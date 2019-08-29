@@ -1,0 +1,275 @@
+<section class="container-fluid">
+   <div class="container habilitarContainer" id="main">
+      <div class="row">
+         <!-- Cliente/Productor Remesa - PANEL A -->
+         <div class=" col-sm-12 col-md-8">
+			#foreach($productorIn in $productorDato)
+			<input type="hidden" value="" id="valorRemesa" />
+
+            <div class="panel panel-default">
+               <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                  ##set($nroRemesa = $valorNroRemesa)
+                  #parse("/partials/util/botonVolverAtras.vm")
+                  <h4 style="color: #ffffff;border:none;margin:0px;padding-top:3px;text-align:center;" class="center-block">Remesa - Productor <b>#$nroProductor</b></h4>
+               </div>
+               <div class="panel-body">
+                  <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+                     <div class="col-md-2" style=";text-align: center;"> 
+		  	<i class="material-icons altoIcono"  style="color:#0b4376;" >&#xe7fb;</i>
+   		     </div>
+                     <div class="col-md-10" style="text-align: left; padding-left:30px; padding-right:30px">
+                        <!-- pag principal -->
+                        <div class="row" id="panela" style="">
+                           <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Pas :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.CAPD_NM_PRODUCTOR")))</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Dni :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.CAPD_TP_DOCUMENTO")),$productorIn.get("P_TF_PROD.CAPD_NU_DOCUMENTO"),"-")</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cuit :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_NU_CUIT"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Categoria :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.CAPD_CD_CATEGORIA_PRODUCTOR")),$utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.INB_CD_CATEGORIA_PRODUCTOR")),"-")</b></h6></td>
+                           		</tr>
+                         
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CASU_CD_AGENCIA"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_AGENCIA")),"-")</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Lugar :</h6></td>
+                           		<td style="padding-top:5px; width:60%;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAUT_CD_LUGAR"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_LUGAR")),"-")</b></h6></td>
+                           		
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cod Persona :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CABU_NU_PERSONA"))</b></h6></td>
+                           	
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Amba :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CD_ID_AMBA"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_ID_AMBA")),"-")</b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Ejecutivo :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAEC_CD_EJECUTIVO"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_EJECUTIVO")),"-")</b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Perfil PAS :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CD_PERFIL_PAS"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_PERFIL_PAS")),"-")</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+                           	      
+              			  </div>
+                        </div>
+                        <!-- aca termina -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+     #end
+            <!-- PANEL C-->
+            
+            <div class="panel panel-default">
+               <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                  <h4 id="">Detalle de remesa</h4>
+               </div>
+               #if ($remesasSaldo.size() > 0)
+               
+               <div class="panel-body">
+                  <div class="row" style="margin-top:18px; margin-bottom:18px;">
+                     <div class="col-md-2" style="text-align: center;"> 
+						<i class="material-icons altoIcono"  style="color:#0b4376;" >autorenew</i>
+					 </div>
+                     <div class="col-md-10" style="text-align: left; padding-left:30px; padding-right:30px">
+                        <!-- pag principal -->
+                        <div class="row" id="panelDetalleRemesa" style="display:none;">
+                           <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									<tr>
+										<td align="right"  valign="top" style="padding-top:5px;" >
+											<h6>Medio pago :</h6>
+										</td>
+										<td style="padding-top:5px;width:60%;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_COTC_CD_MEDIO_PAGO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td align="right"  valign="top" style="padding-top:5px;" >
+											<h6>Total :</h6>
+										</td>
+										<td style="padding-top:5px;width:60%;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_MT_TOTAL"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td align="right"  valign="top" style="padding-top:5px;">
+											<h6>Estado:</h6>
+										</td>
+										<td style="padding-top:5px;width:60%;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_ST_ESTADO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" style="padding-top:5px;">
+											<h6>Tipo :</h6>
+										</td>
+										<td style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_INB_DSP_TIPO_INGRESO_DESC"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" valign="top" style="padding-top:5px;">
+											<h6>Usuario :</h6>
+										</td>
+										<td valign="top" style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_CD_USUARIO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" style="padding-top:5px;">
+											<h6>Fecha cobro :</h6>
+										</td>
+										<td valign="top" style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_FE_COBRO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" style="padding-top:5px;">
+											<h6>Concepto :</h6>
+										</td>
+										<td valign="top" style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_DE_CONCEPTO"></h6>
+										</td>
+									</tr>
+								</table>
+						   </div>
+						   <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									<tr>
+										<td align="right"  valign="top" style="padding-top:5px;">
+											<h6>Origen :</h6>
+										</td>
+										<td style="padding-top:5px; width:60%;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_CJOI_CD_ORIGEN"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td align="right"  valign="top" style="padding-top:5px;">
+											<h6>Saldo :</h6>
+										</td>
+										<td style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_MT_SALDO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" valign="top" style="padding-top:5px;">
+											<h6>Moneda :</h6>
+										</td>
+										<td  valign="top" style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_CAMO_CD_MONEDA"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td align="right"  valign="top" style="padding-top:5px;">
+											<h6>Descripci&oacute;n :</h6>
+										</td>
+										<td style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_CD_COBRO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" style="padding-top:5px;">
+											<h6>Fecha ingreso :</h6>
+										</td>
+										<td valign="top" style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_FE_INGRESO"></h6>
+										</td>
+									</tr>
+									<tr>
+										<td  align="right" style="padding-top:5px;">
+											<h6>Fecha actualizacion :</h6>
+										</td>
+										<td valign="top" style="padding-top:5px;">
+											<h6 id="INFO_P_TF_LISTA_CJIN_FE_ACTUALIZACION"></h6>
+										</td>
+									</tr>
+									
+								</table>
+						   </div>
+                        </div>
+						
+						<div class="row" id="seleccionRemesa">
+                           <div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;" >
+                              <div id="datosParametricosSegunEndoso">
+                                 <h5 style="border:none;color: #b3b0b0;text-align:center;"><br><br>&nbsp;&nbsp;&nbsp;Seleccione la remesa de la lista de saldo</h5>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- aca termina -->
+                     </div>
+                  </div>
+				  <div class="row" id="verDetalleRemesa" style="display:none;">
+							<div class="col-md-12 text-center" style="margin-top:20px;">
+								<button class="btn btn-success" style="background:#00317A; background-color: #00317A;border-color: #00317A;" type="button" onclick="irRemesaHome()">Ver remesa</button>
+							</div>
+				  </div>
+               </div>
+               #else 
+					#set($concepto = "detalles de la remesa")
+					#parse("partials/util/rowVacio.vm")	
+               #end
+            </div>
+         </div>
+         <!-- PANEL B -->
+         <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+            <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+               <div class="panel-heading" style=" background-color:white;border-color:white;">
+                  <h4 id="labelCancelacionesRemesa" style="color:#00317A;">Remesas con saldo (#if($remesasSaldo.size() > 0)$remesasSaldo.size()#else 0 #end)</h4>
+               </div>
+               <div class="main-container page__container altoPanelB">
+                  <div class="timeline__group" style="z-index:1;max-height:20px;">
+                     
+					 #if ($remesasSaldo.size() > 0)
+
+                        #foreach($remesaSaldoIn in $remesasSaldo)
+                        #set($nroRemesa = $remesaSaldoIn.get("P_TF_LISTA_INB_NU_REMESA"))
+                        #set($descRemesa = $remesaSaldoIn.get("P_TF_LISTA_INB_DSP_REMESA"))
+						#set($fIngreso = $remesaSaldoIn.get("P_TF_LISTA_CJIN_FE_INGRESO"))
+
+                        #set($icono = "rotate_right")
+                        #set ($numeroCard = $velocityCount)
+                        #parse("partials/pes/entidades/remesa/itemRemesaSaldo.vm")	 
+                        #end
+                        
+                     #else 
+                     <div>
+                        #set($concepto = "remesas con saldo")
+                        #parse("partials/util/itemTimeLineVacio.vm")	
+                     </div>
+                     #end      
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+#parse("partials/pes/entidades/remesa/modalRemesaHome/cobroModal.vm")

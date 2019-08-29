@@ -1,0 +1,49 @@
+<!-- Modal: modalCart -->
+<div class="modal fade bd-example-modal-lg" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" style="opacity:5!important;">
+  <div class="modal-dialog modal-xl" style="width:800px!important;;" role="document">
+    <div class="modal-content" style="border-radius:5px;">
+      <!--Header-->
+      <div class="modal-header">
+		<div class="row">
+    		<div class="col-md-12">
+            <h4 class="modal-title" id="titulo_detalle_cobertura" style="border:none;">Detalle Coberturas</h4>
+    		</div>
+    		<div class="col-md-2" style="padding-left:20px;">
+    			<h4 id="cantIgualesDetalleCoberturaLabel"  class="bordeFiltro" style="border-bottom-width:0px;font-size: 12px;font-weight: 400;display:none;"></h4>
+    		</div>
+    		<div class="col-md-4">
+    			<h4 id="cantDifDetalleCoberturaLabel" class="bordeFiltro" style="border-bottom-width:0px;font-size: 12px;font-weight: 400;display:none;"></h4>
+    		</div>
+		</div>
+		
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fas fa-times"></i></span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+		<div class="row">
+			<div class="col-md-2">
+				<i class="material-icons altoIcono"  style="color:#646464;" >compare</i>
+			</div>
+			<div class="col-md-10" style="text-align: left; padding-left:1px;padding-right:1px">
+				<div style="overflow-y:auto;height:400px;">
+        			<table  class="table table-hover" style="width:100%;">
+						<thead class="thead-grilla" role="rowgroup">
+							<tr class="tr-grilla" role="row">
+								<th  scope="col" role="columnheader" style="width:5%;text-align: right;"><h5 style="border:none;">Dato</h5></th>
+								<th  scope="col" style="text-align: center;width: 30%;" role="columnheader"><h5 style="border:none;">Cotizaci&oacute;n A ($cotizacion)</h5></th>
+								<th  scope="col" style="width:1%" role="columnheader"></th>
+								<th  scope="col" style="text-align: center;width: 30%;" role="columnheader"><h5 style="border:none;">Cotizaci&oacute;n B (<a style="color:#bfbac2;" class="cotizacionB">Sin dato</a>)</h5></th>
+							</tr>
+						</thead>
+						<tbody class="tbody-grilla" id="datosDetalleCoberturaCMP">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+    </div>
+  </div>
+</div>

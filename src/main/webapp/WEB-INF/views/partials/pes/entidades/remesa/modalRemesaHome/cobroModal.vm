@@ -1,0 +1,91 @@
+   <!-- modal cobros de remesa --->
+	 
+	      		<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="cobroRemesaPopUp" >
+      	 
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+						</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="INFO_NUM_COBRO"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#00317A;" >attach_money</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								
+								<tr>
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha dep&oacute;sito :</h6></td>
+									<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_FE_DEPOSITO"><b></b></h6></td>
+                           		</tr>
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Moneda :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_CAMO_CD_MONEDA"><b></b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Banco :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_CABA_CD_BANCO"><b></b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro. Cheque :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_NU_CHEQUE"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Monto Cheque :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_MT_CHEQUE"><b></b></h6></td>
+                           		</tr>
+									
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Estado Cheque :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_ST_CHEQUE"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Suc. Bancaria&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_CASU_CD_SUCURSAL"><b></b></h6></td>
+                           		</tr>
+								
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cuenta :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_NU_CUENTA"><b></b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tipo Movimiento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_CJMI_TP_MOVIMIENTO"><b></b></h6></td>
+                           		</tr>
+							
+							
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Boleta&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CJCI_CJIN_NU_INGRESO"><b></b></h6></td>
+                           		</tr>
+								
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>
+					
+			</div>
+		</div>
+     

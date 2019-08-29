@@ -1,0 +1,10 @@
+#set ($indicadorSeccionParametroNivel1 = 'Cobranzas' )
+#set ($indicadorSeccionParametroNivel2 = $polizaEncabezado )
+
+#set ($indicadorClienteParametro = 'Provincia Enterprise System')
+#set ($funcionOnload = 'inicioHomePromocion();')
+
+
+#set ($templateWeb = '/partials/pes/entidades/promociones/promosionesHome.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateConfiguracionVisualizacion.vm")	  

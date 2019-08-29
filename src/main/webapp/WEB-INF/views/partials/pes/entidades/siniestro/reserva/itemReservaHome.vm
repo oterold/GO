@@ -1,0 +1,19 @@
+
+
+<div  id="cuadroImgEndoso" style="cursor:pointer; background-color:#ffffff" onclick="mostrarReservasHome('timeLineItemReserva','$numeroCard','$icono','$codSiniestro','$codRamo','$reservaTercero','$codAnnio','$utilToolScreen.fechaAnnioMes($reservaPeriodo)','$reservaPeriodo','$adju','$tipoReserva');">
+
+  <div class="timeline__post seleccionPanelB" id="timeLineItemReserva$numeroCard" onclick="mostrarReservasHome('timeLineItemReserva','$numeroCard','$icono','$codSiniestro','$codRamo','$reservaTercero','$codAnnio','$utilToolScreen.fechaAnnioMes($reservaPeriodo)','$reservaPeriodo','$adju','$tipoReserva');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A;padding-bottom:5px">
+  
+						  <div class="timeline__content" style="overflow:hidden;">
+							<i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">$icono</i>
+							<h6>Periodo :<b> $utilToolScreen.fechaAnnioMes($utilToolScreen.datoVacio($reservaPeriodo))</b></h6>
+							<h6>Reserva :<b> $$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($reservaBruta))</b></h6>
+							<h6><b> $utilToolScreen.datoVacio($utilToolScreen.adJu($adju))</b></h6>
+                        	<h6><b> $utilToolScreen.datoVacio($reservaMoneda) - $utilToolScreen.nombreMayuscula($utilToolScreen.datoVacio($reservaMonedaDesc))</b></h6>
+                        
+                         </div>
+                        </div> 
+						
+	</div>
+		
+	

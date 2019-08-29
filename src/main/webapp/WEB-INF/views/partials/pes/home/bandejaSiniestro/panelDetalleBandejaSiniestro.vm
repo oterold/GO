@@ -1,0 +1,482 @@
+<!--poliza-->
+<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #bcbcbc; padding-top:10px; padding-bottom:10px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >supervisor_account</i>
+                    </div>
+                    <br>
+                        <div style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">W</b>
+                        </div>
+
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+   <div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="background-color:#bac2bb;border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #289f28; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">M</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+		
+	
+	
+	<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #286d9f; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >supervisor_account</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">V</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+		<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #eb563d; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">S</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+		<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #c42424; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">R</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+			<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #c42424; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;"> 
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">R</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+			<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #c42424; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">R</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	
+			<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #c42424; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">R</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+			<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #c42424; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;">
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">R</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+			<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" style="border-bottom:1px solid #00317a;cursor:pointer;border-left:3px solid #c42424; paddind-top:5px; padding-bottom:5px;padding-left:10px;padding-right:10px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div>
+                        <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;float:right;" >person</i>
+                    </div>
+                    <br>
+                        <div  style="text-align:center;"> 
+                            <b style="color:#0b4376;cursor:pointer;font-size:17px">R</b>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Sin :<b>1-4-456421</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Dec : <b>14/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <h6>Pat :<b>NOJ123</b>
+                                </h6>
+                            </div>
+                            <div class="col-md-6 pt-2">
+                                <h6>Ocu :<b> 12/12/2010</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-2">
+                                <h6>
+                                    <b>Puente Lucas Hernan</b>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

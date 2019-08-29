@@ -1,0 +1,12 @@
+  <ol class="breadcrumb" style="	border-right: 0px none rgb(51, 51, 51); 	border-bottom: 1px solid rgba(0, 0, 0, 0.03);  border-top: 2px groove rgba(0, 0, 0, 0.03); background:#f1f1f1;">
+  <div class="container"  style="max-width:1450px;">
+        <!--  <li class="breadcrumb-item" style="float:right;">$indicadorSeccionParametro</li> -->
+        <li class="breadcrumb-item" style="text-align:left;">
+          <a href="#">Provincia Enterprise System</a>
+          </li>
+        <li class="breadcrumb-item" style="text-align:left;">Consulta de Poliza</li>
+		  
+         
+  </div>
+        </ol>
+		

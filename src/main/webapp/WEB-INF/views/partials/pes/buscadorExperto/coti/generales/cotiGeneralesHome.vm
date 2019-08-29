@@ -1,0 +1,195 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-2 pt-4" style="color:#0b4376;border:none;font-size:30px;line-height:1;">Datos Generales</h3>
+                                <div class="plan-selection">
+                                    <div class="plan-data">
+                                        <div class="row">
+                                            #* selector marca *#
+                                            <div class="col-md-6 mb-3 mt-3">
+                                                <label for="country">Sucursal</label>
+                                                <select class="datosInputDatos custom-select d-block w-100" id="country" style="height: 35px" required>
+                                                    <option value="">1 - Casa Central</option>
+                                                    <option>52 - Acassuso</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor seleccione una marca.
+                                                </div>
+                                            </div>
+                                            #* selector Modelo *#
+                                            <div class="col-md-6 mb-3 mt-3">
+                                                <label for="country">Periodo de Vigencia</label>
+                                                <select class="datosInputDatos custom-select d-block w-100" style="height: 35px" id="country" required>
+                                                    <option value="">Seleccione...</option>
+                                                    <option>Mensual Ref. Anual</option>
+                                                    <option>Cuatrimestral</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor seleccione un modelo.
+                                                </div>
+                                            </div>
+                                            #* selector annio *#
+                                            <div class="col-md-6 mb-3 mt-3">
+                                                <label for="firstName">Vigencia </label>
+                                                <input type="text" value="Anual" class="datosInputDatos form-control datosInputDatos" id="firstName" placeholder="" value="" required="" disabled>
+                                                    <div class="invalid-feedback">
+                                                        Valid first name is required.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3 mt-3">
+                                                    <label for="country">Promoci&oacute;n</label>
+                                                    <select class="datosInputDatos custom-select d-block w-100" style="height: 35px" id="country" required>
+                                                        <option value="">Seleccione...</option>
+                                                        <option>Provincia Seguros</option>
+                                                        <option>Cero Kilometro</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione un modelo.
+                                                    </div>
+                                                </div>
+                                                #* selector marca *#
+                                                <div class="col-md-6 mb-3 mt-3">
+                                                    <label for="country">Cuotas</label>
+                                                    <select class="datosInputDatos custom-select d-block w-100" id="country" style="height: 35px" required>
+                                                        <option value="">Seleccione...</option>
+                                                        <option>1</option>
+                                                        <option>3</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione una marca.
+                                                    </div>
+                                                </div>
+                                                #* selector Modelo *#
+                                                <div class="col-md-6 mb-3 mt-3">
+                                                    <label for="country">Provincia</label>
+                                                    <select class="datosInputDatos custom-select d-block w-100" style="height: 35px" id="country" required>
+                                                        <option value="">Seleccione...</option>
+                                                        <option>Buenos Aires</option>
+                                                        <option>Cordoba</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione un modelo.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3 mt-3">
+                                                    <label for="country">Medio de Pago</label>
+                                                    <select class="datosInputDatos custom-select d-block w-100" style="height: 35px" id="country" required>
+                                                        <option value="">Seleccione...</option>
+                                                        <option>Caja</option>
+                                                        <option>Tarjeta de Credito</option>
+                                                        <option>Tarjeta de Debito</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione un modelo.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3 mt-3">
+                                                    <label for="country">Origen de Pago</label>
+                                                    <select class="datosInputDatos custom-select d-block w-100" style="height: 35px" id="country" required>
+                                                        <option value="">Seleccione...</option>
+                                                        <option>Directo</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione un modelo.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3 mt-3">
+                                                    <div class="md-form">
+                                                        <input type="text" value="12/12/2018" id="form1" class="form-control">
+                                                            <label for="form1" style="font-size:15px;" class="">Fecha Desde</label>
+												</div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3 mt-3">
+                                                        <div class="md-form">
+                                                            <input type="text" value="12/01/2019" id="form1" class="form-control">
+                                                                <label for="form1" style="font-size:15px;"  class="">Fecha Hasta</label>
+														</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="pull-right btn btn-indigo" onclick="redirectBienes();" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;">Siguiente&nbsp;&nbsp;
+                                                <i class="fas fa-angle-right" style="color:white;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Lista certificados - Panel B -->
+                        <div class="col-sm-12 col-md-4" style="width:100%;">
+                            <div class="panel panel-default" style="margin-bottom:0px;border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+                                <div class="main-container page__container" >
+                                    <div class="widget" style="margin-bottom: 0px;padding-bottom: 0px;padding-top: 25px;padding-left:10px;padding-right:10px;">
+        <div class="summary-head" style="width:80%;">
+                                                                        <h4 style="border:none;color:#0b4376"  class="widget-title">Cotizaci&oacute;n</h5>
+                                                                        <span class="summary-small-text" ></span>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text fas fa-refresh" href="/PSPES/cotizador" style="color:#0b4376;font-size:15px;"></a>
+                                                                    </div>
+                                                                                                    <div class="summary-block" >
+                                            <div class="summary-content" style="width:100%;">
+                                                <div class="summary-head" style="width:80%;">
+                                                    <h5 style="border:none;"  class="summary-title">Selecci&oacute;n de Producto</h5>
+                                                    <span class="summary-small-text" >Automotores /(04100/10) Automotores </span>
+                                                </div>
+                                                <div class="summary-price">
+                                                    <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="summary-block" >
+                                            <div class="summary-content" style="width:100%;">
+                                                <div class="summary-head" style="width:80%;">
+                                                    <h5 style="border:none;"  class="summary-title">Datos Generales</h5>
+                                                    <span class="summary-small-text" ></span>
+                                                </div>
+                                                <div class="summary-price">
+                                                    <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="summary-block" >
+                                            <div class="summary-content" style="width:100%;">
+                                                <div class="summary-head" style="width:80%;">
+                                                                        <h5 style="border:none;"  class="summary-title">Carga de  Bienes</h5>
+                                                </div>
+                                                <div class="summary-price">
+                                                    <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="summary-block">
+                                            <div class="summary-content">
+                                                <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title">Selecci&oacute;n de Planes</h5>
+                                                </div>
+                                                <div class="summary-price">
+                                                    <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="summary-block">
+                                            <div class="summary-content">
+                                                <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title">Fin de Cotizaci&oacute;n</h5>
+                                                </div>
+                                                <div class="summary-price">
+                                                    <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</section>

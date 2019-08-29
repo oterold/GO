@@ -1,0 +1,52 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="coberturaFinanieraPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4>Cobertura Financiera a la Fecha</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  id="textoCoberturaIconoSiniestros" style="color:#00317A;" >notifications_active</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+							
+							
+								 <div class="select col-md-6">
+						         	<div class="input-group date" style="width:100%;">
+			                             <a>Certificado : <input onChange="coberturaFinanciera();" type="text" style="width:25%;" id="endosoCoberturaFinancieraModal" value="0" class="form-control"></a>
+									</div>
+			   			 		</div>
+			   			 
+							
+								 <div class="select col-md-6">
+						         	<div class="input-group date" id="datepickerCoberturaFinanciera" data-provide="datepicker" style="width:100%;">
+						         	  <div style="background:white;border:none;padding-right:2px;" class="input-group-addon">
+			                             <span style="pointer:none;">Fecha :</span>
+			                           </div>
+			                            <input id="inputDataPickerCoberturaFinanciera" type="text" class="form-control">
+			                            	<div class="input-group-addon">
+			                            		<span class="fa fa-calendar"></span>
+			                            	</div>
+									</div>
+			   			 		</div>
+			   			 
+			   			 		 <div class="select col-md-12" style="padding-top:2%;text-align:center;">
+			   			 		<h5 id="textoCoberturaSiniestros" style="border:none;"></h5> 
+						   		</div>
+						   				 
+			   			 
+			   			 		 <!--div class="select col-md-12" style="display:none;padding-top:5%;text-align:center;">
+			   			 		<h5 id="textoCoberturaIconoSiniestros" style="border:none;"></h5> 
+						   		</div-->
+						   				 
+					</div>
+    			</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

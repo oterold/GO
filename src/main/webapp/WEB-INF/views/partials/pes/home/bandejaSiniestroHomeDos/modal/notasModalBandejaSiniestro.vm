@@ -1,0 +1,32 @@
+#* notas *#
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="notasPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   fas fa-times cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close"></a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	     
+			<div class="row">
+                   <div class="col-md-12"> 			  
+					<h4 id="DATOS_MODAL"></h4>
+				   </div>
+			  <div class="col-md-12 md-form pull-right input-group" style="padding-left:20px;">
+                      <i class="fas fa-search prefix"></i>
+                      <input style="width: calc(100% - 60px);margin-left:30px;"type="text" onkeyup="buscadorPanelModalNotas()" id="inputBusquedaSiniestroModal" class="form-control">
+                      <label style="margin-left: 4.5rem;top:6px;" for="inputIconEx1">Filtrar</label>
+                    </div>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="fas fa-comment-alt altoIconoPopUp"  style="color:#00317A;" ></i>
+
+   			</div>
+          	 	  <div class="col-md-10" style="text-align:left; padding-right:0px; padding-left:0px;">
+	          	 	  <div id="datosModal">
+	          	 	  
+	          	 	  </div>
+              	  </div>
+    			</div>            
+    		  </div>
+    		</div>	

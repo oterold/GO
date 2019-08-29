@@ -1,0 +1,704 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+    <div class="row">
+    
+    <!-- POLIZA -->
+      <div class=" col-sm-12 col-md-8">
+	  	   #foreach($sinistroIn in $datoSiniestro)
+			
+			<input type="hidden" value="$sinistroIn.get("P_TF_LISTA_IMPR.SISI_NU_SINIESTRO")" id="valorNumeroSiniestroHome" />
+			<input type="hidden" value="$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO")" id="valorRamoSiniestroHome" />
+			
+        <div class="panel panel-default">
+          <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+		  #parse("/partials/util/botonVolverAtras.vm")
+          <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver menos</a>
+          <h4 style="text-align:center;color: #ffffff;">Pagos - Siniestro #$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_NU_SINIESTRO')) - SubSiniestro #$subSiniestroNumero</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#39b3d7" >$utilToolScreen.getIcono($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO'))</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="display:none;padding-bottom:10px;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6 >Siniestro&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b> $sinistroIn.get('P_TF_LISTA_IMPR.SISI_NU_ANNIO') - $sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO') - $sinistroIn.get('P_TF_LISTA_IMPR.SISI_NU_SINIESTRO')</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Anticipo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_SIWA_NU_ANTICIPO'))</b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ramo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO'),$utilToolScreen.getDescRamo($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO')),"-") </b></h6></td>
+                           		</tr>
+                           	 	
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>F.&nbsp;Declaraci&oacute;n&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($sinistroIn.get('P_TF_LISTA_IMPR.SISI_FE_DECLARACION')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>F.&nbsp;Ocurrencia&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($sinistroIn.get('P_TF_LISTA_IMPR.SISI_FE_OCURRENCIA'))) - $utilToolScreen.formatearFecha($utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_HORA_OCURRENCIA')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Situacion&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_ST_SINIESTRO'))</b></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Entrada&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($sinistroIn.get('P_TF_LISTA_IMPR.SISI_FE_REGISTRO')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Poliza/Certificado&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:3px;"><h6 style="color:#6fa1d4; cursor:pointer;" onclick="abrirPopupPolizaAnterior('$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CAPO_NU_POLIZA")','$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO")','polizaAnteriorPopUp');"><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CAPO_NU_POLIZA'),$sinistroIn.get('P_TF_LISTA_IMPR.SISI_CACE_NU_CERTIFICADO')," - " )</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Endoso&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CACE_NU_ENDOSO'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Nomina&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.INB_NOMINA')))</b></h6></td>
+                           		</tr>    
+								
+ </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         	   		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6 >Facult&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CASE_IN_FACULTATIVO'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Evento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_REEV_NU_EVENTO'),$sinistroIn.get('P_TF_LISTA_IMPR.DESC_EVENTO')," - " )</b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:0px;width:60%;"><h6 onClick="abrirModalClienteHome('$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CACN_NU_CEDULA_RIF")');" style="cursor:pointer;color:#6fa1d4;"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.DESC_NOMBRE')))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           	 	
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Cobertura&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_CD_PLAN'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Patente&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_PATENTE'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>A&ntilde;o&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_ANIO'))</b></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Marca/Modelo&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_MODELO'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor&nbsp;del&nbsp;Veh&iacute;culo&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_PATENTE'))</b></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Liquidador&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_LIQUIDADOR'),$utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.INB_DE_LIQUIDADOR'))," - " )</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Ocurrencia&nbsp;:</h6></td>
+                           		<td valign="top" onclick="abrirModalOcurrencia();" data-placement="bottom" data-toggle="tooltip" title="$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_DE_SINIESTRO')))" style="padding-top:5px;"><h6 style="cursor:pointer;"><b>$utilToolScreen.datoVacio($utilToolScreen.campoSiniestro($sinistroIn.get('P_TF_LISTA_IMPR.SISI_DE_SINIESTRO')))</b></h6></td>
+                           		#set ($ocurrencia = $utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_DE_SINIESTRO'))))
+								#set ($siniestroNumero = $sinistroIn.get("P_TF_LISTA_IMPR.SISI_NU_SINIESTRO"))
+								
+								</tr>  
+								
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6 >Siniestro&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b> $sinistroIn.get('P_TF_LISTA_IMPR.SISI_NU_ANNIO') - $sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO') - $sinistroIn.get('P_TF_LISTA_IMPR.SISI_NU_SINIESTRO')</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Anticipo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_SIWA_NU_ANTICIPO'))</b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ramo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO'),$utilToolScreen.getDescRamo($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO')),"-") </b></h6></td>
+                           		</tr>
+                           	 	
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>F.&nbsp;Declaraci&oacute;n&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($sinistroIn.get('P_TF_LISTA_IMPR.SISI_FE_DECLARACION')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>F.&nbsp;Ocurrencia&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($sinistroIn.get('P_TF_LISTA_IMPR.SISI_FE_OCURRENCIA'))) - $utilToolScreen.formatearFecha($utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_HORA_OCURRENCIA')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Situacion&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_ST_SINIESTRO'))</b></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Entrada&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($sinistroIn.get('P_TF_LISTA_IMPR.SISI_FE_REGISTRO')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Poliza/Certificado&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:3px;"><h6 style="color:#6fa1d4; cursor:pointer;" onclick="abrirPopupPolizaAnterior('$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CAPO_NU_POLIZA")','$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CARP_CD_RAMO")','polizaAnteriorPopUp');"><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CAPO_NU_POLIZA'),$sinistroIn.get('P_TF_LISTA_IMPR.SISI_CACE_NU_CERTIFICADO')," - " )</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Endoso&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CACE_NU_ENDOSO'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Nomina&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.INB_NOMINA')))</b></h6></td>
+                           		</tr>    
+								
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                         		   		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6 >Facult&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CASE_IN_FACULTATIVO'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Evento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_REEV_NU_EVENTO'),$sinistroIn.get('P_TF_LISTA_IMPR.DESC_EVENTO')," - " )</b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:0px;width:60%;"><h6 onClick="abrirModalClienteHome('$sinistroIn.get("P_TF_LISTA_IMPR.SISI_CACN_NU_CEDULA_RIF")');" style="cursor:pointer;color:#6fa1d4;"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.DESC_NOMBRE')))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           	 	
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Cobertura&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_CD_PLAN'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Patente&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_PATENTE'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>A&ntilde;o&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_ANIO'))</b></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Marca/Modelo&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_MODELO'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor&nbsp;del&nbsp;Veh&iacute;culo&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_PATENTE'))</b></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Liquidador&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_LIQUIDADOR'),$utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.INB_DE_LIQUIDADOR'))," - " )</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Ocurrencia&nbsp;:</h6></td>
+                           		<td valign="top" onclick="abrirModalOcurrencia();" data-placement="bottom" data-toggle="tooltip" title="$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_DE_SINIESTRO')))" style="padding-top:5px;"><h6 style="cursor:pointer;"><b>$utilToolScreen.datoVacio($utilToolScreen.campoSiniestro($sinistroIn.get('P_TF_LISTA_IMPR.SISI_DE_SINIESTRO')))</b></h6></td>
+                           		</tr>  
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Domic. del Siniestro(Orden) :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CADO_CONSECUTIVO_DIRE'))</b></h6></td>
+                           		</tr>
+                           	 		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Da&ntilde;os&nbsp;del&nbsp;Veh&iacute;culo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_DE_DANOS'))</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Causa&nbsp;Siniestro&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_SICS_CD_CAUSA_SINIESTRO')),$utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.DESC_SINIESTRO'))," - " )</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cod.&nbsp;Riesgo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.INB_CODIGO_POSTAL'))</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Direcci&oacute;&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_LUGAR_OCURRENCIA')))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sin.&nbsp;Total&nbsp;Ant&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.EXIST_SIN_TOTAL_ANT'))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cob.&nbsp;Fin&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.INB_CD_MOTIVO_COBF')))</b></h6></td>
+                           		</tr>
+								
+								
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table style= "width:100%;">
+                         			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Localidad&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.INB_PCIA')),$utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.INB_CIUDAD'))," - " )</b></h6></td>
+                           		</tr>
+                           	 		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Agencia&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_SUCURSAL_SINIESTRO'),$utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.INB_AGENCIA_S'))," - " )</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ag.&nbsp;Gesti&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($sinistroIn.get('P_TF_LISTA_IMPR.SISI_CASU_CD_SUCURSAL_GESTION'),$utilToolScreen.nombreMayuscula($sinistroIn.get('P_TF_LISTA_IMPR.INB_AGENCIA'))," - " )</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Juzgado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_JUZGADO')))</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Comisaria&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_COMISARIA')))</b></h6></td>
+                           		</tr>
+								
+								
+								
+								
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Acta&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($sinistroIn.get('P_TF_LISTA_IMPR.SISI_NRO_ACTA')))</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+                           	      
+					<br><br>
+              			  </div>
+    				</div> 
+    					
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+      	 	#end		
+        		 </div>
+   			</div>
+   		
+   		<!-- panel D -->
+   		
+      		<div class="panel panel-default" id="panelDetallePago" style="display:none;">
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <a style="cursor:pointer;" id="verMasPanelC" class="pull-right" onclick="mostrarPanelD('panelc','paneld','verMasPanelC');">Ver mas</a> 
+      	    <h4 id="labelPanelDetallePago"></h4>
+      	    </div>	
+   						<input type="hidden" value="" id="valorNumeroCompromiso" />
+
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;" id="panelImagenDetalle">
+					<img id="imgCliente" />
+				</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	
+          	 	  
+          	 	 <!-- pag principal -->
+              		
+          	 			<div class="row" id="panelc">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                      <table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sector&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_SECTOR"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha&nbsp;Registro&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_FE_REGISTRO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>F.&nbsp;Tentativa&nbsp;Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_FE_PAGO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>F.&nbsp;Conformidad:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_FE_REGISTRO"></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+						  
+						  <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  					<table  style= "width:100%;">
+						
+						<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Tipo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_EGRESO"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Moneda&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_MONEDA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Estado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_DE_ESTADO"></h6></td>
+                           		</tr>
+						
+						
+                           	 </table> 
+    					</div>
+						  
+						  
+						  
+						  
+				    <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+
+						
+			<div class="col-md-12" style="text-align: left;padding-left:1px;padding-right:1px">
+                    <h6 style="text-align:center"> <b>Beneficiario</b> </h6>
+			</div>
+			
+			<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+					  <table  style= "width:100%;">
+						
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Codigo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DETA_CJCR_CABU_NU_PERSONA"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Documento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_DOCUMENTO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Beneficiario&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_BENEFICIARIO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Domiciolio&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_DOMICILIO"></h6></td>
+                           		</tr>
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Email&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_EMAIL"></h6></td>
+                           		</tr>
+                           		
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cal.&nbsp;Indemn&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_CD_CALIDAD_INDEM"></h6></td>
+                           		</tr>
+								
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cuit&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_NU_PERSONA_CUIT"></h6></td>
+                           		</tr>
+								
+								
+								
+                           	 </table> 
+                           	      
+              			  </div>
+						  
+						
+						
+						
+						
+							
+			<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+					  <table  style= "width:100%;">
+						
+						
+						
+						
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Apoderado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DETA_CJCR_NM_APODERADO"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Vinculo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_VINCULO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Motivo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_MOTIVO"></h6></td>
+                           		</tr>
+						
+								
+									
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Provincia&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_DE_PROVINCIA"></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Comprobante&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_DES_TP_FACTURA"></h6></td>
+                           		</tr>
+								
+								
+											<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fecha&nbsp;Compr.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_FE_ELABORACION"></h6></td>
+                           		</tr>
+								
+								
+												<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Recepci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_FE_RECEPCION"></h6></td>
+                           		</tr>
+								
+								
+												<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Obs.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_OBS"></h6></td>
+                           		</tr>
+								
+								
+                           	 </table> 
+                           	      
+              			  </div>
+						
+						
+				</div>       
+           		
+    					     
+    			<!-- PANEL OCULTO -->
+    					
+    					
+    					<div class="row" id="paneld" style="display:none;">
+          		
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+						<div class="col-md-12" style="padding-left:1px;padding-right:1px">
+						<h6 style="text-align:center;"> <b>Forma&nbsp;de&nbsp;Pago</b> </h6>
+						</div>
+						
+                       <!-- datos agregados -->
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+					  <table  style= "width:100%;">
+						
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_PAGO"></h6></td>
+                           		</tr>
+								
+								
+								
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Tipo&nbsp;Cuenta&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_DE_TIPO_CUENTA"></h6></td>
+                           		</tr>
+								
+								
+								
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nu.&nbsp;Cuenta&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_CADM_NU_CUENTA"></h6></td>
+                           		</tr>
+								
+								
+                           	 </table> 
+                           	      
+              			  </div>
+						
+              			  
+           				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+					  <table  style= "width:100%;">
+						
+						
+						
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Banco&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_BANCO"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sucursal&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_DE_SUCU"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>CBU&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETA_CJCR_NU_CBU"></h6></td>
+                           		</tr>
+						
+								
+								
+								
+                           	 </table> 
+                           	      
+              			  </div>
+    				</div> 
+    					
+    					
+    			<!-- aca termina -->
+    			  </div>
+    			</div>	
+						<div class="row" >
+					     <div class="col-lg-12" style="text-align: center;">
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirModalCronograma();"  data-placement="bottom" data-toggle="tooltip" title="Cronograma" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;" >schedule</a>
+						 </div>
+					</div>	
+            	</div>
+   			</div>
+    <!-- PANEL C -->
+     
+     
+      <div class="panel panel-default">
+
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+           <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control" onkeyup="buscadorPanelCEntidadPago()" id="inputBusquedaPago"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				 <h4 id="cantidadConceptos">Conceptos</h4>
+   			 </div>	
+			
+   				<div class="col-xs-2" style=";text-align: center;">  
+   				</div>
+   				<div class="panel-body">    
+                   	<div class="row">
+              	 	    <div class="col-xs-10" style="text-align: left;padding-left:30px;padding-right:30px;$centradoVertical;width:100%;" id="caruMayor">
+							#set($concepto = "conceptos en el siniestro")
+
+							#parse("partials/util/rowVacio.vm")	
+							<div id="micaru" class="owl-carousel owl-theme" style="text-align:center; padding-left:25px;">
+        					</div>
+              	 	    </div> 
+              	 	</div> 
+				</div>
+			
+   		</div>
+	</div>
+   
+
+  	   
+  	 <!-- PANEL B -->
+  	   
+    
+              <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+              <h4 style="color:#00317A;">Lista Pagos #if ($datoListaPagos.size() > 0) ($datoListaPagos.size()) #end</h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+				<div class="timeline__group" style="z-index:1;max-height:20px;">
+              
+				  	<div>
+    
+						#if ($datoListaPagos.size() > 0)
+                			#foreach($datoListaPagosIn in $datoListaPagos)	
+                               #set ($compania = $datoListaPagosIn.get("P_TF_SUBSINI.CJSI_CJCR_CD_COMPANIAS"))
+							   #set ($compromiso = $datoListaPagosIn.get("P_TF_SUBSINI.CJSI_CJCR_COMPROMISO"))
+							   #set ($registro = $datoListaPagosIn.get("P_TF_SUBSINI.DSP_FE_REGISTRO"))
+							   
+							   #set ($montoPagar = $datoListaPagosIn.get("P_TF_SUBSINI.CJSI_MT_PAGAR"))
+							   
+                			   #set ($juicio = $datoListaPagosIn.get("P_TF_SUBSINI.CJSI_SIJU_NU_JUICIO"))
+							   #set ($beneficiario = $datoListaPagosIn.get("P_TF_SUBSINI.DSP_BENEFICIARIO"))
+							   
+							   #set ($icono = "attach_money")
+							   #set ($numeroCard = $velocityCount)
+                			   #parse("partials/pes/entidades/siniestro/pagos/itemPagosListaHome.vm")	 
+                        
+							#end
+					   #else 
+						   #set($concepto = "pagos en el siniestro")
+               			   #parse("partials/util/itemTimeLineVacio.vm")	
+
+					   #end										
+   
+					</div>
+            
+				</div>
+	
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+	   
+	   
+	   
+	     #parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")
+
+		 #parse("partials/pes/entidades/poliza/modalPolizaHome/ocurrenciaModal.vm")
+
+		 #parse("/partials/pes/entidades/poliza/modalPolizaHome/cronogramaModal.vm")
+
+     
+     
+     
+     
+
+

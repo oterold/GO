@@ -1,0 +1,101 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="inspeccionesPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_INSPECCION"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#271765;" >&#xE02f;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Estado :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_ESTADO_INSPECCION"><b></b></h6></td>
+                           		</tr>
+									
+									
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_FE_STATUS"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ultima Act. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_FE_ACTUALIZACION"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Entrega Estim. :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_FE_ENTREGA_ESTIMADA"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Nro Inspec. :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_NU_INSPECCION"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Centro Inspec. :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="DATO_CENTRO_INSPECCION"><b></b></h6></td>
+                           		</tr>
+                           		
+                           
+                         	
+                          
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Observaciones :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_OBSERVACION_TALLER"></h6></td>
+                           	</tr>
+								
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Motivo Inspec. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_MOTIVO_INSPEC"></h6></td>
+                           	</tr>
+									
+							
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Taller Mec&aacute;nico :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_CENTRO_TALLER"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         	
+                         	  	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Domicilio Taller :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_DOMICILIO_TALLER"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         	
+                           		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Localidad:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_IMPR_SIID_GECP_NU_POSTAL"><b></b></h6></td>
+                           		</tr>
+								<tr>                         		
+                           		
+                           		
+                           		
+                           		
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

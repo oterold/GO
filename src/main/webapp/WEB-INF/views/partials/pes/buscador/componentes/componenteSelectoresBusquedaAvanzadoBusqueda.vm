@@ -1,0 +1,138 @@
+	
+#if(($datoRetornoP1 == "0") &&($datoRetornoP2 == "0") &&($datoRetornoP3 == "0")  )
+
+	#set ($displayAvanzado = 'display:none;')
+	
+#else
+	#set ($displayAvanzado = '')
+	
+#end
+	
+	<div style="padding-top:12px;padding-bottom:5px; $displayAvanzado" class="row" id="panelBAvanzado" >
+	   <!--
+	         <div class="col-md-12" style="text-align: center;">
+						        <h6 style="text-align:left; margin-bottom:5px; border-bottom: #dfdada 1px solid;padding-top:10px">Criterio de busqueda Avanzada</h6>
+			 </div>
+			--> 
+	
+			 <div class="select col-md-4">
+			          <select id="selectorP1" name="selectorP1">
+			          
+												            <option value="0" selcted>Buscar por ramo ...</option>
+												            <option value="1">01 - Incendio</option>
+												            <option value="2">02 - Transportes</option>
+												            <option value="3">03 - Aeronavegacion</option>
+												            <option value="4">04 - Automotores</option>
+												            <option value="5">05 - Cristales</option>
+												            <option value="6">06 - Robo</option>
+												            <option value="7">07 - Responsabilidad Civil</option>
+												            <option value="8">08 - Integrales</option>
+												            <option value="9">09 - Sepelio</option>
+												            <option value="10">10 - Granizo</option>
+												            <option value="11">11 - Ganado</option>
+												            <option value="12">12 - Accidentes del Trabajo</option>
+												            <option value="13">13 - Seguro Tecnico</option>
+												            <option value="14">14 - Riesgos Varios</option>
+												            <option value="15">15 - Caucion</option>
+												            <option value="16">16 - Accidentes Personales</option>
+												            <option value="17">17 - Vida Colectivo</option>
+												            <option value="18">18 - Cascos</option>
+												            <option value="21">21 - Vida Colectivo - Obligatorio</option>
+												            <option value="22">22 - Motovehiculos</option>
+												            <option value="55">55 - Legales - Sin Poliza</option>
+												        </select>
+												        <!-- Lo que tiene que mostrar cuando se selecciona la entidad productor -->
+												        <select id="selectorP1Productor" name="selectorP1" style="display:none;">
+												            <option value="0" selcted>No aplica</option>
+												        </select>
+			        <div class="select_arrow">
+			        </div>
+   			 </div>
+   			 
+   			 
+   			
+   			 
+   			 
+   			  <div class="select col-md-4">
+			         <select id="selectorP2" name="selectorP2"  >
+									            <option value="0">Buscar Exclusivamente por ...</option>
+									            <optgroup label="Poliza" data-max-options="2" id="polizaIn" class="ocultarPanel"> 
+									                <option value="1001">Productor</option>
+									                <option value="1003">Sucursal</option>
+									                <option value="1004">Nomina</option>
+									                <option value="1005">Apellido Cliente</option>
+									            </optgroup>
+									            <optgroup label="Cliente" data-max-options="2" id="clienteIn" style="display:none;" class="ocultarPanel">
+									                <option value="2001">Apellido y Nombre</option>
+									                <option value="2002">Fecha de Nacimiento</option>
+									                <option value="2003">Email</option>
+									                <option value="2004">Cuit</option>
+									                <option value="2005">Productor</option>
+									            </optgroup>
+									            <optgroup label="Siniestro" data-max-options="2" id="siniestroIn" style="display:none;" class="ocultarPanel">
+									                <option value="3001">Productor</option>
+									                <option value="3002">Sucursal</option>
+									                <option value="3004">Anticipo</option>
+													<option value="3005">Poliza</option>
+													<option value="3007">Apellido Cliente</option>
+													<option value="3008">Numero Cliente</option>
+																						            
+									            </optgroup>
+									            <optgroup label="Nid" data-max-options="2" id="nidIn" style="display:none;" class="ocultarPanel">
+									                <option value="4001">Productor</option>
+									                <option value="4002">Apellido y Nombre</option>
+									                <option value="4003">Sucursal</option>
+									                <option value="4004">Estado</option>
+									                <option value="4006">En Departamento Abierto</option>
+									                <option value="4007">En Departamento Cerrado</option>
+									                <option value="4008">En Departamento Todos</option>
+									                
+									            </optgroup>
+									            <optgroup label="Cotizaciones" data-max-options="2" id="cotizacionesIn" style="display:none;" class="ocultarPanel">
+									                <option value="5001">Productor</option>
+									                <option value="5002">Bien</option>
+									            </optgroup>
+									            <optgroup label="Productores" data-max-options="2" id="productoresIn" style="display:none;" class="ocultarPanel">
+									                <option value="6001">Apellido y Nombre</option>
+									                <option value="6002">Sucursal</option>
+									            </optgroup>
+									        </select>
+			        <div class="select_arrow">
+			        </div>
+   			 </div>
+   			 
+   			 
+   			  
+   			 
+   			  <div class="select col-md-4">
+			           <select  id="selectorP3" name="selectorP3" >
+									            <option value="0">Buscar por ...</option>
+									            <optgroup label="Fecha De Creacion" id="fechaCreacion" data-max-options="2">
+									                <option value="04">Ultimo Dia</option>
+									                <option value="05">Ultimo Mes</option>
+									                <option value="06">Ultimo A&nacute;o</option>
+									            </optgroup>
+									            <optgroup label="Fecha De Actualizacion " id="fechaActualizacion" data-max-options="2">
+									                <option value="01">Ultimo Dia</option>
+									                <option value="02">Ultimo Mes</option>
+									                <option value="03">Ultimo A&nacute;o</option>
+									            </optgroup>
+									            <optgroup label="Estados" id="fechaEstados" data-max-options="2">
+									                <option value="07">Vigente</option>
+									                <option value="08">No Vigente</option>
+									            </optgroup>
+									            <optgroup label="Fecha" id="fechaCreacionNid" data-max-options="2">
+									                <option value="04">Ultimo Dia</option>
+									                <option value="09">Ultimos Tres Dias</option>
+									                <option value="10">Ultima Semana</option>
+									                <option value="05">Ultimo Mes</option>
+									                <option value="11">Mayor a Ultimo Mes</option>
+									            </optgroup>
+									            
+									        </select>
+			        <div class="select_arrow">
+			        </div>
+   			 </div>
+   			 
+   			 
+	</div>

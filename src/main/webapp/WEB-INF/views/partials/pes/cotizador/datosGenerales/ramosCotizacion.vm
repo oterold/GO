@@ -1,0 +1,15 @@
+<!------------------------------------ RAMOS ------------------------------------>	
+<div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 cardRamos acomodar-card-resposive centrar-card-resposive" style="cursor:pointer!important;" id="ramo_$codRamo" onclick="mostrarProductosCotizacion('$codRamo',this.id,'$descRamo')">
+    <div class="card">
+        <div class="card-image cuerpo-card sacarSeleccionCard" style="cursor:pointer!important;" id="cardActivada_$codRamo">
+            $utilToolScreen.getIconoMaterial($codRamo)
+            <a class="btn-floating halfway-fab waves-effect waves-light red sacarCheckActivado" id="checkActivado_$codRamo" style="display:none;">
+                <i class="fas fa-check icono-check-ramos"></i>
+            </a>
+        </div>
+        <div class="card-content texto-card">
+            <p>$utilToolScreen.nombreMayuscula($descRamo)</p>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,125 @@
+
+<div class="row entidadCard$entidad  cardResultado ramoCard$cardPolizaRamoNro estadoCard$cardPolizaCodEstado" >
+		   <div class=" col-sm-12 col-md-12"> 
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+				<a style="cursor:pointer;" id="botomVerMasVerMenos$entidad$contador" class="pull-right" onclick="mostrarContenidoVerMasVerMenosCardBusqueda('$entidad','$contador');">Ver mas</a>  
+      	    <h4 style="border:none;" style="padding-botton:1px;">Cotizaciones #$cardCotizacionesNroCoti</h4>
+      	    </div>	
+   			<div class="panel-body" style="background-color:white;padding-top:0;">
+				<div class=" row">
+   					<div class="col-md-2 cardPosicionIcono" > 
+   					<i class="material-icons altoIcono"  style="color:#ff9064;" >$utilToolScreen.getIcono($cardCotizacionesNroRamo)</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align:left;padding-left:10px;padding-right:10px">
+              		
+              		<!-- pag principal -->
+              		
+          	 		<div class="row" id="panelC$entidad$contador">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px;padding-bottom:10px;">
+                                 
+  							<table  style= "width:100%;">
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Bien :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($cardCotizacionesDescBien)</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Cotizaci&oacute;n :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($cardCotizacionesFeCotizacion))</b></h6></td>
+                           		</tr>
+                         		<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Asegurado :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardCotizacionesDescCliente))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+           		
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    					<div class="row" id="panelD$entidad$contador" style="display:none;">
+							
+          			<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px">
+                                 
+  							<table  style= "width:100%;">
+                          	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Bien :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cardCotizacionesDescBien))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Cotizaci&oacute;n :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($cardCotizacionesFeCotizacion))</b></h6></td>
+                           		</tr>
+								<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Asegurado :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardCotizacionesDescCliente))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+             			
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:90%;">
+                       
+                       <!-- datos agregados -->
+          				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+
+								<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Documento :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardCotizacionesDescDocumento), $cardCotizacionesNroDocumento, "-")</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>Sucursal :</h6></td>
+                           		<td style="padding-top:5px;width:25%;max-width:1px;"><h6 style="font-weight:bold;">$utilToolScreen.datoVacio($cardCotizacionesNroSucursal,$utilToolScreen.nombreMayuscula($cardCotizacionesDescSucursal),"-")</h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor :</h6></td>
+								<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($cardCotizacionesNroProd,$utilToolScreen.nombreMayuscula($cardCotizacionesDescProd),"-")</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+									#if(!($cardCotizacionesFeTecnicaDesde == ""))
+									#set($fechaFinal = $cardCotizacionesFeHasta)
+									#else
+									#set($fechaFinal = $cardCotizacionesFeTecnicaHasta)
+									#end
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Vigencia : </h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($cardCotizacionesFeTecnicaDesde) ,$utilToolScreen.formatearFecha($fechaFinal), "-" )</b></h6></td>
+                           		</tr>
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>P&oacute;liza :</h6></td>
+                           		<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($cardCotizacionesNroPoliza)</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+              			  </div>
+						 
+    				</div> 
+    					
+    				
+						<a class="btn btn-block btn-social btn-bitbucket pull-right" style="width:20%;margin:1px;color:#ffffff;margin-right:25px;margin-top:20px;margin-bottom:5px;" href="/PSPES/homeCotizacion?cotizacion=$cardCotizacionesNroCoti">Detalle</a>
+    			<!-- aca termina -->
+    			  </div>
+			  
+    			</div>	
+          		
+          	#if($cardDatoEntidadRelacionada == "N")
+	      	    <h6 style="padding-left:5px;padding-bottom:5px;">Relaciona por : $cardCotizacionEntidad / $cardCotizacionAtributo</h6>
+      	    #end
+    
+     		<hr style="margin:0px; border-color:#dfdada;" >
+			</div>
+		
+   			</div>
+				
+     <!-- CERTIFICADOS -->
+           </div>
+ 

@@ -1,0 +1,186 @@
+ <div class="col-sm-12 col-md-3 sin-margen-izq" style="margin-top:50px;width:100%;">
+            <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+               <div class="main-container page__container" >
+                  <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;">
+                     <div class="summary-head" style="width:100%;">
+						
+                        <h5 style="border:none;color:#0b4376;"  class="widget-title">
+						#if($datosCoti.cotizacion > 0) 
+                        Cotizaci&oacute;n #$datosCoti.cotizacion
+						#end
+						</h5>
+                     </div>
+                     <div class="summary-block" >
+                        <div class="summary-content" style="width:100%;">
+                           <div class="summary-head" style="width:80%;">
+                            #if($card == 0)
+							  <h5 style="border:none;"  class="summary-title"><b>Datos del Cliente</b></h5>
+							#else
+							  <h5 style="border:none;"  class="summary-title">Datos del Cliente</h5>
+							#end
+							  #if($datosCoti.datosContacto.nombre.length() > 0)
+							  <h6  class="summary-title datos-cotizacion"> $datosCoti.datosContacto.nombre / $datosCoti.datosContacto.dni</h6>
+							  #end
+                              <span class="summary-small-text" ></span>
+                           </div>
+                           <div class="summary-price">
+							#if($card == 0)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							#end
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block" >
+                        <div class="summary-content" style="width:100%;">
+                           <div class="summary-head" style="width:80%;">
+                            #if($card == 1)
+							  <h5 style="border:none;"  class="summary-title"><b>Selecci&oacute;n Ramo y Producto</b></h5>
+							#else
+								<h5 style="border:none;"  class="summary-title">Selecci&oacute;n Ramo y Producto</h5>
+							#end
+							  #if($$datosCoti.ramo.length() > 0)
+							  <h6  class="summary-title datos-cotizacion"> $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.ramo) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.prod)</h6>
+							  #end
+                              <span class="summary-small-text" ></span>
+                           </div>
+                           <div class="summary-price">
+							#if($card == 1)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 1)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							 #end
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+							#if($card == 2)
+                              <h5 style="border:none;"  class="summary-title"></i>
+                                 <b>Datos Generales</b>
+                              </h5>
+							#else
+								<h5 style="border:none;"  class="summary-title"></i>
+                                 Datos Generales
+                              </h5>
+							 #end
+							  #if($datosCoti.datosGenerales.productor.length() > 0)
+							  <h6  class="summary-title datos-cotizacion"> $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.medioPago) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.formaPago) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.Vigencia) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.facturacion)  / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.moneda) </h6>
+							  #end
+                           </div>
+                           <div class="summary-price">
+							#if($card == 2)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 2)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							 #end      
+							</div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+							  #if($card == 3)
+                              <h5 style="border:none;"  class="summary-title"></i>
+								<b> Datos del Bien</b>
+                              </h5>
+							  #else
+								<h5 style="border:none;"  class="summary-title"></i>
+									Datos del Bien
+						        </h5>
+							  #end
+							  <h6  class="summary-title datos-cotizacion"> 
+							  #if($datosCoti.datosPanelB.annio.length() > 0)
+								$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.annio) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.marca) /
+								$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.modelo) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.precioBien)
+							  #end
+							</h6>
+                           </div>
+                           <div class="summary-price">
+							#if($card == 3)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 3)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							#end
+						   </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+							#if($card == 4)
+                              <h5 style="border:none;"  class="summary-title"><b>Promociones</b></h5>
+							#else
+								<h5 style="border:none;"  class="summary-title">Promociones</h5>
+							#end
+								  #if($datosCoti.datosPanelB.promoA.length() > 0)
+										<h6  class="summary-title datos-cotizacion">
+										$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)
+										#if($datosCoti.datosPanelB.promoB.length() > 0) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB) #end  
+										#if($datosCoti.datosPanelB.promoC.length() > 0) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC) #end</h6>
+								  #end
+                           </div>
+                           <div class="summary-price">
+							#if($card == 4)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 4)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							#end                  </div>
+                        </div>
+                     </div>
+                     #if($datosCoti.ramo == 8)
+                     <div class="summary-block">
+						<div class="summary-content">
+                           <div class="summary-head">
+                            #if($card == 6)
+							  <h5 style="border:none;"  class="summary-title"><b>Coberturas</b></h5>
+							#else
+								<h5 style="border:none;"  class="summary-title">Coberturas</h5>
+							#end
+                           </div>
+                           <div class="summary-price">
+							#if($card == 6)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 6)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							#end       
+							</div>
+                        </div>
+                     </div>
+					 #end
+					     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                            #if($card == 5)
+							  <h5 style="border:none;"  class="summary-title"><b>Planes Cotizados</b></h5>
+							#else
+								<h5 style="border:none;"  class="summary-title">Planes Cotizados</h5>
+							#end
+                           </div>
+                           <div class="summary-price">
+							#if($card == 5)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 5)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							#end       
+							</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>

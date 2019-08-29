@@ -1,0 +1,299 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <input type="hidden" value="" id="valorPanelB"/>
+            <!-- POLIZA -->
+            <div class=" col-sm-12 col-md-8">
+					<input type="hidden" value="" id="datosObjPromociones"/>
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                        <div class="col-sm-2 col-md-3 col-lg-2">
+                            #parse("/partials/util/botonVolverAtras.vm")
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-10">
+                            <h4 style="text-align:center;color: #ffffff;border:none;font-weight: 400;">Visualizaci&oacute;n / Configuraci&oacute;n de Datos</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+						
+						<!---------- ROLES --------------->
+						<div class="row ocultarSeccion pl-5" style="width:100%" id="datosRolesBusqueda">
+							<div class="col-xs-4 col-md-4 mb-3">
+                                <label style="font-size:12px;">Origen</label>
+								<select class="form-control letraSelect" id="selectorOrigenDatosRoles">
+                                    <option>Seleccione..</option>
+									<option>WEBPRO</option>
+                                </select>
+                            </div>
+							
+                            <div class="col-xs-4 col-md-4 mb-3">
+                                <label style="font-size:12px;">Roles</label>
+								<select class="form-control letraSelect" id="selectorEsquemaDatosRolesRoles">
+                                    <option>Seleccione..</option>
+                                        <option value="10001">10001</option>
+										<option value="10002">10002</option>
+                                </select>
+                            </div>
+                            
+							
+							<div class="col-xs-3 col-md-4" style="text-align:center;margin-top:25px !important;">
+                                    <button id="navbar-category-bundle-jquery" onclick="buscarDatosPanelBRoles();" class="btn btn-indigo btn-sm my-0 waves-effect waves-light pull-right" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;" role="button">
+                                        <span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Buscar</span>
+                                        <i class="fas fa-search" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                    </button>
+							</div>
+						</div>
+						
+						<!----------- DATOS GENERALES --------------->
+                        <div class="row ocultarSeccion pl-5" style="width:100%;display:none;" id="datosGeneralesBusqueda">
+                            <div class="col-xs-6 col-md-6 mb-3">
+                                <label style="font-size:12px;">Esquema Datos Generales</label>
+								<select class="form-control letraSelect" id="selectorEsquemaDatosGenerlaes">
+                                    <option>Seleccione..</option>
+                                    #foreach($datosEsquema in $datosEsquemaGenerales)
+                                        <option value="$datosEsquema.get('P_TF_CREK.CREK_NU_VISUALIZACION')">$utilToolScreen.datoVacio($datosEsquema.get('P_TF_CREK.CREK_NU_VISUALIZACION')) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($datosEsquema.get("P_TF_CREK.CREK_DE_VISUALIZACION")))</option>
+                                    #end
+                                </select>
+                            </div>
+                            <div class="col-xs-3 col-md-6" style="text-align:center;margin-top:25px !important;">
+                                    <button id="navbar-category-bundle-jquery" onclick="buscarDatosPanelBDatosGenerales();" class="btn btn-indigo btn-sm my-0 waves-effect waves-light pull-right" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;" role="button">
+                                        <span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Buscar</span>
+                                        <i class="fas fa-search" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                    </button>
+							</div>
+                            </div>
+                            <!-- panel de parametricos -->
+                            <div class="row ocultarSeccion pl-5" style="width:100%;display:none;" id="datosParametricosBusqueda">
+                                <div class="col-md-3 mb-3" style="margin-bottom: 5px !important;">
+    								<label style="font-size:12px;">Ramo</label>
+    								<select class="form-control letraSelect" onchange="selecionarProductoConfigVisualizacion(1);" id="selectRamosConfigVisual">
+                                        <option>Seleccione..</option>
+                                        #foreach($datosRamosSelect in $datosRamos)
+                                                <option value="$datosRamosSelect.get('P_TF_CARP.CARP_CD_RAMO')">$utilToolScreen.datoVacio($datosRamosSelect.get('P_TF_CARP.CARP_CD_RAMO')) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($datosRamosSelect.get('P_TF_CARP.CARP_DE_RAMO')))</option>
+										#end
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+									<label style="font-size:12px;">Producto</label>
+    								<select class="form-control letraSelect" onchange="selecionarEsquemasConfigVisualizacion();" id="selectorProdConfiguracion">
+                                        <option>Seleccione..</option>
+                                    </select>
+								</div>
+                                <div class="col-md-3 mb-3">
+										<label style="font-size:12px;">Esquema Datos Parametrico</label>
+    								<select class="form-control letraSelect" id="selectorEsquemaConfiguracionVisualizacion">
+                                        <option>Seleccione..</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 mb-3" style="text-align:center;margin-top:25px;">
+                                        <button id="navbar-category-bundle-jquery" onclick="buscarDatosPanelB();" class="btn btn-indigo btn-sm my-0 waves-effect waves-light pull-right" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;" role="button">
+                                            <span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Buscar</span>
+                                            <i class="fas fa-search" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                        </button>
+							</div>
+                                </div>
+                                <!-- panel de planes -->
+								<div class="row ocultarSeccion pl-5" style="width:100%;display:none;" id="planesConfiguracionVisualizacion">
+    								<div class="col-md-12 mb-3" style="text-align:center;">
+										<h5 style="border:none;font-weight:400;padding-top:12px;"> Las ramos se encuentran en el panel derecho.</h5>
+                                    </div>		
+								</div>
+								<!-- panel de promociones -->
+                                <div class="row ocultarSeccion pl-5" style="width:100%;display:none;" id="datosPromocionesBusqueda">
+    								<div class="col-md-12 mb-3" style="text-align:center;">
+										<h5 style="border:none;font-weight:400;padding-top:12px;"> Las promociones se encuentran en el panel derecho.</h5>
+                                    </div>		
+								</div>
+								
+								
+								<!-- panel de valores default -->
+                                <div class="row ocultarSeccion pl-5" style="width:100%;display:none;" id="datosValoresDefault">
+									
+									<div class="col-md-3 mb-3">
+										<label style="font-size:12px;">Origen</label>
+										<select class="form-control letraSelect"  id="selectorValoresDefaultConfigVisualOrigen">
+                                            <option>Seleccione..</option>
+											#foreach($datosOrigenIn in $datosOrigen)
+											<option value="$datosOrigenIn.get('P_TF_CRIV.CRIV_CD_ORIGEN')">$utilToolScreen.datoVacio($datosOrigenIn.get('P_TF_CRIV.CRIV_CD_ORIGEN')) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($datosOrigenIn.get('P_TF_CRIV.CRIV_DE_ORIGEN')))</option>
+											#end
+										</select>
+                                    </div>
+									
+									
+									
+    								<div class="col-md-3 mb-3">
+                                        <label style="font-size:12px;">Ramos</label>
+										<select class="form-control letraSelect" onchange="selecionarProductoConfigVisualizacion(2);" id="selectRamosValoresDefaultConfigVisual">
+											<option>Seleccione..</option>
+											#foreach($datosRamosSelectVisual in $datosRamos)	
+                                                <option value="$datosRamosSelectVisual.get('P_TF_CARP.CARP_CD_RAMO')">$utilToolScreen.datoVacio($datosRamosSelectVisual.get('P_TF_CARP.CARP_CD_RAMO')) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($datosRamosSelectVisual.get('P_TF_CARP.CARP_DE_RAMO')))</option>
+											#end
+										</select>
+                                    </div>		
+									
+									<div class="col-md-3 mb-3">
+										<label style="font-size:12px;">Producto</label>
+										<select class="form-control letraSelect"  id="selectorProdValoresDefaultConfiguracion">
+                                            <option>Seleccione..</option>
+										</select>
+    								</div>
+								
+									<div class="col-md-3 mb-3">
+                                  		<label style="font-size:12px;">Formulario</label>
+										<select class="form-control letraSelect" id="selectorValoresDefaultFormularioConfigVisual">
+                                            <option>Seleccione..</option>
+											<option value="DGENERALES">Datos Generales</option>
+										</select>
+									</div>
+									
+									<div class="col-md-6 mb-3">
+                                  		<label style="font-size:12px;">Auxiliar	
+											<a href data-toggle="tooltip" data-placement="right" title="El formato es: CodProductor;CodProductor;Esq1;Esq2;Rol; Ej : 15925;15925;1;1;10001;">
+												<i class="fas fa-info-circle" style="color:#0B4376"></i>
+											</a>
+										</label>
+										<input value="15925;15925;1;1;10001" type="text" id="inputAuxiliarValoresDefault" class="form-control">
+								
+									</div>
+									
+									<div class="col-md-6 mb-3" style="text-align:center;margin-top:25px;">
+                                        <button id="navbar-category-bundle-jquery" onclick="cargarValoresPorDefaultPanelB();" class="btn btn-indigo btn-sm my-0 waves-effect waves-light pull-right" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;width:160px;" role="button">
+                                            <span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Buscar</span>
+                                            <i class="fas fa-search" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                        </button>
+									</div>
+									
+								</div>
+								
+								
+                                    <div class="row" id="panelABotones">
+                                        <div class="col-lg-12" style="text-align: center;padding-top:10px;">
+											 <button type="button" onclick="mostrarBusquedaConfigVisualizaciones('datosRolesBusqueda','btnRoles');" id="btnRoles" class=" mt-2 fondoBoton btn btn-sm subBoton-menu-panelA" style="color:white;">
+                                                <i class="fas fa-plus pr-2" aria-hidden="true" style="color:white;font-size:12px;"></i>
+                                                <a style="font-size:12px;"> Roles </a>
+                                            </button>
+                                            <button type="button" onclick="mostrarBusquedaConfigVisualizaciones('datosGeneralesBusqueda','btnGenerales');" id="btnGenerales" class="mt-2 fondoBoton btn btn-sm subBoton-menu-panelA" style="color:white;background-color:#7a7a7a"">
+                                                <i class="fas fa-plus pr-2" aria-hidden="true" style="color:white;font-size:12px;"></i>
+                                                <a style="font-size:12px;">D. Generales </a>
+                                            </button>
+                                            <button type="button" onclick="mostrarBusquedaConfigVisualizaciones('datosParametricosBusqueda','btnParametricos');" id="btnParametricos" class=" mt-2 fondoBoton btn btn-sm subBoton-menu-panelA" style="color:white;background-color:#7a7a7a">
+                                                <i class="fas fa-plus pr-2" aria-hidden="true" style="color:white;font-size:12px;"></i>
+                                                <a style="font-size:12px;">D. Parametricos </a>
+                                            </button>
+                                            <button type="button" onclick="mostrarBusquedaConfigVisualizaciones('datosPromocionesBusqueda','btnPromo');"  id="btnPromo" class=" mt-2 fondoBoton btn btn-sm subBoton-menu-panelA" style="color:white;background-color:#7a7a7a">
+                                                <i class="fas fa-plus pr-2" aria-hidden="true" style="color:white;font-size:12px;"></i>
+                                                <a style="font-size:12px;"> Promociones </a>
+                                            </button>
+                                            <button type="button" onclick="mostrarBusquedaConfigVisualizaciones('planesConfiguracionVisualizacion','btnPlanes');" id="btnPlanes"class=" mt-2 fondoBoton btn btn-sm subBoton-menu-panelA" style="color:white;background-color:#7a7a7a">
+                                                <i class="fas fa-plus pr-2" aria-hidden="true" style="color:white;font-size:12px;"></i>
+                                                <a style="font-size:12px;"> Planes </a>
+                                            </button>
+                                            <button type="button" onclick="mostrarBusquedaConfigVisualizaciones('datosValoresDefault','bntDefault');" id="bntDefault" class=" mt-2 fondoBoton btn btn-sm subBoton-menu-panelA" style="color:white;background-color:#7a7a7a">
+                                                <i class="fas fa-plus pr-2" aria-hidden="true" style="color:white;font-size:12px;"></i>
+                                                <a style="font-size:12px;"> Valores Default </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- panel C-->
+                            <div class="panel panel-default" style="height:400px;">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h4 id="labelPanelC" style="border:none;color:#00317A;font-weight:400;">Valores Activos del dato</h4>
+                                                    </div>
+                                                    <div class="col-md-6">
+														<div class="form-group">
+                                                            <input class="form-control" onkeyup="buscarDatoPanelCConfiguracionVisualizacion('tablaDatoPanelCConfig');" id="inputDatoPanelCConfiguracion" placeholder="Filtrar">
+                                                          
+																   <select class="form-control  sin-margen" style="display:none;" id="selectorPlanesProductosEsquema" onchange="MostrarPanelCPlanesConfiguracionVisualizacion();";>
+																		<option></option>
+																   </select>
+
+														</div>
+														
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <hr style="margin-top:0px!important;margin-bottom:0px!important;border-top: 1px solid #bababa;">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p style="text-align:center;padding-top:20px;" id="textoInicialPanelC">Realice una b&uacute;squeda</p>
+                                                    <div id="tablaPanelC" style="overflow-y:auto;display:none;height:320px;">
+                                                        <table id="tablaDatoPanelCConfig" class="table table-hover table-grilla"  role="table">
+                                                            <thead class="thead-grilla" role="rowgroup">
+                                                                <tr class="tr-grilla" role="row">
+                                                                    <th class="th-grilla" style="width:20%" role="columnheader">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera1">Visualizaci&oacute;n</h5>
+                                                                    </th>
+                                                                    <th class="th-grilla" style="width:20%" role="columnheader">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera2">Tabla</h5>
+                                                                    </th>
+                                                                    <th class="th-grilla" role="columnheader">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera3">Dominio</h5>
+                                                                    </th>
+                                                                    <th class="th-grilla" role="columnheader">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera4">Clave</h5>
+                                                                    </th>
+                                                                    <th class="th-grilla" role="columnheader">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera5">Fe. Alta</h5>
+                                                                    </th>
+                                                                    <th class="th-grilla" role="columnheader" id="columnaDatoCabecera6">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera6">Fe. Mod</h5>
+                                                                    </th>
+                                                                    <th class="th-grilla" role="columnheader" style="display:none;" id="columnaDatoCabecera7">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera7"></h5>
+                                                                    </th>
+																	<th class="th-grilla" role="columnheader" style="display:none;" id="columnaDatoCabecera8">
+                                                                        <h5 style="border:none;font-weight:600;" id="datoCabecera8"></h5>
+                                                                    </th>
+																	
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="tbody-grilla" id="tablaConfiguVisualizacion">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Panel B -->
+                                <div class="col-sm-12 col-md-4 col-lg-4 " style="width:100%; margin-bottom: 20px;">
+                                    <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+                                        <div class="panel-heading" style=" background-color:white;border-color:white;">
+                                            <div class="row" style="padding-top:5px;">
+                                                <div class="col-md-8" style="padding-right:0px;padding-left: 5px;">
+                                                    <h4 style="color:#00317A;font-weight:400;border-bottom: none;" id="datoTituloPanelB">Datos Parametricos / Generales</h4>
+                                                </div>
+                                                <div class="col-md-4">
+														 <div class="form-group">
+                                                            <input class="form-control" onkeyup="buscadorPanelParamGrales();" id="filtroPanelBConfiguracionVisualizacion" placeholder="Filtrar">
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <hr style="width:100%;margin-top: 0px;margin-bottom: 0px;border-top:1px solid #bababa;">
+                                                </div>
+                                                <div class="main-container page__container altoPanelB" style="height:85% !important;">
+                                                    <div class="timeline__group" style="z-index:1;max-height:20px;">
+                                                        <div>
+                                                            #parse("partials/pes/home/configuracionDeVisualizacion/panelBconfiguracionVisualizacion.vm")	 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+</section>
+#parse("partials/pes/home/configuracionDeVisualizacion/modal/planesConfiguracionVisualizacionModal.vm")
+#parse("partials/pes/entidades/poliza/modalPolizaHome/detalleRolesProductosModal.vm")

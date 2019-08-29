@@ -1,0 +1,42 @@
+ <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Accesorios</h3>
+                                <div class="plan-selection">
+                                    <div class="plan-data">
+
+<div class="row" id="listaAccesorios">
+</div>
+<div class="row" style="margin-bottom:0px;">
+    <div class="input-field col-md-5">
+        <select class="js-select2" name="40020" id="selectorAccesorios" >
+            <option value="00">Selecione..</option>
+            #foreach($accesoriosIn in $accesorios)
+                <option value="$accesoriosIn.get("P_TF_CAAX.CAAX_CD_ACCESORIO")">$utilToolScreen.ucFirst($accesoriosIn.get("P_TF_CAAX.CAAX_DE_ACCESORIO"))</option>
+            #end
+        </select>
+        <label class="label-file-select">Accesorios</label>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="input-field col-md-2">
+        <input for="suma"  placeholder="$0.00,00" id="montoAccesorios" style="text-align:right;" type="text">
+            <label style="left:100px !important" for="suma">Monto*</label>
+    </div>
+    <div class="input-field col-md-2">
+        <a style="background-color:#0b4376;" onclick="agregarAccesorios();" class="btn-floating btn-small">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+</div>
+
+<div class="row" id="listaTotalAccesorios" style="display:none;">
+    <div class="input-field col-md-5">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="input-field col-md-2" style="text-align:right;">
+		<h6 id="valorAccesorios"></h6>
+    </div>
+</div>
+	
+</div>
+	
+</div>

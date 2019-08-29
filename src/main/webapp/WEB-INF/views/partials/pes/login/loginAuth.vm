@@ -1,0 +1,33 @@
+<div class="container habilitarContainer">
+    <div class="row">
+      <div class="col-md-6 center-block">
+            <div class="account-wall" style="margin-top:120px;">
+                
+   				<i class="material-icons altoIcono profile-img"  style="color:#00317A;border:solid;text-align:center;" >https</i>
+                <form role="form" class="form-signin" action="loginAuthIn">
+					
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Nombre y Apellido"name="nomApe" id="nomApe">
+  				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Email" name="emailIn" id="emailIn">
+  				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Usuario red" name="usuarioRedIn" id="usuarioRedIn">
+  				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Mensaje" name="mensajeIn" id="mensajeIn">
+  				</div>
+                
+
+               #if($errorMsg)
+                         <span style="color:red;"><h4 style="text-align:center;border:none;">$errorMsg</h4></span>
+               #end            
+                <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:#00317A;" onclick="solicitarAutorizacion()">Solicitar
+				</button>
+            
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

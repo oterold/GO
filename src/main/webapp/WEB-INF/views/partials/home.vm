@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Provincia Seguros">
+    <meta name="author" content="">
+    <title>Provincia Seguros Clientes</title>
+
+    <link href="/PSPES/resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"    rel="stylesheet">
+    <link href="/PSPES/resources/css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	
+    <link href="/PSPES/resources/css/psadmin.css" rel="stylesheet">
+ 
+  </head>
+
+  <body style="background:#5d5d5d;">
+    
+	<div class="row">
+		<img src="/PSPES/resources/img/fondoa.jpg" width="100%" />
+    </div>
+
+	
+	
+	<div class="row" style="background:#5d5d5d;">
+		<div class="col-xs-6 col-md-6 col-md-6" style ="  text-align: center;">
+			<a href="/PSPES/clienteFinal"><img src="/PSPES/resources/img/fondob.jpg" style="text-align:center;"/></a>
+		</div>
+		<div class="col-xs-6 col-md-6 col-md-6; text-align:center; " style ="  text-align: center;">
+			<a href="/PSPES/clienteLogin"><img src="/PSPES/resources/img/fondoc.jpg" /></a>
+		</div>
+    </div>
+	
+	
+    
+	<script src="/PSPES/resources/js/jquery/jquery.js"></script>
+    <script src="/PSPES/resources/js/popper/popper.min.js"></script>
+    <script src="/PSPES/resources/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/PSPES/resources/js/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/PSPES/resources/js/datatables/jquery.dataTables.js"></script>
+    <script src="/PSPES/resources/js/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/PSPES/resources/js/psadmin.js"></script>
+	<script src="/PSPES/resources/js/psClientesConUsuario.js"></script>
+	<script src="/PSPES/resources/js/jquery.blockUI.js"></script>
+	
+#parse("partials/util/noBack.vm")	
+	
+	
+
+  </body>
+
+</html>

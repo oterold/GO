@@ -1,0 +1,59 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="impresionesPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATOS_MODAL_IMPRESIONES"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#271765;" >&#xE02f;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_MOVIMIENTOS_CFIF_FE_MOVIMIENTO"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Movimiento :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_MOVIMIENTOS_INB_TP_MOVIMIENTO"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Remito :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_MOVIMIENTOS_CFIF_CFIT_NU_REMITO"><b></b></h6></td>
+                           		</tr>
+                          
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Rechazo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_MOVIMIENTOS_INB_RECHAZO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Usuario :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_MOVIMIENTOS_INB_USUARIO"></h6></td>
+                           		</tr>
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

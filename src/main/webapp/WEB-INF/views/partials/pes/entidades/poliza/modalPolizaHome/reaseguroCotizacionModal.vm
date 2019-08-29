@@ -1,0 +1,133 @@
+<div class="panel panel-default" style="display:none;max-width:800px;height:500px;overflow-y:hidden;" id="reaseguroCotizacionPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 style="border:none;" id="DATO_REASEGURO_COTIZACION"></h4>
+      	    </div>	
+   		<div>
+   		
+   			<input type="hidden" value="" id="valorFechaCoti" />
+   			<input type="hidden" value="" id="valorGrupoCoti" />
+   			<input type="hidden" value="" id="valorProgramaCoti" />
+   			
+   		
+               	<div class="row" style="margin:0px;">
+          	 	 <div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;">
+					 <div class="col-md-8" style="text-align: left;padding-left:5px;padding-right:5px;">
+					
+                        		<div class="row" style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Ramo :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_CAZB_CD_RAMO" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				Suma Asegurada :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_MT_SUMA_ASEGURADA" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                        </div>
+			                        
+				        		<div class="row" style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Retenciones :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_CACE_NU_RETENCIONES" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				Grupo :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_CACS_CD_GRUPO" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                   </div>
+			                   
+			                   
+			                   
+			                       
+				        		<div class="row" style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Programa :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_CACS_CD_PROGRAMA" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				Monto Facultativo :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_MT_FACULTATIVO" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                   </div>
+			                   
+			                   
+			                   
+			                       
+				        		<div class="row" style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Es Facultativo? :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_IN_FACULTATIVO" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				Retenci&oacute;n Propia :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_MT_RET_PROPIA" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                   </div>
+			                   
+			                   
+			                   
+			                   
+			                       
+				        		<div class="row" style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Monto o Contrato :
+			                        	<a  id="INFO_P_TF_REASEGURO_RECO_MT_CONTRATO" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                        
+			                        
+			                          <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				
+			                        	<a  id="DATO_FUERA_DE_PAUTA_COTI" style="color:#ff9064;text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                        
+			                   </div>
+			                       
+			               </div>
+			                        <div class="col-md-4 input-group pull-right" style="z-index:1;" >
+						<div class="form-group">
+							  <select onchange="selectorReasegurosModal();" class="form-control" style="height:35px;" name ="selectorReaseguroCotizacion" id="selectorReaseguroCotizacion">
+							    <option  value="0"  selected>Seleccione un bien..</option>
+							  </select>
+							</div>
+					</div>
+    						  </div>
+				
+				
+					<div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:5px;height:250px;overflow-y:auto;padding-top:10px;" >
+							<div style="overflow-y:auto;">
+								<div class="col-md-12" style="padding-top:10px;">
+				                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+								</div>
+						
+							  <h4 style="border:none;padding-bottom:15px;">Coberturas</h4>
+
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+								    <tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Descripci&oacute;n</th>
+								            <th class="th-grilla" role="columnheader">Suma Asegurada</th>
+								            <th class="th-grilla" role="columnheader">Monto Prima</th>
+								            
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosReaseguroCotizacion">
+							</tbody>
+								</table>
+								</div>
+						</div> 
+					
+				
+				</div>
+    				  
+    				  </div>
+    				  
+    			</div>	
+   		</div>

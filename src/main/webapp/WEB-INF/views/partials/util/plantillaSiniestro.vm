@@ -1,0 +1,128 @@
+<div class="row entidadCard$entidad cardResultado ramoCard$cardSiniestroRamo" >
+		   <div class=" col-sm-12 col-md-12"> 
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+				<a style="cursor:pointer;" id="botomVerMasVerMenos$entidad$contador" class="pull-right" onclick="mostrarContenidoVerMasVerMenosCardBusqueda('$entidad','$contador');">Ver mas</a>  
+      	    <h4 style="border:none;" style="padding-botton:1px;">Siniestro #$cardSiniestroNroSiniestro - $cardSiniestroDescRamo</h4>
+      	    </div>	
+   			<div class="panel-body" style="background-color:white;padding-top:0;">
+				<div class=" row">
+   					<div class="col-md-2 cardPosicionIcono" > 
+   					<i class="material-icons altoIcono"  style="color:#5bc0de;" >$cardSiniestroIcono</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align:left;padding-left:10px;padding-right:10px">
+              		
+              		<!-- pag principal -->
+              		
+          	 		<div class="row" id="panelC$entidad$contador">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px;padding-bottom:10px;">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Asegurado :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardSiniestroAsegurado))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>P&oacute;liza :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($cardSiniestroNroPoliza)</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Ocurrencia :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cardSiniestroFeOcurrencia)</b></h6></td>
+                           		</tr>
+                           	
+                        
+                           	 </table> 
+                           	      
+              			  </div>
+           		
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    					<div class="row" id="panelD$entidad$contador" style="display:none;">
+							
+          			<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Asegurado :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardSiniestroAsegurado))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>P&oacute;liza :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($cardSiniestroNroPoliza)</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Ocurrencia :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cardSiniestroFeOcurrencia)</b></h6></td>
+                           		</tr>
+                           	
+                        
+                           	 </table> 
+                           	      
+              			  </div>
+             			
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:90%;">
+                       
+                       <!-- datos agregados -->
+          				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>Ramo :</h6></td>
+                           		<td style="padding-top:5px;width:25%;max-width:1px;"><h6 style="font-weight:bold;">$utilToolScreen.datoVacio($cardSiniestroRamo, $utilToolScreen.ucFirst($cardSiniestroDescRamo), "-")</h6></td>
+                           		</tr>
+                           	 	
+                           		<tr>
+                         		
+								<td align="right"  valign="top" style="padding-top:5px;"><h6>Siniestro :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cardSiniestroTipoSiniestro) , $utilToolScreen.ucFirst($cardSiniestroTipoSiniestroDesc),"-")</b></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		
+								<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha Declaraci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cardSiniestroFechaDeclaracion)</b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Certificado :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cardSiniestroCertificado)</b></h6></td>
+                           		</tr>
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>Nro Endoso :</h6></td>
+                           		<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($cardSiniestroEndoso)</b></h6></td>
+                           		</tr>
+                          
+                           	 </table> 
+                           	      
+              		
+                           	      
+              			  </div>
+						 
+    				</div> 
+    					
+    				
+						<a class="btn btn-block btn-social btn-bitbucket pull-right" style="width:20%;margin:1px;color:#ffffff;margin-right:25px;margin-top:0px;margin-bottom:5px;" onclick="bloquearPantallaGris();" href="/PSPES/homeSiniestro?nroSiniestro=$cardSiniestroNroSiniestro&ramo=$cardSiniestroRamo&anio=$cardSiniestroAnnio">Detalle</a>
+    			<!-- aca termina -->
+    			  </div>
+			  
+    			</div>	
+          	
+          	#if($cardDatoEntidadRelacionada == "N")
+      	    <h6 style="padding-left:5px;padding-bottom:5px;">Relacionado x : $cardSiniestroEntidad / $cardSiniestroAtributo</h6>
+			#end
+            		<hr style="margin:0px; border-color:#dfdada;" >
+			</div>
+   			</div>
+				
+     <!-- CERTIFICADOS -->
+           </div>
+ 

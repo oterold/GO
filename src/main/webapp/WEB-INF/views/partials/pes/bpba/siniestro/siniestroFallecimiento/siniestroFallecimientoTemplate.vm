@@ -1,0 +1,3 @@
+#set ($templateWeb = 'partials/pes/bpba/siniestro/siniestroFallecimiento/siniestroFallecimiento.vm')
+
+#parse("partials/pes/bpba/siniestro/mainTemplateDenunciaSiniestro.vm")	  

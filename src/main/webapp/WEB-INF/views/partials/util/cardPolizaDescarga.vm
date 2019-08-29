@@ -1,0 +1,25 @@
+<section>
+	<div class="container py-2" style = "border-radius: 7px; border-width: 1px; border-color:#414042; border-style: solid; box-shadow: 0 0 0px black;    padding:0 15px 0 15px; background:#ffffff;">
+		<div class="row">
+			
+			<div class="col-md-3" style="background:#fbfbfb;     text-align: center;"> <i class="material-icons altoIconoDescarga"  style="color:#00317A;" >&#xE24D;</i></div>
+			<div class="col-md-6" style="background:#ffffff;">
+				<h5 style="color:#00317A;">$descargaName</h5>
+				<hr style="background-color: #00317A; height: 1px; border: 0; ">
+				<h6>$descargaDescripcion</h6>
+				
+		</div>
+        <div class="col-md-3 align-middle" style="vertical-align: middle;background:#ffffff;">
+			<a class="btn btn-primary btn-block btn-sm"  style="cursor: pointer; color:white;" onclick="descargarArchivoFinal('$descargaSecuencia' , '$descargaTalonCirculacion' ,'$descargaCuadernilloAX','$descargaCuadernilloAN')"  role="button">DESCARGAR</a>
+			
+			
+			
+		</div>
+      </div>
+	 </div>
+</section>
+
+<br>
+	
+	
+		

@@ -1,0 +1,29 @@
+<div class="col-md-12">
+	<div class="input-field col-md-5">
+			<input value="$utilToolScreen.nombreMayuscula($datosCoti.descPlan)" name="plan" id="plan" type="text" class="form-control form-validar">
+			<label for="plan">Plan*</label>
+    </div>
+</div>
+<div class="col-md-8 mb-4" style="padding-left:0px;">
+	<h3 class="box-title pl-1" style="margin-top:10px;color:#0b4376;border:none;font-size:25px;line-height:1;">Suma Asegurada :</h3>
+</div>
+
+<div class="col-md-4 mb-4" style="padding-left:0px;">
+	<h3 class="box-title pl-1" style="margin-top:10px;color:#0b4376;border:none;font-size:25px;line-height:1;text-align:center;" id="valorCoberturas"></h3>
+</div>
+
+
+#foreach($coberturasIn in $coberturas)
+
+<div class="col-md-4 centrarElementos">
+	<h6 style="font-size:15px;">$coberturasIn.get("P_TF_CACK.CACB_DE_COBERTURA")</h6>
+</div>
+<div class="col-md-4 input-field" style="margin-top:0px;">
+	<input  name="IncendioEdificio" style="margin-bottom:5px;" id="incendioEdificio" onkeyup="mostrarMontoCoberturas(event,150000,99999999,this.id);"  type="text" class="form-control amt">
+</div>
+<div class="col-md-4 centrarElementos">
+	<h6 style="font-size:15px;">( $utilToolScreen.formatearMonedaCotizador($coberturasIn.get("P_TF_CACK.CAPF_MT_MINIMO")) a  $utilToolScreen.formatearMonedaCotizador($coberturasIn.get("P_TF_CACK.CAPF_MT_MAXIMO")) )
+</h6>
+</div>
+	
+#end

@@ -1,0 +1,67 @@
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Provincia Seguros">
+    <meta name="author" content="">
+    <title>Provincia Seguros</title>
+	
+	<link rel="stylesheet" href="resources/css/cotizador/cotizacion.css"> 
+	<link rel="stylesheet" href="resources/css/MDB-Pro_4.7.5/css/bootstrap.css">
+	<link rel="stylesheet" href="resources/css/fonts/google/material-icons.css">
+    <link href="resources/css/pantalla/v3/psadminV3.css" rel="stylesheet"> 
+    <link href="resources/css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="resources/css/pantalla/v3/v3.css"> 
+    <link href="resources/css/fontawesome-free-5.7.2-web/css/all.css" rel="stylesheet" type="text/css">
+	<link href="resources/css/materialize/materialize.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="resources/css/sweetalert2.css"> 
+	<link rel="stylesheet" href="resources/css/animate.min.css"> 
+	<link rel="stylesheet" href="resources/css/materialSelectDos.css"> 
+	
+  
+  
+  </head>
+  <body style="background-color:#f5f5f5;" onload="$funcionOnload">
+    <div id="contenido">
+		#parse("partials/pes/templates/principal/mainTemplateHeaderCotizador.vm")
+		#parse("partials/pes/templates/principal/mainTemplateSeccionCotizador.vm")
+		
+	 #parse($templateWeb)
+    <a class="scroll-to-top rounded" onclick="topFunction()">
+      <i class="fa fa-angle-up"></i>
+    </a>
+	<!-- boton flotante-->
+	</div>
+  
+	<script src="/PSPES/resources/js/MDB-Pro_4.7.0/js/jquery-3.3.1.min.js"></script>
+    <script src="/PSPES/resources/js/popper/popper.min.js"></script>
+	<script src="/PSPES/resources/js/MDB-Pro_4.7.5/js/bootstrap.min.js"></script>
+	<script src="/PSPES/resources/js/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/validation.js"></script>
+	<script src="/PSPES/resources/js/pesHome.js?$paramId"></script>
+	<script type="text/javascript" src="resources/js/card.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/pdfVida/pdfVida.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/materialV411/materialize.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacion.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/select2.full.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/sweetalert2.all.min.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/jsMask.js"></script>
+	
+	
+	
+	
+  </body>
+
+    <!-- Custom scripts for this template -->
+	
+	<script src="/PSPES/resources/js/mfb.js"></script>
+	<script>
+	
+</script>
+	
+	
+	$scriptGrilla
+	
+	

@@ -1,0 +1,201 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-8">
+	  #foreach($direccionesIn in $direccionesDatos)
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+
+          <h4 style="text-align:center;color: #ffffff;" id="labelPanelAImpresora">Contacto - Poliza #$direccionesIn.get("P_TF_DIRE.CACE_CAPO_NU_POLIZA")</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#205081;" >$utilToolScreen.getIcono($direccionesIn.get("P_TF_DIRE.CACE_CARP_CD_RAMO"))</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+
+    			
+    			<div class="row" id="panela">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Asegurado :</h6></td>
+                           		<td style="padding-top:0px; width:60%;"><h6 onClick="abrirModalClienteHome('$direccionesIn.get("P_TF_DIRE.CACN_NU_CEDULA_RIF")');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($utilToolScreen.ocultarNulo($direccionesIn.get("P_TF_DIRE.INB_DSP_CLIENTE"))))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+								
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ramo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($direccionesIn.get("P_TF_DIRE.CACE_CARP_CD_RAMO")) - $utilToolScreen.datoVacio($direccionesIn.get("P_TF_DIRE.INB_DSP_RAMO"))</b></h6></td>
+                           		</tr>
+								
+                           	 	
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  					<table  style= "width:100%;">
+                         
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td style="padding-top:0px;width:60%; cursor:pointer;" onClick="abrirPopUpNuevo('sucursalPopUp');"><h6 style="color:#6fa1d4;"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($direccionesIn.get("P_TF_DIRE.INB_DSP_SUCURSAL")))<i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Nro Cedula :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($direccionesIn.get("P_TF_DIRE.CACN_NU_CEDULA_RIF"))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           	 </table> 
+    					</div>
+    					</div>     
+
+					  </div>
+       			    </div>
+        		 </div>
+   			</div>
+
+   		#end
+   	
+   		
+      		<div class="panel panel-default" id="endoso" >
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="labelPanelContacto">Detalle Direccion #1</h4>
+      	    </div>	
+   			
+   			<div class="panel-body" style="padding-bottom:50px;">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+					<i class="material-icons altoIcono"  style="color:#205081; font-size:80px;"  id="imgTimeLineEndoso$nroPoliza">note</i></div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	
+          	 	  
+          	 	 <!-- pag principal -->
+           	<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+               	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Codigo Postal :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DETALLE_GECP_CD_CODIGO_POSTAL"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Localidad :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DETALLE_INB_DE_LOCALIDAD"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Calle :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_CADO_DE_CALLE"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Numero :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_CADO_DE_NUMERO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Piso :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_CADO_DE_PISO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Departamento :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_CADO_DE_DEPARTAMENTO"><b></b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Unidad :</h6></td>
+                           		<td style="padding-top:5px; width:60%;"><h6 id="INFO_P_TF_DETALLE_CADO_DE_UNIDAD"><b></b></h6></td>
+                           		
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Provincia :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_INB_CD_PROVINCIA"><b><u></u></b></h6></td>
+                           	
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Contacto :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_INB_DATO_CONTACTO"><b></b></h6></td>
+                           		</tr>
+                         
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+                    
+    				</div>      
+    					     
+	
+    					
+    			<!-- aca termina -->
+    			  </div>
+    			</div>
+				
+            	</div>
+   			</div>
+     <!-- CERTIFICADOS -->
+     
+
+
+	</div>
+
+  	   
+  	   <!-- Cantidad Endosos -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+         <div class="panel-heading" style=" background-color:white;border-color:white;">
+          <h4 style="color:#00317A;">Direcciones #if ($listadoDirecciones.size()> 0 ) ($listadoDirecciones.size()) #end</h4>
+         </div>
+         
+         <div class="main-container page__container altoPanelB" >
+			
+             <div class="timeline__group" style="z-index:1;max-height:20px;">
+  
+				<div >
+					
+					#if ($listadoDirecciones.size()> 0 )
+						
+                        #foreach($direccionesDato in $listadoDirecciones)
+                        	#set ($numeroCard =$velocityCount)	
+                        	#set ($nroPersona = $direccionesDato.get("P_TF_LISTA_DIRE.CADO_NU_PERSONA"))
+                        	#set ($cardContactoIcono ="person")
+                        	#set ($direccionConsecutivo = $direccionesDato.get("P_TF_LISTA_DIRE.CADO_CONSECUTIVO_DIRECCION"))
+                        	#set ($consecutivo = $direccionesDato.get("P_TF_LISTA_DIRE.CACF_NU_CONSECUTIVO"))
+                        	#set ($tipoDireccion = $direccionesDato.get("P_TF_LISTA_DIRE.INB_DE_PERSONA"))
+                        	#set ($descDireccion = $direccionesDato.get("P_TF_LISTA_DIRE.INB_DE_DIRECCION"))
+                        	
+                        	#parse("partials/pes/entidades/poliza/direcciones/itemDireccionesPolizaHome.vm")	 
+						#end
+					#else
+					    #set($concepto = "Direcciones")
+           			    #parse("partials/util/itemTimeLineVacio.vm")						
+					#end
+					
+				</div>
+				
+			 </div>
+	
+   		</div>
+	</div>
+  </div>
+ </div>
+ </div>
+       </section>
+    
+	  	 <!-- modal Cliente -->
+ #parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")

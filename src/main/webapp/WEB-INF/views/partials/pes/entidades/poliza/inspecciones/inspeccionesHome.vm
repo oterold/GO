@@ -1,0 +1,413 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+ 
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-8">
+	  	<input type="hidden" value="$valorInspeccion" id="valorInspeccion" />
+	  	<input type="hidden" value="" id="inspeccionValor" />
+	  	<input type="hidden" value="$ramoInspec" id="inspeccionRamoValor" />
+
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+          <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver mas</a>
+          <h4 style="text-align:center;color: #ffffff;" id="DATO_CABECERA"></h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#00317A;" >find_in_page</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              			<input type="hidden" value="" id="valorProducto" />
+              			<input type="hidden" value="" id="valorSucursal" />
+						<input type="hidden" value="" id="valorRamo" />
+
+
+          	 			<div class="row" id="panela" style="display:none;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                           <table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Producto&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_INSPE_CAIN_CAPU_CD_PRODUCTO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_P_TF_INSPE_INB_PRODUCTOR"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Ramo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_RAMO_INSPECCION"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Num.&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_NU_CEDULA_RIF"></h6></td>
+                           		</tr>
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nom.&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_P_TF_INSPE_CAIN_NM_CLIENTE" style="color:#6fa1d4;cursor:pointer;"></h6></td>
+                           		</tr>
+                    
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nro. Cotizacion :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_CAZB_NU_COTIZACION"></h6></td>
+                           		</tr>
+                    
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Perito&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_CAPS_CD_PERITO"></h6></td>
+                           		</tr>
+                    
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Sucursal&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_P_TF_INSPE_INB_SUCURSAL"></h6></td>
+                           		</tr>
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Certificado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_CACE_NU_CERTIFICADO"></h6></td>
+                           		</tr>
+                    
+							
+                            </table>
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Usuario&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_INSPE_CAIN_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Observaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_P_TF_INSPE_CAIN_DE_OBSERVACION"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Estado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_INB_ESTADO"></h6></td>
+                           		</tr>
+                           		
+                        
+                      		    <tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Calle&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_DI_CALLE"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Num.&nbsp;Calle&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_NU_CALLE"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Localidad&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_CACI_CD_LOCALIDAD"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Ingreso&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_FE_INGRESO"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Inspeccion&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_FE_INSPECCION"></h6></td>
+                           		</tr>
+							
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Visita&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_INB_FE_VISITA"></h6></td>
+                           		</tr>
+								
+                            </table>
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Producto&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_CAPU_CD_PRODUCTO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_INB_PRODUCTOR"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Ramo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_RAMO_INSPECCION_B"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Num.&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_NU_CEDULA_RIF"></h6></td>
+                           		</tr>
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nom.&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_NM_CLIENTE"></h6></td>
+                           		</tr>
+                    
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nro.&nbsp;Cotizacion&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_CAZB_NU_COTIZACION"></h6></td>
+                           		</tr>
+                    
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Perito&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_CAPS_CD_PERITO"></h6></td>
+                           		</tr>
+                    
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Sucursal&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_INB_SUCURSAL"></h6></td>
+                           		</tr>
+                    
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Certificado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_CACE_NU_CERTIFICADO"></h6></td>
+                           		</tr>
+                    
+                            </table>
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Usuario&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Observaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_DE_OBSERVACION"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Estado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_INB_ESTADO"></h6></td>
+                           		</tr>
+                           		
+                        
+                      		    <tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Calle&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_DI_CALLE"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Num.&nbsp;Calle&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_NU_CALLE"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Localidad&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_CACI_CD_LOCALIDAD"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Ingreso&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_FE_INGRESO"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Inspeccion&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_CAIN_FE_INSPECCION"></h6></td>
+                           		</tr>
+                           	 
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Visita&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_PANEL_2_P_TF_INSPE_INB_FE_VISITA"></h6></td>
+                           		</tr>
+							
+                            </table>
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+							
+          						<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Endoso&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_INSPE_CAIN_NU_ENDOSO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ubicaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b id="INFO_P_TF_INSPE_CAIN_DE_UBICACION"></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Cod&nbsp;Postal&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_CD_CODIGO_POSTAL"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Departamento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_CD_DEPARTAMENTO"></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Obs.&nbsp;Revisi&oacute;n.&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;"><h6 id="INFO_P_TF_INSPE_CAIN_DE_OBS_REV_ADMIN"></h6></td>
+                           		</tr>
+                           		<tr>
+							
+                            </table>
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fe.&nbsp;Actualizaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_INSPE_CAIN_FE_ACTUALIZACION"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Contacto&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_NM_CONTACTO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Telefono&nbsp;Contac.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INSPE_CAIN_NU_TELEFONO_CONTACTO"></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Provincia&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_INSPE_CAIN_CD_PROVINCIA"></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Localidad&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_INSPE_CAIN_CACI_DESC_LOCALIDAD"></h6></td>
+                           		</tr>
+      
+      
+							
+                            </table>
+                           	      
+					<br><br>
+              			  </div>
+    				</div> 
+    					
+    			<!-- aca termina -->
+					  </div>
+       			 </div>
+       			    				<!-- botones aca -->	 
+       			 <div class="row">
+                    <div class="col-lg-12" style="text-align: center;">
+						<a onclick="redirectZambaInspeccion()" class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" data-placement="bottom" data-toggle="tooltip" title="Foto Digital" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">photo_library</a>
+						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="verVisitasInspeccion();"  data-placement="bottom" data-toggle="tooltip" title="Visitas" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">contacts</a>
+						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="verDocumentosInspeccion();"  data-placement="bottom" data-toggle="tooltip" title="Documentos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">note</a>
+
+						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="verResultadoInspeccion();"  data-placement="bottom" data-toggle="tooltip" title="Resultado Inspeccion" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">report</a>
+						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="verCartaDaniosInspeccion();"  data-placement="bottom" data-toggle="tooltip" title="Carta De Da&ntilde;os" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">broken_image</a>
+						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="verAccesoriosInspeccion();"  data-placement="bottom" data-toggle="tooltip" title="Accesorios" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">devices_other</a>
+
+					</div>
+				 </div>   					
+			</div>
+   		</div>
+
+   		
+   		<!-- panel c -->
+   		
+      		<div class="panel panel-default" id="panelDetalleInspec" style="display:none;">
+				<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+					<h4 id="labelPanelInspeccion"></h4>
+				</div>	
+   			
+				
+						<div class="col-md-2" style=";text-align: center;" id="panelImagenEndoso">
+							<i class="material-icons altoIcono"  style="color:#00317A;" >$utilToolScreen.getIcono($ramoInspec)</i>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px;">
+									<div id="datosParametricosInspec">
+									</div>
+								</div>
+							</div>
+						</div>
+						
+				
+   			</div>     
+     
+		
+	</div>
+
+  	   
+  	   <!-- Cantidad Endosos -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">	
+
+         <div class="panel-heading" style=" background-color:white;border-color:white;">
+          <h4 style="color:#00317A;">Inspecciones #if ( $InspeccionesPorPoliza.size() > 0 ) ($InspeccionesPorPoliza.size()) #end</h4>
+         </div>         
+   		 <div class="main-container page__container altoPanelB" >
+   		
+             <div class="timeline__group" style="z-index:1;max-height:20px;">
+               	
+				 <div>
+  
+					    #if ($InspeccionesPorPoliza.size() > 0)
+                			#foreach($inspeccionIn in $InspeccionesPorPoliza)	
+                               #set ($nroInspec = $inspeccionIn.get("P_TF_INSPE_CAIN_NU_INSPECCION"))
+                			   
+							   ##Se comenta debido a que el campo no esta puesto todavia en produccion
+							   ##set ($nroConsecutivo = $inspeccionIn.get("P_TF_INSPE_CAIN_NU_CONSECUTIVO"))
+                			   #set ($nroConsecutivo = 0)
+							   
+							   #set ($feInspec = $inspeccionIn.get("P_TF_INSPE_CAIN_FE_INSPECCION"))
+                			   #set ($poliza = $polizaInspec)
+                			   #set ($ramo = $ramoInspec)
+                			   #set ($sucursal = $sucursalInspec)
+							   #set ($numeroCard = $velocityCount)
+                
+                			   #set ($estado = $clienteIn.get("P_TF_LISTA_POL.INB_ESTADO"))
+                			   #parse("partials/pes/entidades/poliza/inspecciones/itemInspecciones.vm")	 
+                        
+							#end
+					   #else 
+						   #set($concepto = "inspecciones")
+               			   #parse("partials/util/itemTimeLineVacio.vm")	
+
+					   #end								
+				 	 
+				 </div>
+            
+			 </div>
+			
+   		 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+      
+#parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")
+#parse("partials/pes/entidades/poliza/modalPolizaHome/sucursalModal.vm")
+#parse("partials/pes/entidades/poliza/modalPolizaHome/productoresModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/visitasInspeccionModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/documentosInspeccionModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/resultadosInspeccionModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/cartaDaniosInspeccionModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/accesoriosInspeccionModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/observacionInspeccionModal.vm")
+#parse("partials/pes/entidades/poliza/inspecciones/modalInspeccionesHome/observacionRevisionInspeccionModal.vm")

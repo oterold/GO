@@ -1,0 +1,203 @@
+			.item-hover,
+			.item-hover .mask,
+			.item-img,
+			.item-info {
+				width: 255px;
+				height: 128px;	
+				border-radius:10px;
+			}
+			
+
+			
+			.item-hover-busqueda .mask,
+			.item-hover-busqueda,
+			.item-hover,
+			.item-hover .mask,
+			.item-img { 
+				position:absolute;
+				top:0;
+				left:0;			
+			}			
+		
+			.item-type-line  .item-hover-busqueda,.item-type-line .item-hover {	
+				z-index:100;	
+				-webkit-transition: all 1100ms ease-out;
+				-moz-transition: all 1100ms ease-out;
+				-o-transition: all 1100ms ease-out;
+				transition: all 1100ms ease-out;	
+				opacity:0;
+				cursor:pointer;						
+				display:block;
+				text-decoration:none;
+				text-align:center;
+			}
+			
+			.item-type-line	.item-info-busqueda	,.item-type-line .item-info {
+					color:#ffffff;
+					display:table-cell;
+					vertical-align:middle;
+					position:relative;
+					z-index:5;				 					
+				}
+			
+				.item-type-line .item-info-busqueda .headline,.item-type-line .item-info .headline {
+					font-size:20px;					
+				}
+				
+				.item-type-line .item-info-busqueda .line,.item-type-line .item-info .line {
+					 height:1px;
+					 width:0%;
+					 margin:15px auto;
+					 background-color:#ffffff;
+					-webkit-transition: all 350ms ease-out;
+					-moz-transition: all 350ms ease-out;
+					-o-transition: all 350ms ease-out;
+					transition: all 350ms ease-out;					 
+
+				}
+				
+				.item-type-line .item-info-busqueda .date,.item-type-line .item-info .date {
+					font-size:12px;
+				}
+				
+			.item-type-line	.item-hover-busqueda .mask,.item-type-line .item-hover .mask {
+					background-color:#000;
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+					filter: alpha(opacity=50);										
+					opacity:0.8;
+					z-index:0;
+					
+					
+				}
+				
+				.item-type-line .item-hover-busqueda:hover .line,.item-type-line .item-hover:hover .line {
+					width:40%;
+				}
+				
+				.item-type-line .item-hover-busqueda:hover,.item-type-line .item-hover:hover {
+					opacity:1;
+				}				
+			
+			.item-img {			
+				background-color:#7a548f;
+				z-index:0;			
+			}
+			
+						
+/*Resolucion para celulares*/
+@media screen and (max-width: 450px) {
+				.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 345px;
+				height: 310px;	
+				border-radius:10px;
+			}
+						.item-hover,
+			.item-hover .mask,
+			.item-img,
+			.item-info {
+				width: 345px;
+				height: 127px;	
+				border-radius:10px;
+			}
+			
+}
+/*Resolucion para celulares*/
+@media screen and (min-width: 450px) and (max-width: 767px) {
+					.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 450px;
+				height: 310px;	
+				border-radius:10px;
+			}
+	
+}
+/*Resolucion para tablets*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+						.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 330px;
+				height: 275px;	
+				border-radius:10px;
+			}
+			.item-hover,
+			.item-hover .mask,
+			.item-img,
+			.item-info {
+				width: 152px;
+				height: 125px;	
+				border-radius:10px;
+			}
+			
+	}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+						.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 450px;
+				height: 310px;	
+				border-radius:10px;
+			}
+					.item-hover,
+			.item-hover .mask,
+			.item-img,
+			.item-info {
+				width: 210px;
+				height: 130px;	
+				border-radius:10px;
+			}
+}
+
+/*Resolucion para computadoras*/
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+					.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 450px;
+				height: 280px;	
+				border-radius:10px;
+			}
+
+}
+
+/*Resolucion para computadoras*/
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+				.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 540px;
+				height: 280px;	
+				border-radius:10px;
+			}
+	
+
+}
+
+/*Resolucion para computadoras*/
+@media screen and (min-width: 1600px) and (max-width: 8000px) {
+				.item-hover-busqueda  .mask,
+			.item-hover-busqueda,
+			.item-img,
+			.item-info-busqueda {
+				width: 541px;
+				height: 277px;	
+				border-radius:10px;
+			}
+}
+
+			
+			
+			
+			
+			

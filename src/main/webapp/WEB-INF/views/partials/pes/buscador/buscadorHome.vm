@@ -1,0 +1,321 @@
+	<div class="containerMargenes containerMenuResponsive" id="main">
+        <div class="row">
+            <!-- POLIZA -->
+            <div class=" col-sm-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                        <a id="btnBusquedaAvanzada" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="actionBusquedaAvanzada('btnBusquedaAvanzada','panelb','verMasPanelA');">B&uacute;squeda Avanzada</a>
+                        <h4 style="color: #ffffff;">Buscador</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-3" style="padding-top: 10px;">
+									<a onclick="redirectHome()" style="cursor:pointer">							
+									<img src="/PSPES/resources/img/logo/logoGO5.png" style="max-width:100%;  margin:auto;  display:block; "  />								
+									</a>
+								
+                            </div>
+                            <div class="col-md-9" style="text-align: left;padding-left:30px;padding-right:30px ;">
+                                <h6  style="line-height: 1.5;    letter-spacing: 1px;">Una nueva experiencia en <b>tu b&uacute;squeda</b> de informaci&oacute;n.</h6>
+                                <br>
+									<div class="input-group">
+    									<input type="hidden" id="datoSaveP1" value="$datoRetornoP1"/>
+    									<input type="hidden" id="datoSaveP2" value="$datoRetornoP2"/>
+    									<input type="hidden" id="datoSaveP3" value="$datoRetornoP3"/>
+                                        <input style="width:100%;z-index:0" id="datoFiltro" class="datoFiltro form-control"  title="Por favor ingrese el dato para iniciar su b&uacute;squeda" value="$datoBuscado" onkeypress="enterBuscarHome(event)"/>
+                                    </div>
+										#parse("partials/pes/buscador/componentes/componenteCheckBusqueda.vm")
+										#parse("partials/pes/buscador/componentes/componenteSelectoresBusquedaAvanzadoBusqueda.vm")
+										<hr style="width:100%;margin-top:5px;margin-bottom:10px;">
+										<a id="botonBuscarPrincipal" class="align-bottom btn btn-block btn-social btn-bitbucket center-block" onclick="buscarHome()" style="width:25%;color:#ffffff;">Buscar</a>
+							</div>
+						 </div>
+						</div>
+					</div>
+				  </div>
+				</div>
+			</div>
+													 
+#if($sinResultados == "SI")
+     #parse("partials/pes/buscador/componentes/componenteSinResultadosBusqueda.vm")
+#end
+							
+	
+	
+#if($polizas && ( $sinResultados == "NO"))
+							
+<div class="containerMargenes  habilitarContainer">
+
+	<div class="row">
+		#parse("partials/pes/buscador/componentes/componenteFiltroBusqueda.vm")
+
+
+			#set ($separadorEntidad = "false")
+			#set ($esPrimeraEntidad = "true")
+			
+			
+            <div class="col-md-9" >
+            	
+                #foreach($pol in $polizas)
+ 
+ 					#if($esPrimeraEntidad == "false"  && $separadorEntidad == "false" && $pol.encontradoEntidad == "N")
+	 					<hr>
+	 					<h5 style="text-align:center;">Resultados relacionados</h5>
+	 					#set ($separadorEntidad = "true")
+	 				#else
+	 					#if($pol.encontradoEntidad == "S")
+	 						#set ($esPrimeraEntidad = "false")
+	 					#end
+ 					#end
+ 					
+            		#set ($contador = $velocityCount)
+            		#set ($entidad = "Poliza")
+            	
+                    #set ($cardPolizaPolizaAnterior = $pol.polizaAnterior)
+                    #set ($cardPolizaDescSucursal = $pol.descSucursal)
+                    #set ($cardPolizaCodEstado = $pol.codEstado)
+                    #set ($cardPolizaCodCliente = $pol.codCliente)
+                    #set ($cardPolizaNro = $pol.poliza)
+                    #set ($cardPolizaSucursal = $pol.sucursal)
+            		#set ($cardPolizaEstado = $pol.descEstado)
+            		#set ($cardPolizaSucursal = $pol.sucursal)
+            		#set ($cardPolizaFechaOperacion = $pol.feOperacion)
+            		#set ($cardPolizaProductor = $pol.codProductor + ' - ' + $pol.descProductor)
+            		#set ($cardPolizaSiguiente = $pol.polizaSiguiente)
+                    #set ($cardPolizaRamoNro = $pol.ramo)
+                    #set ($codCliente = $pol.codCliente)
+                    #set ($cardPolizaRamo = $pol.descRamo)
+                    #set ($cardPolizaIcono = $utilToolScreen.getIcono($pol.ramo))
+                    #set ($cardPolizaAsegurado = $pol.asegurado)
+                    #set ($cardPolizaBien = $pol.descripcion)
+					#set ($cardPolizaPlan = $pol.plan)
+					#set ($cardPolizaDocumento = $pol.tpDocumento + ' - '+$pol.nuDocumento )
+                    #set ($cardPolizaCodEstado = $pol.codEstado)
+					
+					#if(($pol.vigenciaTecnicaHasta == ' ') || ($pol.vigenciaTecnicaHasta == '' ))
+						#set($fechaFinalHasta = $pol.vigenciaHasta)
+					#else
+						#set($fechaFinalHasta = $pol.vigenciaTecnicaHasta)
+					#end
+
+					#if($pol.vigenciaTecnicaDesde == ' ' || ($pol.vigenciaTecnicaDesde == '' ) )
+						#set($fechaFinalDesde = $pol.vigenciaDesde)
+					#else
+						#set($fechaFinalDesde = $pol.vigenciaTecnicaDesde)
+					#end
+					
+                    #set ($cardPolizaVigencia = $fechaFinalDesde + ' - ' +  $fechaFinalHasta  )
+                    #set ($cardPolizaCodEstado = $pol.codEstado)
+                    #set ($cardPolizaEntidad = $pol.entidad)
+                    #set ($cardPolizaAtributo = $pol.atributo)
+                    #set ($cardDatoEntidadRelacionada = $pol.encontradoEntidad )  
+                    
+                    #parse("partials/util/plantillaPoliza.vm")	  
+                #end
+                
+                #foreach($cl in $clientes)
+                
+               		#if($esPrimeraEntidad == "false"  && $separadorEntidad == "false" && $cl.resultadoEntidad == "N")
+	 					<hr>
+	 					<h5 style="text-align:center;">Resultados relacionados</h5>
+	 					
+	 					#set ($separadorEntidad = "true")
+	 				#else
+		 				#if($cl.resultadoEntidad == "S")
+	 						#set ($esPrimeraEntidad = "false")
+	 					#end
+ 					#end
+ 					
+ 					
+ 					
+                    #set ($contador = $velocityCount)
+            		#set ($entidad = "Cliente")
+                    #set ($cardClienteEntidad = $cl.entidad)
+            		#set ($cardClienteAtributo = $cl.atributo)
+            		#set ($cardClienteCodigo = $cl.codigo)
+            		#set ($cardClienteNroPersona = $cl.nroPersona)
+            		#set ($cardClienteDescNro = $cl.descDocumento)
+            		#set ($cardClienteNroCuit = $cl.nroCuit)
+            		#set ($cardClienteEmail = $cl.email)
+            		#set ($cardClienteDni = $cl.nroDocumento)
+            		#set ($cardClienteTipoDni = $cl.tipoDocumento)
+                    #set ($cardClienteAsegurado = $cl.apellidoYNombre)
+                    #set ($cardClienteIcono = "&#xe7fb;")
+                    #set ($cardClientePersonaR = $cl.personaR)
+            		#set ($cardClienteFechaAlta = $cl.fechaAlta)
+            		#set ($cardClienteTelefono = $cl.telefono)
+            		  
+            		
+                    #parse("partials/util/plantillaClienteNew.vm")	  
+                #end
+                
+                
+                 
+                #foreach($sin in $siniestros)
+                
+                #if($esPrimeraEntidad == "false"  && $separadorEntidad == "false" && $sin.resultadoEntidad == "N")
+	 					<hr>
+	 					<h5 style="text-align:center;">Resultados relacionados</h5>
+	 					
+	 					#set ($separadorEntidad = "true")
+	 				#else
+	 					#if($sin.resultadoEntidad == "S")
+	 						#set ($esPrimeraEntidad = "false")
+	 					#end
+ 					#end
+ 					
+ 					
+                 #set ($contador = $velocityCount)
+            	 #set ($entidad = "Siniestro")
+            	 #set ($cardSiniestroEntidad = $sin.entidad)  
+                 #set ($cardSiniestroAtributo = $sin.atributo)  
+            	 #set ($cardSiniestroAnnio = $sin.annio)    
+            	 #set ($cardSiniestroRamo = $sin.ramo)    
+            	 #set ($cardSiniestroDescRamo = $sin.descRamo)    
+            	 #set ($cardSiniestroNroSiniestro = $sin.nroSiniestro)    
+            	 #set ($cardSiniestroNroPoliza = $sin.nroPoliza)    
+            	 #set ($cardSiniestroCertificado = $sin.certificado)    
+            	 #set ($cardSiniestroEndoso = $sin.endoso)    
+            	 #set ($cardSiniestroFeOcurrencia = $sin.feOcurrencia)    
+            	 #set ($cardSiniestroReserva = $sin.reserva)    
+            	 #set ($cardSiniestroPagos = $sin.pagos)    
+            	 #set ($cardSiniestroRecuperado = $sin.recuperado)  
+            	 #set ($cardSiniestroTipoSiniestro = $sin.tipoSiniestro)  
+            	 #set ($cardSiniestroTipoSiniestroDesc = $sin.tipoSiniestroDesc)  						
+            	 #set ($cardSiniestroIcono = $utilToolScreen.getIcono($sin.ramo))
+            	 #set ($cardSiniestroAsegurado = $sin.asegurado)  
+            	 #set ($cardSiniestroFechaDeclaracion = $sin.fechaDeclaracion)  
+            	 #set ($cardDatoEntidadRelacionada = $sin.resultadoEntidad )  
+            	 
+            	 
+            	 #parse("partials/util/plantillaSiniestro.vm")	   
+                #end
+               
+                #foreach($prod in $productores)
+                
+             	  #if($esPrimeraEntidad == "false"  && $separadorEntidad == "false" && $prod.resultadoEntidad == "N")
+	 					<hr>
+	 					<h5 style="text-align;">Resultados relacionados</h5>
+	 					
+	 					#set ($separadorEntidad = "true")
+	 				#else
+	 					#if($prod.resultadoEntidad == "S")
+	 						#set ($esPrimeraEntidad = "false")
+	 					#end
+ 					#end
+ 					
+ 					
+ 					
+                	    #set ($cardProductorEntidad = $prod.entidad)
+             	  	    #set ($cardProductorAtributo = $prod.atributo)
+             	  	    #set ($contador = $velocityCount)
+             	  		#set ($entidad = "Productor")
+            			#set ($cardProductorNro =$prod.codProductor)
+            			#set ($cardProductorDescDni =$prod.descDni)
+            			#set ($cardProductorNroDni =$prod.nroDni)
+            			#set ($cardProductorNombre =$prod.nombreProd)
+            			#set ($cardProductorNroSucursal =$prod.nroSucursal)
+            			#set ($cardProductorDescSucursal =$prod.descSucursal)
+            			#set ($cardProductorEstado =$prod.estadoProd)
+            			#set ($cardProductorDescEstado =$prod.descEstadoProd)
+            			#set ($cardProductorFeAlta =$prod.feAlta)
+            			#set ($cardProductorFeBaja =$prod.feBaja)
+                        #set ($cardDatoEntidadRelacionada = $prod.encontradoEntidad )  
+            		
+            		    #parse("partials/pes/cards/plantillaProductor.vm")	  
+                #end
+                
+                #foreach($nid in $certificados)
+                
+                	#if($esPrimeraEntidad == "false"  && $separadorEntidad == "false" && $nid.resultadoEntidad == "N")
+	 					<hr>
+	 					<h5 style="text-align:center;">Resultados relacionados</h5>
+	 					
+	 					#set ($separadorEntidad = "true")
+	 				#else
+	 					#if($nid.resultadoEntidad == "S")
+	 						#set ($esPrimeraEntidad = "false")
+	 					#end
+ 					#end
+ 					
+ 					
+                 	 #set ($entidad = "Certificado")
+            		 #set ($contador = $velocityCount)
+            		 #set ($cardNidEntidad = $nid.entidad)
+            		 #set ($cardNidAtributo = $nid.atributo)
+            		 #set ($cardNidNroSecuencia= $nid.nroSecuencia)
+            		 #set ($cardNidnroCiclo = $nid.nroCiclo)
+            		 #set ($cardNidDescCiclo= $nid.descCiclo)
+            		 #set ($cardNidNroPoder = $nid.nroPoder)
+            		 #set ($cardNidDescPoder= $nid.descPoder)
+            		 #set ($cardNidNroProd = $nid.nroProd)
+            		 #set ($cardNidDescProd= $nid.descProd)
+            		 #set ($cardNidNroCedula = $nid.nroCedula)
+            		 #set ($cardNidCliente= $nid.cliente)
+            		 #set ($cardNidCodEstado = $nid.codEstado)
+            		 #set ($cardNidDescEstado= $nid.descEstado)
+            		 #set ($cardNidTipoEntidad = $nid.tipoEntidad)
+            		 #set ($cardDatoEntidadRelacionada = $nid.encontradoEntidad )  
+            		 
+            		 
+            	    #parse("partials/pes/cards/plantillaNid.vm")	
+            	#end
+               
+                #foreach($cot in $cotizaciones)
+               
+               		#if($esPrimeraEntidad == "false"  && $separadorEntidad == "false" && $cot.resultadoEntidad == "N")
+	 					<hr>
+	 					<h5 style="text-align:center;">Resultados relacionados</h5>
+	 					
+	 					#set ($separadorEntidad = "true")
+	 				#else
+	 					#if($cot.resultadoEntidad == "S")
+	 						#set ($esPrimeraEntidad = "false")
+	 					#end
+ 					#end
+ 					
+ 					
+ 					
+            			#set ($entidad = "Cotizacion")
+                	    #set ($cardCotizacionEntidad = $cot.entidad)
+             	  	    #set ($cardCotizacionAtributo = $cot.atributo)
+             	  	    #set ($contador = $velocityCount)
+            			#set ($cardCotizacionesNroCoti = $cot.cotizacion)
+            			#set ($cardCotizacionesNroSucursal = $cot.nroSucursal)
+            			#set ($cardCotizacionesDescSucursal = $cot.descSucursal)
+            			#set ($cardCotizacionesNroRamo = $cot.nroRamo)
+            			#set ($cardCotizacionesDescRamo = $cot.descRamo)
+            			#set ($cardCotizacionesNroProd = $cot.nroProd)
+            			#set ($cardCotizacionesDescProd = $cot.descProd)
+            			#set ($cardCotizacionesNroPoliza = $cot.nroPoliza)
+            			#set ($cardCotizacionesNroEndoso = $cot.nroEndoso)
+            			#set ($cardCotizacionesNroCertificado = $cot.nroCertificado)
+            			#set ($cardCotizacionesNroCliente = $cot.nroCliente)
+            			#set ($cardCotizacionesDescCliente = $cot.descCliente)
+            			#set ($cardCotizacionesNroDocumento = $cot.nroDocumento)
+            			#set ($cardCotizacionesDescDocumento = $cot.descDocumento)
+            			#set ($cardCotizacionesNroCotizacion = $cot.nroCotizacion)
+            			#set ($cardCotizacionesDescEstado = $cot.descEstado)
+            			#set ($cardCotizacionesFeCotizacion = $cot.feCotizacion)
+            			#set ($cardCotizacionesFeDesde = $cot.feDesde)
+            			#set ($cardCotizacionesFeHasta = $cot.feHasta)
+            			#set ($cardCotizacionesFeTecnicaHasta = $cot.feTecnicaHasta)
+            			#set ($cardCotizacionesFeTecnicaDesde = $cot.feTecnicaDesde)
+            			#set ($cardCotizacionesMoneda = $cot.moneda)
+            			#set ($cardCotizacionesPremio = $cot.premio)
+            			#set ($cardCotizacionesSumaAsegurada = $cot.sumaAsegurada)
+            			#set ($cardCotizacionesDescBien = $cot.descBien)
+            	        #set ($cardDatoEntidadRelacionada = $cot.encontradoEntidad )  
+            		
+            			
+            		 #parse("partials/pes/cards/plantillaCotizaciones.vm")	  
+				#end
+								
+				#parse("partials/pes/buscador/paginacion.vm")
+            </div>
+        </div>
+ </div>
+#end	
+
+
+#parse("partials/pes/entidades/poliza/modalPolizaHome/mensajesInicioModal.vm")

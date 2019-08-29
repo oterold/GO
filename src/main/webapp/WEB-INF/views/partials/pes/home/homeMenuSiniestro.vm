@@ -1,0 +1,69 @@
+	     <div class="col-sm-6  col-md-3 anim7 item-type-line mb-4 menuSiniestroHover" style="display:none;">
+						<a class="item-hover ocultarMenuHover" href="#"  style="text-decoration: none;">
+        					<div class="item-info">
+                            	<div class="headline">Ayuda</div>
+                            	<div class="line"></div>
+        						<div class="date">GO Team.</div>
+                            </div>
+    						<div class="mask"></div>
+						</a>
+        				<div class="item ocultarMenuHover" style="background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+        						<i class="material-icons" style="color:#0b4376;font-size: 55px;">help_outline</i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                              <div class="content" style="width:100%;">
+                                <h3 style="text-align:center;color: #807e7e;">Crear</h3>
+                              </div>
+                            </div>
+                          </div>
+					</div>
+					
+					
+					
+					
+						     <div class="col-sm-6  col-md-3 anim7 item-type-line mb-4 menuSiniestroHover">
+						<a class="item-hover ocultarMenuHover" href="#"  style="text-decoration: none;">
+        					<div class="item-info">
+                            	<div class="headline">Ayuda</div>
+                            	<div class="line"></div>
+        						<div class="date">GO Team.</div>
+                            </div>
+    						<div class="mask"></div>
+						</a>
+        				<div class="item ocultarMenuHover" style="background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+        						<i class="material-icons" style="color:#0b4376;font-size: 55px;">help_outline</i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                              <div class="content" style="width:100%;">
+                                <h3 style="text-align:center;color: #807e7e;">Buscar</h3>
+                              </div>
+                            </div>
+                          </div>
+					</div>
+					
+					
+					
+					
+					
+						     <div class="col-sm-6  col-md-3 anim7 item-type-line mb-4 menuSiniestroHover" style="display:none">
+						<a class="item-hover ocultarMenuHover" href="#"  style="text-decoration: none;">
+        					<div class="item-info">
+                            	<div class="headline">Ayuda</div>
+                            	<div class="line"></div>
+        						<div class="date">GO Team.</div>
+                            </div>
+    						<div class="mask"></div>
+						</a>
+        				<div class="item ocultarMenuHover" style="background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+        						<i class="material-icons" style="color:#0b4376;font-size: 55px;">help_outline</i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                              <div class="content" style="width:100%;">
+                                <h3 style="text-align:center;color: #807e7e;">Volver</h3>
+                              </div>
+                            </div>
+                          </div>
+					</div>

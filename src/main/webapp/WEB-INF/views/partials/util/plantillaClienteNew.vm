@@ -1,0 +1,120 @@
+<div class="row entidadCard$entidad cardResultado" >
+		  <div class=" col-sm-12 col-md-12"> 
+        
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <a style="cursor:pointer;" id="botomVerMasVerMenos$entidad$contador" class="pull-right" onclick="mostrarContenidoVerMasVerMenosCardBusqueda('$entidad','$contador');">Ver mas</a> 
+      	    <h4 style="border:none;" style="padding-botton:1px;">Cliente #$cardClienteCodigo #if($cardClienteNroPersona == $cardClientePersonaR)<i class="material-icons"  style="font-weight:bold;font-size:21px;color:#4caf50;cursor:pointer;" title="Persona Mandatoria" >check</i>#end</h4>
+      	    </div>	
+   			<div class="panel-body" style="background-color:white;padding-top:0;">
+				<div class=" row">
+   					<div class="col-md-2 cardPosicionIcono" > 
+   					<i class="material-icons altoIcono"  style="color:#ed9c28;" >$cardClienteIcono</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align:left;padding-left:10px;padding-right:10px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panelC$entidad$contador">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px;padding-bottom:10px;">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Cliente :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardClienteAsegurado))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Documento :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cardClienteTipoDni), $cardClienteDni , '-')</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Email :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cardClienteEmail))</b></h6></td>
+                           		</tr>
+                        
+                           	 </table> 
+                           	      
+              			  </div>
+           		
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			    <div class="row" id="panelD$entidad$contador" style="display:none;">
+							
+          			<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px">
+                                 
+  							     
+  							<table  style= "width:100%;">
+                         				<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Cliente :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($cardClienteAsegurado))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Documento :</h6></td>
+                           		<td style="padding-top:5px;" ><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cardClienteTipoDni), $cardClienteDni , '-')</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Email :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cardClienteEmail))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+             			
+             			
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:90%;">
+                       
+                       <!-- datos agregados -->
+          				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>Cuit :</h6></td>
+                           		<td style="padding-top:5px;width:25%;max-width:1px;"><h6 style="font-weight:bold;">$utilToolScreen.datoVacio($cardClienteNroCuit)</h6></td>
+                           		</tr>
+                           		<tr>
+                         		
+								<td align="right"  valign="top" style="padding-top:5px;"><h6>Nro Persona :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cardClienteNroPersona)</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Persona R :</h6></td>
+								<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($cardClientePersonaR)</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							 <table  style= "width:100%;">
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Telefono : </h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cardClienteTelefono)</b></h6></td>
+                           		</tr>
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>Fecha Alta :</h6></td>
+                           		<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($cardClienteFechaAlta)</b></h6></td>
+                           		</tr>
+                           	 </table> 
+              		
+              			  </div>
+						 
+    					</div> 
+    					
+    				
+						<a class="btn btn-block btn-social btn-bitbucket pull-right" style="width:20%;margin:1px;color:#ffffff;margin-right:25px;margin-top:0px;margin-bottom:5px;" onclick="bloquearPantallaGris();" href="/PSPES/homeCliente?nroCliente=$cardClienteCodigo">Detalle</a>
+    			<!-- aca termina -->
+    			  </div>
+			  
+    			</div>	
+          		
+      	    <h6 style="padding-left:5px;padding-bottom:5px;">Encontrada x : $cardClienteEntidad / $cardClienteAtributo</h6>
+            		<hr style="margin:0px; border-color:#dfdada;" >
+			</div>
+		
+   			</div>
+				
+     <!-- CERTIFICADOS -->
+           </div>
+ 

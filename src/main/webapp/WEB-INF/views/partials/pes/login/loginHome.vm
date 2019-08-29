@@ -1,0 +1,24 @@
+<div class="container habilitarContainer">
+    <div class="row">
+      <div class="col-md-6 center-block">
+            <div class="account-wall" style="margin-top:120px;">
+                
+   				<i class="material-icons altoIcono profile-img"  style="color:#00317A;border:solid;text-align:center;" >person</i>
+                <form class="form-signin" action="loginIn">
+                <input type="text" class="form-control" placeholder="Usuario"name="usuarioIn"  autofocus>
+                <input type="password" class="form-control" placeholder="Contrase&nacute;a" name="passwordIn" >
+               #if($errorMsg)
+                         <span style="color:red;"><h4 style="text-align:center;border:none;">$errorMsg</h4></span>
+               #end            
+                <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="bloquearPantallaGris();" style="background-color:#00317A;" href="/PSPES/loginIn">
+                   Ingresar</button>
+				<div class="row">
+					<div class="col-md-12" style="text-align:center; margin-top:20px;">
+							<a onclick="bloquearPantallaGris();" href="/PSPES/loginAuth">¿Desea solicitar autorizacion?</a>
+					</div>
+				</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

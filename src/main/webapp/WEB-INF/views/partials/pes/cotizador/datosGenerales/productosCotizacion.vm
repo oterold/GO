@@ -1,0 +1,43 @@
+<!------------------------------------ Incendio ------------------------------------>	
+<div class="col-md-2">
+    <div class="card">
+        <div class="card-image cuerpo-card-seleccionado">
+            <i class="fas fa-car-alt icono-cabecera-ramos"></i>
+            <a class="btn-floating halfway-fab waves-effect waves-light red">
+                <i class="fas fa-check icono-check-ramos"></i>
+            </a>
+        </div>
+        <div class="card-content texto-card">
+            <p>Automotores.</p>
+        </div>
+    </div>
+</div>
+<!------------------------------------ Robo ------------------------------------>	
+<div class="col-md-2">
+    <div class="card">
+        <div class="card-image cuerpo-card">
+            <i class="fas fa-car-alt icono-cabecera-ramos"></i>
+            <a class="btn-floating halfway-fab waves-effect waves-light red" style="display:none;">
+                <i class="fas fa-check icono-check-ramos"></i>
+            </a>
+        </div>
+        <div class="card-content texto-card">
+            <p>T. del Fuego.</p>
+        </div>
+    </div>
+</div>
+
+<!------------------------------------ Seguro Tecnico ------------------------------------>	
+<div class="col-md-2">
+    <div class="card">
+        <div class="card-image cuerpo-card">
+            <i class="fas fa-car-alt icono-cabecera-ramos"></i>
+            <a class="btn-floating halfway-fab waves-effect waves-light red" style="display:none;">
+                <i class="fas fa-check icono-check-ramos"></i>
+            </a>
+        </div>
+        <div class="card-content texto-card">
+            <p>P. Leasing.</p>
+        </div>
+    </div>
+</div>

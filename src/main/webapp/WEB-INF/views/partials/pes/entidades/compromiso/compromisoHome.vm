@@ -1,0 +1,311 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+
+    <div class="row">
+    
+    <!-- Preliquidaciones -->
+       <div class=" col-sm-12 col-md-8">
+	  
+		#foreach($compromisoDato in $datosCompromiso)
+				<input type="hidden" value="$compromisoDato.get("P_TF_COMPR.CJCR_COMPROMISO")" id="valorConceptoCompromiso">
+				<input type="hidden" value="$compromisoDato.get("P_TF_COMPR.CJCR_COMPROMISO")" id="valorCompromiso">
+			
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+
+          <h4 style="color: #ffffff; text-align:center" class="center-block">Compromiso #$compromisoDato.get("P_TF_COMPR.CJCR_COMPROMISO")</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#205081;" >credit_card</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              			
+    			
+    				<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+									
+										<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($compromisoDato.get("P_TF_COMPR.CJCR_FE_PAGO")))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe.&nbsp;Registro&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($compromisoDato.get("P_TF_COMPR.CJCR_FE_REGISTRO")))</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Deparmaento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px"><h6><b>$utilToolScreen.datoVacio($compromisoDato.get("P_TF_COMPR.CJCR_CD_DEPARTAMENTO"),$compromisoDato.get("P_TF_COMPR.CJCR_CD_DEPARTAMENTO")," - ")</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Egreso&nbsp;:</h6></td>
+                           		<td style="padding-top:5px"><h6><b>$utilToolScreen.datoVacio($compromisoDato.get("P_TF_COMPR.CJCR_CD_EGRESO"),$compromisoDato.get("P_TF_COMPR.INB_DE_TIPO_EGRESO")," - ")</b></h6></td>
+                           		
+                           
+                          
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Moneda&nbsp;:</h6></td>
+                           		<td style="padding-top:5px"><h6><b>$utilToolScreen.datoVacio($compromisoDato.get("P_TF_COMPR.CJCR_CAMO_CD_MONEDA"),$compromisoDato.get("P_TF_COMPR.INB_DE_MONEDA")," - ")</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Estado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($compromisoDato.get("P_TF_COMPR.INB_DE_ESTADO"))</b></h6></td>
+								</tr>
+								
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Nu&nbsp;egreso&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($compromisoDato.get("P_TF_COMPR.CJCR_CJEG_NU_EGRESO")))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Forma&nbsp;de&nbsp;pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($compromisoDato.get("P_TF_COMPR.CJCR_CD_FORMA_PAGO")))</b></h6></td>
+								</tr>
+                           	
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+
+
+					 			<div class="row" style="margin-top:15px;">
+					     <div class="col-lg-12" style="text-align: center;">
+					
+                        
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Forma de Pago" onclick="abrirPopUpFormaDePagoCompromisoHome();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081">attach_money</a>
+						
+						
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Asociaciones" onclick="abrirPopUpAsociacionesCompromisoHome();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081">assignment_late</a>
+						
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Errores" onclick="abrirPopUpErrorCompromisoHome();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081">warning</a>
+						
+						
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Cronograma" onclick="abrirPopUpCronogramaCompromisoHome();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081">query_builder</a>
+						
+						
+						
+						
+							</div>
+					</div>	 
+
+        		 </div>
+   			</div>
+		
+		
+		
+		
+			#end    					
+
+
+
+
+		 <!-- PANEL D -->     
+	      <div class="panel panel-default" style="display:none;" id="panelDetalleConcepto" >
+			
+	   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+					<h4 id="labelPanelConcepto">Informacion del Concepto</h4>
+	   			 </div>	
+	   			 
+					<div class="panel-body">    
+					    <div class="row">
+				 <div class="col-xs-2" style=";text-align: center;">   
+						<i class="material-icons altoIcono"  id="panelImagenPre" style="color:#205081;padding-top:15px;" >note</i>
+					</div>
+		
+						<div class="col-xs-10" style="text-align: left;padding-left:5px;padding-right:5px;" >
+				   			 		<div class="row" id="panelc">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                      <table  style= "width:100%;">
+                         		
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Iva&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_IVA"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ret.&nbsp;Iva&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_RET_IVA"><b></b></h6></td>
+                           		</tr>
+                           		
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Monto&nbsp;Bruto&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_MT_BRUTO"><b></b></h6></td>
+                         		
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Monto&nbsp;Neto&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_IVA"><b></b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Exigible&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_MT_NETO"><b></b></h6></td>
+                           		</tr>
+                           	
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>IIBB&nbsp;OF:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_CD_IIBB_OF"><b></b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  					<table  style= "width:100%;">
+
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>IIBB&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_MT_IIBB"><b></b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Otros&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_MT_OTROS_TRIB"><b></b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Concepto&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_CD_CONCEPTO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Remesa&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJOC_CD_IIBB_OF"><b></b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+    					</div>
+					</div>       			
+				   			 					
+								</div> 
+					    </div> 
+				
+				</div>
+				
+	   	  </div>
+	   	  
+	   	  
+	   	  
+	   	  
+	   	  
+		     <!-- PANEL C -->
+     
+     
+        <div class="panel panel-default">
+	
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control" onkeyup="buscadorPanelCEntidadCliente()" id="inputBusquedaSiniestro"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				<h4 id="cantSiniestros">Beneficiario #if ( $datosBeneficiario.size() > 0 ) ($datosBeneficiario.size()) #end</h4> 
+   			 </div>	
+			 
+			  #if ($datosBeneficiario.size() > 0)
+   				<div class="col-xs-2" style=";text-align: center;">   
+					<i class="material-icons altoIcono"  style="color:#205081;padding-top:15px;" >&#xE02f;</i>
+   				</div>
+   				<div class="panel-body">    
+                   	<div class="row">
+              	 	    <div class="col-xs-10" style="text-align: left;padding-left:30px;padding-right:30px;$centradoVertical" id="caruMayor">
+                  	 	    <div id="micaru" class="owl-carousel owl-theme" style="text-align:center; padding-left:25px;">
+    						   
+    							    #foreach ($datoBenef in $datosBeneficiario)      
+        							    <div id="micaruB$velocityCount" onClick="abrirPopUpBeneficiarioCompromisoHome('$datoBenef.get("P_TF_COMPR.CJCR_COMPROMISO")','$velocityCount');" class="item" style="height:105px; cursor:pointer; background:#efeeee;border-radius: 3px; border-width: 1px; border-color:#e0e0e0; border-style: solid; box-shadow: 0 0 0px black;">
+        									<h6 id="nroSiniestro$velocityCount" style="height:33px;border-bottom:1px solid; padding-top:4%;padding-bottom:4%;background-color:#205081;color:#ffffff;">#$datoBenef.get("P_TF_COMPR.CJCR_BENEFICIARIO")</h6>
+        									<h6 style="margin-top:2%;" id="datoSiniestro$velocityCount" class="datoSiniestroCarusel">Provincia : <b>$utilToolScreen.nombreMayuscula($datoBenef.get("P_TF_COMPR.INB_DE_PROVINCIA"))</b></h6>
+        									<h6 style="margin-top:2%;" id="datoSiniestro$velocityCount" class="datoSiniestroCarusel">Suc. pago: <b>$utilToolScreen.nombreMayuscula($datoBenef.get("P_TF_COMPR.INB_DE_SUC_PAGO"))</b></h6>
+        
+        									<br>
+        							    </div>
+    								#end
+    								
+        					</div>
+              	 	    </div> 
+              	 	</div> 
+
+				</div>
+			#else 
+    				#if($mostrarBotonDeBusquedaSiniestro == "SI" )
+							<a class="btn btn-block btn-social btn-bitbucket pull-right" style="width:25%;margin:1px;color:#ffffff" href="/go?dato=12&entidades=001000&p1=0&p2=0&p3=0">Ver Siniestros</a>
+					#else
+                			#set($concepto = "beneficiarios")
+                           	#parse("partials/util/rowVacio.vm")	
+    				#end
+	        #end	
+   		</div>
+	</div>
+
+		
+     
+  	   
+  	     <!-- PANEL B -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+                  <h4 style="color:#00317A;">Conceptos #if ($datosConceptos.size() > 0) ($datosConceptos.size()) #end</h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+           
+                 <div class="timeline__group" style="z-index:1;max-height:20px;">
+				 #if ($datosConceptos.size() > 0)
+					<div  style="padding-bottom:0px;">
+    
+            			  #foreach($datosCon in $datosConceptos)
+            					    #set ($concepto = $datosCon.get("P_TF_COMPR.CJOC_CD_CONCEPTO"))
+            						#set ($descConcepto = $datosCon.get("P_TF_COMPR.INB_DE_CONCEPTO"))
+                            		#set ($montoNeto = $datosCon.get("P_TF_COMPR.CJOC_MT_NETO"))
+            					    #set ($numeroCard = $velocityCount)
+            					
+            						#parse("partials/pes/entidades/compromiso/itemDetalleCompromiso.vm")	 
+            				#end
+            							
+					</div>
+				#else 
+					<div>
+					    #set($concepto = "conceptos")
+           			    #parse("partials/util/itemTimeLineVacio.vm")	
+					</div>
+				#end      
+				</div>
+		
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+  
+
+
+   #parse("partials/pes/entidades/poliza/modalPolizaHome/beneficiarioCompromisoModal.vm")
+   #parse("partials/pes/entidades/poliza/modalPolizaHome/formaPagoCompromiso.vm")
+   #parse("partials/pes/entidades/poliza/modalPolizaHome/asociacionesCompromisoModal.vm")
+   #parse("partials/pes/entidades/poliza/modalPolizaHome/errorCompromisoModal.vm")
+   #parse("partials/pes/entidades/poliza/modalPolizaHome/cronogramaCompromisoModal.vm")
+

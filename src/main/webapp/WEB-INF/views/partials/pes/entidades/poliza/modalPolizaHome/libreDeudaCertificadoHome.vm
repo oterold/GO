@@ -1,0 +1,79 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="libreDeudaPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4>Certificado Libre de Deuda</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#00317A;" >payment</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+         				<div class="row" id="panelModal">
+		          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+										<table  style= "width:100%;">
+										<tr>		                           		
+		                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ramo :</h6></td>
+		                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_RAMO_CER_DEUDA"></h6></td>
+		                           		</tr>
+								
+										<tr>
+		                                <td align="right"  valign="top" style="padding-top:5px;" ><h6>P&oacute;liza :</h6></td>
+		                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_POLIZA_CER_DEUDA"></h6></td>
+		                           		</tr>
+		                                </table>
+								     
+		              			  </div>
+		           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+		             			 			<table  style= "width:100%;">
+												
+										<tr>
+		                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Sucursal :</h6></td>
+		                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_SUCURSAL_CER_DEUDA"></h6></td>
+		                           		</tr>
+									
+										<tr>
+		                         	   	<td align="right"  valign="top" style="padding-top:5px;" ><h6>Certificado :</h6></td>
+		                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_CER_CER_DEUDA"></h6></td>
+		                           		</tr>
+										<tr>
+												
+		                                </table>
+		              				 
+		    						</div>
+		    				</div>
+		    			<div class="row">
+		    						
+		    					 <div class="select col-md-12">
+						         	<div class="input-group date" style="width:100%;padding-left:10%;padding-top: 10px;">
+			                             <a><h6 style="display: inline;">Email :</h6> <input  type="text" style="width:65%;height: 27px;" value="$usuaro" id="emailLibreDeuda" class="form-control"></a>
+									</div>
+			   			 		</div>
+														    						
+		    						
+    							</div>  
+						     
+						     
+              			  </div>
+          	 	  
+
+    			  </div>
+		    						<div class="row">
+										<div class="col-md-12" style="padding-top:10px;">
+									       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+										</div>
+									</div>
+    			</div>	
+				    <div class="row">
+					     <div class="col-lg-12" style="text-align: center;">
+					     <h6>*Al seleccionar el boton se va a enviar un email a la casilla ingresada</h6>
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="enviarEmailLibredeudaModal();" rel="modal:close"  data-placement="bottom" data-toggle="tooltip"  title="Libre de Deuda" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;">mail_outline</a>
+						 </div>
+					</div>
+			</div>
+   			</div>

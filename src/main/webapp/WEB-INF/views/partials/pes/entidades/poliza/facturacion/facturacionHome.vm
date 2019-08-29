@@ -1,0 +1,576 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+	    #parse("partials/util/mensajeEnProduccion.vm")
+
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-8">
+	  
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+
+          <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver menos</a>
+          <h4 style="color: #ffffff;">Facturacion - Poliza #8585757</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#ed9c28;" >&#xe7fb;</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="display:none;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                           <table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Sin valor</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                    
+							
+                            </table>
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Sin valor</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                        
+							
+                            </table>
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Sin valor</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                    
+							
+                            </table>
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Sin valor</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+              
+							
+                            </table>
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Sin valor</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+          
+							
+                            </table>
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Sin valor</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Valor :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>sin valor</b></h6></td>
+                           		</tr>
+      
+							
+                            </table>
+                           	      
+					<br><br>
+              			  </div>
+    				</div> 
+    					
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+       			    				<!-- botones aca -->	 
+       			    					
+        		 </div>
+   			</div>
+
+   		
+   		<!-- ENDOSO -->
+   		
+      		<div class="panel panel-default" id="endoso" style="display:none;">
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <a style="cursor:pointer;" id="verMasPanelC" class="pull-right" onclick="mostrarPoliza('panelc','paneld','verMasPanelC');">Ver mas</a> 
+      	    <h4 id="labelPanelEndoso">Poliza #1</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;" id="panelImagenEndoso">
+					<img id="imgCliente" />
+				</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	
+          	 	  
+          	 	 <!-- pag principal -->
+              		
+          	 			<div class="row" id="panelc">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                      <table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Premio:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$77,889.35</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Suma Asegurada:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$1,669,900,00</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Emisi�n:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Fecha Emisi�n</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Vigencia:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Del 26/04/2017 al 26/04/2018</b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  					<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Tipo:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Renovaci�n</b></h6></td>
+                           		
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Motivo:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>Renovaci�n Manual de P�liza</b></h6></td>
+                           	
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Origen:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>sss</b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+    					</div>
+    					</div>       
+    					     
+    			<!-- pag oculta -->
+    					
+    					
+    					<div class="row" id="paneld" style="display:none;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Premio:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$77,889.35</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Suma Asegurada:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$1,669,900,00</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Emisi�n:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Fecha Emisi�n</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Vigencia:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Del 26/04/2017 al 26/04/2018</b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Tipo:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Renovaci�n</b></h6></td>
+                           		
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Motivo:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>Renovaci�n Manual de P�liza</b></h6></td>
+                           	
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Origen:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b></b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+                       <!-- datos agregados -->
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Vigencia T�cnica:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>27/04/2018</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Modo C�lculo:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>Normal</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Vigencia:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Anual</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Convenio:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>General</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Esquema:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Especial -  Resoluci�n 32080 SSN</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Forma de Pago:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Tarjeta de Cr�dito</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Origen Pago</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>VISA BPBA</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Plan de Pago:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>12 Pagos</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Promoci�n:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>No Aplica Promoci�n</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Afiliado:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>N</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Refacturaci�n:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>N</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Renovaci�n:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>121</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Anulaci�n:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nids:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>39</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Identificador:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>39</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cotizaci�n:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>39251834</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Remesa:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>39251834</b></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Usuario:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>Carlos Flores</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+    				</div> 
+    					
+    					
+    			<!-- aca termina -->
+    			  </div>
+    			</div>	
+            	</div>
+   			</div>
+     <!-- CERTIFICADOS -->
+     
+     
+      <div class="panel panel-default">
+		
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control"   style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				<h4>Imputaciones</h4>
+   			 </div>	
+			#set($concepto = "imputaciones")
+           	#parse("partials/util/rowVacio.vm")	
+   		</div>
+	</div>
+
+  	   
+  	   <!-- Cantidad Endosos -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+         <div class="panel-heading" style=" background-color:white;border-color:white;">
+          <h4 style="color:#00317A;">Cuotas Consolidadas</h4>
+         </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+
+                 <div class="timeline__group" style="z-index:1;max-height:20px;">
+              
+				  	<div>
+    
+					    #set($concepto = "cuotas consolidadas")
+           			    #parse("partials/util/itemTimeLineVacio.vm")	
+   
+					</div>
+            
+            
+				 </div>
+			
+   		</div>
+	</div>
+  </div>
+ </div>
+ </div>
+       </section>
+ 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+ <!-- Modal -->
+ 
+      		<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="ex5" >
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4>Productor #1595</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#00317A;" >&#xE7FB;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 	
+              		
+          	 			<div class="row" id="panelc">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Denominaci�n :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tel�fono :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>1231805000</b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>EMAIL :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>puentel@pseguros.com.ar</b></h6></td>
+                           		</tr>
+								
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ejecutivo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Lucas Puente</b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Gerencia :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Comercial</b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Sub Gerencia :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>1231805000</b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Departamento :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>1231805000</b></h6></td>
+                           		</tr>
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Oficina :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>1231805000</b></h6></td>
+                           		</tr>
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Agrupaci�n :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Comercial</b></h6></td>
+                           		</tr>
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Perfil :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b></b></h6></td>
+                           		</tr>
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Sucursal :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Cabecera</b></h6></td>
+                           		</tr>
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Agencia :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>Provincia Seguros</b></h6></td>
+                           		</tr>
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Organizador :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b></b></h6></td>
+                           		</tr>
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    					
+    	
+                  		                 	
+                  
+                  	
+                  	
+                  	
+    			  </div>
+    			</div>	
+           		<a class="btn btn-block btn-social btn-bitbucket pull-right" rel="modal:close" href="#" style="width:25%;margin:1px;color:#ffffff">Cerrar</a>
+            	</div>
+   			</div>
+
+

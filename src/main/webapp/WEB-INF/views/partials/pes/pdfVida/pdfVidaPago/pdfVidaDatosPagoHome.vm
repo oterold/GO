@@ -1,0 +1,156 @@
+<section class="container-fluid">
+    <div class="containerMargenes" style="padding-top:50px;" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8 sin-margen-derecha" style="margin-top:30px">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-1 pt-4" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Forma de Pago</h3>
+                                <br>
+                                    <br>
+                                        <div class="demo-container">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-container active">
+                                                        <form action="">
+                                                            <div class="col-md-12 mb-3 mt-3">
+                                                                <div class="md-form form-lg">
+                                                                    <input  type="tel" name="number" id="numeroTarjeta" class="form-control">
+                                                                        <label for="numeroTarjeta" style="font-weight: 400;" class="active">Numero Tarjeta</label>
+</div>
+                                                                </div>
+                                                                <div class="col-md-12 mb-3 mt-5">
+                                                                    <div class="md-form form-lg">
+                                                                        <input  type="text" name="name" id="apyn" class="form-control">
+                                                                            <label for="apyn" style="font-weight: 400;" class="active">Nombre y Apellido</label>
+</div>
+                                                                    </div>
+                                                                    <div class="row pl-4 pr-4">
+                                                                        <div class="col-md-6 mb-3 mt-3">
+                                                                            <div class="md-form form-lg">
+                                                                                <input  type="tel" name="expiry" id="Vencimiento" class="form-control">
+                                                                                    <label for="Vencimiento" style="font-weight: 400;" class="active">Vencimiento</label>
+</div>
+                                                                            </div>
+                                                                            <div class="col-md-6 mb-3 mt-3">
+                                                                                <div class="md-form form-lg">
+                                                                                    <input  type="tel" name="cvc" id="cod" class="form-control">
+                                                                                        <label for="cod" style="font-weight: 400;">C&oacute;digo de Seguridad</label>
+</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12 mb-3 mt-3">
+                                                                                <div class="md-form form-lg">
+                                                                                    <input  type="tel" id="email" class="form-control">
+                                                                                        <label for="email" style="font-weight: 400;" class="active">Email</label>
+</div>
+                                                                                </div>
+                                                                                <div class="col-md-12 mb-3 mt-5">
+                                                                                    <div class="md-form form-lg">
+                                                                                        <input  type="tel" id="email" class="form-control">
+                                                                                            <label for="email" style="font-weight: 400;" class="active">Telefono</label>
+</div>
+                                                                                    </div>
+</form>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="card-wrapper"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+																	<br>
+																		<br>
+                                                                    <button type="button" class="pull-right btn btn-indigo icono-sig" onclick="redirectDatosRiesgo();" type="submit" style="background-color: #0b4376 !important;">Siguiente&nbsp;&nbsp;
+                                                                        <i class="fas fa-angle-right" style="color:white;"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+</div>
+                                                    </div>
+                                                </div>
+                                                <!-- Lista certificados - Panel B -->
+                                                <div class="col-sm-12 col-md-4  sin-margen-izq" style="width:100%;margin-top:30px;">
+                                                    <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+                                                        <div class="main-container page__container" >
+                                                            <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-top: 55px;padding-left:10px;padding-right:10px;">
+                                                                <div class="summary-head" style="width:80%;">
+                                                                    <h4 style="border:none;color:#0b4376"  class="widget-title">Cotizaci&oacute;n (40%)</h5>
+                                                                    <span class="summary-small-text" ></span>
+                                                                </div>
+                                                                <div class="summary-price">
+                                                                    <a class="summary-text fas fa-refresh" href="/PSPES/bpba" style="color:#0b4376;font-size:15px;"></a>
+                                                                </div>
+                                                                <div class="summary-block" >
+                                                                    <div class="summary-content" style="width:100%;">
+                                                                        <div class="summary-head" style="width:80%;">
+                                                                            <h5 style="border:none;"  class="summary-title">Propuesta de Seguro</h5>
+                                                                            <span class="summary-small-text" ></span>
+                                                                        </div>
+                                                                        <div class="summary-price">
+                                                                            <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="summary-block">
+                                                                    <div class="summary-content">
+                                                                        <div class="summary-head">
+                                                                            <h5 style="border:none;"  class="summary-title"></i>
+                                                                            Datos del Solicitante</h5>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="summary-block">
+                                                                <div class="summary-content">
+                                                                    <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title"></i>
+                                                                        Forma de Pago</h5>
+                                                                </div>
+                                                                <div class="summary-price">
+                                                                    <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="summary-block">
+                                                            <div class="summary-content">
+                                                                <div class="summary-head">
+                                                                    <h5 style="border:none;"  class="summary-title">Datos del  Riesgo</h5>
+                                                                </div>
+                                                                <div class="summary-price">
+                                                                    <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="summary-block">
+                                                            <div class="summary-content">
+                                                                <div class="summary-head">
+                                                                    <h5 style="border:none;"  class="summary-title">Datos del Acreedor Prendario</h5>
+                                                                </div>
+                                                                <div class="summary-price">
+                                                                    <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="summary-block">
+                                                            <div class="summary-content">
+                                                                <div class="summary-head">
+                                                                    <h5 style="border:none;"  class="summary-title">Fin de Cotizaci&oacute;n</h5>
+                                                                </div>
+                                                                <div class="summary-price">
+                                                                    <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+</div>
+</div>
+</section>

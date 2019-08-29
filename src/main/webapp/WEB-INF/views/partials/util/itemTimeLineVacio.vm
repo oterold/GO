@@ -1,0 +1,11 @@
+<!--result Vacio-->
+<div  id="cuadroImgVacio" style="cursor:pointer; background-color:#ffffff" >
+    <div class="timeline__post seleccionPanelB" id="timeLineItemVacio" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A">
+        <div class="timeline__content" style="overflow:hidden;">
+			<i class="material-icons altoIcono"  style="color:#205081; font-size:40px; float:left; margin-right:20px;"  id="imgTimeLineVacio">&#xE611;</i>
+			<h6 id="etiquetaVacio" style="padding-top: 15px; padding-bottom: 15px; color:#b3b0b0;">No se encontraron $concepto</h6>
+        </div>
+    </div>
+</div>
+	
+	

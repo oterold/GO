@@ -1,0 +1,62 @@
+<div class="panel panel-default" style="display:none;max-width:800px;height:500px;overflow-y:hidden;" id="anexoCertificadoPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+   		<div>
+   		
+               	<div class="row" style="margin:0px;">
+          	 	 <div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;">
+                     
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-top:5px;">
+			                        	<h4  id="DATO_ANEXO_CERTIFICADO" style="border:none;text-align:left;padding-top:5px;"></h4>
+			                        </div>
+                     
+			                        <div class="col-md-6 input-group pull-right" style="z-index:1;" >
+						<div class="form-group">
+							  <select onchange="mostrarClausulasCertificado();" class="form-control" style="height:35px;" name ="selectorLineasCertificado" id="selectorLineasCertificado">
+							    <option  value="0"  selected>Seleccione un bien..</option>
+							  </select>
+							</div>
+					</div>
+    						  </div>
+				
+				
+					<div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:5px;height:230px;overflow-y:auto;padding-top:10px;" >
+							<div style="overflow-y:auto;">
+								<div class="col-md-12" style="padding-top:10px;">
+				                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+								</div>
+						
+							  <h4 style="border:none;padding-bottom:15px;">Clausulas</h4>
+
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+								    <tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">C&oacute;digo</th>
+								            <th class="th-grilla" role="columnheader">Descripci&oacute;n</th>
+								            
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosClausulasCotizacion">
+							</tbody>
+								</table>
+								</div>
+						</div> 
+								<div class="col-md-12" style="padding-top:10px;">
+				                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+								</div>
+								 <div class="col-md-12" style="height:140px;overflow-y:auto;text-align: left;padding-left:15px;padding-right:5px;padding-top:10px;">
+					
+                           				Texto : 
+			                        	<a  id="valorTextoClausulaCotizacion" style="text-align:left;padding-top:5px;"></a>
+			                     		
+			              	 </div>
+					</div>
+				
+				</div>
+    				  
+    				  </div>
+    				  
+    			</div>	
+   		</div>

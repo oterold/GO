@@ -1,0 +1,6 @@
+#set ($indicadorSeccionParametroNivel1 = 'Log' )
+#set ($indicadorClienteParametro = 'Plataforma Unica de Busqueda')
+
+#set ($templateWeb = 'partials/util/log/plantillaLog.vm') 
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

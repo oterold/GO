@@ -1,0 +1,177 @@
+	 <section class="container-fluid">
+    <div class="containerMargenes" style="padding-top:50px;" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8" style="margin-top:50px">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-1 pt-4" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Nueva denuncia de siniestros</h3>
+                                <br>
+                                    <br>
+                                        <div class="plan-selection">
+                                            <div class="plan-data">
+                                                <div class="row">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                            <br>
+                                                
+                                                <div class="plan-selection">
+                                                    <div class="plan-data">
+                                                        <div class="row">
+															<!-- Seguro de Vida Colectivo -->
+														<div class="col-md-2">
+															<!-- cara de la card -->
+                                                                            <div class="card-wrapper">
+                                                                              <div id="card-1" class="card card-rotating text-center">
+                                                                                <!-- Front Side -->
+                                                                                <div class="face front rotate-btn" data-card="card-1" style="cursor:pointer;">
+                                                                                  <!-- Avatar -->
+                                                                               <div class="card" style="width:110px;">
+                                                                                <a class="iconoCard material-icons tituloCard p-1" style="color:white;">lock</a>
+                                                                                <div class="card-body cuerpoCard" style="padding-left:5px;padding-right:5px;height:56px;">
+                                                                                    <h6 class="rotate-btn card-text"><strong>Seguro de Vida Colectivo</strong></h6>
+                                                                                </div>
+                                                                            </div>
+                                                                         </div>
+                                                                
+                                                                            <!-- atras de la card  -->
+                                                                            <div class="face back rotate-btn" data-card="card-1" style="cursor:pointer;">
+                                                                              
+                                                                             <div class="card" style="width:110px;">
+                                                                            <a class=" iconoCard material-icons tituloCard p-1"  style="background-color:#b1b1b1;color:white;">lock</a>
+                                                                            <div class="card-body cuerpoCard" style="padding-left:5px;padding-right:5px;height:56px;border-bottom: 2px solid #b1b1b1 !important;">
+                                                                                <h6 class=" card-text"><strong>Seguro de Vida Colectivo</strong></h6>
+																				<i class="fas fa-check" style="color:green;position: relative;left: 52px;font-size: 23px;"></i>
+																			</div>
+                                                                        </div>
+                                                                     </div>
+                                                                        
+                                                                  </div>
+                                                                </div>
+
+																
+														</div>
+														
+														
+														
+														
+														
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                    <br>
+                                                        <br>
+                                                            <br>
+                                                                <br>
+                                                                    <br>
+                                                                        <br>
+                                                                            <br>
+                                                                                <br>
+                                                                                    <br>
+                                                                                        <br>
+                                                                                            <br>
+                                                                                                <br>
+                                                                                                    <br>
+                                                                                                        <br>
+                                                                                                            <button type="submit" onclick="datosAseguradoSiniestro();"  class="pull-right btn btn-indigo waves-effect waves-light" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;">Siguiente&nbsp;&nbsp;
+                                                                                                                <i class="fas fa-angle-right" style="color:white;"></i>
+                                                                                                            </button>
+ <button type="submit" onclick="redirectHomeBpba()"  class="pull-left btn btn-indigo waves-effect waves-light" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;">Inicio&nbsp;&nbsp;
+                                                                                                            </button>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lista certificados - Panel B -->
+<div class="col-sm-12 col-md-4 " style="margin-top:50px;width:100%;">
+            <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+               <div class="main-container page__container" >
+                  <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;">
+                     <div class="summary-head" style="width:80%;">
+                        <h4 style="border:none;color:#0b4376"  class="widget-title">
+                        Denuncia Siniestro</h5>
+                        <span class="summary-small-text" ></span>
+                     </div>
+                     <div class="summary-price">
+                        <a class="summary-text fas fa-refresh" href="/PSPES/bpba" style="color:#0b4376;font-size:15px;"></a>
+                     </div>
+                     <div class="summary-block" >
+                        <div class="summary-content" style="width:100%;">
+                           <div class="summary-head" style="width:80%;">
+                              <h5 style="border:none;"  class="summary-title">Seleccion de producto</h5>
+                              <span class="summary-small-text" ></span>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title"></i>
+                                 Datos del Asegurado
+                              </h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title"></i>
+                                 Deuda Asegurada
+                              </h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title">Fallecimiento</h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title">Pago de siniestro a transferir</h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title">Fin de Indemnizaci&oacute;n</h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+</div>
+</div>
+</section>

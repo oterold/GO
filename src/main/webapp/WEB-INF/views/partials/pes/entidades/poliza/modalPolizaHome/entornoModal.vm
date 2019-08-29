@@ -1,0 +1,83 @@
+
+      		<div class="panel panel-default" style="display:none;max-width:500px;overflow-y:auto;" id="entornoPopUp" >
+						<div style="width:100%;text-align:right;">
+						<a class="btn pull-right material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+						</div>
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 style="border-bottom:solid 1px;padding:5px;font-size:18px;font-family:'Roboto', sans-serif !important">Entorno Actual <b>$entornoApp</b></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-3" style=";text-align: center;">
+   			<i class="fa fa-database" aria-hidden="true" style="font-size:80px;color:#0b4376;"></i>
+   			
+   			</div>
+          	 	  <div class="col-md-9" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:20px">
+					
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-9" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+                                
+                                <div class="radio">
+									<label style="font-family:'Roboto', sans-serif !important;font-size:14px;">
+										#if($entorno == "PRODUCCION")
+											<input type="radio" name="optradio" style="margin-right:8px;" value="01" checked>Producci&oacute;n
+										#else
+											<input type="radio" name="optradio" style="margin-right:8px;" value="01" onclick="location.href='/PSPES/entorno?p1=PRODUCCION'">Producci&oacute;n
+										#end
+									</label>
+								</div>
+										<div class="radio">
+								  <label style="font-family:'Roboto', sans-serif !important;font-size:14px;">
+									#if($entorno == "TESTING")
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" checked>Testing</label>	
+									#else
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" onclick="location.href='/PSPES/entorno?p1=TESTING'">Testing</label>										
+									#end
+								</div>
+								
+								
+									<div class="radio">
+								  <label style="font-family:'Roboto', sans-serif !important;font-size:14px;">
+									#if($entorno == "TESTING_MDW")
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" checked>Testing - Mdw</label>	
+									#else
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" onclick="location.href='/PSPES/entorno?p1=TESTING_MDW'">Testing - Mdw</label>										
+									#end
+								</div>
+								
+									<div class="radio">
+								  <label style="font-family:'Roboto', sans-serif !important;font-size:14px;">
+									#if($entorno == "TESTING_UNIFICADO")
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" checked>Testing - Unificado</label>	
+									#else
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" onclick="location.href='/PSPES/entorno?p1=TESTING_UNIFICADO'">Testing - Unificado</label>										
+									#end
+								</div>
+								
+								
+								
+                                <div class="radio">
+								  <label style="font-family:'Roboto', sans-serif !important;font-size:14px;">
+									#if($entorno == "DESARROLLO")
+										<input type="radio" name="optradio" style="margin-right:8px;" value="02" checked>Desarrollo</label>
+									#else
+										<input type="radio" name="optradio" style="margin-right:8px;" value="02" onclick="location.href='/PSPES/entorno?p1=DESARROLLO'">Desarrollo</label>
+									#end
+								</div>
+                                
+                                
+                                </table>
+						     
+              			  </div>
+           				
+						  	<div class="col-md-offset-4">
+							</div>
+          				
+    					</div>            
+						
+    			  </div>
+    			</div>	
+               </div>
+</div>

@@ -1,0 +1,28 @@
+<div id="modal1" class="modal">
+	    <div class="row" style="width:100%">
+	    	<div class="col-md-12 p-5">
+	     	 <h5>Datos del Plan 50 ( No aplica promoci&oacute;n)</h5>
+	      </div>
+	     </div>
+	    <div class="row" style="width:100%">
+		    <div class="col-md-2" style="text-align:center;">
+		     <i class="fas fa-car" style="color:#0b4376!important;font-size:70px;"></i>
+		    </div>
+		    <div class="col-md-10">
+		      <p>Datos</p>
+		      			      <p>Datos</p>
+		      		      <p>Datos</p>
+		      		      <p>Datos</p>
+		      		      <p>Datos</p>
+		      		      <p>Datos</p>
+		      		      <p>Datos</p>
+		      
+		    </div>
+	    </div>
+    <div class="row">
+    	<div class="col-md-12">
+      <button href="#!" class="modal-close pull-right btn-flat">Cerrar</button>
+      	</div>
+      </div>
+    </div>
+ </div>

@@ -1,0 +1,444 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+ 
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-8">
+       #foreach($nidIn in $datoNid)
+	  
+		<input type="hidden" value="$nidIn.get('P_TF_NID.GEAC_NU_SECUENCIA')" id="valorNidHome" />
+        <div class="panel panel-default">
+          <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+		  <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver menos</a>
+          <h4 style="text-align:center;color: #ffffff;">Nid #$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_NU_SECUENCIA'))</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#509750;padding-top:15px;">$utilToolScreen.getIcono($nidIn.get('P_TF_NID.GEAC_CARP_CD_RAMO'))</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="display:none;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                   		 		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>P&oacute;liza&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;color:#6fa1d4;cursor:pointer;width:60%;"><h6 onclick="redirectPoliza('$nidIn.get('P_TF_NID.GEAC_CAPO_NU_POLIZA')','$nidIn.get('P_TF_NID.GEAC_CARP_CD_RAMO')','$nidIn.get('P_TF_NID.GEAC_CASU_CD_SUCURSAL')');"><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CAPO_NU_POLIZA'))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                         		
+                         		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Ramo.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CARP_CD_RAMO'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_RAMO'))," - ")</b></h6></td>
+                           		</tr>
+                         		
+                         		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Numero&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CACN_NU_CEDULA_RIF'))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nombre&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;cursor:pointer;color:#6fa1d4"><h6 onClick="abrirModalClienteHome('$nidIn.get('P_TF_NID.GEAC_CACN_NU_CEDULA_RIF')');"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.GEAC_NM_CLIENTE')))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Documento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_TP_DOCUMENTO')),$nidIn.get('P_TF_NID.GEAC_NU_DOCUMENTO')," - ")</b></h6></td>
+                           		</tr>
+                           		
+                         		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Origen&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.INB_USUARIO_AUTORIZ'),$nidIn.get('P_TF_NID.INB_NID_ORIGEN')," - ")</b></h6></td>
+                           		</tr>
+                           	 	
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;width:60%;cursor:pointer;color:#6fa1d4"><h6 onClick="abrirModalProductorHome('$nidIn.get('P_TF_NID.GEAC_CAPD_CD_PRODUCTOR')');"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_PRODUCTOR')))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Agenda&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.formatearFecha($utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_FE_AGENDA')))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.formatearFecha($utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_FE_DESDE')))</b></h6></td>
+                           		</tr>
+                           			
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Certificado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CACE_NU_CERTIFICADO'))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Producto.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CAPU_CD_PRODUCTO'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_PRODUCTO'))," - ")</b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		 		
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>P&oacute;liza&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;color:#6fa1d4;cursor:pointer;width:60%;"><h6 onclick="redirectPoliza('$nidIn.get('P_TF_NID.GEAC_CAPO_NU_POLIZA')','$nidIn.get('P_TF_NID.GEAC_CARP_CD_RAMO')','$nidIn.get('P_TF_NID.GEAC_CASU_CD_SUCURSAL')');"><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CAPO_NU_POLIZA'))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Ramo.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CARP_CD_RAMO'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_RAMO'))," - ")</b></h6></td>
+                           		</tr>
+                         		
+                         		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Numero&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CACN_NU_CEDULA_RIF'))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nombre&nbsp;Cliente&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;cursor:pointer;color:#6fa1d4"><h6 onClick="abrirModalClienteHome('$nidIn.get('P_TF_NID.GEAC_CACN_NU_CEDULA_RIF')');"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.GEAC_NM_CLIENTE')))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		
+                		 		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Documento&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_TP_DOCUMENTO')),$nidIn.get('P_TF_NID.GEAC_NU_DOCUMENTO')," - ")</b></h6></td>
+                           		</tr>
+                           		
+                         		
+				 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Origen&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.INB_USUARIO_AUTORIZ'),$nidIn.get('P_TF_NID.INB_NID_ORIGEN')," - ")</b></h6></td>
+                           		</tr>
+                           		
+                           	 	
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                   				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor&nbsp;:</h6></td>
+                           		<td style="padding-top:3px;width:60%;cursor:pointer;color:#6fa1d4"><h6 onClick="abrirModalProductorHome('$nidIn.get('P_TF_NID.GEAC_CAPD_CD_PRODUCTOR')');"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_PRODUCTOR')))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Agenda&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.formatearFecha($utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_FE_AGENDA')))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.formatearFecha($utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_FE_DESDE')))</b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Certificado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CACE_NU_CERTIFICADO'))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Producto.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CAPU_CD_PRODUCTO'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_PRODUCTO'))," - ")</b></h6></td>
+                           		</tr>
+                           		
+                 
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Ciclo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_GEAT_CD_TIPO_CICLO'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_TIPO_CICLO')), " - ")</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>En&nbsp;poder&nbsp;del&nbsp;Depto:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CJDP_EN_PODER'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_EN_PODER')), " - ")</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Patente&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_NU_PATENTE'))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Usuario&nbsp;Act.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.GEAC_CAUS_CD_USUARIO')),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_USUARIO'))," - ")</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Actualizaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.formatearFecha($utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_FE_ACTUALIZACION')))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sucursal:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CASU_CD_SUCURSAL'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_SUCURSAL'))," - ")</b></h6></td>
+                           		<tr>
+  								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Delegaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.nombreMayuscula($utilToolScreen.datoVacio($nidIn.get('P_TF_NID.INB_ORIGEN')))</b></h6></td>
+                           		<tr>
+                         
+                           			
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Inspecci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_CAIN_NU_INSPECCION'))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Motivo&nbsp;Rechazo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_GEAR_CD_MOTIVO_RECHAZO'),$utilToolScreen.nombreMayuscula($nidIn.get('P_TF_NID.INB_MOTIVO_RECHAZO'))," - ")</b></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Carta&nbsp;Rechazo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_NU_CARTA_RECHAZO'))</b></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Autom&aacute;tico&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nidIn.get('P_TF_NID.GEAC_IN_VARIOS'),$nidIn.get('P_TF_NID.INB_IN_VARIOS')," - ")</b></h6></td>
+                           		</tr>
+             
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+    				</div> 
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+    					<div class="row">
+                    <div class="col-lg-12" style="text-align: center;">
+						<a onclick="redirectZambaInspeccionNid('$nidIn.get('P_TF_NID.GEAC_NU_SECUENCIA')')" class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" data-placement="bottom" data-toggle="tooltip" title="Zamba" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">photo_library</a>
+
+					</div>
+				 </div>   					
+			#end
+        		 </div>
+   			</div>
+
+   		
+   		<!-- PANEL D -->
+   		
+      		<div class="panel panel-default" id="panelHistorialNid" style="display:none;">
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="labelPanelDetalleNid"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;" id="panelImagenNid">
+					<img id="imgCliente" />
+				</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	
+          	 	  
+          	 	 <!-- pag principal -->
+              		
+          	 			<div class="row" id="panelc">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                      <table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Tipo&nbsp;Novedad&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_NOVEDAD"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha&nbsp;Agenda&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_GEAD_FE_AGENDA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Derivado :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="DATO_DERIVADO"></h6></td>
+                           		</tr>
+								
+								
+										<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Carta&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="DATO_CARTA"></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  					<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Usuario&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_USUARIO"></h6></td>
+                           		
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Remito&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_INB_NU_REMITO"></h6></td>
+                           	
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>FP&nbsp;Renovac&oacute;n&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_GEAD_FP_RENOVACION"></h6></td>
+                           		</tr>
+                           		
+								
+										<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Rechazo&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="DATO_RECHAZO"></h6></td>
+                           		</tr>
+								
+								
+								
+										<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Texto&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_DETALLE_GEAD_DE_TEXTO"></h6></td>
+                           		</tr>
+								
+								
+                           	 </table> 
+    					</div>
+    					</div>       
+    					     
+    			  </div>
+    			</div>	
+            	</div>
+   			</div>
+			
+     <!-- PANEL C -->
+     
+      <div class="panel panel-default">
+		
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control" onkeyup="buscadorPanelCEntidadProductor()" id="inputBusquedaPagosRechazados"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				<h4 id="cantPagosRechazados">Vinculados #if ( $datosNidVinculados.size() > 0 ) ($datosNidVinculados.size()) #end</h4>
+   			 </div>	
+
+			#if ($datosNidVinculados.size() > 0)
+   				<div class="col-xs-2" style=";text-align: center;">   
+					<i class="material-icons altoIcono"  style="color:#095d14;padding-top:15px;" >&#xE02f;</i>
+   				</div>
+   				<div class="panel-body">    
+                   	<div class="row">
+              	 	    <div class="col-xs-10" style="text-align: left;padding-left:30px;padding-right:30px;$centradoVertical" id="caruMayor">
+                  	 	    <div id="micaru" class="owl-carousel owl-theme" style="text-align:center; padding-left:25px;">
+    						   
+    							    #foreach ($datosNidVinculadosIn in $datosNidVinculados)      
+        							    <div id="micaruB$velocityCount"  class="item" style="height:105px; background:#efeeee;border-radius: 3px; border-width: 1px; border-color:#095d14; border-style: solid; box-shadow: 0 0 0px black;">
+        									<h6 id="vinculado$velocityCount" style="height:25px;border-bottom:1px solid; padding-top:4%;padding-bottom:4%;background-color:#095d14;color:#ffffff;"><b>$utilToolScreen.datoVacio(#$datosNidVinculadosIn.get("P_TF_NID_VINC.INB_ESTADO"))</b></h6>
+											<h6 style="margin-top:2%;"  class="datoPolizaRechazada"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($datosNidVinculadosIn.get("P_TF_NID_VINC.INB_USUARIO")))</b></h6>
+        									<h6 style="margin-top:2%;"  class="datoPolizaRechazada"><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($datosNidVinculadosIn.get("P_TF_NID_VINC.GENV_FE_ACTUALIZACION")))</b></h6>
+        									<h6 style="margin-top:2%;"  class="datoPolizaRechazada">Ciclo : <b>$utilToolScreen.datoVacio($datosNidVinculadosIn.get("P_TF_NID_VINC.GEAC_GEAT_CD_TIPO_CICLO"),$utilToolScreen.nombreMayuscula($datosNidVinculadosIn.get("P_TF_NID_VINC.INB_TIPO_CICLO"))," - ")</b></h6>
+        									<br>
+        							    </div>
+    								#end
+        					</div>
+              	 	    </div> 
+              	 	</div> 
+				</div>
+			#else 
+    			#set($concepto = "nid vinculados")
+               	#parse("partials/util/rowVacio.vm")	
+	        #end	
+			
+   		</div>
+	</div>
+
+  	   
+  	   <!-- PANEL B -->
+  	  
+              <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+              <h4 style="color:#00317A;">Historial #if ($datoHistorialNid.size() > 0) ($datoHistorialNid.size()) #end</h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+				<div class="timeline__group" style="z-index:1;max-height:20px;">
+              
+				  	<div>
+    
+						#if ($datoHistorialNid.size() > 0)
+                			#foreach($datoHistorialNidIn in $datoHistorialNid)	
+                               #set ($novedad = $utilToolScreen.datoVacio($datoHistorialNidIn.get("P_TF_LISTA_DET.GEAD_GEAN_CD_TIPO_NOVEDAD"),$utilToolScreen.ucFirst($datoHistorialNidIn.get("P_TF_LISTA_DET.INB_TIPO_NOVEDAD"))," - "))
+							   #set ($orden = $utilToolScreen.datoVacio($datoHistorialNidIn.get("P_TF_LISTA_DET.GEAD_NU_ORDEN")))
+							   #set ($FechaAgenda = $utilToolScreen.formatearFecha($utilToolScreen.datoVacio($datoHistorialNidIn.get("P_TF_LISTA_DET.GEAD_FE_AGENDA"))))
+							   #set ($deribado = $utilToolScreen.datoVacio($datoHistorialNidIn.get("P_TF_LISTA_DET.GEAD_CJDP_CD_DERIVADO"),$utilToolScreen.nombreMayuscula($datoHistorialNidIn.get("P_TF_LISTA_DET.INB_DERIVADO"))," - "))
+							   
+							   #set ($icono = "note")
+							   #set ($numeroCard = $velocityCount)
+                			   #parse("partials/pes/entidades/nid/itemNidHome.vm")	 
+							#end
+					   #else 
+						   #set($concepto = "El siniestro no posee juicios")
+               			   #parse("partials/util/itemTimeLineVacio.vm")	
+
+					   #end										
+   
+					</div>
+            
+				</div>
+	
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+  
+
+				<!-- Modal Sucursal-->
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/sucursalModal.vm")
+     <!-- modal Productores -->
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/productoresModal.vm")
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")

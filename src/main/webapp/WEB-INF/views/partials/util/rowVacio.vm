@@ -1,0 +1,18 @@
+ 
+<!-- mensaje default -->
+<div class="row" style="width:100%;">
+<div class="col-xs-2 col-md-2" style=";text-align: center;">   
+	<i class="material-icons altoIcono"  id="iconoCertificadoDePoliza"  style="color:#39b3d7;padding-top:15px;" >&#xE611;</i>
+</div>
+<div class="col-xs-10 col-md-10" style=";text-align: center;">   
+<div class="panel-body">    
+    <div class="row">
+    	<div class="col-xs-10" style="text-align: left;padding-left:30px;padding-right:30px;padding-top: 30px;padding-bottom: 30px;" id="caruMayor">
+     	  	<div style="text-align:center; padding-left:25px; color:#b3b0b0;">
+    		    No se encontraron $concepto 
+    		</div>
+    	</div> 
+    </div> 
+    </div>
+    </div>
+</div>

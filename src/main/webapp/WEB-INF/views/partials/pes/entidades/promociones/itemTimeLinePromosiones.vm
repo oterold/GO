@@ -1,0 +1,18 @@
+	
+
+
+<div  id="cuadroImgEndoso$indiceLista"  class="cardRelacionPromocion" style="background-color:#ffffff">
+
+  <div class="timeline__post seleccionPanelB" style="margin-bottom:10px;border-left:3px solid #611BBD;padding-bottom:5px">
+  
+						  <div class="timeline__content" style="overflow:hidden;">
+							<i class="material-icons altoIcono"  style="color:#611BBD; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">&#xe7fb;</i>
+								<h6 id="datoPromocion$velocityCount" class="datoCertificadoCarusel">Ramo : <b>$ramo - $ramoDesc </b></h6>
+								<h6 id="datoProducto$velocityCount">Producto : <b>$producto - $productoDesc</b></h6>
+								<h6 id="datoProductor$velocityCount">Productor : <b>$productor</b></h6>
+                         </div>
+  </div> 
+						
+</div>
+		
+	

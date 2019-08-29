@@ -1,0 +1,80 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- POLIZA -->
+            <div class=" col-sm-12 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                        #parse("/partials/util/botonVolverAtras.vm")
+                        <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver menos</a>
+                        <h4 style="text-align:center;color: #ffffff;">Ayuda</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-2" style=";text-align: center;">
+                                <i class="material-icons altoIcono"  style="color:#0b4376;" >help_outline</i>
+                            </div>
+                            <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h5 style="border:none;line-height: 1.3">GO es una apliccaci&oacute;n que fue generada internamente por el &aacute;rea de SISTEMAS, con el fin de convertir a Rector en un sistema amigable, f&aacute;cil de comprender y que sea utilizable por toda la compa&ntilde;&iacute;a.
+                                </h5>
+                                <h5 style="border:none;">Alcance y Beneficios:</h5>
+                                <ul style="padding-top:5px;">
+                                    <li>
+                                        <h6>Abarca el 90% de las pantallas de b&uacute;squedas de Rector.</h6>
+                                    </li>
+                                    <li>
+                                        <h6>+ de 40 pantallas de b&uacute;squeda en 3 tipolog&iacute;as,+ de 4488 combinaciones de b&uacute;squeda posibles. La misma experiencia, busques lo que busques.</h6>
+                                    </li>
+                                    <li>
+                                        <h6>Acceso sin CONTRASE&Ntilde;A, mediante verificaci&oacute;n autom&aacute;tica de usuario.</h6>
+                                    </li>
+                                    <li>
+                                        <h6> Posibilidad de descargar PDF de p&oacute;liza.(PAPEL CERO).</h6>
+                                    </li>
+									<li>
+                                        <h6> Exportaci&oacute;n de resultados a Excel.</h6>
+                                    </li>
+
+									
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="height:300px;">
+                    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                        <h4 id="cantSiniestros">Contenido</h4>
+                    </div>
+				
+				<div class="panel-body">    
+                   	<div class="row">
+        				<div class="col-md-2" style=";text-align: center;" id="panelImagenAyuda">
+        				</div>
+              	 	    <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;overflow-y:auto;" id="contenidoAyuda">
+							 
+						</div>
+					</div>
+				</div>
+				
+                </div>
+				
+            </div>
+            <!-- Panel B -->
+			
+            <div class="col-md-10 col-lg-4" style="width:100%; margin-bottom: 20px;">
+                <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+                    <div class="panel-heading" style=" background-color:white;border-color:white;">
+                        <h4 style="color:#00317A;">Topicos</h4>
+                    </div>
+                    <div class="main-container page__container altoPanelB" >
+                        <div class="timeline__group" style="z-index:1;max-height:20px;">
+                            <div>
+                                #parse("partials/pes/home/ayuda/panelBayuda.vm")	 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

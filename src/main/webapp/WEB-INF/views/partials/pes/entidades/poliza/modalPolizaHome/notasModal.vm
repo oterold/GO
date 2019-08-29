@@ -1,0 +1,28 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="notasPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	      <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control" onkeyup="buscadorPanelModalNotas()" id="inputBusquedaSiniestroModal"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+      	    <h4 id="DATOS_MODAL"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#00317A;" >speaker_notes</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align:left; padding-right:0px; padding-left:0px;">
+	          	 	  <div id="datosModal">
+	          	 	  
+	          	 	  </div>
+              	  </div>
+    			</div>            
+    		  </div>
+    		</div>	

@@ -1,0 +1,457 @@
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		.table-grilla, .thead-grilla, .tbody-grilla, .th-grilla, .td-grilla, .tr-grilla,.td-grilla-primaCertificado,.td-grilla-asociacionesCompromiso,.td-grilla-errorCompromiso,.td-grilla-cronogramaCompromiso,.td-grilla-textoCotizacion,.td-grilla-planesCotizacion,.td-grilla-noImpresionImpresionesHome,.td-grilla-accesoriosCotizacionHome,.td-grilla-archivoImpresionesHome,.td-grilla-componentesModalCotizacionHome,.td-grilla-IiBbCertificadoHome,.td-comprobante,.td-grilla-detalleImpresionHome,.td-grilla-objetosCotizacion,.td-grilla-componentePoliza,.td-grilla-coberturasSiniestroHome,.td-grilla-coberturasCotizacion,.td-grilla-titularesCotizacionHome,.td-grilla-reaseguCotizacion,.td-grilla-reaseguCotizacion,.td-grilla-historiaProductor,.td-grilla-historiaOrganizador,.td-grilla-chequesRechazados, .td-grilla-inhabilitacionSSNProductor,.td-grilla-acreedoresCertificado,.td-grilla-listaBienesCertificado,.td-grilla-textoCertificado,.td-grilla-anexoCotizacion,.td-grilla-benefiricarioCertificado,.td-grilla-ubicacionesCertificado,.td-grilla-alarmaCertificado,.td-grilla-anexoCertificado,.td-grilla-componentesPromocionHome,.td-grilla-tasaPromocionHome,.td-grilla-incRiesgoSiniestroHome,
+		.td-grilla-visitasInspeccion, .td-grilla-documentosInspeccion, .td-grilla-resultadosInspeccion, .td-grilla-coberturaCertificado,.td-grilla-monedaCotizacionHome,.td-grilla-escalamientoWf,.td-grilla-componentesBoletaPagoHome,.td-grilla-imputacionCobranzaHome,.td-grilla-fueraDePautaCotizacion,.td-grilla-valorPromocionHome,.td-grilla-visualizacionesPromociones,.td-grilla-contactoProductorHome{
+			display: block !important;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		.thead-grilla .tr-grilla {
+			position: absolute !important;
+			top: -9999px !important;
+			left: -9999px !important;
+		}
+
+
+.tituloTabla{
+	display:none;
+}
+ .body-grilla {
+      height: 350px; !important;
+    }
+
+
+    .tr-grilla {
+      margin: 0 0 1rem 0 !important;
+    }
+      
+    .tr-grilla:nth-child(odd) {
+      background: #eee;
+    }
+    
+		.td-comprobante,.td-grilla,.td-grilla-primaCertificado,.td-grilla-asociacionesCompromiso,.td-grilla-errorCompromiso,.td-grilla-cronogramaCompromiso,.td-grilla-textoCotizacion,.td-grilla-planesCotizacion,.td-grilla-noImpresionImpresionesHome,.td-grilla-accesoriosCotizacionHome,.td-grilla-archivoImpresionesHome,.td-grilla-componentesModalCotizacionHome,.td-grilla-IiBbCertificadoHome,.td-grilla-detalleImpresionHome,.td-grilla-objetosCotizacion,.td-grilla-componentePoliza,.td-grilla-coberturasSiniestroHome,.td-grilla-coberturasCotizacion,.td-grilla-titularesCotizacionHome,.td-grilla-reaseguCotizacion,.td-grilla-reaseguCotizacion,.td-grilla-historiaProductor,.td-grilla-historiaOrganizador,.td-grilla-chequesRechazados,.td-grilla-inhabilitacionSSNProductor,.td-grilla-acreedoresCertificado,.td-grilla-listaBienesCertificado,.td-grilla-textoCertificado,.td-grilla-anexoCotizacion,.td-grilla-benefiricarioCertificado,.td-grilla-ubicacionesCertificado,.td-grilla-alarmaCertificado,.td-grilla-anexoCertificado,.td-grilla-componentesPromocionHome,.td-grilla-tasaPromocionHome,.td-grilla-incRiesgoSiniestroHome,
+		.td-grilla-visitasInspeccion, .td-grilla-documentosInspeccion, .td-grilla-resultadosInspeccion, .td-grilla-coberturaCertificado,.td-grilla-monedaCotizacionHome,.td-grilla-escalamientoWf,.td-grilla-componentesBoletaPagoHome,.td-grilla-imputacionCobranzaHome,.td-grilla-fueraDePautaCotizacion,.td-grilla-valorPromocionHome,.td-grilla-visualizacionesPromociones,.td-grilla-contactoProductorHome{
+			/* Behave  like a "row" */
+			border: none !important;
+			border-bottom: 1px solid #eee !important;
+			position: relative !important;
+			padding-left: 50% !important;
+		}
+
+		.td-grilla:before,.td-grilla-primaCertificado:before,.td-grilla-asociacionesCompromiso:before,.td-grilla-errorCompromiso:before,.td-grilla-cronogramaCompromiso:before,.td-grilla-textoCotizacion:before,.td-grilla-planesCotizacion:before,.td-grilla-noImpresionImpresionesHome:before,.td-grilla-accesoriosCotizacionHome:before,.td-grilla-archivoImpresionesHome:before,.td-grilla-componentesModalCotizacionHome:before,.td-grilla-IiBbCertificadoHome:before,.td-comprobante:before,.td-grilla-detalleImpresionHome:before,.td-grilla-objetosCotizacion:before,.td-grilla-componentePoliza:before,.td-grilla-coberturasSiniestroHome:before,.td-grilla-coberturasCotizacion:before,.td-grilla-titularesCotizacionHome:before,.td-grilla-reaseguCotizacion:before,.td-grilla-reaseguCotizacion:before,.td-grilla-historiaProductor:before,.td-grilla-historiaOrganizador:before,.td-grilla-chequesRechazados:before,.td-grilla-inhabilitacionSSNProductor:before,.td-grilla-acreedoresCertificado:before,.td-grilla-listaBienesCertificado:before,.td-grilla-textoCertificado:before,.td-grilla-anexoCotizacion:before,.td-grilla-benefiricarioCertificado:before,.td-grilla-ubicacionesCertificado:before,.td-grilla-alarmaCertificado:before,.td-grilla-anexoCertificado:before,.td-grilla-componentesPromocionHome:before,.td-grilla-tasaPromocionHome:before,.td-grilla-incRiesgoSiniestroHome:before,
+		.td-grilla-visitasInspeccion:before, .td-grilla-documentosInspeccion:before, .td-grilla-resultadosInspeccion:before, .td-grilla-coberturaCertificado:before,.td-grilla-monedaCotizacionHome:before,.td-grilla-escalamientoWf:before, .td-grilla-componentesBoletaPagoHome:before, .td-grilla-imputacionCobranzaHome:before,.td-grilla-fueraDePautaCotizacion:before,.td-grilla-valorPromocionHome:before,.td-grilla-visualizacionesPromociones:before,.td-grilla-contactoProductorHome:before{
+			/* Now like a table header */
+			position: absolute !important;
+			/* Top/left values mimic padding */
+			top: 0 !important;
+			left: 6px !important;
+			width: 45% !important;
+			padding-right: 10px !important;
+			white-space: nowrap !important;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		
+		/* se setean en los componentes */
+		/*
+		.td-grilla:nth-of-type(1):before { content: "Componente"; padding-top:6px; font-weight: bold;}
+		.td-grilla:nth-of-type(2):before { content: "Tasa";padding-top:6px;; font-weight: bold;}
+		.td-grilla:nth-of-type(3):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+			*/
+			
+					.td-grilla-monedaCotizacionHome:nth-of-type(1):before { content: "Fecha"; padding-top:6px; font-weight: bold;}
+					.td-grilla-monedaCotizacionHome:nth-of-type(2):before { content: "Compra"; padding-top:6px; font-weight: bold;}
+					.td-grilla-monedaCotizacionHome:nth-of-type(3):before { content: "Venta"; padding-top:6px; font-weight: bold;}
+			
+			
+						/* se setean en la cobertura */
+		.td-grilla-coberturaCertificado:nth-of-type(1):before { content: "Plan"; padding-top:6px; font-weight: bold;}
+		.td-grilla-coberturaCertificado:nth-of-type(2):before { content: "Coberturas";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturaCertificado:nth-of-type(3):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturaCertificado:nth-of-type(4):before { content: "Suma Aseg."; padding-top:6px; font-weight: bold;}
+		.td-grilla-coberturaCertificado:nth-of-type(5):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+			/* se setean en la prima */
+		.td-grilla-primaCertificado:nth-of-type(1):before { content: "Plan"; padding-top:6px; font-weight: bold;}
+		.td-grilla-primaCertificado:nth-of-type(2):before { content: "Coberturas";padding-top:6px;; font-weight: bold;}
+		.td-grilla-primaCertificado:nth-of-type(3):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+		.td-grilla-primaCertificado:nth-of-type(4):before { content: "Suma Aseg."; padding-top:6px; font-weight: bold;}
+		.td-grilla-primaCertificado:nth-of-type(5):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+		.td-grilla-primaCertificado:nth-of-type(6):before { content: "Variacion";padding-top:6px;; font-weight: bold;}
+		/* se setean en las asociacions del compromiso  */
+		.td-grilla-asociacionesCompromiso:nth-of-type(1):before { content: "Liqui.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-asociacionesCompromiso:nth-of-type(2):before { content: "Nota";padding-top:6px;; font-weight: bold;}
+		.td-grilla-asociacionesCompromiso:nth-of-type(3):before { content: "Ingreso";padding-top:6px;; font-weight: bold;}
+		.td-grilla-asociacionesCompromiso:nth-of-type(4):before { content: "Secuencia";padding-top:6px;; font-weight: bold;}
+		.td-grilla-asociacionesCompromiso:nth-of-type(5):before { content: "Cancelado";padding-top:6px;; font-weight: bold;}
+		
+		/* se setean en los errores del compromiso */
+		.td-grilla-errorCompromiso:nth-of-type(1):before { content: "Orden.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-errorCompromiso:nth-of-type(2):before { content: "Dep";padding-top:6px;; font-weight: bold;}
+		.td-grilla-errorCompromiso:nth-of-type(3):before { content: "Secuencia";padding-top:6px;; font-weight: bold;}
+		.td-grilla-errorCompromiso:nth-of-type(4):before { content: "Compromiso";padding-top:6px;; font-weight: bold;}
+		.td-grilla-errorCompromiso:nth-of-type(5):before { content: "Error";padding-top:6px;; font-weight: bold;}
+	
+	
+		/* se setean en los errores del cronograma */
+		.td-grilla-cronogramaCompromiso:nth-of-type(1):before { content: "Fe. Cambio";padding-top:6px;; font-weight: bold;}
+		.td-grilla-cronogramaCompromiso:nth-of-type(2):before { content: "Importe";padding-top:6px;; font-weight: bold;}
+		.td-grilla-cronogramaCompromiso:nth-of-type(3):before { content: "Cambio";padding-top:6px;; font-weight: bold;}
+		.td-grilla-cronogramaCompromiso:nth-of-type(4):before { content: "Compromiso";padding-top:6px;; font-weight: bold;}
+		.td-grilla-cronogramaCompromiso:nth-of-type(5):before { content: "Distribuci&oacute;n";padding-top:6px;; font-weight: bold;}
+		.td-grilla-cronogramaCompromiso:nth-of-type(6):before { content: "mon";padding-top:6px;; font-weight: bold;}
+		/* se setean los textos dentor de la pantalla cotizacion*/
+		
+		.td-grilla-textoCotizacion:nth-of-type(1):before { content: "Consecutivo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(2):before { content: "Texto";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(3):before { content: "Breve";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(4):before { content: "Impresion";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(5):before { content: "Desde";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(6):before { content: "Hasta";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(7):before { content: "Renovacion";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(8):before { content: "Renueva";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCotizacion:nth-of-type(9):before { content: "Texto";padding-top:6px;; font-weight: bold;}
+		
+		/* se setean los planes dentor de la pantalla cotizacion*/
+		
+		.td-grilla-planesCotizacion:nth-of-type(1):before { content: "Tipo Plan";padding-top:6px;; font-weight: bold;}
+		.td-grilla-planesCotizacion:nth-of-type(2):before { content: "Valor";padding-top:6px;; font-weight: bold;}
+		.td-grilla-planesCotizacion:nth-of-type(3):before { content: "Suma Aseg.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-planesCotizacion:nth-of-type(4):before { content: "Caucion'";padding-top:6px;; font-weight: bold;}
+		
+		
+		
+		
+		
+		
+		/* se setean las no impresiones dentor de la pantalla impresiones*/
+		.td-grilla-noImpresionImpresionesHome:nth-of-type(1):before { content: "Endoso";padding-top:6px;; font-weight: bold;}
+		.td-grilla-noImpresionImpresionesHome:nth-of-type(2):before { content: "Actualizacion";padding-top:6px;; font-weight: bold;}
+		.td-grilla-noImpresionImpresionesHome:nth-of-type(3):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+		
+		/* se setean las accesorios dentor de la pantalla cotizaciones*/
+		.td-grilla-accesoriosCotizacionHome:nth-of-type(1):before { content: "Cod.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-accesoriosCotizacionHome:nth-of-type(2):before { content: "Accesorio";padding-top:6px;; font-weight: bold;}
+		.td-grilla-accesoriosCotizacionHome:nth-of-type(3):before { content: "Valor";padding-top:6px;; font-weight: bold;}
+		
+		
+		/* se setean los archivos de impresion dentor de la pantalla impresiones*/
+		.td-grilla-archivoImpresionesHome:nth-of-type(1):before { content: "Fecha";padding-top:6px;; font-weight: bold;}
+		.td-grilla-archivoImpresionesHome:nth-of-type(2):before { content: "Movimiento";padding-top:6px;; font-weight: bold;}
+		.td-grilla-archivoImpresionesHome:nth-of-type(3):before { content: "Remito";padding-top:6px;; font-weight: bold;}
+		.td-grilla-archivoImpresionesHome:nth-of-type(4):before { content: "Rechazo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-archivoImpresionesHome:nth-of-type(5):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+		
+		
+		/* se setean los componentes de la pantalla cotizacion panel C MODAL*/
+		.td-grilla-componentesModalCotizacionHome:nth-of-type(1):before { content: "Componente";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesModalCotizacionHome:nth-of-type(2):before { content: "Tasa";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesModalCotizacionHome:nth-of-type(3):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+		
+		
+		/* se setean los IIBB de la pantalla certificado MODAL*/
+		.td-grilla-IiBbCertificadoHome:nth-of-type(1):before { content: "Concepto";padding-top:6px;; font-weight: bold;}
+		.td-grilla-IiBbCertificadoHome:nth-of-type(2):before { content: "Tasa";padding-top:6px;; font-weight: bold;}
+		.td-grilla-IiBbCertificadoHome:nth-of-type(3):before { content: "Importe";padding-top:6px;; font-weight: bold;}
+		
+		/* comprobante remesa*/
+		.td-comprobante:nth-of-type(1):before { content: "Comprobante";padding-top:6px;; font-weight: bold;}
+		.td-comprobante:nth-of-type(2):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+		.td-comprobante:nth-of-type(3):before { content: "Monto";padding-top:6px;; font-weight: bold;}
+		.td-comprobante:nth-of-type(4):before { content: "Fecha";padding-top:6px;; font-weight: bold;}
+		
+		/* detalle impresiones*/
+		.td-grilla-detalleImpresionHome:nth-of-type(1):before { content: "Fecha";padding-top:6px;; font-weight: bold;}
+		.td-grilla-detalleImpresionHome:nth-of-type(2):before { content: "Movimiento";padding-top:6px;; font-weight: bold;}
+		.td-grilla-detalleImpresionHome:nth-of-type(3):before { content: "Remito";padding-top:6px;; font-weight: bold;}
+		.td-grilla-detalleImpresionHome:nth-of-type(4):before { content: "Rechazo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-detalleImpresionHome:nth-of-type(5):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+		
+		/*modal objetos cotizacion */
+		
+		.td-grilla-objetosCotizacion:nth-of-type(1):before { content: "Objeto";padding-top:6px;; font-weight: bold;}
+		.td-grilla-objetosCotizacion:nth-of-type(2):before { content: "Descripcion";padding-top:6px;; font-weight: bold;}
+		.td-grilla-objetosCotizacion:nth-of-type(3):before { content: "Valor";padding-top:6px;; font-weight: bold;}
+		.td-grilla-objetosCotizacion:nth-of-type(4):before { content: "Unidades";padding-top:6px;; font-weight: bold;}
+		.td-grilla-objetosCotizacion:nth-of-type(5):before { content: "Marca";padding-top:6px;; font-weight: bold;}
+		.td-grilla-objetosCotizacion:nth-of-type(6):before { content: "Serie";padding-top:6px;; font-weight: bold;}
+		.td-grilla-objetosCotizacion:nth-of-type(7):before { content: "ValorTotal";padding-top:6px;; font-weight: bold;}
+		/* modal componente Poliza */
+		.td-grilla-componentePoliza:nth-of-type(1):before { content: "Componente";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentePoliza:nth-of-type(2):before { content: "Tasa";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentePoliza:nth-of-type(3):before { content: "Importe";padding-top:6px;; font-weight: bold;}
+		
+		
+		/*modal cobertura siniestro */
+		.td-grilla-coberturasSiniestroHome:nth-of-type(1):before { content: "Hecho Gen.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasSiniestroHome:nth-of-type(2):before { content: "Cobertura";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasSiniestroHome:nth-of-type(3):before { content: "Fe. Act.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasSiniestroHome:nth-of-type(4):before { content: "Fe. Prescrip.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasSiniestroHome:nth-of-type(5):before { content: "Franquicia";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasSiniestroHome:nth-of-type(6):before { content: "Reserva";padding-top:6px;; font-weight: bold;}
+
+
+/* coberturas cotizacion */
+		.td-grilla-coberturasCotizacion:nth-of-type(1):before { content: "Cobertura";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasCotizacion:nth-of-type(2):before { content: "Tit. Elemento";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasCotizacion:nth-of-type(3):before { content: "Tit. Importe";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasCotizacion:nth-of-type(4):before { content: "Tasa";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasCotizacion:nth-of-type(5):before { content: "Prima";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasCotizacion:nth-of-type(6):before { content: "% Franquicia";padding-top:6px;; font-weight: bold;}
+		.td-grilla-coberturasCotizacion:nth-of-type(7):before { content: "Mon. Dedu.";padding-top:6px;; font-weight: bold;}
+		
+		
+		/*titulares cotizacion */
+		
+	.td-grilla-titularesCotizacionHome:nth-of-type(1):before { content: "Persona";padding-top:6px;; font-weight: bold;}
+	.td-grilla-titularesCotizacionHome:nth-of-type(2):before { content: "Nombre";padding-top:6px;; font-weight: bold;}
+	.td-grilla-titularesCotizacionHome:nth-of-type(3):before { content: "Tipo Titular";padding-top:6px;; font-weight: bold;}
+		
+		
+		/*reaseguro cotizacion */
+		
+		.td-grilla-reaseguCotizacion:nth-of-type(1):before { content: "Cobertura";padding-top:6px;; font-weight: bold;}
+		.td-grilla-reaseguCotizacion:nth-of-type(2):before { content: "Suma Aseg.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-reaseguCotizacion:nth-of-type(3):before { content: "Mt. Prima";padding-top:6px;; font-weight: bold;}
+		
+		
+	/* anexo cotiaciones */
+	.td-grilla-anexoCotizacion:nth-of-type(1):before { content: "Cod.";padding-top:6px;; font-weight: bold;}
+	.td-grilla-anexoCotizacion:nth-of-type(2):before { content: "Descrip.";padding-top:6px;; font-weight: bold;}
+	.td-grilla-anexoCotizacion:nth-of-type(3):before { content: "Exclusion";padding-top:6px;; font-weight: bold;}
+		
+	
+	/* historia productor*/
+	.td-grilla-historiaProductor:nth-of-type(1):before { content: "Productor";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaProductor:nth-of-type(2):before { content: "Agencia";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaProductor:nth-of-type(3):before { content: "Suc. Cabecera";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaProductor:nth-of-type(4):before { content: "Convenio";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaProductor:nth-of-type(5):before { content: "Esquema";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaProductor:nth-of-type(6):before { content: "Categoria";padding-top:6px;; font-weight: bold;}
+	
+	/* historia organizador*/
+	.td-grilla-historiaOrganizador:nth-of-type(1):before { content: "Organizador";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaOrganizador:nth-of-type(2):before { content: "Fecha Alta";padding-top:6px;; font-weight: bold;}
+		.td-grilla-historiaOrganizador:nth-of-type(3):before { content: "Fecha Baja";padding-top:6px;; font-weight: bold;}
+	
+	/* cheques rechazados*/
+	.td-grilla-chequesRechazados:nth-of-type(1):before { content: "Remesa";padding-top:6px;; font-weight: bold;}
+		.td-grilla-chequesRechazados:nth-of-type(2):before { content: "Nro Cheque";padding-top:6px;; font-weight: bold;}
+		.td-grilla-chequesRechazados:nth-of-type(3):before { content: "F. Rechazo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-chequesRechazados:nth-of-type(4):before { content: "Moneda";padding-top:6px;; font-weight: bold;}
+		.td-grilla-chequesRechazados:nth-of-type(5):before { content: "F. Proceso";padding-top:6px;; font-weight: bold;}
+		.td-grilla-chequesRechazados:nth-of-type(6):before { content: "F. Importe";padding-top:6px;; font-weight: bold;}
+		
+	/* inhabilitaciones ssn*/
+		.td-grilla-inhabilitacionSSNProductor:nth-of-type(1):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+		.td-grilla-inhabilitacionSSNProductor:nth-of-type(2):before { content: "Orden";padding-top:6px;; font-weight: bold;}
+		.td-grilla-inhabilitacionSSNProductor:nth-of-type(3):before { content: "F. desde";padding-top:6px;; font-weight: bold;}
+		.td-grilla-inhabilitacionSSNProductor:nth-of-type(4):before { content: "F. hasta";padding-top:6px;; font-weight: bold;}
+		.td-grilla-inhabilitacionSSNProductor:nth-of-type(5):before { content: "F. Actualiz.";padding-top:6px;; font-weight: bold;}
+	
+	/* anexo acreedores */
+	.td-grilla-acreedoresCertificado:nth-of-type(1):before { content: "Acreedor";padding-top:6px;; font-weight: bold;}
+	.td-grilla-acreedoresCertificado:nth-of-type(2):before { content: "Objeto";padding-top:6px;; font-weight: bold;}
+	.td-grilla-acreedoresCertificado:nth-of-type(3):before { content: "Tipo.";padding-top:6px;; font-weight: bold;}
+	.td-grilla-acreedoresCertificado:nth-of-type(4):before { content: "Participacion.";padding-top:6px;; font-weight: bold;}
+	.td-grilla-acreedoresCertificado:nth-of-type(5):before { content: "Exclusion";padding-top:6px;; font-weight: bold;}
+
+	
+	/* anexo acreedores */
+	.td-grilla-listaBienesCertificado:nth-of-type(1):before { content: "Bien";padding-top:6px;; font-weight: bold;}
+	.td-grilla-listaBienesCertificado:nth-of-type(2):before { content: "Descripcion";padding-top:6px;; font-weight: bold;}
+	.td-grilla-listaBienesCertificado:nth-of-type(3):before { content: "Cantidad";padding-top:6px;; font-weight: bold;}
+	.td-grilla-listaBienesCertificado:nth-of-type(4):before { content: "Marca";padding-top:6px;; font-weight: bold;}
+	.td-grilla-listaBienesCertificado:nth-of-type(5):before { content: "Serial";padding-top:6px;; font-weight: bold;}
+	.td-grilla-listaBienesCertificado:nth-of-type(6):before { content: "Valor";padding-top:6px;; font-weight: bold;}
+	
+	/* texto certificado */
+		.td-grilla-textoCertificado:nth-of-type(1):before { content: "Texto";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCertificado:nth-of-type(2):before { content: "Desde";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCertificado:nth-of-type(3):before { content: "Hasta";padding-top:6px;; font-weight: bold;}
+		.td-grilla-textoCertificado:nth-of-type(4):before { content: "Desc.";padding-top:6px;; font-weight: bold;}
+	
+	
+	/* anexos certificado */
+	
+	
+	.td-grilla-anexoCertificado:nth-of-type(1):before { content: "Cod";padding-top:6px;; font-weight: bold;}
+	.td-grilla-anexoCertificado:nth-of-type(2):before { content: "Descrip.";padding-top:6px;; font-weight: bold;}
+
+	
+	
+	/*beneficiario certificado */
+
+			.td-grilla-benefiricarioCertificado:nth-of-type(1):before { content: "Doc.";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(2):before { content: "Nombre";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(3):before { content: "Paren";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(4):before { content: "Part.";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(5):before { content: "Inclusion.";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(6):before { content: "Nacimiento";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(7):before { content: "Exlusion";padding-top:6px;; font-weight: bold;}
+			.td-grilla-benefiricarioCertificado:nth-of-type(8):before { content: "Obs";padding-top:6px;; font-weight: bold;}
+		
+		
+		
+	/*ubicaciones certificado */
+	
+		
+	
+			.td-grilla-ubicacionesCertificado:nth-of-type(1):before { content: "Fe. Efect.";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(2):before { content: "Calle";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(3):before { content: "Numero";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(4):before { content: "Piso";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(5):before { content: "Depto.";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(6):before { content: "Tel";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(7):before { content: "Fax";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(8):before { content: "C.P";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(9):before { content: "Localidad";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(10):before { content: "Municipio";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(11):before { content: "Provincia";padding-top:6px;; font-weight: bold;}
+			.td-grilla-ubicacionesCertificado:nth-of-type(12):before { content: "Pais";padding-top:6px;; font-weight: bold;}
+		
+		
+			/*alarma certificado */
+			
+			
+				.td-grilla-alarmaCertificado:nth-of-type(1):before { content: "Transac.";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(2):before { content: "Prestador";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(3):before { content: "Iden.";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(4):before { content: "Proceso";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(5):before { content: "Fe. Proceso";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(6):before { content: "Mov.";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(7):before { content: "Estado";padding-top:6px;; font-weight: bold;}
+				.td-grilla-alarmaCertificado:nth-of-type(8):before { content: "Instalacion";padding-top:6px;; font-weight: bold;}
+
+			
+			
+			/*componente promocion home */
+			
+			
+		.td-grilla-componentesPromocionHome:nth-of-type(1):before { content: "ID";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(2):before { content: "FechaD";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(3):before { content: "FechaH";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(4):before { content: "Campo1";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(5):before { content: "Campo2";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(6):before { content: "Campo3";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(7):before { content: "Campo4";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(8):before { content: "Importe";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesPromocionHome:nth-of-type(9):before { content: "Tasa";padding-top:6px;; font-weight: bold;}
+		
+		
+			/*tasa promocion home */
+		.td-grilla-tasaPromocionHome:nth-of-type(1):before { content: "Fecha";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(2):before { content: "Baja";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(3):before { content: "Pto";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(4):before { content: "Cob";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(5):before { content: "Campo1";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(6):before { content: "Campo2";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(7):before { content: "Campo3";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(8):before { content: "Campo4";padding-top:6px;; font-weight: bold;}
+		.td-grilla-tasaPromocionHome:nth-of-type(9):before { content: "Coeficiente";padding-top:6px;; font-weight: bold;}
+			
+			
+			
+			/*tasa inc Riesgo siniestroHome */
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(1):before { content: "";padding-top:6px;; font-weight: bold;}
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(2):before { content: "Instancia";padding-top:6px;; font-weight: bold;}
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(3):before { content: "Tercero";padding-top:6px;; font-weight: bold;}
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(4):before { content: "Indicador";padding-top:6px;; font-weight: bold;}
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(5):before { content: "Coment.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(6):before { content: "Modif.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-incRiesgoSiniestroHome:nth-of-type(7):before { content: "Puntaje";padding-top:6px;; font-weight: bold;}
+			
+		/*visitas inspeccion*/
+		.td-grilla-visitasInspeccion:nth-of-type(1):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+		.td-grilla-visitasInspeccion:nth-of-type(2):before { content: "Resutlado";padding-top:6px;; font-weight: bold;}
+		.td-grilla-visitasInspeccion:nth-of-type(3):before { content: "Fecha";padding-top:6px;; font-weight: bold;}
+		.td-grilla-visitasInspeccion:nth-of-type(4):before { content: "Horario";padding-top:6px;; font-weight: bold;}
+		
+		/*documentos inspeccion*/
+		.td-grilla-documentosInspeccion:nth-of-type(1):before { content: "Orden";padding-top:6px;; font-weight: bold;}
+		.td-grilla-documentosInspeccion:nth-of-type(2):before { content: "Tipo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-documentosInspeccion:nth-of-type(3):before { content: "Descr.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-documentosInspeccion:nth-of-type(4):before { content: "Due\00F1o";padding-top:6px;; font-weight: bold;}
+		.td-grilla-documentosInspeccion:nth-of-type(5):before { content: "Fecha";padding-top:6px;; font-weight: bold;}
+		
+		/*resultados inspeccion*/
+		.td-grilla-resultadosInspeccion:nth-of-type(1):before { content: "Dato";padding-top:6px;; font-weight: bold;}
+		.td-grilla-resultadosInspeccion:nth-of-type(2):before { content: "Descr.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-resultadosInspeccion:nth-of-type(3):before { content: "% Val.";padding-top:6px;; font-weight: bold;}
+		.td-grilla-resultadosInspeccion:nth-of-type(4):before { content: "Monto Val.";padding-top:6px;; font-weight: bold;}
+		
+		
+		/*resultados wf escalamiento*/
+		.td-grilla-escalamientoWf:nth-of-type(1):before { content: "Tiempo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-escalamientoWf:nth-of-type(2):before { content: "Finalizacion";padding-top:6px;; font-weight: bold;}
+		.td-grilla-escalamientoWf:nth-of-type(3):before { content: "Unidad";padding-top:6px;; font-weight: bold;}
+		.td-grilla-escalamientoWf:nth-of-type(4):before { content: "Escalamiento";padding-top:6px;; font-weight: bold;}
+		
+		/*boletas de pago*/
+		.td-grilla-componentesBoletaPagoHome:nth-of-type(1):before { content: "Fecha Saldo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesBoletaPagoHome:nth-of-type(2):before { content: "Saldo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-componentesBoletaPagoHome:nth-of-type(3):before { content: "BP";padding-top:6px;; font-weight: bold;}
+		
+		
+			/*boletas de pago*/
+		.td-grilla-imputacionCobranzaHome:nth-of-type(1):before { content: "Preliquidacion";padding-top:6px;; font-weight: bold;}
+		.td-grilla-imputacionCobranzaHome:nth-of-type(2):before { content: "Pago";padding-top:6px;; font-weight: bold;}
+		.td-grilla-imputacionCobranzaHome:nth-of-type(3):before { content: "Monto";padding-top:6px;; font-weight: bold;}
+		.td-grilla-imputacionCobranzaHome:nth-of-type(4):before { content: "Codigo";padding-top:6px;; font-weight: bold;}
+		.td-grilla-imputacionCobranzaHome:nth-of-type(5):before { content: "Origen";padding-top:6px;; font-weight: bold;}
+		
+	
+	
+		/* fuera de pauta cotizacion */
+	
+			.td-grilla-fueraDePautaCotizacion:nth-of-type(1):before { content: "Motivo";padding-top:6px;; font-weight: bold;}
+			.td-grilla-fueraDePautaCotizacion:nth-of-type(2):before { content: "Nivel";padding-top:6px;; font-weight: bold;}
+			.td-grilla-fueraDePautaCotizacion:nth-of-type(3):before { content: "Aprobado";padding-top:6px;; font-weight: bold;}
+			.td-grilla-fueraDePautaCotizacion:nth-of-type(4):before { content: "Fp";padding-top:6px;; font-weight: bold;}
+			.td-grilla-fueraDePautaCotizacion:nth-of-type(5):before { content: "Usuario";padding-top:6px;; font-weight: bold;}
+			.td-grilla-fueraDePautaCotizacion:nth-of-type(6):before { content: "Act";padding-top:6px;; font-weight: bold;}
+	
+	
+		/* fuera de pauta cotizacion */
+	
+			.td-grilla-valorPromocionHome:nth-of-type(1):before { content: "Componente";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(2):before { content: "Efectiva";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(3):before { content: "Hasta";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(4):before { content: "Dato1";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(5):before { content: "Dato2";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(6):before { content: "Dato3";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(7):before { content: "Dato4";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(8):before { content: "Impuesto";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(9):before { content: "Formula";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(10):before { content: "Usr";padding-top:6px;; font-weight: bold;}
+			.td-grilla-valorPromocionHome:nth-of-type(11):before { content: "Min. Imponible";padding-top:6px;; font-weight: bold;}
+	
+	
+	
+	
+	* fuera de pauta cotizacion */
+	
+			.td-grilla-visualizacionesPromociones:nth-of-type(1):before { content: "Ramo";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(2):before { content: "Producto";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(3):before { content: "Visualizacion";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(4):before { content: "Dato";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(5):before { content: "Bien";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(6):before { content: "Tabla";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(7):before { content: "Visible";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(8):before { content: "User";padding-top:6px;; font-weight: bold;}
+			.td-grilla-visualizacionesPromociones:nth-of-type(9):before { content: "Fe. Act";padding-top:6px;; font-weight: bold;}
+	
+	
+	/*contacto prod */
+	
+	.td-grilla-contactoProductorHome:nth-of-type(1):before { content: "Tipo de Contacto";padding-top:6px;; font-weight: bold;}
+	.td-grilla-contactoProductorHome:nth-of-type(2):before { content: "Descripcion";padding-top:6px;; font-weight: bold;}

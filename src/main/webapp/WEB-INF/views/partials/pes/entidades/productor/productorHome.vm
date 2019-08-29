@@ -1,0 +1,595 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- POLIZA -->
+			
+			
+
+            <div class=" col-sm-12 col-md-8">
+                #foreach($productorIn in $productorDato)
+					<input type="hidden" value="$productorIn.get("P_TF_PROD.CAPD_CABU_NU_PERSONA")" id="valorNumeroPersonaProd" />
+                    <input type="hidden" value="$productorIn.get("P_TF_PROD.CAPD_CD_PRODUCTOR")" id="valorProductor" />
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                            #parse("/partials/util/botonVolverAtras.vm")
+                            <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver menos</a>
+                            <h4 style="text-align:center;color: #ffffff;">Productor #$productorIn.get("P_TF_PROD.CAPD_CD_PRODUCTOR")</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class=" row">
+                                <div class="col-md-2" style=";text-align: center;">
+                                    <i class="material-icons altoIcono"  style="color:#611BBD;" >&#xe7fb;</i>
+                                </div>
+                                <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+                                    <!-- pag principal -->
+                                    <div class="row" id="panela" style="display:none;">
+                                        <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                            <table  style= "width:100%;">
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;" >
+                                                        <h6>Pas&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;width:60%;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.CAPD_NM_PRODUCTOR")))</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;" >
+                                                        <h6>Dni&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;width:60%;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.CAPD_TP_DOCUMENTO")),$productorIn.get("P_TF_PROD.CAPD_NU_DOCUMENTO"),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                                        <h6>Cuit&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_NU_CUIT"))</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Categoria&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.CAPD_CD_CATEGORIA_PRODUCTOR")),$utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.INB_CD_CATEGORIA_PRODUCTOR")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" style="padding-top:5px;">
+                                                        <h6>Sucursal&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CASU_CD_AGENCIA"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_AGENCIA")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                            <table  style= "width:100%;">
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                                        <h6>Sucursal&nbsp;BPBA&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px; width:60%;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAUT_CD_LUGAR"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_LUGAR")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                                        <h6>Cod&nbsp;Persona&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CABU_NU_PERSONA"))</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Amba&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CD_ID_AMBA"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_ID_AMBA")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Ejecutivo&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAEC_CD_EJECUTIVO"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_EJECUTIVO")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Perfil&nbsp;PAS&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CD_PERFIL_PAS"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_PERFIL_PAS")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- pag oculta -->
+                                    <div class="row" id="panelb">
+                                        <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                            <table  style= "width:100%;">
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;" >
+                                                        <h6>Pas&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;width:60%;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.CAPD_NM_PRODUCTOR")))</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;" >
+                                                        <h6>Dni&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;width:60%;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.CAPD_TP_DOCUMENTO")),$productorIn.get("P_TF_PROD.CAPD_NU_DOCUMENTO"),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                                        <h6>Cuit&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_NU_CUIT"))</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Categoria&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.CAPD_CD_CATEGORIA_PRODUCTOR")),$utilToolScreen.ucFirst($productorIn.get("P_TF_PROD.INB_CD_CATEGORIA_PRODUCTOR")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" style="padding-top:5px;">
+                                                        <h6>Agencia&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CASU_CD_AGENCIA"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_AGENCIA")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                            <table  style= "width:100%;">
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                                        <h6>Sucursal&nbsp;BPBA&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px; width:60%;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAUT_CD_LUGAR"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_LUGAR")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                                        <h6>Cod&nbsp;Persona&nbsp;:</h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CABU_NU_PERSONA"))</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Amba&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CD_ID_AMBA"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_ID_AMBA")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Ejecutivo&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAEC_CD_EJECUTIVO"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_EJECUTIVO")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                                        <h6>Perfil&nbsp;PAS&nbsp;:</h6>
+                                                    </td>
+                                                    <td valign="top" style="padding-top:5px;">
+                                                        <h6>
+                                                            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CD_PERFIL_PAS"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_PERFIL_PAS")),"-")</b>
+                                                        </h6>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                                            <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                                <table  style= "width:100%;">
+                                                    <tr>
+                                                        <td align="right"  valign="top" style="padding-top:5px;">
+                                                            <h6>Organizador&nbsp;:</h6>
+                                                        </td>
+                                                        <td style="padding-top:5px;width:60%;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_CAPD_CD_ORGANIZADOR"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_CD_ORGANIZADOR")),"-")</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"  valign="top" style="padding-top:5px;">
+                                                            <h6>Beneficiario&nbsp;:</h6>
+                                                        </td>
+                                                        <td style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.CAPD_NM_BENEFICIARIO_CHEQ")))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" valign="top" style="padding-top:5px;">
+                                                            <h6>Anulaci&oacute;n&nbsp;x&nbsp;Corrida:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_IN_ANULACION_CORRIDA"))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" style="padding-top:5px;">
+                                                            <h6>Tipo&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_IN_TIPO"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_IN_TIPO")),"-")</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" style="padding-top:5px;">
+                                                            <h6>Casillero&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_NU_CASILLERO")))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" style="padding-top:5px;">
+                                                            <h6>Adh.&nbsp;P&oacute;liza&nbsp;Digital&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_PROT_ADHE_POL"))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" style="padding-top:5px;">
+                                                            <h6>Nro.&nbsp;Afiliado&nbsp;OSSEG&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6 id="INFO_P_TF_OSSEG_CAPD_NU_AFIL_OSSEG">
+                                                                <b></b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" style="padding-top:5px;">
+                                                            <h6>Motivo&nbsp;Baja&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6 id="INFO_CAPD_CD_MOTIVO_BAJA"></h6>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                                <table style= "width:100%;">
+                                                    <tr>
+                                                        <td align="right"  valign="top" style="padding-top:5px;">
+                                                            <h6>Mail&nbsp;:</h6>
+                                                        </td>
+                                                        <td  style="padding-top:0px;width:60%;word-break: break-all;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_EMAIL"))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"  valign="top" style="padding-top:5px;">
+                                                            <h6>Fecha&nbsp;Alta&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($productorIn.get("P_TF_PROD.CAPD_FE_ALTA")))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td  align="right" valign="top" style="padding-top:5px;">
+                                                            <h6>Fecha&nbsp;Baja&nbsp;:</h6>
+                                                        </td>
+                                                        <td valign="top" style="padding-top:5px;">
+                                                            <h6>
+                                                                <b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($productorIn.get("P_TF_PROD.CAPD_FE_BAJA")))</b>
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <tr>
+                                                            <td  align="right" style="padding-top:5px;">
+                                                                <h6>Estado&nbsp;:</h6>
+                                                            </td>
+                                                            <td valign="top" style="padding-top:5px;">
+                                                                <h6>
+                                                                    <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_ST_PRODUCTOR"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_ST_PRODUCTOR")),"-")</b>
+                                                                </h6>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td  align="right" style="padding-top:5px;">
+                                                                <h6>Mensaje&nbsp;:</h6>
+                                                            </td>
+                                                            <td valign="top" style="padding-top:5px;width:60%;word-break: break-all;"">
+                                                                <h6>
+                                                                    <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_PROT_CD_MENSAJE"),$utilToolScreen.nombreMayuscula($productorIn.get("P_TF_PROD.INB_PROT_CD_MENSAJE"))," - ")</b>
+                                                                </h6>
+</td>
+</tr>
+<tr>
+    <td  align="right" style="padding-top:5px;">
+        <h6>Se&nbsp;envia&nbsp;Mail&nbsp;:</h6>
+    </td>
+    <td valign="top" style="padding-top:5px;">
+        <h6>
+            <b>$utilToolScreen.datoVacio($productorIn.get("P_TF_PROD.CAPD_PROT_IN_ENVIAR"))</b>
+        </h6>
+    </td>
+</tr>
+<tr>
+    <td  align="right" style="padding-top:5px;">
+        <h6>%&nbsp;Aporte&nbsp;OSSEG&nbsp;:</h6>
+    </td>
+    <td valign="top" style="padding-top:5px;">
+        <h6 id="INFO_P_TF_OSSEG_CAPD_NU_PORC_OSSEG">
+            <b></b>
+        </h6>
+    </td>
+</tr>
+</table>
+<br>
+    <br>
+</div>
+</div>
+<!-- aca termina -->
+</div>
+</div>
+<div class="row" style="margin-top:20px;">
+    <div class="col-lg-12" style="text-align: center;">
+
+		<a class="btn btn-panela-productor  btn-social btn-bitbucket material-icons movimientosBotonHoover"  data-toggle="tooltip" title="Datos de Contacto"  data-placement="bottom" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e" onclick="datosContactoProductor();">person</a>
+
+		
+        #if ($tienePermiso == 'SI')
+            <a class="btn btn-panela-productor  btn-social btn-bitbucket material-icons movimientosBotonHoover"  data-toggle="tooltip" title="Cuenta Corriente"  data-placement="bottom" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e" onclick="redireCCProductorHome();">account_balance</a>
+			<a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover mostrarBotonProductor"  data-placement="bottom" data-toggle="tooltip" title="Forma de pago" onclick="verDatosFormaDePago();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e;">credit_card</a>
+        #end
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Remesa Con Saldo" onclick="verDatosDetalleRemesaPorProductor();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e">autorenew</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Impositivos" onclick="verDatosImpositivos();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e">card_membership</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Convenio/Esquema" onclick="verDatosConvenioEsquema();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e">description</a>
+        <a id="btnVerMasBotonesProductor" class="btn btn btn-panela-productor  btn-social btn-bitbucket  material-icons remesaBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="M&aacute;s acciones" onclick="mostrarBotonesProductor();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e;line-height:0.5;">...</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover mostrarBotonProductor"  data-placement="bottom" data-toggle="tooltip" title="Intervinientes" onclick="verDatosIntervinientes();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e; display:none;">group</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover mostrarBotonProductor"  data-placement="bottom" data-toggle="tooltip" title="SSN" onclick="verDatosSSN();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e; display:none">location_city</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover mostrarBotonProductor"  data-placement="bottom" data-toggle="tooltip" title="Inhabilitaciones SSN" onclick="verDatosInhabilitacionesSSN();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e; display:none">highlight_off</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover mostrarBotonProductor"  data-placement="bottom" data-toggle="tooltip" title="Historia" onclick="verDatosHistoriaProductor();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e; display:none;">history</a>
+        <a class="btn btn-panela-productor  btn-social btn-bitbucket  material-icons movimientosBotonHoover mostrarBotonProductor"  data-placement="bottom" data-toggle="tooltip" title="Cheques Rechazados" onclick="verChequesRechazadosProductor();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#46759e; display:none;">money_off</a>
+    </div>
+</div>
+#end
+</div>
+</div>
+<!-- ENDOSO -->
+<div class="panel panel-default" id="polizasRamo" style="display:none;">
+    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+        <h4 id="labelPanelProductor"></h4>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2" style=";text-align: center;" id="panelImagenProductor">
+                <img id="imgCliente" />
+            </div>
+            <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+                <!-- pag principal -->
+                <input type="hidden" value="" id="valorRamoProductor" />
+                <div class="row" id="panelc">
+                    <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                        <table  style= "width:100%;">
+                            <tr>
+                                <td align="right"  valign="top" style="padding-top:5px;">
+                                    <h6>P&oacute;lizas&nbsp;Vigentes&nbsp;:</h6>
+                                </td>
+                                <td style="padding-top:5px;width:60%;">
+                                    <h6 id="INFO_P_TF_LISTA_VIG_INB_CANTIDAD_VIG">
+                                        <b></b>
+                                    </h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right"  valign="top" style="padding-top:5px;">
+                                    <h6>Premio&nbsp;del&nbsp;Ramo&nbsp;:</h6>
+                                </td>
+                                <td style="padding-top:5px;">
+                                    <h6 id="INFO_PRODUCTOR_P_TF_PREMIO_DEL_RAMO">
+                                        <b></b>
+                                    </h6>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                        <table  style= "width:100%;">
+                            <tr>
+                                <td align="right"  valign="top" style="padding-top:5px;">
+                                    <h6>Saldo&nbsp;del&nbsp;Ramo&nbsp;:</h6>
+                                </td>
+                                <td style="padding-top:5px;width:60%;">
+                                    <h6 id="INFO_PRODUCTOR_P_TF_SALDO_DEL_RAMO">
+                                        <b></b>
+                                    </h6>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- pag oculta -->
+                <!-- aca termina -->
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-lg-12" style="text-align: center;">
+                <a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover" onclick="redirecCarteraProd();"  data-placement="bottom" data-toggle="tooltip" title="Cartera x Ramo" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081" id="DATO_IMG_RAMO"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PANEL C -->
+<div class="panel panel-default">
+    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+        <div class="input-group pull-right" style="z-index:1; width:35%;" >
+            <input type="text" class="form-control" onkeyup="buscadorPanelCEntidadProductor()" id="inputBusquedaPagosRechazados"  style="height:26px;">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                </span>
+            </div>
+            <h4 id="cantPagosRechazados">Pagos Rechazados #if ( $productorPagosRechazados.size() > 0 ) ($productorPagosRechazados.size()) #end</h4>
+        </div>
+        #if ($productorPagosRechazados.size() > 0)
+            <div class="col-xs-2" style=";text-align: center;" id="iconoPanelC">
+                <i class="material-icons altoIcono"  style="color:#e0d100;padding-top:15px;" >&#xE02f;</i>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-10" style="text-align: left;padding-left:30px;padding-right:30px;$centradoVertical" id="caruMayor">
+                        <div id="micaru" class="owl-carousel owl-theme" style="text-align:center; padding-left:25px;">
+                            #foreach ($datoPolizaRechazadas in $productorPagosRechazados)      
+                                <div id="micaruB$velocityCount" class="item" style="height:105px; cursor:pointer; background:#efeeee;border-radius: 3px; border-width: 1px; border-color:#e0e0e0; border-style: solid; box-shadow: 0 0 0px black;">
+                                    <h6 id="nroRamo$velocityCount" style="height:25px;border-bottom:1px solid; padding-top:4%;padding-bottom:4%;background-color:#e0d100;color:#ffffff;">Ramo : <b>$utilToolScreen.datoVacio(#$datoPolizaRechazadas.get("P_TF_RECHAZOS.CJIP_CARP_CD_RAMO"))</b>
+                                    </h6>
+                                    <h6 style="margin-top:2%;" id="datoPagoRechazado$velocityCount" class="datoPolizaRechazada">P&oacute;liza : <b>$utilToolScreen.datoVacio($datoPolizaRechazadas.get("P_TF_RECHAZOS.CJIP_CAPO_NU_POLIZA"))</b>
+                                    </h6>
+                                    <h6 style="margin-top:2%;" id="datoPagoRechazado$velocityCount" class="datoPolizaRechazada">
+                                        <b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($datoPolizaRechazadas.get("P_TF_RECHAZOS.INB_VC_RAZO")))</b>
+                                    </h6>
+                                    <h6 style="margin-top:2%;" id="datoPagoRechazado$velocityCount" class="datoPolizaRechazada">$utilToolScreen.datoVacio($datoPolizaRechazadas.get("P_TF_RECHAZOS.COMR_DE_MOTIVO_RECHAZO"))</h6>
+                                    <br>
+</div>
+                            #end
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                #else 
+                    #set($concepto = "Pagos Rechazados para el ramo seleccionado")
+<div class="row">
+<div class="col-xs-2 col-md-2" id="iconoPanelC" style=";text-align: center;">   
+	<i class="material-icons altoIcono"  style="color:#39b3d7;padding-top:15px;" >&#xE611;</i>
+</div>
+<div class="col-xs-10 col-md-10" style=";text-align: center;">   
+<div class="panel-body">    
+    <div class="row">
+    	<div class="col-xs-10" style="text-align: left;padding-left:30px;padding-right:30px;padding-top: 30px;padding-bottom: 30px;" id="caruMayor">
+     	  	<div style="text-align:center; padding-left:25px; color:#b3b0b0;">
+    		    No se encontraron $concepto 
+    		</div>
+    	</div> 
+    </div> 
+    </div>
+    </div>
+</div>        #end	
+            </div>
+    </div>
+    <!-- PANEL B -->
+    <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+            <div class="panel-heading" style=" background-color:white;border-color:white;">
+                <h4 style="color:#00317A;">Cartera Vigentes </h4>
+            </div>
+            <div class="main-container page__container altoPanelB" >
+                <div class="timeline__group" style="z-index:1;max-height:20px;">
+                    <div>
+                        #if ($productorCarteraDato.size() > 0)
+                            #foreach($prodictorCarteraIn in $productorCarteraDato)	
+                                #set ($codRamoCartera = $prodictorCarteraIn.get("P_TF_LISTA_VIG.CACE_CARP_CD_RAMO"))
+                                #set ($descRamoCartera = $prodictorCarteraIn.get("P_TF_LISTA_VIG.INB_CD_RAMO"))
+                                #set ($cantCartera = $prodictorCarteraIn.get("P_TF_LISTA_VIG.INB_CANTIDAD_VIG"))
+                                #set ($ramoIcono = $utilToolScreen.getIcono($prodictorCarteraIn.get("P_TF_LISTA_VIG.CACE_CARP_CD_RAMO")))
+                                #set ($numeroCard = $velocityCount)
+                                #parse("partials/pes/entidades/productor/itemCarteraProductorHome.vm")	 
+                            #end
+                            #else 
+                                #set($concepto = "El productor no posee p&oacute;lizas")
+                                #parse("partials/util/itemTimeLineVacio.vm")	
+                        #end										
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+#parse("partials/pes/entidades/poliza/modalPolizaHome/pagosRechazadosProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/impositivosProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/convenioEsquemaProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/intervinientesProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/formaDePagoProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/OSSEGProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/SSNProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/InhabilitacionesSSNProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/historiaProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/chequesRechazadosProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/motivoBajaProductorModal.vm")
+#parse("partials/pes/entidades/productor/modalProductorHome/datosContactoProductorModal.vm")
+

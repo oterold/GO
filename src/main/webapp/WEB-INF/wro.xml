@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro">
+    <group name="allcss">
+	    <css>/resources/css/pantalla/v3/timeLine.css</css>  
+	    <css>/resources/css/pantalla/v3/login.css</css>
+	    <css>/resources/css/pantalla/v3/bootstrap-social.css</css>
+		<css>/resources/css/pantalla/buscador/checkbox.css</css>  
+		<css>/resources/css/pantalla/v3/iconos.css</css>  
+		<css>/resources/css/pantalla/v1/owl.carousel.min.css</css> 
+		<css>/resources/css/pantalla/v3/v3.css</css> 
+	 	<css>/resources/css/pantalla/v3/body.css</css> 
+	 	<css>/resources/css/jquery-popup-modal.css</css> 
+		<css>/resources/css/jquery-labelauty.css</css> 
+		<css>/resources/css/bootstrap-datepicker3.css</css> 
+	   	<css>/resources/css/componentes/bootstrap-select.css</css> 
+		<css>/resources/css/sweetalert2.css</css> 
+		<css>/resources/css/tablaResponsive/tablaResponsive.css</css> 
+		<css>/resources/css/slickGrid/slick.grid.css</css>
+	    <css>/resources/css/smoothness/jquery-ui-1.8.16.custom.css</css>
+    </group>
+   
+    <group name="alljs">
+                <js>/resources/js/pub/**.js</js>
+    </group>    
+</groups> 
+

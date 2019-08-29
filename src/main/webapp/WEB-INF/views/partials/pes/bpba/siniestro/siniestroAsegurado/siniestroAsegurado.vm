@@ -1,0 +1,252 @@
+<section class="container-fluid">
+   <div class="containerMargenes" style="padding-top:50px;" id="main">
+      <div class="row">
+         <!-- Datos Asegurado Fallecido -->
+         <div class=" col-sm-12 col-md-8" style="margin-top:50px">
+            <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+               <div class="panel-body">
+                  <div class=" row">
+                     <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                        <h3 class="box-title pl-1 pt-4" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos del Asegurado - Fallecido</h3>
+                        <br>
+                        <br>
+                        <div class="plan-selection">
+                           <div class="plan-data">
+                              <div class="row">
+								<div class="col-sm-6 col-md-4 mb-3 mt-3">
+                                    <div class="md-form form-lg">
+                                       <input type="text" value="" id="apyn" class="form-control">
+                                       <label for="apyn"  class="active">Nombre y Apellido</label>
+                                    </div>
+                                 </div>
+								 <div class="col-md-2 mb-3 mt-3">
+                                    <div class="md-form form-lg">
+                                       <input type="text" value="" id="cuil" class="form-control" disable>
+                                       <label for="cuil"  class="active">Cuil</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3 mb-3 mt-3">
+                                    <div class="md-form form-lg">
+                                       <input type="text" value="" id="cuil" class="form-control" disable>
+                                       <label for="Ocupacion">Ocupacion</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3 mb-3">
+                                    <!--Blue select-->
+                                   <label style="color: #757575;">Sexo</label>
+                                    <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" searchable="Buscar.." required>
+                                       <option value="">Seleccione</option>
+                                       <option>Hombre</option>
+                                       <option>Mujer</option>
+                                       
+                                    </select>
+                                    <!--/Blue select-->
+                                 </div>
+                                 
+                                 
+                              </div>
+                              ##Segunda fila##
+                              <div class="row">
+                                 <div class="col-md-4 mb-3 mt-3">
+                                    <div class="md-form form-lg">
+                                       <input  type="text" value="" id="lugarNacimiento" class="form-control">
+                                       <label for="lugarNacimiento"  class="active">Lugar Nacimiento</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-2 mb-3 mt-3">
+                                    <div class="md-form form-lg">
+										<input placeholder="Seleccione" type="text" id="date-picker-example" class="form-control datepicker">
+										<label for="date-picker-example">Fecha Nacimiento</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3 mb-3 mt-3">
+                                    <label style="color: #757575;">Nacionalidad</label>
+                                    <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" searchable="Buscar.." required>
+                                       <option value="">Seleccione</option>
+                                       <option>Alemana</option>
+                                       <option>Argentina</option>
+                                       <option>Aruba</option>
+                                       <option>Boliviana</option>
+                                       <option>Brasile&ntilde;a</option>
+                                       <option>Canadiense</option>
+                                       <option>Costarrisence</option>
+                                       <option>Chilena</option>
+                                       <option>Ecuatoriana</option>
+                                       <option>Salvadore&ntilde;a</option>
+                                       <option>Espa&ntilde;ola</option>
+                                       <option>Estadounidense</option>
+                                       <option>Mexicana</option>
+                                       <option>Nicaraguense</option>
+                                       <option>Paname&ntilde;a</option>
+                                       <option>Paraguaya</option>
+                                       <option>Peruana</option>
+                                       <option>Portorique&ntilde;a</option>
+                                       <option>Dominicana</option>
+                                       <option>Cubana</option>
+                                       <option>Trinidad y Tobago</option>
+                                       <option>Uruguaya</option>
+                                       <option>Venezolana</option>
+                                       <option>Taiwandesa</option>
+                                       <option>Italiana</option>
+                                       <option>Porguesa</option>
+                                       <option>Griega</option>
+                                       <option>Austr&iacute;aca</option>
+                                       <option>Armenia</option>
+                                       <option>Australiana</option>
+                                       <option>Egipcia</option>
+                                       <option>Libia</option>
+                                       <option>China</option>
+                                       <option>Coreana</option>
+                                       <option>Extranjera</option>
+                                    </select>
+                                 </div>
+                                 <div class="col-md-3 mb-3 mt-3">
+                                       <label style="color: #757575;">Estado Civil</label>
+									   <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" searchable="Buscar.." required>
+											<option value="">Seleccione</option>
+											<option>Soltero/a</option>
+											<option>Casado/a</option>
+											<option>Viudo/a</option>
+                                       
+									   </select>
+                                 </div>
+                                 
+                              </div>
+                              <br>
+                              ##tercera fila ##
+                              <div class="row">
+                                 <div class="col-md-3 mb-3">
+                                    <div class="md-form form-lg">
+                                       <input  type="text" value="" id="nroConvenio" class="form-control">
+                                       <label for="nroConvenio"  class="active">Convenio N°</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3 mb-3">
+                                    <div class="md-form form-lg">
+                                       <input  type="text" value="" id="nombreConvenio" class="form-control">
+                                       <label for="nombreConvenio"  class="active">Nombre del Convenio</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3 mb-3">
+                                    <div class="md-form form-lg">
+                                       <input  type="text" value="" id="nroPrestamo" class="form-control">
+                                       <label for="nroPrestamo"  class="active">Numero de prestamo</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-3 mb-3">
+                                    
+                                 </div>
+                              </div>
+                              <br>
+                              ##cuarta Fila##
+                              <div class="row">
+                                 <div class="col-md-3 mb-3">
+                                    
+                                 </div>
+                                 <div class="col-md-3 mb-3">
+                                    
+                                 </div>
+                                 <div class="col-md-3 mb-3">
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <br><br><br><br>
+                        <button type="button" class="pull-right btn btn-indigo" onclick="datosSiniestroDeudaAsegurada();" type="submit" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;">Siguiente&nbsp;&nbsp;
+                        <i class="fas fa-angle-right" style="color:white;"></i>
+                        </button>
+						
+						<button type="button" class="pull-left btn btn-indigo" onclick="datosSiniestroProducto();" type="submit" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;"><i class="fas fa-angle-left" style="color:white;"></i>&nbsp;&nbsp;Atras
+                        </button>
+						
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Lista certificados - Panel B -->
+         <div class="col-sm-12 col-md-4 " style="margin-top:50px;width:100%;">
+            <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+               <div class="main-container page__container" >
+                  <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;">
+                     <div class="summary-head" style="width:80%;">
+                        <h4 style="border:none;color:#0b4376"  class="widget-title">
+                        Denuncia Siniestro</h5>
+                        <span class="summary-small-text" ></span>
+                     </div>
+                     <div class="summary-price">
+                        <a class="summary-text fas fa-refresh" href="/PSPES/bpba" style="color:#0b4376;font-size:15px;"></a>
+                     </div>
+                     <div class="summary-block" >
+                        <div class="summary-content" style="width:100%;">
+                           <div class="summary-head" style="width:80%;">
+                              <h5 style="border:none;"  class="summary-title">Selecci&oacute;n de producto</h5>
+                              <span class="summary-small-text" ></span>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title"></i>
+                                 Datos del Asegurado
+                              </h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title"></i>
+                                 Deuda Asegurada
+                              </h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title">Fallecimiento</h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title">Pago de siniestro a transferir</h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+                              <h5 style="border:none;"  class="summary-title">Fin de Indemnizaci&oacute;n</h5>
+                           </div>
+                           <div class="summary-price">
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

@@ -1,0 +1,26 @@
+<section>
+	<div class="container py-2" style = "border-radius: 7px; border-width: 1px; border-color:#414042; border-style: solid; box-shadow: 0 0 0px black;    padding:0 15px 0 15px; background:#ffffff;">
+
+		<div class="row">
+			<div class="col-md-3" style="background:#fbfbfb;     text-align: center;"> <i class="material-icons"  style="font-size: 150px;color:#00317A;" >$cardPolizaIcono</i></div>
+
+			<div class="col-md-6" style="background:#fbfbfb;">
+				<h5 style="color:#00317A;">Siniestro Nro $cardSiniestroNro</h4>
+				<hr style="background-color: #00317A; height: 1px; border: 0; ">
+                <h6><b>Fecha :</b>&nbsp; $cardSiniestroFecha</h6>
+                <h6><b>Asegurado :</b>&nbsp; $cardSiniestroNombre</h6>
+                <h6><b>P&oacute;liza :</b>&nbsp; $cardSiniestroRamo - $cardSiniestroNroPoliza</h6>
+                <h6><b>Patente :</b>&nbsp; $cardSiniestroPatente</h6>
+                <h6><b>Descripci&oacute;n :</b>&nbsp; $cardSiniestroDescripcion</h6>
+				
+		</div>
+       <div class="col-md-3" style="background:#fbfbfb;   display: flex;   align-items: flex-end;">
+			
+			<a class="btn btn-primary btn-block btn-sm bottomaligned" onclick="verDetalleSiniestro($cardSiniestroNro,$cardSiniestroRamo,$cardSiniestroAnio)" style="cursor: pointer; color:white;" role="button">DETALLES</a>
+
+		</div>
+      </div>
+	 </div>
+</section>
+
+<br>

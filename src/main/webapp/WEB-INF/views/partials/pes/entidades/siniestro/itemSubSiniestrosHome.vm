@@ -1,0 +1,18 @@
+
+
+<div  id="cuadroImgEndoso" style="cursor:pointer; background-color:#ffffff">
+
+  <div class="timeline__post seleccionPanelB" id="timeLineItemSubSiniestro$numeroCard" onclick="mostrarSiniestroHome('timeLineItemSubSiniestro','$numeroCard','$icono','$codSiniestro','$codRamo','$codAnnio','$tercero');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A;padding-bottom:5px">
+  
+						  <div class="timeline__content" style="overflow:hidden;">
+							<i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">$icono</i>
+							<h6><b>Siniestro : $codAnnio - $codRamo - $codSiniestro</b></h6>
+							<h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($descNombre))</b></h6>
+							<h6><b>Tercero : $utilToolScreen.datoVacio($tercero)</b></h6>
+							<h6><b>Tipo : $utilToolScreen.datoVacio($utilToolScreen.ucFirst($descTipo))</b></h6>
+                         </div>
+                        </div> 
+						
+	</div>
+		
+	

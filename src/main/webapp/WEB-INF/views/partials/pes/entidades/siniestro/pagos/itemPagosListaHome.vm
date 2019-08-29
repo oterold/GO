@@ -1,0 +1,19 @@
+
+
+<div  id="cuadroImgEndoso" style="cursor:pointer; background-color:#ffffff" onclick="mostrarDetallePagoHome('timeLineItemPago','$numeroCard','$icono','$compromiso');">
+
+  <div class="timeline__post seleccionPanelB" id="timeLineItemPago$numeroCard" onclick="mostrarDetallePagoHome('timeLineItemPago','$numeroCard','$icono','$compromiso');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A;padding-bottom:5px">
+  
+						  <div class="timeline__content" style="overflow:hidden;">
+							<i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">$icono</i>
+							<h6>Compromiso :<b> $utilToolScreen.datoVacio($compromiso)</b></h6>
+							<h6><b> $utilToolScreen.formatearFecha($utilToolScreen.datoVacio($registro))</b></h6>
+							<h6>Pago : <b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($montoPagar))</b></h6>
+                        	<h6><b> $utilToolScreen.nombreMayuscula($utilToolScreen.datoVacio($beneficiario))</b></h6>
+                        
+                         </div>
+                        </div> 
+						
+	</div>
+		
+	

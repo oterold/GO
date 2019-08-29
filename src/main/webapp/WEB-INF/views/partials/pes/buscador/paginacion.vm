@@ -1,0 +1,48 @@
+#if($cantidadDeResultadosTotales > 50)
+	#if($indicePaginaActual - 3 > 0 )
+		#set($inicioPagina = $indicePaginaActual - 3)
+	#else
+		#set($inicioPagina = 1)
+	#end
+	#set($finPagina = $inicioPagina + 6)
+				
+	#if($cantidadDeResultadosTotales % 50 == 0)
+		#set($totalPaginas = $cantidadDeResultadosTotales/50)
+	#else
+		#set($totalPaginas = $cantidadDeResultadosTotales/50 + 1)
+	#end
+	
+	#if($totalPaginas < 7)
+			#set($finPagina = $totalPaginas)
+	#end
+		<div class="row text-center">
+			<div class="col-sm-12 col-md-12">
+				<ul class="pagination">
+					<li>
+					#if($indicePaginaActual > 1)
+						#set($paginaAnterior = $indicePaginaActual - 1)
+							<a href="/PSPES/go?dato=$datoBuscado&entidades=$entidades&p1=$datoRetornoP1&p2=$datoRetornoP2&p3=$datoRetornoP3&pp=$paginaAnterior" onclick="buscarPorPagina()">&lt;</a>
+					#else
+							<span>&lt;</span>
+					#end
+					</li>
+					#foreach($numPagina in [$inicioPagina..$finPagina])
+						#if($indicePaginaActual == $numPagina)
+							<li class="active"><a>$numPagina</a></li>
+						#else
+							<li><a href="/PSPES/go?dato=$datoBuscado&entidades=$entidades&p1=$datoRetornoP1&p2=$datoRetornoP2&p3=$datoRetornoP3&pp=$numPagina" onclick="buscarPorPagina()">$numPagina</a></li>
+						#end
+					#end
+					
+					<li>
+					#if($indicePaginaActual + 1 <= $totalPaginas)
+						#set($paginaSiguiente = $indicePaginaActual + 1)
+							<a href="/PSPES/go?dato=$datoBuscado&entidades=$entidades&p1=$datoRetornoP1&p2=$datoRetornoP2&p3=$datoRetornoP3&pp=$paginaSiguiente" onclick="buscarPorPagina()">&gt;</a>
+					#else
+						<span>&gt;</span>
+					#end
+					</li>
+				</ul>
+			</div>
+		</div>
+#end

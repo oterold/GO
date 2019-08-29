@@ -1,0 +1,25 @@
+
+<!--poliza-->
+<div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+
+  <div class="timeline__post seleccionPanelB" id="timeLineItemEndoso$nroPoliza" onclick="mostrarPolizaClienteHome('timeLineItemEndoso$nroPoliza','endoso','$nroPoliza','cuantitativo','$urlImg','$nroPoliza','$etiquetaRamo','$sucursalRamo');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+  
+						  <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+							<i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">$urlImg</i>
+
+						    <h6><b>#$nroPoliza - $descRamo </b></h6>
+							<h6><b>$nroFechaDesde al $nroFechaHasta</b></h6>
+                            <h6>$estadoPoliza</h6>
+							                        
+                         </div>
+                        </div> 
+						
+	</div>
+		
+	
+	
+	
+
+	
+	
+	

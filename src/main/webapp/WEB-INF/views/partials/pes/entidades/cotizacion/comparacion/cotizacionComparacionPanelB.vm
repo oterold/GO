@@ -1,0 +1,12 @@
+<div  id="cuadroImgEndoso" style="cursor:pointer; background-color:#ffffff" onclick="">
+    <div class="timeline__post seleccionPanelB" id="certificadoCotizacionComparacion$nroConsecutivo" onclick="botonNuevaCoti($nroConsecutivo);"  style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A;padding-bottom:5px">
+        <div class="timeline__content" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;">$icono</i>
+            <h6>
+                <b>#$nroConsecutivo</b>
+            </h6>
+            <h6>Descripcion:<b>$descCertificado</b>
+            </h6>
+        </div>
+    </div>
+</div>

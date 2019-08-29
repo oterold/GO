@@ -1,0 +1,197 @@
+<section class="container-fluid">
+    <div class="containerMargenes" style="padding-top:80px;" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8" style="margin-top:30px">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-1 pt-4" style="color:#0b4376;border:none;font-size:30px;line-height:1;">Nueva Cotizaci&oacute;n</h3>
+                                <div class="plan-selection">
+									<br>
+                                    <div class="plan-data">
+                                        <h5 class="pt-4 pb-3 summary-title" style="border:none;">Seleccione un Ramo</h5>
+                                        <div class="row">
+                                            #* automotores *#
+                                            <div class="col-md-2">
+                                                <div class="card" style="background-color:#929292">
+                                                    <a class="iconoCard material-icons tituloCard p-1" style="background-color:#929292;color:white;">directions_car</a>
+                                                    <div class="card-body cuerpoCard" style="padding-left:5px;padding-right:5px;background-color:#929292">
+                                                        <p class="card-text" style="color:white">Automotores</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            #* moto *#
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <a class="iconoCard material-icons tituloCard p-1" style="color:white;">motorcycle</a>
+                                                    <div class="card-body cuerpoCard" style="padding-left:5px;padding-right:5px;">
+                                                        <p class="card-text">Motovehiculos</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+											
+											
+											
+											
+                                            #* Integrales *#
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <a class="iconoCard material-icons tituloCard p-1" style="color:white;">&#xE88A;</a>
+                                                    <div class="card-body cuerpoCard">
+                                                        <p class="card-text">Integrales</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            #* Incendio *#
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <a class="iconoCard material-icons tituloCard p-1" style="color:white;">&#xE80E</a>
+                                                    <div class="card-body cuerpoCard">
+                                                        <p class="card-text">Incendio</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            #* Incendio *#
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <a class="iconoCard material-icons tituloCard p-1" style="color:white;">&#xE899;</a>
+                                                    <div class="card-body cuerpoCard">
+                                                        <p class="card-text">Robo</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            #* Mas *#
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <a class="iconoCard material-icons tituloCard p-1" style="color:white;">add</a>
+                                                    <div class="card-body cuerpoCard">
+                                                        <p class="card-text">Mas</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								<br><br>
+                                #* aca van los productos *#
+                                <div class="plan-selection">
+                                    <div class="plan-data">
+                                        <h5 class="pt-4 pb-3 summary-title" style="border:none;">Seleccione un Producto</h5>
+                                        <div class="row">
+                                            #* automotores *#
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <h5 class="iconoCard tituloCard encabezadoProducto" style="color:white;">04500/1</h5>
+                                                    <div class="card-body cuerpoCard" style="height:75px;">
+                                                        <p class="card-text">Automotor - Provincia Leasing</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="card" style="background-color:#929292">
+                                                    <h6 class="encabezadoProducto" style="color:white;">04100/10</h6>
+                                                    <div class="card-body cuerpoCard" style="padding-left:5px;padding-right:5px;background-color:#929292;height:75px;">
+                                                        <p class="card-text" style="color:white">Automotores</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="card">
+                                                    <h5 class="iconoCard tituloCard encabezadoProducto" style="color:white;">80003/2</h5>
+                                                    <div class="card-body cuerpoCard" style="height:75px;">
+                                                        <p class="card-text">CF99</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                                    <br>
+                                                        <br>
+                                                            <br>
+                                                                <button type="button" class="pull-right btn btn-indigo" onclick="redirectGenerales();" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;">Siguiente&nbsp;&nbsp;
+                                                                    <i class="fas fa-angle-right" style="color:white;"></i>
+                                                                </button>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+											
+                                            <!-- Lista certificados - Panel B -->
+                                            <div class="col-sm-12 col-md-4" style="width:100%;">
+                                                <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:110%;">
+                                                    <div class="main-container page__container" >
+                                                        <div class="widget" style="margin-bottom: 0px;padding-bottom: 0px;padding-top: 55px;padding-left:10px;padding-right:10px;">
+															        <div class="summary-head" style="width:80%;">
+                                                                        <h4 style="border:none;color:#0b4376"  class="widget-title">Cotizaci&oacute;n</h5>
+                                                                        <span class="summary-small-text" ></span>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text fas fa-refresh" href="/PSPES/cotizador" style="color:#0b4376;font-size:15px;"></a>
+                                                                    </div>
+                                                            
+															
+															
+															
+															<div class="summary-block" >
+                                                                <div class="summary-content" style="width:100%;">
+                                                                    <div class="summary-head" style="width:80%;">
+                                                                        <h5 style="border:none;"  class="summary-title">Selecci&oacute;n de Producto</h5>
+                                                                        <span class="summary-small-text" ></span>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="summary-block">
+                                                                <div class="summary-content">
+                                                                    <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title"></i>Datos Generales</h5>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="summary-block">
+                                                                <div class="summary-content">
+                                                                    <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title">Carga de  Bienes</h5>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="summary-block">
+                                                                <div class="summary-content">
+                                                                    <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title">Selecci&oacute;n de Planes</h5>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="summary-block">
+                                                                <div class="summary-content">
+                                                                    <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title">Fin de Cotizaci&oacute;n</h5>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+</section>

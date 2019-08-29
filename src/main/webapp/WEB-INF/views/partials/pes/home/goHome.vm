@@ -1,0 +1,253 @@
+    <nav  class="navbar fixed-top navbar-expand-lg navbar-dark indigo" style="background-color:#0b4376 !important; padding-left:6.5%;border-radius:0px;">
+        <a href="/PSPES/home">
+            <img src="/PSPES/resources/img/logo/logo-header-blanco.png" style="height:40px;padding-left:10%"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+<section class="top-listings" style="width:100%;padding-top: 60px;">
+    <div class="container">
+        <div class="row d-flex align-items-stretch">
+            <div class="col-xs-12 col-sm-12 col-md-12 pb-3">
+                <h4 style="border:none;text-align:center;font-size: 27px;font-weight: 400;">Bienvenido $nombreUsuario</h4>
+            </div>
+            <!-- Item-->
+            <div class="col-sm-12 col-md-6 col-lg-6 mb-4  item-type-line ocultarMenuHover">
+                <a class="item-hover-busqueda" href="/PSPES/go"  style="text-decoration: none;">
+                    <div class="item-info-busqueda">
+                        <div class="headline" style="font-size:26px;">GO B&uacute;squeda</div>
+                        <div class="line"></div>
+                        <div class="date">GO Team.</div>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+                <div class="item item-big" style="background: white;">
+                    <div class="info">
+                        <div class="content">
+                            <img id="imgCardBig" height="180px;" src="resources/img/logo/Logo_GO_positivo.svg">
+                                <h3 style="text-align:center;color: #807e7e;font-weight:400">B&uacute;squeda GO</h3>
+                                <p style="text-align:center;color: #807e7e;"> Realizar b&uacute;squedas en la app</p>
+</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Item-->
+            <div class="col-sm-12 col-md-6 col-lg-6 ">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6  item-type-line mb-4 ocultarMenuHover">
+                        <a class="item-hover" href="/PSPES/goExperto"  style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">B&uacute;squeda especifica</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="material-icons imgCardSmall" style="color:#0b4376;font-size: 55px;">touch_app</i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Experto</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6  item-type-line mb-4 ocultarMenuHover">
+                        <a class="item-hover" href="/PSPES/cotizacionMoneda"  style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">Cotizaci&oacute;n Moneda</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="fas fa-university imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Moneda</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+            <div class="col-sm-6 col-md-6  item-type-line mb-4 ocultarMenuHover">
+			 <a class="item-hover" href="#"  style="text-decoration: none;">
+                    <div class="item-info">
+                        <div class="headline">Proximamente!!</div>
+                        <div class="line"></div>
+                        <div class="date">GO Team.</div>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+                <div class="item" style="background-color:white;">
+                    <div style="text-align:center;" class="p-2">
+                        <i class="material-icons imgCardSmall" style="color:#0b4376;font-size: 55px;">dashboard</i>
+                    </div>
+                    <div class="pb-2 d-flex align-items-end">
+                        <div class="content" style="width:100%;">
+                            <h3 class="estilo-letra-card-chico">Promociones</h3>
+                        </div>
+                    </div>
+                </div>
+			</div>
+            
+					
+					
+					
+					<div class="col-sm-6 col-md-6  item-type-line mb-4 ocultarMenuHover">
+						             <a href="/PSPES/homeAfiliado" class="item-hover" style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">Afiliados.</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="fas fa-users imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Empleados Provincia</h3>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
+					    <a class="item-hover" href="https://docs.google.com/forms/d/e/1FAIpQLScoJzpqaYCYJjPbS5mDP6NREMDu52HIONCTTKZeqiETdXcNsg/viewform"  style="text-decoration: none;">
+                    <div class="item-info">
+                        <div class="headline">Contacto</div>
+                        <div class="line"></div>
+                        <div class="date">GO Team.</div>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+                <div class="item" style="padding:3px;background-color:white;">
+                    <div style="text-align:center;" class="p-2">
+                        <i class="fas fa-envelope imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                    </div>
+                    <div class="pb-2 d-flex align-items-end">
+                        <div class="content" style="width:100%;">
+                            <h3 class="estilo-letra-card-chico">Contacto</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+                    <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
+						                        <a class="item-hover" href="/PSPES/ayudaHome"  style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">Ayuda</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="far fa-question-circle imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Ayuda</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+			<div class="col-sm-6  col-md-3  item-type-line mb-4 ocultarMenuHover">
+	         <a class="item-hover" onclick="redirectRectorHome();"  style="text-decoration: none;">
+                    <div class="item-info">
+                        <div class="headline">Rector</div>
+                        <div class="line"></div>
+                        <div class="date">GO Team.</div>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+                <div class="item" style="padding:3px;background-color:white;">
+                    <div style="text-align:center;" class="p-2">
+                        <i class="fas fa-cog imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                    </div>
+                    <div class="pb-2 d-flex align-items-end">
+                        <div class="content" style="width:100%;">
+                            <h3 class="estilo-letra-card-chico">Ir a Rector</h3>
+                        </div>
+                    </div>
+                </div>
+			
+			
+			</div>
+			
+			
+			
+			
+			
+			
+			
+		
+			#if($tienePermiso)
+                <div class="col-sm-6  col-md-3  item-type-line mb-4 ocultarMenuHover">
+                    <a class="item-hover" onclick="redirectGoHomeMas();" style="text-decoration: none;">
+                        <div class="item-info">
+                            <div class="headline">M&aacute;s</div>
+                            <div class="line"></div>
+                            <div class="date">GO Team.</div>
+                        </div>
+                        <div class="mask"></div>
+                    </a>
+                    <div class="item" style="padding:3px;background-color:white;">
+                        <div style="text-align:center;" class="p-2">
+                            <i class="fas fa-plus imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                        </div>
+                        <div class="pb-2 d-flex align-items-end">
+                            <div class="content" style="width:100%;">
+                                <h3 class="estilo-letra-card-chico">Avanzado</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			#else
+    			   <div class="col-sm-6  col-md-3  item-type-line mb-4 ocultarMenuHover">
+                    <a class="item-hover" href="http://provinciaintranet/?u=hdjj399sj3&a=1&" style="text-decoration: none;">
+                        <div class="item-info">
+                            <div class="headline">Salir</div>
+                            <div class="line"></div>
+                            <div class="date">GO Team.</div>
+                        </div>
+                        <div class="mask"></div>
+                    </a>
+                    <div class="item" style="padding:3px;background-color:white;">
+                        <div style="text-align:center;" class="p-2">
+                            <i class="fas fa-sign-out-alt imgCardSmall" style="color:#0b4376;font-size: 55px;"></i>
+                        </div>
+                        <div class="pb-2 d-flex align-items-end">
+                            <div class="content" style="width:100%;">
+                                <h3 class="estilo-letra-card-chico">Salir</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			#end
+			
+			
+			
+        </div>
+    </div>
+</section>
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/entornoModal.vm")
+

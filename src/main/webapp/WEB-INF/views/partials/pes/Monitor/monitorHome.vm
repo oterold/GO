@@ -1,0 +1,206 @@
+
+<section class="container-fluid">
+
+ <div class="container habilitarContainer" id="main">
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+	<input type="hidden" value="$dia" id="valorDiaMonitor" />
+	<input type="hidden" value="$mes" id="valorMesMonitor" />
+	<input type="hidden" value="$annio" id="valorAnnioMonitor" />
+
+		#parse("/partials/util/botonVolverAtras.vm")
+          <h4 style="text-align:center;color: #ffffff;">Monitor</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#ed9c28;" >queue_play_next</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px; height:30px; VERTICAL-ALIGN:MIDDLE;"><h6>A&ntildeo&nbsp;:</h6></td>
+								<td style="padding-top:5px;"><select class="form-control" onchange="refrescarMonitor();" style="height:30px;" name ="annioSelectorMonitor" id="annioSelectorMonitor">
+											<option  value="2018">2018</option>
+											<option  value="2019">2019</option>
+            							  </select>
+								</td>
+								</tr>
+                         		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px; height:30px; VERTICAL-ALIGN: MIDDLE;" ><h6>Mes&nbsp;:</h6></td>
+								<td style="padding-top:5px;">
+									 <select  class="form-control" onchange="refrescarMonitor();" style="height:30px;" name ="mesSelectorMonitor" id="mesSelectorMonitor">
+											<option  value="01">ENERO</option>
+											<option  value="02">FEBRERO</option>
+											<option  value="03">MARZO</option>
+											<option  value="04">ABRIL</option>
+											<option  value="05">MAYO</option>
+											<option  value="06">JUNIO</option>
+											<option  value="07">JULIO</option>
+											<option  value="08">AGOSTO</option>
+											<option  value="09">SEPTIEMBRE</option>
+											<option  value="10">OCTUBRE</option>
+											<option  value="11">NOVIEMBRE</option>
+											<option  value="12">DICIEMBRE</option>
+            							 </select>
+								
+								</td>
+								</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:40%; height:30px; VERTICAL-ALIGN: MIDDLE;"><h6>Dia&nbsp;:</h6></td>
+								<td style="padding-top:5px;">
+									<select class="form-control" onchange="refrescarMonitor();" style="height:30px;" name ="diaSelectorMonitor" id="diaSelectorMonitor">
+											
+										#foreach($valorDia in [1..$diasPorMes])
+											
+											<option value="$valorDia" #if($valorDia == $dia) selected #end>$valorDia</option>
+											
+										#end	
+										  </select>
+								</td>
+								
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:40%;"><h6>Total usuarios&nbsp;:</h6></td>
+								<td style="padding-top:5px;"><h6><b>$usuariosCantidad</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Total Request&nbsp;:</h6></td>
+								<td style="padding-top:5px;"><h6><b>$requestCantidad</b></h6></td>
+								</tr>
+                           	 	
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+					 <div class="row" style="margin-top:10px;">
+					     <div class="col-lg-12" style="text-align: center;">
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="exportarUsuariosMonitor();"  data-placement="bottom" data-toggle="tooltip" title="Exportar Usuarios" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">cloud_download</a>
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="exportarUsuariosTotalMonitor();"  data-placement="bottom" data-toggle="tooltip" title="Exportar el total de usuarios" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">vertical_align_bottom</a>
+
+						 </div>
+					</div>	 	 
+        		 </div>
+   			</div>
+   		
+  <!-- PANEL C -->
+     
+     
+      <div class="panel panel-default">
+		
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                
+				 <h4>Accesos </h4>
+   			 </div>	
+			
+				<div class="panel-body panelComponenteGrilla" style="height:380px;">    
+				    <div class="row" style="padding:10px;">
+							
+				
+					<div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;height:250px;overflow-y:auto;padding-top:10px;" >
+							<div style="overflow-y:auto;">
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+								    <tr class="tr-grilla" role="row">
+											<th class="th-grilla" role="columnheader">Fecha y hora</th>
+											<th class="th-grilla" role="columnheader">Pantalla</th>
+											<th class="th-grilla" role="columnheader">Link</th>
+											
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosNavegacionMonitor">
+							</tbody>
+								</table>
+								</div>
+						</div> 
+					
+				
+				</div>
+				</div>
+			
+			
+   		</div>
+	</div>
+
+
+
+  	   
+  	   <!-- Panel B -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+             <div class="input-group pull-right" style="z-index:1; width:50%;" >
+                  <input type="text" class="form-control" onkeyup="buscadorPanelPolizaClienteHome()" id="inputBusquedaPolizasCliente"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+			  <h4 style="color:#00317A;">Usuarios ($usuariosCantidad)</h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+				<div class="timeline__group" style="z-index:1;max-height:20px;">
+              
+				  	<div>
+    
+                			#foreach($usuarioIn in $usuarios)	
+								#set ($numeroCard = $velocityCount)
+
+                            <div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff;">
+                            
+                              <div class="timeline__post seleccionPanelB" id="card$usuarioIn.nombre" onclick="mostrarPanelCMonitorHome('$usuarioIn.nombre');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+								
+                            						  <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+                            							<i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">person</i>
+                            
+                            						    <h6><b>#$usuarioIn.nombre </b></h6>
+                            							<h6><b>$usuarioIn.cantidad</b></h6>
+													  </div>
+                                                    </div> 
+								</div>
+	
+								#end
+
+   
+					</div>
+            
+				</div>
+	
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+ 
+     
+     
+			      

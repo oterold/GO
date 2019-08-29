@@ -1,0 +1,94 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="productorPopUp" >
+      	   <div style="width:100%;">
+				<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_P_TF_PROD_CAPD_NM_PRODUCTOR"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#611bbd;" >&#xE7FB;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 	<input type="hidden" value="" id="DATO_P_TF_PROD_CAPD_NM_PRODUCTOR_REDIRECT" />
+          	 	
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Dni :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PROD_CAPD_TP_DOCUMENTO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cuit :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_NU_CUIT"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Categoria :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_CD_CATEGORIA_PRODUCTOR"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_INB_CD_AGENCIA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Lugar :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_INB_CD_LUGAR"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cod Persona :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_CABU_NU_PERSONA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Zona :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_INB_CD_ID_AMBA"></h6></td>
+                           		</tr>
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ejecutivo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PROD_INB_CD_EJECUTIVO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Perfil PAS :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_INB_CD_PERFIL_PAS"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Organizador :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_CAPD_CD_ORGANIZADOR"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Mail :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_EMAIL"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fecha Alta :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_FE_ALTA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fecha Baja :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_PROD_CAPD_FE_BAJA"></h6></td>
+                           		</tr>
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+					<div class="row" style="margin-top:15px;">
+					     <div class="col-lg-12" style="text-align: center;">
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons productorBotonHoover" onclick="redireProductorHome()" data-placement="bottom" data-toggle="tooltip" title="Detalle"  style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#611BBD">play_arrow</a>
+						 </div>
+					</div>
+			</div>
+   			</div>

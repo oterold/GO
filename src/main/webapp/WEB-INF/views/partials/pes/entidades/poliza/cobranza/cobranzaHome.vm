@@ -1,0 +1,473 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+ 
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-8">
+	  #foreach($polizaIn in $polizaDato)
+	  	<input type="hidden" value="$polizaIn.get("P_TF_POLI.CACE_CAPO_NU_POLIZA")" id="valorPoliza" />
+		<input type="hidden" value="$polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")" id="valorRamo" />
+		<input type="hidden" value="$polizaIn.get("P_TF_POLI.CACE_CACN_NU_CEDULA_RIF")" id="valorCliente" />
+			<input type="hidden" value="$polizaIn.get("P_TF_POLI.CACE_CASU_CD_SUCURSAL")" id="valorSucursal"/>
+
+		<input type="hidden" value="$valorCobranzaCertificado" id="valorCertificadoCobranza" />
+		
+        <div class="panel panel-default">
+		  <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+		  <a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPoliza('panela','panelb','verMasPanelA');">Ver menos</a>
+          <h4 style="text-align:center;color: #ffffff;">Cobranzas - Poliza #$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CACE_CAPO_NU_POLIZA"))</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#00317A;" >$utilToolScreen.getIcono($polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO"))</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="display:none;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ramo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")) - $utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_DSP_RAMO"))</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Situaci&oacute;n P&oacute;liza :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_DSP_ESTADO")))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha Emisi&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ocultarNulo($utilToolScreen.formatearFecha($polizaIn.get("P_TF_POLI.CACE_FE_SUSCRIPCION"))))</b></h6></td>
+                           		</tr>
+								
+									#if($$polizaIn.get("P_TF_POLI.CACE_FE_HASTA_TECNICA") == "")
+									#set($fechaFinal = $polizaIn.get("P_TF_POLI.CACE_FE_HASTA"))
+									#else
+									#set($fechaFinal = $polizaIn.get("P_TF_POLI.CACE_FE_HASTA_TECNICA"))
+									#end
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Vigencia :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($polizaIn.get("P_TF_POLI.CACE_FE_DESDE_TECNICA")), $utilToolScreen.formatearFecha($fechaFinal) , '-')</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>P&oacute;liza Anterior :</h6></td>
+								#if($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR").length() >= 1)
+									<td valign="top" style="padding-top:2px;"><h6 onClick="abrirPopupPolizaAnterior('$polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR")','$polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")','$polizaIn.get("P_TF_POLI.CACE_CASU_CD_SUCURSAL")','polizaAnteriorPopUp');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR")) <i class="material-icons" style="display:inline:color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></b></h6></td>
+                           		#else
+									<td valign="top" style="padding-top:5px;"><h6 ><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR"))</b></h6></td>
+								#end	
+								</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>P&oacute;liza Siguiente :</h6></td>
+                         		
+                         		#if($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE").length() >= 1)
+									<td valign="top" style="padding-top:2px;"><h6 onClick="abrirPopupPolizaSiguiente('$polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE")','$polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")','$polizaIn.get("P_TF_POLI.CACE_CASU_CD_SUCURSAL")','polizaAnteriorPopUp');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE")) <i class="material-icons" style="display:inline:color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></b></h6></td>
+                           		#else
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE"))</b></h6></td>
+								#end	
+                           		</tr>
+                           	
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cliente :</h6></td>
+                           		<td style="padding-top:0px; width:60%;"><h6 onClick="abrirModalClienteHome('$polizaIn.get("P_TF_POLI.CACE_CACN_NU_CEDULA_RIF")');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($utilToolScreen.ocultarNulo($polizaIn.get("P_TF_POLI.INB_DSP_ASEGURADO"))))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor :</h6></td>
+                           		<td style="padding-top:0px;"><h6 onClick="abrirModalProductorHome('$polizaIn.get("P_TF_POLI.CACE_CAPD_CD_PRODUCTOR")');" style="color:#6fa1d4;cursor:pointer;"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($polizaIn.get("P_TF_POLI.INB_DSP_PRODUCTOR")))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           	
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td  valign="top" style="padding-top:5px;"><h6 onClick="abrirPopUpNuevo('sucursalPopUp');"  style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($utilToolScreen.ocultarNulo($polizaIn.get("P_TF_POLI.INB_DSP_SUCURSAL"))))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Facturaci&oacute;n :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_TP_FACTURACION")))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Moneda :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ocultarNulo($polizaIn.get("P_TF_POLI.CAMO_SM_MONEDA")))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Promo :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_PROMOCION")))</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							        
+  							<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ramo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")) - $utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_DSP_RAMO"))</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Situaci&oacute;n P&oacute;liza :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_DSP_ESTADO")))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha Emisi&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ocultarNulo($utilToolScreen.formatearFecha($polizaIn.get("P_TF_POLI.CACE_FE_SUSCRIPCION"))))</b></h6></td>
+                           		</tr>
+								<tr>
+									
+									#if($polizaIn.get("P_TF_POLI.CACE_FE_HASTA_TECNICA") == '')
+									#set($fechaFinalHasta = $polizaIn.get("P_TF_POLI.CACE_FE_HASTA"))
+									#else
+									#set($fechaFinalHasta = $polizaIn.get("P_TF_POLI.CACE_FE_HASTA_TECNICA"))
+									#end
+								
+									#if($polizaIn.get("P_TF_POLI.CACE_FE_DESDE_TECNICA") == '')
+									#set($fechaFinalDesde = $polizaIn.get("P_TF_POLI.CACE_FE_DESDE"))
+									#else
+									#set($fechaFinalDesde = $polizaIn.get("P_TF_POLI.CACE_FE_DESDE_TECNICA"))
+									#end
+								
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Vigencia&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($fechaFinalDesde), $utilToolScreen.formatearFecha($fechaFinalHasta) , '-')</b></h6></td>
+                           		</tr>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>P&oacute;liza Anterior :</h6></td>
+								#if($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR").length() >= 1)
+									<td valign="top" style="padding-top:2px;"><h6 onClick="abrirPopupPolizaAnterior('$polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR")','$polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")','$polizaIn.get("P_TF_POLI.CACE_CASU_CD_SUCURSAL")','polizaAnteriorPopUp');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR")) <i class="material-icons" style="display:inline:color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></b></h6></td>
+                           		#else
+									<td valign="top" style="padding-top:5px;"><h6 ><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_ANTERIOR"))</b></h6></td>
+								#end	
+								</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>P&oacute;liza Siguiente :</h6></td>
+                         		
+                         		#if($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE").length() >= 1)
+									<td valign="top" style="padding-top:2px;"><h6 onClick="abrirPopupPolizaSiguiente('$polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE")','$polizaIn.get("P_TF_POLI.CACE_CARP_CD_RAMO")','$polizaIn.get("P_TF_POLI.CACE_CASU_CD_SUCURSAL")','polizaAnteriorPopUp');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE")) <i class="material-icons" style="display:inline:color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></b></h6></td>
+                           		#else
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_POLIZA_SIGUIENTE"))</b></h6></td>
+								#end	
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                         			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cliente :</h6></td>
+                           		<td style="padding-top:0px; width:60%;"><h6 onClick="abrirModalClienteHome('$polizaIn.get("P_TF_POLI.CACE_CACN_NU_CEDULA_RIF")');" style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($utilToolScreen.ocultarNulo($polizaIn.get("P_TF_POLI.INB_DSP_ASEGURADO"))))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		
+                           		</tr>
+
+								<tr>
+									<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor :</h6></td>
+                           		<td style="padding-top:0px;"><h6 onClick="abrirModalProductorHome('$polizaIn.get("P_TF_POLI.CACE_CAPD_CD_PRODUCTOR")');" style="color:#6fa1d4;cursor:pointer;"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($polizaIn.get("P_TF_POLI.INB_DSP_PRODUCTOR")))</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		</tr>
+                           		
+							<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 onClick="abrirPopUpNuevo('sucursalPopUp');"  style="cursor:pointer;color:#6fa1d4"><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($utilToolScreen.ocultarNulo($polizaIn.get("P_TF_POLI.INB_DSP_SUCURSAL"))))<i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Facturaci&oacute;n :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_TP_FACTURACION")))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Moneda :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ocultarNulo($polizaIn.get("P_TF_POLI.CAMO_SM_MONEDA")))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Promo :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_PROMOCION")))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  						<table  style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Nro P&oacute;liza Digital :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.CAPO_NU_SEGUIMIENTO_SSN")))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Negocio :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_TP_NEGOCIO")))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Refacturaci&oacute;n :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_IN_REFACTURACION")))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nro Expediente :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CPEX_NU_EXPEDIENTE"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Nro Proveido :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.INB_NRO_PROVEIDO"))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table style= "width:100%;">
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Nro Identificados :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_CAIP_DE_IDENTIFICADOR"))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Refacturaciones :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.CAPO_NU_REFACT_EFECT"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Pagos BANELCO :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.INB_DE_PAGOS_BANELCO"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>De Pagos LINK :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($polizaIn.get("P_TF_POLI.INB_DE_PAGOS_LINK"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Tipo de P&oacute;liza :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($polizaIn.get("P_TF_POLI.INB_TIPO_POLIZA")))</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+					<br><br>
+              			  </div>
+    				</div> 
+    					
+					
+					
+					
+					
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+<!-- botones aca -->  
+
+	   <div class="row" >
+		<div class="col-lg-12" style="text-align: center;">
+			<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover" onclick="bloquearPantallaGris();"  data-placement="bottom" data-toggle="tooltip" title="Imprimir CC" style="display:none;margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#0b4376">local_printshop</a>
+		</div>
+	   </div>	 
+
+
+        		 </div>
+   			</div>
+   		 #end
+   		<!-- PANEL D -->
+   		
+      		<div class="panel panel-default" id="detalleCuotas" style="display:none;">
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="labelPanelCuotasConsolidadas"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+          	 	  <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	
+      <div class="row">
+		
+  <div class="col-8" id ="listaResultado">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">prueba 1</div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">prueba 2</div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">prueba 3</div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">prueba 4</div>
+    </div>
+  </div>
+		
+		
+  <div class="col-4" id="listaTitulo">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+    </div>
+  </div>
+  
+</div>
+    					
+    			<!-- aca termina -->
+    			  </div>
+    			</div>	
+            	</div>
+   			</div>
+     <!-- CERTIFICADOS -->
+     
+      <div class="panel panel-default">
+	
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control" onkeyup="buscarFiltroImputacionesCobranzaHome('tablaImputacionesCobranzaHome')" id="inputImputacionesCobranzaHome"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				<h4 id="cantSiniestros">Imputaciones #if ( $clienteImputaciones.size() > 0 ) ($clienteImputaciones.size()) #end</h4> 
+   			 </div>	
+			  #if ($clienteImputaciones.size() > 0)
+   				<div class="col-xs-2" style=";text-align: center;">   
+					<i class="material-icons altoIcono"  style="color:#087539;padding-top:15px;" >&#xE02f;</i>
+   				</div>
+   				<div class="panel-body" style="padding-right: 0px;padding-left: 0px;">    
+                   	<div class="row">
+              	 	    <div class="col-xs-12" style="text-align: left;padding-left:0px;padding-right:0px;$centradoVertical">
+                  	 	    <div>
+    						   
+        						<div class="col-md-12" style="text-align: left;padding-left:0px;padding-right:0px;height:250px;overflow-y:auto;padding-top:10px;" >
+							<div style="overflow-y:auto;height:230px">
+								<table  id="tablaImputacionesCobranzaHome"  class="table table-hover table-grilla" role="table">
+
+									#if ( $clienteImputaciones.size() > 0 )
+								    	  <thead class="thead-grilla" role="rowgroup">
+								    <tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Preliquidaci&oacute;n</th>
+								            <th class="th-grilla" role="columnheader">Pago</th>
+								            <th class="th-grilla" role="columnheader">Monto</th>
+											<th class="th-grilla" role="columnheader">Codigo</th>
+											<th class="th-grilla" role="columnheader">Origen</th>
+											
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla">
+    							    #foreach ($datoImputaciones in $clienteImputaciones)      
+										<tr class="tr-grilla" onClick="abrirPopUpImputacionesCobranzaHome('imputacionesPopUp','$velocityCount','$datoImputaciones.get("P_TF_IMPUTACION.CJIP_CALI_NU_PRELIQUIDACION")');" style="cursor:pointer;">
+
+											<td class="td-grilla-imputacionCobranzaHome" role="cell"><h6>$utilToolScreen.datoVacio($datoImputaciones.get("P_TF_IMPUTACION.CJIP_CALI_NU_PRELIQUIDACION"))</h6></td>
+											<td class="td-grilla-imputacionCobranzaHome" role="cell"><h6>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($datoImputaciones.get("P_TF_IMPUTACION.CJIP_FE_COBRO")))</h6></td>
+											<td class="td-grilla-imputacionCobranzaHome" role="cell"><h6>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($datoImputaciones.get("P_TF_IMPUTACION.CJIP_MT_PAGADO")))</h6></td>
+											<td class="td-grilla-imputacionCobranzaHome" role="cell"><h6>$utilToolScreen.datoVacio($datoImputaciones.get("P_TF_IMPUTACION.INB_CD_COBRANZA"),$utilToolScreen.ucFirst($datoImputaciones.get("P_TF_IMPUTACION.INB_DE_COBRANZA"))," - ")</h6></td>
+											<td class="td-grilla-imputacionCobranzaHome" role="cell"><h6>$utilToolScreen.datoVacio($datoImputaciones.get("P_TF_IMPUTACION.INB_TI_PAGO"))</h6></td>
+										</tr>										
+    								#end
+							</tbody>
+								</table>
+									#end
+									
+								</div>
+						</div> 
+        					</div>
+              	 	    </div> 
+              	 	</div> 
+
+    				#if($clienteImputaciones > 100)
+              	 	    <a class="btn btn-block btn-social btn-bitbucket pull-right" style="width:25%;margin:1px;color:#ffffff">Detalle</a>
+    				#end
+				</div>
+			#else 
+    			#set($concepto = "Imputaciones")
+               	#parse("partials/util/rowVacio.vm")	
+	        #end	
+   		</div>
+	</div>
+
+  	   
+  	    	   <!-- Panel B -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+              <h4 style="color:#00317A;">Cuotas Consolidadas #if ( $clienteCuotas.size() > 0 ) ($clienteCuotas.size()) #end</h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+				<div class="timeline__group" style="z-index:1;max-height:20px;">
+              
+				  	<div>
+    
+						#if ($clienteCuotas.size() > 0)
+                			#foreach($clienteIn in $clienteCuotas)	
+                			   #set ($reciboCoutas = $utilToolScreen.datoVacio($clienteIn.get("P_TF_CUOTA_CONSOLIDADA.INB_ST_RECIBO")))
+							   #set ($fechaCoutas = $utilToolScreen.datoVacio($utilToolScreen.formatearFecha($clienteIn.get("P_TF_CUOTA_CONSOLIDADA.CARE_FE_HASTA"))))
+							   #set ($estadoCoutas = $utilToolScreen.datoVacio($utilToolScreen.ucFirst($clienteIn.get("P_TF_CUOTA_CONSOLIDADA.INB_DE_STATUS"))))
+							   #set ($primaCoutas = $utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($clienteIn.get("P_TF_CUOTA_CONSOLIDADA.CARE_MT_PRIMA"))))
+							   #set ($saldoFechaCoutas = $utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($clienteIn.get("P_TF_CUOTA_CONSOLIDADA.INB_SALDO_FECHA"))))
+							   #set ($certificadoCoutas = $utilToolScreen.datoVacio($clienteIn.get("P_TF_CUOTA_CONSOLIDADA.CARE_CACE_NU_CERTIFICADO")))
+							   #set ($numeroCard = $velocityCount)
+							   #set ($ramoIcono = "insert_drive_file")
+
+							   
+                			   #parse("/partials/pes/entidades/poliza/cobranza/itemTimeLineCobranza.vm")	 
+							#end
+					   #else 
+						   #set($concepto = "Coutas Consolidadas")
+               			   #parse("partials/util/itemTimeLineVacio.vm")	
+
+					   #end										
+   
+					</div>
+            
+				</div>
+	
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+ 
+     
+        <!-- modal Imputaciones -->
+#parse("partials/pes/entidades/poliza/modalPolizaHome/imputacionesModal.vm")  
+     
+	 <!-- modal Cliente -->
+ #parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")
+        
+     <!-- modal Productores -->
+ #parse("partials/pes/entidades/poliza/modalPolizaHome/productoresModal.vm")
+    
+	<!-- Modal Sucursal-->
+ #parse("partials/pes/entidades/poliza/modalPolizaHome/sucursalModal.vm")
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     

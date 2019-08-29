@@ -1,0 +1,18 @@
+ <div class="timeline__box " style="$styleElement" >
+ 			
+                        <div class="timeline__date" id="cuadroImgEndoso$nroEndoso" style="cursor:pointer; background-color:#ffffff" onclick="mostrarEndosoPolizaHome('timeLineItemEndoso$nroEndoso','endoso','$nroEndoso','cuantitativo','$nroPolizaEndoso','$nroRamoEndoso', '$sucursalTfPoli', '');">
+                          <span class="timeline__day">   
+                   				 <img src="$urlImgEndoso" width="30" height="30" id="imgTimeLineEndoso$nroEndoso">
+						  </span>
+                        </div>
+                        <div class="timeline__post seleccionPanelB" id="timeLineItemEndoso$nroEndoso" onclick="mostrarEndosoPolizaHome('timeLineItemEndoso$nroEndoso','endoso','$nroEndoso','cuantitativo','$nroPolizaEndoso','$nroRamoEndoso', '$sucursalTfPoli', '');" style="cursor:pointer;">
+                          <div class="timeline__content">
+						   <h6 id="etiquetaEndoso$nroEndoso"><b>#$nroEndoso - $nroFecha.</b></h6>
+							
+                            <h6> $etiquetaEndoso </h6>
+							                        
+                         </div>
+               
+                 
+                 </div>
+                      </div>

@@ -1,0 +1,179 @@
+<section class="container-fluid">
+    <div class="containerMargenes" style="padding-top:50px;" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8 sin-margen-derecha" style="margin-top:30px">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-1 pt-4" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos del Acreedor</h3>
+                                        <div class="plan-selection">
+                                            <div class="plan-data">
+                                                <div class="row">
+													
+													
+													  <div class="col-md-2 mb-3">
+                                                                        <label style="color:#757575">Tipo</label>
+                                                                        <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" required>
+                                                                            <option value="">Seleccione</option>
+                                                                            <option>1</option>
+                                                                            <option>2</option>
+                                                                        </select>
+                                                                        <div class="invalid-feedback">
+                                                                            Por favor seleccione un plan.
+                                                                        </div>
+                                                                    </div>
+													
+                                                    <div class="col-md-3 mb-3 mt-3">
+                                                        <div class="md-form form-lg">
+                                                            <input  type="text" value="" id="nacimientoFe" class="form-control">
+                                                                <label for="nacimientoFe"  class="active">Participaci&oacute;n</label>
+														</div>
+                                                        </div>
+														
+														
+														
+                                                 </div>
+													<div class="row ml-2">
+														<h6 class="" style="font-weight:600;">Medidas de Seguridad<h6>
+																
+														<fieldset class="form-check">
+                                                                   <input class="form-check-input" type="checkbox" id="checkbox1">
+                                                                    <label class="form-check-label" for="checkbox1"><h6>a) Que todas las puertas de acceso al departamento o las del edificio que den a la calle, o patios o jardines accesibles desde aquella, cuenten con cerradura tipo "doble paleta" o "bidimensionales"</h6></label>
+                                                        </fieldset>
+															<fieldset class="form-check">
+                                                                   <input class="form-check-input" type="checkbox" id="checkbox2">
+                                                                    <label class="form-check-label" for="checkbox2"><h6>b) Cuente con rejas de protecci&oacute;n de hierro en todas las ventanas y puertas con paneles de vidrio, ubicadas en la planta baja que den a la calle o patios o jardines que por su parte sean
+																			accesibles desde la calles, es decir, que no lo impidan muros, cercos o rejas de 1,80 mt. como m&iacute;nimo de altura. De no contar con rejas debe poseer un sistema de alarma con sensores
+																			de presencia (infrarrojos), con sonido interior o exterior.</h6></label>
+                                                        </fieldset>
+																<fieldset class="form-check">
+                                                                   <input class="form-check-input" type="checkbox" id="checkbox3">
+                                                                    <label class="form-check-label" for="checkbox3"><h6>c) Est&eacute; edificada de medianera a medianera y no linde con un terreno bald&iacute;o, obra en construcci&oacute;n o edificio abandonado, salvo que cuente con muros, cercos o rejas de una altura m&iacute;nima
+																			de 1,80 mt. que impidan todo acceso que no sea por la puerta del edificio.</h6></label>
+                                                        </fieldset>
+
+
+                                                            <h6 style="font-weight:600;">Si no se cumpliera con una o m&aacute;s de las condiciones antes mencionada y se produjera el siniestro facilitado por cualquiera de tales circunstancias, la indemnizaci&oacute;n que
+                                                            de otra manera pudiese corresponder, queda reducida al 70% excepto si la vivienda asegurada est&aacute; ubicada en un Barrio Privado, Country u otro con vigilancia y per&iacute;metro cercado.</h6>
+													
+														</div>
+
+												<div class="row">
+												
+												       <div class="col-md-3 mb-3 mt-3">
+                                                        <div class="md-form form-lg">
+                                                            <input  type="text" value="" id="codSucursal" class="form-control">
+                                                                <label for="codSucursal"  class="active">Codigo Sucursal</label>
+														</div>
+                                                        </div>
+														       <div class="col-md-3 mb-3 mt-3">
+                                                        <div class="md-form form-lg">
+                                                            <input  type="text" value="" id="afiliado" class="form-control">
+                                                                <label for="afiliado"  class="active">N Afiliado Interviniente</label>
+														</div>
+                                                        </div>
+														       <div class="col-md-6 mb-3 mt-3">
+                                                        <div class="md-form form-lg">
+                                                            <input  type="text" value="" id="nombre" class="form-control">
+                                                                <label for="nombre"  class="active">Apellido y Nombre del Afiliado al BPBA</label>
+														</div>
+                                                        </div>
+														
+												</div>
+												
+															   </div>
+												
+                                            </div>
+											<br><br><br><br>
+                                                                <button type="button" class="pull-right btn btn-indigo icono-sig" onclick="redirectPdfVidaFin();" type="submit" style="background-color: #0b4376 !important;">Finalizar&nbsp;&nbsp;
+                                                                    <i class="fas fa-angle-right" style="color:white;"></i>
+                                                                </button>
+															</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Lista certificados - Panel B -->
+                                            <div class="col-sm-12 col-md-4 sin-margen-izq" style="width:100%;margin-top:30px;">
+                                                <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+                                                    <div class="main-container page__container" >
+                                                        <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;">
+                                                            <div class="summary-head" style="width:80%;">
+                                                                <h4 style="border:none;color:#0b4376"  class="widget-title">Cotizaci&oacute;n (80%)</h5>
+                                                                <span class="summary-small-text" ></span>
+                                                            </div>
+                                                            <div class="summary-price">
+                                                                <a class="summary-text fas fa-refresh" href="/PSPES/bpba" style="color:#0b4376;font-size:15px;"></a>
+                                                            </div>
+                                                            <div class="summary-block" >
+                                                                <div class="summary-content" style="width:100%;">
+                                                                    <div class="summary-head" style="width:80%;">
+                                                                        <h5 style="border:none;"  class="summary-title">Propuesta de Seguro</h5>
+                                                                        <span class="summary-small-text" ></span>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="summary-block">
+                                                                <div class="summary-content">
+                                                                    <div class="summary-head">
+                                                                        <h5 style="border:none;"  class="summary-title"></i>
+                                                                        Datos del Solicitante</h5>
+                                                                </div>
+                                                                <div class="summary-price">
+                                                                    <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="summary-block">
+                                                            <div class="summary-content">
+                                                                <div class="summary-head">
+                                                                    <h5 style="border:none;"  class="summary-title"></i>
+                                                                    Forma de Pago</h5>
+                                                            </div>
+                                                            <div class="summary-price">
+                                                                <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="summary-block">
+                                                        <div class="summary-content">
+                                                            <div class="summary-head">
+                                                                <h5 style="border:none;"  class="summary-title">Datos del  Riesgo</h5>
+                                                            </div>
+                                                            <div class="summary-price">
+                                                                <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="summary-block">
+                                                        <div class="summary-content">
+                                                            <div class="summary-head">
+                                                                <h5 style="border:none;"  class="summary-title">Datos del Acreedor Prendario</h5>
+                                                            </div>
+                                                            <div class="summary-price">
+                                                                <a class="summary-text fas fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="summary-block">
+                                                        <div class="summary-content">
+                                                            <div class="summary-head">
+                                                                <h5 style="border:none;"  class="summary-title">Fin de Cotizaci&oacute;n</h5>
+                                                            </div>
+                                                            <div class="summary-price">
+                                                                <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+</div>
+</div>
+                            </div>
+</section>

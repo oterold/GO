@@ -1,0 +1,90 @@
+.programa ul {
+    margin-left: -49px;
+
+}
+.programa li {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 2.3rem;
+    position: relative;
+  
+    
+}
+
+/*
+.programa li::before {
+    position: absolute;
+    content: " ";
+    width: 2rem;
+    height: 2rem;
+    background: url(/PSPES/resources/img/rector/contrato.png);
+     background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+ 
+}
+*/
+.programa li.cualitativo::before {
+
+     position: absolute;
+    content: " ";
+    width: 2rem;
+    height: 2rem;
+    background: url(/PSPES/resources/img/rector/contrato.png);
+     background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+}
+.programa li.anulacion::before {
+
+     position: absolute;
+    content: " ";
+    width: 2rem;
+    height: 2rem;
+    background: url(/PSPES/resources/img/rector/anulacion.png);
+     background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+}
+.programa li.cuantitativo::before {
+
+    position: absolute;
+    content: " ";
+    width: 2rem;
+    height: 2rem;
+    background: url(/PSPES/resources/img/rector/money.png);
+     background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+}
+.programa li.inicio::before {
+
+    position: absolute;
+    content: " ";
+    width: 2rem;
+    height: 2rem;
+    background: url(/PSPES/resources/img/rector/circulo.png);
+     background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+}
+.programa ul::before {
+    position: absolute;
+    content: ' ';
+    width: 7px;
+    height: 100%;
+    background-color: #e9e9e9;
+    left: 40px;
+    
+}
+/*
+.programa li:first-child::before,
+.programa li:last-child::before {
+    background-image: url(/PSPES/resources/img/rector/money.png);
+    background-repeat: no-repeat;
+}*/
+@media screen and (max-width: 767px)
+li .charla img {
+   display: none;
+}

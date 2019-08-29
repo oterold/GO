@@ -1,0 +1,68 @@
+
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Provincia Seguros">
+    <meta name="author" content="">
+    <title>Provincia Seguros</title>
+	
+<link rel="stylesheet" href="resources/css/cotizador/cotizacion.css"> 
+	<link rel="stylesheet" href="resources/js/MDB-Pro_4.7.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/css/fonts/google/material-icons.css">
+	<link rel="stylesheet" href="resources/css/materialize/materialize.css">
+    <link href="resources/css/pantalla/v3/psadminV3.css" rel="stylesheet"> 
+    <link href="resources/css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="resources/css/pantalla/v3/v3.css"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	
+  
+  
+  </head>
+  <body style="background-color:#f5f5f5;" onload="$funcionOnload">
+    <div id="contenido">
+		 #parse("partials/pes/templates/principal/mainTemplateWebHeader.vm")
+    #parse("partials/pes/templates/principal/mainTemplateSeccion.vm")	
+
+    #parse($templateWeb)
+    <a class="scroll-to-top rounded" onclick="topFunction()">
+      <i class="fa fa-angle-up"></i>
+    </a>
+	<!-- boton flotante-->
+	</div>
+  
+	<script src="/PSPES/resources/js/MDB-Pro_4.7.0/js/jquery-3.3.1.min.js"></script>
+    <script src="/PSPES/resources/js/popper/popper.min.js"></script>
+	<script src="/PSPES/resources/js/MDB-Pro_4.7.0/js/bootstrap.min.js"></script>
+	    <script src="/PSPES/resources/js/materialize/materialize.js"></script>
+	<script src="/PSPES/resources/js/jquery.blockUI.js"></script>
+	<script src="/PSPES/resources/js/pesHome.js?$paramId"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="resources/js/card.js"></script>
+	<script type="text/javascript" src="resources/js/pub/denunciaSiniestro/denunciaSiniestro.js"></script>
+	
+  </body>
+		
+
+    <!-- Custom scripts for this template -->
+	
+	<script src="/PSPES/resources/js/mfb.js"></script>
+	<script>
+	
+	$(document).ready(function() {
+			$('.mdb-select').materialSelect();
+		});
+	
+</script>
+	
+	
+	
+	
+	
+	  
+
+
+	
+     

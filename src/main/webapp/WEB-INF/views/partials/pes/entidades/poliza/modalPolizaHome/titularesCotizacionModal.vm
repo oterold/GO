@@ -1,0 +1,30 @@
+<div class="panel panel-default" style="display:none;max-width:550px;height:500px;overflow-y:hidden;" id="titularesCotizacionPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 style="border:none;" id="DATO_TITULARES_COTI"></h4>
+      	    </div>	
+   		<div>
+               	<div class="row" style="margin:0px;">
+          	 	  <div class="col-md-12" style="text-align: left;height: 450px;overflow-y:auto;padding:0px;">
+								<div>
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+								        <tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Persona</th>
+								            <th class="th-grilla" role="columnheader">Nombre</th>
+								            <th class="th-grilla" role="columnheader">Tipo Titular</th>
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosTitularesCotizacion">
+							</tbody>
+								</table>
+								</div>
+    				  </div>
+    				  
+    				  </div>
+    				  
+    			</div>	
+   		</div>

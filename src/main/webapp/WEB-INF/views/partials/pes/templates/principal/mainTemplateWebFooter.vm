@@ -1,0 +1,5 @@
+ <footer class="footer">
+      <div class="container">
+        <span class="text-muted" style="color:#8d8d8d;">Tiempo de carga del servidor :</span>
+      </div>
+    </footer>

@@ -1,0 +1,4 @@
+
+#set ($templateWeb = 'partials/pes/buscador/buscadorHome.vm') 
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	    

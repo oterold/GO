@@ -1,0 +1,72 @@
+
+
+
+<div style="padding-top:15px;padding-left:15px;padding-right:15px;" class="row" id="panelCAvanzado">
+
+
+			<div class="col-6 col-sm-4 col-md-4 col-lg-2" style="padding:2px;">
+			
+			<input  $estadoCheckEntidadPolizaHome  type="radio" value="100000" name="radio-input" aria-label="Polizas" aria-hidden="true" class="labelauty inpPrincipalPolizas" id="labelauty-184650" style="display: none;">
+				<label for="labelauty-184650" tabindex="0" role="radio" aria-checked="true" aria-label="Polizas" style="width: 100%;" class="labelPrincipalCheck checkPrincipalPolizas" onclick="ocultarMenuAvanzado('labelauty-184650');">
+					<span class="labelauty-unchecked-image"></span>
+					<span class="labelauty-unchecked">Polizas</span>
+					<span class="labelauty-checked-image"></span>
+					<span class="labelauty-checked">P&oacute;lizas</span>
+				</label>
+			</div>
+				
+			<div class="col-6 col-sm-4 col-md-4 col-lg-2" style="padding:2px;">
+			<input  $estadoCheckEntidadClienteHome   type="radio" value="010000"name="radio-input" aria-label="Clientes" aria-hidden="true" class="labelauty inpPrincipalClientes" id="labelauty-106175" style="display: none;">
+				<label for="labelauty-106175" tabindex="1" role="radio" aria-checked="false" aria-label="Clientes" style="width: 100%;" class="labelPrincipalCheck checkPrincipalClientes" onclick="ocultarMenuAvanzado('labelauty-106175');">
+					<span class="labelauty-unchecked-image"></span>
+					<span class="labelauty-unchecked">Clientes</span>
+					<span class="labelauty-checked-image"></span>
+					<span class="labelauty-checked" >Clientes</span>
+				</label>
+				</div>
+				
+			<div class="col-6 col-sm-4 col-md-4 col-lg-2" style="padding:2px;">
+			<input $estadoCheckEntidadSiniestroHome type="radio" value="001000" name="radio-input" aria-label="Siniestros" aria-hidden="true" class="labelauty inpPrincipalSiniestros" id="labelauty-1007180" style="display: none;">
+				<label for="labelauty-1007180" tabindex="2" role="radio" aria-checked="false" aria-label="Siniestros" style="width: 100%;" class="labelPrincipalCheck checkPrincipalSiniestros" onclick="ocultarMenuAvanzado('labelauty-1007180');">
+					<span class="labelauty-unchecked-image"></span>
+					<span class="labelauty-unchecked">Siniestros</span>
+					<span class="labelauty-checked-image"></span>
+					<span class="labelauty-checked">Siniestros</span>
+				</label>
+				</div>
+				
+			<div class="col-6 col-sm-4 col-md-4 col-lg-2" style="padding:2px;">
+			<input $estadoCheckEntidadCotizacionesHome type="radio" value="000010" name="radio-input" aria-label="Productores" aria-hidden="true" class="labelauty inpPrincipalCotizaciones" id="labelauty-968281" style="display: none;">
+				<label for="labelauty-968281" tabindex="4" role="radio" aria-checked="false" aria-label="Productores" style="width: 100%;" class="labelPrincipalCheck checkPrincipalCotizaciones" onclick="ocultarMenuAvanzado('labelauty-968281');">
+					<span class="labelauty-unchecked-image"></span>
+					<span class="labelauty-unchecked">Cotizaciones</span>
+					<span class="labelauty-checked-image"></span>
+					<span class="labelauty-checked">Cotizaciones</span>
+				</label>
+								</div>
+				
+				
+			<div class="col-6 col-sm-4 col-md-4 col-lg-2" style="padding:2px;">
+			<input  $estadoCheckEntidadProductoresHome type="radio" value="000001" name="radio-input" aria-label="Cotizacion" aria-hidden="true" class="labelauty inpPrincipalProductores" id="labelauty-514366" style="display: none;">
+				<label for="labelauty-514366" tabindex="5" role="radio" aria-checked="false" aria-label="Cotizacion" style="width: 100%;" class="labelPrincipalCheck checkPrincipalProductores" onclick="ocultarMenuAvanzado('labelauty-514366');">
+					<span class="labelauty-unchecked-image"></span>
+					<span class="labelauty-unchecked">Productores</span>
+					<span class="labelauty-checked-image"></span>
+					<span class="labelauty-checked">Productores</span>
+				</label>
+				</div>
+
+			<div class="col-6 col-sm-4 col-md-4 col-lg-2" style="padding:2px;">
+			<input $estadoCheckEntidadNidHome  type="radio" value="000100" name="radio-input" aria-label="Nid" aria-hidden="true" class="labelauty inpPrincipalNids" id="labelauty-308588" style="display: none;">
+				<label for="labelauty-308588" tabindex="3" role="radio" aria-checked="false" aria-label="Nid" style="width: 100%;" class="labelPrincipalCheck checkPrincipalNids" onclick="ocultarMenuAvanzado('labelauty-308588');">
+					<span class="labelauty-unchecked-image"></span>
+					<span class="labelauty-unchecked">Nids</span>
+					<span class="labelauty-checked-image"></span>
+					<span class="labelauty-checked">Nids&nbsp;&nbsp;</span>
+				</label>
+				</div>
+</div>
+
+
+
+			

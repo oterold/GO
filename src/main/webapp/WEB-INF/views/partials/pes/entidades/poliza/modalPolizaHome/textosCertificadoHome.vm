@@ -1,0 +1,52 @@
+<div class="panel panel-default" style="display: none;max-width: 1130px;height: 500px;overflow-y: hidden;opacity: 1;padding-left: 0px;padding-right: 0px;padding-top:0px;" id="textosCertificadoPopUp" >
+    <div class="col-md-12" style="padding-right: 0px;padding-left: 0px;">
+        <a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="border-radius:10px;font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:5px;margin-right: 15px;color: white;margin-top: 5px;background-color: #0b4376 !important;" rel="modal:close">clear</a>
+        <div class="panel-heading" style="padding-right:5px;padding-left:5px;background-color:#ffffff;border-color:#ffffff;">
+            <h4 style="border-radius:10px;border:none;text-align:center;color: white;padding-bottom: 15px;padding-top: 15px;background-color: #0b4376 !important;" id="DATO_TEXTO_CER"></h4>
+        </div>
+    </div>
+    <div>
+        <div class="row" style="margin:0px;">
+            <div class="col-md-6" style="text-align: left;height: 400px;overflow-y:auto;padding:0px;padding-left: 15px;background: #f9f9f9;">
+
+				<div class="col-xs-12 col-md-12 col-lg-12 input-group pull-right" style="z-index:1;">
+									<div class="input-group pull-right" style="z-index:1;">
+					                  <input type="text" class="form-control" onkeyup="buscarFiltroParametricoTextos('tablaParametricosTextos')" id="inputBusquedaParametricoTextos" style="height:35px;">
+					                  <span class="input-group-btn">
+					                    <button class="btn btn-default" type="button" style="padding: 2px; padding-left:15px;height:35px; padding-right: 15px">Filtrar</button>
+					                  </span>
+									</div>
+		   						</div>
+				
+				
+				
+				<div>
+                    <table id="tablaParametricosTextos" class="table table-hover table-grilla" role="table">
+                        <thead class="thead-grilla" role="rowgroup">
+                            <tr class="tr-grilla" role="row">
+                                <th class="th-grilla" role="columnheader">Cons</th>
+								<th class="th-grilla" role="columnheader">Texto</th>
+                                <th class="th-grilla" role="columnheader">Desde</th>
+                                <th class="th-grilla" role="columnheader">Hasta</th>
+                                <th class="th-grilla" role="columnheader">Renovac&oacute;n</th>
+                                <th class="th-grilla" role="columnheader">Impr</th>
+								<th class="th-grilla" role="columnheader">Desc</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody-grilla" id="datosTextoCertificado">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6" style="overflow-y:auto;height:400px;font-size:12px;text-align: left;padding-left:15px;padding-right:5px;padding-top:10px;padding-right:15px;">
+                <span  id="valorTextoCertificado" style="height:385px;text-align:left;padding-top:5px;white-space: pre-line"></span>
+				</div>
+				<div class="col-md-6" style="text-align: center;background-color:#f9f9f9">
+					</div>
+					<div class="col-md-6" style="text-align: center;">
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer"  onclick="descargarExcelTextoCertificado();" data-placement="bottom" data-toggle="tooltip"  title="Descargar" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;">cloud_download</a>
+					</div>
+			</div>
+        </div>
+    </div>
+</div>

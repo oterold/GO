@@ -1,0 +1,260 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+				<input type="hidden" value="0" id="valoresDistintosCabecera"/>
+				<input type="hidden" value="0" id="valoresIgualesCabecera"/>
+				<input type="hidden" value="0" id="cantidadCertificadosA"/>
+				<input type="hidden" value="0" id="cantidadCertificadosB"/>
+				<input type="hidden" value="0" id="cantIgualesComponentes"/>
+				<input type="hidden" value="0" id="cantDifComponentes"/>
+				<input type="hidden" value="0" id="datosObjCoberturas"/>
+				<input type="hidden" value="0" id="cantDifCoberturas"/>
+				<input type="hidden" value="0" id="cantIgualesCoberturas"/>
+				<input type="hidden" value="0" id="cantDifDetalleCoberturas"/>
+				<input type="hidden" value="0" id="cantIgualesDetalleCoberturas"/>
+				<input type="hidden" value="0" id="valorCertificado"/>
+				<input type="hidden" value="0" id="cantDifParamCoberturas"/>
+				<input type="hidden" value="0" id="cantIgualesParamCoberturas"/>
+				<input type="hidden" value="0" id="cantDifTarifas"/>
+				<input type="hidden" value="0" id="cantIgualesTarifas"/>
+				
+				
+            <div class=" col-sm-12 col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+                            #parse("/partials/util/botonVolverAtras.vm")
+                            <h4 id="headerCotizacion" style="color: #ffffff; text-align:center;">Comparaci&oacute;n de Cotizaci&oacute;n</h4>
+                        </div>
+                        <div class="panel-body ajustarPantalla" style="height:350px;">
+                            <div class=" row">
+                                <div class="col-md-2" style=";text-align: center;">
+                                <i class="material-icons altoIcono"  style="color:#646464;" >compare</i>
+                                </div>
+                                <div class="col-md-10" style="text-align: left;padding-top:10px;padding-left:30px;padding-right:30px">
+									<div class="row">
+									 <div class="col-md-4">
+                                    <div class="md-form">
+                                      <label for="form1" style="font-size:11px;">Cotizaci&oacute;n A</label>
+                                      <input type="text" id="cotizacionActual" value="$cotizacion" class="form-control">
+                                    </div>
+								</div>
+							
+								<div class="col-md-4">
+                                    <div class="md-form">
+                                      <label for="form1" style="font-size:11px;">Cotizaci&oacute;n B</label>
+                                      <input type="text" id="cotizacionNueva" class="form-control">
+                                    </div>
+								</div>
+									
+								 <div class="col-md-4 pt-2" style="text-align:center;    margin-bottom: 5px !important;">
+                                    <br>
+									<button id="navbar-category-bundle-jquery" onclick="realizarComparacionCotizacion('1');" class="btn btn-indigo btn-sm my-0 waves-effect waves-light" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;" role="button">
+                                        <span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Comparar</span>
+                                        <i class="fas fa-search" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                    </button>
+								 </div>
+							</div>
+									
+                                </div>
+                            </div>
+							<div class="row" id="datosCabecera" style="display:none;">
+								<div class="col-md-2">
+									<h4 id="" class="bordeFiltro" style="border-bottom-width:0px;">Cabecera</h4>
+								</div>
+								<div class="col-md-2 pt-1">
+									<h4 id="cantIgualesCabecera" onclick="mostrarDeferenciasCabecera('iconoDistintosDatosCabecera','cantIgualesCabecera');"  class="bordeFiltro" style="cursor:pointer;border-bottom-width:0px;font-size: 12px;font-weight: 400;display:none;"></h4>
+								</div>
+								<div class="col-md-2 pt-1">
+									<h4 id="cantDifCabecera" onclick="mostrarDeferenciasCabecera('iconoIgualDatosCabecera','cantDifCabecera');" class="bordeFiltro" style="cursor:pointer;border-bottom-width:0px;font-size: 12px;font-weight: 400;display:none;"></h4>
+								</div>
+								<div class="col-md-12 pb-3">
+									<div class="bordeFiltro"></div>
+								</div>
+								<div class="col-md-12">
+									
+									<div style="overflow-y:auto;height:150px;">
+							<table class="table table-hover table-grilla" role="table" id="tablaCmpCoti">
+								     <thead class="thead-grilla" role="rowgroup">
+    								    <tr class="tr-grilla" role="row">
+    								            <th class="" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Dato</h6></th>
+												<th class="" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Cotizaci&oacute;n A (<a style="color:#bfbac2;" class="cotizacionA">Sin dato</a>)</h6></th>
+    								            <th class="" role="columnheader"></th>
+												<th class="" role="columnheader" id="nuevaCotiTitulo" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Cotizaci&oacute;n B  (<a style="color:#bfbac2;" class="cotizacionB">Sin dato</a>)</h6></th>
+    								     </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="tablaComparacionCabecera">
+									</tbody>
+							</table>
+								</div>
+									
+								</div>
+								<div class="col-md-12 pt-2" style="text-align:center;">
+    								<button type="button" class="btn btn-primary" data-toggle="modal" onclick="bienesCotiCMP();" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;">
+										<span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Datos Param.</span>
+										<i class="fas fa-file-alt" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                    </button>
+									
+								</div>
+							</div>
+							
+							
+                        </div>
+                    </div>
+                    ##end
+                    <!-- Datos parametricos - Cotizacion -->
+                    <div class="panel panel-default" id="parametricos" style="">
+                        <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                            <div class="row">
+                                <div class="col-md-3" style="padding-right:0px;padding-left:5px;">
+                                    <h4 id="" class="bordeFiltro pt-3" style="border-bottom-width:0px;">Planes y Promociones</h4>
+                                </div>
+								<div class="col-md-9">
+                    				<div class="form-group">
+                                        <select class="form-control  sin-margen" id="selectorPlanesPromocionCMP" onchange="cargarCoberturasComponentes();";>
+                                          <option></option>
+                                        </select>
+                                    </div>
+								</div>
+								
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="bordeFiltro"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="height:650px;">
+                            <div class="row" style="display:none;" id="panelComponentes">
+								
+								<!----------------------------------------------------------- componentes tabla------------------------------------------------->
+								<div class="col-md-2 pt-1" style="text-align: left;">
+									<h5 style="border:none;">Componentes</h5>
+								</div>
+								<div class="col-md-2">
+                                        <h4 id="cantIgualesComponentesLabel" onclick="mostrarDeferenciasCabecera('iconoDiferenciasDatosComponentes','cantIgualesComponentesLabel');"  class="bordeFiltro" style="cursor:pointer;border-bottom-width:0px;font-size: 12px;font-weight: 400;"></h4>
+                                    </div>
+								      <div class="col-md-2">
+                                        <h4 id="cantDifComponentesLabel" onclick="mostrarDeferenciasCabecera('iconoIgualDatosComponentes','cantDifComponentesLabel');" class="bordeFiltro" style="cursor:pointer;border-bottom-width:0px;font-size: 12px;font-weight: 400;"></h4>
+                                    </div>
+
+								<div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
+									<div style="overflow-y:auto;height:220px;">
+                							<table class="table table-hover table-grilla" role="table" id="tablaCmpCoti">
+                								     <thead class="thead-grilla" role="rowgroup">
+                    								    <tr class="tr-grilla" role="row">
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;width:25%;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+                												<th COLSPAN=2 class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Cotizaci&oacute;n A (<a style="color:#bfbac2;" class="cotizacionA">Sin dato</a>)</h6></th>
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+																<th COLSPAN=2 class="th-grilla" role="columnheader" id="nuevaCotiTitulo" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Cotizaci&oacute;n B (<a style="color:#bfbac2;" class="cotizacionB">Sin dato</a>)</h6></th>
+                    								     </tr>
+                								    </thead>
+													<thead class="thead-grilla" role="rowgroup">
+                    								    <tr class="tr-grilla" role="row">
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Dato</h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Monto</h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Tasa</h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Monto</h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Tasa</h6></th>
+														</tr>
+                								    </thead>
+                								    <tbody class="tbody-grilla" id="tablaCmpComponentes">
+                									</tbody>
+                							</table>
+									</div>
+                                </div>
+								
+								
+								<div class="col-md-12 pt-4">
+									<hr style="border-top:solid 1px #4f5468">
+									
+								</div>
+								
+								<!------------------------------------- coberturas -------------------------------------------------->
+								
+								<div class="col-md-2 pt-1" style="text-align: left;">
+									<h5 style="border:none;">Coberturas</h5>
+								</div>
+								<div class="col-md-2">
+                                        <h4 id="cantIgualesCoberturasLabel" onclick="mostrarDeferenciasCabecera('iconoDiferenciasDatosCoberturas','cantIgualesCoberturasLabel');"  class="bordeFiltro" style="cursor:pointer;border-bottom-width:0px;font-size: 12px;font-weight: 400;"></h4>
+								</div>
+								<div class="col-md-2">
+                                        <h4 id="cantDifCoberturasLabel" onclick="mostrarDeferenciasCabecera('iconoIgualDatosCoberturas','cantDifCoberturasLabel');" class="bordeFiltro" style="cursor:pointer;border-bottom-width:0px;font-size: 12px;font-weight: 400;"></h4>
+								</div>
+
+								<div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
+									<div style="overflow-y:auto;height:220px;">
+                							<table class="table table-hover table-grilla" role="table" >
+                								     <thead class="thead-grilla" role="rowgroup">
+                    								    <tr class="tr-grilla" role="row">
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;width:25%;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Cotizaci&oacute;n A (<a style="color:#bfbac2;" class="cotizacionA">Sin dato</a>)</h6></th>
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+																<th class="th-grilla" role="columnheader" id="nuevaCotiTitulo" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Cotizaci&oacute;n B (<a style="color:#bfbac2;" class="cotizacionB">Sin dato</a>)</h6></th>
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+														</tr>
+                								    </thead>
+													<thead class="thead-grilla" role="rowgroup">
+                    								    <tr class="tr-grilla" role="row">
+															    <th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Dato</h6></th>
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Monto</h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;"></h6></th>
+                												<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Monto</h6></th>
+																<th class="th-grilla" role="columnheader" style="text-align:center;font-size:17px;"><h6 style="font-weight:600;font-size: 14px;">Tarifas</h6></th>
+																
+														</tr>
+                								    </thead>
+                								    <tbody class="tbody-grilla" id="tablaCmpCoberturas">
+                									</tbody>
+                							</table>
+											
+											
+
+
+
+
+											
+									</div>
+                                </div>
+								
+								
+								
+								
+                            </div>
+							<div class="row" id="mensajeComponentes">
+								<div class="col-md-12" style="text-align:center;">
+									<h5 style="border:none;" class="pt-4"> Realice una b&uacute;squeda </h5>
+								</div>
+							</div>
+							
+                        </div>
+						
+                    </div>
+                    <!-- PANEL C -->
+                            </div>
+                            <!-- Lista certificados - Panel B -->
+                            <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+                                <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+                                    <div class="panel-heading" style=" background-color:white;border-color:white;">
+                                        <h4 style="color:#00317A;">Certificados</h4>
+                                    </div>
+                                    <div class="main-container page__container altoPanelB">
+                                        <div class="timeline__group" style="z-index:1;max-height:20px;">
+											<div id="panelBCertificadosCMP" style="display:none;"> 
+                                            </div>
+											<h5 id="mensajePanelCertificado" clas="pt-4" style="border:none;text-align:center;"> Realice una b&uacute;squeda </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+#parse("partials/pes/entidades/poliza/modalPolizaHome/datosTarifasComparacion.vm")
+#parse("partials/pes/entidades/poliza/modalPolizaHome/datosParametricosComparacionCotizacion.vm")
+#parse("partials/pes/entidades/poliza/modalPolizaHome/coberturasDetalleModal.vm")
+
+</section>
+
+

@@ -1,0 +1,2 @@
+#set ($templateWeb = 'partials/pes/portalBpba/portalBpba.vm')
+#parse("partials/pes/templates/principal/mainTemplateHomeWeb.vm")	  

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pseguros</groupId>
+	<artifactId>PSPES</artifactId>
+	<name>PSPES</name>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<properties>
+		<java-version>1.7</java-version>
+		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	
+	
+	<repositories>
+	
+	<repository>
+      <id>repository.jboss.org-public</id>
+      <name>JBoss.org Maven repository</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>  
+    
+	</repositories>
+	<dependencies>
+
+	    
+	      <!-- Spring framework START -->
+       <!-- http://mvnrepository.com/artifact/org.springframework/spring-core%20-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-core</artifactId>
+           <version>4.1.4.RELEASE</version>
+       </dependency>
+ 
+       <!-- http://mvnrepository.com/artifact/org.springframework/spring-web%20-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-web</artifactId>
+           <version>4.1.4.RELEASE</version>
+       </dependency>
+ 
+       <!-- http://mvnrepository.com/artifact/org.springframework/spring-webmvc%20-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-webmvc</artifactId>
+           <version>4.1.4.RELEASE</version>
+       </dependency>
+ 
+ <!-- dependencias para generar el Excel -->
+ <dependency>
+	<groupId>net.sf.jxls</groupId>
+	<artifactId>jxls-core</artifactId>
+	<version>1.0.3</version>
+</dependency>
+<dependency>
+	<groupId>net.sf.jxls</groupId>
+	<artifactId>jxls-reader</artifactId>
+	<version>1.0.3</version>
+</dependency>
+ 
+ 
+       <!-- 
+       <dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+        -->
+		<!-- 
+		 -->
+       
+		       <dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-core</artifactId>
+		  <version>2.7.3</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-databind</artifactId>
+		  <version>2.7.3</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-annotations</artifactId>
+		  <version>2.7.3</version>
+		</dependency>
+		
+
+
+
+	<dependency>
+		<groupId>com.pseguros</groupId>
+		<artifactId>PSContext</artifactId>
+		<version>1.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>com.pseguros</groupId>
+		<artifactId>PSLog4j</artifactId>
+		<version>1.0</version>
+	</dependency>
+ 
+       <!-- contains: VelocityEngineFactory -->
+       <!-- http://mvnrepository.com/artifact/org.springframework/spring-context-support%20-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-context-support</artifactId>
+           <version>4.1.4.RELEASE</version>
+       </dependency>
+       <!-- Spring framework END -->
+
+
+
+
+<!-- Acceso a datos -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>4.1.4.RELEASE</version>
+	</dependency>
+
+
+	<dependency>
+
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc14</artifactId>
+		<version>10.2.0.3.0</version>
+	</dependency>
+
+	<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+	</dependency>
+	
+	
+	
+	<dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<version>2.4</version>
+		 <classifier>jdk15</classifier> 
+	</dependency>
+
+	
+	    <dependency>
+	      <groupId>com.google.code.gson</groupId>
+	      <artifactId>gson</artifactId>
+	      <version>2.8.5</version>
+	      <scope>compile</scope>
+	      
+	    </dependency>
+	
+	    
+	<dependency>
+	   <groupId>com.zaxxer</groupId>
+	   <artifactId>HikariCP-java7</artifactId>
+	   <version>2.4.13</version>
+	   <scope>compile</scope>
+	</dependency>
+
+
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.4.5</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-email</artifactId>
+		<version>1.4</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>com.sun.mail</groupId>
+    	<artifactId>javax.mail</artifactId>
+    	<version>1.4.4</version>
+	</dependency>
+	
+	
+	<dependency>  
+   		 <groupId>ro.isdc.wro4j</groupId>  
+    	<artifactId>wro4j-core</artifactId>  
+    	<version>1.6.3</version>  
+ 	</dependency>
+ 
+ 
+       <!-- Servlet API -->
+       <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api%20-->
+       <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>javax.servlet-api</artifactId>
+           <version>3.1.0</version>
+           <scope>provided</scope>
+       </dependency>
+ 
+ 
+ 
+ 
+       <!-- http://mvnrepository.com/artifact/org.apache.velocity/velocity%20-->
+       <dependency>
+           <groupId>org.apache.velocity</groupId>
+           <artifactId>velocity</artifactId>
+           <version>1.7</version>
+       </dependency>
+ 
+       <!-- http://mvnrepository.com/artifact/org.apache.velocity/velocity-tools%20-->
+       <dependency>
+           <groupId>org.apache.velocity</groupId>
+           <artifactId>velocity-tools</artifactId>
+           <version>2.0</version>
+       </dependency>
+
+			                
+			               
+     <!-- LOG  -->
+     
+     <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<scope>runtime</scope>
+		</dependency>
+     
+          
+         <!-- Fin log -->
+			<dependency>
+      			<groupId>jvftp</groupId>
+      			<artifactId>jvftp</artifactId>
+      			<version>0.73</version>
+    		</dependency>
+			
+			
+		<dependency>
+    <groupId>net.sf.jasperreports</groupId>
+    <artifactId>jasperreports</artifactId>
+    <version>6.1.0</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>xml-apis</artifactId>
+          <groupId>xml-apis</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+<dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>1.8.6</version>
+
+      <exclusions>
+        <exclusion>
+          <artifactId>xml-apis</artifactId>
+          <groupId>xml-apis</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+
+
+<dependency>
+    <groupId>net.sourceforge.barbecue</groupId>
+    <artifactId>barbecue</artifactId>
+    <version>1.5-beta1</version>
+</dependency>
+
+<dependency>
+    <groupId>ar.com.fdvs</groupId>
+    <artifactId>DynamicJasper-core-fonts</artifactId>
+    <version>1.0</version>
+</dependency>
+
+
+			
+	</dependencies>
+    <build>
+    	<finalName>PSPES-${maven.build.timestamp}</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalBuildcommands>
+                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                    </additionalBuildcommands>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+               		<encoding>UTF-8</encoding>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <!-- se agrego este plugin para cambiar a utf8. -->
+            
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+				<encoding>UTF-8</encoding>
+				</configuration> 
+            </plugin>
+            
+            
+            
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>org.test.int1.Main</mainClass>
+                </configuration>
+            </plugin>
+            
+         	
+   			<!--
+   				Aca un ejemplo de como utilizar Ant en un proyecto con maven
+   				Lo que hace esta tarea es copiar el war generado al directorio del proyecto o simplemente al servidor
+            -->
+            
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-war-plugin</artifactId>
+		    <version>2.6</version> 
+		    <configuration>
+               <packagingExcludes>WEB-INF/lib/xml-apis-*.jar,WEB-INF/lib/stax-api*.jar,WEB-INF/lib/ojdb*.jar</packagingExcludes>
+               <!--  <webXml>${basedir}/src/main/webapp/WEB-INF/wl/web.xml</webXml>-->
+		    </configuration>
+		</plugin>   				     
+        	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <configuration>
+                            <warSourceExcludes>WEB-INF/lib/xml-apis-1.3.03.jar,WEB-INF/lib/stax-api-1.0.1.jar,WEB-INF/lib/stax-api-1.0-2.jar</warSourceExcludes>
+                            
+                            <target>
+                                 <echo></echo>
+                                 <echo>*******************************************</echo>
+                                 <echo>Inicia la tarea ANT.</echo>
+                                 
+                                  <tstamp><format property='build.time' pattern='yyyyMMddHHmm'/></tstamp>
+                                  <tstamp><format property='build.timeNew' pattern='yyyyMMdd.HHmm'/></tstamp>
+                                  <tstamp><format property='build.time.hora' pattern='HHmm'/></tstamp>
+                                  <tstamp><format property='build.time.dia' pattern='yyyyMMdd'/></tstamp>
+                                  <property name='pathProyectoLocal' value='c://_proyectos//PES//deploy'/>
+                                  <property name='pathServidorRemotoProduccion' value='p://'/>
+                                  <property name='pathServidorRemotoTesting' value='t://'/>
+
+                                 
+                                   <!--  <copy file="target/PSClientes.war" tofile="${pathProyectoLocal}//PSClientes${build.timeNew}.war" />-->
+
+								<!--<copy file="target/WebServiceUtilities.war" tofile="${pathServidorRemotoProduccion}WebServiceUtilities.war" /> -->                                  
+                                  <!--  <copy file="target/WebServiceUtilities.war" tofile="${pathServidorRemotoTesting}" /> --> 
+                                  
+                                 <echo>Finaliza la tarea ANT.</echo>
+                                 <echo>*******************************************</echo>
+                                 <echo></echo>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                    
+            </plugin> 
+            
+            
+            
+        </plugins>
+    </build>
+</project>

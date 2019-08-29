@@ -1,0 +1,436 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+ 
+    <div class="row">
+    
+    <!-- Cotizacion -->
+       <div class=" col-sm-12 col-md-8">
+	  	##foreach($cotizacion in $listaCertificadosCotizacion)
+			#set($nroCotizacion = $cotizacion)
+			<input type="hidden" value="" id="valorConsecutivo" />
+			<input type="hidden" value="$nroCotizacion" id="valorCotizacion" />
+			<input type="hidden" value="" id="valorRamoCotizacion" /	>
+			<input type="hidden" value="" id="valorPremioTotal" />
+			<input type="hidden" value="" id="valorMonedaCotizacion" />
+			<input type="hidden" value="" id="valorPolizaCotizacion" />
+			<input type="hidden" value="" id="valorProductorCotizacion" />
+			<input type="hidden" value="" id="valorSucursalCotizacion" />
+			
+			
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+				#parse("/partials/util/botonVolverAtras.vm")
+				<a id="verMasPanelA" class="pull-right" style=" cursor:pointer;color: aliceblue;" onclick="mostrarPanelCotizacion('panelb','verMasPanelA');">Ver menos</a>
+				<h4 id="headerCotizacion" style="color: #ffffff; text-align:center;">Cotizacion #$nroCotizacion</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   				
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#ff9064;" >note</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		 	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Poliza :</h6></td>
+                           		<td style="padding-top:2px;width:60%;"><h6 style="cursor:pointer;color:#6fa1d4;" onClick="redirPolizaHome();" id="INFO_P_TF_COTI_CAZB_CAPO_NU_POLIZA"></h6></td>
+                           		</tr>
+							
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Ramo :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_CAPO_CD_RAMO"></h6></td>
+                           		</tr>
+							
+							   	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor :</h6></td>
+                           		<td style="padding-top:5px;"><h6 style="cursor:pointer;color:#6fa1d4;" id="INFO_P_TF_COTI_CAZB_CAPD_CD_PRODUCTOR" onclick="abrirModalCotizacionProductorHome();"></h6></td>
+                           		</tr>
+							
+							
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cliente :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_CACN_CD_CLIENTE"></h6></td>
+                           		</tr>
+							          
+
+                                <tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Lugar Venta :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_CD_UBICACION_VENTA"></h6></td>
+                           		</tr>
+							
+							
+							
+                         		<td  align="right" style="padding-top:5px;"><h6>Medio de pago :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_CAMD_CD_MEDIO_PAGO"></h6></td>
+                           		</tr>
+                           
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+  							
+  								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fecha Desde:</h6></td>
+                           		<td valign="top" style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_FE_DESDE"></h6></td>
+                           		</tr>
+  							<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fecha Hasta:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_FE_HASTA"></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha Tecnica Desde:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_FE_DESDE_TECNICA"></h6></td>
+                           		</tr>
+  							
+  							
+
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Tecnica Hasta:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_FE_HASTA_TECNICA"><b></b></h6></td>
+                           		</tr>
+  							
+  							
+                         		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Renovaci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px; width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_IN_RENOVACION"></h6></td>
+                           		
+                           		</tr>
+                        
+                        
+                        		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Estado:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_INB_ESTADO_COTI"></h6></td>
+                           		</tr>
+							
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			
+    				<div class="row" id="panelb">
+    					
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         	
+                          
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Producto :</h6></td>
+                           		<td valign="top" style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_CAPU_CD_PRODUCTO"></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tp Calculo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_TP_CALCULO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Premio :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_MT_PREMIO_INFORMADO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Provincia :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_CAES_CD_PROVINCIA"></h6></td>
+                           		</tr>
+                           		<tr>
+										<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Origen :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_COTC_CD_ORIGEN"></h6></td>
+                           		</tr>
+                           		
+                        
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table style= "width:100%;">
+                            		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Plan de Pago :</h6></td>
+                           		<td valign="top" style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COTI_CAZB_CALG_CD_PLAN_PAGO"></h6></td>
+                           		</tr>
+                        
+                           	 	<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_CAPO_CD_SUCURSAL"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Usuario :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>
+                           		
+                           		   		   		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Tipo Pago Elegido :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_FR_PAGO_ELEGIDA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Moneda :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COTI_CAZB_CAMO_CD_MONEDA"></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+					<br><br>
+              			  </div>
+    				</div> 
+    					
+    			<!-- aca termina -->
+					  </div>
+        	</div>
+        	
+        	
+        	<div class="row" >
+					     <div class="col-lg-12" style="text-align: center;padding-top:10px;">
+
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" href="/PSPES/homeCotizacionComparacion?cotizacion=$nroCotizacion"   data-placement="bottom" data-toggle="tooltip"  title="Comparar" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">compare</a>
+						 </div>
+					</div>	 
+        	
+        	
+       			    </div>
+
+      	 			
+		</div>
+			##end
+   		
+   		<!-- Datos parametricos - Cotizacion -->
+   		
+      		<div class="panel panel-default" id="parametricos" style="">
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+
+				<div class="row">
+					
+					<div class="col-md-6">
+						<h4 id="" class="bordeFiltro" style="border-bottom-width:0px;">Datos parametricos</h4>
+					</div>
+					
+					<div class="col-md-6 input-group pull-right" style="z-index:1;" >
+						<div class="form-group">
+							  <select onchange="muestraPanelParametricosCotizacoinHome()" class="form-control" style="height:35px;" name ="selectorBienCotizacion" id="selectorBienCotizacion">
+							    <option  value="0"  selected>Seleccione un bien..</option>
+							  </select>
+							</div>
+					</div>
+					
+				</div>
+				<div class="row">
+                    <div class="col-md-12">
+						<div class="bordeFiltro"></div>
+					</div>
+				</div>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;" id="valorImagenCotizacion">
+					<i class="material-icons altoIcono"  style="color:#ff9064;padding-top:15px;" >settings</i>
+				</div>
+				
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+    				<div id="datosParametricosSegunCotizacion">
+									<div style="height:150px;overflow-y:auto;">
+										<table id="tablaParametricosCotizacion" style= "width:100%;">
+											
+										</table>	
+									</div>
+   			 		</div>	
+    					
+    			<!-- aca termina -->
+    			  </div>
+				  
+    			</div>	
+          		
+          		<div class="row" >
+					     <div class="col-lg-12" style="text-align: center;padding-top:10px;">
+
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpTextoCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Texto" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">sms</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirModalPlanesCotizacion();"   data-placement="bottom" data-toggle="tooltip"  title="Planes" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">storage</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpAccesoriosCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Accesorios" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">dns</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpDireccionesCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Direcciones" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">person</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpObjetosCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Objetos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">build</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpCoberturasCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Coberturas" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">beach_access</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpBeneficiarioCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Beneficiario" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">attach_money</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpTitularesCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Titulares" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">insert_drive_file</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpReasegurosCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Reaseguros" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">people</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpAnexosCotizacionHome();"   data-placement="bottom" data-toggle="tooltip"  title="Anexos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">add</a>
+						<a class="btn btn-panela-cotizacion btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirModalCotizacionFueraPauta();"   data-placement="bottom" data-toggle="tooltip"  title="Fuera de Pauta" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">assignment</a>
+						  
+						 
+						 </div>
+					</div>	 
+          		
+            </div>
+   			
+			</div>
+			
+			
+			
+     <!-- PANEL C -->
+     
+     
+      <div class="panel panel-default">
+		
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                
+				 <h4>Componentes </h4>
+   			 </div>	
+			
+				<div class="panel-body panelComponenteGrilla" style="height:380px;">    
+				    <div class="row">
+	  	<div class="col-md-2" style=";text-align: center;" id="">
+					<i class="material-icons altoIcono"  style="color:#ff9064;padding-top:15px;" >insert_drive_file</i>
+				</div>
+			#if($listaCertificadosCotizacion.size()>0)
+				<div class="col-md-10" style="text-align: left;padding-left:5px;padding-right:5px;height:300px;">
+					
+                        		<div class="row" style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Nivel comisi&oacute;n :
+			                        	<a  id="DATO_TOTAL_COMI" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				Premio :
+			                        	<a  id="DATO_PREMIO_COTI" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                        
+    						  </div>
+				        		<div class="row"  style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Prima :
+			                        	<a  id="DATO_PRIMA_COT" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+                           				Suma Premio : 
+			                        	<a  id="DATO_SUMAPREMIO_COTI" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                        
+    						  </div>
+				
+    				     		<div class="row"  style="font-size:12px;">
+								  <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:28px;padding-top:5px;">
+                           				Premio informado :
+			                        	<a  id="DATP_PREMIO_INFORMADO_COTI" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                     			
+			                     			
+			                       <div class="col-md-6 panelComponenteGrillaCabecera" style="text-align: left;padding-left:60px;padding-top:5px;">
+			                        	<a  id="DATP_PAUTA_COTI" style="text-align:left;padding-top:5px;"></a>
+			                        </div>
+			                        
+    						  </div>
+				<div class="row">
+				<div class="col-md-12" style="padding-top:10px;">
+				                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+				</div>
+				</div>
+				
+					<div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;height:250px;overflow-y:auto;padding-top:10px;" >
+							<div style="overflow-y:auto;">
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+								    <tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Componente</th>
+								            <th class="th-grilla" role="columnheader">Tasa</th>
+								            <th class="th-grilla" role="columnheader">Importe</th>
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosComponenteCotizacion">
+							</tbody>
+								</table>
+								</div>
+						</div> 
+					
+				
+				</div>
+				#else
+				<div class="col-md-10" style="text-align: left;padding-left:5px;padding-right:5px;" >
+				    		    <div id="datosParametricosSegunCotizacion">
+				    		      <span style="color:#6f6767;text-align:center;"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No se encontraron componentes de cotizacion</span>
+   			 					</div>
+				</div> 
+				#end    	
+				    </div> 
+				</div>
+			
+			
+   		</div>
+	</div>
+
+  	   
+  	   <!-- Lista certificados - Panel B -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+              <h4 style="color:#00317A;">Certificados #if ($listaCertificadosCotizacion.size() > 0) ($listaCertificadosCotizacion.size()) #end</h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+				<div class="timeline__group" style="z-index:1;max-height:20px;">
+              
+				  	<div>
+						#if ($listaCertificadosCotizacion.size() > 0)
+                			#foreach($datoCertificadoCotizacionIn in $listaCertificadosCotizacion)	
+							   #set ($descCertificado = $utilToolScreen.datoVacio($datoCertificadoCotizacionIn.get("P_TF_LISTA_CERT.INB_CERTIFICADO")))
+							   #set ($nroConsecutivo = $utilToolScreen.datoVacio($datoCertificadoCotizacionIn.get("P_TF_LISTA_CERT.CAZB_NU_CONSECUTIVO")))
+							   
+							   #set ($icono = "note")
+							   #set ($numeroCard = $velocityCount)
+                			   #parse("partials/pes/entidades/cotizacion/itemCotizacionHome.vm")	 
+							#end
+					   #else 
+						   #set($concepto = "No se posee cotizacion")
+               			   #parse("partials/util/itemTimeLineVacio.vm")	
+					   #end										
+   
+					</div>
+            
+				</div>
+	
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+ 
+	  #parse("partials/pes/entidades/cotizacion/modalCotizacionHome/planesCotizacionModal.vm")
+	  #parse("partials/pes/entidades/cotizacion/modalCotizacionHome/componenteCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/textoCotizacionesModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/accesoriosCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/direccionesCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/objetosCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/coberturasCotizacionesModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/beneficiarioCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/titularesCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/reaseguroCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/anexosCotizacionModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/productoresModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/fueraDePautaCotizacionModal.vm")
+	  

@@ -1,0 +1,90 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="clientePopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="INFO_NU_CLIENTE_P_TF_CLIE_CACN_NU_CEDULA_RIF"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#f0ad4e;" >&#xE7FB;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 	          	 	<input type="hidden" value="" id="DATO_P_TF_CLIE_CACN_NU_CEDULA_RIF" />
+
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cliente :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CLIE_INB_NOMBRE"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro Persona :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CLIE_CABU_NU_PERSONA"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Documento :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_NU_DOC_P_TF_CLIE_CABU_CATU_TP_DOCUMENTO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Cuit :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_CLIE_CABU_NU_CUIT"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Tipo Cliente :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_CLIE_INB_CATZ_RAZON_SOCIAL"><b></b></h6></td>
+                           		</tr>
+                          
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha Alta :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CLIE_CABU_FE_ALTA"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha Baja :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CLIE_CABU_FE_BAJA"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Codigo de Usuario  :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CLIE_CABU_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Categoria  :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CLIE_CACN_CJIV_CD_CATEGORIA"></h6></td>
+                           		</tr>
+								
+								 		<tr>
+                         		<td  align="right" style="position:relative;padding-top:5px;"><h6>Nacionalidad :</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_CLIE_INB_NACIONALIDAD"><b></b></h6></td>
+                           		</tr>
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+					<div class="row" style="margin-top:15px;">
+					     <div class="col-lg-12"style="text-align: center;">
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons contactoBotonHoover"  data-placement="bottom" data-toggle="tooltip" onclick="redirecClienteHome();" title="Detalle" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#f0ad4e" >play_arrow</a>
+						 </div>
+					</div>	 
+			</div>
+   			</div>

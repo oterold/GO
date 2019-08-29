@@ -1,0 +1,70 @@
+<div class="panel panel-default" style="display:none; max-width:975px;overflow-y:hidden;" id="chequesRechazadosProductorPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+					<h4 style="" id="DATO_CHEQUES_RECHAZADOS_PRODUCTOR">Cheques Rechazados</h4>
+      	    </div>	
+   			<div class="panel-body">
+               	<div class="row" style="margin:0px;" id="chequesRechazados">
+          	 	  <div class="col-md-12" style="text-align: left;height: 350px;overflow-y:auto;padding:0px;">
+								<div>
+								<table class="table  table-hover table-grilla" role="table">
+								   
+									<thead class="thead-grilla" role="rowgroup">
+										<tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Remesa</th>
+								            <th class="th-grilla" role="columnheader">Nro Cheque</th>
+								            <th class="th-grilla" role="columnheader">Fecha Rechazo</th>	
+											<th class="th-grilla" role="columnheader">Moneda</th>								       
+								            <th class="th-grilla" role="columnheader">Fecha Proceso</th>								       
+								            <th class="th-grilla" role="columnheader">Importe</th>								       
+
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosChequesRechazados">
+									</tbody>
+								</table>
+								</div>
+				  </div>
+    				  
+				</div>
+				<div class="row" style="margin-top:20px;" id="totalCheques">
+          	 	  <div class="col-md-12" style="text-align: left;overflow-y:auto;padding:0px;">
+						<div class="col-md-4">
+							<table  style= "width:100%;">
+									
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Mt.&nbsp;Total&nbsp;Pesos&nbsp;:</h6></td>
+											<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_TOTALES_CHEQUES_INB_MT_TOTAL_PESOS"></h6></td>
+											
+											</tr>
+							</table>
+						</div>
+						<div class="col-md-4">
+							<table  style= "width:100%;">
+									
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Mt.&nbsp;Total&nbsp;Dolares&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_TOTALES_CHEQUES_INB_MT_TOTAL_DOLARES"></h6></td>
+                                       		</tr>
+							</table>
+						</div>
+						<div class="col-md-4">
+							<table  style= "width:100%;">
+									
+											<tr>
+                                     		<td align="right"  valign="top" style="padding-top:5px;"><h6>Mt.&nbsp;Total&nbsp;Euros&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_TOTALES_CHEQUES_INB_MT_TOTAL_EUROS"></h6></td>
+                                       		</tr>
+							</table>
+						</div>
+								
+				  </div>
+    				  
+				</div>
+				
+			</div>
+			
+
+</div>

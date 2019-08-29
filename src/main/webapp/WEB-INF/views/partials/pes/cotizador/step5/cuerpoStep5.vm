@@ -1,0 +1,75 @@
+<div class="col-md-12 pt-3 pb-3" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="cambiarIconoAcordeon();" style="cursor:pointer;">
+    <div class="accordion" id="accordion">
+    	<a class="box-title pl-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;margin-top: 15px;">Modificar Cotizaci&oacute;n <i class="fas fa-angle-double-down" id="iconoAcordeon"></i> </a> 
+    </div>
+</div>
+<div id="collapseOne" aria-expanded="false" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+	<div class="card-body">
+		<div class="row">
+			<div class="switch col-md-6 centrar-switch mt-4">
+				<label>
+					&iquest;Utiliza Comisi&oacute;n Estandar&#63;
+					<input onchange="comisionEstandar(this.id);" id="switchComision" type="checkbox" #if($datosCoti.comision == "null") checked#end>
+					<span class="lever"></span>
+                 </label>
+           	</div>
+            <div class="input-field col-md-4 mt-4">
+				<select class="selectorMaterialice"  name="valorComision" id="valorComision">
+					<option value="">Seleccione..</option> 
+					#foreach($datosComisionIn in $datosComision)
+						#if($datosCoti.comision == $datosComisionIn.get("P_TF_CPRC.CPRC_CD_RELACION"))
+							<option value="$datosComisionIn.get("P_TF_CPRC.CPRC_CD_RELACION")" selected>$datosComisionIn.get("P_TF_CPRC.CPRC_TA_COMISION")%</option>
+						#else
+							<option value="$datosComisionIn.get("P_TF_CPRC.CPRC_CD_RELACION")">$datosComisionIn.get("P_TF_CPRC.CPRC_TA_COMISION")%</option>
+						#end
+					#end
+				</select>
+				<label>Porcentaje Comisi&oacute;n*</label>
+			</div>
+			<div class="switch col-md-6 centrar-switch mt-4">
+				<label>
+					&iquest;Mantiene Comisi&oacute;n en Renovaci&oacute;n&#63;
+					<input type="checkbox">
+					<span class="lever"></span>
+                </label>
+            </div>
+			<div class="input-field col-md-4 mt-4">
+				<select class="selectorMaterialice"  name="comisionPorciento" id="comisionPorciento">
+					<option value="">Seleccione..</option>
+					<option value="">$datosRecalculo.get("P_VC_TABL")</option>
+				</select>
+				<label>$utilToolScreen.nombreMayuscula($datosRecalculo.get("P_VC_DATO"))</label>
+			</div>
+			<div class="col-sm-12  col-md-2 centrarElementos">
+				<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion btn-small" onclick="recalculoCotizacion()" style="padding-top: 2px;cursor: pointer;color: white;margin-top: 5px;width: 45px;height: 35px !important;font-size: 10px !important;width:100%;" role="button">
+					<i class="fa fa-refresh" style="color:white;font-size:15px;"></i>
+				</a>
+			</div>
+      </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

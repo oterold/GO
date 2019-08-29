@@ -1,0 +1,40 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="motivoBajaProductorPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATOS_MODAL_MOTIVO_BAJA_PRODUCTOR">Informacion Detalle Baja</h4>
+      	    </div>	
+   			
+   			<div class="panel-body" style="padding-top:0px;">
+               	<div class="row">
+					<div class="col-md-2" style=";text-align: center;">
+						<i class="material-icons altoIcono"  style="color:#e0d100;padding-top:15px;" >report</i>
+					</div>
+					<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 			<div class="row" id="panelModal" style="margin-top:25px;">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Motivo&nbsp;Baja&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_MOTIVO_BAJA_CAPD_CD_MOTIVO_BAJA"></h6></td>
+                           		</tr>
+								
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Observaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_MOTIVO_BAJA_CAPD_OBS_CD_BAJA"></h6></td>
+                           		</tr>
+                     
+                                </table>
+						     
+              			  </div>
+           				   
+    					</div>            
+					</div>
+    			</div>	
+				
+			</div>
+ </div>

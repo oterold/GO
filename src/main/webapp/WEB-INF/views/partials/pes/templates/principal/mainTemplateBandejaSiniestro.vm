@@ -1,0 +1,95 @@
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Provincia Seguros">
+    <meta name="author" content="">
+    <title>Provincia Seguros</title>
+	<link rel="stylesheet" href="resources/css/boostrap4/bootstrap4v1.min.css">
+	<link rel="stylesheet" href="resources/css/fonts/google/material-icons.css">
+	<link rel="stylesheet" href="resources/css/cotizador/mdb.css"> 
+    <link href="resources/css/pantalla/v3/psadminV3.css" rel="stylesheet"> 
+    <link href="resources/css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="resources/css/pantalla/v3/timeLine.css">  
+    <link rel="stylesheet" href="resources/css/pantalla/v3/bootstrap-social.css">
+	<link rel="stylesheet" href="resources/css/pantalla/buscador/checkbox.css">  
+	<link rel="stylesheet" href="resources/css/pantalla/v3/v3.css"> 
+ 	<link rel="stylesheet" href="resources/css/pantalla/v3/body.css"> 
+ 	<link rel="stylesheet" href="resources/css/jquery-popup-modal.css"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="resources/css/mfb.css"> 
+
+  </head>
+  <body style="background-color:#f5f5f5;" onload="$funcionOnload">
+    <div id="contenido">
+		#parse("partials/pes/templates/principal/mainTemplateWebHeader.vm")
+	  #parse("partials/pes/templates/principal/mainTemplateSeccion.vm")	
+	 #parse($templateWeb)
+    <a class="scroll-to-top rounded" onclick="topFunction()">
+      <i class="fa fa-angle-up"></i>
+    </a>
+	<!-- boton flotante-->
+	#if($userApp != "")
+	<ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
+      <li class="mfb-component__wrap">
+        <a style="background-color:#00317A!important;width:45px;height:45px;" class="mfb-component__button--main">
+          <i class="mfb-component__main-icon--resting  material-icons  ion-plus-round" style="color:#ffffff;line-height:45px;">add</i>
+          <i class="mfb-component__main-icon--active  material-icons  ion-close-round" style="color:#ffffff;line-height:45px;">clear</i>
+        </a>
+        <ul class="mfb-component__list">
+          
+			
+          <li>
+            <a href="mailto:&subject=Compartido por GO&body=Hola, $userApp te est&aacute; compartiendo el siguiente acceso, %0D%0D$compartirUrl. %0D%0DSaludos.%0D%0DGO Team." style="background-color:#00317A!important;width:45px;height:45px;" data-mfb-label="Compartir" class="mfb-component__button--child">
+              <i class="mfb-component__child-icon material-icons ion-social-octocat" style="color:#ffffff;line-height:45px;">share</i>
+            </a>
+          </li>
+		  <li>
+            <a style="background-color:#00317A!important;width:45px;height:45px;"  data-mfb-label="Entorno" class="mfb-component__button--child">
+              <i class="mfb-component__child-icon material-icons  ion-social-github" onclick="abrirPopUpNuevo('entornoPopUp');" style="color:#ffffff;line-height:45px;">storage</i>
+            </a>
+          </li>
+			<li>
+            <a href="http://provinciaintranet/" style="background-color:#00317A!important;width:45px;height:45px;" data-mfb-label="Salir" class="mfb-component__button--child">
+              <i class="mfb-component__child-icon material-icons ion-social-octocat" style="color:#ffffff;line-height:45px;">redo</i>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+	<!-- aca termina -->
+	#end
+	</div>
+  
+	<script src="/PSPES/resources/js/jquery/jquery-3.3.1.min.js"></script>
+	<script src="/PSPES/resources/js/pesHome.js?$paramId"></script>
+    <script src="/PSPES/resources/js/popper/popper.min.js"></script>
+	$scriptCustom
+	<script src="/PSPES/resources/js/jquery.blockUI.js"></script>
+	<script src="/PSPES/resources/js/bootstrap/bootstrap4v1.min.js"></script>
+		<script src="/PSPES/resources/js/mfb.js"></script>
+	
+  </body>
+	
+
+	
+
+    <!-- Custom scripts for this template -->
+	
+	<script src="/PSPES/resources/js/pubFiltroHome.js?$paramId"></script>
+	<script src="/PSPES/resources/js/jquery.modal.js"></script>
+	   <script type="text/javascript" src="/PSPES/resources/js/cotizador/mdb.js"></script>
+		<script src="/PSPES/resources/js/sweetalert2.all.min.js"></script>
+	
+	<script type="text/javascript" src="/PSPES/wro/alljs.js?$paramId"></script> 
+	<script src="/PSPES/resources/js/shortcut.js"></script>
+	<script src="/PSPES/resources/js/pub/bandejaSiniestro/bandejaSiniestro.js"></script>
+
+	
+	
+	$scriptGrilla
+	
+	

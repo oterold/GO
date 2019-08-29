@@ -1,0 +1,10 @@
+<div class="container">
+		<div class="row">
+			<div class="col-xs-12 center-block" style="margin-top:70px;" id="idLog">
+				<div class="account-wall" style="text-align:left; color:#00317A; overflow-x:scroll; overflow-y: hidden; white-space: nowrap; padding: 20px 8px 20px 8px;">
+					<h3 style="text-align:center; color:#00317A; margin-top:0px; margin-bottom: 25px">PSPES - Log </h3>
+					<b>$logPSPES</b>
+				</div>
+			</div> 
+		</div> 
+</div>

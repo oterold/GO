@@ -1,0 +1,122 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-2 pt-4" style="color:#0b4376;border:none;font-size:30px;line-height:1;">Planes</h3>
+                                <div class="plan-selection">
+                                    <div class="plan-data">
+                                        <div class="row">
+                                            <br>
+                                                <br>
+                                                    <br>
+                                                        <br>
+                                                            <br>
+                                                                <br>
+                                                                    <br>
+                                                                        <br>
+                                                                            <br>
+                                                                                <br>
+                                                                                    <br>
+                                                                                        <br>
+                                                                                            <br>
+                                                                                                <br>
+                                                                                                    <br>
+                                                                                                        <br>
+                                                                                                            <br>
+                                                                                                                <br>
+                                                                                                                    <br>
+                                                                                                                        <br>
+                                                                                                                            <br>
+                                                                                                                                <br>
+                                                                                                                                    <br>
+                                                                                                                                        <br>
+                                                                                                                                            <br>
+                                                                                                                                                <br>
+</div>
+</div>
+</div>
+<button type="button" class="pull-right btn btn-indigo" onclick="redirectFin();" style="font-size:13px;width:170px;height:45px;margin-bottom:20px;">Siguiente&nbsp;&nbsp;									
+    <i class="fas fa-angle-right" style="color:white;"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lista certificados - Panel B -->
+<div class="col-sm-12 col-md-4" style="width:100%;">
+    <div class="panel panel-default" style="margin-bottom:0px;border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+        <div class="main-container page__container" >
+            <div class="widget" style="margin-bottom: 0px;padding-bottom: 0px;padding-top: 25px;padding-left:10px;padding-right:10px;">
+        <div class="summary-head" style="width:80%;">
+                                                                        <h4 style="border:none;color:#0b4376"  class="widget-title">Cotizaci&oacute;n</h5>
+                                                                        <span class="summary-small-text" ></span>
+                                                                    </div>
+                                                                    <div class="summary-price">
+                                                                        <a class="summary-text fas fa-refresh" href="/PSPES/cotizador" style="color:#0b4376;font-size:15px;"></a>
+                                                                    </div>
+                                                                            <div class="summary-block" >
+                    <div class="summary-content" style="width:100%;">
+                        <div class="summary-head" style="width:80%;">
+							<h5 style="border:none;"  class="summary-title">Selecci&oacute;n de Producto</h5>
+                            <span class="summary-small-text" >Automotores /(04100/10) Automotores </span>
+                        </div>
+                        <div class="summary-price">
+                            <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-block" >
+                    <div class="summary-content" style="width:100%;">
+                        <div class="summary-head" style="width:80%;">
+							<h5 style="border:none;"  class="summary-title"></i>Datos Generales</h5>
+                            <span class="summary-small-text" >Casa Central / Mensual / Anual / Ps / 1 Cuota / Bs As / Credito / Directo / 19-12-2018 / 19-01-2019</span>
+                        </div>
+                        <div class="summary-price">
+                            <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-block" >
+                    <div class="summary-content" style="width:100%;">
+                        <div class="summary-head" style="width:80%;">
+							<h5 style="border:none;"  class="summary-title">Carga de  Bienes</h5>
+                            <span class="summary-small-text" >Ford / Fiesta Kinetic / 2018 / 0KM / $200.000 / 2020</span>
+                        </div>
+                        <div class="summary-price">
+                            <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-block">
+                    <div class="summary-content">
+                        <div class="summary-head">
+							<h5 style="border:none;"  class="summary-title">Selecci&oacute;n de Planes</h5>
+                        </div>
+                        <div class="summary-price">
+                            <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-block">
+                    <div class="summary-content">
+                        <div class="summary-head">
+							<h5 style="border:none;"  class="summary-title">Fin de Cotizaci&oacute;n</h5>
+                        </div>
+                        <div class="summary-price">
+                            <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>

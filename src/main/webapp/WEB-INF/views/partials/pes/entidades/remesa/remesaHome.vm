@@ -1,0 +1,342 @@
+<section class="container-fluid">
+   <div class="containerMargenes" id="main">
+      <div class="row">
+         <!-- Remesa -->
+         <div class=" col-sm-12 col-md-8">
+            <div class="panel panel-default">
+               <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+				  <input type="hidden" value="$remesa.get("P_TF_LISTA_CJIN_NU_INGRESO")" id="nroComprobanteRemesa" />
+
+                  #set($nroRemesa = $valorNroRemesa)
+                  #parse("/partials/util/botonVolverAtras.vm")
+                  <h4 style="color: #ffffff;border:none;margin:0px;padding-top:3px;text-align:center;" class="center-block">Remesa <b>#$nroRemesa</b></h4>
+               </div>
+               <div class="panel-body">
+                  <div class="row">
+                     <div class="col-md-2" style=";text-align: center;"> 
+						<i class="material-icons altoIcono"  style="color:#0b4376;" >autorenew</i>
+					 </div>
+                     <div class="col-md-10" style="text-align: left; padding-left:30px; padding-right:30px">
+                        <!-- pag principal -->
+                        <div class="row" id="panela" style="">
+                           <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                              <table  style= "width:100%;">
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;" >
+                                       <h6>Medio&nbsp;pago&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px;width:60%;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_CJIN_COTC_CD_MEDIO_PAGO")) - $utilToolScreen.ucFirst($remesa.get("P_TF_LISTA_INB_DESC_MPAGO"))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;" >
+                                       <h6>Total&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px;width:60%;">
+                                       <h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($remesa.get("P_TF_LISTA_CJIN_MT_TOTAL")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                       <h6>Estado&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px;width:60%;">
+                                       <h6><b>$remesa.get("P_TF_LISTA_CJIN_ST_ESTADO")</b> - <b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($remesa.get("P_TF_LISTA_INB_DESC_ESTADO")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Tipo&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_INB_TIPO"))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                       <h6>Usuario&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($remesa.get("P_TF_LISTA_CJIN_CD_USUARIO")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Fecha&nbsp;cobro&nbsp;:</h6>
+                                    </td>
+                                    <td valign="center" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($remesa.get("P_TF_LISTA_CJIN_FE_COBRO")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Concepto&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_CJIN_DE_CONCEPTO"))</b></h6>
+                                    </td>
+                                 </tr>
+                                 
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Tipo&nbsp;Ingreso&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_INB_DSP_TIPO_INGRESO")) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($remesa.get("P_TF_LISTA_INB_DSP_TIPO_INGRESO_DESC")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 
+                                 
+                              </table>
+                           </div>
+                           <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                              <table  style= "width:100%;">
+                                 
+                                  <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                       <h6>Origen&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px; width:60%">
+                                       <h6><b>$remesa.get("P_TF_LISTA_CJIN_COTC_CD_ORIGEN") - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($remesa.get("P_TF_LISTA_INB_DESC_ORIGEN")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                       <h6>Cobro&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px; width:60%;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_CJIN_CD_COBRO"), $remesa.get("P_TF_LISTA_INB_DESC_TIPO_COBRO"), " - ")</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                       <h6>Saldo&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($remesa.get("P_TF_LISTA_CJIN_MT_SALDO")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                       <h6>Moneda&nbsp;:</h6>
+                                    </td>
+                                    <td  valign="top" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_CJIN_CAMO_CD_MONEDA")) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($remesa.get("P_TF_LISTA_INB_DESC_MONEDA")))</b></h6>
+                                    </td>
+                                 </tr>
+                                
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Fecha&nbsp;ingreso&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($remesa.get("P_TF_LISTA_CJIN_FE_INGRESO")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Fecha&nbsp;actualizacion&nbsp;:</h6>
+                                    </td>
+                                    <td valign="center" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($remesa.get("P_TF_LISTA_CJIN_FE_ACTUALIZACION")))</b></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Productor&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6><b>$utilToolScreen.datoVacio($remesa.get("P_TF_LISTA_CJIN_CAPD_CD_PRODUCTOR"),$remesa.get("P_TF_LISTA_INB_PRODUCTOR")," - ")</b></h6>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </div>
+                        <!-- aca termina -->
+                     </div>
+                  </div>
+				  <div class="row">
+					<div class="col-md-12 text-center" style="margin-top:20px;">
+						<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover" onclick="verDatosRemesaUnificada();"  data-placement="bottom" data-toggle="tooltip" title="Cobranza unificada" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#0b4376">attach_money</a>
+					</div>
+				  </div>
+               </div>
+            </div>
+            <!-- Informacion de la cancelacion -->
+            <div class="panel panel-default" id="cancelacion" style="display:none">
+               <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                  <h4 id="labelPanelCancelacion">Informacion de la cancelacion</h4>
+               </div>
+               <div class="panel-body">
+                  <div class="row">
+                     <div class="col-md-2" style=";text-align: center;">
+                        <i class="material-icons altoIcono"  style="color:#00317A;" >copyright</i>
+                     </div>
+                     <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:10px;">
+                        <!-- pag principal -->
+                        <div class="row" id="panelc" style="display:none;">
+                           <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                              <table  style= "width:100%;">
+                                 <tr>
+                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                       <h6>Fecha&nbsp;Cancelaci&oacute;n&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6 id="fechaRecuperoCancelacion"></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" style="padding-top:5px;">
+                                       <h6>Moneda&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6 id="moneda"></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                       <h6>Monto&nbsp;Cancelado&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;width:60%;">
+                                       <h6 id="recuperadoCancelacion"></h6>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                              <table  style= "width:100%;">
+                                 <tr>
+                                    <td align="right"  valign="top" style="padding-top:5px;">
+                                       <h6>Comprobante&nbsp;:</h6>
+                                    </td>
+                                    <td style="padding-top:5px;width:60%;">
+                                       <h6 id="comprobanteCancelacion"></h6>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                       <h6>Usuario&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6 id="usuarioRecuperoCancelacion"></h6>
+                                    </td>
+                                 </tr>
+                                 
+                                 <tr>
+                                    <td  align="right" valign="top" style="padding-top:5px;">
+                                       <h6 title="Moneda Cancelaci&oacute;n">Moneda&nbsp;Cancel.&nbsp;:</h6>
+                                    </td>
+                                    <td valign="top" style="padding-top:5px;">
+                                       <h6 id="monedaCancelacion"></h6>
+                                    </td>
+                                 </tr>
+                                 
+                                 
+                                 
+                              </table>
+                           </div>
+                        </div>
+                        <div class="row" id="verCancelacionRemesa">
+                           <div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;" >
+                              <div id="datosParametricosSegunEndoso">
+                                 <h5 style="border:none;color:#6f6767;text-align:center;"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccione la cancelaci&oacute;n de remesa</h5>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- aca termina -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Detalle de cobro -->
+            
+            
+            <div class="panel panel-default">
+               <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                  <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                     <input type="text" class="form-control" onkeyup="buscadorPanelCCobroRemesa()" id="inputBusquedaCobro"  style="height:26px;">
+                     <span class="input-group-btn">
+                     <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                     </span>
+                  </div>
+                  <h4 id="">Detalle de cobro</h4>
+               </div>
+               #if ($detalleCobroRemesa.size() > 0 )
+               <div class="col-xs-2" style="text-align: center;">   
+                  <i class="material-icons altoIcono"  style="color:#00317A;padding-top:15px;" >attach_money</i>
+               </div>
+               <div class="panel-body">
+                  <div class="row">
+                     <div class="col-xs-12" style="text-align: center;padding-left:30px;padding-right:30px;" id="caruMayor">
+                        #if($detalleCobroRemesa.size()< 50)
+                        <div id="micaru" class="owl-carousel owl-theme" style="text-align:center; padding-left:25px;">
+                           #foreach ($datoCobroRemesaIn in $detalleCobroRemesa)
+                           #set($numCobro = $velocityCount - 1)
+                           <div id="micaruB$velocityCount" onclick="mostrarDetalleCobroSeleccionado('cobroRemesaPopUp', $nroRemesa, $numCobro);" class="item" style="height:105px; cursor:pointer; background:#efeeee;border-radius: 3px; border-width: 1px; border-color:#00317A; border-style: solid; box-shadow: 0 0 0px black;">
+                              <h6 id="nroCobro$velocityCount" style="height:25px;border-bottom:1px solid; padding-top:4%;padding-bottom:4%;background-color:#00317A;color:#ffffff;">#$numCobro</h6>
+                              <h6 style="margin-top:3%;" id="datoCobro$velocityCount" class="datoCobroCarusel">Tipo&nbsp;:&nbsp;<b>$utilToolScreen.datoVacio($datoCobroRemesaIn.get("P_TF_LISTA_CJCI_CJMI_TP_MOVIMIENTO"))&nbsp;-&nbsp;$utilToolScreen.datoVacio($utilToolScreen.ucFirst($datoCobroRemesaIn.get("P_TF_LISTA_INB_TIPO_MOVIMIENTO")))</b></h6>
+                              <h6 style="margin-top:3%;" id="datoCobro$velocityCount" class="datoCobroCarusel">A&nbsp;Depositar&nbsp;:&nbsp;<b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($datoCobroRemesaIn.get("P_TF_LISTA_CJCI_FE_DEPOSITO")))</b></h6>
+                              <h6 style="margin-top:3%;" id="datoCobro$velocityCount" class="datoCobroCarusel">Monto&nbsp;:&nbsp;<b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($datoCobroRemesaIn.get("P_TF_LISTA_CJCI_MT_CHEQUE")))</b></h6>
+                              <h6 style="margin-top:3%;" id="datoCobro$velocityCount" class="datoCobroCarusel">Num.&nbsp;Cheque&nbsp;:&nbsp;<b>$utilToolScreen.datoVacio($datoCobroRemesaIn.get("P_TF_LISTA_CJCI_NU_CHEQUE"))</b></h6>
+                             
+                              <br>
+                           </div>
+                           #end
+                        </div>
+                        #else
+                        <div id="verDetalleCobroRemesa" style="margin-top:20px;">
+                           <button class="btn btn-success" style="background:#00317A;" type="button" onclick="verDetalleCobroTablaRemesa($nroRemesa)">Ver cobros</button>
+                        </div>
+                        <div id="tablaCobroRemesa" class="table-responsive" style="text-align:center;border:0px;display:none">
+                           <div id="grillaCobroRemesa" style="height:180px;">
+                           </div>
+                        </div>
+                        #end
+                     </div>
+                  </div>
+               </div>
+               #else 
+               #set($concepto = "cobros")
+               #parse("partials/util/rowVacio.vm")	
+               #end
+            </div>
+         </div>
+         <!-- Cancelaciones -->
+         <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+            <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+               <div class="panel-heading" style=" background-color:white;border-color:white;">
+                  <h4 id="labelCancelacionesRemesa" style="color:#00317A;">Cancelaciones #if($cancelacionesRemesa.size())($cancelacionesRemesa.size())#else(0)#end</h4>
+               </div>
+               <div class="main-container page__container altoPanelB">
+                  <div class="timeline__group" style="z-index:1;max-height:20px;">
+                     #if ($cancelacionesRemesa.size() > 0)
+
+                        #foreach($cancelacionRemesaIn in $cancelacionesRemesa)
+                        #set($nroCancelacion = $utilToolScreen.datoVacio($cancelacionRemesaIn.get("P_TF_LISTA_INB_COMPROBANTE")))
+                        #set($tipoCancelacion = $utilToolScreen.datoVacio($cancelacionRemesaIn.get("P_TF_LISTA_INB_TIPO")))
+                        #set($montoCancelacion = $utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($cancelacionRemesaIn.get("P_TF_LISTA_CJCR_MT_RECUPERADO"))))
+                        #set($fechaCancelacion = $utilToolScreen.datoVacio($utilToolScreen.formatearFecha($cancelacionRemesaIn.get("P_TF_LISTA_CJCR_FE_RECUPERO"))))
+                        
+                        #set($icono = "check_circle")
+                        #set ($numeroCard = $velocityCount)
+                        #parse("partials/pes/entidades/remesa/itemRemesaCancelacion.vm")	 
+                        #end
+                        
+                     #else 
+                     <div>
+                        #set($concepto = "cancelaciones")
+                        #parse("partials/util/itemTimeLineVacio.vm")	
+                     </div>
+                     #end      
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+#parse("partials/pes/entidades/remesa/modalRemesaHome/cobroModal.vm")
+#parse("partials/pes/entidades/remesa/modalRemesaHome/comprobantesRemesaModal.vm")

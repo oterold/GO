@@ -1,0 +1,27 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="mensajeInicioModal" >
+      	   <div style="width:100%;">
+				<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h2 style="border-none;text-align:center;">Bienvenido a GO !!</h2>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+          	 	  <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <div class="modal-body" id="datosParametricosMensajesinicio">
+     			  </div>
+		         <div class="col-md-12">
+		                 <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+		         </div>
+		         	<div class="col-xs-12 col-md-6">
+				   		<h5 style="border:none;text-align:left;">GO team.</h5>
+		         	</div>
+		         	<div class="col-xs-12 col-md-6">
+		       		 <a href="#" data-dismiss="modal" rel="modal:close" class="pull-right btn inspeccionesBotonHoover" style="color:#ffffff;background:#0b4376;border-color:#0b4376;">Cerrar</a>
+		   		 	</div>
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

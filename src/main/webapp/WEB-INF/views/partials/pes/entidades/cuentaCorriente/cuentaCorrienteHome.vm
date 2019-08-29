@@ -1,0 +1,168 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+
+    <div class="row">
+    
+    <!-- Cuenta corriente -->
+       <div class=" col-sm-12 col-md-8">
+	  
+	  	   #foreach($datosProdIn in $datosProd)
+		<input type="hidden" value="$datosProdIn.get('P_TF_LISTA.PRODUCTOR')" id="numProductorCC" />
+	
+			
+        <div class="panel panel-default">
+          <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+
+          <h4 style="color: #ffffff; text-align:center" class="center-block">Cuenta Corriente - Productor #$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.PRODUCTOR'))</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#0B4376;" >account_balance</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              			
+				
+    			
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Productor&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.PRODUCTOR'), $utilToolScreen.nombreMayuscula($datosProdIn.get('P_TF_LISTA.DESC_PRODUCTOR')), " - ")</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Categoria&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.CATEGORIA'), $utilToolScreen.nombreMayuscula($datosProdIn.get('P_TF_LISTA.DESC_CATEGORIA')), " - ")</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Esquema&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.ESQUEMA'), $utilToolScreen.nombreMayuscula($datosProdIn.get('P_TF_LISTA.DESC_ESQUEMA')), " - ")</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sucursal&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;;width:60%;"><h6><b>$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.AGENCIA'), $utilToolScreen.nombreMayuscula($datosProdIn.get('P_TF_LISTA.DESC_AGENCIA')), " - ")</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Estado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.ESTADO'), $utilToolScreen.nombreMayuscula($datosProdIn.get('P_TF_LISTA.DESC_ESTADO')), " - ")</b></h6></td>
+                           		</tr>
+								
+                           	 </table> 
+              			  </div>
+    				</div> 
+    				
+    				                       <hr style="margin-top:3%;margin-bottom:3%;width:100%;">
+    				
+    						<div class="row">
+						<div class="col-xs-6">
+						
+							<div class="input-group date pull-right" id="datepickerProd" data-provide="datepicker" style="width:50%;">
+							    <input id="inputDataPicker" type="text" class="form-control">
+							    <div class="input-group-addon">
+									<span class="fa fa-calendar"></span>
+							    </div>
+							</div>
+							
+						</div>
+						<div class="col-xs-3 col-md-3">
+							<div class="input-group mb-3">
+								<select class="custom-select" id="selectorMoneda" name="selectorMoneda" style="width:100%;height:36px;" onchange="mostrarPantallaCuentaCorrienteProductor('$utilToolScreen.datoVacio($datosProdIn.get('P_TF_LISTA.PRODUCTOR'))');">
+									<option selected value="01">Peso</option>
+									<option value="02">Dolar</option>
+									<option value="33">Euro</option>
+								</select>
+								</div>
+							</div>
+							
+							<div class="col-xs-3 col-md-3">
+								<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="descargarGrillaCuentaCC();"  data-placement="bottom" data-toggle="tooltip" title="Exportar Datos CC Periodo" style="margin-right:5px;font-size:20px;margin-top:3px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">cloud_download</a>
+							</div>
+							
+					</div>
+    				
+    				
+    				
+					  </div>
+       			    </div>
+
+
+        		 </div>
+   			</div>
+
+		#end
+   		
+
+	 <!-- PANEL D -->     
+   		<div class="panel panel-default">
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control"  id="inputBusquedaProductorMovimientos"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				<h4 id="labelMovimiento">Detalle de Movimientos </h4>
+   			 </div>	
+   				<div class="panel-body" style="height:245px;">    
+                   	<div class="row">
+              	 	    <div class="col-xs-12" style="text-align: center;" id="caruMayor">
+              	 	  	    
+									<div id="tablaDatosProdPanelD" class="table-responsive" style="text-align:center;border:0px;overflow-x:inherit;">
+                            	    	<div id="datosParametricosProductorCC" style="height:180px;">
+                                        </div>
+                                    </div>
+							
+    					</div> 
+              	 	 </div> 
+				</div>
+				
+		
+   		</div>
+	</div>
+	
+	
+	
+	
+   <!-- PANEL B -->
+  	   
+    
+              <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+              <h4 style="color:#00317A;" id="tituloMovimiento">Resumen de Movimientos </h4>
+             </div>
+         
+   		     <div class="main-container page__container altoPanelB" >
+   		
+				<div class="timeline__group" style="z-index:1;max-height:20px;" id="panelBdatosParametricos">
+              
+    				
+    				<h4 id="datosPanelD"></h4>
+					
+					</div>
+            
+				</div>
+	
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+ 
+   #parse("partials/pes/entidades/poliza/modalPolizaHome/movimientoProductorCCModal.vm")
+

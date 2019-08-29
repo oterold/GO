@@ -1,0 +1,113 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- POLIZA -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                        #parse("/partials/util/botonVolverAtras.vm")
+                        <h4 style="text-align:center;color: #ffffff;">Padron Afiliado Grupo Provincia</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-2" style=";text-align: center;">
+								 <i class="fas fa-users altoIcono" style="color:#0b4376;font-size: 70px;"></i>
+                            </div>
+                            <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <div class="col-md-2">
+                                </div>
+								
+								<div class="col-xs-6 col-md-8 mt-4">
+									<label class="active" for="first_name2">Documento : </label>
+									<input id="afiliadoDoc" type="text" class="validate"  onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;">
+								</div>
+							
+							<div class="col-xs-3 col-md-2" style="text-align:center;margin-top:17px !important;">
+                                    <button id="navbar-category-bundle-jquery" onclick="esAfiliado();" class="btn btn-indigo btn-sm my-0 waves-effect waves-light pull-right" style="font-size:12px;background-color:#0b4376!important;border-radius:3px;" role="button">
+                                        <span class="d-none d-xl-inline-block mr-1" style="color:white;font-size:13px;">Buscar</span>
+                                        <i class="fas fa-search" data-toggle="tooltip" title="" data-original-title="Big Bundle" style="color:white;font-size:13px"></i>
+                                    </button>
+							</div>
+						
+								
+							</div>
+						</div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="height:300px;">
+                    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                        <h4 id="cantSiniestros">Resultado</h4>
+                    </div>
+				
+				<div class="panel-body">    
+                   	<div class="row"  id="reultadoBusqueda">
+              	 	    <div class="col-md-12" style="text-align: center;" id="contenidoAyuda">
+							 <h4 class="pt-5" style="border:none;"> Realice una b&uacute;squeda </h4>
+						</div>
+					</div>
+					<div class="row" style="display:none;" id="resultadoAfiliado">
+						<div class="col-md-12" style="text-align: center;padding-left:30px;padding-right:30px;overflow-y:auto;" id="contenidoAyuda">
+							<h4 style="border:none;" id="textoAfiliado"> </h4>
+							<div class="row pt-5" id="datosAfiliado">
+								<div class="col-md-6">
+									<div class="row">
+    									<div class="col-xs-6 col-md-7" style="text-align:right;padding-right:0px;">
+    										<h5 style="border:none;">Documento : </h5>
+    									</div>
+    									<div class="col-xs-6 col-md-5" style="text-align: left;padding-left: 5px;">
+    										<h5 id="documento" style="border:none;"><b>10001757</b></h5>
+    									</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row">
+    									<div class="col-xs-6 col-md-5" style="text-align:right;padding-right:0px;">
+    										<h5 style="border:none;">Nombre y Apellido :</h5>
+    									</div>
+    									<div class="col-xs-6 col-md-7" style="text-align: left;padding-left: 5px;">
+											<h5 id="apellido" style="border:none;"><b>Adriana Estrukel</b></h5>
+    									</div>
+									</div>		
+								</div>
+								<div class="col-md-6 pt-4">
+									<div class="row">
+    									<div class="col-xs-6 col-md-7" style="text-align:right;padding-right:0px;">
+    										<h5 style="border:none;">Estado :</h5>
+    									</div>
+    									<div class="col-xs-6 col-md-5" style="text-align: left;padding-left: 5px;">
+    										<h5 id="altaEstado" style="border:none;"><b>Alta</b></h5>
+    									</div>
+									</div>		
+								</div>
+							</div>
+
+
+
+						</div>
+						
+						
+					</div>
+				</div>
+				
+                </div>
+				
+            </div>
+            <!-- Panel B -->
+			
+            <div class="col-md-10 col-lg-4" style="width:100%; margin-bottom: 20px;">
+                <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+                    <div class="panel-heading" style=" background-color:white;border-color:white;">
+                        <h4 style="color:#00317A;">Descripci&oacute;n</h4>
+                    </div>
+                    <div class="main-container page__container altoPanelB" >
+                        <div class="timeline__group" style="z-index:1;max-height:20px;">
+                            <div>
+                                #parse("partials/pes/afiliado/panelBafiliado.vm")	 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

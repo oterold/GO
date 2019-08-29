@@ -1,0 +1,84 @@
+   <!-- Modal Boleta De Pago --->
+	 
+	      		<div class="panel panel-default" style="display:none;max-width:500px;overflow-y:auto;" id="boletaDePagoPopUp" >
+      	 
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+						</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="INFO_P_TF_CERT_CACE_NU_CERTIFICADO">Boletas de pago</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+					<i class="material-icons altoIconoPopUp"  style="color:#509750;" >payment</i>
+   			
+				</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:1px;padding-right:1px">
+								
+								<table  class="table table-hover table-grilla" role="table" style="margin-bottom:10px;">
+                                    <thead class="thead-grilla" role="rowgroup" align="center">
+                                        <tr class="tr-grilla" role="row" style="border:none;">
+                                            <th class="th-grilla" role="columnheader" style="border:none;width:11%;"><h5 style="padding:0px;border:none;"><b>Fecha De Saldo</b></h5></th>
+                                            <th class="th-grilla" role="columnheader" style="border:none;width:8%;"><h5 style="padding:0px;border:none;"><b>Saldo</b></h5></th>
+                                            <th class="th-grilla" role="columnheader" style="border:none;width:4%;"><h5 style="padding:0px;border:none;"><b>BP</b></h5></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+															
+							<div style="overflow-y:auto;height:250px;">
+								
+								<table id="tablaBoletaDePago" class="table table-grilla" role="table">
+                                        <tbody class="tbody-grilla" id="datosBoletaDePago" style="text-align:center;">
+                                        
+											
+										</tbody>
+                                    </table>
+								
+							</div>	
+								
+              			  </div>
+           				   
+    					</div>            
+    			  </div>
+    			</div>
+				
+				<div id="destinoBoleta" style="display:none;" value="$destinoBoleta"></div>
+
+				<div class="row" style="margin-top:15px;">
+										
+					<div class="col-lg-12">
+					
+						<div class="row">
+							<div style="padding-right: 15px; padding-left: 15px; margin-bottom:10px;">
+                            <h5 style="border:0;">Ingrese el correo electr&oacute;nico para enviar la informaci&oacute;n de las cuotas de boleta de pago</h5>
+							</div>
+							
+						</div>
+						
+						<div class="row">
+        					<div class="col-lg-8" style="text-align: center;">
+                                 <input id="valorEmail" name="email" type="text" placeholder="Ingrese email" class="form-control">
+        					</div>
+    						<div class="col-lg-2">
+    							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="enviarBoletaPorEmail();"  data-placement="bottom" data-toggle="tooltip" title="Enviar boleta" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">email</a>
+    						</div>
+						
+						</div>
+						
+						<div class="row" id="mensajeAlertaBoleta" style="display:none;">
+							
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+     

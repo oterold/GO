@@ -1,0 +1,9 @@
+
+                      
+ <div onClick="alert('Datos del Certificado');" class="item" style= "cursor:pointer; background:#efeeee;border-radius: 3px; border-width: 1px; border-color:#e0e0e0; border-style: solid; box-shadow: 0 0 0px black;">
+   	<h6 style="border-bottom:1px solid; padding-top:4%;padding-bottom:4%;background-color:#509750;color:#ffffff;"># $number - OFO46$number
+    </h6>
+	<br> 
+	<h6> $bienEndoso - $nroAnoBienEndoso <br> <br> 	</h6>
+	<br>
+</div>

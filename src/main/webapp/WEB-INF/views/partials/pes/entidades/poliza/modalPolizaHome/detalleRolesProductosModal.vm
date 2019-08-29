@@ -1,0 +1,88 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="detalleRolesProductosPopUp" >
+      	   <div style="width:100%;">
+				<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="titulo_productos_roles"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#271765;" >assignment</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 	
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Codigo Producto :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="P_TF_CAPU_CAPU_CD_PRODUCTO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Producto :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CAPU_DE_PRODUCTO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fe. Inicio :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CAPU_FE_INICIO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Beneficiario :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CRPB_IN_BENEFICIARIOS"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Direcci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CRPB_IN_DIRECCION"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Pro. Cerrado :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CAPU_IN_CERRADO"></h6></td>
+                           		</tr>
+                           		
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-5" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Esq. Visualizaci&oacute;n 1 :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CTRA_CREK_NU_VISUALIZACION"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Esq. Visualizaci&oacute;n 2 :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CTRA_CPP_CD_ESQ_VISUALIZACION"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ramo :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CAPU_CARP_CD_RAMO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Nomina :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CRPB_IN_NOMINA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Lista Bienes :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CRPB_IN_LISTAS_BIENES"></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Coberturas :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="P_TF_CAPU_CRPB_IN_COBERTURAS"></h6></td>
+                           		</tr>
+                           		
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

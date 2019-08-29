@@ -1,0 +1,112 @@
+<div class="row entidadCard$entidad cardResultado" >
+		  <div class=" col-sm-12 col-md-12"> 
+        
+		#set( $imagenCertificadoPoliza = "&#xE02f;" )
+			
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+      	    <a style="cursor:pointer;" id="botomVerMasVerMenos$entidad$contador" class="pull-right" onclick="mostrarContenidoVerMasVerMenosCardBusqueda('$entidad','$contador');">Ver mas</a> 
+      	    <h4 style="border:none;" style="padding-botton:1px;">Certificado #$utilToolScreen.datoVacio($numeroCertificado)</h4>
+      	    </div>	
+   			<div class="panel-body" style="background-color:white;padding-top:0;">
+				<div class=" row">
+   					<div class="col-md-2 cardPosicionIcono" > 
+   					<i class="material-icons altoIcono"  style="color: #509750;" >$imagenCertificadoPoliza</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align:left;padding-left:10px;padding-right:10px">
+              		
+              			<div class="row" id="panelC$entidad$contador">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px;padding-bottom:10px;">
+                                 
+  							<table  style= "width:100%;">
+                         		<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;"  ><h6>Estado&nbsp;Certificado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 data-toggle="tooltip"><b>$utilToolScreen.datoVacio($estadoCertificado)</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Ramo&nbsp:</h6></td>
+                           		<td style="padding-top:5px;"><h6 data-toggle="tooltip"><b>$utilToolScreen.datoVacio($nroRamo) - $utilToolScreen.datoVacio($descRamo)</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Sucursal&nbsp:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nroSucursal) - $utilToolScreen.datoVacio($descSucursal)</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                           	      
+							</div>
+    					</div>            
+    					
+						<div class="row" id="panelD$entidad$contador" style="display:none;">
+							
+              				<div class="col-md-12" style="text-align: left;padding-left:10px;padding-right:10px">
+                                     
+      							<table  style= "width:100%;">
+                         		<tr style= "width:100%;">
+                         		<td align="right"  valign="top" class="anchoEtiquetaCardPoliza" style="padding-top:5px;" ><h6>Estado&nbsp;Certificado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 data-toggle="tooltip"><b>$utilToolScreen.datoVacio($estadoCertificado)</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td  align="right"  valign="top" style="padding-top:5px;"><h6>Ramo&nbsp:</h6></td>
+                           		<td style="padding-top:5px;"><h6 data-toggle="tooltip"><b>$utilToolScreen.datoVacio($nroRamo) - $utilToolScreen.datoVacio($descRamo)</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Sucursal&nbsp:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nroSucursal) - $utilToolScreen.datoVacio($descSucursal)</b></h6></td>
+                           		</tr>
+                           	 </table> 
+                               	      
+                  			</div>
+             			
+              			  
+							<hr style="margin-top:5px;margin-bottom:5px;width:90%;">
+						
+                           <!-- datos agregados -->
+              				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                     
+      							<table  style= "width:100%;">
+                             		<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>P&oacute;liza&nbsp:</h6></td>
+                                   		<td style="padding-top:5px;width:25%;max-width:1px;"><h6><b>$utilToolScreen.datoVacio($poliza)</b></h6></td>
+                                   	</tr>
+                               	 	<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;"><h6>Estado&nbspP&oacute;liza:</h6></td>
+        								<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($estadoPoliza)</b></h6></td>        
+                               		</tr>
+                               		
+                               	 </table> 
+                               	      
+                  			</div>
+              			  
+               				<div class="col-md-12 col-lg-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                     
+      								<table  style= "width:100%;">
+                               		<tr>
+    									<td  align="right" valign="top" style="padding-top:5px;"><h6>Cliente&nbsp;:</h6></td>
+    									<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($nombreCliente)</b></h6></td>
+                               		</tr>
+                             		<tr>
+    									<td align="right"  valign="top" style="padding-top:5px;width:25%"><h6>Documento&nbsp;:</h6></td>
+    									<td style="padding-top:5px;width:25%;"><h6><b>$utilToolScreen.datoVacio($descDni) - $utilToolScreen.datoVacio($codDni)</b></h6></td>
+                               		</tr>
+                               	 	
+                               	 </table> 
+                               	      
+                  			</div>
+						 
+						</div> 
+    					
+    				
+						<a class="btn btn-block btn-social btn-bitbucket pull-right" style="width:20%;margin:1px;color:#ffffff;margin-right:25px;margin-top:10px;margin-bottom:5px;background-color:#483894" onclick="bloquearPantallaGris();" href="/PSPES/homeCertificado?poliza=$poliza&ramo=$nroRamo&sucursal=$nroSucursal&nroCertificado=$numeroCertificado&facturacion='00'">Detalle</a>
+    			<!-- aca termina -->
+    			  </div>
+			  
+    			</div>	
+          		
+      	    <h6 style="padding-left:5px;padding-bottom:5px;">Encontrada x : $utilToolScreen.datoVacio($entidad) / $utilToolScreen.datoVacio($atributo)</h6>
+            		<hr style="margin:0px; border-color:#dfdada;" >
+			</div>
+		
+   			</div>
+				
+     <!-- CERTIFICADOS -->
+           </div>
+ 

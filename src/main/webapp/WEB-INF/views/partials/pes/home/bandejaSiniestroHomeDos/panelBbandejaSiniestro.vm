@@ -1,0 +1,56 @@
+<!--poliza-->
+  
+			<div class="row">
+				
+          				 	<div class="col-md-12" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Patente&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_NU_PATENTE"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Asegurado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_CACN_NM_APELLIDO_RAZON"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fecha Declaraci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_FE_DECLARACION"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fecha Ocurrencia&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_SISI_FE_OCURRENCIA"></h6></td>
+                           		</tr>
+											<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:51%;" ><h6>Anticipo&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_NU_ANTICIPO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="position:relative;padding-top:5px;"><h6>Origen</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_CJDP_CD_DEPTO_ORIGEN"></h6></td>
+                           		</tr>
+								<tr>
+                         		<td  align="right" style="position:relative;padding-top:5px;"><h6>Responsable&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:50%;"><h6 id="INFO_P_TF_BANDEJA_TAREAS_WFB_RECIPIENT_ROLE"></h6></td>
+                           		</tr>								 
+                           	 </table> 
+                           	      
+              			  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						       <div class="col-md-12" style=";text-align: center;">
+									<hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                            </div>
+							
+							
+							<div class="col-md-12" style="text-align: center;padding-left:30px;padding-right:30px">
+								<a class="btn  btn-bitbucket fas fa-clipboard-list" data-placement="bottom" data-toggle="tooltip" title="Escalamientos" onclick="abrirModalEscalamientos();" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>                            
+								<a class="btn  btn-bitbucket fas fa-sync-alt " data-placement="bottom" data-toggle="tooltip" title="Reasignaciones" onclick="abrirModalReasignaciones();" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>                            
+								<a class="btn  btn-bitbucket fas fa-comment-alt " data-placement="bottom" data-toggle="tooltip" onclick="abrirModalNotasBandejaSiniestro();" title="Notas" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>                            
+							</div>
+							
+							<div class="col-md-12" style="text-align: center;padding-left:30px;padding-right:30px">
+								<a class="btn  btn-bitbucket fas fa-file " data-placement="bottom" data-toggle="tooltip" title="Anticipo"  onclick="abrirModalAnticipo(); "style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>                            
+								<a class="btn  btn-bitbucket fas fa-paperclip " data-placement="bottom" data-toggle="tooltip" title="Archivo" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>                            
+							</div>
+								  
+								  </div>

@@ -1,0 +1,8 @@
+#set ($indicadorSeccionParametroNivel1 = 'Cobranzas' )
+#set ($indicadorSeccionParametroNivel2 = $polizaEncabezado )
+
+#set ($indicadorClienteParametro = 'Provincia Enterprise System')
+
+#set ($templateWeb = '/partials/pes/entidades/poliza/cobranza/cobranzaHome.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

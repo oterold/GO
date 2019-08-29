@@ -1,0 +1,115 @@
+   <!-- modal certificados --->
+	 
+	      		<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="certificadoPopUp" >
+      	 
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+						</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="INFO_P_TF_CERT_CACE_NU_CERTIFICADO">Certificado #</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#509750;" >&#xE02f;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								
+								<tr>
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6>Asegurado :</h6></td>
+									<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_INB_DSP_ASEGURADO"><b></b></h6></td>
+                           		</tr>
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Medio de pago :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_CACE_CAMD_CD_MEDIO_PAGO"><b></b></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Plan :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_EXTRA_PLAN"><b></b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Promocion :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_CACE_CAZB_CD_PROMOCION"><b></b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fragmento :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_INB_FRAGMENT"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="INFO_NOMBRE_CAMPO"></h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CUENTA"><b></b></h6></td>
+                           		</tr>
+                           		
+									
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+             			 	
+             			 			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Bien Aseg. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_EXTRA_BIEN"><b></b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Suma Aseg. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_EXTRA_SUMA_ASEG"><b></b></h6></td>
+                           		</tr>
+             			 	
+             			 	
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Categoria Iva :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_CACE_CJIV_CD_CATEGORIA_IVA"><b></b></h6></td>
+                           		</tr>
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Certificado :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_CACE_ST_CERTIFICADO"><b></b></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Origen :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_CACE_COTC_CD_ORIGEN"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cod. Producto :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_CERT_CACE_CAPU_CD_PRODUCTO"><b></b></h6></td>
+                           		</tr>
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>
+				
+				<div id="INFO_SUCURSAL" style="display:none;"></div>
+				<div id="INFO_CERTIFICADO" style="display:none;"></div>
+				<div id="INFO_RAMO" style="display:none;"></div>
+				<div id="INFO_POLIZA" style="display:none;"></div>
+				<div id="tipoFactu" style="display:none;"></div>
+
+				<div class="row" style="margin-top:15px;">
+					<div class="col-lg-12" style="text-align: center;">
+						<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons certificadoBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Detalle" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#509750" onclick="irHomeCertificado()">play_arrow</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+     

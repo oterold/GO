@@ -1,0 +1,144 @@
+	<div class="containerMargenes containerMenuResponsive" id="main">
+        <div class="row">
+				<input type="hidden" value="$valorSelectorEntidad" id="valorSelectorEntidadExperto"/>
+				<input type="hidden" value="$valorSelectorRamo" id="valorSelectorRamoExperto"/>
+				<input type="hidden" value="$valorSelectorPor" id="valorSelectorPorExperto"/>
+				<input type="hidden" value="$valorSelectorEstado" id="valorSelectorEstadoExperto"/>
+				
+				<input type="hidden" value="$valorSelectorFechaDesde" id="valorSelectorFechaDesdeExperto"/>
+				<input type="hidden" value="$valorSelectorFechaHasta" id="valorSelectorFechaHastaExperto"/>
+
+
+
+				
+            <!-- POLIZA -->
+            <div class=" col-sm-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:#483894;height:37px;">
+                        <h4 style="color: #ffffff;">Modo Experto</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-3" style="padding-top: 10px;">
+									<a onclick="redirectHome()" style="cursor:pointer">							
+									<img src="/PSPES/resources/img/logo/logoGO5.png" style="max-width:100%;  margin:auto;  display:block; "  />								
+									</a>
+								
+                            </div>
+                            <div class="col-md-9" style="text-align: left;padding-left:30px;padding-right:30px ;">
+                                <h6  style="line-height: 1.5;    letter-spacing: 1px;">Por favor ingrese el dato para iniciar su   <b>
+                                        <font style="color:00317A;">BUSQUEDA EXPERTA</font>
+                                </b>
+                                .</h6>
+									
+								
+                                <br>
+									<div class="input-group">
+									
+									
+                                    <input id="datoFiltro" class="datoFiltro form-control" value="$dato" onkeypress="enterBuscarHomeExperto(event)"/>
+  
+                                    </div>
+									
+										#parse("partials/pes/buscadorExperto/filtrosBusquedaAvanzada.vm")
+										#parse("partials/pes/buscadorExperto/filtrosFechaBusquedaAvanzada.vm")
+
+										
+									
+									
+										<hr style="width:100%;margin-top:5px;margin-bottom:10px;">
+											<a id="botonBuscarPrincipal" class="align-bottom btn btn-block btn-social btn-bitbucket center-block" onclick="buscarHomeExperto();" style="width:25%;color:#ffffff;background:#483894">Buscar</a>
+							</div>
+						 </div>
+						</div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+			
+			#if($tieneResultado == "NO")
+				#parse("partials/pes/buscador/componentes/componenteSinResultadosBusqueda.vm")
+			#end
+			#if($tieneResultado == "SI")
+				<div class="containerMargenes containerMenuResponsive">
+					<div class="row">
+						#parse("partials/pes/buscador/componentes/componenteFiltroBusquedaExperto.vm")
+
+			
+						<div class="col-md-9" >
+            	
+						#if($valorSelectorEntidad == "01")
+    						#foreach($resul in $resultadoCard)
+             					
+                        		#set ($contador = $velocityCount)
+                        		#set ($entidad = "Promociones")
+                                #set ($numeroPromocion = $resul.num)
+            					#set ($indexPromocion = $resul.index)
+            					#set ($descPromocion = $resul.descProm)
+            					#set ($codDerivadoPromocion = $resul.codDerivado)
+            					#set ($descDerivadoPromocion = $resul.descDerivado)
+            					#set ($datoEntidadPromocion = $resul.datoEntidad)
+            					#set ($entidad = $resul.entidad)
+            					#set ($atributo = $resul.atributo)
+            					
+                                
+                                #parse("partials/util/plantillaPromocion.vm")	  
+    						#end
+						#end
+						
+						#if($valorSelectorEntidad == "02")
+    						#foreach($resul in $resultadoCard)
+	
+                        		#set ($contador = $velocityCount)
+                        		#set ($entidad = "Certificados")
+                                #set ($numeroCertificado = $resul.nroCertificado)
+								#set ($estadoCertificado = $resul.estadoCertificado)
+            					#set ($nroRamo = $resul.nroRamo)
+								#set ($descRamo = $resul.descRamo)
+								#set ($nroSucursal = $resul.nroSucursal)
+								#set ($descSucursal = $resul.descSucursal)
+								#set ($poliza = $resul.nroPoliza)
+								#set ($estadoPoliza = $resul.estadoPoliza)
+								#set ($nroCliente = $resul.nroCedula)
+								#set ($nombreCliente = $resul.asegurado)
+								#set ($descDni = $resul.descDni)
+								#set ($codDni = $resul.codDni)
+								
+            					#set ($entidad = $resul.entidad)
+            					#set ($atributo = $resul.atributo)
+            					
+                                
+                                #parse("partials/util/plantillaCertificado.vm")	  
+    						#end
+						#end
+						
+						#if($valorSelectorEntidad == "03")
+    						#foreach($resul in $resultadoCard)
+             					
+                        		#set ($contador = $velocityCount)
+                        		#set ($entidad = "Certificados")
+                                #set ($nroSucursal = $resul.nroSucursal)
+								#set ($descSucursal = $resul.descSucursal)
+								#set ($nroRamo = $resul.nroRamo)
+								#set ($descRamo = $resul.descRamo)
+								#set ($nroCliente = $resul.nroCedula)
+								#set ($nombreCliente = $resul.asegurado)
+								#set ($nroInspeccion = $resul.nroInspeccion)
+								#set ($estadoInspeccion = $resul.estadoInspeccion)
+            					#set ($nroPoliza = $resul.nroPoliza)
+								#set ($entidad = $resul.entidad)
+            					#set ($atributo = $resul.atributo)
+								#set ($fechaInspeccion = $resul.fechaInspeccion)
+            					
+                                
+                                #parse("partials/util/plantillaInspeccion.vm")	  
+    						#end
+						#end
+						
+						#parse("partials/pes/buscador/paginacionExperto.vm")
+
+			            </div>
+					</div>
+				</div>
+			#end

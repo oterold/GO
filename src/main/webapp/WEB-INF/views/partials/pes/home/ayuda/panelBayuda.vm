@@ -1,0 +1,111 @@
+<!--poliza-->
+<div   style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome0"  onclick="mostrarAyudaHome(this.id,'home');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;">home</i>
+            <a>
+                <b>Home</b>
+            </a>
+        </div>
+    </div>
+</div>
+<div style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome1"  onclick="mostrarAyudaHome(this.id,'search');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;">search</i>
+            <a>
+                <b>B&uacute;squedas </b>
+            </a>
+        </div>
+    </div>
+</div>
+<div  style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome2"  onclick="mostrarAyudaHome(this.id,'note');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;">note</i>
+            <a>
+                <b>B&uacute;squedas avanzada </b>
+            </a>
+        </div>
+    </div>
+</div>
+<div style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome3"  onclick="mostrarAyudaHome(this.id,'build');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">build</i>
+            <a>
+                <b>Topologia de pantalla </b>
+            </a>
+        </div>
+    </div>
+</div>
+<div   style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome5"  onclick="mostrarAyudaHome(this.id,'cloud_download');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">cloud_download</i>
+            <a>
+                <b>Exportar a Excel </b>
+            </a>
+        </div>
+    </div>
+</div>
+<div  style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome6"  onclick="mostrarAyudaHome(this.id,'arrow_downward');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">arrow_downward</i>
+            <a>
+                <b>Descarga de Poliza </b>
+            </a>
+        </div>
+    </div>
+</div>
+<div  style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome7"  onclick="mostrarAyudaHome(this.id,'important_devices');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">important_devices</i>
+            <a>
+                <b>Responsive</b>
+            </a>
+        </div>
+    </div>
+</div>
+<div  style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome8"  onclick="mostrarAyudaHome(this.id,'settings');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">settings</i>
+            <a>
+                <b>Tecnologias </b>
+            </a>
+        </div>
+    </div>
+</div>
+	<div   style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome9"  onclick="mostrarAyudaHome(this.id,'touch_app');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">touch_app</i>
+            <a>
+                <b>Modo Experto</b>
+            </a>
+        </div>
+    </div>
+</div>
+<div  style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome10"  onclick="mostrarAyudaHome(this.id,'dashboard');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">dashboard</i>
+            <a>
+                <b>Promociones </b>
+            </a>
+        </div>
+    </div>
+</div>
+<div  style="cursor:pointer; background-color:#ffffff;">
+    <div class="timeline__post seleccionPanelB" id="cuadroAyudaHome11"  onclick="mostrarAyudaHome(this.id,'warning');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A; paddind-top:5px; padding-bottom:5px;">
+        <div class="timeline__content datoPolizacliente" id="panelModalClientePolizas$numeroCard" style="overflow:hidden;">
+            <i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineEndoso$nroPoliza">warning</i>
+            <a>
+                <b>Siniestros </b>
+            </a>
+        </div>
+    </div>
+</div>

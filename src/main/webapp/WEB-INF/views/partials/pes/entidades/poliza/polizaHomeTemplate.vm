@@ -1,0 +1,4 @@
+
+#set ($templateWeb = 'partials/pes/entidades/poliza/polizaHome.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

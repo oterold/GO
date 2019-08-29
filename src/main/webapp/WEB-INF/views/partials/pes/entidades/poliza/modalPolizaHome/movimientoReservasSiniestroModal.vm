@@ -1,0 +1,156 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="movimientoReservaPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_MOVIMIENTO"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+					<i class="material-icons altoIcono"  style="color:#271765;padding-top:15px;" >swap_horiz</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Siniestro :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_SISI_NU_SINIESTRO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Juicio :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_SIJU_NU_JUICIO"></h6></td>
+                           		</tr>
+								
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Poliza :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_POLIZA"></h6></td>
+                           		</tr>
+								
+								
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Compromiso :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CJCR_NU_COMPROMISO"></h6></td>
+                           		</tr>
+								
+									<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Secuencia  :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_NU_SECUENCIA"></h6></td>
+                           		</tr>
+								
+									<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Certificado :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CACE_NU_CERTIFICADO"></h6></td>
+                           		</tr>
+                           		
+                           		
+                           		
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cuenta :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CJCH_CJCB_CD_CUENTA"></h6></td>
+                           		</tr>
+							
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ingreso :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CJIN_NU_INGRESO"></h6></td>
+                           		</tr>
+							
+							
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Forma de pago :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_IN_FORMA_PAGO"></h6></td>
+                           		</tr>
+                           		
+                           		
+                           											<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tipo de pago :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CD_TIPO_PAGO"></h6></td>
+                           		</tr>
+                           		
+                           											<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Forma de Cobro :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CD_FORMA_COBRO"></h6></td>
+                           		</tr>
+						
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 			<table  style= "width:100%;">
+             			 						<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Monto :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_MONTO"></h6></td>
+                           		</tr>
+							
+							
+             			 			
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Analista :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CAAN_CD_ANALISTA"></h6></td>
+                           		</tr>
+								
+								<tr>
+                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Usuario :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>
+								
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Beneficiario :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CJCR_BENEFICIARIO"></h6></td>
+                           		</tr>
+								
+								
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cobertura :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CACB_CD_COBERTURA"></h6></td>
+                           		</tr>
+								
+						
+							
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha Act. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_FE_ACTUALIZACION"></h6></td>
+                           		</tr>
+							
+							
+							
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cheque :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CJCH_NU_CHEQUE"></h6></td>
+                           		</tr>
+							
+							
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Asegurado :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_CARC_NU_ASEGURADO"></h6></td>
+                           		</tr>
+							
+							
+																<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tercero :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_SMCC_SISC_NU_TERCERO"></h6></td>
+                           		</tr>
+							
+							
+							
+							
+                                </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+				    <div class="row" style="margin-top:15px;">
+					     <div class="col-lg-12" style="text-align: center;">
+							<!-- aca va boton -->						
+						 </div>
+					</div>
+			</div>
+   			</div>

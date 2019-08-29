@@ -1,0 +1,77 @@
+
+
+
+     <div style="padding-top:15px;padding-left:15px;padding-right:15px;" class="row" id="panelCAvanzado">
+
+			<div class="col-12 col-sm-12 col-md-6 acomodarSelectModoExperto" style="padding:2px;padding-right:14px;">
+			
+			<div class="form-group">
+             <select id="selectorExpertoEntidad" onchange="habilitarSelectorExperto();" class="form-control" style="height:30px;">
+			   <option value="01" selected>Promoci&oacute;n</option>
+               <option value="03">Inspecciones</option>
+               <option value="02">Certificado</option>
+                 
+                 
+             </select>
+          </div>
+			
+			</div>
+				
+			
+				
+						<div class="col-12 col-sm-12 col-md-6 acomodarSelectModoExperto" style="padding:2px;padding-left:14px;">
+			<div class="form-group">
+               <select id="selectorExpertoPor" class="form-control" style="height:30px;">
+				 
+                 <option value="01" selected>Buscar por dato del certificado</option>
+                 <option value="05">Buscar por nombre del cliente</option>
+               </select>
+            </div>
+				</div>
+				
+				<div class="col-12 col-sm-12 col-md-6 acomodarSelectModoExperto" style="padding:2px;padding-right:15px;">
+			<div class="form-group">
+               <select id="selectorExpertoRamo" class="form-control" style="height:30px;">
+             <option value="0" selected>Todos los Ramos</option>
+												            <option value="1">01 - Incendio</option>
+												            <option value="2">02 - Transportes</option>
+												            <option value="3">03 - Aeronavegacion</option>
+												            <option value="4">04 - Automotores</option>
+												            <option value="5">05 - Cristales</option>
+												            <option value="6">06 - Robo</option>
+												            <option value="7">07 - Responsabilidad Civil</option>
+												            <option value="8">08 - Integrales</option>
+												            <option value="9">09 - Sepelio</option>
+												            <option value="10">10 - Granizo</option>
+												            <option value="11">11 - Ganado</option>
+												            <option value="12">12 - Accidentes del Trabajo</option>
+												            <option value="13">13 - Seguro Tecnico</option>
+												            <option value="14">14 - Riesgos Varios</option>
+												            <option value="15">15 - Caucion</option>
+												            <option value="16">16 - Accidentes Personales</option>
+												            <option value="17">17 - Vida Colectivo</option>
+												            <option value="18">18 - Cascos</option>
+												            <option value="21">21 - Vida Colectivo - Obligatorio</option>
+												            <option value="22">22 - Motovehiculos</option>
+												            <option value="55">55 - Legales - Sin Poliza</option>
+                  </select>
+             	</div>
+				</div>
+				
+				
+					<div class="col-12 col-sm-12 col-md-6 acomodarSelectModoExperto" style="padding:2px;padding-left:14px;">
+			<div class="form-group">
+               <select id="selectorExpertoEstado" class="form-control" style="height:30px;">
+                 <option value="T" selected>Estado</option>
+                  <option value="V">Vigente</option>
+                  <option value="N">No Vigente</option>
+                  </select>
+             	</div>
+				</div>
+				
+				
+</div>
+
+
+
+			

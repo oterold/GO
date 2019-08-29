@@ -1,0 +1,73 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="SSNProductorPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATOS_MODAL_SSN_PRODUCTOR">SSN</h4>
+      	    </div>	
+   			
+   			<div class="panel-body" style="padding-top:0px;">
+               	<div class="row">
+					<div class="col-md-2" style=";text-align: center;">
+						<i class="material-icons altoIcono"  style="color:#e0d100;padding-top:15px;" >location_city</i>
+   			
+					</div>
+					<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 			<div class="row" id="panelModal" style="margin-top:20px;">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Matr&iacute;cula&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_NU_SUPERINTENDENCIA"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha&nbsp;Notificac&iacute;on&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_FE_NOTIF_MATRICULA"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha&nbsp;De&nbsp;Pago&nbsp;Matr.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_FE_PAGO_MATRICULA"><b></b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>A&ntilde;o&nbsp;De&nbsp;Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_NU_ANIO_PAGO"><b></b></h6></td>
+                           		</tr>
+                     
+                                </table>
+						     
+              			  </div>
+						  
+						  <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro.&nbsp;RAI&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_NU_SUPERINTENDENCIA_RAI"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha&nbsp;Notif.&nbsp;RAI&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_FE_NOTIF_MATRICULA_RAI"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fecha&nbsp;De&nbsp;Pago&nbsp;RAI:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_FE_PAGO_MATRICULA_RAI"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>A&ntilde;o&nbsp;De&nbsp;Pago&nbsp;RAI:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_SSN_CAPD_NU_ANIO_PAGO_RAI"><b></b></h6></td>
+                           		</tr>
+                     
+                                </table>
+						     
+              			  </div>
+           				   
+    					</div>            
+					</div>
+    			</div>	
+				 
+			</div>
+ </div>

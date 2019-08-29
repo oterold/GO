@@ -1,0 +1,33 @@
+	
+	<div style="padding-top:0px;padding-bottom:5px;" class="row">
+	
+	  <div class="select col-md-6">
+			         	<div class="input-group date" id="datepickerGoExpertoDesde" style="width:100%;">
+			         	  <div style="background:white;" class="input-group-addon">
+                             <span>Fecha Desde :</span>
+                           </div>
+                            <input id="inputGoExpertoDesde" type="text" class="form-control">
+                            	<div class="input-group-addon">
+                            		<span class="fa fa-calendar"></span>
+                            	</div>
+						</div>
+   			 </div>
+   			 
+   			  <div class="select col-md-6">
+			         	<div class="input-group date" id="datepickerGoExpertoHasta" style="width:100%;">
+			         	  <div style="background:white;" class="input-group-addon">
+                             <span>Fecha Hasta :</span>
+                           </div>
+                            <input id="inputGoExpertoHasta" type="text" class="form-control">
+                            	<div class="input-group-addon">
+                            		<span class="fa fa-calendar"></span>
+                            	</div>
+						</div>
+   			 </div>
+   			 
+   			 
+   			  
+   			 
+   			 
+   			 
+	</div>

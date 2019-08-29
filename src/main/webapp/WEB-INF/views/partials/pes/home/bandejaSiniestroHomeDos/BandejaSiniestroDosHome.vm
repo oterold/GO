@@ -1,0 +1,182 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <input type="hidden" value="$cantidadBandeja" id="cantidadRegistros"/>
+            <input type="hidden" value="1" id="registroActual"/>
+            <input type="hidden" value="" id="valorAnnioRamoSiniestro" />
+            <input type="hidden" value="" id="typeBandejaSiniestro"/>
+            <input type="hidden" value="" id="keyBandejaSiniestro"/>
+            <input type="hidden" value="" id="actBandejaSiniestro"/>
+            <input type="hidden" value="" id="notiBandejaSiniestro"/>
+            <input type="hidden" value="" id="anticipoBandejaSiniestro"/>
+            <div class=" col-sm-12 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                        <a class="btn btn-default pull-left" #if($indicadorNivel3) onclick="redirectBreadCrumb('$indicadorNivel2URL')"#else onclick="redirectBreadCrumb('$indicadorNivel1URL')"#end style="text-transform:none;font-size:14px;margin-top:1px;color:#ffffff;background:#0b4376 !important; border-color:#808080; padding-top:0px;padding-left:3px; padding-bottom:0px; border-bottom-right-radius:0px;border-top-right-radius:0px;">
+                                    <i class="material-icons" style="vertical-align:middle; color:white; font-size:18px;" >keyboard_arrow_left</i>
+                                    &nbsp;Volver
+                        </a>
+                        <h4 style="text-align:center;color: #ffffff;border:none;">Bandeja de Tareas de Siniestros ($cantidadBandeja)</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row" id="panela">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+                                <h6 style="">Filtros Resultados : </h6>
+                            </div>
+                            <div class="col-xs-8  col-sm-8 col-md-8 col-lg-3 input-group" style="z-index:1;padding-left:10px;" >
+                                <div class="form-group">
+                                    <select class="form-control" style="font-size:12px;height:28px;" name ="selectorBienCertificado" id="selectorBienCertificado">
+                                        <option  value="0">
+                                            <h6>Seleccione...</h6>
+                                        </option>
+                                        <option  value="1" selected>
+                                            <h6>Tareas Activas</h6>
+                                        </option>
+                                        <option  value="2">
+                                            <h6>Tareas Pendientes</h6>
+                                        </option>
+                                        <option  value="3">
+                                            <h6>Tareas Programadas</h6>
+                                        </option>
+                                    </select>
+</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+                            <h6 style="">Ordenamiento : </h6>
+                        </div>
+                        <div class="col-xs-8 col-sm-4  col-md-8 col-lg-3 input-group pull-right" style="z-index:1;padding-left:10px;" >
+                            <div class="form-group">
+                                <select class="form-control" style="font-size:12px;height:28px;" name ="selectorBienCertificado" id="selectorBienCertificado">
+                                    <option  value="0"  selected>
+                                        <h6>Seleccione...<h5></option>
+                                            <option  value="0">
+                                                <h6>Por Siniestro<h5></option>
+                                                    <option  value="0">
+                                                        <h6>Por Sucursal<h5></option>
+                                                            <option  value="0">
+                                                                <h6>Por Tipo<h5></option>
+                                                                    <option  value="0">
+                                                                        <h6>De Rector<h5></option>
+                                                                            <option  value="0">
+                                                                                <h6>De Web<h5></option>
+                                                                                    <option  value="0">
+                                                                                        <h6>De Vida<h5></option>
+                                                                                            <option  value="0">
+                                                                                                <h6>De SiniWeb<h5></option>
+</select>
+</div>
+</div>
+<div class="col-md-12" style="text-align: center;padding-left:30px;padding-right:30px">
+    <a class="btn btn-bitbucket fas fa-file-download inspeccionesBotonHoover" onclick="descargarExcelBandejaWF();" data-placement="bottom" data-toggle="tooltip" title="Descargar" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>
+    <a class="btn btn-bitbucket fas fa-sitemap inspeccionesBotonHoover" data-placement="bottom" data-toggle="tooltip" title="Jerarquias de Roles/Usuarios" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>
+    <a class="btn btn-bitbucket fas fa-filter inspeccionesBotonHoover" data-placement="bottom" data-toggle="tooltip" title="Agregar Filtro" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-default" style="height:420px;">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12 md-form" style="margin-bottom:0px;">
+                <i class="fas fa-search prefix" style="font-size:30px;"></i>
+                <label for="inputValidationEx2" style="margin-left: 6rem;font-size:13px;">Filtrar</label>
+                <input  onkeyup="buscarFiltroBandejaSiniestro('tablaBandejaSiniestro')" style="margin-left: 4.5rem;width: calc(100% - 4.5rem);margin-bottom:10px;"  type="email" id="inputBusquedaBandejaSiniestro"  class="form-control">
+</div>
+<div class="col-md-12" style="text-align: left;padding-right:10px;padding-left:10px;">
+    <table  class="table table-hover table-grilla" role="table" style="margin-bottom:10px;">
+        <thead class="thead-grilla" role="rowgroup">
+            <tr class="tr-grilla" role="row" style="border:none;">
+                <th class="th-grilla" role="columnheader" style="border:none;width:1%;">&nbsp;</th>
+                <th class="th-grilla" role="columnheader" style="border:none;width:7%;">&nbsp;</th>
+                <th class="th-grilla" role="columnheader" style="border:none;width:18%;">
+                    <h5 style="padding:0px;border:none;">
+                        <b>Siniestro</b>
+                    </h5>
+                </th>
+                <th class="th-grilla" role="columnheader" style="border:none;width:13%;">
+                    <h5 style="padding:0px;border:none;">
+                        <b>Proceso/Tarea</b>
+                    </h5>
+                </th>
+                <th class="th-grilla" role="columnheader" style="border:none;width:11%;">
+                    <h5 style="padding:0px;border:none;">
+                        <b>Comienzo</b>
+                    </h5>
+                </th>
+                <th class="th-grilla" role="columnheader" style="border:none;width:9%;">
+                    <h5 style="padding:0px;border:none;">
+                        <b>Finalizaci&oacute;n</b>
+                    </h5>
+                </th>
+                <th class="th-grilla" role="columnheader" style="border:none;width:14%;">
+                    <h5 style="padding:0px;border:none;">
+                        <b>Resultado</b>
+                    </h5>
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scrollbar scrollbar-primary" id="scrollBandeja" style="height:290px;width:100%;">
+        <div class="force-overflow" style="height:305px;">
+            <table id="tablaBandejaSiniestro" class="table table-hover table-grilla" role="table">
+                <tbody class="tbody-grilla" id="datosComponenteCotizacion">
+                    #foreach($datos in $datosBandeja)
+                        <tr class="tr-grilla" id="fila$velocityCount" style="cursor:pointer;" onclick="mostrarValorBandejaSiniestro($velocityCount,'$datos.type','$datos.key','$datos.activity','$datos.id','$datos.anticipo');">
+                            <td class="td-grilla-componentesPromocionHome" role="cell" style="width:7%;">
+                                <i class="material-icons iconoIndRiesgoSiniestro" data-toggle="tooltip"  style="cursor:pointer;color:#bcbcbc;font-size: 25px;">$utilToolScreen.escalamientoWF($datos.escalamiento)</i>
+                            </td>
+                            <td class="td-grilla-componentesPromocionHome" style="width:3%;" role="cell">
+                                <h6 title="Origen : Rector">
+                                    <b style="color:#0b4376;cursor:pointer;font-size:20px">R</b>
+                                </h6>
+                            </td>
+                            <td class="td-grilla-componentesPromocionHome" style="width:16%;" role="cell">
+                                <h6 >$utilToolScreen.datoVacio($datos.siniestro)</h6>
+                            </td>
+                            <td class="td-grilla-componentesPromocionHome" style="width:24%;" role="cell">
+                                <h6 >$utilToolScreen.datoVacio($datos.proceso) / $utilToolScreen.datoVacio($datos.tarea)</h6>
+                            </td>
+                            <td class="td-grilla-componentesPromocionHome" style="width:14%;" role="cell">
+                                <h6 >$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($datos.comienzo))</h6>
+                            </td>
+                            <td class="td-grilla-componentesPromocionHome" style="width: 14%;" role="cell">
+                                <h6 >$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($datos.finalizacion))</h6>
+                            </td>
+                            <td class="td-grilla-componentesPromocionHome" style="width:15%;" role="cell">
+                                <h6 >$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($datos.resultado))</h6>
+                            </td>
+                        </tr>
+                    #end	
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Panel b -->
+<div class="col-sm-12 col-md-4 col-lg-4 " style="width:100%; margin-bottom: 20px;">
+    <div class="panel panel-default" style="display:table;width:100%;height:100%;margin-bottom: 0px;border-bottom-width: 0px;">
+        <div class="panel-heading" style=" background-color:white;border-color:white;">
+            <h4 style="color:#00317A;">Detalle de la Tarea <a  style="font-size:18px;"id="datosSiniestroSeleccionado"></a>
+            </h4>
+        </div>
+        <div class="main-container page__container altoPanelB" >
+            <div class="timeline__group" style="z-index:1;max-height:20px;">
+                <div>
+                    #parse("partials/pes/home/bandejaSiniestroHomeDos/panelBbandejaSiniestro.vm")	 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+#parse("partials/pes/home/bandejaSiniestroHomeDos/modal/notasModalBandejaSiniestro.vm")		
+#parse("partials/pes/home/bandejaSiniestroHomeDos/modal/escalamiendosModalBandejaSiniestro.vm")		
+#parse("partials/pes/home/bandejaSiniestroHomeDos/modal/reasignacionesModalBandejaSiniestro.vm")	
+#parse("partials/pes/home/bandejaSiniestroHomeDos/modal/anticiposBandejaSiniestroModal.vm")

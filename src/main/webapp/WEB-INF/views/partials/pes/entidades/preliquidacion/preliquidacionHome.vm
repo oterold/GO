@@ -1,0 +1,341 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+
+    <div class="row">
+    
+    <!-- Preliquidaciones -->
+       <div class=" col-sm-12 col-md-8">
+	  
+		#foreach($preliquidacionDato in $datosPreli)
+				<input type="hidden" value="$preliquidacionDato.get("P_TF_LISTA.CALI_NU_LIQUIDACION")" id="valorPreliquidacion" />
+				<input type="hidden" value="$mostrarBotonDetallePreli" id="mostrarBotonDetallePreli"/>
+				<input type="hidden" value="1" id="cantidadPag"/>
+			
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+
+          <h4 style="color: #ffffff; text-align:center" class="center-block">Preliquidaci&oacute;n #$preliquidacionDato.get("P_TF_LISTA.CALI_NU_LIQUIDACION")</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#205081;" >note</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              			
+    			
+    				<!-- pag principal -->
+              		
+          	 			<div class="row" id="panela" style="">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+									
+										<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe. Hasta :</h6></td>
+                           		<td style="padding-top:5px;width:66%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($preliquidacionDato.get("P_TF_LISTA.FE_HASTA")))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe.&nbsp;Preliquidaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($preliquidacionDato.get("P_TF_LISTA.FE_PRELIQUIDACION")))</b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe.&nbsp;Anulaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($preliquidacionDato.get("P_TF_LISTA.FE_ANULACION")))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sucursal&nbsp;:</h6></td>
+                           		<td  valign="top" style="padding-top:5px;"><h6 onClick="abrirModalSucursalHome('$preliquidacionDato.get("P_TF_LISTA.SUCURSAL")');"  style="color:#6fa1d4;cursor:pointer;"><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.SUCURSAL"),$utilToolScreen.nombreMayuscula($preliquidacionDato.get("P_TF_LISTA.DESC_SUCURSAL")),"-")</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Moneda&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.MONEDA"),$utilToolScreen.nombreMayuscula($preliquidacionDato.get("P_TF_LISTA.DESC_MONEDA"))," - ")</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Monto&nbsp;Pre.&nbsp;:</h6></td>
+								<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($preliquidacionDato.get("P_TF_LISTA.MT_PRELIQUIDACION")))</h6></td>
+								</tr>
+                          
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         	
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Productor&nbsp;:</h6></td>
+                           		<td style="padding-top:0px;width:66%;"><h6 onClick="abrirModalProductorHome('$preliquidacionDato.get("P_TF_LISTA.PRODUCTOR")');" style="color:#6fa1d4;cursor:pointer;"><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.PRODUCTOR"),$utilToolScreen.nombreMayuscula($preliquidacionDato.get("P_TF_LISTA.DESC_PRODUCTOR"))," - ")</b><i class="material-icons" style="display:inline;color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></h6></td>
+                           		
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Estado&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.ESTADO"),$utilToolScreen.PasarAmayuscula($preliquidacionDato.get("P_TF_LISTA.DESC_ESTADO"))," - ")</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Usuario&nbsp;:</h6></td>
+								<td valign="top" style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.nombreMayuscula($preliquidacionDato.get("P_TF_LISTA.USUARIO_GEN")))</b></h6></td>
+								</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Emitir&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.MT_REM_A_EMITIR"))</h6></td>
+                           		</tr>
+								
+							 		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Medio&nbsp;de&nbsp;Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.MEDIO_PAGO"),$utilToolScreen.nombreMayuscula($preliquidacionDato.get("P_TF_LISTA.DESC_MEDIO_PAGO"))," - ")</b></h6></td>
+                           		</tr>
+                           					<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Origen&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($preliquidacionDato.get("P_TF_LISTA.ORIGEN"),$utilToolScreen.PasarAmayuscula($preliquidacionDato.get("P_TF_LISTA.DESC_ORIGEN"))," - ")</b></h6></td>
+                           		</tr>
+                           	
+                           	 </table> 
+                           	      
+              			  </div>
+    					</div>            
+    			<!-- aca termina -->
+					  </div>
+       			 </div>
+                 <div class="row" id="botonDescargaDetalle" style="display:none;margin-top:20px;">
+					<div class="col-lg-12" style="text-align: center;">
+						<a class="btn btn-panela-preliquidacion  btn-social btn-bitbucket  material-icons contactoBotonHoover" onclick="descargarDetallePreliExcel()"  data-placement="bottom" data-toggle="tooltip" title="Detalle Preliquidacion" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#f0ad4e">note</a>
+                    </div>
+				 </div>
+			</div>
+   		</div>
+		#end    					
+
+
+
+
+		 <!-- PANEL D -->     
+	      <div class="panel panel-default" id="panelDPreli" style="display:none;">
+			
+	   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+					<h4 id="labelDetallePre">Informacion del detalle</h4>
+	   			 </div>	
+	   			 
+					<div class="panel-body">    
+					    <div class="row">
+				 <div class="col-xs-2" style=";text-align: center;">   
+						<i class="material-icons altoIcono"  id="panelImagenPre" style="color:#205081;padding-top:15px;" ></i>
+					</div>
+		
+						<div class="col-xs-10" style="text-align: left;padding-left:5px;padding-right:5px;" >
+				   			 		<div class="row" id="panelc">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                      <table  style= "width:100%;">
+                         		
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>P&oacute;liza&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_POLIZA_PRE"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Sucursal&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_SUCURSAL"><b></b></h6></td>
+                           		</tr>
+                           		
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Certificado&nbsp;:</h6></td>
+                         		<td style="padding-top:5px;width:60%;"><h6 id="DATO_CERTIFICADO"><b></b></h6></td>
+                         		
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Fe.&nbsp;Cobro&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_FE_COBRO"><b></b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Exigible&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_EXIGIBLE_PRE"><b></b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+           		<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  					<table  style= "width:100%;">
+
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Total&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_TOTAL_PRE"><b></b></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>A&nbsp;Pagar&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_APAGAR_PRE"><b></b></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Devoluci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_EMITIR_PRE"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Monto&nbsp;Rem&nbsp;a&nbsp;Emitir&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_DEVOLUCION_PRE"><b></b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+    					</div>
+					</div>       			
+				   			 					
+								</div> 
+					    </div> 
+				
+				</div>
+				
+	   	  </div>
+		
+		<!-- PANEL C -->     
+		 <div class="panel panel-default">
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+                <div class="input-group pull-right" style="z-index:1; width:35%;" >
+                  <input type="text" class="form-control" onkeyup="buscadorPanelCEntidadPreliquidacion()" id="inputBusquedaPreliquidacion"  style="height:26px;">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+                  </span>
+				</div>
+				<h4 id="cantInspecciones">Cancelaciones #if ( $datosCancelacion.size() > 0 ) ($datosCancelacion.size()) #end</h4> 
+   			 </div>	
+   					#if ($datosCancelacion.size() > 0)
+   				<div class="col-xs-2" style=";text-align: center;">   
+					<i class="material-icons altoIcono"  style="color:#205081;padding-top:15px;" >credit_card</i>
+   				</div>
+   				<div class="panel-body">    
+                   	<div class="row">
+              	 	    <div class="col-xs-12" style="text-align: center;$centradoVertical" id="caruMayor">
+              	 	  	    
+    						    #if (($datosCancelacion.size() < 20))
+    						    
+    							<div id="micaru" class="owl-carousel owl-theme" style="text-align:center; padding-left:25px;">
+            						#foreach ($cancelacion in $datosCancelacion)
+            							     <div id="micaruB$velocityCount" onclick="getDatosModalCancelacion($velocityCount,0);"  class="item" style="height:105px; cursor:pointer; background:#efeeee;border-radius: 3px; border-width: 1px; border-color:#271765; border-style: solid; box-shadow: 0 0 0px black;">
+        									<h6 id="nroPreliquidacion$velocityCount"  style="height:25px;border-bottom:1px solid; padding-top:4%;padding-bottom:4%;background-color:#205081;color:#ffffff;">Comprobante #$utilToolScreen.datoVacio($cancelacion.get("P_TF_LISTA.INB_NU_COMPROBANTE"))</h6>
+        									<h6 style="margin-top:2%;" id="datoPreliquidacion$velocityCount" class="datoPreliquidacionCarusel">Tipo :<b> $utilToolScreen.datoVacio($cancelacion.get("P_TF_LISTA.INB_CD_TIPO"))</b></h6>
+        									<h6 style="margin-top:2%;" id="datoPreliquidacion$velocityCount" class="datoPreliquidacionCarusel">Fe. cancel. :<b> $utilToolScreen.datoVacio($utilToolScreen.formatearFecha($cancelacion.get("P_TF_LISTA.CAPC_FE_CANCELACION")))</b></h6>
+        									<h6 style="margin-top:2%;" id="datoPreliquidacion$velocityCount"  class="datoPreliquidacionCarusel">Monto :<b> $utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($cancelacion.get("P_TF_LISTA.CAPC_MT_CANCELADO")))</b></h6>
+											<br>
+        							    </div>
+        							#end
+        						</div>
+							
+							#else
+								<div id="verPreliquidacion" style="margin-top:20px;">
+									<button class="btn btn-success" style="background:#205081;" type="button" onclick="verDetalleTablaPreliquidaciones();">Ver Preliquidaci&oacute;n</button>
+								</div>
+									<div id="tablaPreliquidaciones" class="table-responsive" style="text-align:center;border:0px;display:none">
+                            	    	<div id="grillaPreliquidaciones" style="height:180px;">
+                                        </div>
+                                    </div>
+							#end
+							
+    					</div> 
+              	 	 </div> 
+				</div>
+    		 #else 
+    			#set($concepto = "cancelaciones")
+               	#parse("partials/util/rowVacio.vm")	
+    	     #end
+   		</div>
+	</div>
+		
+		
+     
+  	   
+  	     <!-- PANEL B -->
+  	   
+				
+	  <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="width:100%; height:100%;">
+             <div class="panel-heading" style=" background-color:white;border-color:white;">
+				<div class="row">
+            		<div class="col-xs-6 col-sm-6 col-md-6" style="padding:0px;">
+                              <h4 id="cantEndosos" style="padding-top:7px;color:#00317A;border:none;">Detalle #if ($datosPreliDetalle.size() > 0 && $datosPreliDetalle.size() < 500 ) ($datosPreliDetalle.size()) #elseif($datosPreliDetalle.size() > 499) ($datosPreliDetalle.size()+) #end</h4>
+            				</div>
+            				#if($datosPreliDetalle.size() > 499 )
+							<div class="col-xs-6 col-sm-6 col-md-6">
+							<ul style="margin-bottom:0px;margin-top:0px;padding-top:5px;height:22px;" id="paginadoEndososBtn" class="pull-right pagination">
+                              <li><a id="paginadoBtnIzq" class="material-icons btnPaginado" onclick="paginadoPre('-1');" style="border-radius: 7px 0px 0px 7px;padding-top:5px;height:25px;" href="#">keyboard_arrow_left</a></li>
+                              <li><a id="paginadoBtnDer" class="material-icons btnPaginado" onclick="paginadoPre('1');" style="border-radius: 0px 7px 7px 0px;padding-top:5px;height:25px;" href="#">keyboard_arrow_right</a></li>
+                            </ul>
+							</div>
+							#end
+							
+				</div>
+             </div>
+         <div class="col-md-12">
+			<hr style="border-color:#00317A;margin-top:0px;margin-bottom:10px;width:100%;">
+		 </div>
+				
+				
+				
+   		     <div class="main-container page__container altoPanelB" style="height:485px !important;" >
+   		
+           
+                 <div class="timeline__group" style="max-height:20px;" id="panelPrePaginado">
+				
+				#if($mostrarBotonDetallePreli != "100")
+					
+					#if ($datosPreliDetalle.size() > 0)
+    
+            			  #foreach($datosPre in $datosPreliDetalle)
+            					    #set ($ramo = $datosPre.get("P_TF_LISTA.RAMO"))
+            						#set ($poliza = $datosPre.get("P_TF_LISTA.POLIZA"))
+            						#set ($icono = $utilToolScreen.getIcono($ramo))
+                            		#set ($certificado = $datosPre.get("P_TF_LISTA.CERTIFICADO"))
+            					    #set ($numeroCard = $velocityCount)
+            					
+            						#parse("partials/pes/entidades/preliquidacion/itemDetallePreliquidacion.vm")	 
+            				#end
+            							
+					</div>
+					#else 
+					<div>
+					    #set($concepto = "detalle")
+           			    #parse("partials/util/itemTimeLineVacio.vm")	
+					</div>
+					#end      					
+					
+				#else
+					<div>
+						<div  id="cuadroImgVacio" style="cursor:pointer; background-color:#ffffff" >
+							<div class="timeline__post seleccionPanelB" id="timeLineItemVacio" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A">
+								<div class="timeline__content" style="overflow:hidden;">
+									<div class="row">
+										<div class="col-md-2">
+											<i class="material-icons altoIcono"  style="color:#205081; font-size:40px; float:left; margin-right:20px;"  id="imgTimeLineVacio">error_outline</i>
+										</div>
+										<div class="col-md-10">
+											<h6 id="etiquetaVacio" style="padding-top: 15px; padding-bottom: 15px; color:#b3b0b0;">No se muestran resultados debido a la tardanza en cargar los datos del panel</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				#end					
+				 
+				</div>
+		
+			 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+#parse("partials/pes/entidades/poliza/modalPolizaHome/cancelacionPreModal.vm")	
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/productoresModal.vm")
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/sucursalModal.vm")
+    #parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")
+  
+
+ 

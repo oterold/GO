@@ -1,0 +1,8 @@
+#set ($indicadorSeccionParametroNivel1 = 'Productor' )
+#set ($indicadorSeccionParametroNivel2 = '8585757' )
+
+#set ($indicadorClienteParametro = 'Provincia Enterprise System')
+
+#set ($templateWeb = 'partials/pes/entidades/productor/productorHome.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

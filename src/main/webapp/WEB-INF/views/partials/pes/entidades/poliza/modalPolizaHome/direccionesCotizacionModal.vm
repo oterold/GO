@@ -1,0 +1,90 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="direccionesCotizacionPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_DIRECCIONES_COTIZACION"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#ff9064;" >person</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Calle :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_DE_CALLE"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Numero :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_DE_NUMERO"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Piso :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_DE_PISO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Departamento :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_DE_DEPARTAMENTO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Municipio :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_MUNICIPIO_COTIZACION"><b></b></h6></td>
+                           		</tr>
+                           		
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cod. Postal :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_COD_POSTAL_COTIZACION"><b></b></h6></td>
+                           		</tr>
+                           		
+                          
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Provincia :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_PROVINCIA_COTIZACION"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Pais :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_PAIS_COTIZACION"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Telefono :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_DE_TELEFONO"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fax :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_DE_FAX"><b></b></h6></td>
+                           		</tr>
+								
+								 		<tr>
+                         		<td  align="right" style="position:relative;padding-top:5px;"><h6>Fecha Efectiva :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_DIRECCIONES_CRCC_FE_EFECTIVA"><b></b></h6></td>
+                           		</tr>
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

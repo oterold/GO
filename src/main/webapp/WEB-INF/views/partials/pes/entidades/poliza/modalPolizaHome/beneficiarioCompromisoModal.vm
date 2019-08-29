@@ -1,0 +1,118 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="beneficiarioPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_BENEFICIARIO"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+					<i class="material-icons altoIcono"  style="color:#205081;padding-top:15px;" >&#xE02f;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 	          	 	<input type="hidden" value="" id="DATO_P_TF_CLIE_CACN_NU_CEDULA_RIF" />
+
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe.&nbsp;Elaboraci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJCR_FE_ELABORACION"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Factura&nbsp;1&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJCR_NU1_FACTURA"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Tipo&nbsp;Fac.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_FACTURA_BENEF"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Estado&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_CJCR_CAES_CD_ESTADO"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cod.&nbsp;Pago&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_CJCR_CASU_CD_PAGO"><b></b></h6></td>
+                           		</tr>
+                          
+                          
+                          
+                          
+                             	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Proveedor&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_CJCR_CUIT_PROVEEDOR"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Prestador&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_CJCR_CASU_CD_PRESTADOR"><b></b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Provincia&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_INB_DE_PROVINCIA"><b></b></h6></td>
+                           		</tr>
+                           		
+                           				 		<tr>
+                         		<td  align="right" style="position:relative;padding-top:5px;"><h6>Usuario&nbsp;Confirm.&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_INB_USUARIO_CONFORMADO"><b></b></h6></td>
+                           		</tr>
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+							<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Factura&nbsp;2&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJCR_NU2_FACTURA"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Persona&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJCR_CABU_NU_PERSONA_APOD"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Liquidaci&oacute;n&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJCR_NU_LIQUIDACION"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cod.&nbsp;Usuario&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_CJCR_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>
+								
+								 		<tr>
+                         		<td  align="right" style="position:relative;padding-top:5px;"><h6>Nacionalidad&nbsp;:</h6></td>
+                           		<td valign="top" style="padding-top:5px;"><h6 id="INFO_P_TF_COMPR_CJCR_FE_ELABORACION"><b></b></h6></td>
+                           		</tr>
+							
+							
+							
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Suc.&nbsp;Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_INB_DE_SUC_PAGO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Usuario&nbsp;Resp.&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_COMPR_INB_USUARIO_RESPONSABLE"></h6></td>
+                           		</tr>
+								
+						
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

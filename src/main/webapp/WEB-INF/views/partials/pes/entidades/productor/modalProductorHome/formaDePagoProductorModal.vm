@@ -1,0 +1,71 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="formaDePagoProductorPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:100%;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATOS_MODAL_IMPOSITIVOS_PRODUCTOR">Forma de pago</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+					<div class="col-md-2" style=";text-align: center;">
+						<i class="material-icons altoIcono"  style="color:#e0d100;padding-top:15px;" >credit_card</i>
+   			
+					</div>
+					<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+									
+									<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Medio&nbsp;Pago&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_CD_FORMA_PAGO"><b></b></h6></td>
+                           		</tr>
+									
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Banco&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_CABA_CD_BANCO"><b></b></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tipo&nbsp;cuenta&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_TP_CUENTA"><b></b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Estado&nbsp;Cheque&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_ST_ORDEN_CHEQUE"><b></b></h6></td>
+                           		</tr>
+                           		
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+							<tr>
+									
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Sucursal&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_CABS_NU_SUC_BANCO"><b></b></h6></td>
+                           		</tr>
+                          
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro.&nbsp;cuenta&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_CADM_NU_CUENTA"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro.&nbsp;cbu&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_FORMA_PAGO_CAPD_NU_CBU"><b></b></h6></td>
+                           		</tr>
+								
+								
+								
+                            </table>
+              				 
+    					</div>
+    					</div>            
+					</div>
+    			</div>	
+				 
+			</div>
+ </div>

@@ -1,0 +1,33 @@
+<div class="panel panel-default" style="display:none;max-width:600px;height:500px;overflow-y:hidden;" id="comprobantesRemesaPopUp" >
+	<div style="width:100%;">
+		<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+	</div>
+	<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+		<h4 id="DATOS_COMPROBANTES"></h4>
+	</div>	
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-12" style="text-align: left;height: 350px;overflow-y:auto;">
+				<div class="table-responsive">
+					<table class="table table-hover table-grilla" role="table">
+						<thead class="thead-grilla" role="rowgroup">
+							<tr class="tr-grilla" role="row">
+								<th class="th-grilla" role="columnheader">Comprobante</th>
+								<th class="th-grilla" role="columnheader">Usuario</th>
+								<th class="th-grilla" role="columnheader">monto</th>
+								<th class="th-grilla" role="columnheader">Fecha</th>
+							</tr>
+						</thead>
+						<tbody class="tbody-grilla" id="valorComprobantesRemesa">
+						</tbody>
+					</table>
+				</div>
+			</div>    				  
+		</div>
+		<div class="row">
+            <div class="col-lg-12 text-center" style="margin-top:20px;">
+				<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons" onclick=""  data-placement="bottom" data-toggle="tooltip" title="Exportar Excel" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#479e4b">import_export</a>
+			</div>
+		</div>
+	</div>	
+</div>

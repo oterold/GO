@@ -1,0 +1,17 @@
+
+  
+  
+  <div  id="cuadroImgEndoso$nroPoliza" style="cursor:pointer; background-color:#ffffff" onclick="mostrarPolizasSiniestroHome('timeLineItemEndoso$nroPoliza','endoso','$nroPoliza','cuantitativo','$cardPolizaIcono');">
+  
+  <div class="timeline__post seleccionPanelB" id="timeLineItemEndoso$nroPoliza" onclick="mostrarPolizasSiniestroHome('timeLineItemEndoso$nroPoliza','endoso','$nroPoliza','cuantitativo');" style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A">
+  <i class="material-icons altoIcono"  style="color:#205081; font-size:20px; float:left; margin-right:20px;"  id="imgTimeLineEndoso$nroPoliza">$cardPolizaIcono</i>
+                          <div class="timeline__content">
+						   <h6 id="etiquetaEndoso$nroPoliza"><b>#$nroPoliza - $nroFecha</b></h6>
+							
+                            <h6> $etiquetaRamo </h6>
+							                        
+                         </div>
+                        </div> 
+  
+
+	</div>

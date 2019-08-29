@@ -1,0 +1,382 @@
+
+<section class="container-fluid">
+
+ <div class="containerMargenes" id="main">
+ 
+    <div class="row">
+    
+    <!-- CERTIFICADO -->
+       <div class=" col-sm-12 col-md-8">
+	  
+		#foreach($cabeceraDato in $cabecera)
+		
+						#set($nroCertificadoCabecera = $cabeceraDato.get("P_TF_CERT_CACE_NU_CERTIFICADO"))
+			
+						<input type="hidden" value="$cabeceraDato.get("P_TF_CERT_CACE_NU_CERTIFICADO")" id="valorCertificado" />
+						<input type="hidden" value="$cabeceraDato.get("P_TF_CERT_CACE_CAPO_NU_POLIZA")" id="valorPolizaCertificadoHome" />
+						<input type="hidden" value="$cabeceraDato.get("P_TF_CERT_CACE_CARP_CD_RAMO")" id="valorRamoCertificadoHome" />
+						<input type="hidden" value="$cabeceraDato.get("P_TF_CERT_CACE_CASU_CD_SUCURSAL")" id="valorSucursalCertificadoHome" />
+						<input type="hidden" value="$cabeceraDato.get("P_TF_CERT_CACE_CASU_CD_SUCURSAL")" id="valorSucursal" />
+						<input type="hidden" value="$utilToolScreen.getIcono($cabeceraDato.get("P_TF_CERT_CACE_CARP_CD_RAMO"))" id="imagenIconoCertificado" />
+						<input type="hidden" value="$endosoCertificadoSeleccionado" id="ultimoEndoso" />
+						<input type="hidden" value="" id="textoCertificado" />
+			
+			
+        <div class="panel panel-default">
+          <div class="panel-heading altoDobleHeaderPanel" style="background-color: #0B4376;height:37px;">
+			#parse("/partials/util/botonVolverAtras.vm")
+
+          <h4 style="color: #ffffff; text-align:center" class="center-block">Certificado #$cabeceraDato.get("P_TF_CERT_CACE_NU_CERTIFICADO") - Poliza #$cabeceraDato.get("P_TF_CERT_CACE_CAPO_NU_POLIZA") </h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#509750;" >$utilToolScreen.getIcono($cabeceraDato.get("P_TF_CERT_CACE_CARP_CD_RAMO"))</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              			
+    			
+    				<div class="row" id="panelb">
+    					
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+  							
+  								 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Riesgo Asegurado :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_RIESGO_ASEG_CERTIFICADO"></h6></td>
+                           		</tr>
+                           		
+                           		 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Suma Asegurada :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_SUMA_ASEG_CERTIFICADO"></h6></td>
+                           		</tr>
+                           		
+                           		
+                         		 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ramo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_CACE_CARP_CD_RAMO"))) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_INB_DSP_RAMO")))</b></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Medio de pago :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_CACE_CAMD_CD_MEDIO_PAGO"))) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_INB_MEDIO_PAGO")))</b></h6></td>
+                           		</tr>
+                          	 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Origen :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_CACE_COTC_CD_ORIGEN"))) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_INB_ORIGEN")))</b></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cod. Producto :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_CACE_CAPU_CD_PRODUCTO"))</b></h6></td>
+                           		</tr>
+                           		
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+             				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  								<table  style= "width:100%;">
+                         	
+  							
+  								 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Plan :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_PLAN_CERTIFICADO"></h6></td>
+                           		</tr>
+                           		
+                         	
+                         	
+                           		 		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Promocion :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_INB_PROMOCION"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Estado :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_INB_ST_CERTIFICADO"))</b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Fragmento :</h6></td>
+                           		<td style="padding-top:5px;"><h6><b>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_INB_FRAGMENT"))</b></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Aseg. :</h6></td>
+                                <td style="padding-top:2px;"><h6 onclick="abrirModalClienteHome('$cabeceraDato.get("P_TF_CERT_CACE_CACN_NU_CEDULA_RIF")');" style="color:#6fa1d4;cursor:pointer;"><b>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_INB_DSP_ASEGURADO"))</b><span><i class="material-icons" style="display:inline:color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></span></h6></td>
+                           		</tr>
+                           	
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;">
+                       
+          				<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+                                 
+  							<table  style= "width:100%;">
+                         		 				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 style="color:#6fa1d4;cursor:pointer;" onclick="abrirModalSucursalHome('$cabeceraDato.get("P_TF_CERT_CACE_CASU_CD_SUCURSAL")')"><b>$cabeceraDato.get("P_TF_CERT_CACE_CASU_CD_SUCURSAL") - $cabeceraDato.get("P_TF_CERT_INB_DSP_SUCURSAL")</b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Categoria Iva :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_CACE_CJIV_CD_CATEGORIA_IVA")) - $utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_INB_CD_CATEGORIA_IVA")))</b></h6></td>
+                           		</tr>
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>CPT :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.datoVacio($utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_INB_CCTT_CPT")))</b></h6></td>
+                           		</tr>
+   
+                           	 	
+									
+                           	 </table> 
+                           	      
+              			  </div>
+              			  
+           				 <div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+  							<table style= "width:100%;">
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cod. Cedula Rif&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6><b>$utilToolScreen.ucFirst($cabeceraDato.get("P_TF_CERT_CACE_CACN_NU_CEDULA_RIF"))</b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Poliza&nbsp;:</h6></td>
+                           		<td style="padding-top:1px;width:60%;"><h6 onclick="irAPoliza()" style="color:#6fa1d4;cursor:pointer;"><b>$cabeceraDato.get("P_TF_CERT_CACE_CAPO_NU_POLIZA")</b><span><i class="material-icons" style="display:inline:color:#6fa1d4;font-size:14px;cursor:pointer;">arrow_drop_up</i></span></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>CBU&nbsp;:</h6></td>
+                           		<td style="padding-top:1px;width:60%;"><h6>$utilToolScreen.datoVacio($cabeceraDato.get("P_TF_CERT_INB_NU_CUENTA"))</h6></td>
+                           		</tr>
+                           	 </table> 
+					<br><br>
+              			  </div>
+    				</div> 
+    					
+
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+							<div class="row" >
+					     		<div class="col-lg-12" style="text-align: center;">
+       			   			#if($tipoFactu == '00')
+								<a id="botonCobranzaCertrificadoHome" class="btn btn-panela-poliza  btn-social btn-bitbucket material-icons movimientosBotonHoover"  data-toggle="tooltip" title="Posici&oacute;n Consolidada"  data-placement="bottom" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#00317A" onClick="abrirPopUpMovimientosPolizaHome('MovimientosPopUp','$nroCertificadoCabecera','$cabeceraDato.get("P_TF_CERT_CACE_CAPO_NU_POLIZA")','$cabeceraDato.get("P_TF_CERT_CACE_CARP_CD_RAMO")');">account_balance</a>
+							#end
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirModalPrimaCertificadoPanelA();"   data-placement="bottom" data-toggle="tooltip"  title="Coberturas" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">attach_money</a>
+							<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="mostrarLibredeudaModal();"   data-placement="bottom" data-toggle="tooltip"  title="Libre de Deuda" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;">payment</a>
+							   </div>
+							</div>
+        		 </div>
+   			</div>
+
+		#end
+   		
+
+	 <!-- Datos Parametricos -->     
+      <div class="panel panel-default" >
+		
+   			<div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+				
+				<div class="row">
+						 <div class="col-md-12" style="text-align: left;padding-left:5px;padding-right:5px;">
+						 
+								  <div class="col-xs-12 col-md-12 col-lg-4 panelComponenteGrillaCabecera" style="text-align: left;padding-top:5px;padding-bottom:15px;">
+						                        	<h4 style="border:none;">Datos Parametricos</h4>
+					         		</div>
+		
+								<!-- se guardan el endoso seleccionado -->
+								
+		
+					         		
+								<div class="col-xs-12  col-md-12 col-lg-4 input-group pull-right" style="z-index:1;" >
+									<div class="form-group">
+										  <select class="form-control" onchange="mostrarEndosoParametricoHome();" style="height:35px;" name ="selectorBienCertificado" id="selectorBienCertificado">
+										    <option  value="0"  selected>Seleccione un bien...</option>
+										  </select>
+										</div>
+								</div>
+					
+								<div class="col-xs-12 col-md-12 col-lg-4 input-group pull-right" style="z-index:1;" >
+									<div class="input-group pull-right" style="z-index:1;" >
+					                  <input type="text" class="form-control" onkeyup="buscarFiltroParametrico('tablaParametricos')" id="inputBusquedaParametrico"  style="height:35px;">
+					                  <span class="input-group-btn">
+					                    <button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px;height:35px; padding-right: 15px">Filtrar</button>
+					                  </span>
+									</div>
+		   						</div>
+		   				</div>
+						<div class="col-md-12">
+				                       <hr style="margin-top:5px;margin-bottom:5px;width:100%;border-top: 1px solid #000000;">
+						</div>		   		
+	   		</div>
+	   	 </div>	
+   			 
+   			 
+   			 
+   			
+			 
+				<div class="panel-body">    
+				    <div class="row">
+			 <div class="col-xs-2" style=";text-align: center;">   
+					<i class="material-icons altoIcono"  style="color:#1c8a1b;padding-top:15px;" >settings</i>
+				</div>
+				#if($endososCertificado.size() > 0)
+				<div class="col-xs-10" style="text-align: left;padding-left:5px;padding-right:5px;" >
+				    		    
+							
+					<input type="hidden" value="" id="valorEndosoCertificadoHome" />
+										
+					<input type="hidden" value="" id="valorPrestadorCertificadoHome" />
+					<input type="hidden" value="" id="valorNumCodCertificadoHome" />
+					<input type="hidden" value="" id="valorAlarmaCertificadoHome" />
+					<input type="hidden" value="" id="valorIdentificadorCertificadoHome" />
+					
+								
+								
+								<div id="datosParametricosSegunEndoso">
+									<div style="height:150px;overflow-y:auto;">
+										<table id="tablaParametricos" style= "width:100%;">
+											<tbody>
+												#foreach($parametricoEndoso in $parametricosEndosoCertificado)
+												<tr>
+													<td align="right"  valign="top" style="padding-top:5px;"><h6>$utilToolScreen.nombreMayuscula($parametricoEndoso.get("P_TF_PARAM_INB_LABEL")):</h6> 
+													</td>
+													<td style="padding-top:5px;width:60%;">
+														<h6>
+															<b>
+																#if($parametricoEndoso.get("P_TF_PARAM_CRPD_CRCD_CD_DATO").empty)
+																	<a style='color:#bfbac2;'>Sin dato</a>
+																#else	
+																	$utilToolScreen.nombreMayuscula($parametricoEndoso.get("P_TF_PARAM_CRPD_CRCD_CD_DATO")) - 
+																	#if(!$parametricoEndoso.get("P_TF_PARAM_CRPD_DATO").empty)
+																	$utilToolScreen.nombreMayuscula($parametricoEndoso.get("P_TF_PARAM_CRPD_DATO")) $utilToolScreen.nombreMayuscula($parametricoEndoso.get("P_TF_PARAM_INB_DATO"))
+																	#else
+																		<a style='color:#bfbac2;'>Sin dato</a>
+																	#end
+																#end
+															</b>
+														</h6>
+													</td>
+												</tr>
+												#end
+											</tbody>
+										</table>	
+									</div>
+   			 					</div>
+				</div> 
+				#else
+					<div class="col-xs-10" style="text-align: left;padding-left:5px;padding-right:5px;" >
+				    		    <div id="datosParametricosSegunEndoso">
+				    		      <span style="color:#6f6767;text-align:center;"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No se encontraron datos de endosos de certificados</span>
+   			 					</div>
+				</div> 
+				#end    	
+				    </div> 
+				<div class="row" >
+				     <div class="col-lg-12" style="text-align: center;">
+						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirModalPrimaCertificado();"   data-placement="bottom" data-toggle="tooltip"  title="Coberturas" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">attach_money</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirModalComponenteCertificado();"   data-placement="bottom" data-toggle="tooltip"  title="Componentes" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">list</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="mostrarTextosCertificado();"   data-placement="bottom" data-toggle="tooltip"  title="Textos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A">sms</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="abrirPopUpAnexosCertificadoHome();"   data-placement="bottom" data-toggle="tooltip"  title="Anexos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;">add</a>
+ 						
+ 						<a id="btnVerMasBotonesCer" class="btn btn btn-panela-productor  btn-social btn-bitbucket  material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="M&aacute;s acciones" onclick="mostrarBotonesCertificado();" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#00317A;line-height:0.5;">...</a>
+ 						
+ 						
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover" onclick="abrirPopUpAcredoresCertificadoHome();"   data-placement="bottom" data-toggle="tooltip"  title="Acreedores" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none">people</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="abrirModalIIBBCertificado();"   data-placement="bottom" data-toggle="tooltip"  title="IIBB" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none;">payment</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="abrirPopUpListaBienesCertificadoHome();"   data-placement="bottom" data-toggle="tooltip"  title="Objetos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none;">build</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="mostrarBeneficiariosCertificado();"   data-placement="bottom" data-toggle="tooltip"  title="Beneficiarios" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none;">monetization_on</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="mostrarUbicacionesCertificadoModal();"   data-placement="bottom" data-toggle="tooltip"  title="Ubicaciones" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none;">place</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="mostrarDispSatelitalCertificadoModal();"   data-placement="bottom" data-toggle="tooltip"  title="Disp. Satelital" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none;">satellite</a>
+ 						<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover mostrarBotonCer" onclick="mostrarAlarmaCertificadoModal();"   data-placement="bottom" data-toggle="tooltip"  title="Alarmas" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff; background-color:#00317A;display:none;">alarm</a>
+ 						
+ 						
+ 						</div>
+				</div>
+				</div>
+   	  </div>
+	</div>
+	
+	
+	<!-- Nuevo Panel-->
+	
+	<!-- Panel D -->
+   	
+   			
+   			
+   			
+  	   
+  	   <!-- Cantidad Endosos -->
+  	   
+       <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+         <div class="panel-heading" style=" background-color:white;border-color:white;">
+          <h4 style="color:#00317A;">Endosos #if($endososCertificado.size() > 0 ) ($endososCertificado.size()) #end</h4>
+         </div>
+         
+   		 <div class="main-container page__container altoPanelB" >
+   		
+			<div class="timeline__group" style="z-index:1;max-height:20px;">
+			#if($endososCertificado.size() > 0)
+				<div class="timeline" style="padding-bottom:0px;">
+					#foreach($endosoDato in $endososCertificado)
+						#set ($nroPolizaEndoso = $endosoDato.get("P_TF_LISTA_END_CACW_CAPO_NU_POLIZA"))
+						#set ($nroSucursalEndoso = $endosoDato.get("P_TF_LISTA_END_CACW_CASU_CD_SUCURSAL"))
+            			#set ($nroRamoEndoso = $endosoDato.get("P_TF_LISTA_END_CACW_CARP_CD_RAMO"))
+                        #set ($nroEndoso = $endosoDato.get("P_TF_LISTA_END_CACW_NU_ENDOSO"))
+                        #set ($urlImgEndoso = $utilToolScreen.getIconoEndoso($endosoDato.get("P_TF_LISTA_END_CACW_CAME_TP_TRANSAC")))
+                        #set ($nroFecha = $utilToolScreen.formatearFecha($endosoDato.get("P_TF_LISTA_END_CACW_FE_OPERACION")))
+                        #set ($etiquetaEndoso = $endosoDato.get("P_TF_LISTA_END_INB_TP_TRANSAC"))
+						 #set ($numeroCard = $velocityCount)
+						
+						#set ($numProducto = $endosoDato.get("P_TF_LISTA_END_CACW_CAPU_CD_PRODUCTO"))
+						#set ($prestador = $endosoDato.get("P_TF_LISTA_END_INB_CD_PRESTADOR"))
+						#set ($identificador = $endosoDato.get("P_TF_LISTA_END_INB_CD_IDENTIFICADOR"))
+						#set ($alarma= $endosoDato.get("P_TF_LISTA_END_INB_CD_IDENTIFICADOR_ALAR"))
+						
+						
+						#if($foreach.hasNext)
+							#set ($styleElement = "")
+            			#else
+            				#set ($styleElement = "background-color:white;")
+            			#end
+            			#parse("partials/pes/entidades/certificado/itemEndosoCertificadoHome.vm")	 
+            		#end
+				</div>
+			#else
+				<div>
+   
+						#set($concepto = "endosos de certificados")
+           			    #parse("partials/util/itemTimeLineVacio.vm")
+						   
+				</div>
+			#end
+			</div>
+	
+   		 </div>
+		</div>
+	   </div>
+ </div>
+ </div>
+       </section>
+ 
+     
+      #parse("partials/pes/entidades/poliza/modalPolizaHome/primaCertificadoModal.vm")
+      #parse("partials/pes/entidades/poliza/modalPolizaHome/coberturaCertificadoModal.vm")
+      #parse("partials/pes/entidades/poliza/modalPolizaHome/componenteCertificadoModal.vm")
+      #parse("partials/pes/entidades/poliza/modalPolizaHome/iiBbCertificadoModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/clienteModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/movimientosModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/acreedoresModalCertificado.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/sucursalModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/listaBienesCertificadoModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/textosCertificadoHome.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/anexosCertificadoModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/beneficiariosCertificadoHomeModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/ubicacionCertificadoModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/dispositivoSatelitalCertificadoModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/alarmaCertificadoModal.vm")
+	  #parse("partials/pes/entidades/poliza/modalPolizaHome/libreDeudaCertificadoHome.vm")
+

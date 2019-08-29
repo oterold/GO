@@ -1,0 +1,4 @@
+
+#set ($templateWeb = 'partials/pes/pdfVida/pdfVidaDatosRiesgo/pdfVidaDatosRiesgoHome.vm')
+
+#parse("partials/pes/buscadorExperto/coti/mainTemplateCotiWeb.vm")	  

@@ -1,0 +1,11 @@
+ <div class="containerMargenes containerMenuResponsive">
+						            <div class="row">
+						                <!-- POLIZA -->
+						                <div class=" col-sm-12 col-md-12">
+						                    <div class="alert alert-danger bs-alert-old-docs">
+						                        <strong>Upss...</strong>
+						                        No se encontraron elementos para su busqueda
+						                    </div>
+						                </div>
+						            </div>
+						        </div>

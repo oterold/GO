@@ -1,0 +1,92 @@
+<div class="panel panel-default" style="display:none;max-width:975px;overflow-y:hidden;" id="historiaProductorPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="background-color:#ffffff;border-color:#ffffff;">
+					<h4 style="" id="DATO_HISTORIA_PRODUCTOR"></h4>
+      	    </div>	
+   			<div class="panel-body">
+               	<div class="row" style="margin:0px;" id="idHistoriaOrganizador">
+          	 	  <div class="col-md-12" style="text-align: left;height: 380px;overflow-y:auto;padding:0px;">
+								<div id="idHistoriaOrganizadorPanel">
+								<table class="table table-hover table-grilla" role="table">
+								   
+									<thead class="thead-grilla" role="rowgroup">
+										<tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Organizador</th>
+								            <th class="th-grilla" role="columnheader">Fecha Alta</th>
+								            <th class="th-grilla" role="columnheader">Fecha Baja</th>								       
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosHistoriaOrganizador">
+									</tbody>
+								</table>
+								</div>
+    				  </div>
+    				  
+				</div>
+				<div class="row" style="margin:0px;" id="idHistoriaProductor">
+          	 	  <div class="col-md-12" style="text-align: left;height: 350px;overflow-y:auto;padding:0px;">
+								<div>
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+											<tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader">Productor</th>
+								            <th class="th-grilla" role="columnheader">Agencia</th>
+								            <th class="th-grilla" role="columnheader">Suc. Cabecera</th>
+								            <th class="th-grilla" role="columnheader">Convenio</th>
+								            <th class="th-grilla" role="columnheader">Esquema</th>
+											<th class="th-grilla" role="columnheader">Categoria</th>
+
+											</tr>
+										  </thead>
+								    <tbody class="tbody-grilla" id="datosHistoriaProductor">
+									</tbody>
+								</table>
+								</div>
+    				  </div>
+    				  
+				</div>
+				<div class="row" style="margin-top:10px;" id="idHistoriaProductorAdicional">
+							<div class="col-xs-12 col-md-6">
+								<table  style= "width:100%;">
+									
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha&nbsp;Alta&nbsp;:</h6></td>
+											<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_HISTORIA_CAOR_FE_ALTA"></h6></td>
+											</tr>
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha&nbsp;Modificacion&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_HISTORIA_CAOR_FE_MODIFICACION"></h6></td>
+                                       		</tr>
+                                       	 	<tr>
+                                     		<td align="right"  valign="top" style="padding-top:5px;"><h6>Baja&nbsp;Provisoria&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_HISTORIA_CAOR_FE_BAJA_PROV"></h6></td>
+                                       		</tr>
+                                       		
+                                        </table>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<table  style= "width:100%;">
+									
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Rehabilitaci&oacute;n&nbsp;:</h6></td>
+											<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_HISTORIA_CAOR_FE_REHABILITACION"></h6></td>
+											</tr>
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha&nbsp;Baja&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_HISTORIA_CAOR_FE_BAJA"></h6></td>
+                                       		</tr>
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha&nbsp;Baja&nbsp;Def.&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_HISTORIA_CAOR_FE_BAJA_DEF"></h6></td>
+                                       		</tr>
+                                       		
+                                        </table>
+							</div>
+				</div>
+			</div>
+			
+
+</div>

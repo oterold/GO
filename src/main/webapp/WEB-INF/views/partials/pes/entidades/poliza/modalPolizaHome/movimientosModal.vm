@@ -1,0 +1,123 @@
+
+      		<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="MovimientosPopUp" >
+						<div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+						</div>
+			<div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4>Posici&oacute;n Consolidada</h4>
+      	    </div>	
+   		 <input type="hidden" value="" id="valorCertificadoComi"/>
+   		 <input type="hidden" value="" id="valorPolizaComi"/>
+   		 <input type="hidden" value="" id="valorRamoComi"/>
+
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			 <img src="/PSPES/resources/img/rector/timeLine/pesosAzul.svg" width="70" height="70">
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:20px">
+					
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:60%;" ><h6 style="border:none;">Monto Emitido :</h6></td>
+								<td style="padding-top:5px;width:60%;"><h6 id ="DATO_MONTO_EMITIDO"></h6></td>
+                           		</tr>
+								
+						
+								
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 
+							<table  style= "width:100%;">
+								
+								
+							
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:60%;"><h6 style="border:none;">Monto Cobrado : </h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_MONTO_COBRADO"></h6></td>
+                           		</tr>
+							
+                            </table>
+              				 
+    					</div>
+    					</div>            
+
+						
+						<hr style="margin-bottom:5px;margin-top:5px;">
+							
+						<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:60%;" ><h6 style="border:none;"<b>Productor :</b></h6></td>
+								<td style="padding-top:5px;width:60%;"><h6 id="DATO_P_TF_MOVS_CACE_CAPD_CD_PRODUCTOR" data-placement="bottom" data-toggle="tooltip"></h6></td>
+								</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Comisiones Devengadas :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_COMI_DEVEN_PROD"></h6></td>
+                           		</tr>
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Comisiones Amortizadas :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_COMI_AMO_PROD"></h6></td>
+                           		</tr>
+								
+								
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Comisiones Liberadas :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_COMI_LIB_PROD"></h6></td>
+                           		</tr>
+								
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 
+							<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:60%;" ><h6 style="border:none;"<b>Organizador :</b></h6></td>
+								<td style="padding-top:5px;width:60%;"><h6 id="DATO_P_TF_MOVS_CAOR_CD_ORGANIZADOR"></h6></td>
+								</tr>
+								
+								
+								<tr>
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6>Comisiones Devengadas :</h6></td>
+									<td style="padding-top:5px;width:60%;"><h6 id="DATO_COMI_DEVEN_ORG"></h6></td>
+                           		</tr>
+								
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Comisiones Amortizadas :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_COMI_AMO_ORG"></h6></td>
+                           		</tr>
+								
+								<tr>
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6>Comisiones Liberadas :</h6></td>
+									<td style="padding-top:5px;width:60%;"><h6 id="DATO_COMI_LIB_ORG"></h6></td>
+                           		</tr>
+							
+								
+								
+                            </table>
+              				 
+    					</div>
+    					</div>      
+						
+                  	
+    			  </div>
+    			</div>	
+						<div class="row">
+			<div class="col-lg-12" style="text-align: center;">
+				<a class="btn btn-social btn-bitbucket  material-icons inspeccionesModalBotonHoover" onclick="redirecComisiones();" data-placement="bottom" data-toggle="tooltip" title="Comisiones"  style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081">trending_up</a>
+				<a class="btn   btn-social btn-bitbucket  material-icons inspeccionesModalBotonHoover" data-placement="bottom" data-toggle="tooltip" title="Cobranzas"  style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#205081" onclick="redirecCobranza();">attach_money</a>
+          	</div>
+   			</div>
+
+
+                </div>
+</div>

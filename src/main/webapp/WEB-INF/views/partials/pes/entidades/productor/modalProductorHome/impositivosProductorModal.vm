@@ -1,0 +1,162 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="impositivosProductorPopUp" >
+      	   <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+		   </div>
+			
+			<div class="panel-heading" style="max-width:100%;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATOS_MODAL_IMPOSITIVOS_PRODUCTOR">Impositivos</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+					<div class="col-md-2" style=";text-align: center;">
+						<i class="material-icons altoIcono"  style="color:#e0d100;padding-top:15px;" >card_membership</i>
+   			
+					</div>
+					<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px;margin-bottom:15px;">
+          	 	  
+          	 			<div class="row" id="panelDatosGenerales">
+							
+							<div class="col-md-12">
+                                <div class="row">
+									<div class="col-md-12 text-center">
+										<h5 style="border: 0 solid #aabfd2; border-bottom-width: 1px; padding-bottom: 10px;"><b>Informaci&oacute;n Generales</b></h5>
+										<hr style="margin-top:0px;border-top: 0px solid #00317A;">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+										<table  style= "width:100%;">
+									
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>S.&nbsp;Social&nbsp;:</h6></td>
+											<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_CD_SERVICIO_SOCIAL"><b></b></h6></td>
+											</tr>
+											<tr>
+											<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro.&nbsp;Social&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_NU_SERVICIO_SOCIAL"><b></b></h6></td>
+                                       		</tr>
+                                       	 	<tr>
+                                     		<td align="right"  valign="top" style="padding-top:5px;"><h6>Ing.&nbsp;Brutos&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_IN_ING_BRUTOS"><b></b></h6></td>
+                                       		</tr>
+                                       		<tr>
+                                     		<td  align="right" valign="top" style="padding-top:5px;"><h6>Nro.&nbsp;Ing.&nbsp;Brutos&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_NU_INGRESOS_BRUTOS"><b></b></h6></td>
+                                       		</tr>
+                                       		<tr>
+                                     		<td  align="right" valign="top" style="padding-top:5px;"><h6>Clasif.&nbsp;IB&nbsp;:</h6></td>
+                                       		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_CJIB_CD_CLASIF_IB"><b></b></h6></td>
+                                       		</tr>
+                                 
+                                        </table>
+						     
+                      			    </div>
+                   				    <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+        								<table  style= "width:100%;">
+        								
+                                   		<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Iva&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_CJIV_CD_IVA"><b></b></h6></td>
+                                   		</tr>
+        								
+        								<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Conc.&nbsp;ganancia&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_CJCC_CD_CONC_GANANCIA"><b></b></h6></td>
+                                   		</tr>
+        								
+        								<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cond.&nbsp;ganancias&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_CJGN_CD_CONDICION"><b></b></h6></td>
+                                   		</tr>
+        								
+        								<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nro.&nbsp;Caja&nbsp;Jub&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_NU_CAJAJUB"><b></b></h6></td>
+                                   		</tr>
+        								
+        							
+        								</table>
+                      				 
+        							</div>
+								</div>
+								
+							</div>
+							
+    					</div>
+						
+						<div class="row" id="panelTasas" style="margin-top:20px;">
+                            <div class="col-md-12">
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<h5 style="border: 0 solid #aabfd2; border-bottom-width: 1px; padding-bottom: 10px;"><b>Informaci&oacute;n Tasa</b></h5>
+										<hr style="margin-top:0px;border-top: 0px solid #00317A;">
+									</div>
+								</div>
+								<div class="row">
+        							<div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+        								<table  style= "width:100%;">
+        								
+                                   		<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Ret.&nbsp;ISSS&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_RETEN_ISSS"><b></b></h6></td>
+                                   		</tr>
+										
+										<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Ret.&nbsp;Ganancia&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_RETEN_GANAN"><b></b></h6></td>
+                                   		</tr>
+        								
+										<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ret.&nbsp;Iva:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_RETEN_IVA"><b></b></h6></td>
+                                   		</tr>
+										
+										<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Ret.&nbsp;IB&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_RETEN_IB"><b></b></h6></td>
+                                   		</tr>
+										
+        								<tr>
+                                 		<td align="right"  valign="top" style="padding-top:5px;" ><h6>F.&nbsp;Term&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_FE_RETEN_ISSS"><b></b></h6></td>
+                                   		</tr>
+        								
+        								</table>
+        							</div>
+        							<div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+        								<table  style= "width:100%;">
+											<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Tasa&nbsp;ISSS&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_PO_RETEN_ISSS"><b></b></h6></td>
+                                   		</tr>
+        								
+                                   		<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Tasa&nbsp;Ganancia&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_PO_RETEN_GANAN"><b></b></h6></td>
+                                   		</tr>
+										
+										<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Tasa&nbsp;Iva&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_PO_RETEN_IVA"><b></b></h6></td>
+                                   		</tr>
+        								
+        								<tr>
+                                 		<td  align="right" style="padding-top:5px;"><h6>Tasa&nbsp;IB&nbsp;:</h6></td>
+                                   		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPOSITIVO_CAPD_PO_RETEN_IB"><b></b></h6></td>
+                                   		</tr>
+        								
+        					
+        								</table>
+        							</div>
+								</div>
+								
+							</div>
+						</div>
+						
+                        
+					</div>
+    			</div>	
+					 
+			</div>
+ </div>

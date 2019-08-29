@@ -1,0 +1,26 @@
+ <nav  class="navbar fixed-top navbar-expand-lg navbar-dark indigo" style="background-color:#0b4376!important; padding-left:6.5%;border-radius:0px;">
+       
+      <a href="/PSPES/home"> <img src="/PSPES/resources/img/logo/logo-header-blanco.png" style="height:40px;padding-left:10%"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-right:10%;">
+            <ul class="navbar-nav ml-auto" >
+             <li class="nav-item ">
+              	 <a style="font-weight: 350;font-family: 'Roboto', sans-serif !important;font-size:13px;">
+	               <i style="color:#ffffff;padding-top:6px;" class="fa fa-user"></i> 
+	              	 Bienvenido $userApp
+	             </a>
+			 </li>
+            </ul>
+			
+        </div>
+    </nav>
+        
+        	<!-- Modal Sucursal-->
+  #parse("partials/pes/entidades/poliza/modalPolizaHome/entornoModal.vm")
+    
+        
+
+    
+    

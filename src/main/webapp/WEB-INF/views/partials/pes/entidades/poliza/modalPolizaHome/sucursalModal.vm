@@ -1,0 +1,102 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="sucursalPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_SUCURSAL_POLIZA"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#00317A;" >&#xE88A;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Codigo :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_CD_SUCURSAL"></h6></td>
+                           		</tr>
+								
+								<tr>
+                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Emisor :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_CAEM_CD_CENTRO_EMISOR"></h6></td>
+                           		</tr>
+								
+								<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Region :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_CAGI_CD_REGION"></h6></td>
+                                    </tr>
+								
+								<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Email :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_DE_EMAIL"></h6></td>
+                           		</tr>
+								
+									
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Contacto 1 :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_DE_TELEFONO"></h6></td>
+                           		</tr>
+								
+								
+									
+								
+								
+								
+									
+						
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 			<table  style= "width:100%;">
+										
+										<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Contacto 2 :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_NU_TELEFONO3"></h6></td>
+                           		</tr>
+										
+									<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Calle :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_DE_CALLE"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Numero :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_DE_NUMERO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Piso :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_DE_PISO"></h6></td>
+                           		</tr>
+								
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Depto. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_LISTA_CASU_DE_DEPARTAMENTO"></h6></td>
+                           		</tr>
+								
+								
+										
+							
+							
+                                </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+				    <div class="row" style="margin-top:15px;">
+					     <div class="col-lg-12" style="text-align: center;">
+							<!-- aca va boton -->						
+						 </div>
+					</div>
+			</div>
+   			</div>

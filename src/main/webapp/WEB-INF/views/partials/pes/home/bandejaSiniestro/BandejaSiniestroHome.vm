@@ -1,0 +1,299 @@
+<section class="container-fluid">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <!-- POLIZA -->
+			<!-- Panel B -->
+			
+            <div class="col-md-10 col-lg-4" style="width:100%; margin-bottom: 20px;">
+        <div class="panel panel-default" style="display:table; width:100%; height:100%;">
+                    <div class="panel-heading" style=" background-color:#0B4376;border-color:white;">
+						<h4 style="text-align:center;color:white;">Tareas de Siniestros (40)</h4>
+						
+                    </div>
+					
+                    <div class="main-container page__container altoPanelB" style="padding-left:10px;padding-right:10px;">
+							<div class="col-md-12 input-group" style="margin-top:10px;z-index:1;padding:0px;" >
+            						<input type="text" class="form-control" onkeyup="buscadorPanelCEntidadPoliza()" id="inputBusquedaCertificado"  style="height:26px;">
+            							<span class="input-group-btn">
+            								<button class="btn btn-default" type="button"  style="padding: 2px; padding-left:15px; padding-right: 15px">Filtrar</button>
+            							</span>
+            					</div>
+                        <div class="timeline__group" style="margin-top:10px;z-index:1;max-height:20px;padding-top:0px;">
+							
+                            <div>
+                                #parse("partials/pes/home/bandejaSiniestro/panelDetalleBandejaSiniestro.vm")	 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+            <div class=" col-sm-12 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:white;height:37px;">
+                        <h4 style="color:#0B4376;text-align:center;border:none;">Configuraci&oacute;n</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Filtros de Resultados: </h6>
+							</div>
+								<div class="col-xs-8  col-sm-8 col-md-8 col-lg-3 input-group" style="z-index:1;padding-left:10px;" >
+									<div class="form-group">
+										 <select class="form-control" style="font-size:12px;height:28px;" name ="selectorBienCertificado" id="selectorBienCertificado">
+										    <option  value="0"><h6>Seleccione...</h6></option>
+											<option  value="1" selected><h6>Tareas Activas</h6></option>
+											<option  value="2"><h6>Tareas Pendientes</h6></option>
+											<option  value="3"><h6>Tareas Programadas</h6></option>
+										  </select>
+										</a>
+										</div>
+								</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Ordenamiento : </h6>
+							</div>
+								<div class="col-xs-8 col-sm-4  col-md-8 col-lg-3 input-group pull-right" style="z-index:1;padding-left:10px;" >
+									<div class="form-group">
+										  <select class="form-control" style="font-size:12px;height:28px;" name ="selectorBienCertificado" id="selectorBienCertificado">
+										    <option  value="0"  selected><h6>Seleccione...<h5></option>
+										    <option  value="0"><h6>Por Siniestro<h5></option>
+										    <option  value="0"><h6>Por Sucursal<h5></option>
+										    <option  value="0"><h6>Por Tipo<h5></option>
+										    <option  value="0"><h6>De Rector<h5></option>
+										    <option  value="0"><h6>De Web<h5></option>
+											<option  value="0"><h6>De Vida<h5></option>
+											<option  value="0"><h6>De SiniWeb<h5></option>
+										  </select>
+										</div>
+								</div>
+							
+							
+                            <div class="col-md-12" style="text-align: center;padding-left:30px;padding-right:30px">
+									<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Jerarquias de Roles/Usuarios" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">supervisor_account</a>
+									<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Descargar" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">cloud_download</a>
+									<a class="btn btn-panela-poliza btn-social btn-bitbucket fas fa-filter inspeccionesBotonHoover" data-placement="bottom" data-toggle="tooltip" title="Agregar Filtro" style="margin-right:5px;font-size:15px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:6px;color:#ffffff;"></a>                            
+							</div>
+                        </div>
+                    </div>
+                </div>
+				
+           <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:white;height:37px;">
+                        <h4 style="color:#0B4376;text-align:center;border:none;">Detalle de Tarea # 1-4-456421</h4>
+                    </div>
+                    <div class="panel-body" style="height:340px;">
+                        <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Anticipo :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Proceso : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+							         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Tarea :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Resultado : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Fecha Comienzo :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Finalizacion : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Responsable :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Poliza : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Documento :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Depto. Origen : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Sucursal :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Compromiso : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Sub Siniestro :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Resultado : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Unidad :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Tipo de Pago : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Numero Secuencia :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Productor : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Producto :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Aplicacion : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						         <div class="row" id="panela">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="text-align:right;padding-right:0px;">
+							<h6 style="">Ramo :</h6>
+							</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+								
+								<div class="col-xs-4 col-sm-2 col-md-4 col-lg-2 pt-2" style="text-align:right;padding-right:0px;">
+									<h6 style="">Escalamiento : </h6>
+							</div>
+											<div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 pt-2" style="padding-left:5px;text-align:right;padding-right:0px;">
+							<h6 style="text-align:left;"><b>Dato 1</b> </h6>
+							</div>
+							
+						</div>
+							
+						    <br><br><br>
+							
+							
+							
+								<div class="row" style="padding-top:20px;">
+									<div class="col-md-12" style="text-align: center;padding-left:30px;padding-right:30px">
+								
+                                <a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Revision" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">error</a>
+                                <a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Escalamientos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">person</a>
+										 <a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Reasignaciones" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">cached</a>
+								<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"  data-placement="bottom" data-toggle="tooltip" title="Intervinientes" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">pan_tool</a>
+                                <a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Anticipo" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">note</a>
+										
+								
+									<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Notas" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">speaker_notes</a>
+									<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Archivos" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">attach_file</a>
+									<a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover"   data-placement="bottom" data-toggle="tooltip" title="Inspecciones" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">find_in_page</a>
+								
+								
+								
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>

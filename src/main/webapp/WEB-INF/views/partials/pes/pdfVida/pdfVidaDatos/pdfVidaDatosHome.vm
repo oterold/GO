@@ -1,0 +1,341 @@
+<section class="container-fluid">
+    <div class="containerMargenes" style="padding-top:50px;" id="main">
+        <div class="row">
+				<input type="hidden" value="20" id="porcentajeActual"/>
+				<input type="hidden" value="0" id="apynOculto"/>
+				<input type="hidden" value="0" id="localidadOculto"/>
+				<input type="hidden" value="0" id="sujObligadoOculto"/>
+				<input type="hidden" value="0" id="sexoOculto"/>
+				<input type="hidden" value="0" id="dataPickerOculto"/>
+				<input type="hidden" value="0" id="tipoOculto"/>
+				<input type="hidden" value="0" id="documentoOculto"/>
+				
+            <!-- Cotizacion -->
+            <div class=" col-sm-12 col-md-8 sin-margen-derecha" style="margin-top:30px">
+                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+                    <div class="panel-body">
+                        <div class=" row">
+                            <div class="col-md-12" style="text-align: left;padding-left:30px;padding-right:30px">
+                                <h3 class="box-title pl-1 pt-4" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos del Solicitante</h3>
+                                <br>
+                                    <br>
+                                        <div class="plan-selection">
+                                            <div class="plan-data">
+                                                <div class="row">
+													
+												
+												<div class="col-md-3 mb-3 mt-3">
+													<div class="md-form form-lg">
+                                                          <input placeholder="Seleccione una fecha" onchange="cambiarPorcentaje(this.id,'dataPickerOculto','1')" type="text" id="fechaDataPicker" class="form-control datepicker">
+                                                          <label for="date-picker-example">Vigencia</label>
+                                                     </div>
+												</div>
+													
+                                                    ##selector dni
+                                                    <div class="col-md-2 mb-3">
+                                                        <label clas="md-form form-lg" style="color: #757575;">Tipo</label>
+                                                        <select class="mdb-select colorful-select dropdown-ins d-block w-100" onchange="cambiarPorcentajeSelector(this.id,'tipoOculto','1')" id="tipoDni" required>
+                                                            <option value="">Seleccione</option>
+                                                            <option>DNI</option>
+                                                            <option>CI</option>
+                                                            <option>LC</option>
+                                                            <option>LAS</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">
+                                                            Por favor seleccione un plan.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2 mb-3 mt-3">
+                                                        <div class="md-form form-lg">
+                                                            <input type="text" value="" onchange="cambiarPorcentaje(this.id,'documentoOculto','1')" id="documento" class="form-control" disable>
+                                                                <label for="documento"  class="active">Documento</label>
+</div>
+                                                        </div>
+                                                            ##campo apyn
+                                                            <div class="col-sm-6 col-md-3 mb-3 mt-3">
+                                                                <div class="md-form form-lg">
+                                                                    <input type="text" value="" onchange="cambiarPorcentaje(this.id,'apynOculto','2')" id="apyn" class="form-control">
+                                                                        <label for="apyn"  class="active">Nombre y Apellido</label>
+</div>
+                                                                </div>
+                                                                </div>
+                                                                ##Segunda fila##
+                                                                <div class="row">
+                                                                    <div class="col-md-4 mb-3 mt-3">
+                                                                        <div class="md-form form-lg">
+                                                                            <input  type="text" value="" id="calle" class="form-control">
+                                                                                <label for="calle"  class="active">Calle</label>
+</div>
+                                                                        </div>
+                                                                        <div class="col-md-2 mb-3 mt-3">
+                                                                            <div class="md-form form-lg">
+                                                                                <input  type="text" value="" id="numeroCalle" class="form-control">
+                                                                                    <label for="numeroCalle"  class="active">Numero</label>
+</div>
+                                                                            </div>
+                                                                            <div class="col-md-1 mb-3 mt-3">
+                                                                                <div class="md-form form-lg">
+                                                                                    <input  type="text" value="" id="piso" class="form-control">
+                                                                                        <label for="piso"  class="active">Piso</label>
+</div>
+                                                                                </div>
+                                                                                <div class="col-md-1 mb-3 mt-3">
+                                                                                    <div class="md-form form-lg">
+                                                                                        <input  type="text" value="" id="depto" class="form-control">
+                                                                                            <label for="depto"  class="active">Depto</label>
+</div>
+                                                                                    </div>
+                                                                                    <div class="col-md-2 mb-3 mt-3">
+                                                                                        <div class="md-form form-lg">
+                                                                                            <input  type="text" value=""  id="cPostal" class="form-control">
+                                                                                                <label for="cPostal"  class="active">C. Postal</label>
+</div>
+                                                                                        </div>
+                                                                                        <div class="col-md-2 mb-3 mt-3">
+                                                                                            <div class="md-form form-lg">
+                                                                                                <input  type="text" value="" onchange="cambiarPorcentaje(this.id,'localidadOculto','5')" id="Localidad" class="form-control">
+                                                                                                    <label for="Localidad"  class="active">Localidad</label>
+</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <br>
+                                                                                            ##tercera fila ##
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-3 mb-3">
+                                                                                                    <label style="color: #757575;">Provincia</label>
+                                                                                                    <select class="mdb-select  colorful-select dropdown-ins d-block w-100" searchable="Buscar.." id="country" required>
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option>Buenos Aires</option>
+                                                                                                        <option>Capital Federal</option>
+                                                                                                        <option>Catamarca</option>
+                                                                                                        <option>Chaco</option>
+                                                                                                        <option>Chubut</option>
+                                                                                                        <option>C&oacute;rdoba</option>
+                                                                                                        <option>Corrientes</option>
+                                                                                                        <option>Entre Rios</option>
+                                                                                                        <option>Formosa</option>
+                                                                                                        <option>Jujuy</option>
+                                                                                                        <option>La Pampa</option>
+                                                                                                        <option>La Rioja</option>
+                                                                                                        <option>Mendoza</option>
+                                                                                                        <option>Misiones</option>
+                                                                                                        <option>Neuqu&eacute;n</option>
+                                                                                                        <option>R&iacute;o Negro</option>
+                                                                                                        <option>Salta</option>
+                                                                                                        <option>San Juan</option>
+                                                                                                        <option>San Luis</option>
+                                                                                                        <option>Santa Cruz</option>
+                                                                                                        <option>Santa F&eacute;</option>
+                                                                                                        <option>Santiago del Estero</option>
+                                                                                                        <option>Tierra del Fuego</option>
+                                                                                                        <option>Tucuman</option>
+                                                                                                    </select>
+                                                                                                    <div class="invalid-feedback">
+                                                                                                        Por favor seleccione un plan.
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-3 mb-3">
+                                                                                                    <label style="color: #757575;">Nacionalidad</label>
+                                                                                                    <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" searchable="Buscar.." required>
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option>Alemana</option>
+                                                                                                        <option>Argentina</option>
+                                                                                                        <option>Aruba</option>
+                                                                                                        <option>Boliviana</option>
+                                                                                                        <option>Brasile&ntilde;a</option>
+                                                                                                        <option>Canadiense</option>
+                                                                                                        <option>Costarrisence</option>
+                                                                                                        <option>Chilena</option>
+                                                                                                        <option>Ecuatoriana</option>
+                                                                                                        <option>Salvadore&ntilde;a</option>
+                                                                                                        <option>Espa&ntilde;ola</option>
+                                                                                                        <option>Estadounidense</option>
+                                                                                                        <option>Mexicana</option>
+                                                                                                        <option>Nicaraguense</option>
+                                                                                                        <option>Paname&ntilde;a</option>
+                                                                                                        <option>Paraguaya</option>
+                                                                                                        <option>Peruana</option>
+                                                                                                        <option>Portorique&ntilde;a</option>
+                                                                                                        <option>Dominicana</option>
+                                                                                                        <option>Cubana</option>
+                                                                                                        <option>Trinidad y Tobago</option>
+                                                                                                        <option>Uruguaya</option>
+                                                                                                        <option>Venezolana</option>
+                                                                                                        <option>Taiwandesa</option>
+                                                                                                        <option>Italiana</option>
+                                                                                                        <option>Porguesa</option>
+                                                                                                        <option>Griega</option>
+                                                                                                        <option>Austr&iacute;aca</option>
+                                                                                                        <option>Armenia</option>
+                                                                                                        <option>Australiana</option>
+                                                                                                        <option>Egipcia</option>
+                                                                                                        <option>Libia</option>
+                                                                                                        <option>China</option>
+                                                                                                        <option>Coreana</option>
+                                                                                                        <option>Extranjera</option>
+                                                                                                    </select>
+                                                                                                    <div class="invalid-feedback">
+                                                                                                        Por favor seleccione un plan.
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-3 mb-3">
+                                                                                                    <label style="color: #757575;">IIBB</label>
+                                                                                                    <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" required>
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option>Ag. Percepci&oacute;n</option>
+                                                                                                        <option>Contrib. Local</option>
+                                                                                                        <option>Convenio Multilateral</option>
+                                                                                                        <option>Exento</option>
+                                                                                                        <option>No Corresponde</option>
+                                                                                                        <option>Reg. Simplificado</option>
+                                                                                                        <option>Sicom</option>
+                                                                                                    </select>
+                                                                                                    <div class="invalid-feedback">
+                                                                                                        Por favor seleccione un plan.
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-3 mb-3">
+                                                                                                    <label style="color: #757575;">Suj. Obligado</label>
+                                                                                                    <select class="mdb-select   colorful-select dropdown-ins d-block w-100" onchange="cambiarPorcentajeSelector(this.id,'sujObligadoOculto','5')" id="sujObligado" required>
+                                                                                                        <option value="0">Seleccione</option>
+                                                                                                        <option>Si</option>
+                                                                                                        <option>No</option>
+                                                                                                    </select>
+                                                                                                    <div class="invalid-feedback">
+                                                                                                        Por favor seleccione un plan.
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <br>
+                                                                                                ##cuarta Fila##
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-3 mb-3">
+                                                                                                        <label style="color: #757575;">Condici&oacute;n IVA</label>
+                                                                                                        <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" required>
+                                                                                                            <option value="">Seleccione</option>
+                                                                                                            <option>Consumidor Final</option>
+                                                                                                            <option>Exento</option>
+                                                                                                            <option>Monotributo</option>
+                                                                                                            <option>Responsable Inscripto</option>
+                                                                                                        </select>
+                                                                                                        <div class="invalid-feedback">
+                                                                                                            Por favor seleccione un plan.
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-3 mb-3">
+                                                                                                        <label style="color: #757575;">Pep</label>
+                                                                                                        <select class="mdb-select  colorful-select dropdown-ins d-block w-100" id="country" required>
+                                                                                                            <option value="">Seleccione</option>
+                                                                                                            <option>Si</option>
+                                                                                                            <option>No</option>
+                                                                                                        </select>
+                                                                                                        <div class="invalid-feedback">
+                                                                                                            Por favor seleccione un plan.
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-3 mb-3">
+                                                                                                        <label style="color: #757575;">Sexo</label>
+                                                                                                        <select class="mdb-select  colorful-select dropdown-ins d-block w-100" onchange="cambiarPorcentajeSelector(this.id,'sexoOculto')"    id="sexo" required>
+                                                                                                            <option value="0">Seleccione</option>
+                                                                                                            <option value="1">Feminino</option>
+                                                                                                            <option value="2">Masculino</option>
+                                                                                                        </select>
+                                                                                                        <div class="invalid-feedback">
+                                                                                                            Por favor seleccione un plan.
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+																						<br><br>
+                                                                                        <button type="button" class="pull-right btn btn-indigo icono-sig" onclick="redirectPdfVidaDatosB();" type="submit"  style="background-color: #0b4376 !important;">Siguiente&nbsp;&nbsp;
+                                                                                            <i class="fas fa-angle-right" style="color:white;"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Lista certificados - Panel B -->
+                                                                     <div class="col-sm-12 col-md-4 sin-margen-izq" style="margin-top:30px;width:100%;">
+                                                        				<div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+                                                        					<div class="main-container page__container" >
+                                                        						<div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;">
+                                                        							<div class="summary-head" style="width:80%;">
+                                                        								<h4 style="border:none;color:#0b4376"  id="porcentajeTitulo" class="widget-title">Cotizaci&oacute;n (20%)</h5>
+                                                        								<span class="summary-small-text" ></span>
+                                                        							</div>
+                                                        							<div class="summary-price">
+                                                        								<a class="summary-text fas fa-refresh" href="/PSPES/bpba" style="color:#0b4376;font-size:15px;"></a>
+                                                        							</div>
+                                                        							<div class="summary-block" >
+                                                        								<div class="summary-content" style="width:100%;">
+                                                        									<div class="summary-head" style="width:80%;">
+                                                        										<h5 style="border:none;"  class="summary-title">Propuesta de Seguro</h5>
+                                                        										<span class="summary-small-text" ></span>
+                                                        									</div>
+                                                        									<div class="summary-price">
+                                                        										<a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+                                                        									</div>
+                                                        								</div>
+                                                        							</div>
+                                                        							<div class="summary-block">
+                                                        								<div class="summary-content">
+                                                        									<div class="summary-head">
+                                                        										<h5 style="border:none;"  class="summary-title"></i>
+                                                        										Datos del Solicitante</h5>
+                                                        								</div>
+                                                        								<div class="summary-price">
+                                                        									<a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+                                                        								</div>
+                                                        							</div>
+                                                        						</div>
+                                                        						<div class="summary-block">
+                                                        							<div class="summary-content">
+                                                        								<div class="summary-head">
+                                                        									<h5 style="border:none;"  class="summary-title"></i>
+                                                        									Forma de Pago</h5>
+                                                        							</div>
+                                                        							<div class="summary-price">
+                                                        								<a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                        							</div>
+                                                        						</div>
+                                                        					</div>
+                                                        					<div class="summary-block">
+                                                        						<div class="summary-content">
+                                                        							<div class="summary-head">
+                                                        								<h5 style="border:none;"  class="summary-title">Datos del  Riesgo</h5>
+                                                        							</div>
+                                                        							<div class="summary-price">
+                                                        								<a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                        							</div>
+                                                        						</div>
+                                                        					</div>
+                                                        					<div class="summary-block">
+                                                        						<div class="summary-content">
+                                                        							<div class="summary-head">
+                                                        								<h5 style="border:none;"  class="summary-title">Datos del Acreedor Prendario</h5>
+                                                        							</div>
+                                                        							<div class="summary-price">
+                                                        								<a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                        							</div>
+                                                        						</div>
+                                                        					</div>
+                                                        					<div class="summary-block">
+                                                        						<div class="summary-content">
+                                                        							<div class="summary-head">
+                                                        								<h5 style="border:none;"  class="summary-title">Fin de Cotizaci&oacute;n</h5>
+                                                        							</div>
+                                                        							<div class="summary-price">
+                                                        								<a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+                                                        								</div>
+                                                        						</div>
+                                                        					</div>
+                                                        				</div>
+                                                        			 </div>
+                                                        		</div>
+                                                        	</div>	
+                                                           </div>		
+                                                         </div>	
+                                                        
+</section>	

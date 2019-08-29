@@ -1,0 +1,125 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="cancelacionPrePopUp" >
+      	   <div style="width:100%;">
+				<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATOS_MODAL_CANCELACION_PRE"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+					<i class="material-icons altoIcono"  style="color:#205081;padding-top:15px;" >credit_card</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 	<input type="hidden" value="" id="DATO_P_TF_PROD_CAPD_NM_PRODUCTOR_REDIRECT" />
+          	 	
+              		
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+							
+                           		
+                           		   
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;width:50%;"><h6>Fe. Cancelaci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_FE_CANCELACION"></h6></td>
+                           		</tr>
+                           		
+                           	 	
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Factura :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CICA_NU_FACTURA"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Cancelado :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_CANCELACION"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Nota :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CJND_NU_NOTA"></h6></td>
+                           		</tr>    
+								
+								
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Compania :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CJIN_CJCM_CD_COMPANIA"></h6></td>
+                           		</tr>    
+								
+										<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Sucursal :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CJIN_CASU_CD_SUCURSAL"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Remesa :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CJIN_NU_INGRESO_N"></h6></td>
+                           		</tr>
+						    
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+										<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6 >Compromiso :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CJCR_NU_COMPROMISO"></h6></td>
+                           		</tr>
+                           		
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Secuencia :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_NU_SECUENCIA"></h6></td>
+                           		</tr>
+                           	 	
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Liquidaci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CALI_NU_LIQUIDACION"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Usuario :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_CAUS_CD_USUARIO"></h6></td>
+                           		</tr>    
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Moneda :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_MONEDA_CANCELACION"></h6></td>
+                           		</tr>
+								
+                           		
+                           				<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Tipo :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_INB_CD_TIPO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Comprobante. :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_INB_NU_COMPROBANTE"></h6></td>
+                           		</tr>
+                           			<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Fe. Actualizac&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_LISTA_CAPC_FE_ACTUALIZACION"></h6></td>
+                           		</tr> 
+                           		
+						
+                           		
+                            </table>
+              				 
+    					</div>
+    					
+    					
+    				</div>            
+    			  </div>
+    			</div>	
+    			
+    				
+			</div>
+   			</div>

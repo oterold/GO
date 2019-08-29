@@ -1,0 +1,5 @@
+#set ($indicadorClienteParametro = 'Provincia Enterprise System')
+
+#set ($templateWeb = '/partials/pes/entidades/pagos/pagoHome.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

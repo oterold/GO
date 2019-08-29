@@ -1,0 +1,78 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="imputacionesPopUp" >
+      	   <div style="width:100%;">
+				<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_P_TF_IMPUTACION_CJIP_CALI_NU_PRELIQUIDACION"></h4>
+      	    </div>	
+   			
+   				<input type="hidden" value="" id="valorPreliquidacion" />
+   			
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#087539;" >&#xE02f;</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe. Cobro :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_IMPUTACION_CJIP_FE_EFVA_COBRO"></h6></td>
+                           		</tr>
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fecha :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_IMPUTACION_CJIP_FE_COBRO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Periodo :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_IMPUTACION_CJIP_CALI_CD_MONEDA"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Moneda :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="DATO_P_TF_IMPUTACION_MONEDA"></h6></td>
+                           		</tr>
+                           	
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 	<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Pagado :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="DATO_COBRANZA_IMPUTACIONES_PAGADO"></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		<td  align="right" style="padding-top:5px;"><h6>Cod. Pago :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_COD_PAGO"></h6></td>
+                           		</tr>
+                           		
+                           	 	<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;"><h6>Cobranza :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_IMPUTACION_INB_TI_PAGO"></h6></td>
+                           		</tr>
+                           		<tr>
+                         		<td  align="right" valign="top" style="padding-top:5px;"><h6>Certificado :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="INFO_P_TF_IMPUTACION_CJIP_CACE_NU_CERTIFICADO"></h6></td>
+                           		</tr>
+                            </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+    			
+    				<div class="row" style="margin-top:15px;">
+					     <div class="col-lg-12"style="text-align: center;">
+							<a class="btn btn-panela-poliza  btn-social btn-bitbucket  material-icons"  data-placement="bottom" data-toggle="tooltip" onclick="redirecPreliquidacionesHome();" title="Detalle" style="margin-right:5px;font-size:20px; margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;background-color:#087539" >play_arrow</a>
+						 </div>
+					</div>
+			</div>
+   			</div>

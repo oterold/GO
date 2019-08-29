@@ -1,0 +1,90 @@
+   <!-- modal tarifa ventana --->
+	 
+	 <div class="panel panel-default" style="display:none;max-width:550px;height:300px;overflow-x:hidden;overflow-y:auto;" id="tarifaVentanaPopUp" >
+      	 
+      	   <div style="width:100%;">
+						<a class="btn pull-right fas fa-times cerrarModalBotonHoover"  data-placement="bottom"  style="box-shadow:none;font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close"></a>
+						</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="CRTA_ID_REGISTRO">Tarifa #</h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#cc4e4e" >dashboard</i>
+   			
+   			</div>
+          	 	  <div class="col-md-8" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	
+              		
+          	 			<div class="row" id="panelTarifaVentadaModal">
+          				 	<div class="col-md-12" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr id="ocultarCampo1">
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="CAMPO_CRCD_DE_DATO1"></h6></td>
+									<td style="padding-top:5px;"><h6 id="CRCD_DE_DATO1"><b></b></h6></td>
+                           		</tr>
+								<tr id="ocultarCampo2">
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="CAMPO_CRCD_DE_DATO2"></h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRCD_DE_DATO2"><b></b></h6></td>
+                           		</tr>
+                           		
+                           			<tr id="ocultarCampo3">
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="CAMPO_CRCD_DE_DATO3"></h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRCD_DE_DATO3"><b></b></h6></td>
+                           		</tr>
+									<tr id="ocultarCampo4">
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="CAMPO_CRCD_DE_DATO4"></h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRCD_DE_DATO4"><b></b></h6></td>
+                           		</tr>
+								
+									<tr id="ocultarCampo5">
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="CAMPO_CRCD_DE_DATO5"></h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRCD_DE_DATO5"><b></b></h6></td>
+                           		</tr>
+								
+								<tr id="ocultarCampo6">
+									<td align="right"  valign="top" style="padding-top:5px;" ><h6 id="CAMPO_CRCD_DE_DATO6"></h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRCD_DE_DATO6"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tasa :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRTA_PO_TASA"><b></b></h6></td>
+                           		</tr>
+								
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Suma :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CRTA_MT_SUMA"><b></b></h6></td>
+                           		</tr>
+                           		
+                           			<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cobertura :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CTDF_IN_COBERTURA"><b></b></h6></td>
+                           		</tr>
+                           		
+                           		
+                           				<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Producto :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CTDF_IN_PRODUCTO"><b></b></h6></td>
+                           		</tr>
+             			 	
+             			 	
+									<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Plan :</h6></td>
+                           		<td style="padding-top:5px;"><h6 id="CTDF_IN_PLAN"><b></b></h6></td>
+                           		</tr>
+									
+                                </table>
+						     
+              			  </div>
+    					</div>            
+    			  </div>
+    			</div>
+				
+			</div>
+		</div>
+     

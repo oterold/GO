@@ -1,0 +1,7 @@
+#set ($indicadorSeccionParametro = 'Inicio Rector')
+#set ($indicadorClienteParametro = 'Provincia Enterprise System')
+
+
+#set ($templateWeb = 'partials/pes/rector/menu/menuRector.vm')
+
+#parse("partials/util/template/mainTemplateWeb.vm")	  

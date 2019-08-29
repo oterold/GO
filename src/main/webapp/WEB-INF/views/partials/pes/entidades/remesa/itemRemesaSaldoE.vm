@@ -1,0 +1,31 @@
+<div  id="cuadroImgEndoso" style="cursor:pointer; background-color:#ffffff">
+
+  <div class="timeline__post seleccionPanelB" id="timeLineRemesaSaldo$numeroCard" onclick="mostrarDetalleRemesa('timeLineRemesaSaldo','$numeroCard','$icono', '$nroRemesa');"  style="cursor:pointer;margin-bottom:10px;border-left:3px solid #00317A;padding-bottom:5px">
+  
+						  <div class="timeline__content" style="overflow:hidden;">
+							
+							<div class="row">
+								<div class="col-xs-2">
+									<i class="material-icons altoIcono"  style="color:#205081; font-size:20px;margin-bottom:32px; margin-right:20px;float:left;"  id="imgTimeLineRemesaSaldo$nroRemesa">$icono</i>
+								</div>
+								<div class="col-xs-10">
+									<h6>Remesa: <b>#$nroRemesa</b> - $utilToolScreen.ucFirst($descRemesa)</h6>
+									<h6>Fecha ingreso:<b>$utilToolScreen.datoVacio($utilToolScreen.formatearFecha($fIngreso))</b></h6>
+									<h6>Referencia: <b>$remesaSaldoIn.get("P_TF_LISTA_2_INB_REFERENCIA")</b></h6>
+									
+                                    <div class="row">
+										<div class="col-xs-6">
+											<h6>Total: <b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($remesaSaldoIn.get("P_TF_LISTA_2_CJIN_MT_TOTAL")))</b></h6>
+										</div>
+										<div class="col-xs-6">
+											<h6>Saldo: <b>$utilToolScreen.datoVacio($utilToolScreen.formatearMoneda($remesaSaldoIn.get("P_TF_LISTA_2_CJIN_MT_SALDO")))</b></h6>
+										</div>
+
+									</div>
+								</div>
+							</div>
+								
+                         </div>
+  </div> 
+						
+</div>

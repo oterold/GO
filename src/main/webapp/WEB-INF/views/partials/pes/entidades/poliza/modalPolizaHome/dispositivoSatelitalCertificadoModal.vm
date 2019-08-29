@@ -1,0 +1,103 @@
+<div class="panel panel-default" style="display:none;max-width:700px;overflow-y:auto;" id="dispSatelitalCertificadoPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   material-icons cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close">clear</a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	    <h4 id="DATO_SATELITICAL_CER"></h4>
+      	    </div>	
+   			
+   			<div class="panel-body">
+               	<div class="row">
+               	<div class="col-md-2" style=";text-align: center;">
+   			<i class="material-icons altoIconoPopUp"  style="color:#00317A;" >satellite</i>
+   			
+   			</div>
+          	 	  <div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+          	 	  
+          	 	  <!-- pag principal-->
+          	 	  
+          	 			<div class="row" id="panelModal">
+          				 	<div class="col-md-6" style="text-align: left;padding-left:1px;padding-right:1px">
+								<table  style= "width:100%;">
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Nu. Proceso :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEC_NU_PROCESO"></h6></td>
+                           		</tr>
+								
+								<tr>
+                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>P&oacute;liza :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEC_CAPO_NU_POLIZA"></h6></td>
+                           		</tr>
+								
+								<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Transacci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEC_CAME_TP_TRANSAC"></h6></td>
+                                    </tr>
+								
+								<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cod. Identificador&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEC_CEED_CD_IDENTIFICADOR"></h6></td>
+                           		</tr>
+								
+									
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Movimiento :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEK_TP_MOVIMIENTO"></h6></td>
+                           		</tr>
+								
+								
+									
+								
+								
+								
+									
+						
+                                </table>
+						     
+              			  </div>
+           				   <div class="col-md-6" style="text-align: left; padding-left:1px;padding-right:1px">
+             			 			<table  style= "width:100%;">
+										
+										
+													<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Tipo Proceso&nbsp;:</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_INB_DSP_TIPO_PROCESO"></h6></td>
+                           		</tr>
+										
+									<tr>
+                         	           		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe. Proceso :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEJ_FE_PROCESO"></h6></td>
+                           		</tr>
+								
+										
+										<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Fe. Instalaci&oacute;n :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEK_FE_INSTALACION"></h6></td>
+                           		</tr>
+								<tr>
+                         		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Prestador :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_CEEJ_CD_PRESTADOR"></h6></td>
+                           		</tr>
+								
+								<tr>
+                              		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Usuario :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_INB_CEEC_CAUS_CD_USUARIO_MAN"></h6></td>
+                           		</tr>
+								
+									<tr>
+                                		<td align="right"  valign="top" style="padding-top:5px;" ><h6>Cedula. :</h6></td>
+                           		<td style="padding-top:5px;width:60%;"><h6 id="INFO_P_TF_PARAM_INB_V_VC_CEDULA"></h6></td>
+                           		</tr>
+								
+								
+										
+							
+							
+                                </table>
+              				 
+    					</div>
+    					</div>            
+    			  </div>
+    			</div>	
+			</div>
+   			</div>

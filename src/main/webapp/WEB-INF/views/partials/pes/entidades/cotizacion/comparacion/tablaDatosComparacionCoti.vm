@@ -1,0 +1,232 @@
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell"  style="text-align:right;;"><h6 class="sinBorde">Poliza</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAPO_NU_POLIZA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAPO_NU_POLIZA"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="NUEVO_P_TF_COTI_CAZB_CAPO_NU_POLIZA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Ramo</h5></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="INFO_P_TF_COTI_CAZB_CAPO_CD_RAMO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAPO_CD_RAMO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAPO_CD_RAMO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Productor</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAPD_CD_PRODUCTOR"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAPD_CD_PRODUCTOR" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAPD_CD_PRODUCTOR" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Productor Desc.</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_INB_DSP_PRODUCTOR"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_INB_DSP_PRODUCTOR" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_INB_DSP_PRODUCTOR" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Cliente</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CACN_CD_CLIENTE"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CACN_CD_CLIENTE" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CACN_CD_CLIENTE" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Lugar Venta</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CD_UBICACION_VENTA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CD_UBICACION_VENTA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CD_UBICACION_VENTA" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Medio de pago</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAMD_CD_MEDIO_PAGO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAMD_CD_MEDIO_PAGO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAMD_CD_MEDIO_PAGO" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Fecha Desde</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_FE_DESDE"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_FE_DESDE" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_FE_DESDE" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+	<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Fecha Hasta</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_FE_HASTA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_FE_HASTA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_FE_HASTA" style="color:#bfbac2;"> Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Fecha Tecnica Desde</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_FE_DESDE_TECNICA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_FE_DESDE_TECNICA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_FE_DESDE_TECNICA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Fecha Tecnica Hasta</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_FE_HASTA_TECNICA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_FE_HASTA_TECNICA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_FE_HASTA_TECNICA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Renovaci&oacute;n</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_IN_RENOVACION"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_IN_RENOVACION" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_IN_RENOVACION" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Estado</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_INB_ESTADO_COTI"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_INB_ESTADO_COTI" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_INB_ESTADO_COTI" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Producto</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAPU_CD_PRODUCTO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAPU_CD_PRODUCTO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAPU_CD_PRODUCTO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Producto Desc.</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_INB_CD_PRODUCTO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_INB_CD_PRODUCTO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_INB_CD_PRODUCTO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Premio</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_MT_PREMIO_INFORMADO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_MT_PREMIO_INFORMADO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_MT_PREMIO_INFORMADO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Tp Calculo</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_TP_CALCULO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_TP_CALCULO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_TP_CALCULO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde" >Provincia</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAES_CD_PROVINCIA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAES_CD_PROVINCIA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAES_CD_PROVINCIA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Origen</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_COTC_CD_ORIGEN"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_COTC_CD_ORIGEN" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_COTC_CD_ORIGEN" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Plan de Pago</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CALG_CD_PLAN_PAGO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CALG_CD_PLAN_PAGO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CALG_CD_PLAN_PAGO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Sucursal</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAPO_CD_SUCURSAL"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAPO_CD_SUCURSAL" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAPO_CD_SUCURSAL" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Sucursal Desc.</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_INB_DSP_SUCURSAL"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_INB_DSP_SUCURSAL" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_INB_DSP_SUCURSAL" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Usuario</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAUS_CD_USUARIO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAUS_CD_USUARIO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAUS_CD_USUARIO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Pago Elegido</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_FR_PAGO_ELEGIDA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_FR_PAGO_ELEGIDA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_FR_PAGO_ELEGIDA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Pago Elegido Desc.</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_INB_FR_PAGO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_INB_FR_PAGO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_INB_FR_PAGO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Moneda</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_COTI_CAZB_CAMO_CD_MONEDA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_COTI_CAZB_CAMO_CD_MONEDA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_COTI_CAZB_CAMO_CD_MONEDA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Nivel Comision</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_TOTALES_INB_DE_NIVEL_COMISIONES"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_TOTALES_INB_DE_NIVEL_COMISIONES" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_TOTALES_INB_DE_NIVEL_COMISIONES" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Premio</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_TOTALES_INB_MT_SUMA_PREMIO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_TOTALES_INB_MT_SUMA_PREMIO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_TOTALES_INB_MT_SUMA_PREMIO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Prima</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_TOTALES_INB_MT_SUMA_PRIMA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_TOTALES_INB_MT_SUMA_PRIMA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_TOTALES_INB_MT_SUMA_PRIMA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Suma Premio</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_TOTALES_INB_MT_SUMA_COMP_PREMIO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_TOTALES_INB_MT_SUMA_COMP_PREMIO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_TOTALES_INB_MT_SUMA_COMP_PREMIO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Premio Informado</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_TOTALES_INB_MT_PREMIO_INFORMADO"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_TOTALES_INB_MT_PREMIO_INFORMADO" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_TOTALES_INB_MT_PREMIO_INFORMADO" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+
+<tr class="tr-grilla" style="text-align:center;">
+	<td class="td-grilla-resultadosInspeccion" role="cell" style="text-align:right;;"><h6 class="sinBorde">Fuera de Pauta</h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="INFO_P_TF_TOTALES_INB_FUERA_PAUTA"></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde" id="ICONO_P_TF_TOTALES_INB_FUERA_PAUTA" style="color:#bfbac2;"><i class="fas fa-equals" style="color:#bfbac2"></i></h6></td>
+	<td class="td-grilla-resultadosInspeccion" role="cell"><h6 class="sinBorde"  id="NUEVO_P_TF_TOTALES_INB_FUERA_PAUTA" style="color:#bfbac2;">Sin dato</h6></td>
+</tr>
+

@@ -1,0 +1,4 @@
+
+#set ($templateWeb = 'partials/pes/home/cotizacionMoneda/cotizacionMonedaHome.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

@@ -1,0 +1,11 @@
+<project name="MyProject" default="dist" basedir=".">
+   <description>
+       simple example build file
+   </description>
+	<target name="dist">
+		<concat destfile="resources/js/resourcesJs.js">
+		    <fileset dir="resources/js/pub/" includes="**/*.js"/>
+		</concat>
+        <echo message="finalizo.." />
+	</target>
+</project>

@@ -1,0 +1,6 @@
+#set ($indicadorSeccionParametroNivel1 = 'LoginAuth' )
+#set ($indicadorClienteParametro = 'Plataforma Unica de Busqueda')
+
+#set ($templateWeb = 'partials/pes/login/loginAuth.vm') 
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	    

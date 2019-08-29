@@ -1,0 +1,7 @@
+#if($tipoDetalleRemesa == "cliente")
+	#set ($templateWeb = 'partials/pes/entidades/remesa/detalleRemesaClienteHome.vm')
+#else
+	#set ($templateWeb = 'partials/pes/entidades/remesa/detalleRemesaProductorHome.vm')
+#end
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  

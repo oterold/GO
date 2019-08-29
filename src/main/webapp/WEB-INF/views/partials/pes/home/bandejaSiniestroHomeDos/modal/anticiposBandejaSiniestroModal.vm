@@ -1,0 +1,48 @@
+#* notas *#
+<div class="panel panel-default" style="display:none;max-width:920px;overflow-y:auto;" id="anticiposWfPopUp" >
+      	    <div style="width:100%;">
+						<a class="btn pull-right   fas fa-times cerrarModalBotonHoover"  data-placement="bottom"  style="font-size:20px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#989898;background-color:#ffffff" rel="modal:close"></a>
+			</div>
+      	    <div class="panel-heading" style="max-width:600px;background-color:#ffffff;border-color:#ffffff;">
+      	     	
+      	        <h4 style="border:none;" id="DATOS_MODAL_ANTICIPOS"></h4>
+      	     
+			</div>
+
+     	<div class="row" style="margin:0px;">
+				<div class="col-md-8">
+				</div>
+				<div class="col-md-4">
+				<h6 id="fechaEscalamiento"></h6>
+				</div>
+				
+				<br><br>
+
+          	 	  <div class="col-md-12" style="text-align: left;height: 350px;overflow-y:auto;padding:0px">
+								<div>
+								<table class="table table-hover table-grilla" role="table">
+								   
+								    	  <thead class="thead-grilla" role="rowgroup">
+								    <tr class="tr-grilla" role="row">
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Anticipo</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Producto</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Email</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Latitud</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Longitud</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Asegurado</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Mobile</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Productor</h5></th>
+								            <th class="th-grilla" role="columnheader"><h5 style="border:none;">Aplicaci&oacute;n</h5></th>
+								            
+								        </tr>
+								    </thead>
+								    <tbody class="tbody-grilla" id="datosAnticiposWF">
+							</tbody>
+								</table>
+								</div>
+    				  </div>
+    				  
+    				  </div>
+    				  
+    			</div>	
+   		</div>

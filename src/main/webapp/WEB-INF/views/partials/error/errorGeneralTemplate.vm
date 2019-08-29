@@ -1,0 +1,9 @@
+#set ($indicadorSeccionParametroNivel1 = 'Error' )
+#set ($indicadorSeccionParametroNivel2 = 'Error General' )
+
+#set ($indicadorClienteParametro = 'Provincia Enterprise System')
+
+#set ($templateWeb = 'partials/error/errorGeneral.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateWeb.vm")	  
+
