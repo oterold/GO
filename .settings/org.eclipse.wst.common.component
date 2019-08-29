@@ -5,6 +5,7 @@
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
 		<property name="java-output-path" value="target/classes"/>
-        <property name="context-root" value="pes"/>
+        <property name="context-root" value="PSPES-${maven.build.timestamp}"/>
+        <property name="component.exclusion.patterns" value="WEB-INF/lib/xml-apis-*.jar,WEB-INF/lib/stax-api*.jar,WEB-INF/lib/ojdb*.jar"/>
 	</wb-module>
 </project-modules>
