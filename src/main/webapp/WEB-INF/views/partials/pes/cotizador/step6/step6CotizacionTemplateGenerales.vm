@@ -1,0 +1,3 @@
+#set ($templateWeb = 'partials/pes/cotizador/step6/step6Cotizacion.vm')
+
+#parse("partials/pes/templates/principal/mainTemplateCotiWeb.vm")	  

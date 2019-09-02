@@ -1,0 +1,71 @@
+		
+	<div class="col-md-1">
+	</div>
+
+
+    <div class="col-sm-12 col-md-6 col-lg-4 centrar-texto">
+      <div class="card" style="width:100%;">
+        <div class="card-image">
+        <div class="col-md-12 p-2 cabecera-persona">
+			<i class="fas fa-user-edit icono-cabecera-persona"></i>
+			<h6 style="color:white;">Tomador / Asegurado *</h6>
+		</div>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" style="background-color:#999999!important;height:50px!important;width:50px!important;" onclick="mostrarSegundoAseg();">
+			<i class="fas fa-user-plus" id="iconoAsegurado" style="padding-top: 5px;padding-left: 5px;"></i>
+		  </a>
+        </div>
+			<div class="row pt-1">
+				<div class="input-field col-md-12">
+					<i class="fas fa-pen prefix icono-input"></i>
+					<input id="doc" type="text" class="validate">
+    				<label for="doc">Doc. / Cuit / Cuil *</label>
+          	 	 </div>
+    			<div class="input-field col-md-12">
+					<i class="fas fa-map-marker-alt prefix icono-input"></i>
+					<input id="domicilio" type="text" class="validate">
+    				<label for="domicilio">Domicilio *</label>
+          	 	 </div>
+				 <div class="input-field col-md-12">
+    				<i class="material-icons prefix icono-input">phone</i>
+    				<input id="telefono" type="text" class="validate">
+    				<label for="telefono">Telefono *</label>
+          	 	 </div>
+				 <div class="input-field col-md-12">
+					<i class="fas fa-envelope prefix icono-input"></i>
+    				<input id="email" type="text" class="validate">
+    				<label for="email">Email *</label>
+          	 	 </div>
+				 <div class="input-field col-md-12">
+					<i class="fas fa-university prefix icono-input"></i>
+    				<input id="datos" type="text" class="validate">
+    				<label for="datos">Datos Bancarios *</label>
+          	 	 </div>
+			</div>
+      </div>
+    </div>
+	
+	<div class="col-md-1">
+	</div>
+
+	<!-- card 2 -->
+	
+    <div class="col-md-4 centrar-texto" id="segundoAseg" style="display:none;">
+      <div class="card" style="width:100%;">
+        <div class="card-image">
+        <div class="col-md-12 p-2 cabecera-persona">
+			<i class="fas fa-user-friends icono-cabecera-persona"></i>
+			<h6 style="color:white;">2° Titular *</h6>
+		</div>
+        </div>
+			<div class="row pt-1" style="height:330px;">
+					<div data-target="modal1" class="modal-trigger" style="height: 70px;cursor:pointer;">
+						<div class="input-field col-md-12">
+							<i class="fas fa-pen prefix icono-input"></i>
+							<input id="docDos" type="text" class="validate">
+							<label for="docDos">Doc. / Cuit / Cuil *</label>
+					</div>
+          	 	 </div>
+			</div>
+      </div>
+    </div>
+		

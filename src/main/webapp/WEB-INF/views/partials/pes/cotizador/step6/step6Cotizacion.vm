@@ -1,0 +1,41 @@
+<section class="container-fluid">
+   <div class="containerMargenes" style="padding-top:50px;" id="main">
+      <div class="row">
+         <div class=" col-sm-12 col-md-9 sin-margen-der" style="margin-top:50px">
+            <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+               <div class="panel-body">
+                  <div class=" row">
+                     <div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
+                        <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos Tomador / Asegurado / Otros Titulares </h3>
+                        <div class="plan-selection">
+                           <div class="plan-data mt-2">
+                                  <div class="row">
+									#parse("partials/pes/cotizador/step6/cuerpoStep6.vm")
+    							  </div>
+						</div>
+					 </div>
+					  	<div class="row margin-boton">
+					<div class="col-sm-12 col-md-3">
+					<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep6" name="action">Volver
+						</a>
+					</div> 
+					<div class="col-md-6">
+					</div>
+					<div class="col-sm-12  col-md-3">
+						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep6" name="action">Siguiente
+        							<i class="material-icons right" style="color:white;">send</i>
+						</a>
+					</div>
+						</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Lista certificados - Panel B -->
+        #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")
+      </div>
+   </div>
+</section>
+
+#parse("partials/pes/cotizador/step6/modalStep6AgregarPersona.vm")

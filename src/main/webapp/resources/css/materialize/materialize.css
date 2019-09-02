@@ -5745,7 +5745,7 @@ body.keyboard-focused .dropdown-content li:focus {
   right: 0;
   background-color: #fafafa;
   padding: 0;
-  max-height: 70%;
+  max-height: 90%;
   width: 55%;
   margin: auto;
   overflow-y: auto;
@@ -6571,10 +6571,6 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   -webkit-transition: color .2s;
   transition: color .2s;
   top: 0.5rem;
-}
-
-.input-field .prefix.active {
-  color: #26a69a;
 }
 
 .input-field .prefix ~ input,

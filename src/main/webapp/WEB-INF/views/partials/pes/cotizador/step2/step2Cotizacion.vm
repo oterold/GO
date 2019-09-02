@@ -30,14 +30,14 @@
     						</div>
     					 <div class="row margin-boton">
         					<div class="col-sm-12 col-md-3">
-							  	<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="volverRedirectStep1()" style="padding-top:5px;cursor: pointer; color:white; margin-top: 5px;" role="button">
+							  	<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="volverRedirectStep1()" style="cursor: pointer; color:white; margin-top: 5px;" role="button">
 								Volver
 								</a>
         					</div> 
         					<div class="col-md-6">
         					</div>
         					<div class="col-sm-12  col-md-3 .centrarElementos">
-								<a  class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="redirectStep3()" style="padding-top: 5px;cursor: pointer; color:white; margin-top: 5px;" role="button">
+								<a  class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="redirectStep3()" style="cursor: pointer; color:white; margin-top: 5px;" role="button">
 									Siguiente
         							<i class="material-icons right" style="color:white;">send</i>
 								</a>
