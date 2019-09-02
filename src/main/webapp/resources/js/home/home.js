@@ -24,18 +24,5 @@ function redirectGoHomeMas(){
 
 
 function redirectRectorHome(){
-	var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-	if(es_chrome){
-		Swal.fire({
-			 title:"Hola !! Para utilizar Rector deber&aacute; ingresar con Internet Explorer.",
-		       text: "GO Team.",
-		       type: "info",
-		       customClass: 'modificar-sweetalert',
-		})
-	}
-	else{
 		location.href="http://bloasp:7778/forms/frmservlet?config=RECTORLB";
-	}
-		
-		
 	}

@@ -522,6 +522,23 @@ function cambiarIconoAcordeon(){
 }
 
 
+function mostrarSegundoAseg(){
+	if($('#segundoAseg').is(':visible')){
+		$("#iconoAsegurado").removeClass("fas fa-user-minus");
+		$("#iconoAsegurado").addClass("fas fa-user-plus");
+		$('#mostrarPanelProd').removeClass('animated fadeIn');
+		$("#segundoAseg").css("display","none");
+
+	}else{
+		$("#segundoAseg").css("display","");
+		$('#segundoAseg').addClass('animated fadeIn');
+		$("#iconoAsegurado").removeClass("fas fa-user-plus");
+	    $("#iconoAsegurado").addClass("fas fa-user-minus");
+
+	}
+}
+
+
 function mostrarBtnRamos(id){
 		var ramo=document.getElementById("valorRamo").value;
 
@@ -1258,7 +1275,59 @@ function cargarSelectorPlanDePago(vigencia){
 	});
 };
 
+function quitarSelectCardPromo(){
+	$(".alto-panel-promo-seleccionado").each(function(){
+    	$(this).removeClass("alto-panel-promo-seleccionado");
+    	$(this).addClass("alto-panel-promo");
+ 	});
+	$(".alto-panel-promo-seleccionado-b").each(function(){
+    	$(this).removeClass("alto-panel-promo-seleccionado-b");
+    	$(this).addClass("alto-panel-promo-b");
+ 	});
+	$(".checkCard").each(function(){
+    	$(this).css("display","none");
+ 	});
+	$(".animated").each(function(){
+    	$(this).removeClass("animated");
+ 	});
+	
+	$(".pulse").each(function(){
+    	$(this).removeClass("pulse");
+ 	});
+	
+}
 
+function selecionarCotizacion(id){
+    if ($("#card_"+id).hasClass('animated pulse')){
+    	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado");
+    	$("#check_"+id).css("display","none");
+    	$("#cuerpo_"+id).addClass("alto-panel-promo");
+    	$("#card_"+id).removeClass("animated pulse");
+    }else{
+    	quitarSelectCardPromo();
+    	$("#cuerpo_"+id).removeClass("alto-panel-promo");
+    	$("#cuerpo_"+id).addClass("alto-panel-promo-seleccionado");
+    	$("#check_"+id).css("display","");
+    	$("#card_"+id).addClass("animated pulse");
+    }
+}
+
+
+
+function selecionarCotizacionB(id){
+    if ($("#card_"+id).hasClass('animated pulse')){
+    	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado-b");
+    	$("#check_"+id).css("display","none");
+    	$("#cuerpo_"+id).addClass("alto-panel-promo-b");
+    	$("#card_"+id).removeClass("animated pulse");
+    }else{
+    	quitarSelectCardPromo();
+    	$("#cuerpo_"+id).removeClass("alto-panel-promo-b");
+    	$("#cuerpo_"+id).addClass("alto-panel-promo-seleccionado-b");
+    	$("#check_"+id).css("display","");
+    	$("#card_"+id).addClass("animated pulse");
+    }
+}
 
 function selecionarPromo(id){
 	var promoUno= $("#promoUno").val();
@@ -1309,18 +1378,20 @@ function selecionarPromo(id){
 }
 
 
+
+
 function resaltarPromocionSeleccionada(id){
 		$("#"+id).removeClass("animated pulse");
-	    if ($("#cuerpo_"+id).hasClass('cuerpo-card-seleccionado')){
-	    	$("#check_"+id).css("display","none")
-	    	$("#cuerpo_"+id).removeClass("cuerpo-card-seleccionado");
-	    	$("#cuerpo_"+id).addClass("cuerpo-card");
-	    }else{
-	    	$("#check_"+id).css("display","")
-	    	$("#cuerpo_"+id).removeClass("cuerpo-card");
-	    	$("#cuerpo_"+id).addClass("cuerpo-card-seleccionado");
-	    	$("#"+id).addClass("animated pulse");
-	    }
+		    if ($("#cuerpo_"+id).hasClass('cuerpo-card-seleccionado')){
+		    	$("#check_"+id).css("display","none")
+		    	$("#cuerpo_"+id).removeClass("cuerpo-card-seleccionado");
+		    	$("#cuerpo_"+id).addClass("cuerpo-card");
+		    }else{
+		    	$("#check_"+id).css("display","")
+		    	$("#cuerpo_"+id).removeClass("cuerpo-card");
+		    	$("#cuerpo_"+id).addClass("cuerpo-card-seleccionado");
+		    	$("#"+id).addClass("animated pulse");
+		    }
 }
 
 function mostrarIconoMaterial(ramo){

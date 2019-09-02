@@ -47,9 +47,9 @@
                       </button>
 					</div> 
 					<div class="col-sm-12  col-md-3">
-						<button class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" type="submit" name="action">Cerrar
-							<i class="material-icons right" style="color:white;">exit_to_app</i>
-						</button>
+						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep6" name="action">Siguiente
+        							<i class="material-icons right" style="color:white;">send</i>
+						</a>
 					</div>
 				</div>
                      </div>

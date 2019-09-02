@@ -34,7 +34,7 @@
 											#end
                                     <div class="row margin-boton">
                                         <div class="col-sm-12 col-md-3">
-											<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="volverRedirectStep2();" style="padding-top: 5px;cursor: pointer; color:white; margin-top: 5px;">
+											<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="volverRedirectStep2();" style="cursor: pointer; color:white; margin-top: 5px;">
                                                 Volver
                                             </a>
                                         </div>
@@ -42,7 +42,7 @@
                                         </div>
                                         <div class="col-sm-12  col-md-3">
 											
-											<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="redirectStep4();" style="padding-top: 5px;cursor: pointer; color:white; margin-top: 5px;">
+											<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="redirectStep4();" style="cursor: pointer; color:white; margin-top: 5px;">
 												Siguiente
 												<i class="material-icons right" style="color:white;">send</i>
 											</a>

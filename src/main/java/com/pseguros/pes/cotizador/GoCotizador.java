@@ -46,7 +46,9 @@ public class GoCotizador extends AbstractPubController {
 	private static final String COTIZADOR_STEP_FINAL = "/partials/pes/cotizador/step5/step5CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_COBERTURAS = "partials/pes/cotizador/stepCoberturas/stepCoberturasCotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_COTIZADOR = "partials/pes/cotizador/step0/step0CotizacionTemplateGenerales";
+	private static final String COTIZADOR_STEP_DATOS_DEL_ASEGURADO = "partials/pes/cotizador/step6/step6CotizacionTemplateGenerales";
 
+	
 	
 	
 	@Autowired
@@ -399,9 +401,6 @@ public class GoCotizador extends AbstractPubController {
 	}
 
 	
-	
-	
-	
 	@RequestMapping(value = "/cotizacionStep5Coberturas", method = RequestMethod.GET)
 	public ModelAndView getCotizacionStep5Coberturas(HttpSession session, HttpServletRequest request, Locale locale, Model model) throws Exception {
 
@@ -444,6 +443,31 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 5", e);
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("errorMsg", "" + e.getCause().getMessage());
+		}
+
+		return new ModelAndView(PANTALLA_ERROR, mapa);
+	}
+	
+	@RequestMapping(value = "/cotizacionStep6", method = RequestMethod.GET)
+	public ModelAndView getCotizacionStep6(HttpSession session, HttpServletRequest request, Locale locale, Model model) throws Exception {
+
+		Map<String, Object> mapa = new HashMap<String, Object>();
+		try {
+			logger.debug("Mostrar Pantalla step 6 coberturas cotizador GO ");
+
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+
+			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("datosCoti", datosCoti);
+			mapa.put("card", 6);
+			
+			return new ModelAndView(COTIZADOR_STEP_DATOS_DEL_ASEGURADO, mapa);
+
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto step 6", e);
 			mapa.putAll(getDatosComunes(request));
 			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}

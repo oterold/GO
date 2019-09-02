@@ -1,4 +1,4 @@
- <nav  class="navbar fixed-top navbar-expand-lg navbar-dark indigo" style="background-color:#0b4376!important; padding-left:6.5%;border-radius:0px;">
+ <nav  class="navbar fixed-top navbar-expand-lg navbar-dark indigo" style="box-shadow:none;background-color:#0b4376!important; padding-left:6.5%;border-radius:0px;">
        
       <a href="/PSPES/home"> <img src="/PSPES/resources/img/logo/logo-header-blanco.png" style="height:40px;padding-left:10%"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
