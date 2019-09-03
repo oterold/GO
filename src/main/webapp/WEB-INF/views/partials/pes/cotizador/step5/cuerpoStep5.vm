@@ -9,7 +9,7 @@
 			<div class="switch col-md-6 centrar-switch mt-4">
 				<label>
 					&iquest;Utiliza Comisi&oacute;n Estandar&#63;
-					<input onchange="comisionEstandar(this.id);" id="switchComision" type="checkbox" #if($datosCoti.comision == "null") checked#end>
+					<input onchange="comisionEstandar(this.id);" id="switchComision" type="checkbox"  checked>
 					<span class="lever"></span>
                  </label>
            	</div>

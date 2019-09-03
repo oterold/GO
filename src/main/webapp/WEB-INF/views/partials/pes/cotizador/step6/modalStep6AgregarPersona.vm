@@ -7,12 +7,15 @@
 	    <div class="row pl-5 pr-5" style="width:100%">
 			    <div class="input-field col-md-2">
 					<select  name="selectOrigenPago" aria-required="true" id="selectDni">
-						<option>Dni</option>
+						<option value="">Seleccione..</option>
+						#foreach($datosIn in $datosDocumentos)
+							<option value="$datosIn.get("P_TF_CATU.CATU_TP_DOCUMENTO")">$datosIn.get("P_TF_CATU.CATU_DE_DOCUMENTO")</option>
+						#end
 					</select>
 					<label>Tipo Dni*</label>
 				</div>
 			<div class="input-field  col-md-4">
-				<input name="dni" id="productorLabel" type="text">
+				<input name="dni" id="clienteDniA" type="text">
 				<label for="dni">Numero de Documento </label>
 			</div>	
 			<div class="input-field  col-md-6">
@@ -49,10 +52,10 @@
 			</div>	
 			<div class="input-field col-md-6">
 				<select  name="selectOrigenPago" aria-required="true" id="selectDni">
-					<option>a</option>
-					<option>b</option>
-					<option>c</option>
-
+					<option value="">Seleccione..</option>
+					#foreach($datosIn in $datosProfesiones)
+						<option value="$datosIn.get("P_TF_CAPW.CAPW_CD_PROFESION")">$datosIn.get("P_TF_CAPW.CAPW_DE_PROFESION")</option>
+					#end
 				</select>
 				<label>Profesi&oacute;n*</label>
 			</div>

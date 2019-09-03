@@ -1,0 +1,81 @@
+<div id="modalDatosDni" class="modal">
+	    <div class="row" style="width:100%">
+	    	<div class="col-md-12 pl-5 pr-5">
+	     	 <h5>Nueva Persona Fisica</h5>
+	      </div>
+	     </div>
+	    <div class="row pl-5 pr-5" style="width:100%">
+			    <div class="input-field col-md-2">
+					<input name="dni" id="personaTpDni" type="text" disabled >
+					<label for="dni">Tipo Dni*</label>
+				</div>
+			<div class="input-field  col-md-4">
+				<input name="dni" id="personaDocumento" type="text" disabled >
+				<label for="personaDocumento">Numero de Documento </label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="cuit" id="personaCuit" type="text" disabled >
+				<label for="personaCuit">Cuit / Cuil </label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="apell" id="perdonaApellido" type="text" disabled >
+				<label for="perdonaApellido">Apellido *</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="nombre" id="PersonaNombre" type="text" disabled >
+				<label for="PersonaNombre">Nombre *</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="genero" id="PersonaGenero" type="text" disabled >
+				<label for="PersonaGenero">Genero *</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="facheNac" id="personaNac" type="text" disabled >
+				<label for="personaNac">Fecha de Nacimiento *</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="nacio" id="personaNacionalidad" type="text" disabled >
+				<label for="personaNacionalidad">Nacionalidad *</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="productorLabel" id="personaLugarNac" type="text" disabled >
+				<label for="personaLugarNac">Lugar de Nacimiento *</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="productorLabel" id="persoanEstadoCivil" type="text" disabled >
+				<label for="persoanEstadoCivil">Estado Civil *</label>
+			</div>	
+			<div class="input-field col-md-6">
+				<input name="productorLabel" id="personaProfesion" type="text" disabled >
+				<label  for="personaProfesion">Profesi&oacute;n*</label>
+			</div>
+			<div class="switch col-md-5 centrar-switch">
+                <label>
+                 &iquest;Expuesto Politicamente?
+                  <input type="checkbox" id="pep" disabled>
+                  <span class="lever"></span>
+                </label>
+    	  </div>
+		  <div class="switch col-md-5 centrar-switch">
+            <label>
+             &iquest;Sujeto Obligado Art. 230?
+              <input type="checkbox" id="art230" disabled>
+              <span class="lever"></span>
+            </label>
+     	 </div>
+		 
+		  <div class="input-field col-md-12">
+			<i class="fas fa-exclamation-triangle prefix icono-input"></i>
+			<input id="datoError" type="text" class="validate">
+			<label for="datoError">Observar el/los errores en los datos cargados para su revisi&oacute;n *</label>
+          </div>
+
+ </div>
+    <div class="row">
+    	<div class="col-md-12">
+			<button href="#!" class="modal-close pull-left btn-flat">Cerrar</button>
+			<button href="#!" class="modal-close pull-right btn-flat">Guardar</button>
+      	</div>
+      </div>
+    </div>
+ </div>

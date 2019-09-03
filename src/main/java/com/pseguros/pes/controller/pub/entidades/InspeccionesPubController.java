@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -64,15 +65,11 @@ public class InspeccionesPubController extends AbstractPubController {
 			String sucursal = request.getParameter("sucursal");
 			String inspeccion = request.getParameter("inspeccion");
 			
-			if(inspeccion == null || inspeccion.isEmpty()){
-				inspeccion = "";
-			}
-			
 			
 			agregarBreadcrumb(request, "Inspeccion #" + inspeccion);
 			mapa.putAll(getDatosComunes(request));
 			
-			Future<List> listaInspecciones = inspeccioneService.buscarInspeccionesPorPoliza(ramo, poliza, sucursal, inspeccion, getUser(request),getEntorno(request));
+			Future<ArrayList> listaInspecciones = inspeccioneService.buscarInspeccionesPorPoliza(ramo, poliza, sucursal, inspeccion, getUser(request),getEntorno(request));
 			
 			
 			while(!(listaInspecciones.isDone())){
@@ -118,7 +115,7 @@ public class InspeccionesPubController extends AbstractPubController {
 			}
 			
 			
-			Future<List> listaInspecciones = inspeccioneService.buscarInspeccionesPorPoliza(ramo, poliza, sucursal, inspeccion, getUser(request),getEntorno(request));
+			Future<ArrayList> listaInspecciones = inspeccioneService.buscarInspeccionesPorPoliza(ramo, poliza, sucursal, inspeccion, getUser(request),getEntorno(request));
 			
 			while(!(listaInspecciones.isDone())){
 				Thread.sleep(5);
@@ -176,7 +173,7 @@ public class InspeccionesPubController extends AbstractPubController {
 						inspeccion = "";
 					}
 					
-					Future<List> listaInspecciones = inspeccioneService.buscarInspeccionesPorPoliza(ramo, poliza, sucursal, inspeccion, getUser(request),getEntorno(request));
+					Future<ArrayList> listaInspecciones = inspeccioneService.buscarInspeccionesPorPoliza(ramo, poliza, sucursal, inspeccion, getUser(request),getEntorno(request));
 					
 					while(!(listaInspecciones.isDone())){
 						Thread.sleep(5);

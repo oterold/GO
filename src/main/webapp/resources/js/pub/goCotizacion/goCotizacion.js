@@ -18,6 +18,7 @@ function agregarAccesorios(){
 	setearSelectoraccesoriosInicio();
 }
 
+
 function cargarPanelAgregadoAccesorios(obj,monto){
 	var id='"'+obj.valor+'"';
 	var panelAgregado ="<div style='width:100%;margin-bottom:0px;' class='row' id='"+obj.valor+"'><div class='input-field col-md-5'>"+
@@ -176,6 +177,237 @@ function cargarSelectorParametricoByClass(id){
 
 }
 
+function cargarDatosModalDatosBanco(json){
+	$("#datoBanco").val(json[0]["P_TF_CADM_RV_TP_CUENTA"])
+	$("#tarjetaCredito").val(json[0]["P_TF_CADM_CATT_DE_TARJETA"])
+	$("#numTarjeta").val(ocultarDato(json[0]["P_TF_CADM_CADM_NU_CUENTA"]))
+	M.updateTextFields();
+}
+
+function cargarDatosModalDocumento(json){
+
+	
+	$("#personaTpDni").val(json[0]["P_TF_CABU_CABU_CATU_TP_DOCUMENTO"])
+	$("#personaDocumento").val(json[0]["P_TF_CABU_CABU_NU_DOCUMENTO"])
+	$("#personaCuit").val(json[0]["P_TF_CABU_CABU_NU_CUIT"])
+	$("#perdonaApellido").val(json[0]["P_TF_CABU_CABU_NM_APELLIDO_RAZON"])
+	$("#PersonaNombre").val(json[0]["P_TF_CABU_CABU_NM_PERSONA"])
+	$("#personaNac").val(json[0]["P_TF_CABU_CABU_FE_NACIMIENTO"])
+	$("#PersonaGenero").val(json[0]["P_TF_CABU_CABU_ST_SEXO"])
+	$("#personaNacionalidad").val(json[0]["P_TF_CABU_CABU_CAPA_CD_NACIONALIDAD"])
+	$("#personaLugarNac").val(json[0]["P_TF_CABU_CABU_CD_ESTADO_NACIMIENTO"])
+	$("#persoanEstadoCivil").val(json[0]["P_TF_CABU_CABU_ESTADO_CIVIL"])
+	$("#personaProfesion").val(json[0]["P_TF_CABU_CABU_CAPW_CD_PROFESION"])
+
+	if(json[0]["P_TF_CABU_CABU_PEP"] =='S'){
+		$('#pep').prop('checked', true);
+	}
+	if(json[0]["P_TF_CABU_CABU_IN_RES_230"] =='S'){
+		$('#pep').prop('checked', true);
+	}
+	   M.updateTextFields();
+
+}
+
+
+function buscarPersona(){
+	var documento = $("#docPersona").val();
+	if(documento.length>7){
+	 $.ajax({
+		    url : 'buscarPersona',
+		    contentType: 'application/json', 
+		    data : {documento:documento},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		$("#mensajeDni").css("display","none");
+		    		$("#nombreAseg").text(primeraLetraMayus(primeraLetraMayus(json[0]["P_TF_CABU_CABU_NM_APELLIDO_RAZON"]) +" "+ json[0]["P_TF_CABU_CABU_NM_PERSONA"]))
+		    		cargarDatosModalDocumento(json);
+		    		cargarDatosComunicacion(json[0]["P_TF_CABU_CABU_NU_PERSONA"],1);
+		    		cargarDatosComunicacion(json[0]["P_TF_CABU_CABU_NU_PERSONA"],4);
+		    		cargarDatosBanco(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
+		    		cargarDatosDomiciolio(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
+		    		$(".iconos-modal").each(function(){
+		    	 	    $(this).css("display","");
+		    	 	});
+		    	}catch(e)
+		    	{
+		    	}
+		    	},
+		    error : function(xhr, status) {
+
+		    },
+		});
+	}else{
+		if(documento.length == 0){
+    		$("#mensajeDni").css("display","none");
+		}else{
+			$("#mensajeDni").css("display","");
+		}
+		$("#nombreAseg").text("");
+		$("#telefonoPersona").val("");
+		$("#emailPersona").val("");
+		$("#datosBanco").val("");
+		var d1 = document.getElementById("selecDomicilio");
+   		d1.innerHTML = '<option value="" selected></option>';
+	    $('select').formSelect();
+	    
+		
+		$(".iconos-modal").each(function(){
+	 	    $(this).css("display","none");
+	 	});
+	    
+   		
+   		M.updateTextFields();
+	}
+	}
+
+
+function cargarDatosDomiciolio(persona){
+	 $.ajax({
+		    url : 'buscarDomicilios',
+		    contentType: 'application/json', 
+		    data : {persona:persona},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		var panelNuevo ='';
+		    		var d1 = document.getElementById("selecDomicilio");
+		    		d1.innerHTML = '';
+		    		if(json.length>1){
+		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+		    		panelNuevo = panelNuevo;
+		    		}
+			    	for ( var int = 0; int < json.length ; int++) {
+		    			panelNuevo = panelNuevo + "<option value="+int+">"+primeraLetraMayus(json[int]["P_TF_CADO_CADO_DE_CALLE"])+" "+json[int]["P_TF_CADO_CADO_DE_NUMERO"]+"</option>";
+			    	}
+		    		d1.innerHTML =panelNuevo;
+		    		
+				    $('select').formSelect();
+
+		    	}catch(e)
+		    	{
+		    	}
+		    	},
+		    error : function(xhr, status) {
+		    },
+		 
+		   
+		});
+
+	}
+
+function cargarSelectDomicilio(){
+	var select = document.getElementById('selecDomicilio');
+	var domicilio = select.options[select.selectedIndex].value;
+	var persona=$("#docPersona").val();
+	
+	$.ajax({
+	    url : 'buscarDomicilios',
+	    contentType: 'application/json', 
+	    data : {persona:persona},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
+	    		$("#callePersona").val(json[domicilio]["P_TF_CADO_CADO_DE_CALLE"]);
+	    		$("#numeroPersona").val(json[domicilio]["P_TF_CADO_CADO_DE_NUMERO"]);
+	    		$("#pisoPersona").val(json[domicilio]["P_TF_CADO_CADO_DE_PISO"]);
+	    		$("#deptoPersona").val(json[domicilio]["P_TF_CADO_CADO_DE_DEPARTAMENTO"]);
+	    		$("#unidadPersona").val(json[domicilio]["P_TF_CADO_CADO_DE_UNIDAD"]);
+	    		$("#postalPersona").val(json[domicilio]["P_TF_CADO_GECP_CD_CODIGO_POSTAL"]);
+	    		$("#localidadPersona").val(json[domicilio]["P_TF_CADO_GECP_DE_LOCALIDAD"]);
+	    		$("#municipioPersona").val(json[domicilio]["P_TF_CADO_GEMU_DE_MUNICIPIO"]);
+	    		$("#provinciaPersona").val(json[domicilio]["P_TF_CADO_CAES_DE_PROVINCIA"]);
+	    		M.updateTextFields();
+
+	    		
+	    		
+	    	}catch(e)
+	    	{
+	    	}
+	    	},
+	    error : function(xhr, status) {
+	    },
+	 
+	   
+	});
+
+}
+
+function abrirCargaCliente(){
+	var dni = $("#docPersona").val();
+	$("#clienteDniA").val(dni);
+	M.updateTextFields();
+
+}
+	
+	
+
+function cargarDatosBanco(persona){
+	 $.ajax({
+		    url : 'buscarBanco',
+		    contentType: 'application/json', 
+		    data : {persona:persona},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		cargarDatosModalDatosBanco(json);
+		    		$("#datosBanco").val(ocultarDato(json[0]["P_TF_CADM_CADM_NU_CUENTA"]))
+		    		M.updateTextFields();
+		    		
+		    	}catch(e)
+		    	{
+		    	}
+		    	},
+		    error : function(xhr, status) {
+		    },
+		 
+		   
+		});
+
+	}
+
+function ocultarDato(dato){
+	var valor = dato.substring(11,15);
+	return "xxxxxxxxxxxx"+valor;
+}
+
+function cargarDatosComunicacion(persona,cod){
+	 $.ajax({
+		    url : 'buscarComunicaciones',
+		    contentType: 'application/json', 
+		    data : {persona:persona,codigo:cod},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		
+		    		if(cod == 1){
+		    			$("#telefonoPersona").val(json[0]["P_TF_CACF_CACF_DE_COMUNICACION"])
+		    		}
+		    		if(cod == 4){
+		    			$("#emailPersona").val(json[0]["P_TF_CACF_CACF_DE_COMUNICACION"])
+		    		}
+					   M.updateTextFields();
+		    		
+		    	}catch(e)
+		    	{
+		    	}
+		    	},
+		    error : function(xhr, status) {
+		    },
+		 
+		   
+		});
+
+	}
+
+
+
 function cargarSelectorParametrico(id,datos,tabla){
 	bloquearPantallaGris();
 	 $.ajax({
@@ -309,7 +541,7 @@ function buscarDirecciones(){
 			    		var provincia ="'"+json[int]["P_TF_CAPU_CTRA_CREK_NU_VISUALIZACION"]+"'";
 			    		var pais=  "'"+json[int]["P_TF_CAPU_CAPU_CD_PRODUCTO"]+"'";
 				    	mostrarUbicacion("'"+postal+"'","'"+calle+"'","'"+localidad+"'","'"+provincia+"'","'"+pais+"'");
-				    	
+			    		
 		    		}
 			    	$.unblockUI();
 

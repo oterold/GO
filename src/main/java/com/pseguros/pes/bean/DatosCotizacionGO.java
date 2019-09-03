@@ -26,6 +26,8 @@ public class DatosCotizacionGO {
 	private String plan; 
 	private String descPlan; 
 	private String comision; 
+	private String nuPersona; 
+	
 	
 	
 	private String formDatosGenerales="DGENERALES";
@@ -46,6 +48,13 @@ public class DatosCotizacionGO {
 	
 	
 	
+	
+	public String getNuPersona() {
+		return nuPersona;
+	}
+	public void setNuPersona(String nuPersona) {
+		this.nuPersona = nuPersona;
+	}
 	public DatosMostrarPanelB getDatosPanelB() {
 		return datosPanelB;
 	}

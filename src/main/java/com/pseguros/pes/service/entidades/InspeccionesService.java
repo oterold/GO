@@ -26,7 +26,7 @@ public class InspeccionesService {
 
 		
 		@Async
-		public Future<List> buscarInspeccionesPorPoliza(String ramo, String poliza, String sucursal, String inspeccion, String user, EnvironmentType entorno) throws Exception {
+		public Future<ArrayList> buscarInspeccionesPorPoliza(String ramo, String poliza, String sucursal, String inspeccion, String user, EnvironmentType entorno) throws Exception {
 			Map<String, String> xx = new HashMap<String, String>();
 			
 			EnvironmentContextHolder.setEnvironmentType(entorno);
@@ -63,9 +63,9 @@ public class InspeccionesService {
 				throw new Exception(salida.get("mensaje").toString());
 			}
 			
-			List datoSalida = (ArrayList) salida.get("datosSalida");
+			ArrayList datoSalida = (ArrayList) salida.get("datosSalida");
 			
-			return new AsyncResult<List>(datoSalida);
+			return new AsyncResult<ArrayList>(datoSalida);
 
 		}
 		

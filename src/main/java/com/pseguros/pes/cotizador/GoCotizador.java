@@ -460,8 +460,19 @@ public class GoCotizador extends AbstractPubController {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 
+			
+			Future<ArrayList> datosProfesiones = goCotizador.datosProfesiones(datosCoti, getEntorno(request), getUser(request));
+			Future<ArrayList> datosDocumentos = goCotizador.datosDocumentos(datosCoti, getEntorno(request), getUser(request));
+
+			while (!(datosProfesiones.isDone() && datosDocumentos.isDone())) {
+				Thread.sleep(5);
+			}
+			
+			mapa.putAll(getDatosComunes(request));
 			mapa.put("funcionOnload", "inicioCotizacion()");
 			mapa.put("datosCoti", datosCoti);
+			mapa.put("datosProfesiones", datosProfesiones.get());
+			mapa.put("datosDocumentos", datosDocumentos.get());
 			mapa.put("card", 6);
 			
 			return new ModelAndView(COTIZADOR_STEP_DATOS_DEL_ASEGURADO, mapa);
@@ -804,6 +815,75 @@ public class GoCotizador extends AbstractPubController {
 			return "No se encontraron datos del bien.";
 		}
 	}
+	
+	
+	@RequestMapping(value = "/buscarPersona", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getBuscarPersona(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String documento = request.getParameter("documento");
+
+			return goCotizador.buscarPersona(datosCoti,documento, getEntorno(request), getUser(request));
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return "No se encontraron datos del bien.";
+		}
+	}
+	
+	@RequestMapping(value = "/buscarComunicaciones", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getBuscarComunicaciones(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String persona = request.getParameter("persona");
+			String codigo = request.getParameter("codigo");
+			
+			return goCotizador.buscarComunicacion(datosCoti,persona,codigo,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return "No se encontraron datos del bien.";
+		}
+	}
+	
+	
+	
+	@RequestMapping(value = "/buscarBanco", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getBuscarBanco(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String persona = request.getParameter("persona");
+			datosCoti.setNuPersona(persona);
+			return goCotizador.buscarBanco(datosCoti,persona,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return "No se encontraron datos del bien.";
+		}
+	}
+	
+	@RequestMapping(value = "/buscarDomicilios", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getBuscarDomicilios(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String persona = request.getParameter("persona");
+			return goCotizador.buscarDomicilio(datosCoti,persona,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return "No se encontraron datos del bien.";
+		}
+	}
+	
+	
+	
 	
 	// ---------------------------------------------------------------------------------------------------------------------------------------
 	// ----------------------------------------------------- PRIVADOS

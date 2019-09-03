@@ -8567,7 +8567,6 @@ input[type=range]::-ms-thumb {
 }
 
 .pulse::before {
-  content: '';
   display: block;
   position: absolute;
   width: 100%;
