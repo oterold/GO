@@ -310,5 +310,11 @@ public class ConstantsProcedureDB {
 	public static final String L_COMISIONES_RECARGOS = "L_COMISIONES_RECARGOS";
 	public static final String L_PARAMETRICO_RECALCULO = "L_PARAMETRICO_RECALCULO";
 	public static final String MDW_RECALCULO_COTIZACION = "MDW_RECALCULO_COTIZACION";
+	public static final String B_PERSONAS = "B_PERSONAS";
+	public static final String B_COMUNICACIONES = "B_COMUNICACIONES";
+	public static final String L_PROFESIONES = "L_PROFESIONES";
+	public static final String L_TIPOS_DOCUMENTOS = "L_TIPOS_DOCUMENTOS";
+	public static final String B_DOMICILIOS_BANCARIOS = "B_DOMICILIOS_BANCARIOS";
+	public static final String B_DOMICILIOS = "B_DOMICILIOS";
 	
 }

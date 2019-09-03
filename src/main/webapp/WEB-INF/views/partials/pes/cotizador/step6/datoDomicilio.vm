@@ -1,0 +1,57 @@
+<div id="modalDatosDomicilio" class="modal">
+	    <div class="row" style="width:100%">
+	    	<div class="col-md-12 pl-5 pr-5">
+	     	 <h5>Datos Domicilio</h5>
+	      </div>
+	     </div>
+	    <div class="row pl-5 pr-5" style="width:100%">
+			    <div class="input-field col-md-6">
+					<input name="callePersona" id="callePersona" type="text" disabled >
+					<label for="callePersona">Calle</label>
+				</div>
+			<div class="input-field  col-md-2">
+				<input name="numeroPersona" id="numeroPersona" type="text" disabled >
+				<label for="numeroPersona">Numero</label>
+			</div>	
+			<div class="input-field  col-md-2">
+				<input name="pisoPersona" id="pisoPersona" type="text" disabled >
+				<label for="pisoPersona">Piso</label>
+			</div>	
+			<div class="input-field  col-md-1">
+				<input name="deptoPersona" id="deptoPersona" type="text" disabled >
+				<label for="deptoPersona">Depto</label>
+			</div>	
+			<div class="input-field  col-md-1">
+				<input name="unidadPersona" id="unidadPersona" type="text" disabled >
+				<label for="unidadPersona">Unidad</label>
+			</div>	
+			
+			<div class="input-field  col-md-2">
+				<input name="postalPersona" id="postalPersona" type="text" disabled >
+				<label for="postalPersona">Cod P</label>
+			</div>	
+			
+			<div class="input-field  col-md-4">
+				<input name="localidadPersona" id="localidadPersona" type="text" disabled >
+				<label for="localidadPersona">Localidad</label>
+			</div>	
+			
+			<div class="input-field  col-md-6">
+				<input name="municipioPersona" id="municipioPersona" type="text" disabled >
+				<label for="municipioPersona">Municipio</label>
+			</div>	
+			
+			<div class="input-field  col-md-6">
+				<input name="provinciaPersona" id="provinciaPersona" type="text" disabled >
+				<label for="provinciaPersona">Provincia</label>
+			</div>	
+			
+			
+ 		</div>
+    <div class="row">
+    	<div class="col-md-12">
+			<button href="#!" class="modal-close pull-left btn-flat">Cerrar</button>
+      	</div>
+      </div>
+    </div>
+ </div>

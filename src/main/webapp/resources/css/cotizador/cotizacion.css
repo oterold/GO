@@ -174,7 +174,18 @@ border-bottom: 2px solid #0b4376 !important;
 .icono-check-ramos{
 	font-size:15px;
 }
-
+.ancho-label-icono{
+	    padding-right: 0px !important;
+}
+.icono-info{
+	
+    position: relative;
+    top: 25px;
+    font-size: 18px;
+    color: #999999!important;
+    cursor: pointer;
+	
+}
 .texto-card{
 	width: 115px;
 	text-align: center;

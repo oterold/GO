@@ -48,10 +48,12 @@
     					</div>
 						#end
 				#else
+										<div class="col-md-12">
 					
-						<div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282  !important">
+						<div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282  !important;">
     							<h6 style="margin-top:0px;">No aplica</h6>
-    						</div>					
+    						</div>		
+    						</div>			
 							
 				#end
 			</td>
@@ -91,10 +93,12 @@
     					</div>
 					#end
 				#else
+										<div class="col-md-12">
 					
-						<div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282  !important">
+						<div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282  !important;">
     							<h6 style="margin-top:0px;">No aplica</h6>
     						</div>		
+    						</div>
 				#end
 
 			</td>
@@ -135,10 +139,11 @@
     					</div>
 					#end
 			#else
-					
-						<div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282 !important">
+					<div class="col-md-12">
+						<div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282 !important;">
     							<h6 style="margin-top:0px;">No aplica</h6>
     						</div>		
+    				</div>
 			#end
 
 		 	</td>

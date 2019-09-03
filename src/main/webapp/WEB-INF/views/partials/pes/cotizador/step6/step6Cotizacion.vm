@@ -39,3 +39,9 @@
 </section>
 
 #parse("partials/pes/cotizador/step6/modalStep6AgregarPersona.vm")
+#parse("partials/pes/cotizador/step6/datosDni.vm")
+#parse("partials/pes/cotizador/step6/datosBanco.vm")
+#parse("partials/pes/cotizador/step6/datoDomicilio.vm")
+
+
+

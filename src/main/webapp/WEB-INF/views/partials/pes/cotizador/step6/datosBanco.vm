@@ -1,0 +1,27 @@
+<div id="modalDatosBanco" class="modal">
+	    <div class="row" style="width:100%">
+	    	<div class="col-md-12 pl-5 pr-5">
+	     	 <h5>Nueva Persona Fisica</h5>
+	      </div>
+	     </div>
+	    <div class="row pl-5 pr-5" style="width:100%">
+			    <div class="input-field col-md-6">
+					<input name="datoBanco" id="datoBanco" type="text" disabled >
+					<label for="datoBanco">Tipo Dato Bancario</label>
+				</div>
+			<div class="input-field  col-md-6">
+				<input name="tarjetaCredito" id="tarjetaCredito" type="text" disabled >
+				<label for="tarjetaCredito">Tarjeta de Credito</label>
+			</div>	
+			<div class="input-field  col-md-6">
+				<input name="numTarjeta" id="numTarjeta" type="text" disabled >
+				<label for="numTarjeta">N&uacute;mero Tarjeta</label>
+			</div>	
+ 		</div>
+    <div class="row">
+    	<div class="col-md-12">
+			<button href="#!" class="modal-close pull-left btn-flat">Cerrar</button>
+      	</div>
+      </div>
+    </div>
+ </div>
