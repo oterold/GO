@@ -463,6 +463,8 @@ public class GoCotizador extends AbstractPubController {
 			
 			Future<ArrayList> datosProfesiones = goCotizador.datosProfesiones(datosCoti, getEntorno(request), getUser(request));
 			Future<ArrayList> datosDocumentos = goCotizador.datosDocumentos(datosCoti, getEntorno(request), getUser(request));
+			Future<ArrayList> datosGenero = goCotizador.datosGenero(datosCoti, getEntorno(request), getUser(request));
+			Future<ArrayList> datosLugarNacimiento = goCotizador.datosLugarNacimiento(datosCoti, getEntorno(request), getUser(request));
 
 			while (!(datosProfesiones.isDone() && datosDocumentos.isDone())) {
 				Thread.sleep(5);
@@ -473,7 +475,10 @@ public class GoCotizador extends AbstractPubController {
 			mapa.put("datosCoti", datosCoti);
 			mapa.put("datosProfesiones", datosProfesiones.get());
 			mapa.put("datosDocumentos", datosDocumentos.get());
-			mapa.put("card", 6);
+			mapa.put("datosLugarNacimiento", datosLugarNacimiento.get());
+			mapa.put("datosGenero", datosGenero.get());
+			
+			mapa.put("card", 0);
 			
 			return new ModelAndView(COTIZADOR_STEP_DATOS_DEL_ASEGURADO, mapa);
 
@@ -882,6 +887,37 @@ public class GoCotizador extends AbstractPubController {
 		}
 	}
 	
+	@RequestMapping(value = "/confirmarCotizacion", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getConfirmarCotizacion(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String impr = "N";
+			return goCotizador.confirmarCotizacion(datosCoti,impr,getEntorno(request), getUser(request));
+			
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return "No se encontraron datos del bien.";
+		}
+	}
+	
+	@RequestMapping(value = "/guardarPlanPromo", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getGuardarPlanPromo(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			UtilGuardarDatosSession.guardarDatosCotizacion(request,datosCoti);
+			return goCotizador.guardarDatosPromoPlan(datosCoti,getEntorno(request), getUser(request));
+			
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return "No se encontraron datos del bien.";
+		}
+	}
 	
 	
 	

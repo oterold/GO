@@ -4,12 +4,12 @@
     <div class="col-sm-12 col-md-6 col-lg-4 centrar-texto pt-4">
       <div class="card" style="width:100%;">
         <div class="card-image">
-        <div class="col-md-12 p-2 cabecera-persona">
+        <div class="col-md-12 p-2 cabecera-persona" id="aseguradoPrincipal" style="background-color:#0b4376">
 			<i class="fas fa-user-edit icono-cabecera-persona"></i>
 			<h6 style="color:white;">Tomador / Asegurado *</h6>
 			<h6 style="color:white;" id="nombreAseg"></h6>
 		</div>
-		<div data-target="modal1" class="modal-trigger" style="cursor:pointer;" onclick="abrirCargaCliente();">
+		<div data-target="modal1" class="modal-trigger" id="btnAgregarPersona" style="cursor:pointer;" onclick="abrirCargaCliente();">
           <a class="btn-floating halfway-fab waves-effect waves-light red" style="background-color:#999999!important;height:50px!important;width:50px!important;" ">
 			<i class="fas fa-user-plus" id="iconoAsegurado" style="padding-top: 5px;padding-left: 5px;"></i>
 		  </a>
@@ -18,13 +18,13 @@
 			<div class="row pt-2">
 				<div class="input-field col-md-10 ancho-label-icono">
 					<i class="fas fa-pen prefix icono-input"></i>
-					<input onkeyup="buscarPersona()" id="docPersona" type="text" class="validate">
+					<input onkeyup="buscarPersona()" id="docPersona" type="text" class="">
     				<label  style="text-align:left;" for="docPersona">Doc. / Cuit / Cuil *</label>
 					<a style="font-size: 12px;color: red;font-weight: 700;display:none;" id="mensajeDni">No se encontro una persona con el documento ingresado. Ingrese una nueva.</a>
           	 	 </div>
 				 <div class="col-md-2">
 							<div data-target="modalDatosDni" class="modal-trigger" style="cursor:pointer;">
-								<i class="fas fa-info-circle icono-info iconos-modal" style="display:none;"></i>
+								<i class="fas fa-info-circle icono-info iconos-modal"></i>
 							</div>
 				 </div>
 				 <div class="col-md-2">
@@ -38,27 +38,37 @@
           	 	 </div>
 				 <div class="col-md-2">
 					<div data-target="modalDatosDomicilio" class="modal-trigger" onclick="cargarSelectDomicilio();" style="cursor:pointer;">
-						<i class="fas fa-info-circle icono-info iconos-modal" style="display:none;"></i>
+						<i class="fas fa-info-circle icono-info iconos-modal"></i>
 					</div>
 				 </div>
 				 <div class="input-field col-md-10 ancho-label-icono">
     				<i class="material-icons prefix icono-input">phone</i>
-    				<input id="telefonoPersona" type="text" class="validate">
+    				<input id="telefonoPersona" type="text" class="campo-persona">
     				<label  style="text-align:left;" for="telefonoPersona">Telefono *</label>
           	 	 </div>
+				 <div class="col-md-2">
+					<div data-target="modalDatosTelefono" class="modal-trigger" style="cursor:pointer;">
+						<i class="fas fa-info-circle icono-info iconos-modal""></i>
+					</div>
+				 </div>
 				 <div class="input-field col-md-10 ancho-label-icono">
 					<i class="fas fa-envelope prefix icono-input"></i>
-    				<input id="emailPersona" type="text" class="validate">
+    				<input id="emailPersona" type="text" class="campo-persona">
     				<label  style="text-align:left;" for="emailPersona">Email *</label>
           	 	 </div>
+				 	 <div class="col-md-2">
+					<div data-target="modalDatosEmail" class="modal-trigger" style="cursor:pointer;">
+						<i class="fas fa-info-circle icono-info iconos-modal""></i>
+					</div>
+				 </div>
 				 <div class="input-field col-md-10 ancho-label-icono">
 					<i class="fas fa-university prefix icono-input"></i>
-    				<input id="datosBanco" type="text" class="validate">
+    				<input id="datosBanco" type="text" class="campo-persona">
     				<label style="text-align:left;" for="datosBanco">Datos Bancarios *</label>
           	 	 </div>
 				 <div class="col-md-2">
 					<div data-target="modalDatosBanco" class="modal-trigger" style="cursor:pointer;">
-						<i class="fas fa-info-circle icono-info iconos-modal" style="display:none;"></i>
+						<i class="fas fa-info-circle icono-info iconos-modal""></i>
 					</div>
 				 </div>
 			</div>
@@ -72,7 +82,7 @@
     <div class="col-md-4 centrar-texto pt-4" id="segundoAseg">
       <div class="card" style="width:100%;">
         <div class="card-image">
-        <div class="col-md-12 p-2 cabecera-persona">
+        <div class="col-md-12 p-2 cabecera-persona" style="background-color:#0b4376">
 			<i class="fas fa-user-friends icono-cabecera-persona"></i>
 			<h6 style="color:white;">2° Titular *</h6>
 		</div>

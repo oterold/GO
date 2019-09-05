@@ -51,4 +51,11 @@ public class UtilGuardarDatosSession {
 		
 	}
 
+	public static void guardarDatosCotizacion(HttpServletRequest request,DatosCotizacionGO datosCoti) {
+		
+		datosCoti.setPromocion(request.getParameter("promo"));
+		datosCoti.setPlan(request.getParameter("plan"));
+		datosCoti.setFechaEmision(request.getParameter("fecha"));
+	}
+
 }

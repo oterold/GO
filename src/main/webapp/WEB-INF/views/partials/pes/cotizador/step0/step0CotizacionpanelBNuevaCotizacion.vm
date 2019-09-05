@@ -16,7 +16,7 @@
                         <div class="summary-content" style="width:100%;;margin-top:16px;">
                            <div class="summary-head" style="width:80%;">
                             #if($card == 0)
-							  <h5 style="border:none;"  class="summary-title"><b>Datos del Cliente (0%)</b></h5>
+							  <h5 style="border:none;"  class="summary-title"><b>Datos del Cliente</b></h5>
 							#else
 							  <h5 style="border:none;"  class="summary-title">Datos del Cliente</h5>
 							#end
@@ -38,7 +38,7 @@
                         <div class="summary-content" style="width:100%;">
                            <div class="summary-head" style="width:80%;">
                             #if($card == 1)
-							  <h5 style="border:none;"  class="summary-title"><b>Selecci&oacute;n Ramo y Producto (10%)</b></h5>
+							  <h5 style="border:none;"  class="summary-title"><b>Selecci&oacute;n Ramo y Producto</b></h5>
 							#else
 								<h5 style="border:none;"  class="summary-title">Selecci&oacute;n Ramo y Producto</h5>
 							#end
@@ -63,7 +63,7 @@
                            <div class="summary-head">
 							#if($card == 2)
                               <h5 style="border:none;"  class="summary-title"></i>
-                                 <b>Datos Generales (20%)</b>
+                                 <b>Datos Generales</b>
                               </h5>
 							#else
 								<h5 style="border:none;"  class="summary-title"></i>
@@ -90,7 +90,7 @@
                            <div class="summary-head">
 							  #if($card == 3)
                               <h5 style="border:none;"  class="summary-title"></i>
-								<b> Datos del Bien (30%)</b>
+								<b> Datos del Bien</b>
                               </h5>
 							  #else
 								<h5 style="border:none;"  class="summary-title"></i>
@@ -119,7 +119,7 @@
                         <div class="summary-content">
                            <div class="summary-head">
 							#if($card == 4)
-                              <h5 style="border:none;"  class="summary-title"><b>Promociones (40%)</b></h5>
+                              <h5 style="border:none;"  class="summary-title"><b>Promociones</b></h5>
 							#else
 								<h5 style="border:none;"  class="summary-title">Promociones</h5>
 							#end
@@ -145,7 +145,7 @@
 						<div class="summary-content">
                            <div class="summary-head">
                             #if($card == 6)
-							  <h5 style="border:none;"  class="summary-title"><b>Coberturas (50%)</b></h5>
+							  <h5 style="border:none;"  class="summary-title"><b>Coberturas</b></h5>
 							#else
 								<h5 style="border:none;"  class="summary-title">Coberturas</h5>
 							#end
@@ -166,35 +166,15 @@
                         <div class="summary-content">
                            <div class="summary-head">
                             #if($card == 5)
-							  <h5 style="border:none;"  class="summary-title"><b>Planes Cotizados (60%)</b></h5>
+							  <h5 style="border:none;"  class="summary-title"><b>Fin Emisi&oacute;n</b></h5>
 							#else
-								<h5 style="border:none;"  class="summary-title">Planes Cotizados</h5>
+								<h5 style="border:none;"  class="summary-title">Fin Emisi&oacute;n</h5>
 							#end
                            </div>
                            <div class="summary-price">
 							#if($card == 5)
                               <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
 							#elseif($card < 5)
-                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
-							#else
-							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
-							#end       
-							</div>
-                        </div>
-                     </div>
-                     	     <div class="summary-block">
-                        <div class="summary-content">
-                           <div class="summary-head">
-                            #if($card == 6)
-							  <h5 style="border:none;"  class="summary-title"><b>Tomador / Asegurado (70%)</b></h5>
-							#else
-								<h5 style="border:none;"  class="summary-title">Tomador / Asegurado</h5>
-							#end
-                           </div>
-                           <div class="summary-price">
-							#if($card == 6)
-                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
-							#elseif($card < 6)
                               <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
 							#else
 							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>

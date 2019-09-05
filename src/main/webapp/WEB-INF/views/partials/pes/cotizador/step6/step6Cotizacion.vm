@@ -33,7 +33,7 @@
             </div>
          </div>
          <!-- Lista certificados - Panel B -->
-        #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")
+        #parse("partials/pes/cotizador/step6/stepEmisionPanelB.vm")
       </div>
    </div>
 </section>
@@ -42,6 +42,8 @@
 #parse("partials/pes/cotizador/step6/datosDni.vm")
 #parse("partials/pes/cotizador/step6/datosBanco.vm")
 #parse("partials/pes/cotizador/step6/datoDomicilio.vm")
+#parse("partials/pes/cotizador/step6/datosEmail.vm")
+#parse("partials/pes/cotizador/step6/datosTelefono.vm")
 
 
 

@@ -316,5 +316,10 @@ public class ConstantsProcedureDB {
 	public static final String L_TIPOS_DOCUMENTOS = "L_TIPOS_DOCUMENTOS";
 	public static final String B_DOMICILIOS_BANCARIOS = "B_DOMICILIOS_BANCARIOS";
 	public static final String B_DOMICILIOS = "B_DOMICILIOS";
+	public static final String L_GENEROS = "L_GENEROS";
+	public static final String L_LUGARES_NACIMIENTO = "L_LUGARES_NACIMIENTO";
+	public static final String CIERRE_COTIZACION = "CIERRE_COTIZACION";
+	public static final String PKG_EMI_MDW_E = "PKG_EMI_MDW_E";
+	public static final String I_SELECCION_PLAN = "I_SELECCION_PLAN";
 	
 }

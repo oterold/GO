@@ -233,7 +233,6 @@ border-bottom: 2px solid #0b4376 !important;
 }
 
 .cabecera-persona{
-	background-color: #0b4376!important;
     border-radius: 5px 5px 0px 0px;
 }
 
@@ -341,6 +340,7 @@ cursor:pointer;
 	font-size:13px;
     margin-top: 0px;
     margin-bottom: 0px;
+    line-height:20px;
 	
 }
 

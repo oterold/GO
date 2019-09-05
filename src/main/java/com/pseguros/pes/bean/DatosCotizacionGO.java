@@ -27,6 +27,8 @@ public class DatosCotizacionGO {
 	private String descPlan; 
 	private String comision; 
 	private String nuPersona; 
+	private String promocion; 
+	private String fechaEmision; 
 	
 	
 	
@@ -49,6 +51,18 @@ public class DatosCotizacionGO {
 	
 	
 	
+	public String getFechaEmision() {
+		return fechaEmision;
+	}
+	public void setFechaEmision(String fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
+	public String getPromocion() {
+		return promocion;
+	}
+	public void setPromocion(String promocion) {
+		this.promocion = promocion;
+	}
 	public String getNuPersona() {
 		return nuPersona;
 	}
