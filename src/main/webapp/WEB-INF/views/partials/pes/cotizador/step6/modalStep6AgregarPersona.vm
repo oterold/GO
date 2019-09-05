@@ -9,7 +9,11 @@
 					<select  name="selectOrigenPago" aria-required="true" id="selectDni">
 						<option value="">Seleccione..</option>
 						#foreach($datosIn in $datosDocumentos)
-							<option value="$datosIn.get("P_TF_CATU.CATU_TP_DOCUMENTO")">$datosIn.get("P_TF_CATU.CATU_DE_DOCUMENTO")</option>
+    						#if($datosIn.get("P_TF_CATU.CATU_TP_DOCUMENTO") == "DNI")
+    							<option selected value="$datosIn.get("P_TF_CATU.CATU_TP_DOCUMENTO")">$datosIn.get("P_TF_CATU.CATU_DE_DOCUMENTO")</option>
+							#else
+    							<option value="$datosIn.get("P_TF_CATU.CATU_TP_DOCUMENTO")">$datosIn.get("P_TF_CATU.CATU_DE_DOCUMENTO")</option>
+    						#end
 						#end
 					</select>
 					<label>Tipo Dni*</label>
@@ -30,9 +34,14 @@
 				<input name="nombre" id="productorLabel" type="text">
 				<label for="nombre">Nombre *</label>
 			</div>	
-			<div class="input-field  col-md-6">
-				<input name="genero" id="productorLabel" type="text">
-				<label for="genero">Genero *</label>
+			<div class="input-field col-md-6">
+				<select  name="selectOrigenPago" aria-required="true" id="selectDni">
+					<option value="">Seleccione..</option>
+					#foreach($datosIn in $datosGenero)
+						<option value="$datosIn.get("P_TF_RV.RV_LOW_VALUE")">$datosIn.get("P_TF_RV.RV_MEANING")</option>
+					#end
+				</select>
+				<label>Genero*</label>
 			</div>	
 			<div class="input-field  col-md-6">
 				<input name="facheNac" id="productorLabel" type="text">
@@ -42,10 +51,15 @@
 				<input name="nacio" id="productorLabel" type="text">
 				<label for="nacio">Nacionalidad *</label>
 			</div>	
-			<div class="input-field  col-md-6">
-				<input name="productorLabel" id="productorLabel" type="text">
-				<label for="lugarNac">Lugar de Nacimiento *</label>
-			</div>	
+			<div class="input-field col-md-6">
+				<select  name="selectOrigenPago" aria-required="true" id="selectDni">
+					<option value="">Seleccione..</option>
+					#foreach($datosIn in $datosLugarNacimiento)
+						<option value="$datosIn.get("P_TF_CAES.CAES_DE_ESTADO")">$utilToolScreen.nombreMayuscula($datosIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
+					#end
+				</select>
+				<label>Lugar Nacimiento*</label>
+			</div>		
 			<div class="input-field  col-md-6">
 				<input name="productorLabel" id="productorLabel" type="text">
 				<label for="lugarNac">Estado Civil *</label>

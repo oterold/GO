@@ -224,45 +224,125 @@ function buscarPersona(){
 		    		$("#mensajeDni").css("display","none");
 		    		$("#nombreAseg").text(primeraLetraMayus(primeraLetraMayus(json[0]["P_TF_CABU_CABU_NM_APELLIDO_RAZON"]) +" "+ json[0]["P_TF_CABU_CABU_NM_PERSONA"]))
 		    		cargarDatosModalDocumento(json);
+		    		$("#aseguradoPrincipal").css("background-color","#2f780a");
 		    		cargarDatosComunicacion(json[0]["P_TF_CABU_CABU_NU_PERSONA"],1);
 		    		cargarDatosComunicacion(json[0]["P_TF_CABU_CABU_NU_PERSONA"],4);
 		    		cargarDatosBanco(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
 		    		cargarDatosDomiciolio(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
-		    		$(".iconos-modal").each(function(){
-		    	 	    $(this).css("display","");
-		    	 	});
+		     	    $("#btnAgregarPersona").css("display","none");
 		    	}catch(e)
 		    	{
 		    	}
 		    	},
 		    error : function(xhr, status) {
-
+		    	ocultarDatosPersona(documento);
 		    },
 		});
 	}else{
-		if(documento.length == 0){
-    		$("#mensajeDni").css("display","none");
-		}else{
-			$("#mensajeDni").css("display","");
-		}
-		$("#nombreAseg").text("");
-		$("#telefonoPersona").val("");
-		$("#emailPersona").val("");
-		$("#datosBanco").val("");
-		var d1 = document.getElementById("selecDomicilio");
-   		d1.innerHTML = '<option value="" selected></option>';
-	    $('select').formSelect();
-	    
-		
-		$(".iconos-modal").each(function(){
-	 	    $(this).css("display","none");
-	 	});
-	    
-   		
-   		M.updateTextFields();
+		ocultarDatosPersona(documento);
 	}
 	}
 
+
+function ocultarDatosPersona(documento){
+	if(documento.length == 0){
+		$("#mensajeDni").css("display","none");
+	}else{
+		$("#mensajeDni").css("display","");
+	}
+	$("#nombreAseg").text("");
+	
+	$(".campo-persona").each(function(){
+ 	    $(this).val("");
+ 	});
+    $('select').formSelect();
+	    $("#btnAgregarPersona").css("display","");
+	var d1 = document.getElementById("selecDomicilio");
+	d1.innerHTML = '<option value="" selected></option>';
+	$("#aseguradoPrincipal").css("background-color","#0b4376");
+
+	M.updateTextFields();
+}
+function cargarFecha(){
+	var fecha = new Date(); //Fecha actual
+	  var mes = fecha.getMonth()+1; //obteniendo mes
+	  var dia = fecha.getDate(); //obteniendo dia
+	  var ano = fecha.getFullYear(); //obteniendo año
+	  if(dia<10)
+	    dia='0'+dia; //agrega cero si el menor de 10
+	  if(mes<10)
+	    mes='0'+mes //agrega cero si el menor de 10
+	    
+	 return dia+mes+ano;   
+}
+
+function cargarPromoPlan(){
+	var promo = $("#datoPromo").val();
+	var plan = $("#datoPlan").val();
+	var f = new Date();
+	var fecha = cargarFecha();
+	
+	 $.ajax({
+		    url : 'guardarPlanPromo',
+		    contentType: 'application/json', 
+		    data : {promo:promo,plan:plan,fecha:fecha},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    			location.href="/PSPES/cotizacionStep6"
+		    	}
+		    	catch(e)
+		    	{
+		        	mostrarError('Por favor informe a sistema con el cod de error: 91726.',e);
+		    	}
+		    	$.unblockUI();
+		    	
+		    	
+		    	},
+		    error : function(xhr, status) {
+		    	mostrarError(xhr['responseText']);
+		    },
+	});
+}
+
+
+
+function confirmarCotizacion(){
+	 $.ajax({
+		    url : 'confirmarCotizacion',
+		    contentType: 'application/json', 
+		    data : {},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		$(".botones-promociones").each(function(){
+		    	 	    $(this).css("pointer-events","auto");
+		    		});
+		    		
+		    		$("#btnSiguienteStep5").css("display","");
+		    		$("#btnConfirmarStep5").css("display","none");
+		    		Swal.fire({
+		    			  type: 'success',
+		    			  title: 'Se confirm\u00F3 la cotizaci\u00F3n',
+		    			  showConfirmButton: false,
+		    			  timer: 2000
+		    			})
+		    	}
+		    	catch(e)
+		    	{
+		        	mostrarError('Por favor informe a sistema con el cod de error:91221228716.',e);
+		    	}
+		    	$.unblockUI();
+		    	
+		    	
+		    	},
+		    error : function(xhr, status) {
+		    	mostrarError(xhr['responseText']);
+		    },
+	});
+}
 
 function cargarDatosDomiciolio(persona){
 	 $.ajax({
@@ -1019,6 +1099,11 @@ function inicioCotizacionStep5(){
 		    $('.tooltipped').tooltip();
 		  });
 	comisionEstandar();
+	
+	$(".botones-promociones").each(function(){
+ 	    $(this).css("pointer-events","none");
+	});
+	
 }
 
 
@@ -1529,7 +1614,7 @@ function quitarSelectCardPromo(){
 	
 }
 
-function selecionarCotizacion(id){
+function selecionarCotizacion(id,promo,plan){
     if ($("#card_"+id).hasClass('animated pulse')){
     	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado");
     	$("#check_"+id).css("display","none");
@@ -1542,11 +1627,14 @@ function selecionarCotizacion(id){
     	$("#check_"+id).css("display","");
     	$("#card_"+id).addClass("animated pulse");
     }
+    
+    $("#datoPromo").val(promo)
+    $("#datoPlan").val(plan)
 }
 
 
 
-function selecionarCotizacionB(id){
+function selecionarCotizacionB(id,promo,plan){
     if ($("#card_"+id).hasClass('animated pulse')){
     	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado-b");
     	$("#check_"+id).css("display","none");
@@ -1559,6 +1647,9 @@ function selecionarCotizacionB(id){
     	$("#check_"+id).css("display","");
     	$("#card_"+id).addClass("animated pulse");
     }
+    
+    $("#datoPromo").val(promo)
+    $("#datoPlan").val(plan)
 }
 
 function selecionarPromo(id){

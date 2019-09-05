@@ -2,6 +2,9 @@
 <input type="hidden" value="$datosCoti.promocionA" id="promoUno"/>
 <input type="hidden" value="$datosCoti.promocionB" id="promoDos"/>
 <input type="hidden" value="$datosCoti.promocionC" id="promoTres"/>
+<input type="hidden" value="" id="datoPlan"/>
+<input type="hidden" value="" id="datoPromo"/>
+
 <section class="container-fluid">
    <div class="containerMargenes" style="padding-top:50px;" id="main">
       <div class="row">
@@ -46,8 +49,14 @@
 						<i class="material-icons right" style="color:white;">email</i>
                       </button>
 					</div> 
-					<div class="col-sm-12  col-md-3">
-						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep6" name="action">Siguiente
+					<div class="col-sm-12 col-md-3" id="btnConfirmarStep5">
+						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="confirmarCotizacion();"  name="action" style="color:white;">Confirmar
+        							<i class="material-icons right" style="color:white;">send</i>
+						</a>
+					</div>
+					
+					<div class="col-sm-12  col-md-3" style="display:none;" id="btnSiguienteStep5">
+						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="cargarPromoPlan();" style="color:white;" name="action">Siguiente
         							<i class="material-icons right" style="color:white;">send</i>
 						</a>
 					</div>
