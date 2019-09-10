@@ -25,6 +25,7 @@ import com.pseguros.pes.bean.DatoDinamicoType;
 import com.pseguros.pes.bean.DatosCotizacionGO;
 import com.pseguros.pes.bean.DatosDinamicosCotizador;
 import com.pseguros.pes.bean.DatosMostrarPanelB;
+import com.pseguros.pes.bean.DatosTomadorAseg;
 import com.pseguros.pes.bean.datoValoDefaultCotizacion;
 import com.pseguros.pes.controller.pub.AbstractPubController;
 import com.pseguros.pes.generic.EnvironmentContextHolder;
@@ -47,7 +48,9 @@ public class GoCotizador extends AbstractPubController {
 	private static final String COTIZADOR_STEP_COBERTURAS = "partials/pes/cotizador/stepCoberturas/stepCoberturasCotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_COTIZADOR = "partials/pes/cotizador/step0/step0CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_DATOS_DEL_ASEGURADO = "partials/pes/cotizador/step6/step6CotizacionTemplateGenerales";
+	private static final String COTIZADOR_STEP_DATOS_DEL_BIEN = "partials/pes/cotizador/step7/step7CotizacionTemplateGenerales";
 
+	
 	
 	
 	
@@ -406,7 +409,7 @@ public class GoCotizador extends AbstractPubController {
 
 		Map<String, Object> mapa = new HashMap<String, Object>();
 		try {
-			logger.debug("Mostrar Pantalla step 5 coberturas cotizador GO ");
+			logger.debug("Mostrar Pantalla step 5 cotizador GO ");
 
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 
@@ -455,7 +458,7 @@ public class GoCotizador extends AbstractPubController {
 
 		Map<String, Object> mapa = new HashMap<String, Object>();
 		try {
-			logger.debug("Mostrar Pantalla step 6 coberturas cotizador GO ");
+			logger.debug("Mostrar Pantalla step 6 cotizador GO ");
 
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
@@ -465,8 +468,10 @@ public class GoCotizador extends AbstractPubController {
 			Future<ArrayList> datosDocumentos = goCotizador.datosDocumentos(datosCoti, getEntorno(request), getUser(request));
 			Future<ArrayList> datosGenero = goCotizador.datosGenero(datosCoti, getEntorno(request), getUser(request));
 			Future<ArrayList> datosLugarNacimiento = goCotizador.datosLugarNacimiento(datosCoti, getEntorno(request), getUser(request));
+			Future<ArrayList> datosEstadoCivil = goCotizador.datosEstadoCivil(datosCoti, getEntorno(request), getUser(request));
+			Future<ArrayList> datosPaises = goCotizador.datosPaises(datosCoti, getEntorno(request), getUser(request));
 
-			while (!(datosProfesiones.isDone() && datosDocumentos.isDone())) {
+			while (!(datosProfesiones.isDone() && datosDocumentos.isDone() && datosGenero.isDone() && datosEstadoCivil.isDone() && datosPaises.isDone())) {
 				Thread.sleep(5);
 			}
 			
@@ -476,11 +481,52 @@ public class GoCotizador extends AbstractPubController {
 			mapa.put("datosProfesiones", datosProfesiones.get());
 			mapa.put("datosDocumentos", datosDocumentos.get());
 			mapa.put("datosLugarNacimiento", datosLugarNacimiento.get());
+			mapa.put("datosEstadoCivil", datosEstadoCivil.get());
 			mapa.put("datosGenero", datosGenero.get());
+			mapa.put("datosPaises", datosPaises.get());
+
 			
 			mapa.put("card", 0);
 			
 			return new ModelAndView(COTIZADOR_STEP_DATOS_DEL_ASEGURADO, mapa);
+
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto step 6", e);
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("errorMsg", "" + e.getCause().getMessage());
+		}
+
+		return new ModelAndView(PANTALLA_ERROR, mapa);
+	}
+	
+	
+	@RequestMapping(value = "/cotizacionStep7", method = RequestMethod.GET)
+	public ModelAndView getCotizacionStep7(HttpSession session, HttpServletRequest request, Locale locale, Model model) throws Exception {
+
+		Map<String, Object> mapa = new HashMap<String, Object>();
+		try {
+			logger.debug("Mostrar Pantalla step 7 cotizador GO ");
+
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+
+			
+			Future<ArrayList> datosDelBien = goCotizador.datosDelBien(datosCoti, getEntorno(request), getUser(request));
+			ArrayList datos = cargarDinamicos(request, datosCoti, datosDelBien);
+
+			while (!(datosDelBien.isDone())) {
+				Thread.sleep(5);
+			}
+			
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("datosCoti", datosCoti);
+			mapa.put("datosDinamicos", datosDelBien.get());
+			mapa.put("datosResultadoDinamico", datos);
+
+			mapa.put("card", 1);
+			
+			return new ModelAndView(COTIZADOR_STEP_DATOS_DEL_BIEN, mapa);
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 6", e);
@@ -516,7 +562,7 @@ public class GoCotizador extends AbstractPubController {
 			return "";
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos generales", e);
-			return "Error al cargar los datos generales";
+			return e.getMessage();
 		}
 	}
 
@@ -536,7 +582,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos generales", e);
-			return "Error al cargar los datos generales";
+			return e.getMessage();
 		}
 	}
 
@@ -558,7 +604,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos parametricos", e);
-			return "Error al cargar los datos parametricos";
+			return e.getMessage();
 		}
 	}
 	
@@ -575,7 +621,7 @@ public class GoCotizador extends AbstractPubController {
 			return goCotizador.datosParametricos(datosCoti, tabla, dato, getEntorno(request), getUser(request));
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos parametricos", e);
-			return "Error al cargar los datos parametricos";
+			return e.getMessage();
 		}
 	}
 	
@@ -600,7 +646,7 @@ public class GoCotizador extends AbstractPubController {
 			
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos parametricos", e);
-			return "Error al cargar los datos parametricos";
+			return e.getMessage();
 		}
 	}
 	
@@ -621,7 +667,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos generales", e);
-			return "Error al cargar el tipo de vehiculo";
+			return e.getMessage();
 		}
 	}
 
@@ -639,7 +685,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos generales", e);
-			return "Error al validar la fecha de nacimiento";
+			return e.getMessage();
 		}
 	}
 
@@ -657,7 +703,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al cargar la suma asegurada", e);
-			return "Error al cargar la suma asergurada";
+			return e.getMessage();
 		}
 
 	}
@@ -673,7 +719,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al cargar la suma asegurada", e);
-			return "Error al cargar la suma asergurada";
+			return e.getMessage();
 		}
 
 	}
@@ -694,7 +740,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron pagos.";
+			return e.getMessage();
 		}
 	}
 
@@ -716,7 +762,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron productos.";
+			return e.getMessage();
 		}
 	}
 
@@ -732,7 +778,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontro una vigencia tecnica.";
+			return e.getMessage();
 		}
 	}
 
@@ -747,7 +793,7 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron planes de pagos.";
+			return e.getMessage();
 		}
 	}
 
@@ -770,7 +816,7 @@ public class GoCotizador extends AbstractPubController {
 			return goCotizador.guardarDatosDelBien(datosCoti, getEntorno(request), getUser(request));
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 
@@ -797,7 +843,7 @@ public class GoCotizador extends AbstractPubController {
 			return goCotizador.guardarDatosDelBien(datosCoti, getEntorno(request), getUser(request));
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 
@@ -817,7 +863,7 @@ public class GoCotizador extends AbstractPubController {
 			return goCotizador.recalculoComision(datosCoti, getEntorno(request), getUser(request));
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 	
@@ -829,11 +875,15 @@ public class GoCotizador extends AbstractPubController {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 			String documento = request.getParameter("documento");
-
-			return goCotizador.buscarPersona(datosCoti,documento, getEntorno(request), getUser(request));
+			DatosTomadorAseg datosTomador = new DatosTomadorAseg();			
+			datosTomador.setDni(documento);
+			datosCoti.setDatosAseg(datosTomador);
+			
+			guardarEnSession(request, datosCoti);
+			return goCotizador.buscarPersona(datosCoti,datosTomador, getEntorno(request), getUser(request));
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 	
@@ -843,14 +893,13 @@ public class GoCotizador extends AbstractPubController {
 		try {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
-			String persona = request.getParameter("persona");
 			String codigo = request.getParameter("codigo");
 			
-			return goCotizador.buscarComunicacion(datosCoti,persona,codigo,getEntorno(request), getUser(request));
+			return goCotizador.buscarComunicacion(datosCoti,codigo,getEntorno(request), getUser(request));
 			
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 	
@@ -862,13 +911,11 @@ public class GoCotizador extends AbstractPubController {
 		try {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
-			String persona = request.getParameter("persona");
-			datosCoti.setNuPersona(persona);
-			return goCotizador.buscarBanco(datosCoti,persona,getEntorno(request), getUser(request));
+			return goCotizador.buscarBanco(datosCoti,getEntorno(request), getUser(request));
 			
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 	
@@ -878,12 +925,11 @@ public class GoCotizador extends AbstractPubController {
 		try {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
-			String persona = request.getParameter("persona");
-			return goCotizador.buscarDomicilio(datosCoti,persona,getEntorno(request), getUser(request));
+			return goCotizador.buscarDomicilio(datosCoti,getEntorno(request), getUser(request));
 			
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 	
@@ -899,7 +945,7 @@ public class GoCotizador extends AbstractPubController {
 			
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
 	
@@ -915,9 +961,76 @@ public class GoCotizador extends AbstractPubController {
 			
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
-			return "No se encontraron datos del bien.";
+			return e.getMessage();
 		}
 	}
+	
+	@RequestMapping(value = "/guardarDomicilio", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getGuardarDomicilio(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String valor = RequestCotizadorUtils.obtenerDatosFormateadosDomicilio(datosCoti, request);
+			String condicion = request.getParameter("condicion");
+			return goCotizador.guardarDomicilio(datosCoti,valor,condicion,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+	
+	
+	@RequestMapping(value = "/guardarComunicacion", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getGuardarComunicacion(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String valor = RequestCotizadorUtils.obtenerDatosFormateadosDomicilio(datosCoti, request);
+			String conz = request.getParameter("conz");
+			return goCotizador.guardarComunicacion(datosCoti,valor,conz,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+	
+	
+	@RequestMapping(value = "/guardarDatosBancarios", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getGuardarDatosBancarios(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String valor = "1;5;VI;4546570955309807;;;;#";
+			return goCotizador.guardarDatosBancarios(datosCoti,valor,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+	
+	
+	@RequestMapping(value = "/cargarNuevaPersona", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getCargarNuevaPersona(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String valor = RequestCotizadorUtils.obtenerDatosFormateadosCrearPersona(datosCoti, request);
+			return goCotizador.crearPersona(datosCoti,valor,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+	
+	
 	
 	
 	
@@ -926,6 +1039,8 @@ public class GoCotizador extends AbstractPubController {
 	// ------------------------------------------------
 	// ---------------------------------------------------------------------------------------------------------------------------------------
 
+
+	
 	private ArrayList cargarDinamicos(HttpServletRequest request, DatosCotizacionGO datosCoti, Future<ArrayList> datosDinamicos) throws InterruptedException, ExecutionException, Exception {
 		
 		ArrayList dinamicos = datosDinamicos.get();

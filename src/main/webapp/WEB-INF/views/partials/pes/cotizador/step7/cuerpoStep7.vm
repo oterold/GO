@@ -1,0 +1,66 @@
+#set( $band="0")
+	#foreach($datosDinamicos in $datosResultadoDinamico)
+    	##pregunta si es visible
+    	#if($datosDinamicos.dato.crcoStVisible == "S")
+    			##pregunta si tiene select y no es un check
+        			#if($datosDinamicos.dato.crdpTieneLdv == "S" && $datosDinamicos.dato.crdpInSiNo == "N")
+                        			#if($datosDinamicos.dato.inbInDependencias.length() > 0)
+            						<div class="input-field col-md-5 ">
+										<select class="enviarForm selectorMaterialice cc$datosDinamicos.dato.crcoCrtdCdDato $utilToolScreen.getCssDependencia($datosDinamicos.dato.inbInDependencias)" title="$datosDinamicos.dato.crcdDeHelp" id="$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
+										<option  value="$datosDinamicos.dato.inbInDependencias">Seleccione..</option>
+                        			#else
+									<div class="input-field col-md-5">
+										<select class="enviarForm selectorMaterialice" onchange="cargarDependencias(this.id)" title="$datosDinamicos.dato.crcdDeHelp" id="d$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
+                        				<option value="">Seleccione..</option>
+                        				##recorro la lista con los datos del selector
+                        				#foreach($datosSelect in $datosDinamicos.listaValores)
+											#if($datosSelect.get("P_TF_CRTB.CRTB_CD_DATO") == $datosDinamicos.dato.crcoDato)
+												<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
+											#else
+												<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
+											#end
+                        				#end
+                        			#end 
+										</select>
+                            <label title="$datosDinamicos.dato.crcdDeHelp">$datosDinamicos.dato.crcdDeDato#if($datosDinamicos.dato.crcoInRequerido.length() > 0) * #end</label>
+                        </div>
+						
+			##pregunta si es un label y un check
+			#elseif($datosDinamicos.dato.crdpInSiNo == "S"  && $datosDinamicos.dato.crdpTieneLdv == "S")  
+        	<div class="switch col-md-5 centrar-switch pt-2 pb-2">
+                <label title="$datosDinamicos.dato.crcdDeHelp">
+                 $datosDinamicos.dato.crcdDeDato
+                  <input type="checkbox" class="enviarForm" name="S$datosDinamicos.dato.crcoCrtdCdDato" id="S$datosDinamicos.dato.crcoCrtdCdDato" #if($datosDinamicos.dato.crcoDato == "S") checked #end>
+                  <span class="lever"></span>
+                </label>
+              </div>
+        			
+			
+		##ultima opcion es un label	
+    	#else
+    		<div class="input-field col-md-5">
+				<input class="enviarForm"  value="$datosDinamicos.dato.crcoDato" id="$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato" type="text">
+				<label style="cursor:pointer;z-index:30" title="$datosDinamicos.dato.crcdDeHelp" for="$datosDinamicos.dato.crcoCrtdCdDato">$datosDinamicos.dato.crcdDeDato
+				</label>
+            </div>	
+		#end
+    			
+	#if($band == 0)
+		<div class="col-md-2">
+		</div>
+		#set($band="1")
+	#else
+		#set($band="0")
+	#end
+		#end
+	#end
+	
+	<br>
+		<br>
+			<br>
+					<br>
+		<br>
+			<br>
+					<br>
+		<br>
+			<br>

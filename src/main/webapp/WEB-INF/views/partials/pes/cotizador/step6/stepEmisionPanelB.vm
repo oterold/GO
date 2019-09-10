@@ -23,8 +23,10 @@
                    		<div class="summary-block">
                         <div class="summary-content">
                            <div class="summary-head">
-								<h5 style="border:none;"  class="summary-title">Planes Cotizados</h5>
+								<h5 style="border:none;"  class="summary-title">Plan Cotizados</h5>
 										<h6  class="summary-title datos-cotizacion">
+										Plan $datosCoti.plan
+										/
 										#if($datosCoti.promocion == $datosCoti.promoA)
 											$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)
 										#elseif($datosCoti.promocion == $datosCoti.promoB)
@@ -32,7 +34,7 @@
 										#else
 											$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC)
 										#end
-										/ Plan $datosCoti.plan
+										/   $utilToolScreen.formatearMonedaCotizador($datosCoti.valorPromo)
                            </div>
                            <div class="summary-price">
 							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
@@ -51,8 +53,12 @@
                                 Tomador / Asegurado
                               </h5>
 							 #end
-							  #if($datosCoti.datosGenerales.productor.length() > 0)
-							 	 <h6  class="summary-title datos-cotizacion"> </h6>
+							  #if($datosCoti.datosAseg.dni.length() > 0)
+							 	 <h6  class="summary-title datos-cotizacion"> 
+								$datosCoti.datosAseg.dni / $datosCoti.datosAseg.calle 
+								$datosCoti.datosAseg.numero / $datosCoti.datosAseg.telefono / 
+								$datosCoti.datosAseg.email 
+							 	 </h6>
 							  #end
                            </div>
                            <div class="summary-price">

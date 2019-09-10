@@ -6,7 +6,7 @@
 	     </div>
 	    <div class="row pl-5 pr-5" style="width:100%">
 			    <div class="input-field col-md-2">
-					<select  name="selectOrigenPago" aria-required="true" id="selectDni">
+					<select  name="selectDni" aria-required="true" id="selectDni" class="ingresoNuevaPersona">
 						<option value="">Seleccione..</option>
 						#foreach($datosIn in $datosDocumentos)
     						#if($datosIn.get("P_TF_CATU.CATU_TP_DOCUMENTO") == "DNI")
@@ -19,23 +19,23 @@
 					<label>Tipo Dni*</label>
 				</div>
 			<div class="input-field  col-md-4">
-				<input name="dni" id="clienteDniA" type="text">
-				<label for="dni">Numero de Documento </label>
+				<input name="clienteDni" id="clienteDni" type="text" class="ingresoNuevaPersona">
+				<label for="clienteDni">Numero de Documento </label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="cuit" id="productorLabel" type="text">
+				<input name="cuit" id="cuit" type="text" class="ingresoNuevaPersona">
 				<label for="cuit">Cuit / Cuil </label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="apell" id="productorLabel" type="text">
+				<input name="apell" id="apell" type="text" class="ingresoNuevaPersona">
 				<label for="apell">Apellido *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="nombre" id="productorLabel" type="text">
+				<input name="nombre" id="nombre" type="text" class="ingresoNuevaPersona">
 				<label for="nombre">Nombre *</label>
 			</div>	
 			<div class="input-field col-md-6">
-				<select  name="selectOrigenPago" aria-required="true" id="selectDni">
+				<select  name="selectGenero" aria-required="true" id="selectGenero" class="ingresoNuevaPersona">
 					<option value="">Seleccione..</option>
 					#foreach($datosIn in $datosGenero)
 						<option value="$datosIn.get("P_TF_RV.RV_LOW_VALUE")">$datosIn.get("P_TF_RV.RV_MEANING")</option>
@@ -44,28 +44,42 @@
 				<label>Genero*</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="facheNac" id="productorLabel" type="text">
-				<label for="facheNac">Fecha de Nacimiento *</label>
+				<input name="fechaNac" id="fechaNac" type="text" class="ingresoNuevaPersona">
+				<label for="fechaNac">Fecha de Nacimiento *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="nacio" id="productorLabel" type="text">
-				<label for="nacio">Nacionalidad *</label>
+				<select  name="nacionalidad" class="ingresoNuevaPersona" aria-required="true" id="nacionalidad">
+					<option value="">Seleccione..</option>
+					#foreach($datosIn in $datosPaises)
+						<option value="$datosIn.get("P_TF_CAPA.CAPA_CD_PAIS")">$utilToolScreen.nombreMayuscula($datosIn.get("P_TF_CAPA.CAPA_DE_PAIS"))</option>
+					#end
+				</select>
+				<label>Nacionalidad*</label>
 			</div>	
+			
+			
 			<div class="input-field col-md-6">
-				<select  name="selectOrigenPago" aria-required="true" id="selectDni">
+				<select  name="lugarNacimiento" class="ingresoNuevaPersona" aria-required="true" id="lugarNacimiento">
 					<option value="">Seleccione..</option>
 					#foreach($datosIn in $datosLugarNacimiento)
-						<option value="$datosIn.get("P_TF_CAES.CAES_DE_ESTADO")">$utilToolScreen.nombreMayuscula($datosIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
+						<option value="$datosIn.get("P_TF_CAES.CAES_CD_ESTADO")">$utilToolScreen.nombreMayuscula($datosIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
 					#end
 				</select>
 				<label>Lugar Nacimiento*</label>
 			</div>		
-			<div class="input-field  col-md-6">
-				<input name="productorLabel" id="productorLabel" type="text">
-				<label for="lugarNac">Estado Civil *</label>
+			
+			
+					<div class="input-field col-md-6">
+				<select  name="estadoCivil" aria-required="true" id="estadoCivil" class="ingresoNuevaPersona">
+					<option value="">Seleccione..</option>
+					#foreach($datosIn in $datosEstadoCivil)
+						<option value="$datosIn.get("P_TF_RV.RV_LOW_VALUE")">$utilToolScreen.nombreMayuscula($datosIn.get("P_TF_RV.RV_MEANING"))</option>
+					#end
+				</select>
+				<label>Estado Civil*</label>
 			</div>	
 			<div class="input-field col-md-6">
-				<select  name="selectOrigenPago" aria-required="true" id="selectDni">
+				<select  name="profesion" aria-required="true" id="profesion" class="ingresoNuevaPersona">
 					<option value="">Seleccione..</option>
 					#foreach($datosIn in $datosProfesiones)
 						<option value="$datosIn.get("P_TF_CAPW.CAPW_CD_PROFESION")">$datosIn.get("P_TF_CAPW.CAPW_DE_PROFESION")</option>
@@ -76,29 +90,29 @@
 			<div class="switch col-md-5 centrar-switch">
                 <label>
                  &iquest;Expuesto Politicamente?
-                  <input type="checkbox">
+                  <input name="checkPoliticamente" id="checkPoliticamente" type="checkbox" class="ingresoNuevaPersona">
                   <span class="lever"></span>
                 </label>
     	  </div>
 		  <div class="switch col-md-5 centrar-switch">
             <label>
              &iquest;Sujeto Obligado Art. 230?
-              <input type="checkbox">
+              <input name="checkArt" id="checkArt" type="checkbox" class="ingresoNuevaPersona">
               <span class="lever"></span>
             </label>
      	 </div>
 		 
 		  <div class="input-field col-md-12">
 			<i class="fas fa-exclamation-triangle prefix icono-input"></i>
-			<input id="datoError" type="text" class="validate">
-			<label for="datoError">Observar el/los errores en los datos cargados para su revisi&oacute;n *</label>
+			<input id="observacion" name="observacion" type="text">
+			<label for="observacion">Observar el/los errores en los datos cargados para su revisi&oacute;n *</label>
           </div>
 
  </div>
     <div class="row">
     	<div class="col-md-12">
 			<button href="#!" class="modal-close pull-left btn-flat">Cerrar</button>
-			<button href="#!" class="modal-close pull-right btn-flat">Guardar</button>
+			<button onclick="cargarNuevaPersona();" class="modal-close pull-right btn-flat">Guardar</button>
       	</div>
       </div>
     </div>

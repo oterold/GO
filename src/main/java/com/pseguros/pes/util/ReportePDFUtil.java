@@ -1,13 +1,19 @@
 package com.pseguros.pes.util;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.FileCopyUtils;
 
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -16,7 +22,9 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
 
+import com.pseguros.pes.bean.DatosCotizacionGO;
 import com.pseguros.pes.controller.pub.entidades.PolizaPubController;
+import com.pseguros.pes.cotizador.GoCotizador;
 
 public class ReportePDFUtil {
 	
@@ -46,4 +54,6 @@ public class ReportePDFUtil {
 			
 			return destinoBoleta;
 		}
+	
+	
 }

@@ -1,0 +1,50 @@
+	<input type="hidden" name="direccionConsecutivo" class="ingresoDomicilio" value="" id="direccionConsecutivo"/>
+	<input type="hidden" name="codigoUbicacion" class="ingresoDomicilio" value="" id="codigoUbicacion"/>
+
+<div id="modalIngresoDomicilio" class="modal" style="height:550px;padding:30px;">
+	   <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Ubicaci&oacute;n</h3>
+<div class="plan-selection">
+    <div class="plan-data">
+        <div class="row" style="margin-bottom:0px;" id="buscarUbicacion">
+                <div class="input-field col-md-8">
+    				<input class="datoTablaClass"  value="" id="inputUbicacion" name="inputUbicacion" type="text">
+    					<label for="inputUbicacion" style="cursor:pointer;z-index:30" title="$datosDinamicos.dato.crcdDeHelp" for="first_name">Busque Calle,Localidad,Provincia,Codigo Postal *
+    				</label>
+                </div>
+    			<div class="col-md-2">
+                    <a onclick="buscarDirecciones();" style="background-color:#0b4376;" onclick="agregarAccesorios();" class="btn-floating btn-small">
+                          <i class="material-icons">search</i>
+                    </a>    		
+				</div>
+         </div>
+		 <div class="row" id="mostrarUbicacionVarias" style="display:none;">
+			<table>
+                <thead>
+                  <tr>
+                      <th>C&oacute;digo Postal</th>
+                      <th>Pais</th>
+                      <th>Provincia</th>
+					  <th>Localidad</th>
+                      <th>Calle</th>
+                      <th>Seleccionar</th>
+                  </tr>
+                </thead>
+                <tbody id="contenidoTablaUbicaciones">
+                </tbody>
+      </table>
+		 </div>
+		 <div class="row" id="mostrarUbicacion" style="display:none">
+		 </div>
+		 
+    </div>
+</div>
+
+    <div class="row">
+    	<div class="col-md-12">
+			<button onclick="reiniciarDomicilio();" class="modal-close pull-left btn-flat">Cerrar</button>
+			<button onclick="guardarDatosDomicilioNuevo();" class="modal-close pull-right btn-flat">Guardar</button>
+			
+      	</div>
+      </div>
+	   
+ </div>
