@@ -17,7 +17,7 @@
 				#if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") != "")
     					#if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
 							#set ($valor = $velocityCount)
-    					<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")');" style="cursor:pointer;">
+    					<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")');" style="cursor:pointer;">
     						<div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
             					<div data-target="modal1" class="modal-trigger" style="position: relative;bottom: 20px;cursor:pointer;">
             						<i class="fas fa-plus pull-right"></i>
@@ -30,7 +30,7 @@
     						</div>
     					</div>
     					#else
-    					<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")');" style="cursor:pointer;">
+    					<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")');" style="cursor:pointer;">
     						<div class="card-panel-mio card-panel" id="cuerpo_$valor">
     							<div data-target="modal1" class="modal-trigger" style="position: relative;cursor:pointer;">
     								<i class="fas fa-plus pull-right"></i>
@@ -62,7 +62,7 @@
             		#set ($valor = $velocityCount+"_B")
             		#if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
             			
-								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")');" style="cursor:pointer;">
+								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")');" style="cursor:pointer;">
     						<div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
             					<div data-target="modal1" class="modal-trigger" style="position: relative;bottom: 20px;cursor:pointer;">
             						<i class="fas fa-plus pull-right"></i>
@@ -75,7 +75,7 @@
     						</div>
     					</div>
 					#else
-								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")');" style="cursor:pointer;">
+								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")');" style="cursor:pointer;">
     						<div class="card-panel-mio card-panel" id="cuerpo_$valor">
     							<div data-target="modal1" class="modal-trigger" style="position: relative;cursor:pointer;">
     								<i class="fas fa-plus pull-right"></i>
@@ -108,7 +108,7 @@
             	#set ($valor = $velocityCount+"_C")
             		#if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
             			
-						<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")');" style="cursor:pointer;">
+						<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")');" style="cursor:pointer;">
     						<div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
             					<div data-target="modal1" class="modal-trigger" style="position: relative;bottom: 20px;cursor:pointer;">
             						<i class="fas fa-plus pull-right"></i>
@@ -121,7 +121,7 @@
     						</div>
     					</div>
 					#else
-								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")');" style="cursor:pointer;">
+								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")');" style="cursor:pointer;">
     						<div class="card-panel-mio card-panel" id="cuerpo_$valor">
     							<div data-target="modal1" class="modal-trigger" style="position: relative;cursor:pointer;">
     								<i class="fas fa-plus pull-right"></i>

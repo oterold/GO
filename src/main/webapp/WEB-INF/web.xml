@@ -65,6 +65,7 @@
 			<url-pattern>/wro/*</url-pattern>
 		</filter-mapping>  
 
+
 <!-- 
 		<filter>
     <filter-name>SpnegoHttpFilter</filter-name>
@@ -132,6 +133,7 @@
 </filter-mapping>
 
 -->
+
 <error-page>
     <location>/errors</location>
 </error-page>

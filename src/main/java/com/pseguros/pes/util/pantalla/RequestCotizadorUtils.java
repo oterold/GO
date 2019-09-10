@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.codehaus.groovy.runtime.metaclass.NewStaticMetaMethod;
+
 import net.sf.json.JSONException;
 
 import com.google.gson.JsonArray;
@@ -16,6 +18,8 @@ import com.google.gson.JsonParser;
 import com.pseguros.pes.bean.DatosCotizacionGO;
 import com.pseguros.pes.bean.DatosDinamicosCotizador;
 import com.pseguros.pes.bean.DatosMostrarPanelB;
+import com.pseguros.pes.bean.DatosTomadorAseg;
+import com.pseguros.pes.bean.IngresarPersonaCotizador;
 
 public class RequestCotizadorUtils {
 
@@ -98,6 +102,39 @@ public class RequestCotizadorUtils {
         return dato;
 	}
 
+	
+	
+	public static String obtenerDatosFormateados(DatosCotizacionGO datosCoti,HttpServletRequest request) {
+		String datos = request.getParameter("datos");
+		JsonParser parser = new JsonParser();
+		String valor = "";
+        JsonArray gsonDependencias = parser.parse(datos).getAsJsonArray();
+        for (JsonElement obj : gsonDependencias) {
+            JsonObject gsonDependenciasObj = obj.getAsJsonObject();
+          valor = valor +  gsonDependenciasObj.get("value").toString().replace('"', ' ').trim()+";";
+        }
+        return valor+";#";
+		
+	}
+	
+	
+	
+
+	public static String obtenerDatosFormateadosDomicilio(DatosCotizacionGO datosCoti, HttpServletRequest request) {
+		String datos = request.getParameter("datos");
+		JsonParser parser = new JsonParser();
+		String valor = "";
+        JsonArray gsonDependencias = parser.parse(datos).getAsJsonArray();
+        for (JsonElement obj : gsonDependencias) {
+            JsonObject gsonDependenciasObj = obj.getAsJsonObject();
+          valor = valor +  gsonDependenciasObj.get("value").toString().replace('"', ' ').trim()+";";
+          guardarDatosenSession(gsonDependenciasObj.get("name"),gsonDependenciasObj.get("value"),datosCoti);
+        }
+        return valor+"#";
+	}
+	
+	
+	
 	public static DatosMostrarPanelB obtenerDatosDinamicosMostrarPanelB(DatosCotizacionGO datosCoti, HttpServletRequest request, DatosMostrarPanelB datosPanelB) {
 		String dato = request.getParameter("objDatosMostrar");
 		JsonParser parser = new JsonParser();
@@ -128,4 +165,105 @@ public class RequestCotizadorUtils {
 		return datosPanelB;
 	}
 
+
+
+
+	public static String obtenerDatosFormateadosCrearPersona(
+			DatosCotizacionGO datosCoti, HttpServletRequest request) {
+		String datos = request.getParameter("datos");
+		JsonParser parser = new JsonParser();
+        JsonArray gsonDependencias = parser.parse(datos).getAsJsonArray();
+        
+        return cargarDatosIngresoPersona(gsonDependencias);
+	}
+	
+	
+	
+	
+	/******************************************************* PRIVADOS 	  
+	 * @param gsonDependencias 
+	 * @return ****************************************************************/
+
+	private static String cargarDatosIngresoPersona(JsonArray gsonDependencias) {
+		IngresarPersonaCotizador persona = new IngresarPersonaCotizador();
+		String valor ="";
+		String nombre ="";
+		for (JsonElement obj : gsonDependencias) {
+          JsonObject gsonDependenciasObj = obj.getAsJsonObject();
+          valor = gsonDependenciasObj.get("value").toString().replace('"', ' ').trim();
+          nombre = gsonDependenciasObj.get("name").toString().replace('"', ' ').trim();
+          cargarObjetoPersona(valor,nombre,persona);
+		}
+		return persona.toString();
+	}
+	
+	private static void cargarObjetoPersona(String valor, String nombre, IngresarPersonaCotizador persona) {
+
+		if(nombre.equals("selectDni")){
+			persona.setTipoDni(valor);
+		}
+		if(nombre.equals("clienteDni")){
+			persona.setDni(valor);
+
+		}
+		if(nombre.equals("cuit")){
+			persona.setCuit(valor);
+		}
+		if(nombre.equals("nombre")){
+			persona.setNombre(valor);
+		}
+		if(nombre.equals("apell")){
+			persona.setApellido(valor);
+		}
+		if(nombre.equals("selectGenero")){
+			persona.setSexo(valor);
+		}
+		if(nombre.equals("estadoCivil")){
+			persona.setEstadoCivil(valor);
+		}		
+		if(nombre.equals("fechaNac")){
+			persona.setFecha(valor);	
+		}	
+		if(nombre.equals("profesion")){
+			persona.setProfesion(valor);
+		}	
+		if(nombre.equals("nacionalidad")){
+			persona.setNacionalidad(valor);
+		}
+		if(nombre.equals("checkPoliticamente")){
+			persona.setPoliticamenteExpuesto(valor);	
+		}
+		if(nombre.equals("checkArt")){
+			persona.setArt(valor);	
+		}
+		
+		if(nombre.equals("lugarNacimiento")){
+			persona.setLugarNacimiento(valor);	
+		}
+		
+		
+		if(nombre.equals("observacion")){
+			persona.setObservacion(valor);
+		}		
+	}
+
+	private static void guardarDatosenSession(JsonElement nombre,	JsonElement dato, DatosCotizacionGO datosCoti) {
+		
+		DatosTomadorAseg datosAseg = datosCoti.getDatosAseg();
+		if(nombre.toString().replace('"', ' ').trim().equals("callePersona")){
+			datosAseg.setCalle(dato.toString().replace('"', ' ').trim());
+		}
+		if(nombre.toString().replace('"', ' ').trim().equals("numeroPersona")){
+			datosAseg.setNumero(dato.toString().replace('"', ' ').trim());
+		}		
+		if(nombre.toString().replace('"', ' ').trim().equals("datoComunicacion")){
+			if(dato.toString().replace('"', ' ').trim().indexOf("@")>0){
+				datosAseg.setTelefono(dato.toString().replace('"', ' ').trim());
+			}else{
+				datosAseg.setEmail(dato.toString().replace('"', ' ').trim());
+			}
+		}
+		datosCoti.setDatosAseg(datosAseg);
+		//falta el banco
+	}
 }

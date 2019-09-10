@@ -16,61 +16,78 @@
 		</div>
         </div>
 			<div class="row pt-2">
-				<div class="input-field col-md-10 ancho-label-icono">
+				<div class="input-field col-xs-12 col-sm-10 col-md-10 col-xl-10 ancho-label-icono">
 					<i class="fas fa-pen prefix icono-input"></i>
 					<input onkeyup="buscarPersona()" id="docPersona" type="text" class="">
     				<label  style="text-align:left;" for="docPersona">Doc. / Cuit / Cuil *</label>
-					<a style="font-size: 12px;color: red;font-weight: 700;display:none;" id="mensajeDni">No se encontro una persona con el documento ingresado. Ingrese una nueva.</a>
           	 	 </div>
-				 <div class="col-md-2">
+				 <div class="col-md-2 col-sm-2">
 							<div data-target="modalDatosDni" class="modal-trigger" style="cursor:pointer;">
 								<i class="fas fa-info-circle icono-info iconos-modal"></i>
 							</div>
 				 </div>
-				 <div class="col-md-2">
+				 <div class="col-md-12 mb-1">
+					<a style="font-size: 12px;color: red;font-weight: 700;display:none;position: relative;bottom:10px;" id="mensajeDni">No se encontro una persona con el documento ingresado. Ingrese una nueva.</a>
+				</div>
+				 <div class="col-md-2 col-sm-1">
 					<i class="fas fa-map-marker-alt prefix icono-input" style="position: relative;top: 25px;"></i>
 				 </div>
-    			<div class="input-field col-md-8 ancho-label-icono">
-					<select  name="selecDomicilio" id="selecDomicilio">
-						<option></option>
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+					<select  name="selecDomicilio" class="input-vacio selectorMaterialice" id="selecDomicilio" onchange="cargarSelectDomicilio();">
+						<option>Seleccione..</option>
+						<option value="0101">Nuevo..</option>
 					</select>
     				 <label  style="text-align:left;" for="domicilio">Domicilio *</label>
           	 	 </div>
-				 <div class="col-md-2">
-					<div data-target="modalDatosDomicilio" class="modal-trigger" onclick="cargarSelectDomicilio();" style="cursor:pointer;">
-						<i class="fas fa-info-circle icono-info iconos-modal"></i>
-					</div>
+				 <div class="col-sm-2 col-md-2">
+						<i class="fas fa-info-circle icono-info iconos-modal" style="cursor:pointer;" onclick="abrirDatosDomicilio()"></i>
 				 </div>
-				 <div class="input-field col-md-10 ancho-label-icono">
-    				<i class="material-icons prefix icono-input">phone</i>
-    				<input id="telefonoPersona" type="text" class="campo-persona">
-    				<label  style="text-align:left;" for="telefonoPersona">Telefono *</label>
+				 
+				 <div class="col-md-2 col-sm-1">
+					<i class="fas fa-phone prefix icono-input" style="position: relative;top: 25px;"></i>
+				 </div>
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+					<select onchange="cargarSelectComunicacion('1');" class="input-vacio selectorMaterialice"  name="telefonoPersona" id="telefonoPersona">
+						<option></option>
+					</select>
+    				 <label  style="text-align:left;" for="domicilio">Telefono *</label>
           	 	 </div>
-				 <div class="col-md-2">
+				 <div class="col-md-2 col-sm-2">
 					<div data-target="modalDatosTelefono" class="modal-trigger" style="cursor:pointer;">
 						<i class="fas fa-info-circle icono-info iconos-modal""></i>
 					</div>
 				 </div>
-				 <div class="input-field col-md-10 ancho-label-icono">
-					<i class="fas fa-envelope prefix icono-input"></i>
-    				<input id="emailPersona" type="text" class="campo-persona">
-    				<label  style="text-align:left;" for="emailPersona">Email *</label>
+				 
+				  <div class="col-md-2 col-sm-1">
+					<i class="fas fa-envelope prefix icono-input" style="position: relative;top: 25px;"></i>
+				 </div>
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+					<select  onchange="cargarSelectComunicacion('4');" name="emailPersona" class="input-vacio selectorMaterialice" id="emailPersona">
+						<option></option>
+					</select>
+    				 <label  style="text-align:left;" for="domicilio">Email *</label>
           	 	 </div>
-				 	 <div class="col-md-2">
-					<div data-target="modalDatosEmail" class="modal-trigger" style="cursor:pointer;">
+				 <div class="col-md-2 col-sm-2">
+					<div data-target="modalDatosTelefono" class="modal-trigger" style="cursor:pointer;">
 						<i class="fas fa-info-circle icono-info iconos-modal""></i>
 					</div>
 				 </div>
-				 <div class="input-field col-md-10 ancho-label-icono">
-					<i class="fas fa-university prefix icono-input"></i>
-    				<input id="datosBanco" type="text" class="campo-persona">
-    				<label style="text-align:left;" for="datosBanco">Datos Bancarios *</label>
+				 
+				 <div class="col-md-2 col-sm-1">
+					<i class="fas fa-university prefix icono-input" style="position: relative;top: 25px;"></i>
+				 </div>
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+					<select  name="datosBanco" class="input-vacio selectorMaterialice" id="datosBanco">
+						<option></option>
+					</select>
+    				 <label  style="text-align:left;" for="domicilio">Datos Bancarios *</label>
           	 	 </div>
-				 <div class="col-md-2">
-					<div data-target="modalDatosBanco" class="modal-trigger" style="cursor:pointer;">
+				 <div class="col-md-2 col-sm-2">
+					<div data-target="modalDatosBanco" class="modal-trigger" style="cursor:pointer;" onclick="cargarDatosModalDatosBanco();">
 						<i class="fas fa-info-circle icono-info iconos-modal""></i>
 					</div>
 				 </div>
+				 
 			</div>
       </div>
     </div>

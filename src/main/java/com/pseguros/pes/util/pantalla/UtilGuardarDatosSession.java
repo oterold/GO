@@ -56,6 +56,8 @@ public class UtilGuardarDatosSession {
 		datosCoti.setPromocion(request.getParameter("promo"));
 		datosCoti.setPlan(request.getParameter("plan"));
 		datosCoti.setFechaEmision(request.getParameter("fecha"));
-	}
+		datosCoti.setValorPromo(request.getParameter("valor"));
+	}		
+
 
 }

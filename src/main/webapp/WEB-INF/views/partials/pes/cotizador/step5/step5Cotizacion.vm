@@ -4,6 +4,7 @@
 <input type="hidden" value="$datosCoti.promocionC" id="promoTres"/>
 <input type="hidden" value="" id="datoPlan"/>
 <input type="hidden" value="" id="datoPromo"/>
+<input type="hidden" value="" id="datoMonto"/>
 
 <section class="container-fluid">
    <div class="containerMargenes" style="padding-top:50px;" id="main">
@@ -37,11 +38,10 @@
                         Volver
                       </button>
 					</div> 
-					<div class="col-sm-12  col-md-3">
-					   <button onclick="volverRedirectStep4();" class="btn waves-effect waves-light  boton-siguiente-cotizacion" type="submit" name="action">
-                        Imprimir
-						<i class="material-icons right" style="color:white;">print</i>
-                      </button>
+						<div class="col-sm-12 col-md-3" id="btnConfirmarStep5">
+						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/descargarCotizacion"  name="action" style="color:white;">Imprimir
+        							<i class="material-icons right" style="color:white;">print</i>
+						</a>
 					</div>
 					<div class="col-sm-12  col-md-3">
 					   <button onclick="volverRedirectStep4();" class="btn waves-effect waves-light  boton-siguiente-cotizacion" type="submit" name="action">

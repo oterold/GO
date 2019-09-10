@@ -177,12 +177,44 @@ function cargarSelectorParametricoByClass(id){
 
 }
 
-function cargarDatosModalDatosBanco(json){
-	$("#datoBanco").val(json[0]["P_TF_CADM_RV_TP_CUENTA"])
-	$("#tarjetaCredito").val(json[0]["P_TF_CADM_CATT_DE_TARJETA"])
-	$("#numTarjeta").val(ocultarDato(json[0]["P_TF_CADM_CADM_NU_CUENTA"]))
-	M.updateTextFields();
+function cargarDatosModalDatosBanco(){
+	var select = document.getElementById('datosBanco');
+	var dato = select.options[select.selectedIndex].value;
+	
+	
+	$.ajax({
+	    url : 'buscarBanco',
+	    contentType: 'application/json', 
+	    data : {},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
+	    		
+	    		for ( var int = 0; int < json.length ; int++) {
+	    			if(dato == json[int]["P_TF_CADM_CADM_NU_CUENTA"]){
+	    				$("#datoBanco").val(json[int]["P_TF_CADM_RV_TP_CUENTA"])
+	    				$("#tarjetaCredito").val(json[int]["P_TF_CADM_CATT_DE_TARJETA"])
+	    				$("#numTarjeta").val(ocultarDato(json[int]["P_TF_CADM_CADM_NU_CUENTA"]))
+	    			}
+		    	}
+	    		
+	    		M.updateTextFields();
+	    		
+	    	}catch(e)
+	    	{
+	    	}
+	    	},
+	    error : function(xhr, status) {
+	    },
+	 
+	   
+	});
+
 }
+	
+	
+	
 
 function cargarDatosModalDocumento(json){
 
@@ -230,6 +262,9 @@ function buscarPersona(){
 		    		cargarDatosBanco(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
 		    		cargarDatosDomiciolio(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
 		     	    $("#btnAgregarPersona").css("display","none");
+		     		$(".ingresar-persona").each(function(){
+		     	 	    $(this).prop('disabled', true);
+		     	 	});
 		    	}catch(e)
 		    	{
 		    	}
@@ -255,12 +290,18 @@ function ocultarDatosPersona(documento){
 	$(".campo-persona").each(function(){
  	    $(this).val("");
  	});
-    $('select').formSelect();
-	    $("#btnAgregarPersona").css("display","");
-	var d1 = document.getElementById("selecDomicilio");
-	d1.innerHTML = '<option value="" selected></option>';
+	$(".ingresar-persona").each(function(){
+ 	    $(this).prop('disabled', false);
+ 	});
+	$("#btnAgregarPersona").css("display","");
 	$("#aseguradoPrincipal").css("background-color","#0b4376");
+	
+	$(".input-vacio").each(function(){
+		$(this).empty();
+		$(this).val("");
+	});
 
+	$('select').formSelect();
 	M.updateTextFields();
 }
 function cargarFecha(){
@@ -276,16 +317,186 @@ function cargarFecha(){
 	 return dia+mes+ano;   
 }
 
+function guardarDatoComunicacion(conz){
+var formData = JSON.stringify(jQuery('.datoComunicacion').serializeArray());
+M.updateTextFields();
+$.ajax({
+    url : 'guardarComunicacion',
+    contentType: 'application/json', 
+    data : {datos : formData,conz:conz},
+    type : 'GET',
+    dataType : 'json',
+    success : function(json) {
+    	try{
+
+    	}
+    	catch(e)
+    	{
+        	mostrarError('Por favor informe a sistema con el cod de error: 921726.',e);
+    	}
+    	$.unblockUI();
+    	},
+    error : function(xhr, status) {
+    	mostrarError(xhr['responseText']);
+    },
+});
+}
+
+
+function cargarNuevaPersona(){
+	var formData = JSON.stringify(jQuery('.ingresoNuevaPersona').serializeArray());
+	var array = [];
+	var valor;
+	$.each(JSON.parse(formData), function(i, field){
+		var valor = new Object();
+		valor.name=field.name;
+ 		valor.value = field.value;
+		 array.push(valor);
+		  })
+	var valor = new Object();
+	valor.name="checkPoliticamente";
+	if($("#checkPoliticamente").is(':checked')) {  
+ 		valor.value = "S";
+	} else {  
+ 		valor.value = "N";
+	}
+	array.push(valor)
+	
+	var valor = new Object();
+	valor.name="checkArt";
+	if($("#checkArt").is(':checked')) {  
+ 		valor.value = "S";
+	} else {  
+ 		valor.value = "N";
+	}
+	array.push(valor)
+	
+
+	formData = JSON.stringify(array);    		
+	
+	M.updateTextFields();
+	$.ajax({
+	    url : 'cargarNuevaPersona',
+	    contentType: 'application/json', 
+	    data : {datos : formData},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
+	    		
+
+	    	}
+	    	catch(e)
+	    	{
+	        	mostrarError('Por favor informe a sistema con el cod de error: 921726.',e);
+	    	}
+	    	$.unblockUI();
+	    	},
+	    error : function(xhr, status) {
+	    	mostrarError(xhr['responseText']);
+	    },
+});
+}
+
+
+function guardarDatosDomicilio(){
+	var formData = JSON.stringify(jQuery('.ingresoDomicilio').serializeArray());
+	var condicion = 0;
+	M.updateTextFields();
+	$.ajax({
+	    url : 'guardarDomicilio',
+	    contentType: 'application/json', 
+	    data : {datos : formData,condicion:condicion},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
+	    		
+
+	    	}
+	    	catch(e)
+	    	{
+	        	mostrarError('Por favor informe a sistema con el cod de error: 921726.',e);
+	    	}
+	    	$.unblockUI();
+	    	},
+	    error : function(xhr, status) {
+	    	mostrarError(xhr['responseText']);
+	    },
+});
+}
+
+
+
+function guardarDatosDomicilioNuevo(){
+	var formData = JSON.stringify(jQuery('.ingresoDomicilioNuevo').serializeArray());
+	M.updateTextFields();
+	var condicion="";
+	$.ajax({
+	    url : 'guardarDomicilio',
+	    contentType: 'application/json', 
+	    data : {datos : formData,condicion:condicion},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
+	    		
+	    		guardarDatosDomicilio();
+	    	}
+	    	catch(e)
+	    	{
+	        	mostrarError('Por favor informe a sistema con el cod de error: 921726.',e);
+	    	}
+	    	$.unblockUI();
+	    	},
+	    error : function(xhr, status) {
+	    	mostrarError(xhr['responseText']);
+	    },
+});
+}
+
+function guardarComunicacion(conz){
+	
+	var formData = JSON.stringify(jQuery('.datoComunicacion').serializeArray());
+	  
+	
+	$.ajax({
+	    url : 'guardarComunicacion',
+	    contentType: 'application/json', 
+	    data : {datos : formData,conz:conz},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
+
+	    	
+	    	}
+	    	catch(e)
+	    	{
+	        	mostrarError('Por favor informe a sistema con el cod de error: 921726.',e);
+	    	}
+	    	$.unblockUI();
+	    	},
+	    error : function(xhr, status) {
+	    	mostrarError(xhr['responseText']);
+	    },
+});
+}
+
+
+
 function cargarPromoPlan(){
 	var promo = $("#datoPromo").val();
 	var plan = $("#datoPlan").val();
+	var valor = $("#datoMonto").val();
+	
 	var f = new Date();
 	var fecha = cargarFecha();
 	
 	 $.ajax({
 		    url : 'guardarPlanPromo',
 		    contentType: 'application/json', 
-		    data : {promo:promo,plan:plan,fecha:fecha},
+		    data : {promo:promo,plan:plan,fecha:fecha,valor:valor},
 		    type : 'GET',
 		    dataType : 'json',
 		    success : function(json) {
@@ -363,7 +574,7 @@ function cargarDatosDomiciolio(persona){
 			    	for ( var int = 0; int < json.length ; int++) {
 		    			panelNuevo = panelNuevo + "<option value="+int+">"+primeraLetraMayus(json[int]["P_TF_CADO_CADO_DE_CALLE"])+" "+json[int]["P_TF_CADO_CADO_DE_NUMERO"]+"</option>";
 			    	}
-		    		d1.innerHTML =panelNuevo;
+		    		d1.innerHTML =panelNuevo+"<option value='0101'>Nuevo</option>";
 		    		
 				    $('select').formSelect();
 
@@ -371,7 +582,14 @@ function cargarDatosDomiciolio(persona){
 		    	{
 		    	}
 		    	},
-		    error : function(xhr, status) {
+		    	error : function(xhr, status) {
+		    		
+		    		var panelNuevo ='';
+		    		var d1 = document.getElementById("selecDomicilio");
+		    		d1.innerHTML = '';
+		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+		    			d1.innerHTML =panelNuevo+"<option value='0101'>Nuevo</option>";
+				    $('select').formSelect();
 		    },
 		 
 		   
@@ -379,11 +597,31 @@ function cargarDatosDomiciolio(persona){
 
 	}
 
+
+
+function abrirModalIngresoDomicilio(domicilio){
+	
+	 $('#modalIngresoDomicilio').modal('open'); 
+	
+}
+
+
+
 function cargarSelectDomicilio(){
+	
 	var select = document.getElementById('selecDomicilio');
 	var domicilio = select.options[select.selectedIndex].value;
-	var persona=$("#docPersona").val();
 	
+	if(domicilio=="0101"){
+		abrirModalIngresoDomicilio(domicilio);
+	}else{
+		buscarDomicilios(domicilio);
+	}
+}
+
+
+function buscarDomicilios(domicilio){
+	var persona=$("#docPersona").val();
 	$.ajax({
 	    url : 'buscarDomicilios',
 	    contentType: 'application/json', 
@@ -392,6 +630,10 @@ function cargarSelectDomicilio(){
 	    dataType : 'json',
 	    success : function(json) {
 	    	try{
+	    		$("#direccionConsecutivo").val(json[domicilio]["P_TF_CADO_CADO_CONSECUTIVO_DIRECCION"]);
+	    		$("#codigoUbicacion").val(json[domicilio]["P_TF_CADO_CADO_GECP_NU_POSTAL"]);
+	    		
+	    		$("#callePersona").val(json[domicilio]["P_TF_CADO_CADO_DE_CALLE"]);
 	    		$("#callePersona").val(json[domicilio]["P_TF_CADO_CADO_DE_CALLE"]);
 	    		$("#numeroPersona").val(json[domicilio]["P_TF_CADO_CADO_DE_NUMERO"]);
 	    		$("#pisoPersona").val(json[domicilio]["P_TF_CADO_CADO_DE_PISO"]);
@@ -401,10 +643,46 @@ function cargarSelectDomicilio(){
 	    		$("#localidadPersona").val(json[domicilio]["P_TF_CADO_GECP_DE_LOCALIDAD"]);
 	    		$("#municipioPersona").val(json[domicilio]["P_TF_CADO_GEMU_DE_MUNICIPIO"]);
 	    		$("#provinciaPersona").val(json[domicilio]["P_TF_CADO_CAES_DE_PROVINCIA"]);
+
 	    		M.updateTextFields();
 
+	    		guardarDatosDomicilio();
+	    	}catch(e)
+	    	{
+	    	}
+	    	},
+	    error : function(xhr, status) {
+	    },
+})
+}
+
+
+function cargarSelectComunicacion(codigo){
+	$.ajax({
+	    url : 'buscarComunicaciones',
+	    contentType: 'application/json', 
+	    data : {codigo:codigo},
+	    type : 'GET',
+	    dataType : 'json',
+	    success : function(json) {
+	    	try{
 	    		
+	    		if(codigo == 1){
+	    			var select = document.getElementById('telefonoPersona');
+	    			var valor = select.options[select.selectedIndex].value;
+	    			var conz = "15";
+	    		}
+	    		if(codigo ==4){
+	    			var select = document.getElementById('emailPersona');
+	    			var valor = select.options[select.selectedIndex].value;
+	    			var conz = "9";
+
+	    		}
+	    		$("#comunicacionValor").val(codigo);
+	    		$("#datoComunicacion").val(valor);
+	    		M.updateTextFields();
 	    		
+	    		guardarDatoComunicacion(conz);
 	    	}catch(e)
 	    	{
 	    	}
@@ -417,9 +695,15 @@ function cargarSelectDomicilio(){
 
 }
 
+
+
+
+
+
+
 function abrirCargaCliente(){
 	var dni = $("#docPersona").val();
-	$("#clienteDniA").val(dni);
+	$("#clienteDni").val(dni);
 	M.updateTextFields();
 
 }
@@ -435,8 +719,22 @@ function cargarDatosBanco(persona){
 		    dataType : 'json',
 		    success : function(json) {
 		    	try{
-		    		cargarDatosModalDatosBanco(json);
-		    		$("#datosBanco").val(ocultarDato(json[0]["P_TF_CADM_CADM_NU_CUENTA"]))
+		    		
+		    		var panelNuevo ='';
+		    		var d1 = document.getElementById("datosBanco");
+		    		d1.innerHTML = '';
+		    		if(json.length>1){
+		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+		    		panelNuevo = panelNuevo;
+		    		}
+			    	for ( var int = 0; int < json.length ; int++) {
+		    			panelNuevo = panelNuevo + "<option value="+json[int]["P_TF_CADM_CADM_NU_CUENTA"]+">"+ocultarDato(json[int]["P_TF_CADM_CADM_NU_CUENTA"])+"</option>";
+			    	}
+		    		d1.innerHTML =panelNuevo;
+		    		
+				    $('select').formSelect();
+		    		
+		    		
 		    		M.updateTextFields();
 		    		
 		    	}catch(e)
@@ -467,18 +765,42 @@ function cargarDatosComunicacion(persona,cod){
 		    	try{
 		    		
 		    		if(cod == 1){
-		    			$("#telefonoPersona").val(json[0]["P_TF_CACF_CACF_DE_COMUNICACION"])
+		    			id="telefonoPersona";
 		    		}
 		    		if(cod == 4){
-		    			$("#emailPersona").val(json[0]["P_TF_CACF_CACF_DE_COMUNICACION"])
+		    			id="emailPersona";
 		    		}
-					   M.updateTextFields();
+		    		
+		    		var panelNuevo ='';
+		    		var d1 = document.getElementById(""+id);
+		    		d1.innerHTML = '';
+		    		if(json.length>1){
+		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+		    		panelNuevo = panelNuevo;
+		    		}
+			    	for ( var int = 0; int < json.length ; int++) {
+		    			panelNuevo = panelNuevo + "<option value="+json[int]["P_TF_CACF_CACF_DE_COMUNICACION"]+">"+primeraLetraMayus(json[int]["P_TF_CACF_CACF_DE_COMUNICACION"])+"</option>";
+			    	}
+			    	panelNuevo = panelNuevo + '<option value="991"> <a style="background-color:red;"> Nuevo </a> </option>'
+		    		d1.innerHTML =panelNuevo;
+		    		
+				    $('select').formSelect();
+		    		
+				    M.updateTextFields();
 		    		
 		    	}catch(e)
 		    	{
 		    	}
 		    	},
 		    error : function(xhr, status) {
+		    	
+		    	//no tiene comunicacion
+		    	
+				    
+				    
+		    	
+		    	
+		    	
 		    },
 		 
 		   
@@ -486,7 +808,16 @@ function cargarDatosComunicacion(persona,cod){
 
 	}
 
+function nuevoTelefono(){
+	var select = document.getElementById('telefonoPersona');
+	var dato = select.options[select.selectedIndex].value;
+	if(dato == 991)
+	 $('#modalDatosTelefono').modal('open'); 
+}
+function abrirDatosDomicilio(){
+	 $('#modalDatosDomicilio').modal('open'); 
 
+}
 
 function cargarSelectorParametrico(id,datos,tabla){
 	bloquearPantallaGris();
@@ -599,28 +930,30 @@ function buscarDirecciones(){
 				    	$("#mostrarUbicacionVarias").css("display","");
 				    	for ( var int = 0; int < json.length ; int++) {
 				    		var postal="'"+json[int]["P_TF_GECP_GECP_CD_CODIGO_POSTAL"]+"'";
+				    		var codPostal="'"+json[int]["P_TF_GECP_GECP_NU_POSTAL"]+"'";
 				    		var calle="'"+json[int]["P_TF_GECP_GECP_DE_CALLE"]+"'";
 				    		var localidad ="'"+json[int]["P_TF_GECP_GECP_DE_LOCALIDAD"]+"'";
 				    		var provincia ="'"+json[int]["P_TF_GECP_CAES_DE_PROVINCIA"]+"'";
 				    		var pais="'"+json[int]["P_TF_GECP_CAPA_DE_PAIS"]+"'";
 				    		
 				    		panelNuevo = panelNuevo + '<tr>'+
-				    								  '<td>'+postal+'</td>'+
-				    								  '<td>'+pais+'</td>'+
-				    								  '<td>'+provincia+'</td>'+
-				    								  '<td>'+localidad+'</td>'+
-				    								  '<td>'+calle+'</td>'+
-				    								  '<td><i class="material-icons" style="color:#0b4376!important;cursor:pointer;" onclick="mostrarUbicacion('+postal+','+calle+','+localidad+','+provincia+','+pais+')">exit_to_app</i></td>'+
+				    								  '<td>'+json[int]["P_TF_GECP_GECP_CD_CODIGO_POSTAL"]+'</td>'+
+				    								  '<td>'+json[int]["P_TF_GECP_CAPA_DE_PAIS"]+'</td>'+
+				    								  '<td>'+json[int]["P_TF_GECP_CAES_DE_PROVINCIA"]+'</td>'+
+				    								  '<td>'+json[int]["P_TF_GECP_GECP_DE_LOCALIDAD"]+'</td>'+
+				    								  '<td>'+json[int]["P_TF_GECP_GECP_DE_CALLE"]+' ('+json[int]["P_TF_GECP_GECP_NU_INICIO"]+' - '+json[int]["P_TF_GECP_GECP_NU_FINAL"]+')</td>'+
+				    								  '<td><i class="material-icons" style="color:#0b4376!important;cursor:pointer;" onclick="mostrarUbicacion('+codPostal+','+postal+','+calle+','+localidad+','+provincia+','+pais+')">exit_to_app</i></td>'+
 				    								  '</tr>';
 				    		}
 				    	d1.innerHTML =panelNuevo;
 		    		}else{
+			    		var codPostal="'"+json[int]["P_TF_GECP_GECP_NU_POSTAL"]+"'";
 				    	var postal="'"+json[int]["P_TF_CAPU_CAPU_CD_PRODUCTO"]+"'";
 			    		var calle="'"+json[int]["P_TF_CAPU_CTRA_CPP_CD_ESQ_VISUALIZACION"]+"'";
 			    		var localidad ="'"+json[int]["P_TF_CAPU_CTRA_CREK_NU_VISUALIZACION"]+"'";
 			    		var provincia ="'"+json[int]["P_TF_CAPU_CTRA_CREK_NU_VISUALIZACION"]+"'";
 			    		var pais=  "'"+json[int]["P_TF_CAPU_CAPU_CD_PRODUCTO"]+"'";
-				    	mostrarUbicacion("'"+postal+"'","'"+calle+"'","'"+localidad+"'","'"+provincia+"'","'"+pais+"'");
+				    	mostrarUbicacion("'"+codPostal+"'","'"+postal+"'","'"+calle+"'","'"+localidad+"'","'"+provincia+"'","'"+pais+"'");
 			    		
 		    		}
 			    	$.unblockUI();
@@ -639,8 +972,15 @@ function buscarDirecciones(){
 	}
 
 
+function reiniciarDomicilio(){
+	$("#buscarUbicacion").css("display","");
+	$("#mostrarUbicacion").css("display","none");
+	$("#mostrarUbicacionVarias").css("display","none");
+	$("#inputUbicacion").val("");
+}
 
-function mostrarUbicacion(postal,calle,localidad,provincia,pais,codPostal,codcalle,codLocalidad,codProvincia,codPais){
+
+function mostrarUbicacion(codPostal,postal,calle,localidad,provincia,pais){
 	$("#mostrarUbicacionVarias").css("display","none");
 	$("#buscarUbicacion").css("display","none");
 	$("#mostrarUbicacion").css("display","");
@@ -648,53 +988,53 @@ function mostrarUbicacion(postal,calle,localidad,provincia,pais,codPostal,codcal
 	
 	var d1 = document.getElementById("mostrarUbicacion");
 	var panelNuevo = '<div class="input-field col-md-5">'+
-				   '<input class="inputUbicacion" placeholder="calle"  value="'+calle+'" id="calleUbicacion" name="calleUbicacion" type="text">'+	
+				   '	<input type="hidden" value="1" class="ingresoDomicilioNuevo" name="valorEnviar" id="valorEnviar"/><input class="ingresoDomicilioNuevo" name="valorCodigoPostal" type="hidden" value="'+codPostal+'" id="valorCodigoPostal" /><input class="ingresoDomicilioNuevo" placeholder="calle"  value="'+calle+'" id="calleUbicacion" name="calleUbicacion" type="text">'+	
 				   '<label for="calleUbicacion" style="cursor:pointer;z-index:30" for="first_name">Calle *'+
 				   '</label>'+
 				   '</div>'+
 				   '<div class="input-field col-md-2">'+
 				   '</div>'+
 				   '<div class="input-field col-md-2">'+
-				   '<input class="inputUbicacion"  value="" id="numeroUbicacion" name="numeroUbicacion" type="text">'+	
+				   '<input class="ingresoDomicilioNuevo"  value="" id="numeroUbicacion" name="numeroUbicacion" type="text">'+	
 				   '<label for="numeroUbicacion" style="cursor:pointer;z-index:30" for="first_name">Numero *'+
 				   '</label>'+
 				   '</div>'+
 				   '<div class="input-field col-md-1">'+
-				   '<input class="inputUbicacion"  value="" id="pisoUbicacion" name="pisoUbicacion" type="text">'+	
+				   '<input class="ingresoDomicilioNuevo"  value="" id="pisoUbicacion" name="pisoUbicacion" type="text">'+	
 				   '<label for="pisoUbicacion" style="cursor:pointer;z-index:30" for="first_name">Piso'+
 				   '</label>'+
 				   '</div>'+
 				   '<div class="input-field col-md-1">'+
-				   '<input class="inputUbicacion"  value="" id="deptoUbicacion" name="deptoUbicacion" type="text">'+	
+				   '<input class="ingresoDomicilioNuevo"  value="" id="deptoUbicacion" name="deptoUbicacion" type="text">'+	
 				   '<label for="deptoUbicacion" style="cursor:pointer;z-index:30" for="first_name">Depto'+
 				   '</label>'+
 				   '</div>'+
 				   '<div class="input-field col-md-2">'+
-				   '<input class="inputUbicacion" placeholder="codPostal"   value="'+codPostal+'" id="codPostalUb" name="deptoUbi" type="text">'+	
+				   '<input class="" placeholder="codPostal"   value="'+postal+'" id="codPostalUb" name="codPostalUb" type="text">'+	
 				   '<label for="codPostalUb" style="cursor:pointer;z-index:30"  for="first_name">Cod Postal *'+
 				   '</label>'+
 				   '</div>'+
 				   '<div class="input-field col-md-3">'+
-				   '<input class="inputUbicacion"  value="'+localidad+'" id="localidadUbicacion" name="calleUbicacion" type="text">'+	
+				   '<input class="ingresoDomicilioNuevo"  value="'+localidad+'" id="localidadUbicacion" name="calleUbicacion" type="text">'+	
 				   '<label for="localidadUbicacion" style="cursor:pointer;z-index:30" for="first_name">Localidad *'+
 				   '</label>'+
 				   '</div>'+
 				   '<div class="input-field col-md-2">'+
 				   '</div>'+
 				   '<div class="input-field col-md-5">'+
-				   '<input class="inputUbicacion"  value="" id="municipioUbicacion" name="municipioUbicacion" type="text">'+	
+				   '<input class=""  value="" id="municipioUbicacion" name="municipioUbicacion" type="text">'+	
 				   '<label for="municipioUbicacion" style="cursor:pointer;z-index:30" for="first_name">Municipio *'+
 				   '</label>'+
 				   '</div>'+
 					'<div class="input-field col-md-5">'+
-					   '<input class="inputUbicacion" placeholder="provincia"   value="'+provincia+'" id="provinciaUbicacion" name="provinciaUbicacion" type="text">'+	
+					   '<input class="" placeholder="provincia"   value="'+provincia+'" id="provinciaUbicacion" name="provinciaUbicacion" type="text">'+	
 					   '<label for="provinciaUbicacion" style="cursor:pointer;z-index:30" for="first_name">Provincia *'+
 					   '</label>'+
 					   '</div>'+
 					   '<div class="input-field col-md-2">'+
 					   '</div>'+
 						'<div class="input-field col-md-5">'+
-						   '<input class="inputUbicacion" placeholder="pais"  value="'+pais+'" id="paisUbicacion" name="paisUbicacion" type="text">'+	
+						   '<input class="" placeholder="pais"  value="'+pais+'" id="paisUbicacion" name="paisUbicacion" type="text">'+	
 						   '<label for="calleUbicacion" style="cursor:pointer;z-index:30" for="first_name">Pais *'+
 						   '</label>'+
 						   '</div>'+
@@ -1018,6 +1358,9 @@ function inicioCotizacion(){
 	 $(document).ready(function(){
 		    $('.tooltipped').tooltip();
 		  });
+	 
+     $('#fechaNac').mask('00/00/0000');
+
 }
 
 
@@ -1614,7 +1957,7 @@ function quitarSelectCardPromo(){
 	
 }
 
-function selecionarCotizacion(id,promo,plan){
+function selecionarCotizacion(id,promo,plan,valor){
     if ($("#card_"+id).hasClass('animated pulse')){
     	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado");
     	$("#check_"+id).css("display","none");
@@ -1630,11 +1973,13 @@ function selecionarCotizacion(id,promo,plan){
     
     $("#datoPromo").val(promo)
     $("#datoPlan").val(plan)
+    $("#datoMonto").val(valor)
+    
 }
 
 
 
-function selecionarCotizacionB(id,promo,plan){
+function selecionarCotizacionB(id,promo,plan,valor){
     if ($("#card_"+id).hasClass('animated pulse')){
     	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado-b");
     	$("#check_"+id).css("display","none");
@@ -1650,6 +1995,8 @@ function selecionarCotizacionB(id,promo,plan){
     
     $("#datoPromo").val(promo)
     $("#datoPlan").val(plan)
+    $("#datoMonto").val(valor)
+
 }
 
 function selecionarPromo(id){

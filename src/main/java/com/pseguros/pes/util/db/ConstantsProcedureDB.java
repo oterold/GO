@@ -321,5 +321,11 @@ public class ConstantsProcedureDB {
 	public static final String CIERRE_COTIZACION = "CIERRE_COTIZACION";
 	public static final String PKG_EMI_MDW_E = "PKG_EMI_MDW_E";
 	public static final String I_SELECCION_PLAN = "I_SELECCION_PLAN";
+	public static final String I_COMUNICACIONES = "I_COMUNICACIONES";
+	public static final String I_DOMICILIOS = "I_DOMICILIOS";
+	public static final String I_DATOS_BANCARIOS = "I_DATOS_BANCARIOS";
+	public static final String L_ESTADOS_CIVIL = "L_ESTADOS_CIVIL";
+	public static final String I_PERSONA = "I_PERSONA";
+	public static final String L_PAISES = "L_PAISES";
 	
 }

@@ -29,8 +29,9 @@ public class DatosCotizacionGO {
 	private String nuPersona; 
 	private String promocion; 
 	private String fechaEmision; 
+	private String valorPromo; 
 	
-	
+	private DatosTomadorAseg datosAseg;
 	
 	private String formDatosGenerales="DGENERALES";
 	
@@ -51,6 +52,18 @@ public class DatosCotizacionGO {
 	
 	
 	
+	public DatosTomadorAseg getDatosAseg() {
+		return datosAseg;
+	}
+	public void setDatosAseg(DatosTomadorAseg datosAseg) {
+		this.datosAseg = datosAseg;
+	}
+	public String getValorPromo() {
+		return valorPromo;
+	}
+	public void setValorPromo(String valorPromo) {
+		this.valorPromo = valorPromo;
+	}
 	public String getFechaEmision() {
 		return fechaEmision;
 	}
