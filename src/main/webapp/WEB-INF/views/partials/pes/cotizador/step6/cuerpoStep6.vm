@@ -18,7 +18,7 @@
 			<div class="row pt-2">
 				<div class="input-field col-xs-12 col-sm-10 col-md-10 col-xl-10 ancho-label-icono">
 					<i class="fas fa-pen prefix icono-input"></i>
-					<input onkeyup="buscarPersona()" id="docPersona" type="text" class="">
+					<input onkeyup="buscarPersona()" id="docPersona" value="$datosCoti.datosContacto.dni" type="text" class="">
     				<label  style="text-align:left;" for="docPersona">Doc. / Cuit / Cuil *</label>
           	 	 </div>
 				 <div class="col-md-2 col-sm-2">
@@ -35,7 +35,6 @@
     			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
 					<select  name="selecDomicilio" class="input-vacio selectorMaterialice" id="selecDomicilio" onchange="cargarSelectDomicilio();">
 						<option>Seleccione..</option>
-						<option value="0101">Nuevo..</option>
 					</select>
     				 <label  style="text-align:left;" for="domicilio">Domicilio *</label>
           	 	 </div>

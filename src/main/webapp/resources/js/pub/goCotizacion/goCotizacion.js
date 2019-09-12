@@ -257,8 +257,8 @@ function buscarPersona(){
 		    		$("#nombreAseg").text(primeraLetraMayus(primeraLetraMayus(json[0]["P_TF_CABU_CABU_NM_APELLIDO_RAZON"]) +" "+ json[0]["P_TF_CABU_CABU_NM_PERSONA"]))
 		    		cargarDatosModalDocumento(json);
 		    		$("#aseguradoPrincipal").css("background-color","#2f780a");
-		    		cargarDatosComunicacion(json[0]["P_TF_CABU_CABU_NU_PERSONA"],1);
-		    		cargarDatosComunicacion(json[0]["P_TF_CABU_CABU_NU_PERSONA"],4);
+		    		cargarDatosComunicacionTelefono(json[0]["P_TF_CABU_CABU_NU_PERSONA"],1);
+		    		cargarDatosComunicacionEmail(json[0]["P_TF_CABU_CABU_NU_PERSONA"],4);
 		    		cargarDatosBanco(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
 		    		cargarDatosDomiciolio(json[0]["P_TF_CABU_CABU_NU_PERSONA"]);
 		     	    $("#btnAgregarPersona").css("display","none");
@@ -317,7 +317,9 @@ function cargarFecha(){
 	 return dia+mes+ano;   
 }
 
-function guardarDatoComunicacion(conz){
+function guardarDatoComunicacion(){
+	var conz = $("#valorConz").val(conz);
+
 var formData = JSON.stringify(jQuery('.datoComunicacion').serializeArray());
 M.updateTextFields();
 $.ajax({
@@ -384,7 +386,6 @@ function cargarNuevaPersona(){
 	    success : function(json) {
 	    	try{
 	    		
-
 	    	}
 	    	catch(e)
 	    	{
@@ -396,6 +397,9 @@ function cargarNuevaPersona(){
 	    	mostrarError(xhr['responseText']);
 	    },
 });
+	
+	buscarPersona();
+
 }
 
 
@@ -555,6 +559,7 @@ function confirmarCotizacion(){
 	});
 }
 
+
 function cargarDatosDomiciolio(persona){
 	 $.ajax({
 		    url : 'buscarDomicilios',
@@ -574,7 +579,7 @@ function cargarDatosDomiciolio(persona){
 			    	for ( var int = 0; int < json.length ; int++) {
 		    			panelNuevo = panelNuevo + "<option value="+int+">"+primeraLetraMayus(json[int]["P_TF_CADO_CADO_DE_CALLE"])+" "+json[int]["P_TF_CADO_CADO_DE_NUMERO"]+"</option>";
 			    	}
-		    		d1.innerHTML =panelNuevo+"<option value='0101'>Nuevo</option>";
+		    		d1.innerHTML =panelNuevo+"<option value='0101'data-icon='resources/img/imagenesCotizador/addHome.png' class='circle'>Agregar</option>";
 		    		
 				    $('select').formSelect();
 
@@ -588,7 +593,7 @@ function cargarDatosDomiciolio(persona){
 		    		var d1 = document.getElementById("selecDomicilio");
 		    		d1.innerHTML = '';
 		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
-		    			d1.innerHTML =panelNuevo+"<option value='0101'>Nuevo</option>";
+			    		d1.innerHTML =panelNuevo+"<option value='0101'data-icon='resources/img/imagenesCotizador/addHome.png' class='circle'>Agregar</option>";
 				    $('select').formSelect();
 		    },
 		 
@@ -658,6 +663,38 @@ function buscarDomicilios(domicilio){
 
 
 function cargarSelectComunicacion(codigo){
+	if(codigo == 1){
+		var select = document.getElementById('telefonoPersona');
+		var valor = select.options[select.selectedIndex].value;
+		var conz = "15";
+	}
+	if(codigo ==4){
+		var select = document.getElementById('emailPersona');
+		var valor = select.options[select.selectedIndex].value;
+		var conz = "9";
+		
+	}
+	
+	$("#valorConz").val(conz);
+	$("#comunicacionValor").val(codigo);
+	$("#datoComunicacion").val(valor);
+
+	if(valor == "0101"){
+		$("#datoComunicacion").val("");
+		$('#modalDatosTelefono').modal('open'); 
+		M.updateTextFields();
+
+	}else{
+		cargarComunicacion();
+	}
+}
+	
+function cargarComunicacion(codigo,valor,conz){	
+	
+	var codigo =$("#comunicacionValor").val();
+	var valor =$("#datoComunicacion").val();
+	var conz =$("#valorConz").val();
+	
 	$.ajax({
 	    url : 'buscarComunicaciones',
 	    contentType: 'application/json', 
@@ -667,22 +704,10 @@ function cargarSelectComunicacion(codigo){
 	    success : function(json) {
 	    	try{
 	    		
-	    		if(codigo == 1){
-	    			var select = document.getElementById('telefonoPersona');
-	    			var valor = select.options[select.selectedIndex].value;
-	    			var conz = "15";
-	    		}
-	    		if(codigo ==4){
-	    			var select = document.getElementById('emailPersona');
-	    			var valor = select.options[select.selectedIndex].value;
-	    			var conz = "9";
-
-	    		}
-	    		$("#comunicacionValor").val(codigo);
 	    		$("#datoComunicacion").val(valor);
 	    		M.updateTextFields();
 	    		
-	    		guardarDatoComunicacion(conz);
+	    		guardarDatoComunicacion();
 	    	}catch(e)
 	    	{
 	    	}
@@ -730,7 +755,7 @@ function cargarDatosBanco(persona){
 			    	for ( var int = 0; int < json.length ; int++) {
 		    			panelNuevo = panelNuevo + "<option value="+json[int]["P_TF_CADM_CADM_NU_CUENTA"]+">"+ocultarDato(json[int]["P_TF_CADM_CADM_NU_CUENTA"])+"</option>";
 			    	}
-		    		d1.innerHTML =panelNuevo;
+		    		d1.innerHTML =panelNuevo + "<option value='0101'data-icon='resources/img/imagenesCotizador/addCreditCard.png' class='circle'>Agregar</option>";
 		    		
 				    $('select').formSelect();
 		    		
@@ -742,6 +767,19 @@ function cargarDatosBanco(persona){
 		    	}
 		    	},
 		    error : function(xhr, status) {
+		    	
+		    	var panelNuevo ='';
+	    		var d1 = document.getElementById("datosBanco");
+	    		d1.innerHTML = '';
+	    		panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+	    		d1.innerHTML =panelNuevo + "<option value='0101'data-icon='resources/img/imagenesCotizador/addCreditCard.png' class='circle'>Agregar</option>";
+	    		
+			    $('select').formSelect();
+	    		
+	    		
+	    		M.updateTextFields();
+	    		
+		    	
 		    },
 		 
 		   
@@ -754,7 +792,54 @@ function ocultarDato(dato){
 	return "xxxxxxxxxxxx"+valor;
 }
 
-function cargarDatosComunicacion(persona,cod){
+function cargarDatosComunicacionTelefono(persona,cod){
+	 $.ajax({
+		    url : 'buscarComunicacionesTelefono',
+		    contentType: 'application/json', 
+		    data : {persona:persona,codigo:cod},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		var panelNuevo ='';
+		    		var d1 = document.getElementById("telefonoPersona");
+		    		d1.innerHTML = '';
+		    		if(json.length>1){
+		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+		    		panelNuevo = panelNuevo;
+		    		}
+			    	for ( var int = 0; int < json.length ; int++) {
+		    			panelNuevo = panelNuevo + "<option value="+json[int]["P_TF_CACF_CACF_DE_COMUNICACION"]+">"+primeraLetraMayus(json[int]["P_TF_CACF_CACF_DE_COMUNICACION"])+"</option>";
+			    	}
+			    	panelNuevo = panelNuevo + "<option value='0101'data-icon='resources/img/imagenesCotizador/addPhone.png' class='circle'>Agregar</option>";
+		    		d1.innerHTML =panelNuevo;
+				    $('select').formSelect();
+		    		
+				    M.updateTextFields();
+		    		
+		    	}catch(e)
+		    	{
+		    	}
+		    	},
+		    error : function(xhr, status) {
+		    	
+		    	var panelNuevo ='';
+	    		var d1 = document.getElementById("telefonoPersona");
+	    		d1.innerHTML = '';
+	    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+	    			d1.innerHTML =panelNuevo + "<option value='0101'data-icon='resources/img/imagenesCotizador/addPhone.png' class='circle'>Agregar</option>";
+			    $('select').formSelect();
+		    	
+		    	
+		    },
+		 
+		   
+		});
+
+	}
+
+
+function cargarDatosComunicacionEmail(persona,cod){
 	 $.ajax({
 		    url : 'buscarComunicaciones',
 		    contentType: 'application/json', 
@@ -764,15 +849,9 @@ function cargarDatosComunicacion(persona,cod){
 		    success : function(json) {
 		    	try{
 		    		
-		    		if(cod == 1){
-		    			id="telefonoPersona";
-		    		}
-		    		if(cod == 4){
-		    			id="emailPersona";
-		    		}
 		    		
 		    		var panelNuevo ='';
-		    		var d1 = document.getElementById(""+id);
+		    		var d1 = document.getElementById("emailPersona");
 		    		d1.innerHTML = '';
 		    		if(json.length>1){
 		    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
@@ -781,7 +860,7 @@ function cargarDatosComunicacion(persona,cod){
 			    	for ( var int = 0; int < json.length ; int++) {
 		    			panelNuevo = panelNuevo + "<option value="+json[int]["P_TF_CACF_CACF_DE_COMUNICACION"]+">"+primeraLetraMayus(json[int]["P_TF_CACF_CACF_DE_COMUNICACION"])+"</option>";
 			    	}
-			    	panelNuevo = panelNuevo + '<option value="991"> <a style="background-color:red;"> Nuevo </a> </option>'
+			    	panelNuevo = panelNuevo + "<option value='0101'data-icon='resources/img/imagenesCotizador/addEmail.png' class='circle'>Agregar</option>";
 		    		d1.innerHTML =panelNuevo;
 		    		
 				    $('select').formSelect();
@@ -794,11 +873,12 @@ function cargarDatosComunicacion(persona,cod){
 		    	},
 		    error : function(xhr, status) {
 		    	
-		    	//no tiene comunicacion
-		    	
-				    
-				    
-		    	
+		    	var panelNuevo ='';
+	    		var d1 = document.getElementById("emailPersona");
+	    		d1.innerHTML = '';
+	    			panelNuevo = panelNuevo + "<option value='' selected>Seleccione..</option>";
+	    			d1.innerHTML =panelNuevo +"<option value='0101'data-icon='resources/img/imagenesCotizador/addEmail.png' class='circle'>Agregar</option>";
+			    $('select').formSelect();
 		    	
 		    	
 		    },
@@ -1360,9 +1440,8 @@ function inicioCotizacion(){
 		  });
 	 
      $('#fechaNac').mask('00/00/0000');
-
+     
 }
-
 
 function inicioCotizacionStep2(){
 bloquearPantallaGris();
@@ -1449,6 +1528,27 @@ function inicioCotizacionStep5(){
 	
 }
 
+
+function inicioCotizacionStep6(){
+	$(document).ready(function() {
+	    $('input#input_text, textarea#textarea2').characterCounter();
+	  });
+	 $(document).ready(function(){
+		    $('select').formSelect();
+		  });
+	 
+	 $(document).ready(function(){
+		    $('.modal').modal();
+		  });
+	 $(document).ready(function(){
+		    $('.tooltipped').tooltip();
+		  });
+	 
+     $('#fechaNac').mask('00/00/0000');
+     
+     buscarPersona();
+
+}
 
 function redirectStep2(){
 	bloquearPantallaGris();

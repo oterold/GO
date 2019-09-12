@@ -476,7 +476,7 @@ public class GoCotizador extends AbstractPubController {
 			}
 			
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("funcionOnload", "inicioCotizacionStep6()");
 			mapa.put("datosCoti", datosCoti);
 			mapa.put("datosProfesiones", datosProfesiones.get());
 			mapa.put("datosDocumentos", datosDocumentos.get());
@@ -903,6 +903,21 @@ public class GoCotizador extends AbstractPubController {
 		}
 	}
 	
+	@RequestMapping(value = "/buscarComunicacionesTelefono", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getBuscarComunicacionesTelefono(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String codigo = request.getParameter("codigo");
+			
+			return goCotizador.buscarComunicacion(datosCoti,codigo,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
 	
 	
 	@RequestMapping(value = "/buscarBanco", method = RequestMethod.GET)

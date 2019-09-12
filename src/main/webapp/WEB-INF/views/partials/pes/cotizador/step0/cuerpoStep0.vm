@@ -5,6 +5,7 @@
                     Este es un campo obligatorio.
         </div>
 </div>
+
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
@@ -49,7 +50,10 @@
                                 <option value="1">Web</option>
                                 <option value="2">Tv</option>
                                 <option value="3">Canal</option>
+                               
+                                
                             </select>
                             <label>Canal de Contacto*</label>
                         </div>
                         <!-- select de provincia -->									
+
