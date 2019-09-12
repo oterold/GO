@@ -11,6 +11,7 @@
                            <div class="summary-head" style="width:100%;">
 							  <h5 style="border:none;"  class="summary-title">Resumen Cotizaci&oacute;n</h5>
 							 	<h6  class="summary-title datos-cotizacion">  N&uacute;mero : <b style="color:#0b4376"> $datosCoti.cotizacion. </b> <br>
+   							 	$utilToolScreen.nombreMayuscula($datosCoti.datosContacto.dni) / $utilToolScreen.nombreMayuscula($datosCoti.datosContacto.nombre). <br>
 							 	$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.ramo) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.prod). <br>
 							 	$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.medioPago) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.formaPago). <br>
 							 	$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.annio) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.marca) /

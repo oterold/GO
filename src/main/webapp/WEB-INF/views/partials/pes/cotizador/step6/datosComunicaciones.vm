@@ -1,8 +1,13 @@
+		<input type="hidden" value="" id="valorConz"/>
+		<input type="hidden" value="" id="valorCodigo" />
+	
+	
 	<input type="hidden" value="" name="comunicacionValor" id="comunicacionValor" class="datoComunicacion"/>
+	
 <div id="modalDatosTelefono" class="modal">
 	    <div class="row" style="width:100%">
 	    	<div class="col-md-12 pl-5 pr-5">
-	     	 <h5>Datos Telefono</h5>
+	     	 <h5>Datos Comunicaci&oacute;n</h5>
 	      </div>
 	     </div>
 	    <div class="row pl-5 pr-5" style="width:100%">
