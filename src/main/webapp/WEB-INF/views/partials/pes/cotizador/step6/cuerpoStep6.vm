@@ -32,7 +32,7 @@
 				 <div class="col-md-2 col-sm-1">
 					<i class="fas fa-map-marker-alt prefix icono-input" style="position: relative;top: 25px;"></i>
 				 </div>
-    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono" onclick="cambiarSelect();">
 					<select  name="selecDomicilio" class="input-vacio selectorMaterialice" id="selecDomicilio" onchange="cargarSelectDomicilio();">
 						<option>Seleccione..</option>
 					</select>
@@ -45,7 +45,7 @@
 				 <div class="col-md-2 col-sm-1">
 					<i class="fas fa-phone prefix icono-input" style="position: relative;top: 25px;"></i>
 				 </div>
-    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono" onclick="cambiarSelect();">
 					<select onchange="cargarSelectComunicacion('1');" class="input-vacio selectorMaterialice"  name="telefonoPersona" id="telefonoPersona">
 						<option></option>
 					</select>
@@ -60,7 +60,7 @@
 				  <div class="col-md-2 col-sm-1">
 					<i class="fas fa-envelope prefix icono-input" style="position: relative;top: 25px;"></i>
 				 </div>
-    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono" onclick="cambiarSelect();">
 					<select  onchange="cargarSelectComunicacion('4');" name="emailPersona" class="input-vacio selectorMaterialice" id="emailPersona">
 						<option></option>
 					</select>
@@ -75,7 +75,7 @@
 				 <div class="col-md-2 col-sm-1">
 					<i class="fas fa-university prefix icono-input" style="position: relative;top: 25px;"></i>
 				 </div>
-    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono">
+    			<div class="input-field col-sm-9 col-md-8 ancho-label-icono" onclick="cambiarSelect();">
 					<select  name="datosBanco" class="input-vacio selectorMaterialice" id="datosBanco">
 						<option></option>
 					</select>

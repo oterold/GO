@@ -26,7 +26,7 @@
                            <div class="summary-head">
 								<h5 style="border:none;"  class="summary-title">Plan Cotizados</h5>
 										<h6  class="summary-title datos-cotizacion">
-										Plan $datosCoti.plan
+										$utilToolScreen.nombreMayuscula($datosCoti.descPlan)
 										/
 										#if($datosCoti.promocion == $datosCoti.promoA)
 											$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)
@@ -54,11 +54,11 @@
                                 Tomador / Asegurado
                               </h5>
 							 #end
-							  #if($datosCoti.datosAseg.dni.length() > 0)
+							  #if($datosCoti.datosAseg.calle.length() > 0)
 							 	 <h6  class="summary-title datos-cotizacion"> 
 								$datosCoti.datosAseg.dni / $datosCoti.datosAseg.calle 
 								$datosCoti.datosAseg.numero / $datosCoti.datosAseg.telefono / 
-								$datosCoti.datosAseg.email 
+								$datosCoti.datosAseg.email / $datosCoti.datosAseg.nuCuenta
 							 	 </h6>
 							  #end
                            </div>
@@ -103,15 +103,35 @@
                         <div class="summary-content">
                            <div class="summary-head">
 							#if($card == 2)
-                              <h5 style="border:none;"  class="summary-title"><b>Fin Emisi&oacute;n</b></h5>
+                              <h5 style="border:none;"  class="summary-title"><b>Datos Complementarios</b></h5>
 							#else
-								<h5 style="border:none;"  class="summary-title">Fin Emisi&oacute;n</h5>
+								<h5 style="border:none;"  class="summary-title">Datos Complementarios</h5>
 							#end
                            </div>
                            <div class="summary-price">
 							#if($card == 2)
                               <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
 							#elseif($card < 2)
+                              <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
+							#else
+							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
+							#end             
+							</div>
+                        </div>
+                     </div>
+                     <div class="summary-block">
+                        <div class="summary-content">
+                           <div class="summary-head">
+							#if($card == 3)
+                              <h5 style="border:none;"  class="summary-title"><b>Fin Emisi&oacute;n</b></h5>
+							#else
+								<h5 style="border:none;"  class="summary-title">Fin Emisi&oacute;n</h5>
+							#end
+                           </div>
+                           <div class="summary-price">
+							#if($card == 3)
+                              <a class="summary-text fas fa-edit" style="color:#13992a;font-size:20px;"></a>
+							#elseif($card < 3)
                               <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
 							#else
 							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>

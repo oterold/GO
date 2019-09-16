@@ -97,10 +97,11 @@
 		<property name="targetDataSources">
 			<map key-type="com.pseguros.pes.generic.EnvironmentType">
 				<entry key="PRODUCCION" value-ref="productionDsContinente" />
-				<entry key="TESTING" value-ref="testingDsContinente" />
-				<entry key="TESTING_MDW" value-ref="testingMdw" />
 				<entry key="DESARROLLO" value-ref="desaDsContinente" />
-				<entry key="TESTING_UNIFICADO" value-ref="testingUnificado" />
+				<entry key="TESTING_MDW" value-ref="testingMdw" />
+				<entry key="TESTING" value-ref="testingDsContinente" />
+				<entry key="UNIFICADO_MDW" value-ref="mdwUnificadoDsContinente" />
+				
 				<!-- 
 				 -->
 				 
@@ -135,32 +136,11 @@
 	</bean>
 	
 	
-	<!-- unificado testing -->
-	
-	<bean id="hikariConfigDSTestingUnificado" class="com.zaxxer.hikari.HikariConfig">
-	    <property name="poolName" value="poolContinenteTest" />
-	    <property name="connectionTestQuery" value="select 1 from dual" />
-	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-	    <property name="maximumPoolSize" value="3" />
-	    <property name="idleTimeout" value="15000" />
-	    <property name="jdbcUrl" value="jdbc:oracle:thin:@rex1clon:1561:RECTESTM" />
-	    <property name="dataSourceProperties">
-	        <props>
-	             <prop key="user">gioseg</prop>
-	            <prop key="password">gioseg</prop>
-	        </props>
-	    </property>
-	</bean>
 	
 	
-		<bean id="testingUnificado" class="com.zaxxer.hikari.HikariDataSource"  destroy-method="close">
-	    <constructor-arg ref="hikariConfigDSTestingUnificado" />
-	</bean>
+	<!-- mdw testing 
 	
-	
-	
-	<!-- mdw testing -->
-	
+	-->
 
 	
 	<bean id="hikariConfigDSTestingMdw" class="com.zaxxer.hikari.HikariConfig">
@@ -207,6 +187,29 @@
 	    <constructor-arg ref="hikariConfigDSContinenteTesting" />
 	</bean>
 	
+
+
+<!-- hikari  mdw unificado-->
+
+	<bean id="hikariConfigDSMdwUnificado" class="com.zaxxer.hikari.HikariConfig">
+	    <property name="poolName" value="poolContinenteProd" />
+	    <property name="connectionTestQuery" value="select 1 from dual" />
+	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+	    <property name="maximumPoolSize" value="30" />
+	    <property name="idleTimeout" value="15000" />
+	    <property name="jdbcUrl" value="jdbc:oracle:thin:@rex1clon:1550:RECPRODU" />
+	    
+	    <property name="dataSourceProperties">
+	        <props>
+	            <prop key="user">USR_PUB</prop>
+	            <prop key="password">c4l3f0n</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	<bean id="mdwUnificadoDsContinente" class="com.zaxxer.hikari.HikariDataSource"  destroy-method="close">
+	    <constructor-arg ref="hikariConfigDSMdwUnificado" />
+	</bean>
 
 	
 	<!-- hikari  Continente Produccion-->

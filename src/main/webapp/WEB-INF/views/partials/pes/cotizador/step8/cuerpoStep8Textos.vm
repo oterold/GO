@@ -1,0 +1,9 @@
+ <div class="input-field col-md-4">
+			<input name="acredorNombre" id="acredorNombre" type="text">
+			<label for="acredorNombre">Tipo de Texto*</label>
+</div>
+ <div class="input-field col-md-8">
+			<input name="tipoAcredor" id="tipoAcredor" type="text">
+			<label for="tipoAcredor">Texto*</label>
+</div>
+	

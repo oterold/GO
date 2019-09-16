@@ -181,7 +181,6 @@ function cargarDatosModalDatosBanco(){
 	var select = document.getElementById('datosBanco');
 	var dato = select.options[select.selectedIndex].value;
 	
-	
 	$.ajax({
 	    url : 'buscarBanco',
 	    contentType: 'application/json', 
@@ -318,9 +317,8 @@ function cargarFecha(){
 }
 
 function guardarDatoComunicacion(){
-	var conz = $("#valorConz").val(conz);
-
-var formData = JSON.stringify(jQuery('.datoComunicacion').serializeArray());
+	var conz = $("#valorConz").val();
+	var formData = JSON.stringify(jQuery('.datoComunicacion').serializeArray());
 M.updateTextFields();
 $.ajax({
     url : 'guardarComunicacion',
@@ -344,8 +342,7 @@ $.ajax({
 });
 }
 
-
-function cargarNuevaPersona(){
+function buscarDatosFormateados(){
 	var formData = JSON.stringify(jQuery('.ingresoNuevaPersona').serializeArray());
 	var array = [];
 	var valor;
@@ -374,7 +371,12 @@ function cargarNuevaPersona(){
 	array.push(valor)
 	
 
-	formData = JSON.stringify(array);    		
+	return formData = JSON.stringify(array);    		
+}
+
+function cargarNuevaPersona(){
+	
+	var formData = buscarDatosFormateados();
 	
 	M.updateTextFields();
 	$.ajax({
@@ -397,6 +399,8 @@ function cargarNuevaPersona(){
 	    	mostrarError(xhr['responseText']);
 	    },
 });
+	
+	$("#docPersona").val($("#clienteDni").val());
 	
 	buscarPersona();
 
@@ -493,6 +497,7 @@ function cargarPromoPlan(){
 	var promo = $("#datoPromo").val();
 	var plan = $("#datoPlan").val();
 	var valor = $("#datoMonto").val();
+	var descPlan = $("#datoDescPlan").val();
 	
 	var f = new Date();
 	var fecha = cargarFecha();
@@ -500,7 +505,7 @@ function cargarPromoPlan(){
 	 $.ajax({
 		    url : 'guardarPlanPromo',
 		    contentType: 'application/json', 
-		    data : {promo:promo,plan:plan,fecha:fecha,valor:valor},
+		    data : {promo:promo,plan:plan,fecha:fecha,valor:valor,descPlan:descPlan},
 		    type : 'GET',
 		    dataType : 'json',
 		    success : function(json) {
@@ -610,7 +615,98 @@ function abrirModalIngresoDomicilio(domicilio){
 	
 }
 
+function abrirModalDetalleCobertura(promo,plan,premio,descPromo){
+		 $('#modalDetallePlan').modal('open');
+		 $("#valorPromoModal").val(promo);
+		 $("#valorPlanModal").val(plan);
+		 
+		 $("#textoPromo").html("Promoci&oacute;n " +descPromo);
+		 $("#textoPremio").text("Premio "+ formatearMoneda(premio) + "/ MENSUAL");
+		 $("#textoPlan").text("Plan " +plan);
+		 
+		 detalleCoberturas(promo,plan,premio);
+		 
+		 
+}
 
+function detalleCoberturas(promo,plan,premio){
+	bloquearPantallaGris();
+	$("#tablaCobertura").css("display","");
+	$("#tablaComponente").css("display","none");
+	
+	
+	$("#letraCobertura").css("color","#0b4376");
+	$("#letraComponente").css("color","#a3a3a3");
+	
+	 $.ajax({
+		    url : 'contenidoDetalle',
+		    contentType: 'application/json', 
+		    data : {  plan : plan , promo : promo},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function (json) {
+		    	try {
+		    	var d1 = document.getElementById("contenidoCobertura");
+		    	d1.innerHTML = ' ';
+		    	var panelNuevo = '';
+		    	for ( var int = 0; int < json.length ; int++) {
+		    		panelNuevo = panelNuevo + '<tr><td align="right"style="padding-top:5px;"><h6 style="font-size:13px;color:#a3a3a3">'+ validarCampoVacio(primeraLetraMayus(json[int]['P_TF_CACK_CACB_DE_COBERTURA'])) +' </td><td style="padding-top:5px;width:60%;"><h6 style="font-size:13px;color:#a3a3a3">'+validarCampoVacioNoMostrar(formatearMoneda(json[int]['P_TF_CACK_CACK_MT_SUMA_ASEGURADA']))+'</h6></td><td style="padding-top:5px;width:60%;"><h6 style="font-size:13px;color:#a3a3a3">'+validarCampoVacioNoMostrar(formatearMoneda(json[int]['P_TF_CACK_CACK_CACK_MT_PRIMA']))+'</h6></td></tr>';
+		    	}
+		    	d1.innerHTML =panelNuevo;
+		    	
+		    	} catch (e) {
+		    		// TODO: handle exception
+		    	}
+		    	
+		    	$.unblockUI();
+		    },
+		    error: function (request, status, error) {
+		    	$.unblockUI();
+
+		    },
+		});
+	 
+	}
+
+
+function cargarComponentesDetalle(promo,plan,premio){
+	bloquearPantallaGris();
+	$("#tablaComponente").css("display","");
+	$("#tablaCobertura").css("display","none");
+	
+	$("#letraComponente").css("color","#0b4376");
+	$("#letraCobertura").css("color","#a3a3a3");
+	
+	var promo =  $("#valorPromoModal").val();
+	var plan =  $("#valorPlanModal").val();
+	 $.ajax({
+		    url : 'contenidoCobertura',
+		    contentType: 'application/json', 
+		    data : {  plan : plan , promo : promo},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function (json) {
+		    	try {
+		    	var d1 = document.getElementById("contenidoComponente");
+		    	d1.innerHTML = ' ';
+		    	var panelNuevo = '';
+		    	for ( var int = 0; int < json.length ; int++) {
+		    		panelNuevo = panelNuevo + '<tr><td align="right"style="padding-top:5px;"><h6 style="font-size:13px;color:#a3a3a3">'+ validarCampoVacio(primeraLetraMayus(json[int]['P_TF_CACX_CAPP_DE_COMPONENTE'])) +' </td><td style="padding-top:5px;width:60%;"><h6 style="font-size:13px;color:#a3a3a3">'+validarCampoVacioNoMostrar(formatearMoneda(json[int]['P_TF_CACX_CACX_MT_COMPONENTE']))+'</h6></td></tr>';
+		    	}
+		    	d1.innerHTML =panelNuevo;
+		    	
+		    	} catch (e) {
+		    		// TODO: handle exception
+		    	}
+		    	
+		    	$.unblockUI();
+		    },
+		    error: function (request, status, error) {
+		    	$.unblockUI();
+
+		    },
+		});
+	}
 
 function cargarSelectDomicilio(){
 	
@@ -672,7 +768,6 @@ function cargarSelectComunicacion(codigo){
 		var select = document.getElementById('emailPersona');
 		var valor = select.options[select.selectedIndex].value;
 		var conz = "9";
-		
 	}
 	
 	$("#valorConz").val(conz);
@@ -733,7 +828,32 @@ function abrirCargaCliente(){
 
 }
 	
-	
+
+function guardarDatoBanco(){
+	var select = document.getElementById('datosBanco');
+	var valor = select.options[select.selectedIndex].value;
+	 $.ajax({
+		    url : 'guardarDatosBanco',
+		    contentType: 'application/json', 
+		    data : {dato:valor},
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(json) {
+		    	try{
+		    		
+		    	}catch(e)
+		    	{
+		    	}
+		    	},
+		    error : function(xhr, status) {
+		    	
+		    },
+		 
+		   
+		});
+
+	}
+
 
 function cargarDatosBanco(persona){
 	 $.ajax({
@@ -759,6 +879,7 @@ function cargarDatosBanco(persona){
 		    		
 				    $('select').formSelect();
 		    		
+				    guardarDatoBanco();
 		    		
 		    		M.updateTextFields();
 		    		
@@ -1533,11 +1654,8 @@ function inicioCotizacionStep6(){
 	$(document).ready(function() {
 	    $('input#input_text, textarea#textarea2').characterCounter();
 	  });
-	 $(document).ready(function(){
-		    $('select').formSelect();
-		  });
-	 
-	 $(document).ready(function(){
+	$('select').formSelect();
+	$(document).ready(function(){
 		    $('.modal').modal();
 		  });
 	 $(document).ready(function(){
@@ -1546,9 +1664,17 @@ function inicioCotizacionStep6(){
 	 
      $('#fechaNac').mask('00/00/0000');
      
+
      buscarPersona();
 
+     M.updateTextFields();
 }
+
+function cambiarSelect(){
+	$(".dropdown-content").css("height", "330px");
+	$(".dropdown-content").css("top", "-290.7px");
+}
+
 
 function redirectStep2(){
 	bloquearPantallaGris();
@@ -2057,7 +2183,7 @@ function quitarSelectCardPromo(){
 	
 }
 
-function selecionarCotizacion(id,promo,plan,valor){
+function selecionarCotizacion(id,promo,plan,valor,descPlan){
     if ($("#card_"+id).hasClass('animated pulse')){
     	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado");
     	$("#check_"+id).css("display","none");
@@ -2074,12 +2200,14 @@ function selecionarCotizacion(id,promo,plan,valor){
     $("#datoPromo").val(promo)
     $("#datoPlan").val(plan)
     $("#datoMonto").val(valor)
+    $("#datoDescPlan").val(descPlan)
+    
     
 }
 
 
 
-function selecionarCotizacionB(id,promo,plan,valor){
+function selecionarCotizacionB(id,promo,plan,valor,descPlan){
     if ($("#card_"+id).hasClass('animated pulse')){
     	$("#cuerpo_"+id).removeClass("alto-panel-promo-seleccionado-b");
     	$("#check_"+id).css("display","none");
@@ -2096,6 +2224,8 @@ function selecionarCotizacionB(id,promo,plan,valor){
     $("#datoPromo").val(promo)
     $("#datoPlan").val(plan)
     $("#datoMonto").val(valor)
+    $("#datoDescPlan").val(descPlan)
+
 
 }
 

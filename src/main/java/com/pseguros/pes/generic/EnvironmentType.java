@@ -2,5 +2,5 @@ package com.pseguros.pes.generic;
 
 public enum EnvironmentType {
 	TESTING, DESARROLLO, PRODUCCION,
-	TESTING_MDW, TESTING_UNIFICADO
+	TESTING_MDW, UNIFICADO_MDW
 }

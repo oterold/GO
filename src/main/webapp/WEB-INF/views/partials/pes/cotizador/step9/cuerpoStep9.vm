@@ -1,0 +1,97 @@
+<div class="col-md-2">
+			<div class="circulo">
+				<i class="fas fa-car" style="font-size:60px;position: relative;left: 1px;top: 17px;color: white;"></i>
+			</div>
+</div>
+<div class="col-md-10">
+		<div class="row">
+    		<div class="col-md-3 texto-izq">
+    			Bien : 
+    		</div>
+    		<div class="col-md-7 texto-der">
+    			$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.marca) - $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.modelo)
+    		</div>
+		</div>
+		<div class="row">
+    		<div class="col-md-3 texto-izq">
+    			Suma Asegurada : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+				 $utilToolScreen.formatearMonedaCotizador($datosCoti.datosPanelB.precioBien)
+		</div>
+			<div class="col-md-3 texto-izq">
+    			Promocion : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+				#if($datosCoti.promocion == $datosCoti.promoA)
+					$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)
+				#elseif($datosCoti.promocion == $datosCoti.promoB)
+					$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB)
+				#else
+					$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC)
+				#end  
+			</div>
+	</div>
+	
+		<div class="row pb-3" style="border-bottom:1px #0b4376 dashed">
+    		<div class="col-md-3 texto-izq">
+    			Precio Promocional : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+    			$utilToolScreen.formatearMonedaCotizador($datosCoti.valorPromo)
+    		</div>
+    		
+    		<div class="col-md-3 texto-izq">
+    			Plan : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+				$utilToolScreen.nombreMayuscula($datosCoti.descPlan)
+		</div>
+	</div>
+	
+	
+	<div class="row">
+    		<div class="col-md-3 texto-izq">
+    			Asegurado : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+    			$utilToolScreen.nombreMayuscula($datosCoti.datosContacto.nombre)
+    		</div>
+    		
+    		<div class="col-md-3 texto-izq">
+    			Documento : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+				$utilToolScreen.nombreMayuscula($datosCoti.datosContacto.dni)
+			</div>
+	</div>
+		<div class="row">
+			<div class="col-md-3 texto-izq">
+    			Datos Bancario : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+				$datosCoti.datosAseg.nuCuenta
+    		</div>
+    		
+    		<div class="col-md-3 texto-izq">
+    			N° Inspecci&oacute;n  Productor : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+			
+		</div>
+	</div>
+	
+		<div class="row">
+		
+    		<div class="col-md-3 texto-izq">
+    			N° Inspecci&oacute;n Nueva : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+			</div>
+			<div class="col-md-3 texto-izq">
+    			N° Inspecci&oacute;n Celular : 
+    		</div>
+    		<div class="col-md-3 texto-der">
+			</div>
+	</div>
+</div>

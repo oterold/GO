@@ -31,6 +31,7 @@ public class DatosCotizacionGO {
 	private String fechaEmision; 
 	private String valorPromo; 
 	
+	
 	private DatosTomadorAseg datosAseg;
 	
 	private String formDatosGenerales="DGENERALES";
@@ -48,6 +49,8 @@ public class DatosCotizacionGO {
 	private DatosMostrarPanelB datosPanelB;
 	
 	private DatosGrillaProducto direccion;
+	
+	
 	
 	
 	
