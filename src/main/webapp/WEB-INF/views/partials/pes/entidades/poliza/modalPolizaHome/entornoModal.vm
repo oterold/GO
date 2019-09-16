@@ -47,15 +47,14 @@
 									#end
 								</div>
 								
-									<div class="radio">
+							<div class="radio">
 								  <label style="font-family:'Roboto', sans-serif !important;font-size:14px;">
-									#if($entorno == "TESTING_UNIFICADO")
-										<input type="radio" name="optradio" style="margin-right:8px;" value="03" checked>Testing - Unificado</label>	
+									#if($entorno == "UNIFICADO_MDW")
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" checked>Unificado - Mdw</label>	
 									#else
-										<input type="radio" name="optradio" style="margin-right:8px;" value="03" onclick="location.href='/PSPES/entorno?p1=TESTING_UNIFICADO'">Testing - Unificado</label>										
+										<input type="radio" name="optradio" style="margin-right:8px;" value="03" onclick="location.href='/PSPES/entorno?p1=UNIFICADO_MDW'">Unificado - Mdw</label>										
 									#end
 								</div>
-								
 								
 								
                                 <div class="radio">

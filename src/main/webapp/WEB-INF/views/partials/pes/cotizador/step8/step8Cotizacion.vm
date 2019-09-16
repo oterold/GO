@@ -6,24 +6,33 @@
                <div class="panel-body">
                   <div class=" row">
                      <div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
-                        <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos del Bien</h3>
-                        <div class="plan-selection">
-                           <div class="plan-data mt-2">
+                        <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos Complementarios</h3>
+                      <div class="plan-selection">
+                           <h5 class="pl-2 pt-1" id="tituloRamo" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Acreedores</h5>
+                           <div class="plan-data mt-2 pl-2">
                                   <div class="row">
-									#parse("partials/pes/cotizador/step7/cuerpoStep7.vm")
+									#parse("partials/pes/cotizador/step8/cuerpoStep8.vm")
+    							  </div>
+						</div>
+					 </div>
+					 <div class="plan-selection">
+                           <h5 class="pl-2 pt-1" id="tituloRamo" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Textos</h5>
+                          <div class="plan-data mt-2 pl-2">
+                                  <div class="row">
+									#parse("partials/pes/cotizador/step8/cuerpoStep8Textos.vm")
     							  </div>
 						</div>
 					 </div>
 					  	<div class="row margin-boton">
-					 <div class="col-sm-12 col-md-3">
-                        <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep6" style="cursor: pointer; color:white; margin-top: 5px;">
-                            Volver
-                        </a>
-                     </div>
+					<div class="col-sm-12 col-md-3">
+                           <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep7" style="cursor: pointer; color:white; margin-top: 5px;">
+                              Volver
+                           </a>
+					</div> 
 					<div class="col-md-6">
 					</div>
 					<div class="col-sm-12  col-md-3">
-						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep8" name="action">Siguiente
+						<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep9" name="action">Siguiente
         							<i class="material-icons right" style="color:white;">send</i>
 						</a>
 					</div>

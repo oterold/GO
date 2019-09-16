@@ -5,6 +5,7 @@
 <input type="hidden" value="" id="datoPlan"/>
 <input type="hidden" value="" id="datoPromo"/>
 <input type="hidden" value="" id="datoMonto"/>
+<input type="hidden" value="" id="datoDescPlan"/>
 
 <section class="container-fluid">
    <div class="containerMargenes" style="padding-top:50px;" id="main">

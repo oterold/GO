@@ -49,6 +49,8 @@ public class GoCotizador extends AbstractPubController {
 	private static final String COTIZADOR_STEP_COTIZADOR = "partials/pes/cotizador/step0/step0CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_DATOS_DEL_ASEGURADO = "partials/pes/cotizador/step6/step6CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_DATOS_DEL_BIEN = "partials/pes/cotizador/step7/step7CotizacionTemplateGenerales";
+	private static final String COTIZADOR_STEP_DATOS_COMPLEMENTARIOS = "partials/pes/cotizador/step8/step8CotizacionTemplateGenerales";
+	private static final String COTIZADOR_STEP_FIN_EMISION = "partials/pes/cotizador/step9/step9CotizacionTemplateGenerales";
 
 	
 	
@@ -537,6 +539,72 @@ public class GoCotizador extends AbstractPubController {
 		return new ModelAndView(PANTALLA_ERROR, mapa);
 	}
 	
+	
+	
+	
+	@RequestMapping(value = "/cotizacionStep8", method = RequestMethod.GET)
+	public ModelAndView getCotizacionStep8(HttpSession session, HttpServletRequest request, Locale locale, Model model) throws Exception {
+
+		Map<String, Object> mapa = new HashMap<String, Object>();
+		try {
+			logger.debug("Mostrar Pantalla step 8 cotizador GO ");
+
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+
+			
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("datosCoti", datosCoti);
+
+			mapa.put("card", 2);
+			
+			return new ModelAndView(COTIZADOR_STEP_DATOS_COMPLEMENTARIOS, mapa);
+
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto step 8", e);
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("errorMsg", "" + e.getCause().getMessage());
+		}
+
+		return new ModelAndView(PANTALLA_ERROR, mapa);
+	}
+	
+	@RequestMapping(value = "/cotizacionStep9", method = RequestMethod.GET)
+	public ModelAndView getCotizacionStep9(HttpSession session, HttpServletRequest request, Locale locale, Model model) throws Exception {
+
+		Map<String, Object> mapa = new HashMap<String, Object>();
+		try {
+			logger.debug("Mostrar Pantalla step 8 cotizador GO ");
+
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+
+			
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("datosCoti", datosCoti);
+
+			mapa.put("card", 3);
+			
+			return new ModelAndView(COTIZADOR_STEP_FIN_EMISION, mapa);
+
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto step 8", e);
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("errorMsg", "" + e.getCause().getMessage());
+		}
+
+		return new ModelAndView(PANTALLA_ERROR, mapa);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	// ---------------------------------------------------------------------------------------------------------------------------------------
 	// ----------------------------------------------------- METODOS
 	// ------------------------------------------------
@@ -1014,13 +1082,19 @@ public class GoCotizador extends AbstractPubController {
 	}
 	
 	
-	@RequestMapping(value = "/guardarDatosBancarios", method = RequestMethod.GET)
+	@RequestMapping(value = "/guardarDatosBanco", method = RequestMethod.GET)
 	public @ResponseBody
 	Object getGuardarDatosBancarios(HttpSession session, HttpServletRequest request) throws Exception {
 		try {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 			String valor = "1;5;VI;4546570955309807;;;;#";
+			String datoBanco = request.getParameter("dato");
+			
+			DatosTomadorAseg datosAseg = datosCoti.getDatosAseg();
+			datosAseg.setNuCuenta(datoBanco);
+			datosCoti.setDatosAseg(datosAseg);
+			
 			return goCotizador.guardarDatosBancarios(datosCoti,valor,getEntorno(request), getUser(request));
 			
 		} catch (Exception e) {
@@ -1046,6 +1120,40 @@ public class GoCotizador extends AbstractPubController {
 	}
 	
 	
+	@RequestMapping(value = "/contenidoCobertura", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getContenidoCobertura(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String plan = request.getParameter("plan");
+			String promo = request.getParameter("promo");
+			
+			return goCotizador.buscarDetallePlanPromo(datosCoti,plan,promo,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+	
+	
+	@RequestMapping(value = "/contenidoDetalle", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getContenidoDetalle(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String plan = request.getParameter("plan");
+			String promo = request.getParameter("promo");
+			
+			return goCotizador.buscarDetallePlanPromoCobertura(datosCoti,plan,promo,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
 	
 	
 	

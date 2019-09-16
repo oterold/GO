@@ -1,0 +1,22 @@
+ <div class="input-field col-md-8">
+			<input name="acredorNombre" id="acredorNombre" type="text">
+			<label for="acredorNombre">Acreedor - Buscar Persona por Apellido, Nombre, Documento*</label>
+</div>
+ <div class="input-field col-md-4">
+			<input name="tipoAcredor" id="tipoAcredor" type="text">
+			<label for="tipoAcredor">Tipo Acreedor*</label>
+</div>
+ <div class="input-field col-md-5">
+			<input name="partic" id="partic" type="text">
+			<label for="partic">% Participaci&oacute;n*</label>
+</div>
+ <div class="input-field col-md-5" style="text-align: center;">
+		 <a style="background-color:#0b4376;" onclick="agregarAccesorios();" class="btn-floating btn-small">
+            <i class="material-icons">add</i>
+        </a>
+</div>
+	
+<div class="col-md-12" style="text-align:right;border-bottom:1px #c9caca solid">
+<h6 style="width:100%;color:#0b4376!important">Total Participaci&oacute;n : 0%</h6>
+</div>
+	

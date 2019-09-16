@@ -12,10 +12,38 @@
     padding-top: 6px;
 }
 
-
+.ingreso-persona-alto{
+	height:265px !important;
+	top: -227.7px !important;
+}
 .centrarElementos{
 	 display: flex !important;
     align-items: center !important;
+}
+
+.texto-der{
+	text-align:left;
+	padding-left: 5px !important;
+	color : #999999 !important
+}
+.texto-izq{
+	text-align:right;
+	padding-right: 0px !important;
+	color : #0b4376!important
+	
+}
+
+
+.circulo {
+     width: 100px;
+     height: 100px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #5cb85c;
+    text-align: center;
+    background: #0b4376!important;
+     
 }
 
 .box { background-color: #fff; border-radius: 8px; border: 2px solid #e9ebef; padding: 50px; margin-bottom: 40px; }
