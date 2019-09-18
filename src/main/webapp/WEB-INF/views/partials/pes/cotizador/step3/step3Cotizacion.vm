@@ -41,12 +41,10 @@
                                         <div class="col-md-6">
                                         </div>
                                         <div class="col-sm-12  col-md-3">
-											
 											<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="redirectStep4();" style="cursor: pointer; color:white; margin-top: 5px;">
 												Siguiente
 												<i class="material-icons right" style="color:white;">send</i>
 											</a>
-							
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +53,8 @@
                     </div>
                 </div>
                 <!-- Lista certificados - Panel B -->
-                #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")      </div>
+                #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")  
+            </div>
         </div>
 </section>
 </form>

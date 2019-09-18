@@ -2,11 +2,10 @@
     <div class="containerMargenes" style="padding-top:50px;" id="main">
         <div class="row">
             <input type="hidden" value="" id="valorRamo"/>
-            <input type="hidden" value="" id="valorProducto">	
-			<input type="hidden" value="" id="esqA"/>
-            <input type="hidden" value="" id="esqB"/>
-            <input type="hidden" value="" id="descProd"/>
-
+            <input type="hidden" value="" id="valorProducto">
+                <input type="hidden" value="" id="esqA"/>
+                <input type="hidden" value="" id="esqB"/>
+                <input type="hidden" value="" id="descProd"/>
                 <!-- Datos Asegurado Fallecido -->
                 <div class=" col-sm-12 col-md-9 sin-margen-der" style="margin-top:50px">
                     <div class="panel panel-default panel-mio">
@@ -16,12 +15,12 @@
                                     <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Nueva Cotizaci&oacute;n</h3>
                                     <div class="plan-selection">
                                         <div class="plan-data" id="rowCardRamos">
-                                            <h5 class="pl-2 pt-1" id="tituloRamo" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Seleccione un ramo</h5>
+                                            <h5 class="pl-2 pt-1" id="tituloRamo" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Seleccione un ramo <i class="fas fa-exclamation-circle" id="iconoTitulo" style="color:#dc3545;display:none;"></i></h5>
                                             <div class="row">
                                                 #foreach($ramosIn in $datosRamos)
                                                     #set ($codRamo = $ramosIn.get("P_TF_CARP.CARP_CD_RAMO"))
                                                     #set ($descRamo = $ramosIn.get("P_TF_CARP.CARP_DE_RAMO"))
-                                                    #parse("partials/pes/cotizador/datosGenerales/ramosCotizacion.vm")
+                                                    #parse("partials/pes/cotizador/step1/ramosCotizacion.vm")
                                                 #end
                                                 <div class="col-sm-6 col-md-4 col-lg-2 centrar-card-resposive" id="btnMostrarRamos" style="cursor:pointer!important;display:none;" onclick="mostrarBtnRamos(this.id)">
                                                     <div class="card">
@@ -36,7 +35,7 @@
                                             </div>
                                         </div>
                                         <div class="plan-data" style="display:none;" id="mostrarPanelProd">
-                                            <h5 class="pl-2 pt-1" id="tituloProd" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Seleccione un producto</h5>
+                                            <h5 class="pl-2 pt-1" id="tituloProd" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Seleccione un producto <i class="fas fa-exclamation-circle" id="iconoProd" style="color:#dc3545;display:none;"></i></h5>
                                             <div class="row"  id="mostrarProductos">
                                             </div>
                                         </div>
@@ -63,6 +62,6 @@
                 </div>
                 <!-- Lista certificados - Panel B -->
                 #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")
-</div>
+			</div>
         </div>
 </section>

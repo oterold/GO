@@ -4,7 +4,7 @@
 	<input type="hidden" value="" id="tipoVehiculo" />
 
 <div class="input-field col-md-5">
-    <select onchange="reiniciarSelect()" class="datoTablaClass selectorMaterialice validate" required="required" aria-required="true" name="40012" id="selectAnio">
+    <select onchange="reiniciarSelect(this.id)" class="datoTablaClass selectorMaterialice validarForm" name="40012" id="40012">
         <option value="">Seleccione..</option>
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40012")
@@ -15,6 +15,9 @@
             #end
     </select>
     <label class="">A&ntilde;o*</label>
+    #set( $id = "40012")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 
 <div class="col-md-2">
@@ -27,7 +30,7 @@
 </label>
 </div>
 <div class="input-field col-md-5">
-    <select onchange="seleccionarModelo();" class="js-select2 datoTablaClass validate" required="required" aria-required="true" name="40020" id="selectMarca">
+    <select onchange="seleccionarModelo(this.id);" class="js-select2 datoTablaClass validarForm" name="40020" id="selectMarca">
 		<option value=""selected>Seleccione..</option>
          #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40020")
@@ -42,31 +45,34 @@
         #end
     </select>
     <label class="label-file-select">Marca*</label>
-	 <div class="validar-select-dos" id="validarMarca" style="display:none;">
-		Este es un campo obligatorio.
-	 </div>
+	 #set( $id = "selectMarca")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelectDos.vm")
 </div>
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
-    <select class="js-select2 datoTablaClass modeloClass" onchange="cargarSumaAsegurada();" name="40021" id="selectorModelo" >
+    <select class="js-select2 datoTablaClass modeloClass validarForm" onchange="cargarSumaAsegurada(this.id);" name="40021" id="selectorModelo" >
         <option value="">Seleccione..</option>
     </select>
     <label class="label-file-select">Modelo*</label>
-	 <div class="validar-select-dos" id="validarModelo" style="display:none;">
-		Este es un campo obligatorio.
-	 </div>
+	#set( $id = "selectorModelo")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelectDos.vm")
 </div>
 <div class="input-field col-md-5">
-	<select class="selectorMaterialice datoTablaClass validate" required="required" aria-required="true" name="40008" id="usoVehiculo" >
+	<select class="selectorMaterialice datoTablaClass validarForm" onchange="validarSelect(this.id);" name="40008" id="usoVehiculo" >
         <option value="">Seleccione..</option>
     </select>
     <label class="">Uso del Vehiculo*</label>
+	 #set( $id = "usoVehiculo")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
-    <select class="selectorMaterialice datoTablaClass" name="40090" id="mercosur" >
+    <select class="selectorMaterialice datoTablaClass validarForm" onchange="validarSelect(this.id);" name="40090" id="mercosur" >
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40090")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
@@ -80,18 +86,21 @@
 	#end
     </select>
     <label>L&iacute;mite R.C Mercosur*</label>
+	 #set( $id = "mercosur")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="input-field col-md-5">
-	<input class="datoTablaClass form-control form-validar" required  for="suma" placeholder="$0.00,0"  name="40221" id="labelSumaAsegurada" type="text">
+	<input class="datoTablaClass form-control form-validar validarForm" onblur="validarCampo(this.id);"  for="suma" placeholder="$0.00,0"  name="40221" id="labelSumaAsegurada" type="text">
     <label for="suma">Suma Asegurada*</label>
-	 <div class="invalid-feedback validar-from">
-                    Este es un campo obligatorio.
-                </div>
+	#set( $id = "labelSumaAsegurada")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
 </div>
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
-    <select class="datoTablaClass selectorMaterialice validate" required="required" aria-required="true" name="40550" id="clausula" >
+    <select class="datoTablaClass selectorMaterialice validarForm" onchange="validarSelect(this.id);" name="40550" id="clausula" >
         <option value="">Selecione..</option>
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40550")
@@ -106,18 +115,21 @@
 	#end
     </select>
     <label>Clausula Ajuste*</label>
+	 #set( $id = "clausula")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="input-field col-md-5">
-    <input class="datoTablaClass form-control form-validar" onkeypress="solonumeros(event);"  for="postal"  name="900008" id="codPostal" type="text" required>
-        <label for="postal">C&oacute;digo Postal*</label>
-		 <div class="invalid-feedback validar-from">
-                    Este es un campo obligatorio.
-                </div>
+    <input class="datoTablaClass form-control validarForm" onblur="validarCampo(this.id);" onkeypress="solonumeros(event);"  for="postal"  name="900008" id="codPostal" type="text" required>
+	<label for="postal">C&oacute;digo Postal*</label>
+	#set( $id = "codPostal")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
 </div>
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
-    <select class="selectorMaterialice datoTablaClass validate" required="required" aria-required="true" name="40088" id="bonificacionPromo" >
+    <select class="selectorMaterialice datoTablaClass validarForm" onchange="validarSelect(this.id);"  name="40088" id="bonificacionPromo" >
         <option value=''>Selecione..</option>
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40088")
@@ -132,9 +144,12 @@
 	#end
     </select>
     <label>Bonificaci&oacute;n Adicional por Promoci&oacute;n Ajuste*</label>
+	 #set( $id = "bonificacionPromo")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="input-field col-md-5">
-    <select class="selectorMaterialice datoTablaClass validate" required="required" aria-required="true"  name="40086" id="genero" >
+    <select class="selectorMaterialice datoTablaClass validarForm" onchange="validarSelect(this.id);"  name="40086" id="genero" >
         <option value=''>Selecione..</option>
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40086")
@@ -149,14 +164,16 @@
         #end
     </select>
     <label>Genero*</label>
+	#set( $id = "genero")
+    #set( $idMsj = "_validar")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
-  <input type="text" placeholder="dd/mm/aaaa" class="datoTablaClass form-control form-validar" required placeholder="Fecha Nacimiento"  onchange="validarFechanacimiento();" id="fechaNac" name="16015" >
-   <div class="invalid-feedback validar-from">
-                    Este es un campo obligatorio.
-        </div>
-		    <label>Fecha de Nacimiento*</label>
-
+  <input type="text" placeholder="dd/mm/aaaa" class="datoTablaClass form-control validarForm" onblur="validarCampo(this.id);" placeholder="Fecha Nacimiento"  onchange="validarFechanacimiento();" id="fechaNac" name="16015" >
+  <label>Fecha de Nacimiento*</label>
+     #set( $id = "fechaNac")
+	 #set( $idMsj = "_validar")
+	 #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
 </div>

@@ -1,265 +1,236 @@
-   	<input type="hidden" value="#if($datosCoti.datosGenerales.origenPago.length()>0)$datosCoti.datosGenerales.origenPago#else$datosValoresDefault.datosDefault.origenPago#end" id="valorOrigenPago"/>
-	<input type="hidden" value="#if($datosCoti.datosGenerales.vigenciaTecnica.length()>0)$datosCoti.datosGenerales.vigenciaTecnica#else$datosValoresDefault.datosDefault.vigenciaTecnica#end" id="valorVigenciaTecnica"/>
-	<input type="hidden" value="#if($datosCoti.datosGenerales.planPago.length()>0)$datosCoti.datosGenerales.planPago#else$datosValoresDefault.datosDefault.planPago#end" id="valorPlanPago"/>
-	<input type="hidden" value="$datosCoti.datosGenerales" id="datosCoti"/>
-	
-	
-	<!-- label de productor -->
-    <div class="input-field col-md-5">
-			<input value="$utilToolScreen.nombreMayuscula($datosValoresDefault.datosDefault.productor)" name="productorLabel" id="productorLabel" type="text" class="form-control form-validar" required>
-			<label for="first_name">Productor*</label>
-			    <div class="invalid-feedback validar-from">
-                    Este es un campo obligatorio.
+<input type="hidden" value="#if($datosCoti.datosGenerales.origenPago.length()>0)$datosCoti.datosGenerales.origenPago#else$datosValoresDefault.datosDefault.origenPago#end" id="valorOrigenPago"/>
+<input type="hidden" value="#if($datosCoti.datosGenerales.vigenciaTecnica.length()>0)$datosCoti.datosGenerales.vigenciaTecnica#else$datosValoresDefault.datosDefault.vigenciaTecnica#end" id="valorVigenciaTecnica"/>
+<input type="hidden" value="#if($datosCoti.datosGenerales.planPago.length()>0)$datosCoti.datosGenerales.planPago#else$datosValoresDefault.datosDefault.planPago#end" id="valorPlanPago"/>
+<input type="hidden" value="$datosCoti.datosGenerales" id="datosCoti"/>
+<!-- label de productor -->
+<div class="input-field col-md-5">
+    <input value="$utilToolScreen.nombreMayuscula($datosValoresDefault.datosDefault.productor)" onblur="validarCampo(this.id);" name="productorLabel" id="productorLabel" type="text">
+        <label for="productorLabel">Productor*</label>
+      #set( $id = "productorLabel")
+        #set( $idMsj = "_validar")
+        #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
+</div>
+<div class="col-md-2">
+</div>
+<!-- switch -->
+<div class="switch col-md-5 centrar-switch">
+    <label>
+        &iquest;Es Individual?
+        <input type="checkbox" checked>
+            <span class="lever"></span>
+</label>
         </div>
-    </div>
-    
-    <div class="col-md-2">
-    </div>
-    
-    
-    <!-- switch -->
-     <div class="switch col-md-5 centrar-switch">
-        <label>
-         &iquest;Es Individual?
-          <input type="checkbox" checked>
-          <span class="lever"></span>
-        </label>
-      </div>
-	  
-    <!-- select de provincia -->									
-    <div class="input-field col-md-5">
-        <select class="js-select2 validate" required="required" aria-required="true" name="datoProvincia" id="datoProvincia" >
-            <option value="">Selecione..</option>
-					
-			#foreach($provinciasIn in $datosProvincias.contenido)
-					    #if($datosCoti.datosGenerales.provincia.length()>0 && $provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO") == $datosCoti.datosGenerales.provincia)
-							#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($provinciasIn.get("P_TF_CAES.CAES_DE_ESTADO")))
-						#elseif($datosProvincias.valorDefault == $provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO"))
-							<option value="$provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO")" selected>$utilToolScreen.nombreMayuscula($provinciasIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
-						#else
-							<option value="$provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO")">$utilToolScreen.nombreMayuscula($provinciasIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
-						#end
-			#end
-			#if($datosCoti.datosGenerales.tipoPersona.length()>0)
-						<option value="$datosCoti.datosGenerales.provincia" selected>$textoSeleccionado</option>
-				#end
-        </select>
-        <label class="label-file-select">Provincia*</label>
-    </div>
-    
-    <div class="col-md-2">
-    </div>
-    
-    <!-- select de tipo de persona -->									
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="tipoPersona" id="tipoPersona">
-            <option value="">Selecione..</option>
-				#foreach($datosTipoPersonasIn in $datosTipoPersonas.contenido)
-						#if($datosCoti.datosGenerales.tipoPersona.length()>0 && $datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE") == $datosCoti.datosGenerales.tipoPersona)
-							#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosTipoPersonasIn.get("P_TF_RV.RV_MEANING")))
-						#elseif($datosTipoPersonas.valorDefault == $datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE"))
-							<option value="$datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE")" selected>$utilToolScreen.nombreMayuscula($datosTipoPersonasIn.get("P_TF_RV.RV_MEANING"))</option>
-						#else
-							<option value="$datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE")">$utilToolScreen.nombreMayuscula($datosTipoPersonasIn.get("P_TF_RV.RV_MEANING"))</option>
-						#end
-				#end
-				#if($datosCoti.datosGenerales.tipoPersona.length()>0)
-						<option value="$datosCoti.datosGenerales.tipoPersona" selected>$textoSeleccionado</option>
-				#end
-        </select>
-        <label>Tipo de Persona*</label>
-    </div>
-    
-    
-    <!-- select de medio de pago -->									
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="selectMedioPago" onchange="selectorOrigenPago();" id="selectMedioPago">
-            <option value="">Selecione..</option>
-			#foreach($medioPagoIn in $datosMedioPago.contenido)
-				#if($datosCoti.datosGenerales.medioPago.length()>0 && $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO") == $datosCoti.datosGenerales.medioPago)
-					#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO")))
-				#elseif($datosMedioPago.valorDefault == $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO"))
-					<option value="$medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO")" selected>$utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO"))</option>
-				#else
-							<option value="$medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO")">$utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO"))</option>
-				#end
-			#end
-				#if($datosCoti.datosGenerales.medioPago.length()>0)
-						<option value="$datosCoti.datosGenerales.medioPago" selected>$textoSeleccionado</option>
-				#end
-        </select>
-        <label>Medio de Pago*</label>
-    </div>
-    
-    
-    <div class="col-md-2">
-    </div>
-    
-    
-    <!-- select de origen pago -->
-    <div class="input-field col-md-5">
-        <select  name="selectOrigenPago" class="validate" required="required" aria-required="true" id="selectOrigenPago">
-        </select>
-        <label>Origen de Pago*</label>
-    </div>
-    
-    
-    
-    
-    
-    <!-- select iva-->									
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="condicionIVA" id="condicionIVA">
-            <option value="">Selecione..</option>
-					#foreach($ivaIn in $datosCondicionIva.contenido)
-						#if($datosCoti.datosGenerales.condicionIva.length()>0 && $ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA") == $datosCoti.datosGenerales.condicionIva)
-							#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($utilToolScreen.nombreMayuscula($ivaIn.get("P_TF_CJIV.CJIV_DE_CATEGORIA_IVA"))))
-						#elseif($datosCondicionIva.valorDefault == $ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA"))
-							<option value="$ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA")" selected>$utilToolScreen.nombreMayuscula($ivaIn.get("P_TF_CJIV.CJIV_DE_CATEGORIA_IVA"))</option>
-						#else
-							<option value="$ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA")">$utilToolScreen.nombreMayuscula($ivaIn.get("P_TF_CJIV.CJIV_DE_CATEGORIA_IVA"))</option>
-						#end
-					#end
-					#if($datosCoti.datosGenerales.condicionIva.length()>0)
-						<option value="$datosCoti.datosGenerales.condicionIva" selected>$textoSeleccionado</option>
-					#end
-        </select>
-        <label>Condici&oacute;n de IVA*</label>
-    </div>
-    
-    
-    <div class="col-md-2">
-    </div>
-    
-    
-    <!-- label de cuit -->
-    <div class="input-field col-md-5">
-        <input name="cuit" placeholder="00-00000000-0" value="#if($datosCoti.datosGenerales.cuit.length()>0)$datosCoti.datosGenerales.cuit#end" id="cuit" type="text">
-            <label for="first_name">Cuit</label>
-    </div>
-    
-    
-    
-    <!-- select vigencia-->									
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="selectVigencia" id="selectVigencia" onchange="selectorVigenciaTecnica();	">
-            <option value="">Selecione..</option>
-					#foreach($vigenciaIn in $datosVigencia.contenido)
-						#if($datosCoti.datosGenerales.vigencia.length()>0 && $vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA") == $datosCoti.datosGenerales.vigencia)
-							#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($vigenciaIn.get("P_TF_CAFP.CAFP_DE_VIGENCIA")))
-						#elseif($datosVigencia.valorDefault == $vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA"))
-							<option value="$vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA")" selected>$utilToolScreen.nombreMayuscula($vigenciaIn.get("P_TF_CAFP.CAFP_DE_VIGENCIA"))</option>
-						#else
-							<option value="$vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA")">$utilToolScreen.nombreMayuscula($vigenciaIn.get("P_TF_CAFP.CAFP_DE_VIGENCIA"))</option>
-						#end
-				#end
-				#if($datosCoti.datosGenerales.vigencia.length()>0)
-						<option value="$datosCoti.datosGenerales.vigencia" selected>$textoSeleccionado</option>
-				#end
-				
-				
-        </select>
-        <label>Vigencia*</label>
-    </div>
-    
-    
-    <div class="col-md-2">
-    </div>
-    
-    
-    <!-- label de vigencia tecnica -->
-    <div class="input-field col-md-5">
-        <select name="selectVigenciaTecnica" id="selectVigenciaTecnica">
-		</select>
-        <label>Vigencia T&eacute;cnica</label>
-    </div>
-    
-    
-    <!-- select tipo de fac-->									
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="tipoFacturacion" id="tipoFacturacion">
-            <option value="">Selecione..</option>
-				
-			#foreach($datosFacturacionIn in $datosFacturacion.contenido)
-				#if($datosCoti.datosGenerales.tipoFacturacion.length()>0 && $datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION") == $datosCoti.datosGenerales.tipoFacturacion)
-					#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosFacturacionIn.get("P_TF_CTFA.CTFA_DE_FACTURACION")))
-				#elseif($datosFacturacion.valorDefault == $datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION"))
-					<option value="$datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION")" selected>$utilToolScreen.nombreMayuscula($datosFacturacionIn.get("P_TF_CTFA.CTFA_DE_FACTURACION"))</option>
-				#else
-					<option value="$datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION")">$utilToolScreen.nombreMayuscula($datosFacturacionIn.get("P_TF_CTFA.CTFA_DE_FACTURACION"))</option>
-				#end
-			#end
-			#if($datosCoti.datosGenerales.tipoFacturacion.length()>0)
-				<option value="$datosCoti.datosGenerales.tipoFacturacion" selected>$textoSeleccionado</option>
-			#end
-				
-        </select>
-        <label>Tipo de Facturaci&oacute;n*</label>
-    </div>
-    
-    
-    <div class="col-md-2">
-    </div>
-    
-    
-    <!-- select de oneda  -->
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="moneda" id="moneda">
-			<option value="">Seleccione..</option> 
-			#foreach($datosMonedaIn in $datosMoneda.contenido)
-				#if($datosCoti.datosGenerales.moneda.length()>0 && $datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA") == $datosCoti.datosGenerales.moneda)
-					#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosMonedaIn.get("P_TF_CAMO.CAMO_DE_MONEDA")))
-				#elseif($datosMoneda.valorDefault == $datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA"))
-					<option value="$datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA")" selected>$utilToolScreen.nombreMayuscula($datosMonedaIn.get("P_TF_CAMO.CAMO_DE_MONEDA"))</option>
-				#else
-					<option value="$datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA")">$utilToolScreen.nombreMayuscula($datosMonedaIn.get("P_TF_CAMO.CAMO_DE_MONEDA"))</option>
-				#end
-			#end
-			#if($datosCoti.datosGenerales.moneda.length()>0)
-				<option value="$datosCoti.datosGenerales.moneda" selected>$textoSeleccionado</option>
-			#end
-			
-        </select>
-        <label>Moneda*</label>
-    </div>
-    
-    
-    <!-- select tipo de fac-->									
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="selectPlanesPago" id="selectPlanesPago">
-            <option value="">Selecione..</option>
-			#foreach($datosValoresDefaultIn in $datosValoresDefault)
-				#if($datosValoresDefaultIn.get("P_TF_GANA.GANA_NU_CAMPO") == "8")
-					<option value="$datosValoresDefaultIn.get("P_TF_GANA.GANA_DE_VALOR_DEFAULT")" selected>$utilToolScreen.nombreMayuscula($datosValoresDefaultIn.get("P_TF_GANA.GANA_DE_VALOR_DEFAULT"))</option>
-				#end
-			#end
-        </select>
-        <label>Plan de Pago*</label>
-    </div>
-    
-    
-    <div class="col-md-2">
-    </div>
-    
-    
-    <!--calculo  -->
-    <div class="input-field col-md-5">
-        <select class="selectorMaterialice validate" required="required" aria-required="true" name="modoCalculo" id="modoCalculo">
-            <option value="">Selecione..</option>
-		#foreach($datosCalculoIn in $datosCalculo.contenido)
-				#if($datosCoti.datosGenerales.modoCalculo.length()>0 && $datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE") == $datosCoti.datosGenerales.modoCalculo)
-					#set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosCalculoIn.get("P_TF_RV.RV_MEANING")))
-				#elseif($datosCalculo.valorDefault == $datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE"))
-					<option value="$datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE")" selected>$utilToolScreen.nombreMayuscula($datosCalculoIn.get("P_TF_RV.RV_MEANING"))</option>
+        <!-- select de provincia -->									
+        <div class="input-field col-md-5">
+            <select class="js-select2" onchange="selectorOrigenPago();" name="datoProvincia" id="datoProvincia" >
+                #foreach($provinciasIn in $datosProvincias.contenido)
+                    #if($datosCoti.datosGenerales.provincia.length()>0 && $provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO") == $datosCoti.datosGenerales.provincia)
+                        #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($provinciasIn.get("P_TF_CAES.CAES_DE_ESTADO")))
+                        #elseif($datosProvincias.valorDefault == $provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO"))
+                            <option value="$provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO")" selected>$utilToolScreen.nombreMayuscula($provinciasIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
+                            #else
+                                <option value="$provinciasIn.get("P_TF_CAES.CAES_CD_ESTADO")">$utilToolScreen.nombreMayuscula($provinciasIn.get("P_TF_CAES.CAES_DE_ESTADO"))</option>
+                    #end
+                #end
+                #if($datosCoti.datosGenerales.tipoPersona.length()>0)
+                    <option value="$datosCoti.datosGenerales.provincia" selected>$textoSeleccionado</option>
+                #end
+            </select>
+            <label class="label-file-select">Provincia*</label>
+			#set( $id = "datoProvincia")
+			#set( $idMsj = "_validar")
+			#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+        </div>
+        <div class="col-md-2">
+        </div>
+        <!-- select de tipo de persona -->									
+        <div class="input-field col-md-5">
+            <select class="selectorMaterialice" onchange="selectorOrigenPago();" name="tipoPersona" id="tipoPersona">
+                #foreach($datosTipoPersonasIn in $datosTipoPersonas.contenido)
+                    #if($datosCoti.datosGenerales.tipoPersona.length()>0 && $datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE") == $datosCoti.datosGenerales.tipoPersona)
+                        #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosTipoPersonasIn.get("P_TF_RV.RV_MEANING")))
+                        #elseif($datosTipoPersonas.valorDefault == $datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE"))
+                            <option value="$datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE")" selected>$utilToolScreen.nombreMayuscula($datosTipoPersonasIn.get("P_TF_RV.RV_MEANING"))</option>
+                            #else
+                                <option value="$datosTipoPersonasIn.get("P_TF_RV.RV_LOW_VALUE")">$utilToolScreen.nombreMayuscula($datosTipoPersonasIn.get("P_TF_RV.RV_MEANING"))</option>
+                    #end
+                #end
+                #if($datosCoti.datosGenerales.tipoPersona.length()>0)
+                    <option value="$datosCoti.datosGenerales.tipoPersona" selected>$textoSeleccionado</option>
+                #end
+            </select>
+            <label>Tipo de Persona*</label>
+			#set( $id = "tipoPersona")
+			#set( $idMsj = "_validar")
+			#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+        </div>
+        <!-- select de medio de pago -->									
+        <div class="input-field col-md-5">
+            <select class="selectorMaterialice" name="selectMedioPago" onchange="selectorOrigenPago();" id="selectMedioPago">
+                #foreach($medioPagoIn in $datosMedioPago.contenido)
+                    #if($datosCoti.datosGenerales.medioPago.length()>0 && $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO") == $datosCoti.datosGenerales.medioPago)
+                        #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO")))
+                        #elseif($datosMedioPago.valorDefault == $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO"))
+                            <option value="$medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO")" selected>$utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO"))</option>
+                            #else
+                                <option value="$medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO")">$utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO"))</option>
+                    #end
+                #end
+                #if($datosCoti.datosGenerales.medioPago.length()>0)
+                    <option value="$datosCoti.datosGenerales.medioPago" selected>$textoSeleccionado</option>
+                #end
+            </select>
+            <label>Medio de Pago*</label>
+			#set( $id = "canal")
+			#set( $idMsj = "_validar")
+			#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+        </div>
+        <div class="col-md-2">
+        </div>
+        <!-- select de origen pago -->
+        <div class="input-field col-md-5">
+            <select  name="selectOrigenPago" onchange="validarSelect(this.id);" id="selectOrigenPago">
+            </select>
+            <label>Origen de Pago*</label>
+			#set( $id = "selectOrigenPago")
+			#set( $idMsj = "_validar")
+			#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+        </div>
+        <!-- select iva-->									
+        <div class="input-field col-md-5">
+            <select class="selectorMaterialice" onchange="validarSelect(this.id);" name="condicionIVA" id="condicionIVA">
+                #foreach($ivaIn in $datosCondicionIva.contenido)
+                    #if($datosCoti.datosGenerales.condicionIva.length()>0 && $ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA") == $datosCoti.datosGenerales.condicionIva)
+                        #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($utilToolScreen.nombreMayuscula($ivaIn.get("P_TF_CJIV.CJIV_DE_CATEGORIA_IVA"))))
+                        #elseif($datosCondicionIva.valorDefault == $ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA"))
+                            <option value="$ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA")" selected>$utilToolScreen.nombreMayuscula($ivaIn.get("P_TF_CJIV.CJIV_DE_CATEGORIA_IVA"))</option>
+                            #else
+                                <option value="$ivaIn.get("P_TF_CJIV.CJIV_CD_CATEGORIA_IVA")">$utilToolScreen.nombreMayuscula($ivaIn.get("P_TF_CJIV.CJIV_DE_CATEGORIA_IVA"))</option>
+                    #end
+                #end
+                #if($datosCoti.datosGenerales.condicionIva.length()>0)
+                    <option value="$datosCoti.datosGenerales.condicionIva" selected>$textoSeleccionado</option>
+                #end
+            </select>
+            <label>Condici&oacute;n de IVA*</label>
+			#set( $id = "condicionIVA")
+			#set( $idMsj = "_validar")
+			#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+        </div>
+        <div class="col-md-2">
+        </div>
+        <!-- label de cuit -->
+        <div class="input-field col-md-5">
+            <input name="cuit" placeholder="00-00000000-0" value="#if($datosCoti.datosGenerales.cuit.length()>0)$datosCoti.datosGenerales.cuit#end" id="cuit" type="text">
+                <label for="first_name">Cuit</label>
+</div>
+<!-- select vigencia-->									
+<div class="input-field col-md-5">
+    <select class="selectorMaterialice validate" onchange="validarSelect(this.id);" name="selectVigencia" id="selectVigencia" onchange="selectorVigenciaTecnica();	">
+        #foreach($vigenciaIn in $datosVigencia.contenido)
+            #if($datosCoti.datosGenerales.vigencia.length()>0 && $vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA") == $datosCoti.datosGenerales.vigencia)
+                #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($vigenciaIn.get("P_TF_CAFP.CAFP_DE_VIGENCIA")))
+                #elseif($datosVigencia.valorDefault == $vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA"))
+                    <option value="$vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA")" selected>$utilToolScreen.nombreMayuscula($vigenciaIn.get("P_TF_CAFP.CAFP_DE_VIGENCIA"))</option>
+                    #else
+                        <option value="$vigenciaIn.get("P_TF_CAFP.CAFP_CD_VIGENCIA")">$utilToolScreen.nombreMayuscula($vigenciaIn.get("P_TF_CAFP.CAFP_DE_VIGENCIA"))</option>
+            #end
+        #end
+        #if($datosCoti.datosGenerales.vigencia.length()>0)
+            <option value="$datosCoti.datosGenerales.vigencia" selected>$textoSeleccionado</option>
+        #end
+    </select>
+    <label>Vigencia*</label>
+	#set( $id = "selectVigencia")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+</div>
+<div class="col-md-2">
+</div>
+<!-- label de vigencia tecnica -->
+<div class="input-field col-md-5">
+    <select name="selectVigenciaTecnica" id="selectVigenciaTecnica">
+    </select>
+    <label>Vigencia T&eacute;cnica</label>
+</div>
+<!-- select tipo de fac-->									
+<div class="input-field col-md-5">
+    <select class="selectorMaterialice" onchange="validarSelect(this.id);" name="tipoFacturacion" id="tipoFacturacion">
+        #foreach($datosFacturacionIn in $datosFacturacion.contenido)
+            #if($datosCoti.datosGenerales.tipoFacturacion.length()>0 && $datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION") == $datosCoti.datosGenerales.tipoFacturacion)
+                #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosFacturacionIn.get("P_TF_CTFA.CTFA_DE_FACTURACION")))
+                #elseif($datosFacturacion.valorDefault == $datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION"))
+                    <option value="$datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION")" selected>$utilToolScreen.nombreMayuscula($datosFacturacionIn.get("P_TF_CTFA.CTFA_DE_FACTURACION"))</option>
+                    #else
+                        <option value="$datosFacturacionIn.get("P_TF_CTFA.CTFA_TP_FACTURACION")">$utilToolScreen.nombreMayuscula($datosFacturacionIn.get("P_TF_CTFA.CTFA_DE_FACTURACION"))</option>
+            #end
+        #end
+        #if($datosCoti.datosGenerales.tipoFacturacion.length()>0)
+            <option value="$datosCoti.datosGenerales.tipoFacturacion" selected>$textoSeleccionado</option>
+        #end
+    </select>
+    <label>Tipo de Facturaci&oacute;n*</label>
+	#set( $id = "tipoFacturacion")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+</div>
+<div class="col-md-2">
+</div>
+<!-- select de oneda  -->
+<div class="input-field col-md-5">
+    <select class="selectorMaterialice" onchange="validarSelect(this.id);" name="moneda" id="moneda">
+        #foreach($datosMonedaIn in $datosMoneda.contenido)
+            #if($datosCoti.datosGenerales.moneda.length()>0 && $datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA") == $datosCoti.datosGenerales.moneda)
+                #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosMonedaIn.get("P_TF_CAMO.CAMO_DE_MONEDA")))
+                #elseif($datosMoneda.valorDefault == $datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA"))
+                    <option value="$datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA")" selected>$utilToolScreen.nombreMayuscula($datosMonedaIn.get("P_TF_CAMO.CAMO_DE_MONEDA"))</option>
+                    #else
+                        <option value="$datosMonedaIn.get("P_TF_CAMO.CAMO_CD_MONEDA")">$utilToolScreen.nombreMayuscula($datosMonedaIn.get("P_TF_CAMO.CAMO_DE_MONEDA"))</option>
+            #end
+        #end
+        #if($datosCoti.datosGenerales.moneda.length()>0)
+            <option value="$datosCoti.datosGenerales.moneda" selected>$textoSeleccionado</option>
+        #end
+    </select>
+    <label>Moneda*</label>
+	#set( $id = "moneda")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+</div>
+<!-- select tipo de fac-->									
+<div class="input-field col-md-5">
+    <select class="selectorMaterialice" name="selectPlanesPago" onchange="validarSelect(this.id);" id="selectPlanesPago">
+        #foreach($datosValoresDefaultIn in $datosValoresDefault)
+            #if($datosValoresDefaultIn.get("P_TF_GANA.GANA_NU_CAMPO") == "8")
+                <option value="$datosValoresDefaultIn.get("P_TF_GANA.GANA_DE_VALOR_DEFAULT")" selected>$utilToolScreen.nombreMayuscula($datosValoresDefaultIn.get("P_TF_GANA.GANA_DE_VALOR_DEFAULT"))</option>
+            #end
+        #end
+    </select>
+    <label>Plan de Pago*</label>
+	#set( $id = "selectPlanesPago")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+</div>
+<div class="col-md-2">
+</div>
+<!--calculo  -->
+<div class="input-field col-md-5">
+    <select class="selectorMaterialice" onchange="validarSelect(this.id);" name="modoCalculo" id="modoCalculo">
+        #foreach($datosCalculoIn in $datosCalculo.contenido)
+            #if($datosCoti.datosGenerales.modoCalculo.length()>0 && $datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE") == $datosCoti.datosGenerales.modoCalculo)
+                #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($datosCalculoIn.get("P_TF_RV.RV_MEANING")))
+                #elseif($datosCalculo.valorDefault == $datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE"))
+                    <option value="$datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE")" selected>$utilToolScreen.nombreMayuscula($datosCalculoIn.get("P_TF_RV.RV_MEANING"))</option>
 				#else
 					<option value="$datosCalculoIn.get("P_TF_RV.RV_LOW_VALUE")">$utilToolScreen.nombreMayuscula($datosCalculoIn.get("P_TF_RV.RV_MEANING"))</option>
-				#end
-			#end
-				
-		#if($datosCoti.datosGenerales.modoCalculo.length()>0)
-			<option value="$datosCoti.datosGenerales.modoCalculo" selected>$textoSeleccionado</option>
-		#end
-        </select>
-        <label>Modo de Calculo*</label>
-    </div>
-	
+            #end
+        #end
+        #if($datosCoti.datosGenerales.modoCalculo.length()>0)
+            <option value="$datosCoti.datosGenerales.modoCalculo" selected>$textoSeleccionado</option>
+        #end
+    </select>
+    <label>Modo de Calculo*</label>
+	#set( $id = "modoCalculo")
+	#set( $idMsj = "_validar")
+	#parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
+</div>

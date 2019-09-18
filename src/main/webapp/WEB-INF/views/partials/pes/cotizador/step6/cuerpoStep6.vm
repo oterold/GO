@@ -93,28 +93,27 @@
 	
 	<div class="col-md-1">
 	</div>
-
 	<!-- card 2 -->
     <div class="col-md-4 centrar-texto pt-4" id="segundoAseg">
       <div class="card" style="width:100%;">
         <div class="card-image">
-        <div class="col-md-12 p-2 cabecera-persona" style="background-color:#0b4376">
-			<i class="fas fa-user-friends icono-cabecera-persona"></i>
-			<h6 style="color:white;">2° Titular *</h6>
-		</div>
-		<div data-target="modal1" class="modal-trigger" style="cursor:pointer;">
-          <a class="btn-floating halfway-fab waves-effect waves-light red" style="background-color:#999999!important;height:50px!important;width:50px!important;" ">
-			<i class="fas fa-user-plus" id="iconoAsegurado" style="padding-top: 5px;padding-left: 5px;"></i>
-		  </a>
-		</div>
+            <div class="col-md-12 p-2 cabecera-persona" style="background-color:#0b4376">
+    			<i class="fas fa-user-friends icono-cabecera-persona"></i>
+    			<h6 style="color:white;">2° Titular *</h6>
+    		</div>
+    		<div data-target="modal1" class="modal-trigger" style="cursor:pointer;">
+              <a class="btn-floating halfway-fab waves-effect waves-light red" style="background-color:#999999!important;height:50px!important;width:50px!important;" ">
+    			<i class="fas fa-user-plus" id="iconoAsegurado" style="padding-top: 5px;padding-left: 5px;"></i>
+    		  </a>
+    		</div>
         </div>
-			<div class="row pt-1" style="height:330px;">
-						<div class="input-field col-md-12">
-							<i class="fas fa-pen prefix icono-input"></i>
-							<input id="docDos" type="text" class="validate">
-							<label  style="text-align:left;" for="docDos">Doc. / Cuit / Cuil *</label>
-					</div>
+		<div class="row pt-1" style="height:330px;">
+			<div class="input-field col-md-12">
+				<i class="fas fa-pen prefix icono-input"></i>
+				<input id="docDos" type="text" class="validate">
+					<label  style="text-align:left;" for="docDos">Doc. / Cuit / Cuil *</label>
 			</div>
+		</div>
       </div>
     </div>
 		

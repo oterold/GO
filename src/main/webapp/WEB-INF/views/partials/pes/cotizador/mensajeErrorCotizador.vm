@@ -1,0 +1,3 @@
+        <div class="validar-from" id="$id$idMsj" style="display:none;">
+            Este es un campo obligatorio.
+        </div>

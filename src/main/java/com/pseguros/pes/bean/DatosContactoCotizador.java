@@ -8,7 +8,15 @@ public class DatosContactoCotizador {
 	private String telefono;
 	private String email;
 	private String domicilio;
+	private String canal;
 	
+	
+	public String getCanal() {
+		return canal;
+	}
+	public void setCanal(String canal) {
+		this.canal = canal;
+	}
 	public String getDni() {
 		return dni;
 	}

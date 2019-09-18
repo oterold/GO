@@ -142,28 +142,7 @@ public class AuxiliarUtil extends AbstractPubController {
 		return datosGenerales;
 	}
 
-	public static DatosContactoCotizador cargardatosContacto(HttpServletRequest request) {
-
-		// CARGO EL OBJETO CON LOS DATOS DLE REQUEST
-		DatosContactoCotizador datosContacto = new DatosContactoCotizador();
-		datosContacto.setCuit(request.getParameter("cuit"));
-		datosContacto.setDni(request.getParameter("dniCliente"));
-		datosContacto.setDomicilio(request.getParameter("domicilio"));
-		datosContacto.setEmail(request.getParameter("email"));
-		datosContacto.setNombre(request.getParameter("nombreCliente"));
-		datosContacto.setTelefono(request.getParameter("celular"));
-
-		// guardo en session los datos dle cliente
-
-		request.getSession().setAttribute(ConstantesDeSession.NOMBRE_CLIENTE_COTIZADOR, datosContacto.getNombre());
-		request.getSession().setAttribute(ConstantesDeSession.DNI_CLIENTE_COTIZADOR, datosContacto.getDni());
-		request.getSession().setAttribute(ConstantesDeSession.EMIAL_CLIENTE_COTIZADOR, datosContacto.getEmail());
-		request.getSession().setAttribute(ConstantesDeSession.CUIT_CLIENTE_COTIZADOR, datosContacto.getCuit());
-		request.getSession().setAttribute(ConstantesDeSession.TELEFONO_CLIENTE_COTIZADOR, datosContacto.getTelefono());
-		request.getSession().setAttribute(ConstantesDeSession.DOMICIOLIO_CLIENTE_COTIZADOR, datosContacto.getDomicilio());
-
-		return datosContacto;
-	}
+	
 
 	public static List cargarDatosGeneralesSeleccionados(DatosCotizacionGO datosCoti, HttpServletRequest request) {
 
