@@ -29,11 +29,9 @@
                 </thead>
                 <tbody id="contenidoTablaUbicaciones">
                 </tbody>
-      </table>
+     	 </table>
 		 </div>
 		 <div class="row" id="mostrarUbicacion" style="display:none">
-			
-			
 		 </div>
 		 
     </div>

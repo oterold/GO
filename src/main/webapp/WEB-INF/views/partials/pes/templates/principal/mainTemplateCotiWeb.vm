@@ -45,6 +45,15 @@
 	<script type="text/javascript" src="/PSPES/resources/js/pub/pdfVida/pdfVida.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/materialV411/materialize.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacion.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep0.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep1.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep2.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep3.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep4.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep5.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep6.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep7.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/pub/goCotizacion/goCotizacionStep8.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/select2.full.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/sweetalert2.all.min.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/jsMask.js"></script>

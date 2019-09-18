@@ -40,7 +40,7 @@ import com.pseguros.pes.util.pantalla.UtilGuardarDatosSession;
 @Controller
 public class GoCotizador extends AbstractPubController {
 	private static final Logger logger = LoggerFactory.getLogger(GoCotizador.class);
-	private static final String PANTALLA_HOME_DATOS_GENERALES = "partials/pes/cotizador/datosGenerales/datosTemplateGenerales";
+	private static final String PANTALLA_HOME_DATOS_GENERALES = "partials/pes/cotizador/step1/datosTemplateGenerales";
 	private static final String PANTALLA_HOME_STEP_2 = "partials/pes/cotizador/step2/step2CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_DATOS_BIEN = "partials/pes/cotizador/step3/step3CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_PROMOCIONES = "partials/pes/cotizador/step4/step4CotizacionTemplateGenerales";
@@ -634,7 +634,7 @@ public class GoCotizador extends AbstractPubController {
 		}
 	}
 
-	@RequestMapping(value = "/guardarDatosContacto", method = RequestMethod.POST)
+	@RequestMapping(value = "/guardarDatosContacto", method = RequestMethod.GET)
 	public @ResponseBody
 	Object guardarDatosContacto(HttpSession session, HttpServletRequest request) throws Exception {
 
@@ -643,11 +643,9 @@ public class GoCotizador extends AbstractPubController {
 		try {
 
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
-			datosCoti.setDatosContacto(AuxiliarUtil.cargardatosContacto(request));
+			datosCoti.setDatosContacto(RequestCotizadorUtils.cargardatosContacto(request));
 			guardarEnSession(request, datosCoti);
-
-			return new ModelAndView("redirect:" + "/cotizacionStep1");
-
+			return datosCoti.getDatosContacto();
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto el fin de datos generales", e);
 			return e.getMessage();

@@ -100,7 +100,7 @@
 				<entry key="DESARROLLO" value-ref="desaDsContinente" />
 				<entry key="TESTING_MDW" value-ref="testingMdw" />
 				<entry key="TESTING" value-ref="testingDsContinente" />
-				<entry key="UNIFICADO_MDW" value-ref="mdwUnificadoDsContinente" />
+				<entry key="TESTING_QA" value-ref="mdwUnificadoDsContinente" />
 				
 				<!-- 
 				 -->

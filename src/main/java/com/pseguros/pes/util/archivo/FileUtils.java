@@ -201,7 +201,6 @@ public class FileUtils {
 	}
 
 	/**
-	 * Devuelve el tamaño en MB
 	 * 
 	 * @param fileName
 	 * @return

@@ -6250,6 +6250,7 @@ input[type=number]:not(.browser-default):focus.valid ~ label,
 input[type=search]:not(.browser-default):focus.valid ~ label,
 textarea.materialize-textarea:focus.valid ~ label {
   color: #0b4376;
+  display:none;
 }
 
 input:not([type]):focus.invalid ~ label,
