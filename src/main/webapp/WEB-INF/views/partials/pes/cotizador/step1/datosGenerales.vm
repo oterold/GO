@@ -16,7 +16,7 @@
                                     <div class="plan-selection">
                                         <div class="plan-data" id="rowCardRamos">
                                             <h5 class="pl-2 pt-1" id="tituloRamo" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Seleccione un ramo <i class="fas fa-exclamation-circle" id="iconoTitulo" style="color:#dc3545;display:none;"></i></h5>
-                                            <div class="row">
+											<div class="row">
                                                 #foreach($ramosIn in $datosRamos)
                                                     #set ($codRamo = $ramosIn.get("P_TF_CARP.CARP_CD_RAMO"))
                                                     #set ($descRamo = $ramosIn.get("P_TF_CARP.CARP_DE_RAMO"))

@@ -513,3 +513,70 @@ function mostrarUbicacion(codPostal, postal, calle, localidad, provincia, pais) 
 	M.updateTextFields();
 
 }
+
+
+
+function redirectStep4() {
+	bloquearPantallaGris();
+	var formData = JSON.stringify(jQuery('.datoTablaClass').serializeArray()).replace("/", "").replace("/", "");
+	var array = [];
+	$.each(JSON.parse(formData), function(i, field) {
+		var valor = new Object();
+		if (field.name.indexOf("S") == 0) {
+			valor.name = field.name.replace("S", "");
+			if ($("#" + field.name).is(':checked')) {
+				valor.value = "S";
+			} else {
+				valor.value = "N";
+			}
+		} else {
+			valor.name = field.name;
+			valor.value = field.value;
+		}
+		array.push(valor);
+	})
+
+	formData = JSON.stringify(array);
+
+	var ramo = $("#valorRamo").val();
+	var objMostrar = "";
+	if (ramo == "4") {
+		objMostrar = datosMostrarDatosBien();
+		var arrayMostrar = [];
+		$.each(objMostrar, function(i, field) {
+			var valor = new Object();
+			valor.name = i;
+			valor.value = field;
+			arrayMostrar.push(valor);
+		})
+
+		var objDatosMostrar = JSON.stringify(arrayMostrar);
+
+	}
+	$.ajax({
+		url : 'guardarDatosDelBien',
+		contentType : 'application/json',
+		data : {
+			datosPantalla : formData,
+			objDatosMostrar : objDatosMostrar
+		},
+		type : 'GET',
+		dataType : 'json',
+		success : function(json) {
+			try {
+				var valor = comprobarForm();
+				
+				if(valor == 0){
+					location.href = "/PSPES/cotizacionStep4";
+				}
+			} catch (e) {
+				// TODO: handle exception
+			}
+			$.unblockUI();
+
+		},
+		error : function(xhr, ajaxOptions, thrownError) {
+			$.unblockUI();
+		}
+	});
+}

@@ -68,7 +68,7 @@
         <div class="input-field col-md-5">
             <select class="selectorMaterialice" name="selectMedioPago" onchange="selectorOrigenPago();" id="selectMedioPago">
                 #foreach($medioPagoIn in $datosMedioPago.contenido)
-                    #if($datosCoti.datosGenerales.medioPago.length()>0 && $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO") == $datosCoti.datosGenerales.medioPago)
+                    #if($datosCoti.datosGenerales.medioPago.length() > 0 && $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO") == $datosCoti.datosGenerales.medioPago)
                         #set ($textoSeleccionado = $utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO")))
                         #elseif($datosMedioPago.valorDefault == $medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO"))
                             <option value="$medioPagoIn.get("P_TF_CAMD.CAMD_CD_MEDIO_PAGO")" selected>$utilToolScreen.nombreMayuscula($medioPagoIn.get("P_TF_CAMD.CAMD_DE_MEDIO_PAGO"))</option>
