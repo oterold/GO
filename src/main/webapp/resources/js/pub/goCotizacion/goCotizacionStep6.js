@@ -453,12 +453,12 @@ function cargarSelectComunicacion(codigo) {
 	if (codigo == 1) {
 		var select = document.getElementById('telefonoPersona');
 		var valor = select.options[select.selectedIndex].value;
-		var conz = "15";
+		var conz = "2";
 	}
 	if (codigo == 4) {
 		var select = document.getElementById('emailPersona');
 		var valor = select.options[select.selectedIndex].value;
-		var conz = "9";
+		var conz = "10";
 	}
 
 	$("#valorConz").val(conz);
@@ -744,5 +744,6 @@ function inicioCotizacionStep6() {
 	$('.tooltipped').tooltip();
 	$('#fechaNac').mask('00/00/0000');
 	buscarPersona();
+	
 	M.updateTextFields();
 }

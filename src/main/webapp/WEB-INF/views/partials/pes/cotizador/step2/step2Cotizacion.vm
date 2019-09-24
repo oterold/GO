@@ -8,32 +8,35 @@
     <input type="hidden" value="" name="valorFacturacion" id="valorFacturacion"/>
     <input type="hidden" value="" name="valorMoneda" id="valorMoneda"/>
     <input type="hidden" value="" name="textoSeleccionadoStep2" id="textoSeleccionadoStep2"/>
-    <section class="container-fluid">
-        <div class="containerMargenes" style="padding-top:50px;" id="main">
-            <div class="row">
-                <div class=" col-sm-12 col-md-9 sin-margen-der" style="margin-top:50px">
-                    <div class="panel panel-default panel-mio">
+    <input type="hidden" value="0" id="valorDato"/>
+    <section class="">
+        <div class="" style="padding-top:50px;" id="main">
+            <div class="row" id="rowAlto" style="margin-bottom:0px;">
+                <div class=" col-sm-12 col-md-9 sin-margen-der">
+                    <div class="panel-default fondo-panel-central">
                         <div class="panel-body">
-                            <div class=" row">
-                                <div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
+                            <div class=" row" id="rowCuerpo">
+                                <div class="col-md-12 fondo-cuerpo" style="">
                                     <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos Generales</h3>
                                     <div class="plan-selection">
                                         <div class="plan-data mt-2">
-                                            <div class="row">
+                                            <div class="row" style="margin-bottom:0px;">
                                                 #parse("partials/pes/cotizador/step2/cuerpoStep2.vm")
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row margin-boton">
-                                        <div class="col-sm-12 col-md-3">
-                                            <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="volverRedirectStep1()" style="cursor: pointer; color:white; margin-top: 5px;" role="button">
+                                </div>
+                                <div class="col-md-12 cuerpo-botones">
+                                    <div class="row" style="margin:0px !important;">
+                                        <div class="col-md-3" style="text-align:center;">
+                                            <a onclick="volverRedirectStep1();"  class="btn waves-effect waves-light boton-siguiente-cotizacion boton-volver">
                                                 Volver
                                             </a>
                                         </div>
                                         <div class="col-md-6">
                                         </div>
-                                        <div class="col-sm-12  col-md-3 .centrarElementos">
-                                            <a  class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="redirectStep3()" style="cursor: pointer; color:white; margin-top: 5px;" role="button">
+                                        <div class="col-md-3" style="text-align:center;">
+                                            <a onclick="redirectStep3();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
                                                 Siguiente
                                                 <i class="material-icons right" style="color:white;">send</i>
                                             </a>
@@ -45,8 +48,7 @@
                     </div>
                 </div>
                 <!-- Lista certificados - Panel B -->
-                #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")     
+                #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")
             </div>
-        </div>
-    </section>
+</section>
 </form>

@@ -1,5 +1,5 @@
- <div class="col-sm-12 col-md-3 sin-margen-izq" style="margin-top:50px;width:100%;">
-            <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;">
+ <div class="col-sm-12 col-md-3 sin-margen-izq" style="margin-top:25px;width:100%;padding-right:0px;">
+            <div class="panel panel-default" style="border:2px solid #e9ebef;background-color:#e9ebef;display:table; width:100%; height:100%;padding-top: 45px !important">
                <div class="main-container page__container" >
                   <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;">
                      <div class="summary-head" style="width:100%;">

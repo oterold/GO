@@ -1,51 +1,48 @@
-<section class="container-fluid">
-    <div class="containerMargenes" style="padding-top:50px;" id="main">
-        <div class="row">
-            <div class=" col-sm-12 col-md-9 sin-margen-der" style="margin-top:50px">
-                <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
-                    <div class="panel-body">
-                        <div class=" row">
-                            <div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
-                                <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Fin de Emisi&oacute;n</h3>
-                                <div class="plan-selection">
-                                    <div class="plan-data mt-2">
-                                        <div class="row pt-4">
-                                          <br>
-
+    <section class="">
+        <div class="" style="padding-top:50px;" id="main">
+            <div class="row" id="rowAlto" style="margin-bottom:0px;">
+                <div class=" col-sm-12 col-md-9 sin-margen-der">
+                    <div class="panel-default fondo-panel-central">
+                        <div class="panel-body">
+                            <div class=" row" id="rowCuerpo">
+                                <div class="col-md-12 fondo-cuerpo" style="">
+                                    <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Datos del Bien</h3>
+                                    <div class="plan-selection">
+                                        <div class="plan-data mt-2">
+                                            <div class="row" style="margin-bottom:0px;">
 											#parse("partials/pes/cotizador/step9/cuerpoStep9.vm")
+                                            </div>
                                         </div>
                                     </div>
-									
-<br>
-	<br><br><br><br><br><br><br>
-								<br><br><br><br>
                                 </div>
-                                <div class="row margin-boton">
-                                    <div class="col-sm-12 col-md-3">
-                                        <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" href="/PSPES/cotizacionStep8" style="cursor: pointer; color:white; margin-top: 5px;">
-                                            Volver
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6" style="text-align:center;">
-										  <a class="btn waves-effect waves-light boton-siguiente-cotizacion" style="cursor: pointer; color:white; margin-top: 5px;width:50%;">
+                                <div class="col-md-12 cuerpo-botones" style="padding-top:3px;">
+                                    <div class="row" style="margin:0px !important;">
+                                        <div class="col-md-3" style="text-align:center;">
+                                            <a href="/PSPES/cotizacionStep8"  class="btn waves-effect waves-light boton-siguiente-cotizacion boton-volver">
+                                                Volver
+                                            </a>
+                                        </div>
+										<div class="col-md-3">
+										</div>
+                                        <div class="col-md-3">
+											 <a class="btn waves-effect waves-light boton-siguiente-cotizacion" style="cursor: pointer; color:white; margin-top: 5px;width:50%;">
                                             Descargar
                                             <i class="fas fa-download right" style="color:white;"></i>
                                         </a>
-                                    </div>
-                                    <div class="col-sm-12  col-md-3">
-                                        <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" style="cursor: pointer; color:white; margin-top: 5px;">
+                                        </div>
+                                        <div class="col-md-3" style="text-align:center;">
+                                              <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="emitirPoliza();" style="cursor: pointer; color:white; margin-top: 5px;">
                                             Emitir
                                             <i class="fas fa-file-contract right" style="color:white;"></i>
                                         </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Lista certificados - Panel B -->
+        #parse("partials/pes/cotizador/step6/stepEmisionPanelB.vm")
             </div>
-            <!-- Lista certificados - Panel B -->
-            #parse("partials/pes/cotizador/step6/stepEmisionPanelB.vm")
-        </div>
-    </div>
 </section>

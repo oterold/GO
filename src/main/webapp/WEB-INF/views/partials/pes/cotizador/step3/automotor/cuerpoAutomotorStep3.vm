@@ -1,25 +1,21 @@
-	<input type="hidden" value="0" name="valorArray" id="valorArray"/>
-
-	
-	<input type="hidden" value="" id="tipoVehiculo" />
-
+<input type="hidden" value="0" name="valorArray" id="valorArray"/>
+<input type="hidden" value="" id="tipoVehiculo" />
 <div class="input-field col-md-5">
     <select onchange="reiniciarSelect(this.id)" class="datoTablaClass selectorMaterialice validarForm" name="40012" id="40012">
         <option value="">Seleccione..</option>
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40012")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
-					#end
+                    <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
                 #end
             #end
+        #end
     </select>
     <label class="">A&ntilde;o*</label>
     #set( $id = "40012")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
-
 <div class="col-md-2">
 </div>
 <div class="switch col-md-5 centrar-switch">
@@ -30,24 +26,24 @@
 </label>
 </div>
 <div class="input-field col-md-5">
-    <select onchange="seleccionarModelo(this.id);" class="js-select2 datoTablaClass validarForm" name="40020" id="selectMarca">
-		<option value=""selected>Seleccione..</option>
-         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
+    <select onchange="seleccionarModelo(this.id);" class="selectorMaterialice datoTablaClass validarForm" name="40020" id="selectMarca">
+        <option value=""selected>Seleccione..</option>
+        #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40020")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
-					#if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
-					#else
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#end     
-				#end
+                    #if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
+                        <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
+                        #else
+                            <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                    #end     
+                #end
             #end
         #end
     </select>
-    <label class="label-file-select">Marca*</label>
-	 #set( $id = "selectMarca")
+    <label>Marca*</label>
+    #set( $id = "selectMarca")
     #set( $idMsj = "_validar")
-    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelectDos.vm")
+    #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="col-md-2">
 </div>
@@ -56,16 +52,16 @@
         <option value="">Seleccione..</option>
     </select>
     <label class="label-file-select">Modelo*</label>
-	#set( $id = "selectorModelo")
+    #set( $id = "selectorModelo")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelectDos.vm")
 </div>
 <div class="input-field col-md-5">
-	<select class="selectorMaterialice datoTablaClass validarForm" onchange="validarSelect(this.id);" name="40008" id="usoVehiculo" >
+    <select class="selectorMaterialice datoTablaClass validarForm" onchange="validarSelect(this.id);" name="40008" id="usoVehiculo" >
         <option value="">Seleccione..</option>
     </select>
     <label class="">Uso del Vehiculo*</label>
-	 #set( $id = "usoVehiculo")
+    #set( $id = "usoVehiculo")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
@@ -76,26 +72,26 @@
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40090")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
-					#if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.campoCortar($utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")))</option>
-					#else
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.campoCortar($utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")))</option>
-					#end
+                    #if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
+                        <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.campoCortar($utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")))</option>
+                        #else
+                            <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.campoCortar($utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")))</option>
+                    #end
                 #end
             #end
-	#end
+        #end
     </select>
     <label>L&iacute;mite R.C Mercosur*</label>
-	 #set( $id = "mercosur")
+    #set( $id = "mercosur")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="input-field col-md-5">
-	<input class="datoTablaClass form-control form-validar validarForm" onblur="validarCampo(this.id);"  for="suma" placeholder="$0.00,0"  name="40221" id="labelSumaAsegurada" type="text">
-    <label for="suma">Suma Asegurada*</label>
-	#set( $id = "labelSumaAsegurada")
-	#set( $idMsj = "_validar")
-	#parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
+    <input class="datoTablaClass form-control form-validar validarForm" onblur="validarCampo(this.id);"  for="suma" placeholder="$0.00,0"  name="40221" id="labelSumaAsegurada" type="text">
+        <label for="suma">Suma Asegurada*</label>
+        #set( $id = "labelSumaAsegurada")
+        #set( $idMsj = "_validar")
+        #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
 </div>
 <div class="col-md-2">
 </div>
@@ -105,26 +101,26 @@
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40550")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
-					#if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#else
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#end   
-				#end
+                    #if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
+                        <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                        #else
+                            <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                    #end   
+                #end
             #end
-	#end
+        #end
     </select>
     <label>Clausula Ajuste*</label>
-	 #set( $id = "clausula")
+    #set( $id = "clausula")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="input-field col-md-5">
     <input class="datoTablaClass form-control validarForm" onblur="validarCampo(this.id);" onkeypress="solonumeros(event);"  for="postal"  name="900008" id="codPostal" type="text" required>
-	<label for="postal">C&oacute;digo Postal*</label>
-	#set( $id = "codPostal")
-	#set( $idMsj = "_validar")
-	#parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
+        <label for="postal">C&oacute;digo Postal*</label>
+        #set( $id = "codPostal")
+        #set( $idMsj = "_validar")
+        #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
 </div>
 <div class="col-md-2">
 </div>
@@ -134,17 +130,17 @@
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40088")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
-					#if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#else
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#end   
-				#end
+                    #if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
+                        <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                        #else
+                            <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                    #end   
+                #end
             #end
-	#end
+        #end
     </select>
     <label>Bonificaci&oacute;n Adicional por Promoci&oacute;n Ajuste*</label>
-	 #set( $id = "bonificacionPromo")
+    #set( $id = "bonificacionPromo")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
@@ -154,26 +150,26 @@
         #foreach($datosResultadoDinamicoIn in $datosResultadoDinamico)
             #if($datosResultadoDinamicoIn.dato.crcoCrtdCdDato == "40086")
                 #foreach($datosSelect in $datosResultadoDinamicoIn.listaValores)
-					#if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#else
-						<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
-					#end  
-				#end
+                    #if($datosResultadoDinamicoIn.dato.crdpValorDefecto == $datosSelect.get("P_TF_CRTB.CRTB_CD_DATO"))
+                        <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                        #else
+                            <option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$utilToolScreen.ucFirst($datosSelect.get("P_TF_CRTB.CRTB_DE_DATO"))</option>
+                    #end  
+                #end
             #end
         #end
     </select>
     <label>Genero*</label>
-	#set( $id = "genero")
+    #set( $id = "genero")
     #set( $idMsj = "_validar")
     #parse("partials/pes/cotizador/mensajeErrorCotizadorSelect.vm")
 </div>
 <div class="col-md-2">
 </div>
 <div class="input-field col-md-5">
-  <input type="text" placeholder="dd/mm/aaaa" class="datoTablaClass form-control validarForm" onblur="validarCampo(this.id);" placeholder="Fecha Nacimiento"  onchange="validarFechanacimiento();" id="fechaNac" name="16015" >
-  <label>Fecha de Nacimiento*</label>
-     #set( $id = "fechaNac")
-	 #set( $idMsj = "_validar")
-	 #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
+    <input type="text" placeholder="dd/mm/aaaa" class="datoTablaClass form-control validarForm" onblur="validarCampo(this.id);" placeholder="Fecha Nacimiento"  onchange="validarFechanacimiento();" id="fechaNac" name="16015" >
+        <label>Fecha de Nacimiento*</label>
+        #set( $id = "fechaNac")
+        #set( $idMsj = "_validar")
+        #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")
 </div>

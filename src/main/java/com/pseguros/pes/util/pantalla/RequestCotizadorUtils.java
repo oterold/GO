@@ -25,9 +25,8 @@ import com.pseguros.pes.bean.IngresarPersonaCotizador;
 
 public class RequestCotizadorUtils {
 
-	public static List obtenerDatosDinamicosFormateados(DatosCotizacionGO datosCoti, HttpServletRequest request)
-			throws ParseException, JSONException {
-		List datosDinamicos = datosCoti.getDatosDinamicos();
+	public static List obtenerDatosDinamicosFormateados(DatosCotizacionGO datosCoti, HttpServletRequest request, List datosDinamicosRequest) throws ParseException, JSONException {
+		List datosDinamicos = datosDinamicosRequest;
 		String dato = request.getParameter("datosPantalla");
 		JsonParser parser = new JsonParser();
 		JsonArray gsonArr = parser.parse(dato).getAsJsonArray();
@@ -35,30 +34,44 @@ public class RequestCotizadorUtils {
 			DatosDinamicosCotizador object = (DatosDinamicosCotizador) iterator.next();
 			for (JsonElement obj : gsonArr) {
 				JsonObject gsonObj = obj.getAsJsonObject();
-				if (object.getDato().getCrcoCrtdCdDato().trim()
-						.equals(gsonObj.get("name").toString().replace('"', ' ').trim())) {
+				if (object.getDato().getCrcoCrtdCdDato().trim().equals(gsonObj.get("name").toString().replace('"', ' ').trim())) {
 					object.setValorCliente(gsonObj.get("value").toString().replace('"', ' ').trim());
 				}
 			}
 			if (object.getValorCliente() == null || object.getValorCliente().length() <= 0) {
 				object.setValorCliente(object.getDato().getCrcoDato().toString());
 			}
-			object.setValorFinalDinamico("#" + object.getDato().getCrcoCrtdCdDato().toString() + ";"
-					+ object.getValorCliente().toString() + ";");
+			object.setValorFinalDinamico("#" + object.getDato().getCrcoCrtdCdDato().toString() + ";" + object.getValorCliente().toString() + ";");
 		}
 		return datosDinamicos;
 	}
+	
 
-	public static String obtenerDatosFinalDinamico(DatosCotizacionGO datosCoti) {
-		List datosDinamicos = datosCoti.getDatosDinamicos();
+	public static String obtenerDatosFinalDinamico(DatosCotizacionGO datosCoti, List datosDinamicosRequest) {
+		List datosDinamicos =datosDinamicosRequest;
 		String datosFinal = "";
 		String valorPrimer = "";
 		for (Iterator iterator = datosDinamicos.iterator(); iterator.hasNext();) {
 			DatosDinamicosCotizador object = (DatosDinamicosCotizador) iterator.next();
 			if (object.getDato().getCrcoCrtdCdDato().equals("40021")) {
 				valorPrimer = object.getValorFinalDinamico().replace("#", "");
-			} else if (!object.getDato().getCrcoCrtdCdDato().equals("40010")
-					&& !object.getDato().getCrcoCrtdCdDato().equals("40220")) {
+			} else if (!object.getDato().getCrcoCrtdCdDato().equals("40010") && !object.getDato().getCrcoCrtdCdDato().equals("40220")) {
+				datosFinal = datosFinal + object.getValorFinalDinamico().toString();
+			}
+		}
+		return valorPrimer + datosFinal;
+	}
+	
+	
+	public static String obtenerDatosFinalDinamicoEmision(DatosCotizacionGO datosCoti, List datosDinamicosRequest) {
+		List datosDinamicos =datosDinamicosRequest;
+		String datosFinal = "";
+		String valorPrimer = "";
+		for (Iterator iterator = datosDinamicos.iterator(); iterator.hasNext();) {
+			DatosDinamicosCotizador object = (DatosDinamicosCotizador) iterator.next();
+			if (object.getDato().getCrcoCrtdCdDato().equals("40023")) {
+				valorPrimer = object.getValorFinalDinamico().replace("#", "");
+			} else if (!object.getDato().getCrcoCrtdCdDato().equals("40010") && !object.getDato().getCrcoCrtdCdDato().equals("40220")) {
 				datosFinal = datosFinal + object.getValorFinalDinamico().toString();
 			}
 		}
@@ -73,8 +86,7 @@ public class RequestCotizadorUtils {
 			DatosDinamicosCotizador object = (DatosDinamicosCotizador) iterator.next();
 			if (object.getDato().getCrcoCrtdCdDato().equals("90000")) {
 				valorPrimer = object.getValorFinalDinamico().replace("#", "");
-			} else if (!object.getDato().getCrcoCrtdCdDato().equals("40010")
-					&& !object.getDato().getCrcoCrtdCdDato().equals("40220")) {
+			} else if (!object.getDato().getCrcoCrtdCdDato().equals("40010") && !object.getDato().getCrcoCrtdCdDato().equals("40220")) {
 				datosFinal = datosFinal + object.getValorFinalDinamico().toString();
 			}
 		}
@@ -98,8 +110,7 @@ public class RequestCotizadorUtils {
 			for (JsonElement objDos : gsonFormulario) {
 				JsonObject gsonFormularioObj = objDos.getAsJsonObject();
 
-				if (gsonDependenciasObj.get("name").toString().replace("d", "").trim()
-						.equals(gsonFormularioObj.get("name").toString().trim())) {
+				if (gsonDependenciasObj.get("name").toString().replace("d", "").trim().equals(gsonFormularioObj.get("name").toString().trim())) {
 					dato = dato + gsonFormularioObj.get("value").toString().replace('"', ' ').trim();
 					dato = dato + ";";
 				}
@@ -136,8 +147,7 @@ public class RequestCotizadorUtils {
 		return valor + "#";
 	}
 
-	public static DatosMostrarPanelB obtenerDatosDinamicosMostrarPanelB(DatosCotizacionGO datosCoti,
-			HttpServletRequest request, DatosMostrarPanelB datosPanelB) {
+	public static DatosMostrarPanelB obtenerDatosDinamicosMostrarPanelB(DatosCotizacionGO datosCoti, HttpServletRequest request, DatosMostrarPanelB datosPanelB) {
 		String dato = request.getParameter("objDatosMostrar");
 		JsonParser parser = new JsonParser();
 		JsonArray gsonArr = parser.parse(dato).getAsJsonArray();
@@ -157,8 +167,7 @@ public class RequestCotizadorUtils {
 		return datosPanelB;
 	}
 
-	public static DatosMostrarPanelB obtenerDatosPromoPanelB(DatosCotizacionGO datosCoti, HttpServletRequest request,
-			DatosMostrarPanelB datosPanelB) {
+	public static DatosMostrarPanelB obtenerDatosPromoPanelB(DatosCotizacionGO datosCoti, HttpServletRequest request, DatosMostrarPanelB datosPanelB) {
 
 		datosPanelB.setPromoA(request.getParameter("promoATexto"));
 		datosPanelB.setPromoB(request.getParameter("promoBTexto"));
@@ -272,7 +281,7 @@ public class RequestCotizadorUtils {
 		DatosSeleccionados datosSelec = new DatosSeleccionados();
 		for (JsonElement obj : gsonArr) {
 			JsonObject gsonObj = obj.getAsJsonObject();
-			guardarDatosenSessionDatosCliente(gsonObj.get("name"), gsonObj.get("value"), datosContacto,request);
+			guardarDatosenSessionDatosCliente(gsonObj.get("name"), gsonObj.get("value"), datosContacto, request);
 		}
 
 		return datosContacto;

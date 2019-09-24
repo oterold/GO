@@ -2,12 +2,14 @@
 <input type="hidden" value="" id="promoDos"/>
 <input type="hidden" value="" id="promoTres"/>
 <input type="hidden" value="1" id="valor"/>
+<input type="hidden" value="$mapa.mensajeError" id="msjError"/>
+
 
 <section class="container-fluid">
    <div class="containerMargenes" style="padding-top:50px;" id="main">
       <div class="row">
-         <div class=" col-sm-12 col-md-9 sin-margen-der" style="margin-top:50px">
-            <div class="panel panel-default" style="background-color:white;border:2px solid #e9ebef">
+         <div class=" col-sm-12 col-md-9 sin-margen-der fondo-panel-central" style="margin-top:50px">
+            <div class="panel-default">
                <div class="panel-body">
                   <div class=" row">
                      <div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">

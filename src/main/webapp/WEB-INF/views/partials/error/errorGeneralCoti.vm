@@ -1,0 +1,89 @@
+
+<section class="container-fluid">
+
+ <div class="container" id="main">
+    <div class="row">
+    
+    <!-- POLIZA -->
+       <div class=" col-sm-12 col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+          
+          <h4 style="color: #ffffff;">Uppssss !!!</h4>
+          </div>
+   			<div class="panel-body">
+				<div class=" row">
+   					<div class="col-md-2" style=";text-align: center;"> 
+   					<i class="material-icons altoIcono"  style="color:#00317A;">info</i>
+   					</div>
+   				  	<div class="col-md-10" style="text-align: left;padding-left:30px;padding-right:30px">
+              		
+              		<!-- pag principal -->
+              		
+          	 			<div class="row" >
+          				 	<div class="col-md-12" style="text-align: left;padding-left:1px;padding-right:1px">
+  							
+							 <div class="alert alert-danger"><strong>¡Aviso!</strong>&nbsp;$errorMsg</div>
+                           	      
+              			  </div>
+           	
+    					</div>            
+    			<!-- pag oculta -->
+    					
+    			
+    					
+    			<!-- aca termina -->
+					  </div>
+       			    </div>
+					<div class="row">
+						<div class="margenLeftInicio col-12 col-xs-4 col-md-4 col-xs-offset-8 col-md-offset-8">
+           			 <a class="btn btn-block btn-social btn-bitbucket pull-right" style="margin:1px;color:#ffffff;" href="/PSPES/$pantalla">Volver</a>
+						</div>
+					</div>
+        		 </div>
+   			</div>
+   		
+   		<!-- ENDOSO -->
+   		
+      		
+     <!-- CERTIFICADOS -->
+     
+     
+   
+	</div>
+
+  	   
+  	   <!-- Cantidad Endosos -->
+  	   
+     
+ </div>
+ </div>
+       </section>
+ 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+ 
+ 
+
+			
+			
+			
