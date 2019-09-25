@@ -1,4 +1,3 @@
-
 function inicioCotizacionStep3() {
 	bloquearPantallaGris();
 
@@ -18,12 +17,8 @@ function inicioCotizacionStep3() {
 	});
 
 	$('#fechaNac').mask('00/00/0000');
-
 	$.unblockUI();
 }
-
-
-
 
 function reiniciarSelect(id) {
 	validarSelect("40012");
@@ -37,9 +32,6 @@ function reiniciarSelect(id) {
 		seleccionarModelo();
 	}
 }
-
-
-
 
 function validarFechanacimiento() {
 	var fecha = $("#fechaNac").val();
@@ -75,7 +67,6 @@ function validarFechanacimiento() {
 
 	});
 }
-
 
 function agregarAccesorios() {
 	// obtengo el monto final para mostrar
@@ -300,10 +291,9 @@ function cargarSelectorParametrico(id, datos, tabla) {
 
 }
 
-
 function cargarSumaAsegurada(id) {
 	validarSelect(id);
-	
+
 	var select = document.getElementById('selectorModelo');
 	var modelo = select.options[select.selectedIndex].value;
 
@@ -350,7 +340,6 @@ function cargarSumaAsegurada(id) {
 	});
 
 }
-
 
 function buscarDirecciones() {
 	bloquearPantallaGris();
@@ -514,8 +503,6 @@ function mostrarUbicacion(codPostal, postal, calle, localidad, provincia, pais) 
 
 }
 
-
-
 function redirectStep4() {
 	bloquearPantallaGris();
 	var formData = JSON.stringify(jQuery('.datoTablaClass').serializeArray()).replace("/", "").replace("/", "");
@@ -565,8 +552,7 @@ function redirectStep4() {
 		success : function(json) {
 			try {
 				var valor = comprobarForm();
-				
-				if(valor == 0){
+				if (valor == 0) {
 					location.href = "/PSPES/cotizacionStep4";
 				}
 			} catch (e) {
@@ -579,4 +565,21 @@ function redirectStep4() {
 			$.unblockUI();
 		}
 	});
+}
+
+
+function datosMostrarDatosBien() {
+	var obj = new Object();
+	var select = document.getElementById("40012"), text = select.options[select.selectedIndex].innerText;
+	obj.annio = text;
+
+	var select = document.getElementById("selectMarca"), text = select.options[select.selectedIndex].innerText;
+	obj.marca = text;
+
+	var select = document.getElementById("selectorModelo"), text = select.options[select.selectedIndex].innerText;
+	obj.modelo = text;
+
+	obj.precio = $("#labelSumaAsegurada").val();
+
+	return obj
 }

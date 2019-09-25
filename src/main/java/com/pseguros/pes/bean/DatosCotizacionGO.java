@@ -18,6 +18,7 @@ public class DatosCotizacionGO {
 	private int consecutivo = 1;
 	private String transaccion ="E";
 	private String valorFinalDatosDinamicos="";
+	private String valorFinalDatosDinamicosEmision="";
 	private String promocionA;
 	private String promocionB;
 	private String promocionC;
@@ -46,6 +47,9 @@ public class DatosCotizacionGO {
 	
 	private List datosDinamicos;
 	
+	
+	private List datosDinamicosEmision;
+	
 	private DatosMostrarPanelB datosPanelB;
 	
 	private DatosGrillaProducto direccion;
@@ -54,7 +58,18 @@ public class DatosCotizacionGO {
 	
 	
 	
-	
+	public String getValorFinalDatosDinamicosEmision() {
+		return valorFinalDatosDinamicosEmision;
+	}
+	public void setValorFinalDatosDinamicosEmision(String valorFinalDatosDinamicosEmision) {
+		this.valorFinalDatosDinamicosEmision = valorFinalDatosDinamicosEmision;
+	}
+	public List getDatosDinamicosEmision() {
+		return datosDinamicosEmision;
+	}
+	public void setDatosDinamicosEmision(List datosDinamicosEmision) {
+		this.datosDinamicosEmision = datosDinamicosEmision;
+	}
 	public DatosTomadorAseg getDatosAseg() {
 		return datosAseg;
 	}

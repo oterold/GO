@@ -1,5 +1,3 @@
-
-
 function cargarTipoVehiculo() {
 	var select = document.getElementById('selectorModelo');
 	var modelo = select.options[select.selectedIndex].value;
@@ -33,7 +31,6 @@ function cargarTipoVehiculo() {
 
 }
 
-
 function inicioCotizacion() {
 	$('.datepicker').datepicker(
 			{
@@ -47,87 +44,67 @@ function inicioCotizacion() {
 	$('.modal').modal();
 	$('.tooltipped').tooltip();
 	$('#fechaNac').mask('00/00/0000');
-
+	var height = $(window).height();
+    $('#rowAlto').height(parseInt(height)-parseInt(50));
+    $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+    
 }
 
-function validarCampo(id){
-	var valor = $("#"+id).val();
+function validarCampo(id) {
+	var valor = $("#" + id).val();
 	var valor;
-	if(valor!= ''){
-		$("#"+id+"_validar").css("display","none");
-	}else{
-		$("#"+id+"_validar").css("display","");
+	if (valor != '') {
+		$("#" + id + "_validar").css("display", "none");
+	} else {
+		$("#" + id + "_validar").css("display", "");
 		valor = 1;
 	}
 	return valor;
 }
 
-function validarSelect(id){
-	var select = document.getElementById(''+id);
+function validarSelect(id) {
+	var select = document.getElementById('' + id);
 	var valorSelect = select.options[select.selectedIndex].value;
 	var valor;
-	if(valorSelect!= '' && valorSelect!="Selecione.."){
-		$("#"+id+"_validar").css("display","none");
-	}else{
-		$("#"+id+"_validar").css("display","");
+	if (valorSelect != '' && valorSelect != "Selecione..") {
+		$("#" + id + "_validar").css("display", "none");
+	} else {
+		$("#" + id + "_validar").css("display", "");
 		valor = 1;
 	}
 	return valor;
 }
-
-
-
 
 function cambiarSelect() {
 	$(".dropdown-content").css("height", "330px");
 	$(".dropdown-content").css("top", "-290.7px");
 }
 
+function comprobarForm() {
+	var valor = "";
+	var inputValor = "";
+	var selectValor = "";
+	$(".validarForm").each(function(i, obj) {
+		var x = document.getElementById(this.id);
+		if (x.type == "text") {
+			inputValor = validarCampo(this.id);
 
-function comprobarForm(){
-	var valor="";
-	var inputValor="";
-	var selectValor="";
-	$(".validarForm").each(function(i, obj){
- 	   var x = document.getElementById(this.id);
-	 	   if(x.type == "text"){
-	    	 inputValor = validarCampo(this.id);
+		} else {
+			selectValor = validarSelect(this.id);
 
-	 	   }else{
-	    	 selectValor = validarSelect(this.id);
+		}
+	});
 
-	 	   }
- 	   }
-	);
-	
-	 if(inputValor == 1 || selectValor== 1){
-	    	valor = 1;
-	    }else{
-	    	valor = 0;
-	    }
-	    return valor;
-	
+	if (inputValor == 1 || selectValor == 1) {
+		valor = 1;
+	} else {
+		valor = 0;
+	}
+	return valor;
+
 }
 
 
-
-
-
-function datosMostrarDatosBien() {
-	var obj = new Object();
-	var select = document.getElementById("40012"), text = select.options[select.selectedIndex].innerText;
-	obj.annio = text;
-
-	var select = document.getElementById("selectMarca"), text = select.options[select.selectedIndex].innerText;
-	obj.marca = text;
-
-	var select = document.getElementById("selectorModelo"), text = select.options[select.selectedIndex].innerText;
-	obj.modelo = text;
-
-	obj.precio = $("#labelSumaAsegurada").val();
-
-	return obj
-}
 
 function comisionEstandar() {
 	if ($("#switchComision").is(':checked')) {
@@ -194,10 +171,6 @@ function solonumeros(e) {
 	if (key < 48 || key > 57)
 		e.preventDefault();
 }
-
-
-
-
 
 function mostrarIconoMaterial(ramo) {
 

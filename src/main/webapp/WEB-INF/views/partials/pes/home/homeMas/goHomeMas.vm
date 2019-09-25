@@ -16,6 +16,26 @@
                 <!-- row uno-->
                 <div class="row">
 
+  <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
+                        <a class="item-hover" href="/PSPES/cotizadorGO"  style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">Cotizaci&oacute;n</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="fas fa-file-signature imgCardSmall" style="color:#0b4376;font-size: 50px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Cotizaci&oacute;n</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 					
 					<!-- item uno -->
                     <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
@@ -62,26 +82,7 @@
                     </div>
 					
 					
-					        <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
-                        <a class="item-hover" href="/PSPES/cotizadorGO"  style="text-decoration: none;">
-                            <div class="item-info">
-                                <div class="headline">Cotizaci&oacute;n</div>
-                                <div class="line"></div>
-                                <div class="date">GO Team.</div>
-                            </div>
-                            <div class="mask"></div>
-                        </a>
-                        <div class="item" style="padding:3px;background-color:white;">
-                            <div style="text-align:center;" class="p-2">
-                                <i class="fas fa-file-signature imgCardSmall" style="color:#0b4376;font-size: 50px;"></i>
-                            </div>
-                            <div class="pb-2 d-flex align-items-end">
-                                <div class="content" style="width:100%;">
-                                    <h3 class="estilo-letra-card-chico">Cotizaci&oacute;n</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+					      
 					
 					
 					

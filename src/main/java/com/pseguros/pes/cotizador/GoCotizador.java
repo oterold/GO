@@ -51,6 +51,7 @@ public class GoCotizador extends AbstractPubController {
 	private static final String COTIZADOR_STEP_DATOS_DEL_BIEN = "partials/pes/cotizador/step7/step7CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_DATOS_COMPLEMENTARIOS = "partials/pes/cotizador/step8/step8CotizacionTemplateGenerales";
 	private static final String COTIZADOR_STEP_FIN_EMISION = "partials/pes/cotizador/step9/step9CotizacionTemplateGenerales";
+	private static final String PANTALLA_ERROR_COTI = "partials/error/errorGeneralTemplateCotizador";
 
 	
 	
@@ -107,7 +108,7 @@ public class GoCotizador extends AbstractPubController {
 			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
 
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 
 
@@ -154,11 +155,11 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto goCotizador", e);
+			mapa.put("pantalla", "cotizadorGO");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
 
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 
 	/**
@@ -225,11 +226,11 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto goCotizador", e);
+			mapa.put("pantalla", "cotizacionStep1");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
 
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 
 	/**
@@ -281,11 +282,11 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 3", e);
+			mapa.put("pantalla", "cotizacionStep2");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
 
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 
 	/**
@@ -327,11 +328,11 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 4", e);
+			mapa.put("pantalla", "cotizacionStep3");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 
-		return new ModelAndView(PANTALLA_ERROR, mapa);
 	}
 
 	/**
@@ -392,17 +393,19 @@ public class GoCotizador extends AbstractPubController {
 			mapa.put("datosRecalculo", datosRecalculo);
 
 			guardarEnSession(request, datosCoti);
-
 			
 			return new ModelAndView(COTIZADOR_STEP_FINAL, mapa);
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 5", e);
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
+			mapa.put("errorMsg",e.getMessage());
+			mapa.put("pantalla", "cotizacionStep4");
+			mapa.putAll(getDatosComunes(request));
+
 		}
 
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 
 	
@@ -448,11 +451,10 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 5", e);
+			mapa.put("pantalla", "cotizacionStep4");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
-
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 	
 	@RequestMapping(value = "/cotizacionStep6", method = RequestMethod.GET)
@@ -494,11 +496,10 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 6", e);
+			mapa.put("pantalla", "cotizacionStep5");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
-
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 	
 	
@@ -515,7 +516,7 @@ public class GoCotizador extends AbstractPubController {
 			
 			Future<ArrayList> datosDelBien = goCotizador.datosDelBien(datosCoti, getEntorno(request), getUser(request));
 			ArrayList datos = cargarDinamicos(request, datosCoti, datosDelBien);
-
+			datosCoti.setDatosDinamicosEmision(datos);
 			while (!(datosDelBien.isDone())) {
 				Thread.sleep(5);
 			}
@@ -531,12 +532,11 @@ public class GoCotizador extends AbstractPubController {
 			return new ModelAndView(COTIZADOR_STEP_DATOS_DEL_BIEN, mapa);
 
 		} catch (Exception e) {
-			logger.error(getUserLog(request) + "Exploto step 6", e);
+			logger.error(getUserLog(request) + "Exploto step 7", e);
+			mapa.put("pantalla", "cotizacionStep6");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
-
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 	
 	
@@ -563,11 +563,10 @@ public class GoCotizador extends AbstractPubController {
 
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto step 8", e);
+			mapa.put("pantalla", "cotizacionStep7");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
-
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 	
 	@RequestMapping(value = "/cotizacionStep9", method = RequestMethod.GET)
@@ -590,12 +589,11 @@ public class GoCotizador extends AbstractPubController {
 			return new ModelAndView(COTIZADOR_STEP_FIN_EMISION, mapa);
 
 		} catch (Exception e) {
-			logger.error(getUserLog(request) + "Exploto step 8", e);
+			logger.error(getUserLog(request) + "Exploto step 9", e);
+			mapa.put("pantalla", "cotizacionStep8");
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("errorMsg", "" + e.getCause().getMessage());
 		}
-
-		return new ModelAndView(PANTALLA_ERROR, mapa);
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 	
 	
@@ -870,11 +868,11 @@ public class GoCotizador extends AbstractPubController {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 			DatosMostrarPanelB datosPanelB= datosCoti.getDatosPanelB();
-			datosCoti.setDatosDinamicos(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request));
+			datosCoti.setDatosDinamicos(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicos()));
 			
 			if(datosCoti.getRamo().toString().equals("4")){
 				datosCoti.setDatosPanelB(RequestCotizadorUtils.obtenerDatosDinamicosMostrarPanelB(datosCoti,request,datosPanelB));
-				datosCoti.setValorFinalDatosDinamicos(RequestCotizadorUtils.obtenerDatosFinalDinamico(datosCoti));
+				datosCoti.setValorFinalDatosDinamicos(RequestCotizadorUtils.obtenerDatosFinalDinamico(datosCoti,datosCoti.getDatosDinamicos()));
 			}else{
 				datosCoti.setValorFinalDatosDinamicos(RequestCotizadorUtils.obtenerDatosFinalDinamicoGenerico(datosCoti));
 
@@ -897,14 +895,7 @@ public class GoCotizador extends AbstractPubController {
 			
 			UtilGuardarDatosSession.guardarDatosPromocion(datosCoti,request);
 			datosCoti.setDatosPanelB(RequestCotizadorUtils.obtenerDatosPromoPanelB(datosCoti,request,datosPanelB));
-			
-			if(datosCoti.getRamo().toString().equals("4")){
-				datosCoti.setValorFinalDatosDinamicos(RequestCotizadorUtils.obtenerDatosFinalDinamico(datosCoti));
-			}else{
-				datosCoti.setValorFinalDatosDinamicos(RequestCotizadorUtils.obtenerDatosFinalDinamicoGenerico(datosCoti));
 
-			}
-			
 			guardarEnSession(request, datosCoti);
 			return goCotizador.guardarDatosDelBien(datosCoti, getEntorno(request), getUser(request));
 		} catch (Exception e) {
@@ -1154,6 +1145,43 @@ public class GoCotizador extends AbstractPubController {
 	}
 	
 	
+	@RequestMapping(value = "/guardarDatosDelBienCotizacion", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getGuardarDatosDelBienCotizacion(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			DatosMostrarPanelB datosPanelB= datosCoti.getDatosPanelB();
+			datosCoti.setDatosDinamicosEmision(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicosEmision()));
+			
+			if(datosCoti.getRamo().toString().equals("4")){
+				datosCoti.setValorFinalDatosDinamicosEmision(RequestCotizadorUtils.obtenerDatosFinalDinamicoEmision(datosCoti,datosCoti.getDatosDinamicosEmision()));
+			}else{
+				datosCoti.setValorFinalDatosDinamicos(RequestCotizadorUtils.obtenerDatosFinalDinamicoGenerico(datosCoti));
+
+			}
+			return goCotizador.guardarDatosDelBienEmision(datosCoti, getEntorno(request), getUser(request));
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+
+	
+	@RequestMapping(value = "/emitirPoliza", method = RequestMethod.GET)
+	public @ResponseBody
+	Object getEmitirPoliza(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			return goCotizador.emitirPoliza(datosCoti, getEntorno(request), getUser(request));
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+
+	
 	
 	// ---------------------------------------------------------------------------------------------------------------------------------------
 	// ----------------------------------------------------- PRIVADOS
@@ -1176,6 +1204,21 @@ public class GoCotizador extends AbstractPubController {
 		return datos;
 	}
 
+	
+	private ArrayList cargarDinamicosCotizacion(HttpServletRequest request, DatosCotizacionGO datosCoti, Future<ArrayList> datosDinamicos) throws InterruptedException, ExecutionException, Exception {
+		
+		ArrayList dinamicos = datosDinamicos.get();
+		ArrayList datos = new ArrayList();
+		int i = 0;
+
+		for (Iterator iterator = dinamicos.iterator(); iterator.hasNext();) {
+			i++;
+			DatoDinamicoType dato = PLUtils.cargarDatoType((HashMap) iterator.next());
+			datos.add(new DatosDinamicosCotizador(dato ,obtenerListaValores(dato,request),i));
+		}
+		return datos;
+	}
+	
 	private ArrayList obtenerListaValores(DatoDinamicoType dato, HttpServletRequest request) throws Exception {
 		DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 		if (dato.getCrdpTieneLdv().toString().toUpperCase().trim().equals("S") && dato.getInbInDependencias().toString().toUpperCase().trim().equals("")) {

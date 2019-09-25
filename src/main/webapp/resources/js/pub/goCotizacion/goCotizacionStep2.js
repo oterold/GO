@@ -139,7 +139,6 @@ function cargarSelectorPlanDePago(vigencia) {
 
 function inicioCotizacionStep2() {
 	bloquearPantallaGris();
-
 	$('input#input_text, textarea#textarea2').characterCounter();
 	$(".js-select2").select2({
 		placeholder : "",
@@ -153,7 +152,6 @@ function inicioCotizacionStep2() {
 
 	selectorOrigenPago();
 	selectorVigenciaTecnica();
-
 	$.unblockUI();
 }
 

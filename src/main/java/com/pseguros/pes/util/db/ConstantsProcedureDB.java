@@ -327,5 +327,6 @@ public class ConstantsProcedureDB {
 	public static final String L_ESTADOS_CIVIL = "L_ESTADOS_CIVIL";
 	public static final String I_PERSONA = "I_PERSONA";
 	public static final String L_PAISES = "L_PAISES";
+	public static final String MDW_SOLICITUD_EMISION = "MDW_SOLICITUD_EMISION";
 	
 }

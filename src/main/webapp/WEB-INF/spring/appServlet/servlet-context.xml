@@ -201,8 +201,8 @@
 	    
 	    <property name="dataSourceProperties">
 	        <props>
-	            <prop key="user">USR_PUB</prop>
-	            <prop key="password">c4l3f0n</prop>
+	            <prop key="user">probador</prop>
+	            <prop key="password">probador</prop>
 	        </props>
 	    </property>
 	</bean>

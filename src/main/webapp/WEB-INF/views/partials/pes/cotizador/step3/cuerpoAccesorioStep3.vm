@@ -1,5 +1,6 @@
-<h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Accesorios</h3>
+<div class="col-md-12" style="border-left: 3px solid #0b4376!important;">
 <div class="plan-selection">
+<h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Accesorios</h3>
     <div class="plan-data">
         <div class="row" id="listaAccesorios">
         </div>
@@ -36,3 +37,4 @@
             </div>
         </div>
     </div>
+</div>
