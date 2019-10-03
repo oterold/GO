@@ -16,50 +16,7 @@
                 <!-- row uno-->
                 <div class="row">
 
-  <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
-                        <a class="item-hover" href="/PSPES/cotizadorGO"  style="text-decoration: none;">
-                            <div class="item-info">
-                                <div class="headline">Cotizaci&oacute;n</div>
-                                <div class="line"></div>
-                                <div class="date">GO Team.</div>
-                            </div>
-                            <div class="mask"></div>
-                        </a>
-                        <div class="item" style="padding:3px;background-color:white;">
-                            <div style="text-align:center;" class="p-2">
-                                <i class="fas fa-file-signature imgCardSmall" style="color:#0b4376;font-size: 50px;"></i>
-                            </div>
-                            <div class="pb-2 d-flex align-items-end">
-                                <div class="content" style="width:100%;">
-                                    <h3 class="estilo-letra-card-chico">Cotizaci&oacute;n</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					
-					<!-- item uno -->
-                    <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
-                        <a class="item-hover" href="/PSPES/configVisualizacion"  style="text-decoration: none;">
-                            <div class="item-info">
-                                <div class="headline">Conf de Visualizaci&oacute;n</div>
-                                <div class="line"></div>
-                                <div class="date">GO Team.</div>
-                            </div>
-                            <div class="mask"></div>
-                        </a>
-                        <div class="item" style="padding:3px;background-color:white;">
-                            <div style="text-align:center;" class="p-2">
-                                <i class="fas fa-user-cog imgCardSmall" style="color:#0b4376;font-size: 50px;"></i>
-                            </div>
-                            <div class="pb-2 d-flex align-items-end">
-                                <div class="content" style="width:100%;">
-                                    <h3 class="estilo-letra-card-chico">Conf. de Visualizaci&oacute;n</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-					
+				
 					<div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
                         <a class="item-hover" href="/PSPES/homeCotizacionComparacion"  style="text-decoration: none;">
                             <div class="item-info">
@@ -81,13 +38,79 @@
                         </div>
                     </div>
 					
-					
-					      
-					
-					
-					
-					     <!-- item cuatro -->
+
+		
                     <div class="col-sm-6  col-md-3  item-type-line mb-4 ocultarMenuHover">
+                        <a class="item-hover" href="/PSPES/acreditarMillas" style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">Millas</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="fas fa-plane imgCardSmall" style="color:#0b4376;font-size: 52px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Acreditar Millas AA</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+
+
+  					<div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
+                        <a class="item-hover" href="/PSPES/cotizadorGO"  style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">Cotizaci&oacute;n</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="fas fa-file-signature imgCardSmall" style="color:#0b4376;font-size: 50px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Cotizaci&oacute;n</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					<!-- item uno -->
+                    <div class="col-sm-6 col-md-3  item-type-line mb-4 ocultarMenuHover">
+                        <a class="item-hover" href="/PSPES/configVisualizacion"  style="text-decoration: none;">
+                            <div class="item-info">
+                                <div class="headline">En Desarrollo.</div>
+                                <div class="line"></div>
+                                <div class="date">GO Team.</div>
+                            </div>
+                            <div class="mask"></div>
+                        </a>
+                        <div class="item" style="padding:3px;background-color:white;">
+                            <div style="text-align:center;" class="p-2">
+                                <i class="fas fa-user-cog imgCardSmall" style="color:#0b4376;font-size: 50px;"></i>
+                            </div>
+                            <div class="pb-2 d-flex align-items-end">
+                                <div class="content" style="width:100%;">
+                                    <h3 class="estilo-letra-card-chico">Conf. de Visualizaci&oacute;n</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+					
+					
+					
+					              <div class="col-sm-6  col-md-3  item-type-line mb-4 ocultarMenuHover">
                         <a class="item-hover" onclick="redirectGoHome();" style="text-decoration: none;">
                             <div class="item-info">
                                 <div class="headline">Volver</div>
@@ -107,6 +130,7 @@
                             </div>
                         </div>
                     </div>
+					
 					
 					
                 </div>

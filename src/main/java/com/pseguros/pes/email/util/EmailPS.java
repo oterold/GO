@@ -8,6 +8,7 @@ public class EmailPS {
 	
 	private String subject = "Info";
 	private String emailDestino;
+	private String[] emailCC;
 	private String template = "tempalteEmail01.html";
 	private String[] images = {"logoHeader.jpg"};
 	
@@ -16,6 +17,12 @@ public class EmailPS {
 	
 	
 	
+	public String[] getEmailCC() {
+		return emailCC;
+	}
+	public void setEmailCC(String[] emailCC) {
+		this.emailCC = emailCC;
+	}
 	public String getSubject() {
 		return subject;
 	}

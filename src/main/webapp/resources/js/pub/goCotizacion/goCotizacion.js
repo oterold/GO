@@ -1,3 +1,9 @@
+function cambiarSelect2(){
+	$("#select2-selectorAccesorios-results").css("max-height","250px");
+	$("#select2-selectorAccesorios-results").css("top", "-290.7px");
+
+}
+
 function cargarTipoVehiculo() {
 	var select = document.getElementById('selectorModelo');
 	var modelo = select.options[select.selectedIndex].value;

@@ -57,6 +57,9 @@ public class HomePubController extends AbstractPubController{
 			usr.add("velazquezg");
 			usr.add("gomezlc");
 			usr.add("guzmanj");
+			usr.add("steinbacho");
+			usr.add("kovala");
+			usr.add("diacof");
 			
 			
 			for (Iterator iterator = usr.iterator(); iterator.hasNext();) {

@@ -1,0 +1,43 @@
+<div class="accordion" id="accordionExample">
+ <div class="row mt-4" >
+     <div class="col-md-12">
+          <h2 style="margin-top:0px;margin-bottom:0px;">
+            <a data-toggle="collapse" data-target="#collapseOne" onclick="cambiarIconoAcordeonInspeccion('gestionarInspeccion');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="true" aria-controls="collapseOne">
+              Gestionar Inspecci&oacute;n &nbsp;&nbsp; <i class="fas fa-angle-double-up acoordeonInspeccion" id="gestionarInspeccion"></i>
+            </a>
+          </h2>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+				#parse("partials/pes/cotizador/stepInspeccion/camposGestionarInspeccion.vm")
+          </div>
+        </div>
+     </div>
+	  
+	 <div class="col-md-12">
+          <h2 style="margin-top:0px;margin-bottom:0px;">
+			<a data-toggle="collapse" data-target="#collapseTwo" onclick="cambiarIconoAcordeonInspeccion('coordinarNuevaInspeccion');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="false" aria-controls="collapseTwo">
+             Ingresar Nueva Inspecci&oacute;n <i class="fas fa-angle-double-down acoordeonInspeccion" id="coordinarNuevaInspeccion"></i>
+			</a>
+          </h2>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+				#parse("partials/pes/cotizador/stepInspeccion/campoNuevaInspeccion.vm")
+          </div>
+        </div>
+     </div>
+	  
+	 <div class="col-md-12">
+          <h2 style="margin-top:0px;margin-bottom:0px;">
+			<a data-toggle="collapse" data-target="#collapseThree" onclick="cambiarIconoAcordeonInspeccion('AsociarInspeccion');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="false" aria-controls="collapseTwo">
+				Coordinar Inspecci&oacute;n <i class="fas fa-angle-double-down acoordeonInspeccion" id="AsociarInspeccion"></i>
+            </a>
+          </h2>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+			#parse("partials/pes/cotizador/stepInspeccion/campoCoordinarNuevaInspeccion.vm")
+          </div>
+        </div>
+     </div>
+	  
+	</div>
+</div>

@@ -31,6 +31,7 @@ public class DatosCotizacionGO {
 	private String promocion; 
 	private String fechaEmision; 
 	private String valorPromo; 
+	private String accesorios; 
 	
 	
 	private DatosTomadorAseg datosAseg;
@@ -58,6 +59,12 @@ public class DatosCotizacionGO {
 	
 	
 	
+	public String getAccesorios() {
+		return accesorios;
+	}
+	public void setAccesorios(String accesorios) {
+		this.accesorios = accesorios;
+	}
 	public String getValorFinalDatosDinamicosEmision() {
 		return valorFinalDatosDinamicosEmision;
 	}

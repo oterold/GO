@@ -41,8 +41,8 @@
 
     <div class="row">
     	<div class="col-md-12">
-			<button onclick="reiniciarDomicilio();" class="modal-close pull-left btn-flat">Cerrar</button>
-			<button onclick="guardarDatosDomicilioNuevo();" class="modal-close pull-right btn-flat">Guardar</button>
+			<button onclick="reiniciarDomicilioPersona();" class="modal-close pull-left btn-flat">Cerrar</button>
+			<button onclick="guardarDatosDomicilioNuevo();" class="modal-close pull-right btn-flat" id="botonGuardarDomicilio">Guardar</button>
 			
       	</div>
       </div>

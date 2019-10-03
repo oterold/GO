@@ -6,67 +6,67 @@
 	     </div>
 	    <div class="row pl-5 pr-5" style="width:100%">
 			    <div class="input-field col-md-2">
-					<input name="dni" id="personaTpDni" type="text" disabled >
-					<label for="dni">Tipo Dni*</label>
+					<input class="ingresoPersona" name="selectDni" id="personaTpDni" type="text" >
+					<label for="selectDni">Tipo Dni*</label>
 				</div>
 			<div class="input-field  col-md-4">
-				<input name="dni" id="personaDocumento" type="text" disabled >
+				<input name="clienteDni" class="ingresoPersona" id="personaDocumento" type="text">
 				<label for="personaDocumento">Numero de Documento </label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="cuit" id="personaCuit" type="text" disabled >
+				<input name="cuit" class="ingresoPersona" id="personaCuit" type="text">
 				<label for="personaCuit">Cuit / Cuil </label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="apell" id="perdonaApellido" type="text" disabled >
+				<input name="apell" class="ingresoPersona" id="perdonaApellido" type="text">
 				<label for="perdonaApellido">Apellido *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="nombre" id="PersonaNombre" type="text" disabled >
+				<input name="nombre" class="ingresoPersona" id="PersonaNombre" type="text">
 				<label for="PersonaNombre">Nombre *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="genero" id="PersonaGenero" type="text" disabled >
+				<input name="selectGenero" class="ingresoPersona" id="PersonaGenero" type="text">
 				<label for="PersonaGenero">Genero *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="facheNac" id="personaNac" type="text" disabled >
+				<input name="fechaNac" class="ingresoPersona" id="personaNac" type="text">
 				<label for="personaNac">Fecha de Nacimiento *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="nacio" id="personaNacionalidad" type="text" disabled >
+				<input name="nacionalidad" class="ingresoPersona" id="personaNacionalidad" type="text">
 				<label for="personaNacionalidad">Nacionalidad *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="productorLabel" id="personaLugarNac" type="text" disabled >
+				<input name="lugarNacimiento" class="ingresoPersona" id="personaLugarNac" type="text">
 				<label for="personaLugarNac">Lugar de Nacimiento *</label>
 			</div>	
 			<div class="input-field  col-md-6">
-				<input name="productorLabel" id="persoanEstadoCivil" type="text" disabled >
+				<input name="estadoCivil" class="ingresoPersona" id="persoanEstadoCivil" type="text" >
 				<label for="persoanEstadoCivil">Estado Civil *</label>
 			</div>	
 			<div class="input-field col-md-6">
-				<input name="productorLabel" id="personaProfesion" type="text" disabled >
+				<input name="profesion" class="ingresoPersona" id="personaProfesion" type="text" >
 				<label  for="personaProfesion">Profesi&oacute;n*</label>
 			</div>
 			<div class="switch col-md-5 centrar-switch">
                 <label>
                  &iquest;Expuesto Politicamente?
-                  <input type="checkbox" id="pep" disabled>
+                  <input name="checkPoliticamente" class="ingresoPersona" type="checkbox" id="pep">
                   <span class="lever"></span>
                 </label>
     	  </div>
 		  <div class="switch col-md-5 centrar-switch">
             <label>
              &iquest;Sujeto Obligado Art. 230?
-              <input type="checkbox" id="art230" disabled>
+              <input name="checkArt"  class="ingresoPersona" type="checkbox" id="art230">
               <span class="lever"></span>
             </label>
      	 </div>
 		 
 		  <div class="input-field col-md-12">
 			<i class="fas fa-exclamation-triangle prefix icono-input"></i>
-			<input id="datoError" type="text" class="validate">
+			<input id="datoError"  name="observacionIn" type="text" class="ingresoPersona">
 			<label for="datoError">Observar el/los errores en los datos cargados para su revisi&oacute;n *</label>
           </div>
 

@@ -1,0 +1,24 @@
+	<div class="plan-selection">
+		<div class="plan-data">
+
+		 <div class="row" id="mostrarUbicacionVarias" style="display:none;">
+			<table>
+                <thead>
+                  <tr>
+                      <th>C&oacute;digo Postal</th>
+                      <th>Pais</th>
+                      <th>Provincia</th>
+					  <th>Localidad</th>
+                      <th>Calle</th>
+                      <th>Seleccionar</th>
+                  </tr>
+                </thead>
+                <tbody id="contenidoTablaUbicaciones">
+                </tbody>
+      </table>
+		 </div>
+		 <div class="row" id="mostrarUbicacion" style="display:none">
+		 </div>
+		 
+    </div>
+</div>

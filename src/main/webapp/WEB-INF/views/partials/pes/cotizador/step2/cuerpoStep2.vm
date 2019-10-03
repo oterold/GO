@@ -204,7 +204,7 @@
             #if($datosValoresDefaultIn.get("P_TF_GANA.GANA_NU_CAMPO") == "8")
                 <option value="$datosValoresDefaultIn.get("P_TF_GANA.GANA_DE_VALOR_DEFAULT")" selected>$utilToolScreen.nombreMayuscula($datosValoresDefaultIn.get("P_TF_GANA.GANA_DE_VALOR_DEFAULT"))</option>
             #end
-        #end
+        #end 
     </select>
     <label>Plan de Pago*</label>
 	#set( $id = "selectPlanesPago")

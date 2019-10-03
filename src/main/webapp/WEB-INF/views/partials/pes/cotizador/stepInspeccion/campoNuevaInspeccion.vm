@@ -1,0 +1,70 @@
+<div class="col-md-12">
+<div class="row">
+#set( $band="0")
+	#foreach($datosDinamicos in $datosResultadoDinamico)
+    	##pregunta si es visible
+    	#if($datosDinamicos.dato.crcoStVisible == "S")
+    			##pregunta si tiene select y no es un check
+        			#if($datosDinamicos.dato.crdpTieneLdv == "S")
+                        			#if($datosDinamicos.dato.inbInDependencias.length() > 0)
+            						<div class="input-field col-md-5 ">
+										<select class="enviarForm selectorMaterialice cc$datosDinamicos.dato.crcoCrtdCdDato $utilToolScreen.getCssDependencia($datosDinamicos.dato.inbInDependencias)" title="$datosDinamicos.dato.crcdDeHelp" id="$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
+										<option  value="$datosDinamicos.dato.inbInDependencias">Seleccione..</option>
+                        			#else
+									<div class="input-field col-md-5">
+										<select class="enviarForm selectorMaterialice" onchange="cargarDependencias(this.id)" title="$datosDinamicos.dato.crcdDeHelp" id="d$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
+                        				<option value="">Seleccione..</option>
+                        				##recorro la lista con los datos del selector
+                        				#foreach($datosSelect in $datosDinamicos.listaValores)
+											#if($datosSelect.get("P_TF_CRTB.CRTB_CD_DATO") == $datosDinamicos.dato.crcoDato)
+												<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")" selected>$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
+											#else
+												<option value="$datosSelect.get("P_TF_CRTB.CRTB_CD_DATO")">$datosSelect.get("P_TF_CRTB.CRTB_DE_DATO")</option>
+											#end
+                        				#end
+                        			#end 
+										</select>
+                            <label title="$datosDinamicos.dato.crcdDeHelp">$datosDinamicos.dato.crcdDeDato#if($datosDinamicos.dato.crcoInRequerido.length() > 0) * #end</label>
+                        </div>
+						
+			##pregunta si es un label y un check
+    	#else
+    		<div class="input-field col-md-5">
+				<input class="enviarForm"  value="$datosDinamicos.dato.crcoDato" id="$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato" type="text">
+				<label style="cursor:pointer;z-index:30" title="$datosDinamicos.dato.crcdDeHelp" for="$datosDinamicos.dato.crcoCrtdCdDato">$datosDinamicos.dato.crcdDeDato
+				</label>
+            </div>	
+		#end
+    			
+	#if($band == 0)
+		<div class="col-md-2">
+		</div>
+		#set($band="1")
+	#else
+		#set($band="0")
+	#end
+		#end
+	#end
+	
+	</div>
+</div>
+
+
+
+<div class="col-md-12">
+	<a style="cursor:pointer;color:#0b4376;border:none;font-size:20px;line-height:1;">
+       	Archivos 	<i class="fas fa-archive"></i>
+   	</a>
+	
+	<div class="col-md-12">
+		<div class="file-field input-field">
+		      <div class="btn">
+		        <span style="color:white;">Pdf</span>
+		        <input type="file" multiple>
+		      </div>
+		      <div class="file-path-wrapper">
+		        <input class="file-path validate" type="text" placeholder="Cargar uno o mas archivos">
+		      </div>
+		    </div>
+	</div>	
+</div>

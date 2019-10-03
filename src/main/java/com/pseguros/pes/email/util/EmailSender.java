@@ -95,6 +95,11 @@ public class EmailSender {
 		email.setHostName("10.6.110.15");
 		email.setCharset("UTF-8");
 		email.setFrom("infonoreply@pseguros.com.ar","Provincia Seguros S.A.");
+	
+		if(emailIn.getEmailCC()!= null){
+			email.addCc(emailIn.getEmailCC());
+		}
+		
 		email.addTo(emailIn.getEmailDestino());
 		email.setSubject(emailIn.getSubject());		
 		email.setHtmlMsg(html);

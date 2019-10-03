@@ -15,9 +15,23 @@ function emitirPoliza() {
 			}
 		},
 		error : function(xhr, ajaxOptions, thrownError) {
-			mostrarError(xhr['responseText']);
+			if(xhr['responseText'].indexOf("46204") > -1){
+				mostrarEmision(xhr['responseText']);
+			}else{
+				mostrarError(xhr['responseText']);
+			}
 
-			$.unblockUI();
 		}
 	});
+}
+function mostrarEmision(msg){
+	try {
+		$.unblockUI();
+	} catch (e) {
+	}
+	swal({
+		  type: 'success',
+		  title: 'Emisi\u00F3n',
+		  text: msg
+		});
 }

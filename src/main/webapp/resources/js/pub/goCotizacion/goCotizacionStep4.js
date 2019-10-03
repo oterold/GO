@@ -134,11 +134,9 @@ function redirectStep5Coberturas() {
 	}
 	if (promoB != "") {
 		var promoBTexto = $("#texto" + promoB).text();
-
 	}
 	if (promoC != "") {
 		var promoCTexto = $("#texto" + promoC).text();
-
 	}
 
 	$.ajax({

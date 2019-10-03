@@ -1,18 +1,20 @@
+
 <div class="col-md-12" style="border-left: 3px solid #0b4376!important;">
 <div class="plan-selection">
 <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Accesorios</h3>
+	<h6 style="font-size: 13px;color: #dc3545;display:none;" id="msjErrorAcessorio" ><b>Seleccione un accesorio o ingrese un monto</b> <i class="fas fa-exclamation-circle" id="iconoProd" style="color:#dc3545;"></i> </h6>
     <div class="plan-data">
         <div class="row" id="listaAccesorios">
         </div>
         <div class="row" style="margin-bottom:0px;">
-            <div class="input-field col-md-5">
-                <select class="js-select2" name="40020" id="selectorAccesorios" >
+            <div class="input-field col-md-5" onclick="cambiarSelect();">
+                <select class="datoTablaClass selectorMaterialice" id="selectorAccesorios" >
                     <option value="00">Selecione..</option>
                     #foreach($accesoriosIn in $accesorios)
                         <option value="$accesoriosIn.get("P_TF_CAAX.CAAX_CD_ACCESORIO")">$utilToolScreen.ucFirst($accesoriosIn.get("P_TF_CAAX.CAAX_DE_ACCESORIO"))</option>
                     #end
                 </select>
-                <label class="label-file-select">Accesorios</label>
+                <label>Accesorios</label>
             </div>
             <div class="col-md-2">
             </div>
