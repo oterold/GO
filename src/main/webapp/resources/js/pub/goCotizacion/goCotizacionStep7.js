@@ -1,4 +1,6 @@
-function redirectStep7() {
+
+
+function redirectStep7(ramo) {
 	bloquearPantallaGris();
 	var formData = JSON.stringify(jQuery('.enviarForm').serializeArray());
 	var array = [];
@@ -33,7 +35,12 @@ function redirectStep7() {
 				var valor = comprobarForm();
 
 				if (valor == 0) {
-					location.href = "/PSPES/cotizacionStep8";
+					
+					if(ramo == 22){
+						location.href = "/PSPES/cotizacionStep8";
+					}else{
+						location.href="/PSPES/cotizacionStepInspeccion"
+					}
 				}
 			} catch (e) {
 				// TODO: handle exception

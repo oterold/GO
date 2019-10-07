@@ -40,7 +40,7 @@
                                         <div class="col-md-6">
                                         </div>
                                         <div class="col-md-3" style="text-align:center;">
-                                            <a onclick="redirectStep4();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
+                                            <a onclick="cargarAccesorios();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
                                                 Siguiente
                                                 <i class="material-icons right" style="color:white;">send</i>
                                             </a>

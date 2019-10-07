@@ -347,6 +347,74 @@ public class GoCotizadorService {
 
 	}
 	
+	public Future<ArrayList> datosDinamicosInspeccion(DatosCotizacionGO datosCoti, EnvironmentType environment, String user) throws Exception {
+		EnvironmentContextHolder.setEnvironmentType(environment);
+
+		Map<String, String> xx = new HashMap<String, String>();
+		
+		xx.put("P_TF_CPDI","datosSalida");
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		xx.put("P_NU_INSP","inspc");
+		xx.put("P_VC_PROD","prod");
+		xx.put("P_NU_RAMO","ramo");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("aux", AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("origen", datosCoti.getOrigen());
+		parametrosIn.put("prod", datosCoti.getProducto());
+		parametrosIn.put("ramo", datosCoti.getRamo());
+
+		ProcedimientoDatoBean procedimientoDato = new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_S,ConstantsProcedureDB.B_DINAMICOS_INSPECCION);
+		Map<String, String> parametrosDeclarados = xx;
+		
+		Map<String, Object> salida = executeService.ejecutarProcedimiento(procedimientoDato,parametrosIn,parametrosDeclarados,ConstantsProcedureDB.B_DINAMICOS_INSPECCION,new Date().getTime());
+		
+		if (salida.get("error") != null && salida.get("error").toString().length()> 1 ) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length()> 1 ) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		ArrayList datoSalida = (ArrayList) salida.get("datosSalida");
+		
+		return new AsyncResult<ArrayList>(datoSalida);
+
+	}
+	
+	public Future<ArrayList> datosInspeccionTabla(DatosCotizacionGO datosCoti, EnvironmentType environment, String user) throws Exception {
+		EnvironmentContextHolder.setEnvironmentType(environment);
+
+		Map<String, String> xx = new HashMap<String, String>();
+		
+		xx.put("P_TF_CAIN","datosSalida");
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("aux", AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("origen", datosCoti.getOrigen());
+
+		ProcedimientoDatoBean procedimientoDato = new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_S,ConstantsProcedureDB.B_INSPECCIONES);
+		Map<String, String> parametrosDeclarados = xx;
+		
+		Map<String, Object> salida = executeService.ejecutarProcedimiento(procedimientoDato,parametrosIn,parametrosDeclarados,ConstantsProcedureDB.B_INSPECCIONES,new Date().getTime());
+		
+		if (salida.get("error") != null && salida.get("error").toString().length()> 1 ) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length()> 1 ) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		ArrayList datoSalida = (ArrayList) salida.get("datosSalida");
+		
+		return new AsyncResult<ArrayList>(datoSalida);
+
+	}
 	
 	
 	public String datosPlan(DatosCotizacionGO datosCoti, EnvironmentType environment, String user) throws Exception {
@@ -1106,7 +1174,6 @@ public class GoCotizadorService {
 					if (salida.get("mensaje") != null && salida.get("mensaje").toString().length()> 1 ) {
 						throw new Exception(salida.get("mensaje").toString());
 					}
-
 					} catch (Exception e) {
 						logger.error("error al ejecutar el procedimiento GUARDAR_PROMOCION",e);			
 					}
@@ -1648,6 +1715,35 @@ public class GoCotizadorService {
 		return dato;
 	}
 	
+	public Object guardarDatosAccesorios (DatosCotizacionGO datosCoti, EnvironmentType entorno, String user) throws Exception{
+		Map<String, String> xx = new HashMap<String, String>();
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		xx.put("P_NU_COTI","coti");
+		xx.put("P_NU_CONS","consecutivo");
+		xx.put("P_VC_ACCE","accesorio");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("coti", ""+datosCoti.getCotizacion());
+		parametrosIn.put("accesorio", datosCoti.getAccesorios());
+		parametrosIn.put("aux", AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("consecutivo", ""+datosCoti.getConsecutivo());
+		parametrosIn.put("origen", datosCoti.getOrigen());
+		
+
+		Map<String, Object> salida = executeService.ejecutarProcedimientoConSeparador(new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_C,ConstantsProcedureDB.I_ACCESORIOS), parametrosIn, xx, ConstantsProcedureDB.I_ACCESORIOS, new Date().getTime(), "_");
+
+		if (salida.get("error") != null && salida.get("error").toString().length() > 1) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length() > 1) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		
+		return true;
+	}
 	
 	public Object guardarDatosDelBienEmision (DatosCotizacionGO datosCoti, EnvironmentType entorno, String user) throws Exception{
 		Map<String, String> xx = new HashMap<String, String>();
@@ -2019,7 +2115,7 @@ public class GoCotizadorService {
 		parametrosIn.put("coti", ""+datosCoti.getCotizacion());
 		parametrosIn.put("cons", ""+datosCoti.getConsecutivo());
 		parametrosIn.put("plan", datosCoti.getPlan());
-		parametrosIn.put("promo", datosCoti.getPromocion());
+		parametrosIn.put("prom", datosCoti.getPromocion());
 		parametrosIn.put("desde", datosCoti.getFechaEmision());
 		
 	
@@ -2106,6 +2202,39 @@ public class GoCotizadorService {
 		
 	}
 	
+	public Object guardarComunicacionNuevo  (DatosCotizacionGO datosCoti,String valor,String conz,EnvironmentType entorno, String user) throws Exception{
+		Map<String, String> xx = new HashMap<String, String>();
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_SALI","datoSalida");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		xx.put("P_NU_PERS","persona");
+		xx.put("P_NU_CONZ","conz");
+		xx.put("P_NU_COTI","cotizacion");
+		xx.put("P_NU_CONS","consecutivo");
+		xx.put("P_VC_COMU","comunicacion");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("origen",datosCoti.getOrigen());
+		parametrosIn.put("aux",AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("persona",datosCoti.getNuPersona());
+		parametrosIn.put("cotizacion", ""+datosCoti.getCotizacion());
+		parametrosIn.put("consecutivo",""+datosCoti.getConsecutivo());
+		parametrosIn.put("comunicacion", valor);
+		
+		Map<String, Object> salida = executeService.ejecutarProcedimientoConSeparador(new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_P,ConstantsProcedureDB.I_COMUNICACIONES), parametrosIn, xx, ConstantsProcedureDB.I_COMUNICACIONES , new Date().getTime(), "_");
+	
+		if (salida.get("error") != null && salida.get("error").toString().length() > 1) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length() > 1) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		
+		return true;
+		
+	}
 
 	public Object guardarDomicilio  (DatosCotizacionGO datosCoti,String valor,String condicion,EnvironmentType entorno, String user) throws Exception{
 		Map<String, String> xx = new HashMap<String, String>();
@@ -2198,6 +2327,39 @@ public class GoCotizadorService {
 		parametrosIn.put("cotizacion", ""+datosCoti.getCotizacion());
 		parametrosIn.put("consecutivo",""+datosCoti.getConsecutivo());
 		parametrosIn.put("datoPersona", valor);
+		
+		Map<String, Object> salida = executeService.ejecutarProcedimientoConSeparador(new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_P,ConstantsProcedureDB.I_PERSONA), parametrosIn, xx, ConstantsProcedureDB.I_PERSONA , new Date().getTime(), "_");
+	
+		if (salida.get("error") != null && salida.get("error").toString().length() > 1) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length() > 1) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		
+		return true;
+		
+	}
+	public Object guardarPersona  (DatosCotizacionGO datosCoti,String valor,EnvironmentType entorno, String user) throws Exception{
+		Map<String, String> xx = new HashMap<String, String>();
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_SALI","datoSalida");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		xx.put("P_NU_PERS","persona");
+		xx.put("P_NU_COTI","cotizacion");
+		xx.put("P_NU_CONS","consecutivo");
+		xx.put("P_VC_TIPO","tipo");
+		xx.put("P_VC_STRI","datoPersona");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("origen",datosCoti.getOrigen());
+		parametrosIn.put("aux",AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("cotizacion", ""+datosCoti.getCotizacion());
+		parametrosIn.put("consecutivo",""+datosCoti.getConsecutivo());
+		parametrosIn.put("datoPersona", datosCoti.getNuPersona()+valor);
+		parametrosIn.put("tipo", "TF");
 		
 		Map<String, Object> salida = executeService.ejecutarProcedimientoConSeparador(new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_P,ConstantsProcedureDB.I_PERSONA), parametrosIn, xx, ConstantsProcedureDB.I_PERSONA , new Date().getTime(), "_");
 	

@@ -1,3 +1,4 @@
+	
 function formatearMoneda(numero) {
 	if(numero !='' && numero !=null){
 	var nStr= parseFloat(numero).toFixed(2);

@@ -27,6 +27,11 @@ public class Dateutils {
 		return formatter.format(fecha);
 	}
 	
+	public static String toBasicFormat(Date fecha) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		return formatter.format(fecha);
+	}
+	
 	
 	
 	

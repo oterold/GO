@@ -1,0 +1,41 @@
+<div class="col-md-12 input-field">
+    <input onkeyup="buscarInspecciones('tablaInspecciones')"  name="inputBusquedaInspeccion" placeholder="Buscar por N° de Inspecci&oacute;n o Riesgo" id="inputBusquedaInspeccion" type="text">
+        <label for="productorLabel">Productor*</label>
+        <div class="col-md-12" style="text-align: left;overflow-y:auto;padding:0px;height:300px;">
+            <div>
+                <table id="tablaInspecciones" class="table table-hover table-grilla" role="table">
+                    <thead class="thead-grilla" role="rowgroup">
+                        <tr class="tr-grilla" role="row">
+                            <th class="th-grilla" role="columnheader">N° Inspecci&oacute;n.</th>
+                            <th class="th-grilla" role="columnheader">Fecha Inspecci&oacute;n</th>
+                            <th class="th-grilla" role="columnheader">Estado Inspecci&oacute;n</th>
+							<th class="th-grilla" role="columnheader">Riesgo</th>
+							<th class="th-grilla" role="columnheader">Asegurado</th>
+							<th class="th-grilla" role="columnheader">Cotizaci&oacute;n</th>
+							<th class="th-grilla" role="columnheader">#Cert</th>
+							<th class="th-grilla" role="columnheader">Asociar Inspecci&oacute;n</th>
+							
+                        </tr>
+                    </thead>
+					#if($datosInspeccionTabla.length > 1)
+						<h6>ERROR </h6>
+					#else
+                    <tbody class="tbody-grilla" id="datosAccesoriosCotizacion">
+    					#foreach($datosInspeccionTablaIn in $datosInspeccionTabla)	
+    						<tr class="tr-grilla">
+    							<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_NU_INSPECCION"))</h6></td>
+    							<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($utilToolScreen.formatearFecha($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_FE_INSPECCION")))</h6></td>
+    							<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_ESTADO"))</h6></td>
+								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_RIESGO"))</h6></td>
+								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_CLIENTE"))</h6></td>
+								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_COTIZACION"))</h6></td>
+								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_CONSECUTIVO"))</h6></td>
+								<td class="td-grilla-componentesModalCotizacionHome" role="cell" style="text-align:center;"><h6 style="font-size: 12px;margin-top:0px;margin-bottom:0px;"><label style="margin-bottom:0px;"><input type="checkbox" class="filled-in" /><span></span></label></h6></td>
+                            </tr>
+    					#end	
+                    </tbody>
+					#end
+                </table>
+            </div>
+        </div>
+</div>

@@ -26,7 +26,7 @@ public abstract class AbstractPubController {
 
 	private static final Logger loggerUser = LoggerFactory.getLogger("LOGGER_USER");
 
-	private static final String VERSION_JS = "201909161536";
+	private static final String VERSION_JS = "201910031120";
 
 	protected void logearUser(String metodo, String pathInfo, String user) {
 		loggerUser.debug("User Accede a metodo : " + metodo + " **** User: " + user + " **** Path Info : " + pathInfo);
@@ -122,7 +122,12 @@ public abstract class AbstractPubController {
 	}
 
 	protected Map<? extends String, ? extends Object> getDatosComunes(HttpServletRequest request) throws UnsupportedEncodingException {
-		return getDatosComunesGeneral(request, "Buscador");
+		try {
+			return getDatosComunesGeneral(request, "Buscador");
+		} catch (Exception e) {
+			loggerUser.error("",e);
+			return null;
+		}
 	}
 
 	protected Map<? extends String, ? extends Object> getDatosComunesGeneral(HttpServletRequest request, String tipoBuscador) throws UnsupportedEncodingException {

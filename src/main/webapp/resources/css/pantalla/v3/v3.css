@@ -33,6 +33,16 @@ textarea {
   
 }
 
+.alto-input{
+	height: 25px !important;
+	font-size:13px !important;
+}
+
+
+.estilo-fuente-aa{
+	color :#1b1b1b !important;
+	font-weight:300;
+}
 .containerMargenes{
 	margin-left:100px;
 	margin-right:100px;

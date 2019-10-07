@@ -13,19 +13,18 @@
 	    <div class="row pl-5 pr-5" style="width:100%">
 			<div class="input-field  col-md-6">
 				<input name="datoComunicacion" id="datoComunicacion" type="text" class="datoComunicacion">
-				<label for="datoComunicacion">Dato </label>
+				<label for="datoComunicacion" id="tituloComunicacion"> </label>
 			</div>	
 			    <div class="input-field col-md-6">
-					<input name="tipoComunicacion" id="tipoComunicacion" type="text"  class="datoComunicacion">
-					<label for="tipoComunicacion">Comunicacion  </label>
+					<input name="tipoComunicacion" id="tipoComunicacion" type="hidden"  class="datoComunicacion">
 				</div>
  		</div>
     <div class="row">
     	<div class="col-md-12">
-			<button href="#!" class="modal-close pull-left btn-flat">Cerrar</button>
+			<button onclick="reiniciarSelectTelefono();" class="modal-close pull-left btn-flat">Cerrar</button>
       	</div>
       	   	<div class="col-md-12">
-			<button onclick="guardarComunicacion();" class="modal-close pull-right btn-flat">Guardar</button>
+			<button onclick="guardarDatoComunicacionNueva();" class="modal-close pull-right btn-flat">Guardar</button>
       	</div>
       </div>
     </div>

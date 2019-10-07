@@ -1,0 +1,46 @@
+<div class="col-md-12">
+	<div class="row">
+		<div class="col-md-4 input-field">
+				<input value=""  name="nombreContacto" id="nombreContacto" type="text">
+				<label for="nombreContacto">Nombre del Contacto*</label>
+		</div>
+		<div class="col-md-4 input-field">
+			<input value=""  name="apellidoContacto" id="apellidoContacto" type="text">
+			<label for="apellidoContacto">Apellido Contacto*</label>
+		</div>
+		<div class="col-md-4 input-field">
+			<input value=""  name="celularContacto" id="celularContacto" type="text">
+			<label for="celularContacto">Celular*</label>
+		</div>
+			<div class="col-md-4 input-field">
+			<input value=""  name="telefonoContacto" id="telefonoContacto" type="text">
+			<label for="telefonoContacto">Telefono Fijo*</label>
+		</div>
+		<div class="col-md-4 input-field">
+			<input value=""  name="lugarInspeccion" id="lugarInspeccion" type="text">
+			<label for="lugarInspeccion">Codigo Postal Lugar Inspecci&oacute;n*</label>
+		</div>
+		<div class="col-md-4 input-field">
+			<p>
+              <label>
+                <input name="group1" id="checkParticular" onclick="mostrarParticular();" type="radio" />
+                <span>Particular</span>
+              </label>
+			</p>
+            <p>
+              <label>
+                <input name="group1" id="checkCentroInspeccion" onclick="mostrarCentrosInspeccion();" type="radio" />
+                <span>Centro de Inspecci&oacute;n</span>
+              </label>
+            </p>
+		</div>
+		
+	</div>
+	
+	
+#parse("partials/pes/cotizador/stepInspeccion/direccionParticular.vm")
+#parse("partials/pes/cotizador/stepInspeccion/direccionCentroInspeccion.vm")
+	
+	
+	
+</div>

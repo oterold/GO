@@ -1,0 +1,394 @@
+<form id="formulario">
+    <div class="containerMargenes" id="main">
+        <div class="row">
+            <div class=" col-sm-12 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                        <h4 style="color: #ffffff;border:none;margin:0px;padding-top:3px;text-align:center;" class="center-block">&nbsp;Consulta Nro Socio de Aerolineas</h4>
+                    </div>
+                    <div class="panel-body" style="padding-top:0px;">
+                        <div class="row">
+                            <div class="col-md-2" style="text-align:center;margin-top:10px;padding-right: 0px;">
+                                <i class="material-icons altoIcono fas fa-user"  style="color:#0b4376;padding-top:15px;font-size:70px;"></i>
+                            </div>
+                            <div class="col-md-10" style="text-align: left; padding-left:30px; padding-right:30px; margin-bottom:10px;margin-top:10px">
+                                <div class="row" id="panelb">
+                                    <div class="col-md-6">
+                                        <table  style= "width:100%;">
+                                            <tr>
+                                                <td align="right"  valign="top" style="padding-top:10px;">
+                                                    <h6>
+                                                        <b>Server AA : </b>
+                                                    </h6>
+                                                </td>
+                                                <td style="padding-top:5px;width:60%;">
+                                                    <select id="selectAmbienteBuscarCliente" name="selectAmbienteBuscarCliente" class="form-control alto-input" style="width:100%;padding: 3px;">
+                                                        <option value="1">Test</option>
+                                                        <option value="2">Produccion</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-12">
+</div>
+<div class="col-md-6">
+    <table  style= "width:100%;">
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Documento (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input type="text" id="documentoPersona" class="form-control alto-input" style="padding-left:5px;"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-6">
+    <table  style= "width:100%;">
+        <tr>
+            <td style="width:60%;">
+                <a class="btn btn-panela-poliza fas fa-search btn-social btn-bitbucket inspeccionesBotonHoover" onclick="buscarPersonaAerolineas();"   data-placement="bottom" data-toggle="tooltip" title="Buscar" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:4px;color:#ffffff;"></a>
+            </td>
+        </tr>
+    </table>
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--- panel b--->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: #0B4376;height:37px;">
+                            <h4 style="color: #ffffff;border:none;margin:0px;padding-top:3px;text-align:center;" class="center-block">&nbsp;Acreditaci&oacute;n de Millas Aerolineas</h4>
+                        </div>
+                        <div class="panel-body" style="padding-top:0px;">
+                            <div class=" row">
+                                <div class="col-md-2" style="text-align:center;margin-top:10px;padding-right: 0px;">
+                                    <i class="material-icons altoIcono fas fa-plane"  style="color:#0b4376;padding-top:15px;font-size:70px;"></i>
+                                </div>
+                                <div class="col-md-10" style="text-align: left; padding-left:30px; padding-right:30px; margin-bottom:10px;margin-top:10px">
+                                    <div class="row" id="panelb">
+                                        <div class="col-md-6">
+                                            <table  style= "width:100%;">
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:10px;">
+                                                        <h6>
+                                                            <b>Server AA : </b>
+                                                        </h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;width:60%;">
+                                                        <select id="selectAmbiente" class="form-control alto-input" style="width:100%;padding: 3px;">
+                                                            <option value="1">Test</option>
+                                                            <option value="2">Produccion</option>
+                                                        </select>
+														<input type="hidden" name="rtn" id="rtn"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table  style= "width:100%;">
+                                                <tr>
+                                                    <td align="right"  valign="top" style="padding-top:10px;">
+                                                        <h6>
+                                                            <b>Code (*) : </b>
+                                                        </h6>
+                                                    </td>
+                                                    <td style="padding-top:5px;width:60%;">
+                                                        <input class="form-control alto-input" style="padding-left:5px;" type="text" id="valorCode" name="code"  />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <hr style="margin-top:5px;margin-bottom:5px;">
+</div>
+<div class="col-md-6">
+    <table  style= "width:100%;">
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Millas (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+				<select id="Millas" name="Millas" class="form-control alto-input" style="width:100%;padding: 3px;">
+					<option value="500"> 500 </option>
+					<option value="1000"> 1000 </option>
+					<option value="4000"> 4000 </option>
+				</select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Socio (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="clienteIn" name="Socio"  />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Nume_fact (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Nume_fact"  />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Apellido (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="apellidoPersonaIn" name="Apellido"  />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Codidocu (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="tipoDocPersonaIn" name="Codidocu" value="DNI" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Numedocu (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="documentoPersonaIn" name="Numedocu"  />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-6">
+    <table  style= "width:100%;">
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Partner_code (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Partner_code"  value="PS" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Partner_id (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Partner_id"  value="PS1" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Partner_nbr (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Partner_nbr"  value="2046" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Millas_Promo (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input"  style="padding-left:5px;" type="text" id="first-name" name="Millas_Promo" value="0" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Lugar (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input"  style="padding-left:5px;" type="text" id="first-name" name="Lugar" value="BUE" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Cod_Promo : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Cod_Promo"  readonly/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Fecha_Desde (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Fecha_Desde" value="$fecha"  />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Fecha_Hasta (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Fecha_Hasta" value="$fecha" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Aux : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Aux" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Int1 (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Int1"  value="0" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Int2 (*) : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Int2"  value="0" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"  valign="top" style="padding-top:10px;">
+                <h6 class="estilo-fuente-aa">
+                    <b>Ldate : </b>
+                </h6>
+            </td>
+            <td style="padding-top:5px;width:60%;">
+                <input class="form-control alto-input" style="padding-left:5px;" type="text" id="first-name" name="Ldate" readonly />
+            </td>
+        </tr>
+    </table>
+</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12" style="text-align: center;">
+                                                <a class="btn btn-panela-poliza btn-social btn-bitbucket material-icons inspeccionesBotonHoover protip" onclick="aceptarAcreditacion('$nombreUsuario');"  data-placement="bottom" data-toggle="tooltip" title="Enviar" style="margin-right:5px;font-size:20px;margin-top:5px;margin-bottom:5px;height:30px;padding-bottom:5px;padding-top:1px;color:#ffffff;">play_arrow</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cantidad Endosos -->
+                    <div class="col-sm-12 col-md-4" style="width:100%; margin-bottom: 20px;">
+                        <div class="panel panel-default" style="width:100%; height:100%;">
+                            <div class="panel-heading" style=" background-color:white;border-color:white;">
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6" style="padding:0px; margin-left:10px;">
+                                        <h4 id="cantEndosos" style="padding-top:7px;color:#00317A;border:none;">Resultado de Ejecuci&oacute;n</i>
+</h4>
+                                </div>
+                                <div class="col-md-12">
+                                    <hr style="border-color:#00317A;margin-top:0px;margin-bottom:10px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-container page__container altoPanelB" >
+                                <div class="" style="">
+									<div class="col-md-12" style="text-align:center;">
+                                        <i  class='fas fa-check-circle'  id="iconoOk" style='display:none;color: green;font-size: 60px;padding:20px;'></i>
+                                        <i class='fas fa-times-circle' id="iconoError" style='display:none;color: red;font-size: 60px;padding:20px;'></i>
+                                    </div>
+                                    <h6 id="msjError" style="color:red;display:none;font-size: 15px;padding: 5px;"></h6>
+                                    <h6 class="msjOk" id="msjOk" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    <h6 class="msjOk"  id="msjOkId" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    <h6 class="msjOk"id="msjOkStatus" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    <h6 class="msjOk"id="msjOkDeStatus" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    <h6 class="msjOk" id="msjOkCodigo_sqlerr" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    <h6 class="msjOk" id="msjOkCodigo_isamerr" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    <h6 class="msjOk" id="msjOkKeyEncrypted" style="font-size: 15px;padding: 5px;display:none;"></h6>
+                                    
+                                </div>
+                                <div class="row" id="datosContacto">
+                                    <div class="col-md-12 mostrarResultadoCliente">
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td align="right"  valign="top" style="padding-top:10px;">
+                                                    <h6>
+                                                        Nombre y Apellido:
+                                                    </h6>
+                                                </td>
+                                                <td style="padding-top:10px;width:60%;">
+                                                    <h6 id="clienteNombre"> - </h6>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right"  valign="top" style="padding-top:10px;">
+                                                    <h6>
+                                                        Tipo Doc  : 
+                                                    </h6>
+                                                </td>
+                                                <td style="padding-top:10px;width:60%;">
+                                                    <h6 id="clienteTPDoc"> - </h6>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right"  valign="top" style="padding-top:10px;">
+                                                    <h6>
+                                                        N. Socio  : 
+                                                    </h6>
+                                                </td>
+                                                <td style="padding-top:10px;width:60%;">
+                                                    <h6 id="clienteNum"> - </h6>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right"  valign="top" style="padding-top:10px;">
+                                                    <h6>
+                                                        Mensaje  : 
+                                                    </h6>
+                                                </td>
+                                                <td style="padding-top:10px;width:60%;">
+                                                    <h6 id="clienteMensaje"> - </h6>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</form>

@@ -17,8 +17,10 @@ function inicioCotizacionStep3() {
 	});
 
 	$('#fechaNac').mask('00/00/0000');
+	
 	$.unblockUI();
 }
+
 
 function reiniciarSelect(id) {
 	validarSelect("40012");
@@ -62,7 +64,7 @@ function validarFechanacimiento() {
 			}
 		},
 		error : function(xhr, status) {
-			mostrarError('No se pudo cargar el tipo de vehiculo, informe a sistemas con el codigo : 1232161219.');
+	    	mostrarError(xhr['responseText']);
 		},
 
 	});
@@ -75,22 +77,30 @@ function agregarAccesorios() {
 	// obtengo el monto de cada accesorio
 	var montoAccesorios = $("#montoAccesorios").val();
 
+	$("#msjErrorAcessorio").css("display","none");
+	
 	// obtengo datos del select
 	var datosAccesorios = new Object();
 	datosAccesorios = llenarDatosAccesorios();
+	if(datosAccesorios.valor == 00 || montoAccesorios == ''){
+		$("#msjErrorAcessorio").css("display","");
 
-	cargarPanelAgregadoAccesorios(datosAccesorios, montoAccesorios);
-	// guardo el valor final
-	$("#montoFinal").val(parseInt(montoAccesorios) + parseInt(montoFinal))
-	$("#listaTotalAccesorios").css("display", "");
-	$("#valorAccesorios").text(formatearMonedaCotizador(parseInt(montoAccesorios) + parseInt(montoFinal)));
-	setearSelectoraccesoriosInicio();
+	}else{
+		cargarPanelAgregadoAccesorios(datosAccesorios, montoAccesorios);
+		// guardo el valor final
+		$("#montoFinal").val(parseInt(montoAccesorios) + parseInt(montoFinal))
+		$("#listaTotalAccesorios").css("display", "");
+		$("#valorAccesorios").text(formatearMonedaCotizador(parseInt(montoAccesorios) + parseInt(montoFinal)));
+		setearSelectoraccesoriosInicio();
+	}
 }
+
+
 
 function cargarPanelAgregadoAccesorios(obj, monto) {
 	var id = '"' + obj.valor + '"';
 	var panelAgregado = "<div style='width:100%;margin-bottom:0px;' class='row' id='" + obj.valor
-			+ "'><div class='input-field col-md-5'>" + "<h6>" + obj.texto + "</h6>" + "</div>"
+			+ "'><div class='input-field col-md-5'><input type='hidden' class='accesorioStringSend' value="+obj.valor+";"+monto+";#>" + "<h6>" + obj.texto + "</h6>" + "</div>"
 			+ "<div class='col-md-2'>" + "</div>" + "<div class='input-field col-md-2'>"
 			+ "<h6 style='text-align:right;'>" + formatearMonedaCotizador(monto) + "<input type='hidden' value='"
 			+ monto + "' id='monto" + obj.valor + "'/></h6>" + "</div>" + "<div class='input-field col-md-2'>"
@@ -120,9 +130,12 @@ function removerAccesorio(id) {
 	montoFinal = parseInt(montoFinal) - parseInt(monto);
 	$("#montoFinal").val(montoFinal)
 	$("#valorAccesorios").text(formatearMonedaCotizador(montoFinal));
-	$("#" + id).css("display", "none");
+	$("#" + id).remove();
+	
 
 }
+
+
 
 function cargarDependencias(id) {
 	$("." + id).each(function(index) {
@@ -236,6 +249,8 @@ function cargarSelectorParametricoByClass(id) {
 			}
 		},
 		error : function(xhr, status) {
+	    	mostrarError(xhr['responseText']);
+
 		},
 
 	});
@@ -284,7 +299,7 @@ function cargarSelectorParametrico(id, datos, tabla) {
 			}
 		},
 		error : function(xhr, status) {
-			mostrarError('No se pudo cargar el selector, informe a sistemas con el codigo : 9871629.');
+	    	mostrarError(xhr['responseText']);
 		},
 
 	});
@@ -334,7 +349,7 @@ function cargarSumaAsegurada(id) {
 			}
 		},
 		error : function(xhr, status) {
-			mostrarError('No se pudo cargar la suma asegurada, informe a sistemas con el codigo : 1231629.');
+	    	mostrarError(xhr['responseText']);
 		},
 
 	});
@@ -413,7 +428,7 @@ function buscarDirecciones() {
 					}
 				},
 				error : function(xhr, status) {
-					mostrarError('No se encontro un resultado con el valor ingresado.');
+			    	mostrarError(xhr['responseText']);
 				},
 
 			});
@@ -551,10 +566,7 @@ function redirectStep4() {
 		dataType : 'json',
 		success : function(json) {
 			try {
-				var valor = comprobarForm();
-				if (valor == 0) {
 					location.href = "/PSPES/cotizacionStep4";
-				}
 			} catch (e) {
 				// TODO: handle exception
 			}
@@ -562,12 +574,49 @@ function redirectStep4() {
 
 		},
 		error : function(xhr, ajaxOptions, thrownError) {
+	    	mostrarError(xhr['responseText']);
 			$.unblockUI();
 		}
 	});
 }
 
-
+function cargarAccesorios(){
+	var valor = comprobarForm();
+	if(valor == 0){
+		var accesorioString='';
+		$(".accesorioStringSend").each(function(){
+			accesorioString = accesorioString + $(this).val();
+	 	});
+	
+		if(accesorioString != ''){
+			$.ajax({
+				url : 'guardarDatosAccesorios',
+				contentType : 'application/json',
+				data : {
+					accesorioString : accesorioString,
+				},
+				type : 'GET',
+				dataType : 'json',
+				success : function(json) {
+					try {
+					} catch (e) {
+					}
+					$.unblockUI();
+				},
+				error : function(xhr, ajaxOptions, thrownError) {
+			    	mostrarError(xhr['responseText']);
+					$.unblockUI();
+				},
+				 complete: function (data) {
+					 redirectStep4(); 
+				}
+			});
+		}else{
+			redirectStep4();
+		}
+	}	
+		
+	}
 function datosMostrarDatosBien() {
 	var obj = new Object();
 	var select = document.getElementById("40012"), text = select.options[select.selectedIndex].innerText;
