@@ -102,7 +102,7 @@
 
     <!-- Custom scripts for this template -->
 	
-    	<script src="/PSPES/resources/js/pubFiltroHome.js?$paramId"></script>
+    	<script src="/PSPES/resources/js/pubFiltroHome.js"></script>
 	<script src="/PSPES/resources/js/pantalla/owl.carousel.js"></script> 
 	<script src="/PSPES/resources/js/jquery.modal.js"></script>
 	<script src="/PSPES/resources/js/sweetalert2.all.min.js"></script>
@@ -113,7 +113,7 @@
 	<script src="/PSPES/resources/js/mfb.js"></script>
 	<script src="/PSPES/resources/js/pub/pantallaAyuda/ayudaHome.js"></script>
 	
-		<script type="text/javascript" src="/PSPES/wro/alljs.js"></script> 
+		<script type="text/javascript" src="/PSPES/wro/alljs.js$paramId"></script> 
 	<script src="/PSPES/resources/js/graficos/graficos.js"></script>
 	<script src="/PSPES/resources/js/shortcut.js"></script>
 	<script src="/PSPES/resources/js/pub/bandejaSiniestro/bandejaSiniestro.js"></script>
