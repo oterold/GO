@@ -112,6 +112,45 @@ public class GoCotizador extends AbstractPubController {
 		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
 	}
 
+	@RequestMapping(value = "/volverCotizadorGO", method = RequestMethod.GET)
+	public ModelAndView volverCotizadorGO(HttpSession session, HttpServletRequest request, Locale locale, Model model) throws Exception {
+
+		Map<String, Object> mapa = new HashMap<String, Object>();
+		EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+
+		try {
+
+			logger.debug("Primer paso de la Cotizacion");
+
+
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+				datosCoti.setRol("10001");
+				datosCoti.setOrigen("WEBPRO");
+				datosCoti.setEsquemaA("1");
+				datosCoti.setEsquemaB("1");
+				datosCoti.setProductor("917");
+				guardarEnSession(request, datosCoti);
+				mapa.put("datosCoti", datosCoti);
+			mapa.put("funcionOnload", "inicioCotizacion()");
+
+			mapa.put("card", 0);
+			mapa.put("clienteCotizacion", "");
+			mapa.put("datosGenerales", "");
+			mapa.put("datosBien", "");
+			mapa.put("datosPromo", "");
+
+			mapa.putAll(getDatosComunes(request));
+
+			return new ModelAndView(COTIZADOR_STEP_COTIZADOR, mapa);
+
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto goCotizador", e);
+			mapa.putAll(getDatosComunes(request));
+			mapa.put("errorMsg", "" + e.getCause().getMessage());
+		}
+
+		return new ModelAndView(PANTALLA_ERROR_COTI, mapa);
+	}
 
 	/**
 	 * Segundo paso de la cotizacion
@@ -254,7 +293,8 @@ public class GoCotizador extends AbstractPubController {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
-
+			datosCoti.setPromocionA(""); datosCoti.setPromocionB(""); datosCoti.setPromocionC("");
+			
 			String acc = "C";
 
 			Future<ArrayList> datosDinamicos = goCotizador.datosDinamicos(datosCoti, acc, getEntorno(request), getUser(request));
@@ -318,7 +358,7 @@ public class GoCotizador extends AbstractPubController {
 			}
 
 			mapa.putAll(getDatosComunes(request));
-			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("funcionOnload", "inicioCotizacion4()");
 			mapa.put("card", 4);
 			mapa.put("datosPromociones", datosPromociones.get());
 			mapa.put("datosCoti", datosCoti);

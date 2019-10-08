@@ -5318,6 +5318,13 @@ small {
   left: 24px;
 }
 
+.btn-floating.halfway-fab2 {
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  background-color:green!important
+}
+
 .btn-floating i {
   width: inherit;
   display: inline-block;
@@ -8275,6 +8282,25 @@ input[type=range]::-ms-thumb {
   bottom: 0;
 }
 
+.promo-txt-data-card{
+	overflow:auto;
+	height:80px;
+	padding:10px;
+}
+
+.promo-card-sp4{
+	color:#0b4376;
+	border:none;
+	font-size:20px;
+	line-height:1; 
+	margin:0;
+}
+
+.promo-col-height{
+	cursor:pointer;
+	height:120px
+}
+ 
 .slider.fullscreen ul.slides {
   height: 100%;
 }

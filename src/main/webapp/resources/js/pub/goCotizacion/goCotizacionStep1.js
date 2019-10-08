@@ -152,7 +152,7 @@ function mostrarBtnRamos(id) {
 
 function volverRedirectStep0() {
 	bloquearPantallaGris();
-	location.href = "/PSPES/cotizadorGO";
+	location.href = "/PSPES/volverCotizadorGO";
 
 }
 
