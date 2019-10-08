@@ -26,6 +26,7 @@ import com.pseguros.pes.bean.DatosCotizacionGO;
 import com.pseguros.pes.bean.DatosDinamicosCotizador;
 import com.pseguros.pes.bean.DatosMostrarPanelB;
 import com.pseguros.pes.bean.DatosTomadorAseg;
+import com.pseguros.pes.bean.ReturnExecuteData;
 import com.pseguros.pes.bean.datoValoDefaultCotizacion;
 import com.pseguros.pes.controller.pub.AbstractPubController;
 import com.pseguros.pes.generic.EnvironmentContextHolder;
@@ -36,6 +37,7 @@ import com.pseguros.pes.util.auxiliar.AuxiliarUtil;
 import com.pseguros.pes.util.db.PLUtils;
 import com.pseguros.pes.util.pantalla.RequestCotizadorUtils;
 import com.pseguros.pes.util.pantalla.UtilGuardarDatosSession;
+import com.pseguros.pes.util.pantalla.UtilGuardarImagenInspeccion;
 
 @Controller
 public class GoCotizador extends AbstractPubController {
@@ -663,7 +665,7 @@ public class GoCotizador extends AbstractPubController {
 			mapa.putAll(getDatosComunes(request));
 			mapa.put("datosDinamicos", datosInspeccion.get());
 			mapa.put("datosResultadoDinamico", datos);
-			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("funcionOnload", "inicioCotizacionInspeccion()");
 			mapa.put("datosInspeccionTabla", datosInspeccionTabla.get());
 			mapa.put("datosCoti", datosCoti);
 
@@ -1310,6 +1312,21 @@ public class GoCotizador extends AbstractPubController {
 		}
 	}
 
+	
+	
+	
+	/*--------------------------------GUARDAR-FOTO-INSPECCION-------------------------------*/
+	@RequestMapping(value = "/guardarFotosInspeccion", method = RequestMethod.POST)
+	public @ResponseBody ReturnExecuteData guardarFotosDenunciaSiniestro(HttpSession session,
+			HttpServletRequest request, Locale locale, Model model) {
+
+		logger.debug("guardar Inspeccion imagen ... ");
+
+		return UtilGuardarImagenInspeccion.guardarImagenInsepccion(request,getEntorno(request));
+	}
+
+	
+	
 	
 	
 	// ---------------------------------------------------------------------------------------------------------------------------------------

@@ -1,3 +1,16 @@
+	<input type="hidden" value="" id="archivo1" name="archivo1"/>
+	<input type="hidden" value="" id="archivo2" name="archivo2" />
+	<input type="hidden" value="" id="archivo3" name="archivo3"/>
+	<input type="hidden" value="" id="archivo4" name="archivo4"/>
+	
+	<input type="hidden" value="" id="extension1" name="archivo1"/>
+	<input type="hidden" value="" id="extension2" name="extension2" />
+	<input type="hidden" value="" id="extension3" name="extension3"/>
+	<input type="hidden" value="" id="extension4" name="extension4"/>
+	<input type="hidden" value="0" id="totalArchivosSubidos" name="totalArchivosSubidos"/>
+
+
+
 <div class="accordion" id="accordionExample">
  <div class="row mt-4" >
      <div class="col-md-12">

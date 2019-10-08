@@ -58,6 +58,12 @@
 	<script type="text/javascript" src="/PSPES/resources/js/select2.full.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/sweetalert2.all.min.js"></script>
 	<script type="text/javascript" src="/PSPES/resources/js/jsMask.js"></script>
+
+
+	<script type="text/javascript" src="/PSPES/resources/js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="/PSPES/resources/js/jquery.fileupload.js"></script>
+	
 	
 	
 	

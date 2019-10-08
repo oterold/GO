@@ -135,3 +135,138 @@ function buscarInspecciones(idTablaParametricos){
     buscarTablaFiltro("#"+idTablaParametricos, filter);
 	
 }
+
+
+function inicioCotizacionInspeccion(){
+	
+	$('.datepicker').datepicker({
+				months : [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+						'Octubre', 'Noviembre', 'Diciembre' ],
+				monthsShort : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+			});
+
+	$('input#input_text, textarea#textarea2').characterCounter();
+	$('select').formSelect();
+	$('.modal').modal();
+	$('.tooltipped').tooltip();
+	$('#fechaNac').mask('00/00/0000');
+	var height = $(window).height();
+    $('#rowAlto').height(parseInt(height)-parseInt(50));
+    $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+    
+	document.getElementById('files').addEventListener('change',handleFileSelect, false);
+
+    $('#files').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+        	
+
+        	var cantidadDeArchivos = $("#totalArchivosSubidos").val();
+        	
+        	if(data.result["code"] == "0"){
+        		Swal.fire(
+      				  '',
+      				  ''+data.result["data"]["errorMsg"],
+      				  'error'
+      				)
+        		return false;
+        	}
+        	
+        	$("#borrarTodasLasImagenesBotom").css("display","");
+        	bloquearPantallaGris();
+			if (cantidadDeArchivos == "0") {
+				$("#archivo1").val(data.result["data"]["secuencia"] + "." + data.result["data"]["extension"]);			
+				$("#totalArchivosSubidos").val("1");
+				
+				$("#labelArchivo1").html(data.result["data"]["name"]);
+				$("#labelArchivo1").css("display","");
+				$("#imgArchivo1").css("display","");
+				$("#labelNombre1").css("display","");
+
+				
+			}
+			if (cantidadDeArchivos == "1") {
+				$("#archivo2").val(data.result["data"]["secuencia"] + "." + data.result["data"]["extension"]);
+				
+				$("#labelArchivo2").html(data.result["data"]["name"]);
+				$("#labelArchivo2").css("display","");
+				$("#imgArchivo2").css("display","");
+				$("#totalArchivosSubidos").val("2");
+
+				$("#labelNombre2").css("display","");
+
+			}
+			if (cantidadDeArchivos == "2") {
+				$("#archivo3").val(data.result["data"]["secuencia"] + "." + data.result["data"]["extension"]);
+				$("#totalArchivosSubidos").val("3");
+				
+				$("#labelArchivo3").html(data.result["data"]["name"]);
+				$("#labelArchivo3").css("display","");
+				$("#imgArchivo3").css("display","");
+				$("#labelNombre3").css("display","");
+
+			}
+			if (cantidadDeArchivos == "3") {
+				$("#archivo4").val(data.result["data"]["secuencia"] + "." + data.result["data"]["extension"]);
+				$("#totalArchivosSubidos").val("4");
+				
+				$("#labelArchivo4").html(data.result["data"]["name"]);
+				$("#labelArchivo4").css("display","");
+				$("#imgArchivo4").css("display","");
+				$("#labelNombre4").css("display","");
+
+			}	
+			
+	        $.unblockUI();        }
+	
+    });
+    
+}
+function handleFileSelect(evt) {
+	var files = evt.target.files; // FileList object
+	var archivos = files.length;
+	if (archivos <= 4) {
+		for ( var i = 0, f; f = files[i]; i++) {
+			// Only process image files.
+			if (!f.type.match('image.*')) {
+				continue;
+			}
+			var reader = new FileReader();
+			reader.onload = (function(theFile) {
+				return function(e) {
+					var span = document.createElement('span');
+					span.innerHTML = [ '<img class="thumb" src="',
+							e.target.result, '" title="', escape(theFile.name),
+							'"/>' ].join('');
+					document.getElementById('list').insertBefore(span, null);
+				};
+			})(f);
+			reader.readAsDataURL(f);
+		}
+	} else {
+		bootbox.alert('Por favor seleccionar menos de 4 imagenes');
+	}
+}
+
+function eliminarImg()
+{
+	const file = document.querySelector('.file');
+	file.value = '';
+	var d1 = document.getElementById("list");
+	d1.innerHTML = '<output id="list"></output>';
+}
+
+
+function validaImg()
+{
+	var file = document.querySelector("#files");
+	  if ( /\.(jpg|png|pdf|doc|docx)$/i.test(file.files[0].name) === false ) 
+	  { 
+		  eliminarImg();
+		  Swal.fire(
+				  '',
+				  'La extensi\u00F3n de la imagen no es valida, por favor ingrese .jpg, .pdf o .png!',
+				  'Error'
+				)
+	  }
+}

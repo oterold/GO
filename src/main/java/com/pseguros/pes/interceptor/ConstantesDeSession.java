@@ -1,5 +1,7 @@
 package com.pseguros.pes.interceptor;
 
+import com.pseguros.pes.util.properties.UtilProperties;
+
 
 public class ConstantesDeSession {
 	public static final String FILTRO_GENERAL_ESTADO_SOLAMENTE_ACTIVOS = "filtroGeneralEstadoSolamenteActivos";
@@ -10,6 +12,7 @@ public class ConstantesDeSession {
 
 	public static final String USUARIO_DISPLAY = "DISPLAY";
 	
+	public static final String PATH_TMP = UtilProperties.getDato("PATH.TMP");
 
 	
 
