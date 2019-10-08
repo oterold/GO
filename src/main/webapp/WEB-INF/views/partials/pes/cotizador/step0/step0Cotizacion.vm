@@ -19,12 +19,7 @@
                                 </div>
                                 <div class="col-md-12 cuerpo-botones" >
                                     <div class="row" style="margin:0px !important;">
-                                        <div class="col-md-3" style="text-align:center;">
-                                            <a onclick="redirectStep1();"  class="btn waves-effect waves-light boton-siguiente-cotizacion boton-volver">
-                                                Volver
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-9">
                                         </div>
                                         <div class="col-md-3" style="text-align:center;">
                                             <a onclick="redirectStep1();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
