@@ -1,17 +1,17 @@
 #foreach($datosPromocionesIn in $datosPromociones)
-<div class="col-md-6 col-lg-4 mt-4" style="cursor:pointer;" id="$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" onclick="selecionarPromo(this.id);">
-    <div class="card" style="width:100%;height:100%;">
-        <div class="card-image cuerpo-card centrar-switch-promo sacarSeleccionCard" id="cuerpo_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")">
-			<h6 id="texto$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")">$utilToolScreen.nombreMayuscula($datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION"))</h6>
-            <a class="btn-floating halfway-fab waves-effect waves-light red sacarCheckActivado" id="check_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" style="display:none;">
+<div class="col-md-6 col-lg-4 mt-4 promo-col-height" id="$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" onclick="selecionarPromo(this.id);">
+	<div class="card" style="width:100%;height:100%;">
+        <div class="card-image cuerpo-card2 centrar-switch-promo sacarSeleccionCard" id="cuerpo_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")">
+			<h6 class=" tooltipped" id="texto$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" data-placement="bottom" data-position="bottom" data-tooltip="$datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION")">$utilToolScreen.nombreMayuscula($datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION")) </h6>
+            <a class="btn-floating halfway-fab2 waves-effect waves-light red sacarCheckActivado" id="check_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" style="display:none;">
                 <i class="fas fa-check icono-check-ramos"></i>
             </a>
         </div>
-			<div class="row alto-cuerpo-promociones" style="overflow-y: auto;height: 155px !important;margin-bottom: 0px;">
-				<div class="col-md-12 pt-4">
-        			<a style="line-height:20px;">$datosPromocionesIn.get('P_TF_PROM.CROT_DE_CONTENIDO')</a>
-				</div>
-        </div>
+
+
+		<p class="promo-txt-data-card">$datosPromocionesIn.get('P_TF_PROM.CROT_DE_CONTENIDO')</p>
+
+
     </div>
 </div>
 #end
