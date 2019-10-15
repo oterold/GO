@@ -35,20 +35,20 @@ function redirectStep7(ramo) {
 				var valor = comprobarForm();
 
 				if (valor == 0) {
-					
 					if(ramo == 22){
 						location.href = "/PSPES/cotizacionStep8";
 					}else{
 						location.href="/PSPES/cotizacionStepInspeccion"
 					}
+				}else{
+					$.unblockUI();
 				}
 			} catch (e) {
-				// TODO: handle exception
 			}
-			$.unblockUI();
-
 		},
 		error : function(xhr, ajaxOptions, thrownError) {
+			mostrarError(xhr['responseText']);
+
 			$.unblockUI();
 		}
 	});

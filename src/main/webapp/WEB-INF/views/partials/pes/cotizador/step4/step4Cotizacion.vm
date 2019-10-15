@@ -5,15 +5,16 @@
 <input type="hidden" value="$datosCoti.promocionA" id="promocionSeleccionadaA"/>
 <input type="hidden" value="$datosCoti.promocionB" id="promocionSeleccionadaB"/>
 <input type="hidden" value="$datosCoti.promocionC" id="promocionSeleccionadaC"/>
+<input type="hidden" value="0" id="valorForm"/>
 
-<section class="container-fluid">
-   <div class="containerMargenes" style="padding-top:50px;" id="main">
-      <div class="row">
-         <div class=" col-sm-12 col-md-9 sin-margen-der" style="background-color:white;border:2px solid #e9ebef;margin-top:50px">
-            <div class="panel-default">
+<section class="">
+   <div class="" style="padding-top:50px;" id="main">
+      <div class="row" id="rowAlto" style="margin-bottom:0px;">
+         <div class=" col-sm-12 col-md-9 sin-margen-der">
+            <div class="panel-default fondo-panel-central">
                <div class="panel-body">
-                  <div class=" row">
-                     <div class="col-md-12" style="text-align: left;padding-left:15px;padding-right:15px">
+				<div class=" row" id="rowCuerpo">
+					<div class="col-md-12 fondo-cuerpo" style="">
                         <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;margin-top: 10px;">Promociones</h3>
 						<h5 class="pl-1 pt-1 promo-card-sp4" id="titloStep4">Seleccione hasta 3 promociones para cotizar <i class="fas fa-exclamation-circle" id="iconoTitulo" style="color:#dc3545;display:none;"></i></h5>
 
@@ -25,12 +26,10 @@
 						</div>
 					 </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-			<div class="row margin-boton" style = "margin-left:15px;margin-right: 15px;margin-top: 70px">
-					<div class="col-sm-12 col-md-3">
-					   <button onclick="volverRedirectStep3();" class="btn waves-effect waves-light pull-left boton-siguiente-cotizacion" type="submit" name="action">
+					 <div class="col-md-12 cuerpo-botones" style="text-align:center;">
+					 <div class="row" style="margin:0px !important;">
+					<div class="col-sm-12 col-md-3" style="text-align:center;">
+					   <button onclick="volverRedirectStep3();" class="btn waves-effect waves-light boton-siguiente-cotizacion boton-volver">
                         Volver
                       </button>
 					</div> 
@@ -38,18 +37,19 @@
 					</div>
 					<div class="col-sm-12  col-md-3">
 						#if($datosCoti.ramo == 4)
-						<button onclick="RedirectStep5();"  class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" type="submit" name="action">
+						<a onclick="RedirectStep5();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
 							Siguiente
-							<i class="material-icons right" style="color:white;">send</i>
-						</button>
+						</a>
 						#else
-						<button onclick="redirectStep5Coberturas();"  class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" type="submit" name="action">
+						<a onclick="redirectStep5Coberturas();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
 							Siguiente
-							<i class="material-icons right" style="color:white;">send</i>
-						</button>
-						
+						</a>
 						#end
 					</div>
+			   </div>
+			   </div>
+            </div>
+			  </div>
 						</div>
          </div>
          <!-- Lista certificados - Panel B -->

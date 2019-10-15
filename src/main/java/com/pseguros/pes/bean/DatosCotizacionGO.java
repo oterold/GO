@@ -19,6 +19,13 @@ public class DatosCotizacionGO {
 	private String transaccion ="E";
 	private String valorFinalDatosDinamicos="";
 	private String valorFinalDatosDinamicosEmision="";
+	private String valorFinalDatosDinamicosInspeccion="";
+	public String getValorFinalDatosDinamicosInspeccion() {
+		return valorFinalDatosDinamicosInspeccion;
+	}
+	public void setValorFinalDatosDinamicosInspeccion(String valorFinalDatosDinamicosInspeccion) {
+		this.valorFinalDatosDinamicosInspeccion = valorFinalDatosDinamicosInspeccion;
+	}
 	private String promocionA;
 	private String promocionB;
 	private String promocionC;
@@ -32,8 +39,12 @@ public class DatosCotizacionGO {
 	private String fechaEmision; 
 	private String valorPromo; 
 	private String accesorios; 
+	private String inspeccion; 
+	private String patente; 
+	private String chasis; 
+	private String motor; 
 	
-	
+
 	private DatosTomadorAseg datosAseg;
 	
 	private String formDatosGenerales="DGENERALES";
@@ -48,17 +59,47 @@ public class DatosCotizacionGO {
 	
 	private List datosDinamicos;
 	
-	
 	private List datosDinamicosEmision;
 	
+	private List datosDinamicosInspeccion;
+
 	private DatosMostrarPanelB datosPanelB;
 	
 	private DatosGrillaProducto direccion;
 	
 	
 	
+	public String getPatente() {
+		return patente;
+	}
+	public void setPatente(String patente) {
+		this.patente = patente;
+	}
+	public String getChasis() {
+		return chasis;
+	}
+	public void setChasis(String chasis) {
+		this.chasis = chasis;
+	}
+	public String getMotor() {
+		return motor;
+	}
+	public void setMotor(String motor) {
+		this.motor = motor;
+	}
 	
-	
+	public List getDatosDinamicosInspeccion() {
+		return datosDinamicosInspeccion;
+	}
+	public void setDatosDinamicosInspeccion(List datosDinamicosInspeccion) {
+		this.datosDinamicosInspeccion = datosDinamicosInspeccion;
+	}
+	public String getInspeccion() {
+		return inspeccion;
+	}
+	public void setInspeccion(String inspeccion) {
+		this.inspeccion = inspeccion;
+	}
 	public String getAccesorios() {
 		return accesorios;
 	}

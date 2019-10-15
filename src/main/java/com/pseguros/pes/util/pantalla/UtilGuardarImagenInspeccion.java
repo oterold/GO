@@ -61,7 +61,7 @@ public class UtilGuardarImagenInspeccion extends AbstractPubController{
 			data.setData(datos);
 
 			FileOutputStream outputStream = new FileOutputStream(
-					new File(ConstantesDeSession.PATH_TMP + id + "." + extension));
+					new File("/tmp/" + id + "." + extension));
 
 			int read = 0;
 

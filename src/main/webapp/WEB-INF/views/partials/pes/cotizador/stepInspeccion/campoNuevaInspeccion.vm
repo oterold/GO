@@ -1,3 +1,8 @@
+<div class="col-md-12 pb-4" style="text-align:right;">
+    <h6 style="color:#9e9e9e">
+        N&uacute;mero de Inspecci&oacute;n : <a style="cursor:pointer;color:#0b4376;border:none;font-size:18px;line-height:1;"> $datosCoti.inspeccion </a>
+    </h6>
+</div>
 <div class="col-md-12">
     <div class="row">
         #set( $band="0")
@@ -8,12 +13,12 @@
                 #if($datosDinamicos.dato.crdpTieneLdv == "S")
                     #if($datosDinamicos.dato.inbInDependencias.length() > 0)
                         <div class="input-field col-md-5 ">
-                            <select class="enviarForm selectorMaterialice cc$datosDinamicos.dato.crcoCrtdCdDato $utilToolScreen.getCssDependencia($datosDinamicos.dato.inbInDependencias)" title="$datosDinamicos.dato.crcdDeHelp" id="$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
+                            <select class="inspeccionDinamico selectorMaterialice cc$datosDinamicos.dato.crcoCrtdCdDato $utilToolScreen.getCssDependencia($datosDinamicos.dato.inbInDependencias)" title="$datosDinamicos.dato.crcdDeHelp" id="$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
                                 <option  value="$datosDinamicos.dato.inbInDependencias">Seleccione..</option>
                                 #else
                                     <div class="input-field col-md-5">
-                                        <select class="enviarForm selectorMaterialice" onchange="cargarDependencias(this.id)" title="$datosDinamicos.dato.crcdDeHelp" id="d$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
-                                            <option value="">Seleccione..</option>
+                                        <select class="inspeccionDinamico selectorMaterialice" onchange="cargarDependencias(this.id)" title="$datosDinamicos.dato.crcdDeHelp" id="d$datosDinamicos.dato.crcoCrtdCdDato" name="$datosDinamicos.dato.crcoCrtdCdDato">
+                                            <option value="1">Seleccione..</option>
                                             ##recorro la lista con los datos del selector
                                             #foreach($datosSelect in $datosDinamicos.listaValores)
                                                 #if($datosSelect.get("P_TF_CRTB.CRTB_CD_DATO") == $datosDinamicos.dato.crcoDato)
@@ -45,48 +50,47 @@
         #end
                                         </div>
 </div>
-
-
-
 <div class="col-md-12">
-	<a style="cursor:pointer;color:#0b4376;border:none;font-size:20px;line-height:1;">
-       	Archivos 	<i class="fas fa-archive"></i>
-   	</a>
-	
-	<div class="col-md-12">
-		<div class="file-field input-field">
-		      <div class="btn" id="limpiarImagen">
-		        <span style="color:white;">Pdf</span>
-		        <input type="file" multiple id="files" name="files[]" data-url="/PSPES/guardarFotosInspeccion">
-		      </div>
-		      <div class="file-path-wrapper">
-		        <input class="file-path validate" type="text" placeholder="Cargar uno o mas archivos">
-		      </div>
-		    </div>
-	</div>	
+    <a style="cursor:pointer;color:#0b4376;border:none;font-size:20px;line-height:1;">
+        Archivos 	<i class="fas fa-archive"></i>
+    </a>
+    <div class="col-md-12">
+        <div class="file-field input-field">
+            <div class="btn" id="limpiarImagen">
+                <span style="color:white;">Pdf</span>
+                <input type="file" multiple id="files" name="files[]" data-url="/PSPES/guardarFotosInspeccion">
 </div>
-<div class="col-md-12">
-	<div class="row">
-
-	<div  class="col-md-6">
-		<i class="fas fa-check-circle" id="imgArchivo1" style="display:none;color:green;font-size:25px;"></i>	<label id="labelNombre1" style="display:none;">Archivo 1 :</label> <label id="labelArchivo1" style="display:none; margin-bottom:4px;" >Archivo 1</label>
-	</div>
-	
-	<div  class="col-md-6">
-		<i class="fas fa-check-circle" id="imgArchivo2" style="display:none;color:green;font-size:25px;"></i>	<label id="labelNombre2" style="display:none;">Archivo 2 :</label> <label id="labelArchivo2" style="display:none; margin-bottom:4px;" >Archivo 2</label>
-	</div>
-	
-	<div  class="col-md-6">
-		<i class="fas fa-check-circle" id="imgArchivo3" style="display:none;color:green;font-size:25px;"></i>	<label id="labelNombre3" style="display:none;">Archivo 3 :</label> <label id="labelArchivo3" style="display:none; margin-bottom:4px;" >Archivo 3</label>
-	</div>
-	
-	<div  class="col-md-6">
-		<i class="fas fa-check-circle" id="imgArchivo4" style="display:none;color:green;font-size:25px;"></i>	<label id="labelNombre4" style="display:none;">Archivo 4 :</label> <label id="labelArchivo4" style="display:none; margin-bottom:4px;" >Archivo 4</label>
-	</div>
-							
-	<div class="col-md-12 mt-2">					
-		<button id="borrarTodasLasImagenesBotom" label="borrar" type="button" class="btn btn-success" onclick="limpiarTodasLasFotos();" style="display:none;">Borrar Archivos <i class="fas fa-backspace"></i></button>
-	</div>
-	</div>
+<div class="file-path-wrapper">
+    <input class="file-path validate" type="text" placeholder="Cargar uno o mas archivos">
 </div>
-
+</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div  class="col-md-6">
+                    <i class="fas fa-check-circle" id="imgArchivo1" style="display:none;color:green;font-size:25px;"></i>
+                    <label id="labelNombre1" style="display:none;">Archivo 1 :</label>
+                    <label id="labelArchivo1" style="display:none; margin-bottom:4px;" >Archivo 1</label>
+                </div>
+                <div  class="col-md-6">
+                    <i class="fas fa-check-circle" id="imgArchivo2" style="display:none;color:green;font-size:25px;"></i>
+                    <label id="labelNombre2" style="display:none;">Archivo 2 :</label>
+                    <label id="labelArchivo2" style="display:none; margin-bottom:4px;" >Archivo 2</label>
+                </div>
+                <div  class="col-md-6">
+                    <i class="fas fa-check-circle" id="imgArchivo3" style="display:none;color:green;font-size:25px;"></i>
+                    <label id="labelNombre3" style="display:none;">Archivo 3 :</label>
+                    <label id="labelArchivo3" style="display:none; margin-bottom:4px;" >Archivo 3</label>
+                </div>
+                <div  class="col-md-6">
+                    <i class="fas fa-check-circle" id="imgArchivo4" style="display:none;color:green;font-size:25px;"></i>
+                    <label id="labelNombre4" style="display:none;">Archivo 4 :</label>
+                    <label id="labelArchivo4" style="display:none; margin-bottom:4px;" >Archivo 4</label>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <button id="borrarTodasLasImagenesBotom" label="borrar" type="button" class="btn btn-success" onclick="limpiarTodasLasFotos();" style="display:none;">Borrar Archivos <i class="fas fa-backspace"></i>
+                    </button>
+                </div>
+            </div>
+        </div>

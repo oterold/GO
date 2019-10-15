@@ -85,6 +85,13 @@
 									Datos Bien
 						        </h5>
 							  #end
+							   #if($datosCoti.chasis.length() > 0)
+							 	 <h6  class="summary-title datos-cotizacion"> 
+								Patente : $datosCoti.patente / 
+								chasis : $datosCoti.chasis / 
+								motor : $datosCoti.motor 
+							 	 </h6>
+							  #end
 							  <h6  class="summary-title datos-cotizacion"> 
 							</h6>
                            </div>
@@ -103,9 +110,9 @@
                         <div class="summary-content">
                            <div class="summary-head">
 							#if($card == 2)
-                              <h5 style="border:none;"  class="summary-title"><b>Datos Complementarios</b></h5>
+                              <h5 style="border:none;"  class="summary-title"><b>Datos Inspeccion</b></h5>
 							#else
-								<h5 style="border:none;"  class="summary-title">Datos Complementarios</h5>
+								<h5 style="border:none;"  class="summary-title">Datos Inspeccion</h5>
 							#end
                            </div>
                            <div class="summary-price">
@@ -115,8 +122,13 @@
                               <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
 							#else
 							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
-							#end             
+							#end     
 							</div>
+							   #if($datosCoti.inspeccion.length() > 0)
+							 	 <h6  class="summary-title datos-cotizacion"> 
+								N&uacute;mero Inspecci&oacute;n :  $datosCoti.inspeccion 
+							 	 </h6>
+							  #end        
                         </div>
                      </div>
                      <div class="summary-block">

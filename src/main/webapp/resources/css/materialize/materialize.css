@@ -8283,6 +8283,7 @@ input[type=range]::-ms-thumb {
 }
 
 .promo-txt-data-card{
+	color: #938f8f;
 	overflow:auto;
 	height:80px;
 	padding:10px;

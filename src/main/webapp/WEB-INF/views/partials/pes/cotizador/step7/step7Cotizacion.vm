@@ -1,4 +1,5 @@
-    <section class="">
+<input type="hidden" value="0" id="valorForm"/>    
+	<section class="">
         <div class="" style="padding-top:50px;" id="main">
             <div class="row" id="rowAlto" style="margin-bottom:0px;">
                 <div class=" col-sm-12 col-md-9 sin-margen-der">
@@ -39,4 +40,5 @@
                 <!-- Lista certificados - Panel B -->
         #parse("partials/pes/cotizador/step6/stepEmisionPanelB.vm")
             </div>
+			</div>
 </section>
