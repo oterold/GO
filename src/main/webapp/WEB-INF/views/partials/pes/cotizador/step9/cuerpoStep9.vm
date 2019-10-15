@@ -87,6 +87,7 @@
     			N° Inspecci&oacute;n Nueva : 
     		</div>
     		<div class="col-md-3 texto-der">
+				$datosCoti.inspeccion
 			</div>
 			<div class="col-md-3 texto-izq">
     			N° Inspecci&oacute;n Celular : 

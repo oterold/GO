@@ -45,12 +45,6 @@
 				
 				
 				
-				
-				
-				
-				
-				
-				
                 <!-- Lista certificados - Panel B -->
         #parse("partials/pes/cotizador/step6/stepEmisionPanelB.vm")
             </div>

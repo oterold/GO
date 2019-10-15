@@ -347,7 +347,7 @@ public class GoCotizadorService {
 
 	}
 	
-	public Future<ArrayList> datosDinamicosInspeccion(DatosCotizacionGO datosCoti, EnvironmentType environment, String user) throws Exception {
+	public Future<HashMap> datosDinamicosInspeccion(DatosCotizacionGO datosCoti, EnvironmentType environment, String user) throws Exception {
 		EnvironmentContextHolder.setEnvironmentType(environment);
 
 		Map<String, String> xx = new HashMap<String, String>();
@@ -378,9 +378,15 @@ public class GoCotizadorService {
 		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length()> 1 ) {
 			throw new Exception(salida.get("mensaje").toString());
 		}
-		ArrayList datoSalida = (ArrayList) salida.get("datosSalida");
 		
-		return new AsyncResult<ArrayList>(datoSalida);
+		HashMap datosDinamicosInspeccion = new HashMap();
+		
+		ArrayList datoSalida = (ArrayList) salida.get("datosSalida");
+		String numeroInspeccion = (String) salida.get("inspc");
+		datosDinamicosInspeccion.put("dinamicos", datoSalida);
+		datosDinamicosInspeccion.put("numeroInspeccion", numeroInspeccion);
+		
+		return new AsyncResult<HashMap>(datosDinamicosInspeccion);
 
 	}
 	
@@ -2375,6 +2381,66 @@ public class GoCotizadorService {
 	}
 	
 	
+	public Object generarNuevaInspeccion  (DatosCotizacionGO datosCoti,EnvironmentType entorno, String user) throws Exception{
+		Map<String, String> xx = new HashMap<String, String>();
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		xx.put("P_NU_COTI","cotizacion");
+		xx.put("P_NU_CONS","consecutivo");
+		xx.put("P_NU_INSP","inspeccion");
+		xx.put("P_VC_RESU","dato");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("origen",datosCoti.getOrigen());
+		parametrosIn.put("aux",AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("cotizacion", ""+datosCoti.getCotizacion());
+		parametrosIn.put("consecutivo",""+datosCoti.getConsecutivo());
+		parametrosIn.put("inspeccion", datosCoti.getInspeccion());
+		parametrosIn.put("dato", datosCoti.getValorFinalDatosDinamicosInspeccion());
+		
+		Map<String, Object> salida = executeService.ejecutarProcedimientoConSeparador(new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_S,ConstantsProcedureDB.I_INSPECCION), parametrosIn, xx, ConstantsProcedureDB.I_INSPECCION , new Date().getTime(), "_");
 	
+		if (salida.get("error") != null && salida.get("error").toString().length() > 1) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length() > 1) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		
+		return true;
+		
+	}
 	
+	public Object asociarInspeccion  (DatosCotizacionGO datosCoti,EnvironmentType entorno, String user) throws Exception{
+		Map<String, String> xx = new HashMap<String, String>();
+		xx.put("P_VC_MENS","mensaje");
+		xx.put("P_VC_ERRO","error");
+		xx.put("P_VC_ORIG","origen");
+		xx.put("P_VC_AUXI","aux");
+		xx.put("P_NU_COTI","cotizacion");
+		xx.put("P_NU_CONS","consecutivo");
+		xx.put("P_NU_INSP","inspeccion");
+		xx.put("P_VC_OBSE","dato");
+		
+		Map<String, Object> parametrosIn = new HashMap<String, Object>();
+		parametrosIn.put("origen",datosCoti.getOrigen());
+		parametrosIn.put("aux",AuxiliarUtil.generarAux(datosCoti));
+		parametrosIn.put("cotizacion", ""+datosCoti.getCotizacion());
+		parametrosIn.put("consecutivo",""+datosCoti.getConsecutivo());
+		parametrosIn.put("inspeccion", datosCoti.getInspeccion());
+		
+		Map<String, Object> salida = executeService.ejecutarProcedimientoConSeparador(new ProcedimientoDatoBean(ConstantsProcedureDB.PKG_EMI_MDW_S,ConstantsProcedureDB.ASOCIAR_INSPECCION), parametrosIn, xx, ConstantsProcedureDB.ASOCIAR_INSPECCION , new Date().getTime(), "_");
+	
+		if (salida.get("error") != null && salida.get("error").toString().length() > 1) {
+			throw new Exception(salida.get("error").toString());
+		}
+		if (salida.get("mensaje") != null && salida.get("mensaje").toString().length() > 1) {
+			throw new Exception(salida.get("mensaje").toString());
+		}
+		
+		return true;
+		
+	}
 }

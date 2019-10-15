@@ -23,14 +23,14 @@
                     <tbody class="tbody-grilla" id="datosAccesoriosCotizacion">
     					#foreach($datosInspeccionTablaIn in $datosInspeccionTabla)	
     						<tr class="tr-grilla">
-    							<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_NU_INSPECCION"))</h6></td>
-    							<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($utilToolScreen.formatearFecha($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_FE_INSPECCION")))</h6></td>
-    							<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_ESTADO"))</h6></td>
-								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_RIESGO"))</h6></td>
-								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_CLIENTE"))</h6></td>
-								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_COTIZACION"))</h6></td>
-								<td class="td-grilla-componentesModalCotizacionHome" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_CONSECUTIVO"))</h6></td>
-								<td class="td-grilla-componentesModalCotizacionHome" role="cell" style="text-align:center;"><h6 style="font-size: 12px;margin-top:0px;margin-bottom:0px;"><label style="margin-bottom:0px;"><input type="checkbox" class="filled-in" /><span></span></label></h6></td>
+    							<td class="" role="cell"><h6 id="valorInspeccionTabla" style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_NU_INSPECCION"))</h6></td>
+                                <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_ESTADO"))</h6></td>
+                                <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_RIESGO"))</h6></td>
+                                <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($utilToolScreen.formatearFecha($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_FE_INSPECCION")))</h6></td>
+                                <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_CLIENTE"))</h6></td>
+                                <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_COTIZACION"))</h6></td>
+                                <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_CONSECUTIVO"))</h6></td>
+								<td class="" role="cell" style="text-align:center;"><h6 style="font-size: 12px;margin-top:0px;margin-bottom:0px;"><label class="asociarInspeccionCheck" style="margin-bottom:0px;"><input type="checkbox" id="$datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_NU_INSPECCION")" class="filled-in" /><span></span></label></h6></td>
                             </tr>
     					#end	
                     </tbody>

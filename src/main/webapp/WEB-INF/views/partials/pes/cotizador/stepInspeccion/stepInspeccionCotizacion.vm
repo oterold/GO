@@ -27,9 +27,20 @@
                                         <div class="col-md-3">
                                         </div>
                                         <div class="col-md-3" style="text-align:center;">
-                                              <a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion" onclick="emitirPoliza();" style="cursor: pointer; color:white; margin-top: 5px;">
+										<!-- boton de gestionar inspeccion -->
+										<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion botonInspeccion" id="enviarInspeccion" onclick="enviarInspeccion();" style="cursor: pointer; color:white; margin-top: 5px;">
                                             Siguiente
-                                            <i class="fas fa-file-contract right" style="color:white;"></i>
+                                                <i class="material-icons right" style="color:white;">send</i>
+                                        </a>
+										<!-- boton de nueva inspeccion -->
+										<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion botonInspeccion" id="enviarInspeccionNueva" onclick="enviarInspeccionNueva();" style="cursor: pointer; color:white; margin-top: 5px;display:none;">
+                                            Siguiente
+                                                <i class="material-icons right" style="color:white;">send</i>
+                                        </a>
+										<!-- boton de coordinar inspeccion -->
+										<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion botonInspeccion" id="enviarInspeccionCoordinar" onclick="enviarInspeccionCoordinar();" style="cursor: pointer; color:white; margin-top: 5px;display:none;">
+                                            Siguiente
+                                                <i class="material-icons right" style="color:white;">send</i>
                                         </a>
                                         </div>
                                     </div>

@@ -418,24 +418,18 @@ function guardarClienteEmision() {
 		dataType : 'json',
 		success : function(json) {
 			try {
-				location.href="/PSPES/cotizacionStep7";
-
 			} catch (e) {
 				mostrarError('Por favor informe a sistema con el cod de error: 921726.', e);
 			}
-			$.unblockUI();
 		},
 		error : function(xhr, status) {
 			mostrarError(xhr['responseText']);
 			$.unblockUI();
 
-		},
+		},complete: function (data) {
+			location.href="/PSPES/cotizacionStep7";			
+		}
 	});
-
-	$("#docPersona").val($("#clienteDni").val());
-
-	buscarPersona();
-
 
 }
 

@@ -146,8 +146,8 @@ public class KeyCloakValidation {
 			String[] partes = responseAuthLoginDTO.getAccessToken()
 					.split("\\.");
 			String datoUsuario = partes[1];
-
-			byte[] valueDecoded = Base64.decodeBase64(datoUsuario);
+			
+			byte[] valueDecoded = Base64.decodeBase64(datoUsuario.getBytes());
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 			JsonElement jelem;

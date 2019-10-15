@@ -2,6 +2,7 @@ package com.pseguros.pes.util.pantalla;
 
 import groovyjarjarcommonscli.ParseException;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,7 +26,7 @@ import com.pseguros.pes.bean.IngresarPersonaCotizador;
 
 public class RequestCotizadorUtils {
 
-	public static List obtenerDatosDinamicosFormateados(DatosCotizacionGO datosCoti, HttpServletRequest request, List datosDinamicosRequest) throws ParseException, JSONException {
+	public static List obtenerDatosDinamicosFormateados(DatosCotizacionGO datosCoti, HttpServletRequest request, List datosDinamicosRequest,String mascara) throws ParseException, JSONException {
 		List datosDinamicos = datosDinamicosRequest;
 		String dato = request.getParameter("datosPantalla");
 		JsonParser parser = new JsonParser();
@@ -37,15 +38,29 @@ public class RequestCotizadorUtils {
 				if (object.getDato().getCrcoCrtdCdDato().trim().equals(gsonObj.get("name").toString().replace('"', ' ').trim())) {
 					object.setValorCliente(gsonObj.get("value").toString().replace('"', ' ').trim());
 				}
+				guardarDatosPanelBdatosDelBien(gsonObj.get("name").toString().replace('"', ' ').trim(),gsonObj.get("value").toString().replace('"', ' ').trim(),datosCoti);
 			}
 			if (object.getValorCliente() == null || object.getValorCliente().length() <= 0) {
 				object.setValorCliente(object.getDato().getCrcoDato().toString());
 			}
-			object.setValorFinalDinamico("#" + object.getDato().getCrcoCrtdCdDato().toString() + ";" + object.getValorCliente().toString() + ";");
+			object.setValorFinalDinamico("#" + object.getDato().getCrcoCrtdCdDato().toString() + ";" + object.getValorCliente().toString() + mascara);
 		}
 		return datosDinamicos;
 	}
 	
+
+	private static void guardarDatosPanelBdatosDelBien(String key, String value, DatosCotizacionGO datosCoti) {
+		if(key.equals("40023")){
+			datosCoti.setMotor(value);
+		}
+		if(key.equals("40004")){
+			datosCoti.setChasis(value);
+		}
+		if(key.equals("40005")){
+			datosCoti.setMotor(value);
+		}
+	}
+
 
 	public static String obtenerDatosFinalDinamico(DatosCotizacionGO datosCoti, List datosDinamicosRequest) {
 		List datosDinamicos =datosDinamicosRequest;
@@ -77,7 +92,25 @@ public class RequestCotizadorUtils {
 		}
 		return valorPrimer + datosFinal;
 	}
+	
 
+	
+	public static String obtenerDatosFinalDinamicoInspeccion(DatosCotizacionGO datosCoti, List datosDinamicosRequest) {
+		List datosDinamicos =datosDinamicosRequest;
+		String datosFinal = "";
+		String valorPrimer = "";
+		for (Iterator iterator = datosDinamicos.iterator(); iterator.hasNext();) {
+			DatosDinamicosCotizador object = (DatosDinamicosCotizador) iterator.next();
+			if (object.getDato().getCrcoCrtdCdDato().equals("48000")) {
+				valorPrimer = object.getValorFinalDinamico().replace("#", "");
+			} else {
+				datosFinal = datosFinal + object.getValorFinalDinamico().toString();
+			}
+		}
+		return valorPrimer + datosFinal;
+	}
+	
+	
 	public static String obtenerDatosFinalDinamicoGenerico(DatosCotizacionGO datosCoti) {
 		List datosDinamicos = datosCoti.getDatosDinamicos();
 		String datosFinal = "";
@@ -134,6 +167,8 @@ public class RequestCotizadorUtils {
 
 	}
 
+	
+	
 	public static String obtenerDatosFormateadosDomicilio(DatosCotizacionGO datosCoti, HttpServletRequest request) {
 		String datos = request.getParameter("datos");
 		JsonParser parser = new JsonParser();
@@ -309,5 +344,17 @@ public class RequestCotizadorUtils {
 		if (id.toString().replace('"', ' ').trim().equals("canal")) {
 			datosContacto.setCanal(dato.toString().replace('"', ' ').trim());
 		}
+	}
+
+
+	public static ArrayList obtenerNumerosInspeccion(String numerosInspeccion) {
+		ArrayList datosInspeccion = new ArrayList();
+		JsonParser parser = new JsonParser();
+		JsonArray gsonArr = parser.parse(numerosInspeccion).getAsJsonArray();
+		for (JsonElement obj : gsonArr) {
+			JsonObject gsonObj = obj.getAsJsonObject();
+				datosInspeccion.add(gsonObj.get("value").toString().replace('"', ' ').trim());
+		}
+		return datosInspeccion ;
 	}
 }

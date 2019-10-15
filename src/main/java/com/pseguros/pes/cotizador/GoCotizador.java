@@ -36,6 +36,7 @@ import com.pseguros.pes.service.entidades.GoCotizadorService;
 import com.pseguros.pes.util.auxiliar.AuxiliarUtil;
 import com.pseguros.pes.util.db.PLUtils;
 import com.pseguros.pes.util.pantalla.RequestCotizadorUtils;
+import com.pseguros.pes.util.pantalla.UtilEnviarImagenes;
 import com.pseguros.pes.util.pantalla.UtilGuardarDatosSession;
 import com.pseguros.pes.util.pantalla.UtilGuardarImagenInspeccion;
 
@@ -653,15 +654,19 @@ public class GoCotizador extends AbstractPubController {
 
 			
 			Future<ArrayList> datosInspeccionTabla = goCotizador.datosInspeccionTabla(datosCoti, getEntorno(request), getUser(request));
-
+			Future<HashMap> datosInspeccion = goCotizador.datosDinamicosInspeccion(datosCoti, getEntorno(request), getUser(request));
 			
-
-			Future<ArrayList> datosInspeccion = goCotizador.datosDinamicosInspeccion(datosCoti, getEntorno(request), getUser(request));
-			ArrayList datos = cargarDinamicos(request, datosCoti, datosInspeccion);
-			while (!(datosInspeccion.isDone())) {
+			while (!(datosInspeccion.isDone() && datosInspeccionTabla.isDone())) {
 				Thread.sleep(5);
 			}
-
+			ArrayList datos = cargarDinamicosInspeccion(request, datosCoti, (ArrayList)((HashMap)datosInspeccion.get()).get("dinamicos"));
+			
+			datosCoti.setDatosDinamicosInspeccion(datos);
+			
+			datosCoti.setInspeccion(((HashMap)datosInspeccion.get()).get("numeroInspeccion").toString());
+			
+			guardarEnSession(request, datosCoti);
+			
 			mapa.putAll(getDatosComunes(request));
 			mapa.put("datosDinamicos", datosInspeccion.get());
 			mapa.put("datosResultadoDinamico", datos);
@@ -948,7 +953,7 @@ public class GoCotizador extends AbstractPubController {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 			DatosMostrarPanelB datosPanelB= datosCoti.getDatosPanelB();
-			datosCoti.setDatosDinamicos(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicos()));
+			datosCoti.setDatosDinamicos(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicos(),";"));
 			
 			if(datosCoti.getRamo().toString().equals("4")){
 				datosCoti.setDatosPanelB(RequestCotizadorUtils.obtenerDatosDinamicosMostrarPanelB(datosCoti,request,datosPanelB));
@@ -1283,7 +1288,7 @@ public class GoCotizador extends AbstractPubController {
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
 			DatosMostrarPanelB datosPanelB= datosCoti.getDatosPanelB();
-			datosCoti.setDatosDinamicosEmision(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicosEmision()));
+			datosCoti.setDatosDinamicosEmision(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicosEmision(),";"));
 			
 			if(datosCoti.getRamo().toString().equals("4")){
 				datosCoti.setValorFinalDatosDinamicosEmision(RequestCotizadorUtils.obtenerDatosFinalDinamicoEmision(datosCoti,datosCoti.getDatosDinamicosEmision()));
@@ -1325,10 +1330,93 @@ public class GoCotizador extends AbstractPubController {
 		return UtilGuardarImagenInspeccion.guardarImagenInsepccion(request,getEntorno(request));
 	}
 
+	@RequestMapping(value = "/imagenesInspeccion", method = RequestMethod.POST)
+	public @ResponseBody
+	Object getEnviarInspeccion(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+
+			logger.debug("entro a asociar las imagenes con la inspeccion : " + datosCoti.getInspeccion());
+			
+			int cantidadDeFotos = Integer.parseInt(request.getParameter("totalArchivosSubidos").toString());
+			
+			if(cantidadDeFotos>0){
+				for (int i = 1; i <= cantidadDeFotos; i++) {
+					String encode = UtilEnviarImagenes.subirFotosDenunciaSiniestro("/tmp/",request.getParameter("archivo" + i), request.getParameter("extension" + i));
+					UtilEnviarImagenes.ejecutarProcedimientoFotos(request,datosCoti.getInspeccion(),encode,request.getParameter("extension" + i));
+				}
+			}
+			
+			return "";
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+
+	@RequestMapping(value = "/generarInspeccionNueva", method = RequestMethod.GET)
+	public @ResponseBody
+	Object generarInspeccionNueva(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			
+			
+			datosCoti.setDatosDinamicos(RequestCotizadorUtils.obtenerDatosDinamicosFormateados(datosCoti,request,datosCoti.getDatosDinamicosInspeccion(),";;;"));
+			datosCoti.setValorFinalDatosDinamicosInspeccion(RequestCotizadorUtils.obtenerDatosFinalDinamicoInspeccion(datosCoti,datosCoti.getDatosDinamicosInspeccion()));
+
+			return goCotizador.generarNuevaInspeccion(datosCoti,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+
 	
 	
 	
+	@RequestMapping(value = "/asociarInspeccionNueva", method = RequestMethod.GET)
+	public @ResponseBody
+	Object asociarInspeccionNueva(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+			String numerosInspeccion = request.getParameter("numerosInspeccion");
+			
+			ArrayList datosInspecciones = RequestCotizadorUtils.obtenerNumerosInspeccion(numerosInspeccion);
+				
+			for (Iterator iterator = datosInspecciones.iterator(); iterator.hasNext();) {
+				Object object = (Object) iterator.next();
+				datosCoti.setInspeccion(object.toString());
+				goCotizador.asociarInspeccion(datosCoti,getEntorno(request), getUser(request));
+			}	
+			
+			return "";
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
 	
+	
+	@RequestMapping(value = "/asociarInspeccion", method = RequestMethod.GET)
+	public @ResponseBody
+	Object asociarInspeccion(HttpSession session, HttpServletRequest request) throws Exception {
+		try {
+			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
+			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
+
+			return goCotizador.asociarInspeccion(datosCoti,getEntorno(request), getUser(request));
+			
+		} catch (Exception e) {
+			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
+			return e.getMessage();
+		}
+	}
+
+
 	// ---------------------------------------------------------------------------------------------------------------------------------------
 	// ----------------------------------------------------- PRIVADOS
 	// ------------------------------------------------
@@ -1349,11 +1437,11 @@ public class GoCotizador extends AbstractPubController {
 		}
 		return datos;
 	}
-
 	
-	private ArrayList cargarDinamicosCotizacion(HttpServletRequest request, DatosCotizacionGO datosCoti, Future<ArrayList> datosDinamicos) throws InterruptedException, ExecutionException, Exception {
+	
+	private ArrayList cargarDinamicosInspeccion(HttpServletRequest request, DatosCotizacionGO datosCoti,ArrayList datosDinamicos) throws InterruptedException, ExecutionException, Exception {
 		
-		ArrayList dinamicos = datosDinamicos.get();
+		ArrayList dinamicos = datosDinamicos;
 		ArrayList datos = new ArrayList();
 		int i = 0;
 
@@ -1364,6 +1452,7 @@ public class GoCotizador extends AbstractPubController {
 		}
 		return datos;
 	}
+
 	
 	private ArrayList obtenerListaValores(DatoDinamicoType dato, HttpServletRequest request) throws Exception {
 		DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);

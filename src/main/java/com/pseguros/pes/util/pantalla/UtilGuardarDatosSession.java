@@ -1,9 +1,9 @@
 package com.pseguros.pes.util.pantalla;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.concurrent.Future;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.pseguros.pes.bean.DatosCotizacionGO;
 import com.pseguros.pes.bean.DatosGrillaProducto;
 import com.pseguros.pes.cotizador.GoCotizador;
+import com.pseguros.pes.util.Dateutils;
 
 public class UtilGuardarDatosSession {
 	private static final Logger logger = LoggerFactory.getLogger(GoCotizador.class);
@@ -53,9 +54,10 @@ public class UtilGuardarDatosSession {
 
 	public static void guardarDatosCotizacion(HttpServletRequest request,DatosCotizacionGO datosCoti) {
 		
+		
 		datosCoti.setPromocion(request.getParameter("promo"));
 		datosCoti.setPlan(request.getParameter("plan"));
-		datosCoti.setFechaEmision(request.getParameter("fecha"));
+		datosCoti.setFechaEmision(Dateutils.toDDMMYYYYConSeparadorDate(Dateutils.getNow()));
 		datosCoti.setValorPromo(request.getParameter("valor"));
 		datosCoti.setDescPlan(request.getParameter("descPlan"));
 	}		
