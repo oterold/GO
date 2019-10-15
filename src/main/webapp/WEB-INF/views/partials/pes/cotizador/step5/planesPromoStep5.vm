@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table>
     <thead>
         <tr>
@@ -13,10 +14,10 @@
                 <td>
                     <h6 class="posicion-vertical-tabla tooltipped" data-position="bottom" data-tooltip="$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")"> Plan $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")</h6>
                 </td>
-                <td>
+                <td class="col-md-12>
+                   #set ($valor = $velocityCount)
                     #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") != "")
                         #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
-                            #set ($valor = $velocityCount)
                             <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
                                 <div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
                                     <div data-target="modalDetallePlan" class="modal-trigger" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)');" style="position: relative;bottom: 20px;cursor:pointer;">
@@ -59,7 +60,7 @@
                             </div>
                     #end
 </td>
-<td>
+<td class="col-md-12>
     #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2") != "")
         #set ($valor = $velocityCount+"_B")
         #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
@@ -105,7 +106,7 @@
             </div>
     #end
 </td>
-<td>
+<td class="col-md-12>
     #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3") != "")
         #set ($valor = $velocityCount+"_C")
         #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
@@ -155,3 +156,4 @@
         #end
 </tbody>
 </table>
+</div>

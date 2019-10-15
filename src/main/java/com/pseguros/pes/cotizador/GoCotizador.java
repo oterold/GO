@@ -95,7 +95,7 @@ public class GoCotizador extends AbstractPubController {
 
 			guardarEnSession(request, datosCoti);
 
-			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("funcionOnload", "inicioCotizacion1()");
 			mapa.put("card", 0);
 			mapa.put("clienteCotizacion", "");
 			mapa.put("datosGenerales", "");
@@ -134,7 +134,7 @@ public class GoCotizador extends AbstractPubController {
 				datosCoti.setProductor("917");
 				guardarEnSession(request, datosCoti);
 				mapa.put("datosCoti", datosCoti);
-			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("funcionOnload", "inicioCotizacion1()");
 
 			mapa.put("card", 0);
 			mapa.put("clienteCotizacion", "");
@@ -186,7 +186,7 @@ public class GoCotizador extends AbstractPubController {
 			}
 
 			mapa.put("datosRamos", datosRamos.get());
-			mapa.put("funcionOnload", "inicioCotizacion()");
+			mapa.put("funcionOnload", "inicioCotizacion1()");
 			mapa.put("card", 1);
 
 			mapa.put("datosCoti", datosCoti);

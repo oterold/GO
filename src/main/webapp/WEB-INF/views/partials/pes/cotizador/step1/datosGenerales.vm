@@ -13,7 +13,7 @@
                         <div class="panel-body">
                             <div class=" row" id="rowCuerpo">
                                 <div class="col-md-12 fondo-cuerpo" style="">
-                                    <h3 class="box-title pl-1 pt-1" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Ramo y Producto</h3>
+                                    <h3 class="box-title pl-1 pt-1" id="tituloRamo" style="color:#0b4376;border:none;font-size:25px;line-height:1;">Ramo y Producto <i class="fas fa-exclamation-circle" id="iconoTitulo" style="color:#dc3545;display:none;"></i></h3>
                                     <div class="plan-selection">
                                         <div class="plan-data mt-2">
                                             <div class="row" style="margin-bottom:0px!important">

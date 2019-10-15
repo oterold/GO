@@ -566,7 +566,10 @@ function redirectStep4() {
 		dataType : 'json',
 		success : function(json) {
 			try {
+				var valor = comprobarForm();
+				if(valor == 0){
 					location.href = "/PSPES/cotizacionStep4";
+				}
 			} catch (e) {
 				// TODO: handle exception
 			}

@@ -5,6 +5,7 @@
 <input type="hidden" value="$datosCoti.promocionA" id="promocionSeleccionadaA"/>
 <input type="hidden" value="$datosCoti.promocionB" id="promocionSeleccionadaB"/>
 <input type="hidden" value="$datosCoti.promocionC" id="promocionSeleccionadaC"/>
+<input type="hidden" value="0" id="valorForm"/>
 
 <section class="">
    <div class="" style="padding-top:50px;" id="main">
