@@ -52,7 +52,6 @@ function inicioCotizacion() {
 	$('#fechaNac').mask('00/00/0000');
 	var height = $(window).height();
     $('#rowAlto').height(parseInt(height)-parseInt(50));
-    $('#rowCuerpo').height(parseInt(height)-parseInt(200));
     
 }
 
@@ -71,7 +70,7 @@ function inicioCotizacion1() {
 	$('#fechaNac').mask('00/00/0000');
 	var height = $(window).height();
     $('#rowAlto').height(parseInt(height)-parseInt(50));
-  //  $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+    //$('#rowCuerpo').height(parseInt(height)-parseInt(200));
     
 }
 

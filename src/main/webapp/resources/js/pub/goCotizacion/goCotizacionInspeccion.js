@@ -19,7 +19,12 @@ function cambiarIconoAcordeonInspeccion(id) {
 		var altoPanel = $("#collapseTwo").height();
 		$('#rowAlto').height(parseInt(height)+ parseInt(altoPanel));
 		$('#rowCuerpo').height(parseInt(height)+ parseInt(altoPanel) - parseInt(300));
-	}else{
+	}else if(id ="gestionarInspeccion"){
+		var height = $(window).height();
+	    $('#rowAlto').height(parseInt(height)-parseInt(50));
+	    $('#rowCuerpo').height(parseInt(height)-parseInt(50));
+	}
+	else{
 		var height = $(window).height();
 	    $('#rowAlto').height(parseInt(height)-parseInt(100));
 	    $('#rowCuerpo').height(parseInt(height)-parseInt(100));
