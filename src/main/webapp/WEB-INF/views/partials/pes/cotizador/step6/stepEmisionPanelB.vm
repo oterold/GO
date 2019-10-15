@@ -85,9 +85,9 @@
 									Datos Bien
 						        </h5>
 							  #end
-							   #if($datosCoti.datosAseg.patente.length() > 0)
+							   #if($datosCoti.chasis.length() > 0)
 							 	 <h6  class="summary-title datos-cotizacion"> 
-								$datosCoti.patente / 
+								Patente : $datosCoti.patente / 
 								chasis : $datosCoti.chasis / 
 								motor : $datosCoti.motor 
 							 	 </h6>
@@ -122,8 +122,13 @@
                               <a class="summary-text far fa-circle" style="color:#13992a;font-size:20px;"></a>
 							#else
 							 <a class="summary-text fas fa-check-circle" style="color:#13992a;font-size:20px;"></a>
-							#end             
+							#end     
 							</div>
+							   #if($datosCoti.inspeccion.length() > 0)
+							 	 <h6  class="summary-title datos-cotizacion"> 
+								N&uacute;mero Inspecci&oacute;n :  $datosCoti.inspeccion 
+							 	 </h6>
+							  #end        
                         </div>
                      </div>
                      <div class="summary-block">

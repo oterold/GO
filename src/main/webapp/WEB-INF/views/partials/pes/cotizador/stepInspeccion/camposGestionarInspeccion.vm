@@ -30,8 +30,12 @@
                                 <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.INB_DSP_CLIENTE"))</h6></td>
                                 <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_COTIZACION"))</h6></td>
                                 <td class="" role="cell"><h6 style="font-size: 12px;">$utilToolScreen.datoVacioGuion($datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_CONSECUTIVO"))</h6></td>
-								<td class="" role="cell" style="text-align:center;"><h6 style="font-size: 12px;margin-top:0px;margin-bottom:0px;"><label class="asociarInspeccionCheck" style="margin-bottom:0px;"><input type="checkbox" id="$datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_NU_INSPECCION")" class="filled-in" /><span></span></label></h6></td>
-                            </tr>
+								#if(!$datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_CAZB_NU_COTIZACION").length()>0)
+									<td class="" role="cell" style="text-align:center;"><h6 style="font-size: 12px;margin-top:0px;margin-bottom:0px;"><label class="asociarInspeccionCheck" style="margin-bottom:0px;"><input type="checkbox" id="$datosInspeccionTablaIn.get("P_TF_CAIN.CAIN_NU_INSPECCION")" class="filled-in" /><span></span></label></h6></td>
+								#else
+									<td class="" role="cell" style="text-align:center;"><h6 style="font-size: 12px;margin-top:0px;margin-bottom:0px;"><label style="margin-bottom:0px;"><input type="checkbox" disabled="disabled" /><span></span></label></h6></td>
+								#end
+							</tr>
     					#end	
                     </tbody>
 					#end

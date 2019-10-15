@@ -23,13 +23,11 @@
     			Promocion : 
     		</div>
     		<div class="col-md-3 texto-der">
-				#if($datosCoti.promocion == $datosCoti.promoA)
+				#if($datosCoti.datosPanelB.promoA.length() > 0)
 					$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)
-				#elseif($datosCoti.promocion == $datosCoti.promoB)
-					$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB)
-				#else
-					$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC)
-				#end  
+					#if($datosCoti.datosPanelB.promoB.length() > 0) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB) #end  
+					#if($datosCoti.datosPanelB.promoC.length() > 0) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC) #end</h6>
+				#end
 			</div>
 	</div>
 	

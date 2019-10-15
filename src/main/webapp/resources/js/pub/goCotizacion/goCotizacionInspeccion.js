@@ -320,6 +320,7 @@ function validaImg()
 
 
 function enviarInspeccion(){
+	bloquearPantallaGris();
 	var arrayDatos = [];
 	$(".asociarInspeccionCheck").each(function(){
 		var valor = $(this).children('input');
@@ -329,25 +330,37 @@ function enviarInspeccion(){
 		arrayDatos.push(obj);
 		}
 	});
-	formData = JSON.stringify(arrayDatos);
+	if(arrayDatos.length == 0){
+		Swal.fire(
+				  '',
+				  'Asocie un n\u00FAmero de inspecci\u00F3n a la cotizaci\u00F3n.',
+				  'info'
+				)
+				$.unblockUI();
 
-	$.ajax({
-		url : 'asociarInspeccionNueva',
-		contentType : 'application/json',
-		data : {
-			numerosInspeccion : formData,
-		},
-		type : 'GET',
-		dataType : 'json',
-		success : function(json) {
-			try {
-			} catch (e) {
+	}else{
+		formData = JSON.stringify(arrayDatos);
+		$.ajax({
+			url : 'asociarInspeccionNueva',
+			contentType : 'application/json',
+			data : {
+				numerosInspeccion : formData,
+			},
+			type : 'GET',
+			dataType : 'json',
+			success : function(json) {
+				try {
+					location.href="/PSPES/cotizacionStep9"
+				} catch (e) {
+				}
+			},
+			error : function(xhr, status) {
+		    	mostrarError(xhr['responseText']);
+			},complete: function (data) {
+				$.unblockUI();
 			}
-		},
-		error : function(xhr, status) {
-	    	mostrarError(xhr['responseText']);
-		},
-	});
+		});
+	}
 }
 
 
@@ -376,6 +389,8 @@ function enviarInspeccionImagenes() {
 				  'Seleccione al menos 4 imagenes!',
 				  'info'
 				)
+				$.unblockUI();
+
 	}
 }
 

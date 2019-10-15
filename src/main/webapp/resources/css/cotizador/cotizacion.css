@@ -106,7 +106,7 @@
 .summary-small-text { font-weight: 700; font-size: 12px; color: #8f929a; }
 .summary-text { margin-bottom: -10px; }
 .summary-title { font-size: 14px; color: #1c1e22;;margin-bottom: 0px;margin-top:10px; }
-.summary-head { display: inline-block; width: 240px; }
+.summary-head { display: inline-block; width: 300px; }
 
 .widget { margin-bottom: 30px; padding: 50px; border-radius: 6px; }
 .widget:last-child { border-bottom: 0px; }

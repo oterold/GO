@@ -647,7 +647,7 @@ public class GoCotizador extends AbstractPubController {
 
 		Map<String, Object> mapa = new HashMap<String, Object>();
 		try {
-			logger.debug("Mostrar Pantalla step 8 cotizador GO ");
+			logger.debug("Mostrar Pantalla step inspeccion cotizador GO ");
 
 			EnvironmentContextHolder.setEnvironmentType(getEntorno(request));
 			DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
@@ -674,12 +674,12 @@ public class GoCotizador extends AbstractPubController {
 			mapa.put("datosInspeccionTabla", datosInspeccionTabla.get());
 			mapa.put("datosCoti", datosCoti);
 
-			mapa.put("card", 3);
+			mapa.put("card", 2);
 			
 			return new ModelAndView(COTIZADOR_STEP_INSPECCION, mapa);
 
 		} catch (Exception e) {
-			logger.error(getUserLog(request) + "Exploto step 9", e);
+			logger.error(getUserLog(request) + "Exploto step inspeccion", e);
 			mapa.put("pantalla", "cotizacionStep8");
 			mapa.putAll(getDatosComunes(request));
 		}
@@ -1393,7 +1393,7 @@ public class GoCotizador extends AbstractPubController {
 				goCotizador.asociarInspeccion(datosCoti,getEntorno(request), getUser(request));
 			}	
 			
-			return "";
+			return true;
 		} catch (Exception e) {
 			logger.error(getUserLog(request) + "Exploto al mostrar detalles", e);
 			return e.getMessage();

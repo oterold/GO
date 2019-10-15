@@ -51,7 +51,7 @@ public class RequestCotizadorUtils {
 
 	private static void guardarDatosPanelBdatosDelBien(String key, String value, DatosCotizacionGO datosCoti) {
 		if(key.equals("40023")){
-			datosCoti.setMotor(value);
+			datosCoti.setPatente(value);
 		}
 		if(key.equals("40004")){
 			datosCoti.setChasis(value);
