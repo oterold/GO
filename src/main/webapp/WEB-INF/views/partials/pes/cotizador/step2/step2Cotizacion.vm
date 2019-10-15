@@ -9,6 +9,7 @@
     <input type="hidden" value="" name="valorMoneda" id="valorMoneda"/>
     <input type="hidden" value="" name="textoSeleccionadoStep2" id="textoSeleccionadoStep2"/>
     <input type="hidden" value="0" id="valorDato"/>
+	<input type="hidden" value="0" id="valorForm"/>
     <section class="">
         <div class="" style="padding-top:50px;" id="main">
             <div class="row" id="rowAlto" style="margin-bottom:0px;">
@@ -50,5 +51,6 @@
                 <!-- Lista certificados - Panel B -->
                 #parse("partials/pes/cotizador/step0/step0CotizacionpanelBNuevaCotizacion.vm")
             </div>
+			 </div>
 </section>
 </form>

@@ -135,7 +135,14 @@ public class Dateutils {
 		
 	}
 
+	public static String toDDMMYYYYConSeparadorDate(Date fecha) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		return formatter.format(fecha.getTime());
+		
+	}
 
+	
+	
 	public static String toCustomFormat(Date fecha) {
 		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyHHmmss");
 		return formatter.format(fecha);

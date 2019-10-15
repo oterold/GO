@@ -1,13 +1,13 @@
-	<input type="hidden" value="" id="archivo1" name="archivo1"/>
-	<input type="hidden" value="" id="archivo2" name="archivo2" />
-	<input type="hidden" value="" id="archivo3" name="archivo3"/>
-	<input type="hidden" value="" id="archivo4" name="archivo4"/>
+	<input type="hidden" value="" class="imagenesForm" id="archivo1" name="archivo1"/>
+	<input type="hidden" value="" class="imagenesForm" id="archivo2" name="archivo2" />
+	<input type="hidden" value="" class="imagenesForm" id="archivo3" name="archivo3"/>
+	<input type="hidden" value="" class="imagenesForm" id="archivo4" name="archivo4"/>
 	
-	<input type="hidden" value="" id="extension1" name="archivo1"/>
-	<input type="hidden" value="" id="extension2" name="extension2" />
-	<input type="hidden" value="" id="extension3" name="extension3"/>
-	<input type="hidden" value="" id="extension4" name="extension4"/>
-	<input type="hidden" value="0" id="totalArchivosSubidos" name="totalArchivosSubidos"/>
+	<input type="hidden" value="" class="imagenesForm" id="extension1" name="extension1"/>
+	<input type="hidden" value="" class="imagenesForm" id="extension2" name="extension2" />
+	<input type="hidden" value="" class="imagenesForm" id="extension3" name="extension3"/>
+	<input type="hidden" value="" class="imagenesForm" id="extension4" name="extension4"/>
+	<input type="hidden" value="0" class="imagenesForm" id="totalArchivosSubidos" name="totalArchivosSubidos" />
 
 
 
@@ -15,7 +15,7 @@
  <div class="row mt-4" >
      <div class="col-md-12">
           <h2 style="margin-top:0px;margin-bottom:0px;">
-            <a data-toggle="collapse" data-target="#collapseOne" onclick="cambiarIconoAcordeonInspeccion('gestionarInspeccion');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="true" aria-controls="collapseOne">
+            <a data-toggle="collapse" data-target="#collapseOne" onclick="cambiarIconoAcordeonInspeccion('gestionarInspeccion');botonNuevaInspeccion('enviarInspeccion')" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="true" aria-controls="collapseOne">
               Gestionar Inspecci&oacute;n &nbsp;&nbsp; <i class="fas fa-angle-double-up acoordeonInspeccion" id="gestionarInspeccion"></i>
             </a>
           </h2>
@@ -28,7 +28,7 @@
 	  
 	 <div class="col-md-12">
           <h2 style="margin-top:0px;margin-bottom:0px;">
-			<a data-toggle="collapse" data-target="#collapseTwo" onclick="cambiarIconoAcordeonInspeccion('coordinarNuevaInspeccion');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="false" aria-controls="collapseTwo">
+			<a data-toggle="collapse" data-target="#collapseTwo" onclick="cambiarIconoAcordeonInspeccion('coordinarNuevaInspeccion');botonNuevaInspeccion('enviarInspeccionNueva');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="false" aria-controls="collapseTwo">
              Ingresar Nueva Inspecci&oacute;n <i class="fas fa-angle-double-down acoordeonInspeccion" id="coordinarNuevaInspeccion"></i>
 			</a>
           </h2>
@@ -41,7 +41,7 @@
 	  
 	 <div class="col-md-12">
           <h2 style="margin-top:0px;margin-bottom:0px;">
-			<a data-toggle="collapse" data-target="#collapseThree" onclick="cambiarIconoAcordeonInspeccion('AsociarInspeccion');" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="false" aria-controls="collapseTwo">
+			<a data-toggle="collapse" data-target="#collapseThree" onclick="cambiarIconoAcordeonInspeccion('AsociarInspeccion');botonNuevaInspeccion('enviarInspeccionCoordinar')" style="cursor:pointer;color:#0b4376;border:none;font-size:25px;line-height:1;" aria-expanded="false" aria-controls="collapseTwo">
 				Coordinar Inspecci&oacute;n <i class="fas fa-angle-double-down acoordeonInspeccion" id="AsociarInspeccion"></i>
             </a>
           </h2>

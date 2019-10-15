@@ -1,5 +1,5 @@
  <div class="col-sm-12 col-md-3 sin-margen-izq" style="margin-top:25px;width:100%;padding-right:0px;">
-            <div class="panel panel-default" style="border:2px solid #EDEDED;background-color:#EDEDED;display:table; width:100%; height:100%;">
+            <div class="panel panel-default" style="border:2px solid #e8e8e8;background-color:#e8e8e8;display:table; width:100%; height:100%;">
                <div class="main-container page__container" >
                   <div class="widget pt-4" style="margin-bottom: 0px;padding-bottom: 0px;padding-left:10px;padding-right:10px;padding-top: 80px !important;">
                      <div class="summary-head" style="width:100%;">
@@ -21,7 +21,7 @@
 							  <h5 style="border:none;"  class="summary-title">Datos del Cliente</h5>
 							#end
 							  #if($datosCoti.datosContacto.nombre.length() > 0)
-							  <h6  class="summary-title datos-cotizacion"> $datosCoti.datosContacto.nombre / $datosCoti.datosContacto.dni</h6>
+							  <h6  class="summary-title datos-cotizacion"> #if($datosCoti.datosContacto.nombre.length()>0)$utilToolScreen.nombreMayuscula($datosCoti.datosContacto.nombre)#end #if($datosCoti.datosContacto.dni.length()>0)/ $utilToolScreen.nombreMayuscula($datosCoti.datosContacto.dni)#end</h6>
 							  #end
                               <span class="summary-small-text" ></span>
                            </div>
@@ -43,7 +43,7 @@
 								<h5 style="border:none;"  class="summary-title">Ramo y Producto</h5>
 							#end
 							  #if($$datosCoti.ramo.length() > 0)
-							  <h6  class="summary-title datos-cotizacion"> $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.ramo) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.prod)</h6>
+							  <h6  class="summary-title datos-cotizacion">#if($datosCoti.datosPanelB.ramo.length()>0)$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.ramo)#end #if($datosCoti.datosPanelB.prod.length()>0)/ $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.prod)#end</h6>
 							  #end
                               <span class="summary-small-text" ></span>
                            </div>
@@ -70,9 +70,7 @@
                                  Datos Generales
                               </h5>
 							 #end
-							  #if($datosCoti.datosGenerales.productor.length() > 0)
-							  <h6  class="summary-title datos-cotizacion"> $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.medioPago) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.formaPago) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.Vigencia) / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.facturacion)  / $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.moneda) </h6>
-							  #end
+							  <h6  class="summary-title datos-cotizacion"> #if($datosCoti.datosPanelB.medioPago.length()>0)$datosCoti.datosPanelB.medioPago #end #if($datosCoti.datosPanelB.formaPago.length()>0)/ $datosCoti.datosPanelB.formaPago #end #if($datosCoti.datosPanelB.Vigencia.length()>0)/ $datosCoti.datosPanelB.Vigencia #end #if($datosCoti.datosPanelB.facturacion.length()>0)/ $datosCoti.datosPanelB.facturacion #end  #if($datosCoti.datosPanelB.moneda.length()>0)/ $datosCoti.datosPanelB.moneda #end</h6>
                            </div>
                            <div class="summary-price">
 							#if($card == 2)

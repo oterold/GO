@@ -332,5 +332,7 @@ public class ConstantsProcedureDB {
 	public static final String B_DINAMICOS_INSPECCION = "B_DINAMICOS_INSPECCION";
 	public static final String B_INSPECCIONES = "B_INSPECCIONES";
 	public static final String I_ACCESORIOS = "I_ACCESORIOS";
+	public static final String I_INSPECCION = "I_INSPECCION";
+	public static final String ASOCIAR_INSPECCION = "ASOCIAR_INSPECCION";
 	
 }

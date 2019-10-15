@@ -1,5 +1,7 @@
 
 function selecionarPromo(id) {
+	if(/\W|_/g.test(id))
+		id = escapeSpecialCharacter(id);
 	$("#titloStep4").css("color","#0b4376");
 	$("#iconoTitulo").css("display","none");	
 	
@@ -42,6 +44,22 @@ function selecionarPromo(id) {
 		}
 }
 
+function escapeSpecialCharacter(id){
+	b = [Array.from(id).length];
+	b = Array.from(id);
+	for (var i = 0; i < b.length; i++) {
+		if(/\W|_/g.test(b[i])){
+			b[i] = b[i].replace(b[i], ('\\'+b[i]))
+		}
+	}
+	id ='';
+	for(var c = 0; c<b.length;c++){
+		
+		id = id + b[c]
+	}
+		return id;
+}
+
 function sobrePasaLimitePromos(){
 	if ($("#promoUno").val()!='' && $("#promoDos").val()!='' && $("#promoTres").val()!='')
 		return true;
@@ -49,7 +67,6 @@ function sobrePasaLimitePromos(){
 		return false;
 }
 function removerPromocionSeleccionadaYswap(id){
-	$("#" + $("#promoUno").val()).removeClass("animated pulse");
 	if ($("#cuerpo_" + $("#promoUno").val()).hasClass('cuerpo-card-seleccionado')) {
 		$("#check_" + $("#promoUno").val()).css("display", "none")
 		$("#cuerpo_" + $("#promoUno").val()).removeClass("cuerpo-card-seleccionado");
@@ -57,12 +74,10 @@ function removerPromocionSeleccionadaYswap(id){
 		$("#check_" + id).css("display", "")
 		$("#cuerpo_" + id).removeClass("cuerpo-card");
 		$("#cuerpo_" + id).addClass("cuerpo-card-seleccionado");
-		$("#" + id).addClass("animated pulse");
 		$("#promoUno").val(id);
 }
 }
 function removerPromocionSeleccionada(id) {
-	$("#" + id).removeClass("animated pulse");
 	$("#cuerpo_" + id).hasClass('cuerpo-card-seleccionado')
 	$("#check_" + id).css("display", "none")
 	$("#cuerpo_" + id).removeClass("cuerpo-card-seleccionado");
@@ -73,7 +88,6 @@ function resaltarPromocionSeleccionada(id)  {
 		$("#check_" + id).css("display", "")
 		$("#cuerpo_" + id).removeClass("cuerpo-card");
 		$("#cuerpo_" + id).addClass("cuerpo-card-seleccionado");
-		$("#" + id).addClass("animated pulse");
 		if($("#promoUno").val()=='')
 			$("#promoUno").val(id);
 		else if($("#promoDos").val()=='')
@@ -87,7 +101,6 @@ function soloResaltarPromocionSeleccionada(id)  {
 	$("#check_" + id).css("display", "")
 	$("#cuerpo_" + id).removeClass("cuerpo-card");
 	$("#cuerpo_" + id).addClass("cuerpo-card-seleccionado");
-	$("#" + id).addClass("animated pulse");
 }
 
 function inicioCotizacion4(){

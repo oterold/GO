@@ -12,11 +12,61 @@ function cambiarIconoAcordeonInspeccion(id) {
 		$("#"+id).removeClass("fa-angle-double-up");
 		$("#"+id).addClass("fa-angle-double-down");
 		
-		
-		
+	}
+	
+	if(id == 'coordinarNuevaInspeccion'){
+		var height = $(window).height();
+		var altoPanel = $("#collapseTwo").height();
+		$('#rowAlto').height(parseInt(height)+ parseInt(altoPanel));
+		$('#rowCuerpo').height(parseInt(height)+ parseInt(altoPanel) - parseInt(300));
+	}else{
+		var height = $(window).height();
+	    $('#rowAlto').height(parseInt(height)-parseInt(100));
+	    $('#rowCuerpo').height(parseInt(height)-parseInt(100));
 	}
 	
 }
+
+function botonNuevaInspeccion(id){
+	bloquearPantallaGris();
+	$(".botonInspeccion").each(function(){
+		$(this).css("display","none");
+	});
+	
+	$("#"+id).css("display","");
+	
+    $.unblockUI();
+	
+}
+
+
+function limpiarTodasLasFotos(){
+	bloquearPantallaGris();
+
+	$("#labelArchivo1").css("display","none");
+	$("#imgArchivo1").css("display","none");
+	
+	$("#labelArchivo2").css("display","none");
+	$("#imgArchivo2").css("display","none");
+	
+	$("#labelArchivo3").css("display","none");
+	$("#imgArchivo3").css("display","none");
+
+	$("#labelArchivo4").css("display","none");
+	$("#imgArchivo4").css("display","none");
+	
+	$("#totalArchivosSubidos").val("0");
+
+	$("#labelNombre1").css("display","none");
+	$("#labelNombre2").css("display","none");
+	$("#labelNombre3").css("display","none");
+	$("#labelNombre4").css("display","none");
+	
+	$("#borrarTodasLasImagenesBotom").css("display","none");
+	
+    $.unblockUI();
+}
+
 
 function validarCodigoPostal(id){
 	$("#"+id).prop('checked', false);
@@ -151,8 +201,8 @@ function inicioCotizacionInspeccion(){
 	$('.tooltipped').tooltip();
 	$('#fechaNac').mask('00/00/0000');
 	var height = $(window).height();
-    $('#rowAlto').height(parseInt(height)-parseInt(50));
-    $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+    $('#rowAlto').height(parseInt(height)-parseInt(0));
+    $('#rowCuerpo').height(parseInt(height)-parseInt(0));
     
 	document.getElementById('files').addEventListener('change',handleFileSelect, false);
 
@@ -160,6 +210,7 @@ function inicioCotizacionInspeccion(){
         dataType: 'json',
         done: function (e, data) {
         	
+        	bloquearPantallaGris();
 
         	var cantidadDeArchivos = $("#totalArchivosSubidos").val();
         	
@@ -217,7 +268,8 @@ function inicioCotizacionInspeccion(){
 
 			}	
 			
-	        $.unblockUI();        }
+	        $.unblockUI();      
+	        }
 	
     });
     
@@ -244,7 +296,11 @@ function handleFileSelect(evt) {
 			reader.readAsDataURL(f);
 		}
 	} else {
-		bootbox.alert('Por favor seleccionar menos de 4 imagenes');
+		 Swal.fire(
+				  '',
+				  'Por favor seleccionar menos de 4 imagenes!',
+				  'info'
+				)
 	}
 }
 
@@ -270,3 +326,146 @@ function validaImg()
 				)
 	  }
 }
+
+
+
+function enviarInspeccion(){
+	bloquearPantallaGris();
+	var arrayDatos = [];
+	$(".asociarInspeccionCheck").each(function(){
+		var valor = $(this).children('input');
+		if ($("#"+valor[0].id).prop('checked')) {
+		var obj = new Object();
+		obj.value = valor[0].id;
+		arrayDatos.push(obj);
+		}
+	});
+	if(arrayDatos.length == 0){
+		Swal.fire(
+				  '',
+				  'Asocie un n\u00FAmero de inspecci\u00F3n a la cotizaci\u00F3n.',
+				  'info'
+				)
+				$.unblockUI();
+
+	}else{
+		formData = JSON.stringify(arrayDatos);
+		$.ajax({
+			url : 'asociarInspeccionNueva',
+			contentType : 'application/json',
+			data : {
+				numerosInspeccion : formData,
+			},
+			type : 'GET',
+			dataType : 'json',
+			success : function(json) {
+				try {
+					location.href="/PSPES/cotizacionStep9"
+				} catch (e) {
+				}
+			},
+			error : function(xhr, status) {
+		    	mostrarError(xhr['responseText']);
+			},complete: function (data) {
+				$.unblockUI();
+			}
+		});
+	}
+}
+
+
+function enviarInspeccionImagenes() {
+	bloquearPantallaGris();
+	if($("#totalArchivosSubidos").val() > 3){
+		var formData = jQuery('.imagenesForm').serialize();
+		$.ajax({
+			type : "POST",
+			url : "imagenesInspeccion",
+			data : formData,
+			success : function(e, data) {
+				location.href="/PSPES/cotizacionStep9"
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+				mostrarError(xhr['responseText']);
+				$.unblockUI();
+			},complete: function (data) {
+				$.unblockUI();
+			}
+			
+		});
+	}else{
+		 Swal.fire(
+				  '',
+				  'Seleccione al menos 4 imagenes!',
+				  'info'
+				)
+		$.unblockUI();
+	}
+}
+
+
+
+
+
+function enviarInspeccionNueva() {
+	bloquearPantallaGris();
+	var formData = JSON.stringify(jQuery('.inspeccionDinamico').serializeArray()).replace("/", "").replace("/", "");
+	$.ajax({
+		url : 'generarInspeccionNueva',
+		contentType : 'application/json',
+		data : {
+			datosPantalla : formData
+		},
+		type : 'GET',
+		dataType : 'json',
+		success : function(json) {
+			try {
+			} catch (e) {
+				
+			}
+		},
+		error : function(xhr, ajaxOptions, thrownError) {
+			mostrarError(xhr['responseText']);
+			$.unblockUI();
+		},
+		 complete: function (data) {
+			 asociarInspeccion(); 
+		}
+	});
+}
+
+
+
+function asociarInspeccion() {
+	bloquearPantallaGris();
+	$.ajax({
+		url : 'asociarInspeccion',
+		contentType : 'application/json',
+		data : {
+		},
+		type : 'GET',
+		dataType : 'json',
+		success : function(json) {
+			try {
+			} catch (e) {
+				
+			}
+		},
+		error : function(xhr, ajaxOptions, thrownError) {
+			mostrarError(xhr['responseText']);
+			$.unblockUI();
+		},
+		 complete: function (data) {
+			 enviarInspeccionImagenes(); 
+		}
+	});
+}
+ 
+
+
+
+
+
+
+
+

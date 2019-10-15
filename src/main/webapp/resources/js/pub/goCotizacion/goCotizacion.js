@@ -56,6 +56,25 @@ function inicioCotizacion() {
     
 }
 
+function inicioCotizacion1() {
+	$('.datepicker').datepicker(
+			{
+				months : [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+						'Octubre', 'Noviembre', 'Diciembre' ],
+				monthsShort : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+			});
+
+	$('input#input_text, textarea#textarea2').characterCounter();
+	$('select').formSelect();
+	$('.modal').modal();
+	$('.tooltipped').tooltip();
+	$('#fechaNac').mask('00/00/0000');
+	var height = $(window).height();
+    $('#rowAlto').height(parseInt(height)-parseInt(50));
+  //  $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+    
+}
+
 function validarCampo(id) {
 	var valor = $("#" + id).val();
 	var valor;
@@ -87,25 +106,22 @@ function cambiarSelect() {
 }
 
 function comprobarForm() {
-	var valor = "";
 	var inputValor = "";
-	var selectValor = "";
+	$("#valorForm").val(0);
 	$(".validarForm").each(function(i, obj) {
+		var valor = $("#valorForm").val();
 		var x = document.getElementById(this.id);
 		if (x.type == "text") {
 			inputValor = validarCampo(this.id);
 
 		} else {
-			selectValor = validarSelect(this.id);
-
+			inputValor = validarSelect(this.id);
+		}
+		if(inputValor == 1){
+			$("#valorForm").val(inputValor);
 		}
 	});
-
-	if (inputValor == 1 || selectValor == 1) {
-		valor = 1;
-	} else {
-		valor = 0;
-	}
+	var valor = $("#valorForm").val();
 	return valor;
 
 }
