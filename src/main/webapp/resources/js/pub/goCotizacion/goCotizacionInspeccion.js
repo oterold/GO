@@ -12,8 +12,17 @@ function cambiarIconoAcordeonInspeccion(id) {
 		$("#"+id).removeClass("fa-angle-double-up");
 		$("#"+id).addClass("fa-angle-double-down");
 		
-		
-		
+	}
+	
+	if(id == 'coordinarNuevaInspeccion'){
+		var height = $(window).height();
+		var altoPanel = $("#collapseTwo").height();
+		$('#rowAlto').height(parseInt(height)+ parseInt(altoPanel));
+		$('#rowCuerpo').height(parseInt(height)+ parseInt(altoPanel) - parseInt(300));
+	}else{
+		var height = $(window).height();
+	    $('#rowAlto').height(parseInt(height)-parseInt(100));
+	    $('#rowCuerpo').height(parseInt(height)-parseInt(100));
 	}
 	
 }
@@ -25,6 +34,7 @@ function botonNuevaInspeccion(id){
 	});
 	
 	$("#"+id).css("display","");
+	
     $.unblockUI();
 	
 }
@@ -191,8 +201,8 @@ function inicioCotizacionInspeccion(){
 	$('.tooltipped').tooltip();
 	$('#fechaNac').mask('00/00/0000');
 	var height = $(window).height();
-    $('#rowAlto').height(parseInt(height)-parseInt(50));
-    $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+    $('#rowAlto').height(parseInt(height)-parseInt(0));
+    $('#rowCuerpo').height(parseInt(height)-parseInt(0));
     
 	document.getElementById('files').addEventListener('change',handleFileSelect, false);
 
@@ -389,8 +399,7 @@ function enviarInspeccionImagenes() {
 				  'Seleccione al menos 4 imagenes!',
 				  'info'
 				)
-				$.unblockUI();
-
+		$.unblockUI();
 	}
 }
 
