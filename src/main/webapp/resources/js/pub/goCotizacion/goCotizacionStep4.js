@@ -67,15 +67,13 @@ function sobrePasaLimitePromos(){
 		return false;
 }
 function removerPromocionSeleccionadaYswap(id){
-	if ($("#cuerpo_" + $("#promoUno").val()).hasClass('cuerpo-card-seleccionado')) {
-		$("#check_" + $("#promoUno").val()).css("display", "none")
+		$("#check_" + $("#promoUno").val()).css("display", "none");
 		$("#cuerpo_" + $("#promoUno").val()).removeClass("cuerpo-card-seleccionado");
 		$("#cuerpo_" + $("#promoUno").val()).addClass("cuerpo-card");
-		$("#check_" + id).css("display", "")
+		$("#check_" + id).css("display", "");
 		$("#cuerpo_" + id).removeClass("cuerpo-card");
 		$("#cuerpo_" + id).addClass("cuerpo-card-seleccionado");
 		$("#promoUno").val(id);
-}
 }
 function removerPromocionSeleccionada(id) {
 	$("#cuerpo_" + id).hasClass('cuerpo-card-seleccionado')
