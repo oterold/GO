@@ -1,5 +1,4 @@
-		
-	<div class="col-md-1">
+	<div class="col-lg-1 acomodar-card-persona">
 	</div>
     <div class="col-sm-12 col-md-6 col-lg-4 centrar-texto pt-4">
       <div class="card" style="width:100%;">
@@ -91,10 +90,10 @@
       </div>
     </div>
 	
-	<div class="col-md-1">
+	<div class="col-lg-1 acomodar-card-persona">
 	</div>
 	<!-- card 2 -->
-    <div class="col-md-4 centrar-texto pt-4" id="segundoAseg">
+    <div class="col-sm-12 col-md-6 col-lg-4 centrar-texto pt-4" id="segundoAseg">
       <div class="card" style="width:100%;">
         <div class="card-image">
             <div class="col-md-12 p-2 cabecera-persona" style="background-color:#0b4376">

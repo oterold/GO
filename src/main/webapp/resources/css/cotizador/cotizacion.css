@@ -411,7 +411,16 @@ cursor:pointer;
 	.acomodar-card-resposive{
 	 margin-right: 40px;
 	}
+
 }
+
+@media screen and (min-width: 200px) and (max-width: 1224px) { 
+	.acomodar-card-persona{
+	display:none;
+	}
+
+}
+
 
 
 .alto-card-superior{

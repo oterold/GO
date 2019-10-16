@@ -4,7 +4,7 @@
                     <div class="row box-shadow">
                         <div class="col-md-12" style="height: 130px;border: 1px solid #efefef;">
                             <div class="lib-row lib-header" data-tooltip="$datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION")">
-                                $utilToolScreen.nombreMayuscula($datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION"),"30")
+                                <h6 "id="texto$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")">$utilToolScreen.nombreMayuscula($datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION"),"30")</h6>
                                	 <a class="btn-floating halfway-fab2 waves-effect waves-light red sacarCheckActivado" id="check_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" style="display:none;bottom:90px !important;">
                						 <i class="fas fa-check icono-check-ramos"></i>
            						 </a>

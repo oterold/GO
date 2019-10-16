@@ -57,7 +57,7 @@ function mostrarProductosCotizacion(ramo, id, descRamo) {
 							esqB = "'" + json[int]["P_TF_CAPU_CTRA_CREK_NU_VISUALIZACION"] + "'";
 							checkActivadoProducto = "checkActivadoProducto" + json[int]["P_TF_CAPU_CAPU_CD_PRODUCTO"];
 							panelNuevo = panelNuevo
-									+ '<div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 cabeceraProd acomodar-card-resposive centrar-card-resposive" id='
+									+ '<div class="col-sm-4 col-md-3 col-lg-3 col-xl-2 cabeceraProd acomodar-card-resposive centrar-card-resposive" id='
 									+ cabeceraProducto
 									+ '>'
 									+ '<div class="card" style="cursor:pointer;" onclick="seleccionProducto('
