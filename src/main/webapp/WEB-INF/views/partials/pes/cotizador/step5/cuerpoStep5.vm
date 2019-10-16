@@ -33,13 +33,6 @@
 					<span class="lever"></span>
                 </label>
             </div>
-			<div class="input-field col-md-4 mt-4">
-				<select class="selectorMaterialice"  name="comisionPorciento" id="comisionPorciento">
-					<option value="">Seleccione..</option>
-					<option value="">$datosRecalculo.get("P_VC_TABL")</option>
-				</select>
-				<label>$utilToolScreen.nombreMayuscula($datosRecalculo.get("P_VC_DATO"))</label>
-			</div>
 			<div class="col-sm-12  col-md-2 centrarElementos">
 				<a class="btn waves-effect waves-light pull-right boton-siguiente-cotizacion btn-small" onclick="recalculoCotizacion()" style="padding-top: 2px;cursor: pointer;color: white;margin-top: 5px;width: 45px;height: 35px !important;font-size: 10px !important;width:100%;" role="button">
 					<i class="fa fa-refresh" style="color:white;font-size:15px;"></i>

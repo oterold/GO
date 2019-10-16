@@ -866,7 +866,7 @@ margin-bottom:5px!important;
 	
     text-align: right;
     position: relative;
-    bottom: 5px;
+    bottom: 62px;
     left: 5px;
 	margin-bottom:0px;
 }
@@ -957,6 +957,21 @@ margin-bottom:5px!important;
   padding-right:10px!important;
   padding-top:30px !important;
   }
+  .tachado-responsive{
+  display:none;}
+}
+	   
+	   
+	   
+  @media (min-width: 300px) and (max-width: 1350px) {
+  .tachado-responsive{
+  display:none;
+  }
+  .texto-centro-card{
+  height: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;}
 }
 	    
 	    
