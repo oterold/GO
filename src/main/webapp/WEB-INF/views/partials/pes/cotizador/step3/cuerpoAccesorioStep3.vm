@@ -19,8 +19,8 @@
             <div class="col-md-2">
             </div>
             <div class="input-field col-md-2">
-                <input for="suma"  placeholder="$0.00,00" id="montoAccesorios" style="text-align:right;" type="text">
-                    <label style="left:100px !important" for="suma">Monto*</label>
+                <input for="suma"  placeholder="$0.00,00" id="montoAccesorios" type="text">
+                    <label for="montoAccesorios">Monto*</label>
 </div>
 <div class="input-field col-md-2">
     <a style="background-color:#0b4376;" onclick="agregarAccesorios();" class="btn-floating btn-small">

@@ -17,22 +17,43 @@ public class UtilPantalla {
 	private static final Logger logger = LoggerFactory.getLogger(UtilPantalla.class);
 
 		
-public static String nombreMayuscula(String dato) {
-    if (dato == null) {
-        return dato;
-    }
-    StringBuilder builder = new StringBuilder();
-    StringTokenizer st = new StringTokenizer(dato," ");
-    while (st.hasMoreElements()) {
-        dato = (String)st.nextElement();
-        if (dato.length()>0) {
-            builder.append(dato.substring(0, 1).toUpperCase());
-            builder.append(dato.substring(1).toLowerCase()); 
-            builder.append(' ');
-        }
-    }
-    return builder.toString();
-}
+	public static String nombreMayuscula(String dato) {
+	    if (dato == null) {
+	        return dato;
+	    }
+	    StringBuilder builder = new StringBuilder();
+	    StringTokenizer st = new StringTokenizer(dato," ");
+	    while (st.hasMoreElements()) {
+	        dato = (String)st.nextElement();
+	        if (dato.length()>0) {
+	            builder.append(dato.substring(0, 1).toUpperCase());
+	            builder.append(dato.substring(1).toLowerCase()); 
+	            builder.append(' ');
+	        }
+	    }
+	    return builder.toString();
+	}
+	public static String nombreMayuscula(String dato,String longuitud) {
+	    if (dato == null) {
+	        return dato;
+	    }
+	    StringBuilder builder = new StringBuilder();
+	    StringTokenizer st = new StringTokenizer(dato," ");
+	    while (st.hasMoreElements()) {
+	        dato = (String)st.nextElement();
+	        if (dato.length()>0) {
+	            builder.append(dato.substring(0, 1).toUpperCase());
+	            builder.append(dato.substring(1).toLowerCase()); 
+	            builder.append(' ');
+	        }
+	    }
+	    if(builder.toString().length()>30){
+	    	return builder.toString().substring(0,Integer.parseInt(longuitud));
+	    }else{
+	    	return builder.toString();
+	    }
+	}
+
 	
 
 public static String  getCssDependencia(String cadena) {

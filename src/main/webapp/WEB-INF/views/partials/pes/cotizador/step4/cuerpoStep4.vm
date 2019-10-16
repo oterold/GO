@@ -1,18 +1,22 @@
 #foreach($datosPromocionesIn in $datosPromociones)
-<div class="col-md-6 col-lg-4 mt-4 promo-col-height" id="$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" onclick="selecionarPromo(this.id);">
-	<div class="card" style="width:100%;height:100%;">
-        <div class="card-image cuerpo-card2 centrar-switch-promo sacarSeleccionCard" id="cuerpo_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")">
-			<h6 class=" tooltipped" id="texto$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" data-placement="bottom" data-position="bottom" data-tooltip="$datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION")">$utilToolScreen.nombreMayuscula($datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION")) </h6>
-            <a class="btn-floating halfway-fab2 waves-effect waves-light red sacarCheckActivado" id="check_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" style="display:none;">
-                <i class="fas fa-check icono-check-ramos"></i>
-            </a>
-        </div>
-
-
-		<p class="promo-txt-data-card">$datosPromocionesIn.get('P_TF_PROM.CROT_DE_CONTENIDO')</p>
-
-
-    </div>
-</div>
+            <div class="col-md-4 mt-1" data-category="view" id="$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" onclick="selecionarPromo(this.id);">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-12" style="height: 130px;border: 1px solid #efefef;">
+                            <div class="lib-row lib-header" data-tooltip="$datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION")">
+                                $utilToolScreen.nombreMayuscula($datosPromocionesIn.get("P_TF_PROM.CROT_DE_PROMOCION"),"30")
+                               	 <a class="btn-floating halfway-fab2 waves-effect waves-light red sacarCheckActivado" id="check_$datosPromocionesIn.get("P_TF_PROM.CROT_CRTB_CD_PROMOCION")" style="display:none;bottom:90px !important;">
+               						 <i class="fas fa-check icono-check-ramos"></i>
+           						 </a>
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc">
+                              $datosPromocionesIn.get('P_TF_PROM.CROT_DE_CONTENIDO')
+                            </div>
+                    </div>
+                   </div>
+                 </div>
+   </div>
 #end
+
 

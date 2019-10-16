@@ -8,7 +8,7 @@
     <section class="">
         <div class="" style="padding-top:50px;" id="main">
             <div class="row" id="rowAlto" style="margin-bottom:0px;">
-                <div class=" col-sm-12 col-md-9 sin-margen-der">
+                <div class="col-sm-12 col-md-12 col-lg-9 sin-margen-der">
                     <div class="panel-default fondo-panel-central">
                         <div class="panel-body">
                             <div class=" row" id="rowCuerpo">

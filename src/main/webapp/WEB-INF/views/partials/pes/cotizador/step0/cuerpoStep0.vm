@@ -2,7 +2,7 @@
 <input type="hidden" value="#if($datosCoti.datosGenerales.planPago.length()>0)$datosCoti.datosGenerales.planPago#else$datosValoresDefault.datosDefault.planPago#end" id="valorPlanPago"/>
 <input type="hidden" value="$datosCoti.datosGenerales" id="datosCoti"/>
 <input type="hidden" value="$datosCoti.datosContacto.cuit" id="datosCotiCuit"/>
-<div class="input-field col-md-5 form-group">
+<div class="input-field col-md-5">
     <input id="dni" class="validarForm" value="#if($datosCoti.datosContacto.dni.length()>0)$datosCoti.datosContacto.dni#end" onkeypress="solonumeros(event);" onblur="validarCampo(this.id);" name="dni" type="text">
         <label for="dni">Documento*</label>
         #set( $id = "dni")

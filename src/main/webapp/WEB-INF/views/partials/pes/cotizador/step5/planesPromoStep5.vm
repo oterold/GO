@@ -1,85 +1,91 @@
 <div class="table-responsive">
-<table>
-    <thead>
-        <tr>
-            <th></th>
-            <th style="text-align:center;width:33%;">#if($datosCoti.promocionA != "")  $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA) #end</th>
-                <th style="text-align:center;width:33%;"> #if($datosCoti.promocionB != "") $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB) #end</th>
-                    <th style="text-align:center;width:33%;"> #if($datosCoti.promocionC != "") $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC) #end</th>
-        </tr>
-    </thead>
-    <tbody>
-        #foreach($datosPromoCuerpoIn in $datosPromoCuerpo)
+    <table>
+        <thead>
             <tr>
-                <td>
-                    <h6 class="posicion-vertical-tabla tooltipped" data-position="bottom" data-tooltip="$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")"> Plan $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")</h6>
-                </td>
-                <td class="col-md-12>
-                   #set ($valor = $velocityCount)
-                    #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") != "")
-                        #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
-                            <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
-                                <div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
-                                    <div data-target="modalDetallePlan" class="modal-trigger" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)');" style="position: relative;bottom: 20px;cursor:pointer;">
-                                        <i class="fas fa-plus pull-right"></i>
-                                    </div>
-                                    <h6 style="margin-top:0px;">Precio :</h6>
-                                    <h6 style="font-size:20px;">
-                                        <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")</b>
-                                        / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
-                                        <h6 class="seleccionPromoCotizacion checkCard" id="check_$valor" style="display:none;">
-                                            <i class="fas fa-check-circle icono-check-promo-coti"></i>
-                                        </h6>
-                                </div>
-                            </div>
+                <th></th>
+                <th style="text-align:center;width:33%;">#if($datosCoti.promocionA != "")  $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA) #end</th>
+                    <th style="text-align:center;width:33%;"> #if($datosCoti.promocionB != "") $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB) #end</th>
+                        <th style="text-align:center;width:33%;"> #if($datosCoti.promocionC != "") $utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC) #end</th>
+            </tr>
+        </thead>
+        <tbody>
+            #foreach($datosPromoCuerpoIn in $datosPromoCuerpo)
+                <tr>
+                    <td>
+                        <h6 class="posicion-vertical-tabla tooltipped" data-position="bottom" data-tooltip="$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")"> Plan $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")</h6>
+                    </td>
+                    <td class="col-md-12>
+                        #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") != "")
+                            #set ($valor = $velocityCount)
+                            #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
+								<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor">
+                                        <div class="card-panel-mio card-panel" id="cuerpo_$valor">
+                                            <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)');">
+                                                <i class="fas fa-plus pull-right"></i>
+                                            </div>
+                                            <div style="padding:26px !important" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+                                                <h6 style="margin-top:0px;color:#868282;font-size:15px;">Precio : </h6>
+                                                <h6 style=";font-size:20px;">
+                                                    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")</b>
+                                                    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
+                                                    <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
+                                                        <i class="fas fa-check-circle icono-check-promo-coti" style="position: relative;top: 25px;left: 20px;"></i>
+                                                    </h6>
+                                            </div>
+                                         </div>
+                                   </div>
+                                #else
+                                    <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor">
+                                        <div class="card-panel-mio card-panel" id="cuerpo_$valor">
+                                            <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)');">
+                                                <i class="fas fa-plus pull-right"></i>
+                                            </div>
+                                            <div class="acomodar-tachado-resposive"  style="position: relative;left:15px;top: 15px;">
+                                                <img style="width:40px;"  src="/PSPES/resources/img/tachadito.png">
+                                            </div>
+                                            <div onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+                                                <h6 style="margin-top:0px;color:#868282;font-size:15px;">$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA")</h6>
+                                                <h6>Precio Promocional :</h6>
+                                                <h6 style=";font-size:20px;">
+                                                    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")</b>
+                                                    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
+                                                    <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
+                                                        <i class="fas fa-check-circle icono-check-promo-coti"></i>
+                                                    </h6>
+                                            </div>
+                                            </div>
+                                        </div>
+                            #end
                             #else
-                                <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
-                                    <div class="card-panel-mio card-panel" id="cuerpo_$valor">
-                                        <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;">
-                                            <i class="fas fa-plus pull-right"></i>
-                                        </div>
-                                        <div class="acomodar-tachado-resposive"  style="position: relative;left:15px;top: 15px;">
-                                            <img style="width:40px;"  src="/PSPES/resources/img/tachadito.png">
-</div>
-<h6 style="margin-top:0px;color:#868282;font-size:15px;">$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA")</h6>
-<h6>Precio Promocional :</h6>
-<h6 style=";font-size:20px;">
-    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")</b>
-    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
-    <h6 class="seleccionPromoCotizacion checkCard" id="check_$valor" style="display:none;">
-        <i class="fas fa-check-circle icono-check-promo-coti"></i>
-    </h6>
-                                        </div>
+                                <div class="col-md-12">
+                                    <div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282  !important;">
+                                        <h6 style="margin-top:0px;">No aplica</h6>
                                     </div>
-                        #end
-                        #else
-                            <div class="col-md-12">
-                                <div class="card-panel-mio card-panel" style="padding: 49px !important;color:#868282  !important;">
-                                    <h6 style="margin-top:0px;">No aplica</h6>
                                 </div>
-                            </div>
-                    #end
+                        #end
 </td>
 <td class="col-md-12>
     #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2") != "")
         #set ($valor = $velocityCount+"_B")
         #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
-            <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
-                <div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
-                    <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;bottom: 20px;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB)');">
-                        <i class="fas fa-plus pull-right"></i>
-                    </div>
-                    <h6 style="margin-top:0px;">Precio :</h6>
-                    <h6 style="font-size:20px;">
-                        <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")</b>
-                        / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
-                        <h6 class="seleccionPromoCotizacion checkCard" id="check_$valor" style="display:none;">
-                            <i class="fas fa-check-circle icono-check-promo-coti"></i>
-                        </h6>
-                </div>
-            </div>
+            			<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor">
+                                        <div class="card-panel-mio card-panel" id="cuerpo_$valor">
+                                            <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)');">
+                                                <i class="fas fa-plus pull-right"></i>
+                                            </div>
+                                            <div style="padding:26px !important" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+                                                <h6 style="margin-top:0px;color:#868282;font-size:15px;">Precio : </h6>
+                                                <h6 style=";font-size:20px;">
+                                                    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")</b>
+                                                    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
+                                                    <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
+                                                        <i class="fas fa-check-circle icono-check-promo-coti" style="position: relative;top: 25px;left: 20px;"></i>
+                                                    </h6>
+                                            </div>
+                                         </div>
+                                   </div>
             #else
-                <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+                <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor">
                     <div class="card-panel-mio card-panel" id="cuerpo_$valor">
                         <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoB)');">
                             <i class="fas fa-plus pull-right"></i>
@@ -87,14 +93,16 @@
                         <div class="acomodar-tachado-resposive"  style="position: relative;left:15px;top: 15px;">
                             <img style="width:40px;"  src="/PSPES/resources/img/tachadito.png">
 </div>
-<h6 style="margin-top:0px;color:#868282;font-size:15px;">$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA")</h6>
-<h6>Precio Promocional :</h6>
-<h6 style=";font-size:20px;">
-    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")</b>
-    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
-    <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
-        <i class="fas fa-check-circle icono-check-promo-coti"></i>
-    </h6>
+<div onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+    <h6 style="margin-top:0px;color:#868282;font-size:15px;">$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA")</h6>
+    <h6>Precio Promocional :</h6>
+    <h6 style=";font-size:20px;">
+        <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")</b>
+        / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
+        <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
+            <i class="fas fa-check-circle icono-check-promo-coti"></i>
+        </h6>
+</div>
                         </div>
                     </div>
         #end
@@ -110,22 +118,24 @@
     #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3") != "")
         #set ($valor = $velocityCount+"_C")
         #if($datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3") == $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA"))
-            <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacion('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
-                <div class="card-panel-mio card-panel alto-panel-promo" id="cuerpo_$valor">
-                    <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;bottom: 20px;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC)');">
-                        <i class="fas fa-plus pull-right"></i>
-                    </div>
-                    <h6 style="margin-top:0px;">Precio :</h6>
-                    <h6 style="font-size:20px;">
-                        <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")</b>
-                        / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
-                        <h6 class="seleccionPromoCotizacion checkCard" id="check_$valor" style="display:none;">
-                            <i class="fas fa-check-circle icono-check-promo-coti"></i>
-                        </h6>
-                </div>
-            </div>
+         			<div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor">
+                                        <div class="card-panel-mio card-panel" id="cuerpo_$valor">
+                                            <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoA)');">
+                                                <i class="fas fa-plus pull-right"></i>
+                                            </div>
+                                            <div style="padding:26px !important" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_2")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+                                                <h6 style="margin-top:0px;color:#868282;font-size:15px;">Precio : </h6>
+                                                <h6 style=";font-size:20px;">
+                                                    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_1")</b>
+                                                    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
+                                                    <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
+                                                        <i class="fas fa-check-circle icono-check-promo-coti" style="position: relative;top: 25px;left: 20px;"></i>
+                                                    </h6>
+                                            </div>
+                                         </div>
+                                   </div>
             #else
-                <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor" onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+                <div class="col-md-12 botones-promociones" class="cabeceraCard" id="card_$valor">
                     <div class="card-panel-mio card-panel" id="cuerpo_$valor">
                         <div data-target="modalDetallePlan" class="modal-trigger" style="position: relative;cursor:pointer;" onclick="abrirModalDetalleCobertura('$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")','$utilToolScreen.nombreMayuscula($datosCoti.datosPanelB.promoC)');">
                             <i class="fas fa-plus pull-right"></i>
@@ -133,14 +143,16 @@
                         <div class="acomodar-tachado-resposive"  style="position: relative;left:15px;top: 15px;">
                             <img style="width:40px;"  src="/PSPES/resources/img/tachadito.png">
 </div>
-<h6 style="margin-top:0px;color:#868282;font-size:15px;">$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA")</h6>
-<h6>Precio Promocional :</h6>
-<h6 style=";font-size:20px;">
-    <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")</b>
-    / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
-    <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
-        <i class="fas fa-check-circle icono-check-promo-coti"></i>
-    </h6>
+<div onclick="selecionarCotizacionB('$valor','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CD_PROMOCION_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_CAPB_CD_PLAN")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")','$datosPromoCuerpoIn.get("P_TF_CAZB.CAPB_DE_PLAN")');" style="cursor:pointer;">
+    <h6 style="margin-top:0px;color:#868282;font-size:15px;">$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_TARIFA_PLANA")</h6>
+    <h6>Precio Promocional :</h6>
+    <h6 style=";font-size:20px;">
+        <b>$ $datosPromoCuerpoIn.get("P_TF_CAZB.CAZB_MT_PREMIO_3")</b>
+        / $datosPromoCuerpoIn.get("P_TF_CAZB.INB_DSP_VIGENCIA")</h6>
+        <h6 class="seleccionPromoCotizacionB checkCard alto-check" id="check_$valor" style="display:none;">
+            <i class="fas fa-check-circle icono-check-promo-coti"></i>
+        </h6>
+</div>
                         </div>
                     </div>
         #end
@@ -153,7 +165,7 @@
     #end
 </td>
 </tr>
-        #end
+#end
 </tbody>
 </table>
 </div>

@@ -1456,7 +1456,7 @@ public class GoCotizador extends AbstractPubController {
 	
 	private ArrayList obtenerListaValores(DatoDinamicoType dato, HttpServletRequest request) throws Exception {
 		DatosCotizacionGO datosCoti = (DatosCotizacionGO) tomarDeSession(request, ConstantesDeSession.DATOS_COTIZACION_GO);
-		if (dato.getCrdpTieneLdv().toString().toUpperCase().trim().equals("S") && dato.getInbInDependencias().toString().toUpperCase().trim().equals("")) {
+		if (dato.getCrdpTieneLdv().toString().toUpperCase().trim().equals("S")) {
 			Future<ArrayList> dinamicoResultado = goCotizador.datosResultadoParametricos(datosCoti, dato.getCrcoCrtdCdDato(), getEntorno(request), getUser(request));
 			while (!(dinamicoResultado.isDone())) {
 				Thread.sleep(5);

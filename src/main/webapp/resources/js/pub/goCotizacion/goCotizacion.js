@@ -52,7 +52,8 @@ function inicioCotizacion() {
 	$('#fechaNac').mask('00/00/0000');
 	var height = $(window).height();
     $('#rowAlto').height(parseInt(height)-parseInt(50));
-    
+    $('#rowCuerpo').height(parseInt(height)-parseInt(200));
+
 }
 
 function inicioCotizacion1() {
@@ -68,10 +69,15 @@ function inicioCotizacion1() {
 	$('.modal').modal();
 	$('.tooltipped').tooltip();
 	$('#fechaNac').mask('00/00/0000');
-	var height = $(window).height();
-    $('#rowAlto').height(parseInt(height)-parseInt(50));
-    //$('#rowCuerpo').height(parseInt(height)-parseInt(200));
-    
+    ajustarPantalla();
+}
+
+function ajustarPantalla(){
+	if (screen.width > 1024) {
+		var height = $(window).height();
+		$('#rowAlto').height(parseInt(height)-parseInt(50));
+		$('#rowCuerpo').height(parseInt(height)-parseInt(200));
+	}
 }
 
 function validarCampo(id) {

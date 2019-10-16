@@ -47,7 +47,7 @@
 </div>
 <div class="col-md-2">
 </div>
-<div class="input-field col-md-5">
+<div class="input-field col-md-5 seletc2-material">
     <select class="js-select2 datoTablaClass modeloClass validarForm" onchange="cargarSumaAsegurada(this.id);" name="40021" id="selectorModelo" >
         <option value="">Seleccione..</option>
     </select>
@@ -117,7 +117,7 @@
 </div>
 <div class="input-field col-md-5">
     <input class="datoTablaClass form-control validarForm" onblur="validarCampo(this.id);" onkeypress="solonumeros(event);"  for="postal"  name="900008" id="codPostal" type="text" required>
-        <label for="postal">C&oacute;digo Postal*</label>
+        <label for="codPostal">C&oacute;digo Postal*</label>
         #set( $id = "codPostal")
         #set( $idMsj = "_validar")
         #parse("partials/pes/cotizador/mensajeErrorCotizador.vm")

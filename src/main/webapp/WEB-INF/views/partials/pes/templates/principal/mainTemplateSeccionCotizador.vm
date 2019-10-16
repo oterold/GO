@@ -12,22 +12,22 @@
        
        #if($indicadorNivel1)
 			#if($tipoBuscador == "Experto")
-				<li class="breadcrumb-item">
+				<li class="breadcrumb-item" style="font-size: 14px;padding-top: 3px;padding-left: 11px;">
 					<a onclick="redirectBreadCrumbExperto('$indicadorNivel1URL')" style="color: #428bca; text-decoration: none; cursor:pointer;">$indicadorNivel1
 					</a> 
 				</li>
 			#elseif($tipoBuscador == "siniestroBPBA")
-				<li class="breadcrumb-item">
+				<li class="breadcrumb-item" style="font-size: 14px;padding-top: 3px;">
 					<a onclick="" style="color: #428bca; text-decoration: none; cursor:pointer;">Denuncia
 					</a> 
 				</li>
 			#elseif($tipoBuscador == "goBPBA")
-    			<li class="breadcrumb-item">
+    			<li class="breadcrumb-item" style="font-size: 14px;padding-top: 3px;padding-left: 11px;">
     				<a onclick="" style="color: #428bca; text-decoration: none; cursor:pointer;">Buscador
     				</a> 
     			</li>
 			#else 
-				<li class="breadcrumb-item">
+				<li class="breadcrumb-item" style="font-size: 14px;padding-top: 2px;padding-left: 11px;">
 					<a onclick="redirectBreadCrumb('$indicadorNivel1URL')" style="color: #428bca; text-decoration: none; cursor:pointer; font-size:14px;font-weight: 400">$indicadorNivel1
 					</a> 
 				</li>
@@ -35,13 +35,13 @@
 			#end
        #end 
         #if($indicadorNivel2)
-     	     <li class="breadcrumb-item">
+     	     <li class="breadcrumb-item" style="font-size: 14px;padding-top: 3px;">
 				<a onclick="redirectBreadCrumb('$indicadorNivel2URL')" style="color: #428bca; text-decoration: none; cursor:pointer; font-size:14px;font-weight: 400">$indicadorNivel2
 				</a>
 			 </li>
        #end 
         #if($indicadorNivel3)
-     	    <li class="breadcrumb-item">
+     	    <li class="breadcrumb-item" style="font-size: 14px;padding-top: 3px;">
 				<a onclick="redirectBreadCrumb('$indicadorNivel3URL')" style="color: #428bca; text-decoration: none; cursor:pointer; font-size:14px;font-weight: 400">$indicadorNivel3
 				</a>
 			</li>

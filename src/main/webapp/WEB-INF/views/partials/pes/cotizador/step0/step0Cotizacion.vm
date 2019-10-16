@@ -4,7 +4,7 @@
     <section class="">
         <div class="" style="padding-top:50px;" id="main">
             <div class="row" id="rowAlto" style="margin-bottom:0px;">
-                <div class=" col-sm-12 col-md-9 sin-margen-der">
+                <div class="col-sm-12 col-md-12 col-lg-9 sin-margen-der">
                     <div class="panel-default fondo-panel-central">
                         <div class="panel-body">
                             <div class=" row" id="rowCuerpo">
@@ -20,9 +20,9 @@
                                 </div>
                                 <div class="col-md-12 cuerpo-botones" >
                                     <div class="row" style="margin:0px !important;">
-                                        <div class="col-md-6">
+                                        <div class="col-sm-6 col-md-8 col-lg-9">
                                         </div>
-                                        <div class="col-md-3" style="text-align:center;">
+                                        <div class="col-sm-12 col-md-4 col-lg-3 margenes-boton" style="text-align:center;">
                                             <a onclick="redirectStep1();"  class="btn waves-effect waves-light boton-siguiente-cotizacion">
                                                 Siguiente
                                                 <i class="material-icons right" style="color:white;">send</i>
