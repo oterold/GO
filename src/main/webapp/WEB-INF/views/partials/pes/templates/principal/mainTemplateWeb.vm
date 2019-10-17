@@ -113,7 +113,7 @@
 	<script src="/PSPES/resources/js/mfb.js"></script>
 	<script src="/PSPES/resources/js/pub/pantallaAyuda/ayudaHome.js"></script>
 	
-		<script type="text/javascript" src="/PSPES/wro/alljs.js$paramId"></script> 
+		<script type="text/javascript" src="/PSPES/wro/alljs.js"></script> 
 	<script src="/PSPES/resources/js/graficos/graficos.js"></script>
 	<script src="/PSPES/resources/js/shortcut.js"></script>
 	<script src="/PSPES/resources/js/pub/bandejaSiniestro/bandejaSiniestro.js"></script>
