@@ -414,6 +414,13 @@ cursor:pointer;
 
 }
 
+@media screen and (max-width: 550px){
+	.ocultar-responsive-icono{
+		display:none !important;;
+	}
+	
+}
+
 @media screen and (min-width: 200px) and (max-width: 1224px) { 
 	.acomodar-card-persona{
 	display:none;
